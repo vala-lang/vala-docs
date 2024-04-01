@@ -1,0 +1,409 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="2.3. Basic Debugging" href="02-03-basic-debugging.html" /><link rel="prev" title="2.1. Installation" href="02-01-installation.html" />
+
+    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.01.29 -->
+        <title>2.2. Hello World - Vala Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=369552022d0b975c8e74270ce6eabe0fb7978f24" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../_static/gnome.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #A56DE2;
+  --color-brand-content: #A56DE2;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #A56DE2;
+  --color-brand-content: #A56DE2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #A56DE2;
+  --color-brand-content: #A56DE2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Vala Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.png" alt="Logo"/>
+  </div>
+
+  
+  <span class="sidebar-brand-text">Vala Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Tutorial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorial</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01-00-introduction.html">1. Introduction</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="02-00-getting-started.html">2. Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of 2. Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="02-01-installation.html">2.1. Installation</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">2.2. Hello World</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02-03-basic-debugging.html">2.3. Basic Debugging</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="03-00-data-types-and-control-structures.html">3. Data Types and Control Structures</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 3. Data Types and Control Structures</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="03-01-variables.html">3.1. Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03-02-numbers.html">3.2. Numbers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03-03-bools-and-ifs.html">3.3. Booleans and if-statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03-04-enums-and-switch-statements.html">3.4. Enums and Switch Statements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03-05-loops.html">3.5. Loops</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="04-00-parrot-program.html">4. Parrot Program</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 4. Parrot Program</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="04-01-entering-your-phrase.html">4.1. Entering your phrase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04-02-cycle-through-names.html">4.2. Cycle through names</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="05-00-methods.html">5. Methods</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of 5. Methods</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="05-01-introducing-methods.html">5.1. Introducing methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="05-02-main-method.html">5.2. Main method</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/colinkiama/vala-docs/edit/main/source/tutorial/02-02-hello-world.rst" title="Edit this page">
+    <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+      <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+    </svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="hello-world">
+<h1><span class="section-number">2.2. </span>Hello World<a class="headerlink" href="#hello-world" title="Permalink to this heading">#</a></h1>
+<p>In this section, we’ll:</p>
+<ul class="simple">
+<li><p>Explain the steps for you to create directories on your system, where you’ll store the Vala programs you will be creating in this tutorial</p></li>
+<li><p>Help you create our first Vala program</p></li>
+<li><p>Teach you the essential parts that make up a Vala program</p></li>
+<li><p>Breifly explain how Vala relates to the C Programming Language</p></li>
+</ul>
+<section id="setting-up-your-directories">
+<h2><span class="section-number">2.2.1. </span>Setting up your directories<a class="headerlink" href="#setting-up-your-directories" title="Permalink to this heading">#</a></h2>
+<p>Firstly, you’ll create a directory where you’ll store all of your Vala projects for this tutorial.
+We suggest making one in your home directory.</p>
+<p>Open a terminal and enter the commands below to create a <code class="docutils literal notranslate"><span class="pre">ValaProjects</span></code> directory in your home directory and <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> directory inside of the <code class="docutils literal notranslate"><span class="pre">ValaProjects</span></code> directory.</p>
+<p>On Unix-based systems (Linux, macOS, *BSD, etc.) and Powershell in Windows, enter these commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>mkdir<span class="w"> </span>~/ValaProjects
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>~/ValaProjects
+<span class="gp">$ </span>mkdir<span class="w"> </span>HelloWorld
+<span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>HelloWorld
+</pre></div>
+</div>
+<p>If you are using CMD in Windows, enter these commands:</p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> <span class="k">mkdir</span> <span class="s2">&quot;</span><span class="nv">%USERPROFILE%</span><span class="s2">\ValaProjects&quot;</span>
+<span class="gp">&gt;</span> <span class="k">cd</span> /d <span class="s2">&quot;</span><span class="nv">%USERPROFILE%</span><span class="s2">\ValaProjects&quot;</span>
+<span class="gp">&gt;</span> <span class="k">mkdir</span> HelloWorld
+<span class="gp">&gt;</span> <span class="k">cd</span> HelloWorld
+</pre></div>
+</div>
+</section>
+<section id="creating-your-first-vala-program">
+<h2><span class="section-number">2.2.2. </span>Creating your first Vala program<a class="headerlink" href="#creating-your-first-vala-program" title="Permalink to this heading">#</a></h2>
+<p>Next, create make a new Vala source file inside the <code class="docutils literal notranslate"><span class="pre">HelloWorld</span></code> directory called <code class="docutils literal notranslate"><span class="pre">main.vala</span></code>. This is where you’ll write the code for you first Vala program.</p>
+<p>Now in <code class="docutils literal notranslate"><span class="pre">main.vala</span></code>, add the following code below:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">main.vala - A program that prints “Hello, world!”</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello, world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In this tutorial, Vala code will be indented with 4 spaces since all Vala code written in this tutorial will follow the <a class="reference external" href="https://docs.elementary.io/develop/writing-apps/code-style">elementary coding style</a> (unless specified otherwise).</p>
+</div>
+<p>After you’ve added the code above to the <code class="docutils literal notranslate"><span class="pre">main.vala</span></code>  source file, save the file then, return to your terminal you opened earlier.</p>
+<p>On Unix-based systems (Linux, macOS, *BSD, etc), enter the following commands to build and run the file:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>valac<span class="w"> </span>main.vala
+<span class="gp">$ </span>./main
+</pre></div>
+</div>
+<p>If you’re using Windows, you need to replace  <code class="docutils literal notranslate"><span class="pre">.\main.exe</span></code> instead of <code class="docutils literal notranslate"><span class="pre">.\main</span></code> when entering the commands:</p>
+<div class="highlight-doscon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;</span> valac main.vala
+<span class="gp">&gt;</span> ./main.exe
+</pre></div>
+</div>
+<p>You should see the following line added to your terminal: “Hello, world!”.</p>
+<p>You’ve successfully created your first Vala program. Congratulations!</p>
+</section>
+<section id="what-just-happened">
+<h2><span class="section-number">2.2.3. </span>What just happened?<a class="headerlink" href="#what-just-happened" title="Permalink to this heading">#</a></h2>
+<p>Let’s break down the anatomy of the program you’ve just created so that you can understand what just happened.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello, world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="hll"><span class="p">}</span>
+</span></pre></div>
+</div>
+<p>The highlighted lines above define a <strong>method</strong> in Vala; A method is a block of code that contain code for the program to execute when called.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> <strong>method</strong> in Vala is special becasue it’s the first <strong>method</strong> that runs in a Vala program. The program automatically calls the <code class="docutils literal notranslate"><span class="pre">main</span></code> <strong>method</strong> first.</p>
+<p>We’ll explain <code class="docutils literal notranslate"><span class="pre">public</span></code>, <code class="docutils literal notranslate"><span class="pre">static</span></code> and <code class="docutils literal notranslate"><span class="pre">void</span></code> in later chapters.</p>
+<p>The curly brackets (<code class="docutils literal notranslate"><span class="pre">{}</span></code>) define the start and end of the <strong>method</strong> body. Our program runs the code written in each line between the curly brackets for the <code class="docutils literal notranslate"><span class="pre">main</span></code> <strong>method</strong>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">main</span></code> <strong>method</strong> contains the following code:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="hll"><span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello, world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The highlighted line above line prints the “Hello, world!” text on the screen.</p>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code> is also a method. Unlike the <code class="docutils literal notranslate"><span class="pre">main</span></code> method, you are calling the <code class="docutils literal notranslate"><span class="pre">print</span></code> method yourself.</p>
+<p>“Hello, world!\n” is a <strong>string</strong>; A <strong>string</strong> is a sequence of characters such as letters, numbers, symbols and spaces. We’ll go into more details about strings in the next chapter.</p>
+<p>You passed in the “Hello, world\n” <strong>string</strong> into the <code class="docutils literal notranslate"><span class="pre">print</span></code> method as an argument to specify the <strong>string</strong> we want to be displayed in the terminal; An argument is a piece of information that may be used in an program. We’ll go into more detail about arguments in methods in later chapters.</p>
+<p>However, “\n” wasn’t actually displayed when we ran the program. This is because “\n” is a special type of character called an “escape sequence”. “\n” adds a new line to the terminal.</p>
+<p>If you build and run the program without “\n”, What ever is added next in the terminal will start on the same line as “Hello, world!”. We’ll find out more about escape sequences in later chapters.</p>
+</section>
+<section id="the-vala-compiler">
+<h2><span class="section-number">2.2.4. </span>The Vala Compiler<a class="headerlink" href="#the-vala-compiler" title="Permalink to this heading">#</a></h2>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>valac<span class="w"> </span>main.vala
+</pre></div>
+</div>
+<p>The line above is tells the Vala compiler to build the program with the code we’ve written in <code class="docutils literal notranslate"><span class="pre">main.vala</span></code>.</p>
+<p>This step is completely separate from running your code with <code class="docutils literal notranslate"><span class="pre">./main</span></code> or <code class="docutils literal notranslate"><span class="pre">./main.exe</span></code>.</p>
+<p>Once your program has been built successfully, we can run it any time without having to compile again.</p>
+<p>The compiler program <code class="docutils literal notranslate"><span class="pre">valac</span></code> is fine for small projects however, once you start working on bigger, more complex projects, we’ll introduce a build system that you’ll work with instead of using <code class="docutils literal notranslate"><span class="pre">valac</span></code> directly.</p>
+</section>
+<section id="the-relationship-between-vala-and-c">
+<h2><span class="section-number">2.2.5. </span>The relationship between Vala and C<a class="headerlink" href="#the-relationship-between-vala-and-c" title="Permalink to this heading">#</a></h2>
+<p>When you enter the command: <code class="docutils literal notranslate"><span class="pre">valac</span> <span class="pre">main.vala</span></code>, <code class="docutils literal notranslate"><span class="pre">valac</span></code> performs the following steps:</p>
+<ol class="arabic simple">
+<li><p>Generate C Code from the Vala code we’ve written</p></li>
+<li><p>Call the C Code compiler on installed on our system to build an binary executable from the generate C Code.</p></li>
+</ol>
+<p>Normally, when compiling your code with <code class="docutils literal notranslate"><span class="pre">valac</span></code>, you don’t notice step 1 however, you can actually see the generated C code by adding the <code class="docutils literal notranslate"><span class="pre">-C</span></code> flag to <code class="docutils literal notranslate"><span class="pre">valac</span></code> commands.</p>
+<p>If you run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>valac<span class="w"> </span>-C<span class="w"> </span>main.vala
+</pre></div>
+</div>
+<p>Instead of an new exectuable file being created, a file called <code class="docutils literal notranslate"><span class="pre">main.c</span></code> will be created instead. This is the generated C code from step 1.</p>
+<p>Details on working with C Code are out of the scope of this tutorial however, this is key to understanding how some of the language’s features are possible later chapters.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="02-03-basic-debugging.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><span class="section-number">2.3. </span>Basic Debugging</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="02-01-installation.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-left"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><span class="section-number">2.1. </span>Installation</div>
+                
+              </div>
+            </a>
+        </div>
+      
+      </footer>
+
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">2.2. Hello World</a><ul>
+<li><a class="reference internal" href="#setting-up-your-directories">2.2.1. Setting up your directories</a></li>
+<li><a class="reference internal" href="#creating-your-first-vala-program">2.2.2. Creating your first Vala program</a></li>
+<li><a class="reference internal" href="#what-just-happened">2.2.3. What just happened?</a></li>
+<li><a class="reference internal" href="#the-vala-compiler">2.2.4. The Vala Compiler</a></li>
+<li><a class="reference internal" href="#the-relationship-between-vala-and-c">2.2.5. The relationship between Vala and C</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    </body>
+</html>

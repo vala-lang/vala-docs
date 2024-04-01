@@ -1,0 +1,29 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: vala-tutorial
+Upstream-Contact: Colin Kiama <colinkiama@gmail.com>
+Source: https://github.com/colinkiama/vala-tutorial
+
+Files: README.md
+Copyright: 2022  Colin Kiama
+License: CC0-1.0
+
+Files: *.rst
+Copyright: 2022  Colin Kiama
+License: CC-BY-SA-4.0
+
+Files: source/_static/*
+Copyright: 2021  Jakub Steiner
+License: CC-BY-SA-3.0
+
+Files: source/_static/fonts/*
+Copyright: 2009  The Cantarell Authors
+License: OFL-1.1
+
+Files: source/_templates/*
+Copyright: 2020  Pradyun Gedam <mail@pradyunsg.me>
+Copyright: 2021  Jakub Steiner
+License: MIT
+
+Files: source/logo.png
+Copyright: 2022  The Vala Authors
+License: CC-BY-SA-3.0

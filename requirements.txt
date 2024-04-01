@@ -1,0 +1,6 @@
+sphinx==6.2
+furo
+sphinx-tabs
+sphinxext-opengraph
+sphinx-copybutton
+pygments

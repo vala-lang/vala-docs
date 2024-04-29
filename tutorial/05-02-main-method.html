@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="5.1. Introducing methods" href="05-01-introducing-methods.html" />
 
-    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.04.27 -->
         <title>5.2. Main method - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=369552022d0b975c8e74270ce6eabe0fb7978f24" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=46965ee0ad39e5260c2467c27b94afaae98bd900" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/gnome.css" />
@@ -230,7 +230,7 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="main-method">
-<h1><span class="section-number">5.2. </span>Main method<a class="headerlink" href="#main-method" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5.2. </span>Main method<a class="headerlink" href="#main-method" title="Permalink to this heading">¶</a></h1>
 <p>The work that you do in this section will be done in a new directory under your
 <code class="docutils literal notranslate"><span class="pre">ValaProjects</span></code> directory called <code class="docutils literal notranslate"><span class="pre">MainMethods</span></code>:abbr:</p>
 <ol class="arabic simple">
@@ -250,7 +250,7 @@ There are different types of main methods that give you access to additional fea
 that are useful for come complicated programs.</p>
 <p>Here are some of the other main methods versions there are available:</p>
 <section id="main-method-with-exit-code">
-<h2><span class="section-number">5.2.1. </span>Main method with exit code<a class="headerlink" href="#main-method-with-exit-code" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2.1. </span>Main method with exit code<a class="headerlink" href="#main-method-with-exit-code" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 </span><span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello, world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <span class="hll"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
@@ -268,7 +268,7 @@ Exit codes tell the operating system the exit status of the program.</p>
 </ul>
 </section>
 <section id="main-method-with-arguments">
-<h2><span class="section-number">5.2.2. </span>Main method with arguments<a class="headerlink" href="#main-method-with-arguments" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2.2. </span>Main method with arguments<a class="headerlink" href="#main-method-with-arguments" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">(</span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">@&quot;Arguments list length: $args.length</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Arguments list:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
@@ -319,7 +319,7 @@ will produce the same output:</p>
 </div>
 </section>
 <section id="no-main-method">
-<h2><span class="section-number">5.2.3. </span>No main method<a class="headerlink" href="#no-main-method" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2.3. </span>No main method<a class="headerlink" href="#no-main-method" title="Permalink to this heading">¶</a></h2>
 <p>If you have a pretty simple program, you don’t even need to write a main method block.
 This code will compile and run just fine:</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;No main method block here!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
@@ -339,7 +339,7 @@ stating that “main blocks are experimental”.</p>
 </div>
 </section>
 <section id="summary">
-<h2><span class="section-number">5.2.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.2.4. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">¶</a></h2>
 <p>Congratualations! You’ve now finished this chapter.</p>
 <p>To recap, you’ve learned:</p>
 <ul class="simple">

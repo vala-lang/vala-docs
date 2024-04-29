@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="3.5. Loops" href="03-05-loops.html" /><link rel="prev" title="3.3. Booleans and if-statements" href="03-03-bools-and-ifs.html" />
 
-    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.04.27 -->
         <title>3.4. Enums and switch statements - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=369552022d0b975c8e74270ce6eabe0fb7978f24" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=46965ee0ad39e5260c2467c27b94afaae98bd900" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/gnome.css" />
@@ -230,7 +230,7 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="enums-and-switch-statements">
-<h1><span class="section-number">3.4. </span>Enums and switch statements<a class="headerlink" href="#enums-and-switch-statements" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.4. </span>Enums and switch statements<a class="headerlink" href="#enums-and-switch-statements" title="Permalink to this heading">¶</a></h1>
 <p>In this section we’ll:</p>
 <ul class="simple">
 <li><p>Introduce the switch statement</p></li>
@@ -238,7 +238,7 @@
 <li><p>Showcase how switch statements and enums work well togeter</p></li>
 </ul>
 <section id="introducing-switch-statements">
-<h2><span class="section-number">3.4.1. </span>Introducing Switch Statements<a class="headerlink" href="#introducing-switch-statements" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.4.1. </span>Introducing Switch Statements<a class="headerlink" href="#introducing-switch-statements" title="Permalink to this heading">¶</a></h2>
 <p>In the last section, we introuduced <code class="docutils literal notranslate"><span class="pre">if</span></code> statements:</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">is_on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">is_on</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -299,7 +299,7 @@ Then after the <code class="docutils literal notranslate"><span class="pre">:</s
 <p>To signal the end of the code to run, a <code class="docutils literal notranslate"><span class="pre">break</span></code> statement is used.</p>
 <p><code class="docutils literal notranslate"><span class="pre">default</span></code> beahves like <code class="docutils literal notranslate"><span class="pre">else</span></code>. It runs when no other cases match the value passed in.</p>
 <section id="taking-advantage-of-the-switch-fallthrough-behaviour">
-<h3><span class="section-number">3.4.1.1. </span>Taking Advantage of the Switch Fallthrough Behaviour<a class="headerlink" href="#taking-advantage-of-the-switch-fallthrough-behaviour" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.4.1.1. </span>Taking Advantage of the Switch Fallthrough Behaviour<a class="headerlink" href="#taking-advantage-of-the-switch-fallthrough-behaviour" title="Permalink to this heading">¶</a></h3>
 <p>In <code class="docutils literal notranslate"><span class="pre">if</span></code> statements, to run the same block of code based on a set of matching values, you would do somethhing like this:</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">lang_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Vala&quot;</span><span class="p">;</span>
 
@@ -339,7 +339,7 @@ The same code would run if <code class="docutils literal notranslate"><span clas
 </section>
 </section>
 <section id="enums">
-<h2><span class="section-number">3.4.2. </span>Enums<a class="headerlink" href="#enums" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.4.2. </span>Enums<a class="headerlink" href="#enums" title="Permalink to this heading">¶</a></h2>
 <p>Now, you’ll write some actual code involving <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements and value type called an Enumeration (<code class="docutils literal notranslate"><span class="pre">enum</span></code>):</p>
 <p>First, you’ll need to create a new directory for the code you’ll write in this section:</p>
 <ol class="arabic simple">
@@ -348,7 +348,7 @@ The same code would run if <code class="docutils literal notranslate"><span clas
 </ol>
 <p>In <code class="docutils literal notranslate"><span class="pre">main.vala</span></code>, write the following code:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">lang_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Vala&quot;</span><span class="p">;</span>
 
@@ -382,13 +382,13 @@ The same code would run if <code class="docutils literal notranslate"><span clas
 </pre></div>
 </div>
 <section id="writing-your-first-enum">
-<h3><span class="section-number">3.4.2.1. </span>Writing your first enum<a class="headerlink" href="#writing-your-first-enum" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.4.2.1. </span>Writing your first enum<a class="headerlink" href="#writing-your-first-enum" title="Permalink to this heading">¶</a></h3>
 <p>In our code, <code class="docutils literal notranslate"><span class="pre">lang_name</span></code> can be reduced to a specific set of related, mutually exclusive values.</p>
 <p>We can take advantage of this by enumerating these values by creating a new <code class="docutils literal notranslate"><span class="pre">enum</span></code>.</p>
 <p>Add an <code class="docutils literal notranslate"><span class="pre">enum</span></code> declaration to the top of <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> so that
 the code looks like this below:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">Language</span><span class="w"> </span><span class="p">{</span>
 </span><span class="hll"><span class="w">    </span><span class="n">VALA</span><span class="p">,</span><span class="w"> </span><span class="c1">// Vala</span>
 </span><span class="hll"><span class="w">    </span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="c1">// C</span>
@@ -429,7 +429,7 @@ checked and recognised by the compiler and they are included in autocomplete sug
 can reduce potential mistakes we can make in our code.</p>
 <p>They also work well with <code class="docutils literal notranslate"><span class="pre">switch</span></code> statements. Update <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> to look like this below:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">Language</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">VALA</span><span class="p">,</span><span class="w"> </span><span class="c1">// Vala</span>
 <span class="w">    </span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="c1">// C</span>

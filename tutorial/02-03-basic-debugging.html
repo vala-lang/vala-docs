@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="3. Data Types and Control Structures" href="03-00-data-types-and-control-structures.html" /><link rel="prev" title="2.2. Hello World" href="02-02-hello-world.html" />
 
-    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.04.27 -->
         <title>2.3. Basic Debugging - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=369552022d0b975c8e74270ce6eabe0fb7978f24" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=46965ee0ad39e5260c2467c27b94afaae98bd900" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/gnome.css" />
@@ -230,7 +230,7 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="basic-debugging">
-<h1><span class="section-number">2.3. </span>Basic Debugging<a class="headerlink" href="#basic-debugging" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">2.3. </span>Basic Debugging<a class="headerlink" href="#basic-debugging" title="Permalink to this heading">¶</a></h1>
 <p>There may be moments where your code contains errors. Some of these errors will stop your code from compiling or operating correctly.</p>
 <p>In this section, we will:</p>
 <ul class="simple">
@@ -238,11 +238,11 @@
 <li><p>Provide you with tips on how to fix errors in Vala programs</p></li>
 </ul>
 <section id="reusing-your-first-program">
-<h2><span class="section-number">2.3.1. </span>Reusing your first program<a class="headerlink" href="#reusing-your-first-program" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3.1. </span>Reusing your first program<a class="headerlink" href="#reusing-your-first-program" title="Permalink to this heading">¶</a></h2>
 <p>You’ll be reusing the Hello World program from our the previous section.</p>
 <p>It looked like this:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">main.vala - A program that prints “Hello, world!”</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala - A program that prints “Hello, world!”</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello, world!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <span class="p">}</span>
@@ -251,11 +251,11 @@
 </div>
 </section>
 <section id="errors">
-<h2><span class="section-number">2.3.2. </span>Errors<a class="headerlink" href="#errors" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3.2. </span>Errors<a class="headerlink" href="#errors" title="Permalink to this heading">¶</a></h2>
 <p>You are now going to add errors to the Hello World program on purpose.</p>
 <p>Replace the code written in <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> with the code below:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">main.vala - A Hello World program with errors</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala - A Hello World program with errors</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="n">Hello</span><span class="p">,</span><span class="w"> </span><span class="n">world</span><span class="p">)</span>
 <span class="p">}</span>
@@ -280,7 +280,7 @@
 </div>
 <p>Add back the the semicolon to the end of the line so the compiler can read that line containing the <code class="docutils literal notranslate"><span class="pre">print</span></code> method:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="n">Hello</span><span class="p">,</span><span class="w"> </span><span class="n">World</span><span class="p">);</span>
 <span class="p">}</span>
@@ -304,7 +304,7 @@ the string “Hello, World” anymore. Instead, it tried to find out if <code cl
 defined in the language or in our code anywhere but. The compiler fails to find definitions for <code class="docutils literal notranslate"><span class="pre">Hello</span></code> and <code class="docutils literal notranslate"><span class="pre">world</span></code> so the compiler displays multiple errors that that <code class="docutils literal notranslate"><span class="pre">Hello</span></code> and <code class="docutils literal notranslate"><span class="pre">world</span></code> do not exist.</p>
 <p>You can fix this by adding back the speech marks to opening and closing speech marks to <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">world</span></code> so it looks like this: <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world&quot;</span></code>.</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello, world&quot;</span><span class="p">);</span>
 <span class="p">}</span>
@@ -316,7 +316,7 @@ defined in the language or in our code anywhere but. The compiler fails to find 
 <p>Although the program is correct, the resulting ouptut is not what we wanted. This is a logic error.</p>
 <p>This can be easily fixed by adding “\n” at the end of “Hello, world” string.</p>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello, world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
 <span class="p">}</span>
@@ -326,12 +326,12 @@ defined in the language or in our code anywhere but. The compiler fails to find 
 <p>Now, if you compile and run the code, it prints “Hello, world” then, adds a new line.</p>
 </section>
 <section id="personalising-the-program">
-<h2><span class="section-number">2.3.3. </span>Personalising the program<a class="headerlink" href="#personalising-the-program" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3.3. </span>Personalising the program<a class="headerlink" href="#personalising-the-program" title="Permalink to this heading">¶</a></h2>
 <p>Now, you’ll change the logic of the Hello World program so that it’s unique to you.</p>
 <p>Replace the word “”world” in the “Hello. world” string with your own name.</p>
 <p>For somebody named “Colin”, this is what their code would look like:</p>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id6" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello, Colin</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <span class="p">}</span>
@@ -342,7 +342,7 @@ defined in the language or in our code anywhere but. The compiler fails to find 
 The code block above will print: “Hello, Colin” to the terminal.</p>
 </section>
 <section id="describing-what-our-code-does">
-<h2><span class="section-number">2.3.4. </span>Describing what our code does<a class="headerlink" href="#describing-what-our-code-does" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3.4. </span>Describing what our code does<a class="headerlink" href="#describing-what-our-code-does" title="Permalink to this heading">¶</a></h2>
 <p>Now that you’ve changed what our code does, you’ll now explain what it does using comments.</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="c1">// In Vala, this line is a comment.</span>
 </pre></div>
@@ -360,7 +360,7 @@ so the compiler ignores the line when reading your code and moves on the next li
 <p>Now add a comment to your personalised Hello World program.</p>
 <p>For somebody named “Colin”, this is what their code would look like:</p>
 <div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id7" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="c1">// Prints the line &quot;Hello, Colin&quot; to the terminal.&quot;</span>
 <span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello, Colin</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
@@ -372,7 +372,7 @@ so the compiler ignores the line when reading your code and moves on the next li
 <p>If you compile and run the code now, nothing about how the program works will change.</p>
 </section>
 <section id="summary">
-<h2><span class="section-number">2.3.5. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">2.3.5. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">¶</a></h2>
 <p>Congratulations! You’ve learned how to:</p>
 <ul class="simple">
 <li><p>Write your Vala program (Hello World)</p></li>

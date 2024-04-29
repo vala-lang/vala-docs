@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="3.4. Enums and switch statements" href="03-04-enums-and-switch-statements.html" /><link rel="prev" title="3.2. Numbers" href="03-02-numbers.html" />
 
-    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.04.27 -->
         <title>3.3. Booleans and if-statements - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=369552022d0b975c8e74270ce6eabe0fb7978f24" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=46965ee0ad39e5260c2467c27b94afaae98bd900" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/gnome.css" />
@@ -230,14 +230,14 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="booleans-and-if-statements">
-<h1><span class="section-number">3.3. </span>Booleans and if-statements<a class="headerlink" href="#booleans-and-if-statements" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.3. </span>Booleans and if-statements<a class="headerlink" href="#booleans-and-if-statements" title="Permalink to this heading">¶</a></h1>
 <p>In this section we’ll:</p>
 <ul class="simple">
 <li><p>Teach you about boolean values and variables</p></li>
 <li><p>Introuduce a way to change the flow of a program based on a boolean value</p></li>
 </ul>
 <section id="introudction-to-booleans">
-<h2><span class="section-number">3.3.1. </span>Introudction to Booleans<a class="headerlink" href="#introudction-to-booleans" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3.1. </span>Introudction to Booleans<a class="headerlink" href="#introudction-to-booleans" title="Permalink to this heading">¶</a></h2>
 <p>Light bulbs ultimately have two, mutually-exclusive states: <code class="docutils literal notranslate"><span class="pre">on</span></code> and <code class="docutils literal notranslate"><span class="pre">off</span></code>. When a light bulb is <code class="docutils literal notranslate"><span class="pre">on</span></code>, it has emits light. When a light bulb is <code class="docutils literal notranslate"><span class="pre">off</span></code>, there is no light.</p>
 <p>Sometimes, in our programs, we need to represent two mutually exclusive states. The boolean data type (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) is how you we can do this.</p>
 <p>Instead of <code class="docutils literal notranslate"><span class="pre">on</span></code> and <code class="docutils literal notranslate"><span class="pre">off</span></code>, we’d use the <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> boolean values to represent two mutually-exclusive states.</p>
@@ -252,7 +252,7 @@
 </ol>
 <p>In <code class="docutils literal notranslate"><span class="pre">main.vala</span></code>, write the following code:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <span class="p">}</span>
@@ -262,11 +262,11 @@
 <p>If you compile and run the program, it will simply print “Hello!”.</p>
 </section>
 <section id="if-statement">
-<h2><span class="section-number">3.3.2. </span>If-statement<a class="headerlink" href="#if-statement" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3.2. </span>If-statement<a class="headerlink" href="#if-statement" title="Permalink to this heading">¶</a></h2>
 <p>Let’s make your program more interesting now.</p>
 <p>Above the <code class="docutils literal notranslate"><span class="pre">print</span></code> method, add declare a boolean variable set to <code class="docutils literal notranslate"><span class="pre">false</span></code>:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">main.vala - Boolean variable added</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala - Boolean variable added</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">should_print</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
@@ -301,7 +301,7 @@
 evaluates a boolean value. If the evaluated boolean value is <code class="docutils literal notranslate"><span class="pre">true</span></code>, the code between the curly braces (<code class="docutils literal notranslate"><span class="pre">{}</span></code>), will run.</p>
 <p>Now set the <code class="docutils literal notranslate"><span class="pre">should_print</span></code> variable to <code class="docutils literal notranslate"><span class="pre">true</span></code> then compile and run the program again:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">should_print</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 
@@ -316,7 +316,7 @@ evaluates a boolean value. If the evaluated boolean value is <code class="docuti
 <p>Variable identifiers themselves also count as an expression. Let’s take advantage of this to simplify our program a bit.</p>
 <p>Update <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> so that the code looks like this:</p>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">should_print</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 
@@ -338,7 +338,7 @@ evaluates a boolean value. If the evaluated boolean value is <code class="docuti
 </div>
 </section>
 <section id="if-else-statements">
-<h2><span class="section-number">3.3.3. </span>If-else statements<a class="headerlink" href="#if-else-statements" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3.3. </span>If-else statements<a class="headerlink" href="#if-else-statements" title="Permalink to this heading">¶</a></h2>
 <p>What if you wanted only wanted to run code that only runs when a variable is <code class="docutils literal notranslate"><span class="pre">true</span></code> and a different piece of code to run when that same variable is <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 <p>This is possible using if-else statements:</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">is_on</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
@@ -352,7 +352,7 @@ evaluates a boolean value. If the evaluated boolean value is <code class="docuti
 </div>
 <p>Let’s try this out. Modfiy <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> to look like this:</p>
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id5" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">should_print_hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 
@@ -370,11 +370,11 @@ evaluates a boolean value. If the evaluated boolean value is <code class="docuti
 be printed instead.</p>
 </section>
 <section id="if-else-if-statements">
-<h2><span class="section-number">3.3.4. </span>if-else-if statements<a class="headerlink" href="#if-else-if-statements" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3.4. </span>if-else-if statements<a class="headerlink" href="#if-else-if-statements" title="Permalink to this heading">¶</a></h2>
 <p>We can keep adding more conditions to try using <code class="docutils literal notranslate"><span class="pre">else</span> <span class="pre">if</span></code>.</p>
 <p>Update <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> with this code below:</p>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id6" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">should_print_hello</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 <span class="kt">bool</span><span class="w"> </span><span class="n">should_print_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
 
@@ -401,7 +401,7 @@ The resulting value is <code class="docutils literal notranslate"><span class="p
 <p>Discovering what the output of the program is based on the value of <code class="docutils literal notranslate"><span class="pre">should_print_hello</span></code> and <code class="docutils literal notranslate"><span class="pre">should_print_name</span></code> will be let as a challenge to you.</p>
 </section>
 <section id="conditional-operators">
-<h2><span class="section-number">3.3.5. </span>Conditional Operators<a class="headerlink" href="#conditional-operators" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.3.5. </span>Conditional Operators<a class="headerlink" href="#conditional-operators" title="Permalink to this heading">¶</a></h2>
 <p>Do you remember the logical AND (<code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>) operator? Well there are other operators like it. We’ll show you a quick overview of them below:</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="c1">// Logical AND operator (&amp;&amp;)</span>
 <span class="nb">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="c1">// false</span>

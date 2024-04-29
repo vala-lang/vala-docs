@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="4. Project 1: Parrot Program" href="04-00-parrot-program.html" /><link rel="prev" title="3.4. Enums and switch statements" href="03-04-enums-and-switch-statements.html" />
 
-    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.04.27 -->
         <title>3.5. Loops - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=369552022d0b975c8e74270ce6eabe0fb7978f24" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=46965ee0ad39e5260c2467c27b94afaae98bd900" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/gnome.css" />
@@ -230,7 +230,7 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="loops">
-<h1><span class="section-number">3.5. </span>Loops<a class="headerlink" href="#loops" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.5. </span>Loops<a class="headerlink" href="#loops" title="Permalink to this heading">¶</a></h1>
 <p>In this section we’ll cover:</p>
 <ul class="simple">
 <li><p>While loops</p></li>
@@ -243,12 +243,12 @@
 <li><p>Create a new file called <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> in the the <code class="docutils literal notranslate"><span class="pre">Loops</span></code> directory that you created.</p></li>
 </ol>
 <section id="introudcing-the-while-loop">
-<h2><span class="section-number">3.5.1. </span>Introudcing the while Loop<a class="headerlink" href="#introudcing-the-while-loop" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5.1. </span>Introudcing the while Loop<a class="headerlink" href="#introudcing-the-while-loop" title="Permalink to this heading">¶</a></h2>
 <p>Sometimes you may want to perform the same or very similiar code multiple times. One example of this is counting.</p>
 <p>One of the ways you can do this is through using the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop.</p>
 <p>Add this code to your <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> file:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">main.vala - Counts from 1 to 10</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala - Counts from 1 to 10</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">has_counted_to_ten</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">current_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
@@ -286,11 +286,11 @@
 <p>Please use loops with care.</p>
 </div>
 <section id="do-while-loop">
-<h3><span class="section-number">3.5.1.1. </span>do-while Loop<a class="headerlink" href="#do-while-loop" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">3.5.1.1. </span>do-while Loop<a class="headerlink" href="#do-while-loop" title="Permalink to this heading">¶</a></h3>
 <p>For loops that you want to run at least once, you can use a do-while loop.</p>
 <p>Modify <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> too look like this:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">has_counted_to_ten</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">current_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
@@ -308,12 +308,12 @@
 </section>
 </section>
 <section id="for-loop">
-<h2><span class="section-number">3.5.2. </span>For Loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5.2. </span>For Loop<a class="headerlink" href="#for-loop" title="Permalink to this heading">¶</a></h2>
 <p>The problem with the <code class="docutils literal notranslate"><span class="pre">while</span></code> loops are that they are error prone. We have to create our variables too keep track of the loop and to check against the end condtion.</p>
 <p>However, if we use a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, a lot of the loop tracking logic and loop variables are <code class="docutils literal notranslate"><span class="pre">for</span></code> statement’s parameter, making the code inside the loop, a lot simpler</p>
 <p>Rewrite <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> so that the code looks like this:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
@@ -330,7 +330,7 @@
 </ul>
 </section>
 <section id="summary">
-<h2><span class="section-number">3.5.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.5.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">¶</a></h2>
 <p>Congratualations! You’ve now finished this chapter.</p>
 <p>To recap, you’ve learned:</p>
 <ul class="simple">

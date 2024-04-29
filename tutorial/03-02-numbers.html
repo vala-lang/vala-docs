@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="3.3. Booleans and if-statements" href="03-03-bools-and-ifs.html" /><link rel="prev" title="3.1. Variables" href="03-01-variables.html" />
 
-    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.04.27 -->
         <title>3.2. Numbers - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=369552022d0b975c8e74270ce6eabe0fb7978f24" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=46965ee0ad39e5260c2467c27b94afaae98bd900" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/gnome.css" />
@@ -230,7 +230,7 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="numbers">
-<h1><span class="section-number">3.2. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">3.2. </span>Numbers<a class="headerlink" href="#numbers" title="Permalink to this heading">¶</a></h1>
 <p>In this section we’ll:</p>
 <ul class="simple">
 <li><p>Teach you about some numeric data types</p></li>
@@ -243,14 +243,14 @@
 <li><p>Under the <code class="docutils literal notranslate"><span class="pre">Numbers</span></code>  directory you have just created, create a new file called <code class="docutils literal notranslate"><span class="pre">main.vala</span></code>.</p></li>
 </ol>
 <section id="introduction-to-numbers">
-<h2><span class="section-number">3.2.1. </span>Introduction to Numbers<a class="headerlink" href="#introduction-to-numbers" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.2.1. </span>Introduction to Numbers<a class="headerlink" href="#introduction-to-numbers" title="Permalink to this heading">¶</a></h2>
 <p>In the last section, we showed an example of a variable:</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">my_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Sara&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>In your <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> file, create a <cite>main</cite> method with, an <code class="docutils literal notranslate"><span class="pre">int</span></code> variable assignment, in the <cite>main</cite> method’s body:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">main.vala - <code class="docutils literal notranslate"><span class="pre">int</span></code> variable declaration.</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala - <code class="docutils literal notranslate"><span class="pre">int</span></code> variable declaration.</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
 <span class="p">}</span>
@@ -260,7 +260,7 @@
 <p>The <code class="docutils literal notranslate"><span class="pre">num</span></code> variable of you’ve created in the line above stores <cite>int</cite> values and you have set the value of it to <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p>
 <p>You can print the value of <code class="docutils literal notranslate"><span class="pre">num</span></code> by adding using the <code class="docutils literal notranslate"><span class="pre">print</span></code> method. Add this line below where you wrote the <code class="docutils literal notranslate"><span class="pre">num</span></code> variable’s delcaration:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">main.vala - Print value of <code class="docutils literal notranslate"><span class="pre">num</span></code></span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala - Print value of <code class="docutils literal notranslate"><span class="pre">num</span></code></span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
 <span class="hll"><span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Value of num: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">num</span><span class="p">);</span>
@@ -279,7 +279,7 @@
 </div>
 </section>
 <section id="different-numeric-data-types">
-<h2><span class="section-number">3.2.2. </span>Different numeric data types<a class="headerlink" href="#different-numeric-data-types" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.2.2. </span>Different numeric data types<a class="headerlink" href="#different-numeric-data-types" title="Permalink to this heading">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>It’s pretty hard to find documentation on exactly how these GLib data types behave. As of now, the descriptions of each data type may be inaccurate.</p>
@@ -322,12 +322,12 @@
 </div>
 </section>
 <section id="artithmetic-operations">
-<h2><span class="section-number">3.2.3. </span>Artithmetic Operations<a class="headerlink" href="#artithmetic-operations" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">3.2.3. </span>Artithmetic Operations<a class="headerlink" href="#artithmetic-operations" title="Permalink to this heading">¶</a></h2>
 <p>Rather than teaching you how each of these data types work in detail, we’ll give you pre-written code that shows you how a few of them behave.</p>
 <p>Some of these data types will be covered in the rest of the tutorial.</p>
 <p>Replace all the code in <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> with this code below:</p>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">main.vala - Numeric data type examples</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala - Numeric data type examples</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Addition:</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// sum = 10</span>

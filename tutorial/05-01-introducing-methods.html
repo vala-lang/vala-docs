@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="5.2. Main method" href="05-02-main-method.html" /><link rel="prev" title="5. Methods" href="05-00-methods.html" />
 
-    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.01.29 -->
+    <link rel="shortcut icon" href="../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.04.27 -->
         <title>5.1. Introducing methods - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=369552022d0b975c8e74270ce6eabe0fb7978f24" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=46965ee0ad39e5260c2467c27b94afaae98bd900" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     <link rel="stylesheet" type="text/css" href="../_static/gnome.css" />
@@ -230,7 +230,7 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="introducing-methods">
-<h1><span class="section-number">5.1. </span>Introducing methods<a class="headerlink" href="#introducing-methods" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">5.1. </span>Introducing methods<a class="headerlink" href="#introducing-methods" title="Permalink to this heading">¶</a></h1>
 <p>You have been using methods for quite a while now. All those times where you’ve
 created the main method and have een calling the <code class="docutils literal notranslate"><span class="pre">print</span></code> method to output
 results from the terminal.</p>
@@ -240,7 +240,7 @@ results from the terminal.</p>
 <li><p>Under the <code class="docutils literal notranslate"><span class="pre">Methods</span></code>  directory you have just created, create a new file called <code class="docutils literal notranslate"><span class="pre">main.vala</span></code>.</p></li>
 </ol>
 <section id="methods-in-more-detail">
-<h2><span class="section-number">5.1.1. </span>Methods in more detail<a class="headerlink" href="#methods-in-more-detail" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1.1. </span>Methods in more detail<a class="headerlink" href="#methods-in-more-detail" title="Permalink to this heading">¶</a></h2>
 <p>As explained previously in the Hello World section, a method is a block of
 code that contain code for the program to execute when called.</p>
 <div class="admonition note">
@@ -250,7 +250,7 @@ code that contain code for the program to execute when called.</p>
 <p>Now let’s create a program that makes use of a method that you create and call.</p>
 <p>First, let’s start with a Hello World program</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">main.vala</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">print</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Hello World</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <span class="p">}</span>
@@ -273,7 +273,7 @@ code that contain code for the program to execute when called.</p>
 </div>
 </section>
 <section id="updating-our-new-method">
-<h2><span class="section-number">5.1.2. </span>Updating our new method<a class="headerlink" href="#updating-our-new-method" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1.2. </span>Updating our new method<a class="headerlink" href="#updating-our-new-method" title="Permalink to this heading">¶</a></h2>
 <p>One of the benefits of using methods is that we are able to change what
 happens when the a method is called, without having the change the initial
 method call line.</p>
@@ -296,7 +296,7 @@ it will have the following output:</p>
 </div>
 </section>
 <section id="adding-method-parameters">
-<h2><span class="section-number">5.1.3. </span>Adding Method Parameters<a class="headerlink" href="#adding-method-parameters" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1.3. </span>Adding Method Parameters<a class="headerlink" href="#adding-method-parameters" title="Permalink to this heading">¶</a></h2>
 <p>We can also pass in data to the method call, to influence the output generated by
 a method:</p>
 <p>Update <code class="docutils literal notranslate"><span class="pre">say_something</span> <span class="pre">()</span></code> so that it takes in a string with the name of <code class="docutils literal notranslate"><span class="pre">name</span></code>,
@@ -325,7 +325,7 @@ main method.</p>
 </div>
 </section>
 <section id="returning-data-from-methods">
-<h2><span class="section-number">5.1.4. </span>Returning data from methods<a class="headerlink" href="#returning-data-from-methods" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">5.1.4. </span>Returning data from methods<a class="headerlink" href="#returning-data-from-methods" title="Permalink to this heading">¶</a></h2>
 <p>Methods can also return data.</p>
 <p>In <code class="docutils literal notranslate"><span class="pre">main.vala</span></code> add a method called <code class="docutils literal notranslate"><span class="pre">double_number</span></code> that takes in and integer and
 returns an integer:</p>

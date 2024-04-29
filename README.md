@@ -4,6 +4,8 @@ This is the source code repository for the Vala Documentation website.
 
 You can view the website online here: https://colinkiama.github.io/vala-docs/
 
+[Outline of work to do](./outline.md)
+
 ## Requirements
 
 - python3

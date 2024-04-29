@@ -5,6 +5,7 @@
 - Home
     - Description of website
     - Sections
+        - Install Vala
         - Tutorials
         - Tooling
         - Contributor Guide
@@ -20,6 +21,7 @@
 
 ## Tutorials
 
+- Getting 
 - Main Tutorial [(one currently in GNOME Vala Wiki website)](https://wiki.gnome.org/Projects/Vala/Tutorial)
 
 ## Tooling

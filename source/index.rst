@@ -19,23 +19,23 @@ Vala uses the GObject type system and has additional code generation routines th
 Sections
 --------
 
-* `Install Vala <install>`_
-* `Tutorials <tutorials>`_
-* `Tooling <tooling>`_
-* `Contributor Guide <contributor-guide>`_
-* `Developer Guides <developer-guides>`_
+- `Install Vala <install>`_
+- `Tutorials <tutorials>`_
+- `Tooling <tooling>`_
+- `Contributor Guide <contributor-guide>`_
+- `Developer Guides <developer-guides>`_
 
 External Resources
 ------------------
 
-* `API References <https://valadoc.org>`_
-* `Reference Manual <https://gnome.pages.gitlab.gnome.org/vala/manual/index.html>`_
-* `GNOME Developer Documentation <https://developer.gnome.org/documentation/>`_
-* `elementary OS Developer Documentation <https://docs.elementary.io/develop>`_
-* `Vala Website <https://vala.dev>`_
+- `API References <https://valadoc.org>`_
+- `Reference Manual <https://gnome.pages.gitlab.gnome.org/vala/manual/index.html>`_
+- `GNOME Developer Documentation <https://developer.gnome.org/documentation/>`_
+- `elementary OS Developer Documentation <https://docs.elementary.io/develop>`_
+- `Vala Website <https://vala.dev>`_
 
 Community
 ---------
 
-* `Vala Community Links <https://vala.dev/#community>`_
+- `Vala Community Links <https://vala.dev/#community>`_
 

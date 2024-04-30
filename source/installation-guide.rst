@@ -1,5 +1,5 @@
-Install Vala
-============
+Installation Guide
+==================
 
 Vala is available on multiple operating systems. Follow the isntallation instructions below for your operating system.
 

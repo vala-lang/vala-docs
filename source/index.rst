@@ -4,8 +4,8 @@ Vala Documentation
 .. toctree::
    :hidden:
 
-   About Vala <about>
-   Install Vala <install>
+   About <about>
+   Installation Guide <installation-guide>
 
 Introduction
 ------------
@@ -19,7 +19,7 @@ Vala uses the GObject type system and has additional code generation routines th
 Sections
 --------
 
-- `Install Vala <install>`_
+- `Installation Guide <installation-guide>`_
 - `Tutorials <tutorials>`_
 - `Tooling <tooling>`_
 - `Contributor Guide <contributor-guide>`_

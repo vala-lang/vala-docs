@@ -1,6 +1,12 @@
 Tutorials
 ==========
 
+.. toctree::
+   :hidden:
+
+   Main Tutorial <main/index>
+
+
 Programming Language
 --------------------
 

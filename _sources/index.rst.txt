@@ -33,7 +33,7 @@ External Resources
 - `GNOME Developer Documentation <https://developer.gnome.org/documentation/>`_
 - `elementary OS Developer Documentation <https://docs.elementary.io/develop>`_
 - `Vala Website <https://vala.dev>`_
-- `Vala Project GNOME Wiki (Deprecated) <https://wiki.gnome.org/Projects/Vala>`
+- `Vala Project GNOME Wiki (Deprecated) <https://wiki.gnome.org/Projects/Vala>`_
 
 Community
 ---------

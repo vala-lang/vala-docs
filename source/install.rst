@@ -3,13 +3,13 @@ Install Vala
 
 Vala is available on multiple operating systems. Follow the isntallation instructions below for your operating system.
 
-.. _linux:
+.. _Linux Installation Instructions:
 
 Linux
 -----
 
 Vala is available on a large variety of Linux distributions.
-Mostly you want to install other development files for libraries, that you want to use with vala.
+You can also install other development files for libraries to use with vala.
 
 Fedora
 ~~~~~~
@@ -71,7 +71,7 @@ You also need to install all the libraries that you want to use individually.
 Windows Subsystem for Windows (WSL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install a Linux distribution in WSL and then continue with the :ref:`installation instructions for Linux <linux>`.
+Install a Linux distribution in WSL and then continue with the :ref:`installation instructions for Linux <Linux Installation Instructions>`.
 
 Mac OS X
 --------
@@ -104,6 +104,6 @@ Please ensure that you've followed the installation instructions above and try a
 If you are struggling to either:
 
 - Install Vala
-- Meet the minimum required Vala version requirement
+- Install the version of Vala that you require
 
 `Try asking the community for help <https://vala.dev/#community>`_.

@@ -6,8 +6,6 @@ Vala Documentation
 
    About Vala <about>
    Install Vala <install>
-   Tutorial <tutorial/index>
-
 
 Introduction
 ------------

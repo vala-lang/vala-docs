@@ -5,7 +5,9 @@ Vala Documentation
    :hidden:
 
    About Vala <about>
+   Install Vala <install>
    Tutorial <tutorial/index>
+
 
 Introduction
 ------------

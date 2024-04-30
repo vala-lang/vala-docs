@@ -28,11 +28,12 @@ Sections
 External Resources
 ------------------
 
-- `API References <https://valadoc.org>`_
+- `API References (valadoc.org) <https://valadoc.org>`_
 - `Reference Manual <https://gnome.pages.gitlab.gnome.org/vala/manual/index.html>`_
 - `GNOME Developer Documentation <https://developer.gnome.org/documentation/>`_
 - `elementary OS Developer Documentation <https://docs.elementary.io/develop>`_
 - `Vala Website <https://vala.dev>`_
+- `Vala Project GNOME Wiki (Deprecated) <https://wiki.gnome.org/Projects/Vala>`
 
 Community
 ---------

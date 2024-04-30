@@ -21,7 +21,8 @@ sys.path.append(os.path.abspath("./_ext"))
 # ones.
 extensions = [
     'sphinx.ext.githubpages',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinx.ext.autosectionlabel',
 ]
 
 source_suffix = {

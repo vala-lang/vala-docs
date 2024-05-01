@@ -7,14 +7,16 @@ The upshot of all this is that you can put as many classes or functions into a f
 
 All source files for the same package are supplied as command line parameters to the Vala compiler ``valac``, along with compiler flags.  This works similarly to how Java source code is compiled.  For example:
 
-.. code-block::console
+.. code-block:: console
+
    $ valac compiler.vala --pkg libvala
 
 will produce a binary with the name *compiler* that links with the package ``libvala``. In fact, this is how the *valac* compiler is produced!
 
 If you want the binary to have a different name or if you have passed multiple source files to the compiler you can specify the binary name explicitly with the ``-o`` switch:
 
-.. code-block::console
+.. code-block:: console
+
    $ valac source1.vala source2.vala -o myprogram
    $ ./myprogram
 
@@ -23,6 +25,7 @@ If you give *valac* the ``-C`` switch, it won't compile your program into a bina
 
 If you want to have a C header file for your project you can use the ``-H`` switch:
 
-.. code-block::console
+.. code-block:: console
+
    $ valac hello.vala -C -H hello.h
 

@@ -4,8 +4,10 @@ Main Tutorial
 .. toctree::
    :hidden:
    :numbered:
+   :maxdepth: 1
 
-   First Program <01-00-first-program/index>
+   01-00-first-program/index
+   02-00-basics/index
 
 .. note::
    This tutorial is made up of multiple contributions from several people from the deprecated `Vala GNOME Wiki <https://wiki.gnome.org/Projects/Vala>`_. The techniques used in the tutorial may not necessarily be "best in practice".

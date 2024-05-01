@@ -4,7 +4,7 @@ Tutorials
 .. toctree::
    :hidden:
 
-   Main Tutorial <main/index>
+   main/index
 
 
 Programming Language

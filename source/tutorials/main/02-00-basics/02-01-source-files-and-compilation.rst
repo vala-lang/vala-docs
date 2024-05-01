@@ -19,7 +19,7 @@ If you want the binary to have a different name or if you have passed multiple s
    $ ./myprogram
 
 
-If you give *valac* the ``-C`` switch, it won't compile your program into a binary file.  Instead it will output the intermediate C code for each of your Vala source files into a corresponding C source file, in this case *source1.c* and *source2.c*. If you look at the content of these files you can see that programming a class in Vala is equivalent to the same task in C, but a whole lot more succinct.  You will also notice that this class is registered dynamically in the running system.  This is a good example of the power of the GNOME platform, but as I've said before, you do not need to know much about this to use Vala.
+If you give *valac* the ``-C`` switch, it won't compile your program into a binary file.  Instead it will output the intermediate C code for each of your Vala source files into a corresponding C source file, in this case *source1.c* and *source2.c*. If you look at the content of these files you can see that programming a class in Vala is equivalent to the same task in C, but a whole lot more succinct.  You will also notice that this class is registered dynamically in the running system.  This is a good example of the power of the GNOME platform, but as I've said before,   you do not need to know much about this to use Vala.
 
 If you want to have a C header file for your project you can use the ``-H`` switch:
 

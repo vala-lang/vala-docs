@@ -5,6 +5,7 @@ Basics
    :maxdepth: 1
 
    02-01-source-files-and-compilation
+   02-02-syntax-overview
 
 
 

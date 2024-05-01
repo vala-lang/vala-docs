@@ -8,6 +8,7 @@ Main Tutorial
 
    01-00-first-program/index
    02-00-basics/index
+   03-00-object-oriented-programming/index
 
 .. note::
    This tutorial is made up of multiple contributions from several people from the deprecated `Vala GNOME Wiki <https://wiki.gnome.org/Projects/Vala>`_. The techniques used in the tutorial may not necessarily be "best in practice".

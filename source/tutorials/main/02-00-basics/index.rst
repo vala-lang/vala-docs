@@ -8,6 +8,6 @@ Basics
    02-02-syntax-overview
    02-03-comments
    02-04-data-types
-
+   02-05-operators
 
 

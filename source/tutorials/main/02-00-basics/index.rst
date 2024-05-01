@@ -11,5 +11,6 @@ Basics
    02-05-operators
    02-06-control-structures
    02-07-language-elements
+   02-08-code-attributes
 
 

@@ -10,6 +10,7 @@ Using exceptions (or *errors* in Vala terminology) is a matter of:
 1) Declaring that a method may raise an error:
 
 .. code-block:: vala
+
    void my_method() throws IOError {
        // ...
    }

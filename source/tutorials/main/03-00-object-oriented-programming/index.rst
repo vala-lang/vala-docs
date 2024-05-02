@@ -14,3 +14,5 @@ Classes in Vala may also have "static" members.  This modifier allows either dat
    03-02-construction
    03-03-destruction
    03-04-signals
+   03-05-properties
+

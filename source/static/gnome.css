@@ -303,6 +303,7 @@ table.docutils {
   text-align: left;
   border-width: 0;
   box-sizing: border-box;
+  width: 100%;
 }
   /* reset crazy */
   table.docutils th, table.docutils tr, table.docutils td {

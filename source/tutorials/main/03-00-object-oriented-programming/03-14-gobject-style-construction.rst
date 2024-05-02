@@ -3,7 +3,7 @@ GObject-Style Construction
 
 As pointed out before, Vala supports an alternative construction scheme that is slightly different to the one described before, but closer to the way GObject construction works.  Which one you prefer depends on whether you come from the GObject side or from the Java or C# side.  The gobject-style construction scheme introduces some new syntax elements: *construct properties*, a special ``Object(...)`` call and a ``construct`` block.  Let's take a look at how this works:
 
-.. oode-block:: vala
+.. code-block:: vala
 
    public class Person : Object {
 

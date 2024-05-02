@@ -2,7 +2,10 @@ Main Tutorial
 =============
 
 .. note::
-   This tutorial is made up of multiple contributions from several people from the deprecated `Vala GNOME Wiki <https://wiki.gnome.org/Projects/Vala>`_. The techniques used in the tutorial may not necessarily be "best in practice".
+
+   Vala is an ongoing project, and its features may change so feel free to help keep the docs up-to-date.
+
+   You can press the edit button on the top of each page.
 
 Introduction
 ------------

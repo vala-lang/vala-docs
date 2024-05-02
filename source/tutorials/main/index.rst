@@ -1,15 +1,6 @@
 Main Tutorial
 =============
 
-.. toctree::
-   :hidden:
-   :numbered:
-   :maxdepth: 1
-
-   01-00-first-program/index
-   02-00-basics/index
-   03-00-object-oriented-programming/index
-
 .. note::
    This tutorial is made up of multiple contributions from several people from the deprecated `Vala GNOME Wiki <https://wiki.gnome.org/Projects/Vala>`_. The techniques used in the tutorial may not necessarily be "best in practice".
 
@@ -45,3 +36,17 @@ Conventions
 Code will be in ``monospaced text``, commands will all be prefaced with a ``$`` prompt.  Other than that, everything should be obvious.  I tend to code very explicitly, including some information that is actually implied.  I will try to explain where some things can be omitted, but that doesn't mean that I encourage you do to this.
 
 At some point I will add in references to the Vala documentation, but that isn't really possible yet.
+
+.. toctree::
+   :numbered:
+   :maxdepth: 1
+
+   01-00-first-program/index
+   02-00-basics/index
+   03-00-object-oriented-programming/index
+   04-00-advanced-features/index
+   05-00-experimental-features/index
+   06-00-libraries/index
+   07-00-tools/index
+   08-00-techniques/index
+

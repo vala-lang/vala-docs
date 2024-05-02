@@ -23,6 +23,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx_copybutton',
     'sphinx.ext.autosectionlabel',
+    'sphinx.ext.todo'
 ]
 
 source_suffix = {
@@ -38,6 +39,8 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 html_title = 'Vala Documentation'
+
+todo_include_todos = True
 
 # -- Options for HTML output -------------------------------------------------
 

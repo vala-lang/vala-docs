@@ -113,7 +113,7 @@ Delegates may also be created locally. A member method can also be assigned to a
        }
    }
 
-More samples in `Delegates Manual </guides/delegates>`_.
+More samples in :doc:`Delegates Manual </developer-guides/delegates>`.
 
 Anonymous Methods / Closures
 ----------------------------

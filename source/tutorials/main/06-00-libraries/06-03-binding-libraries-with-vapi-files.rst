@@ -9,5 +9,5 @@ This process of creating this generally amounts to three steps,
 * Adding extra metadata to standardise the interface or make various other changes.
 * Generating a VAPI file from the above sources using *vapigen*.
 
-Specific instructions on how to generate bindings are in the `Vala Bindings Tutorial </tutorials/bindings>`_
+Specific instructions on how to generate bindings are in the :doc:`Vala Bindings Tutorial </tutorials/bindings>`.
 

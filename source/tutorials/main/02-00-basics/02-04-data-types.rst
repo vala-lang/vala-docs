@@ -122,7 +122,7 @@ In addition the *in* operation can be used to determine whether one string conta
 
 For more information, please report to `the complete overview of the string class <http://www.valadoc.org/glib-2.0/string.html>`_.
 
-A `sample program </guides/string-sample>`_ demonstrating string usage is also available.
+A :doc:`sample program </developer-guides/string-sample>` demonstrating string usage is also available.
 
 Arrays
 ------

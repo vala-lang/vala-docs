@@ -39,5 +39,5 @@ Signals can be annotated with any combination of flags:
        [Signal (action=true, detailed=true, run=true, no_recurse=true, no_hooks=true)]
        public signal void sig_1 ();
 
-More samples in `Signal Samples </guides/signal-and-callbacks>`_.
+More samples in :doc:`Signal Samples </developer-guides/signal-and-callbacks>`.
 

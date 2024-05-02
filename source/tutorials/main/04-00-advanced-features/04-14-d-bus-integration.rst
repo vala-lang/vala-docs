@@ -94,5 +94,5 @@ or
 
 You can also use a graphical D-Bus debugger like `D-Spy <https://apps.gnome.org/en-GB/Dspy/>`_ to browse your D-Bus interfaces and call methods.
 
-Some comprehensive examples: `DBus Client Samples </developer-guides/dbus-client-samples>`_  and `DBus Server Sample </developer-guides/dbus-server-sample>`_.
+Some comprehensive examples: :doc:`DBus Client Samples </developer-guides/dbus-client-samples>`  and :doc:`DBus Server Sample </developer-guides/dbus-server-sample>`.
 

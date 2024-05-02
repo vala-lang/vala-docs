@@ -168,5 +168,5 @@ itself, and then gives back control to its own caller.
 Examples
 --------
 
-See `Async Method Samples </developer-guides/async-samples>`_ for examples of different ways that async may be used.
+See :doc:`Async Method Samples </developer-guides/async-samples>` for examples of different ways that async may be used.
 

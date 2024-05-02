@@ -14,7 +14,7 @@ Advanced Features
    04-08-asynchronous-methods
    04-09-weak-references
    04-10-ownership
-   04-11-varible-length-argument-lists
+   04-11-variable-length-argument-lists
    04-12-pointers
    04-13-non-object-classes
    04-14-d-bus-integration

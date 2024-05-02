@@ -17,8 +17,12 @@ Asynchronous methods are normally used with a GLib main loop running,
 because idle callbacks are used to handle some of the internal
 callbacks.  However under certain conditions ``async`` may be used
 without the GLib main loop, for example if the async methods always
-yield and ``Idle.add()`` is never used.  (FIXME: Check what are the exact
-conditions.)
+yield and ``Idle.add()`` is never used.
+
+.. todo::
+
+   Add the exact conditions ``async`` may be used
+   without the GLib main loop
 
 Asynchronous methods are designed for interleaving the processing of
 many different long-lived operations within a single thread. They do

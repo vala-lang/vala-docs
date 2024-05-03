@@ -1,0 +1,7 @@
+Bindings
+========
+
+.. toctree::
+   :glob:
+
+   */*

@@ -41,3 +41,8 @@ Community
 
 - `Vala Community Links <https://vala.dev/#community>`_
 
+Contribute
+----------
+
+- `View the source code of this documentation <https://github.com/colinkiama/vala-docs>`_
+

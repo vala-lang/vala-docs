@@ -16,9 +16,9 @@ Both of which are installed in the standard locations. And the Vala specific fil
 These files are explained later in this section. It should be noted that the library names are the same in the Vala specific files as in the *pkg-config* files.
 
 .. toctree::
-   :maxdepth: 1
+   :glob:
+   :maxdepth: 2
 
-   06-01-using-libraries
-   06-02-creating-a-library
-   06-03-binding-libraries-with-vapi-files
+   06-00-libraries/*
+
 

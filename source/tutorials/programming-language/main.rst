@@ -43,13 +43,6 @@ At some point I will add in references to the Vala documentation, but that isn't
 .. toctree::
    :numbered:
    :maxdepth: 1
+   :glob:
 
-   01-00-first-program/index
-   02-00-basics/index
-   03-00-object-oriented-programming/index
-   04-00-advanced-features/index
-   05-00-experimental-features/index
-   06-00-libraries/index
-   07-00-tools/index
-   08-00-techniques/index
-
+   main/*

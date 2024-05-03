@@ -6,11 +6,8 @@ Vala Documentation
 
    About <about>
    Installation Guide <installation-guide>
-<<<<<<< HEAD
    Developer Guides <developer-guides/index>
-=======
    Tutorials <tutorials/index>
->>>>>>> upstream/main
 
 Introduction
 ------------

@@ -20,3 +20,10 @@ There is a lot of material in this document and that can make it hard to take in
    | This is when your binding starts to become useful and it will also give an overview of this document. Once you have an overview the document becomes more of a reference for solving tricky function bindings
 
 The above assumes that the library is written in an object oriented style of C. A C binding, however, is only made up of structs and functions so understanding that in enough detail is the purpose of the approach.
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+   :numbered:
+
+   */*

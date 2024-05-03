@@ -3,8 +3,6 @@ Installation Guide
 
 Vala is available on multiple operating systems. Follow the isntallation instructions below for your operating system.
 
-.. _Linux Installation Instructions:
-
 Linux
 -----
 
@@ -71,7 +69,7 @@ You also need to install all the libraries that you want to use individually.
 Windows Subsystem for Windows (WSL)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Install a Linux distribution in WSL and then continue with the :ref:`installation instructions for Linux <Linux Installation Instructions>`.
+Install a Linux distribution in WSL and then continue with the :ref:`installation instructions for Linux <Linux>`.
 
 Mac OS X
 --------

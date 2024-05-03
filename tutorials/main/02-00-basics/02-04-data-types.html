@@ -1,0 +1,573 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="author" title="About these documents" href="../../../about.html" /><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="2.5. Operators" href="02-05-operators.html" /><link rel="prev" title="2.3. Comments" href="02-03-comments.html" />
+
+    <link rel="shortcut icon" href="../../../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.04.27 -->
+        <title>2.4. Data Types - Vala Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=46965ee0ad39e5260c2467c27b94afaae98bd900" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gnome.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #A56DE2;
+  --color-brand-content: #A56DE2;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #A56DE2;
+  --color-brand-content: #A56DE2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #A56DE2;
+  --color-brand-content: #A56DE2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">Vala Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../_static/logo.png" alt="Logo"/>
+  </div>
+
+  
+  <span class="sidebar-brand-text">Vala Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation-guide.html">Installation Guide</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../index.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Main Tutorial</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Main Tutorial</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../01-00-first-program/index.html">1. First Program</a></li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="index.html">2. Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of 2. Basics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="02-01-source-files-and-compilation.html">2.1. Source Files and Compilation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02-02-syntax-overview.html">2.2. Syntax Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02-03-comments.html">2.3. Comments</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">2.4. Data Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02-05-operators.html">2.5. Operators</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02-06-control-structures.html">2.6. Control Structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02-07-language-elements.html">2.7. Language Elements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="02-08-code-attributes.html">2.8. Code Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../03-00-object-oriented-programming/index.html">3. Object Oriented Programming</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of 3. Object Oriented Programming</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-01-basics.html">3.1. Basics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-02-construction.html">3.2. Construction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-03-destruction.html">3.3. Destruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-04-signals.html">3.4. Signals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-05-properties.html">3.5. Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-06-inheritance.html">3.6. Inheritance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-07-abstract-classes.html">3.7. Abstract Classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-08-interfaces.html">3.8. Interfaces</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-09-polymorphism.html">3.9. Polymorphism</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-10-method-hiding.html">3.10. Method Hiding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-11-run-time-type-information.html">3.11. Run-Time Type Information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-12-dynamic-type-casting.html">3.12. Dynamic Type Casting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-13-generics.html">3.13. Generics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../03-00-object-oriented-programming/03-14-gobject-style-construction.html">3.14. GObject-Style Construction</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../04-00-advanced-features/index.html">4. Advanced Features</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of 4. Advanced Features</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-01-assertions-and-contract-programming.html">4.1. Assertions and Contract Programming</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-02-error-handling.html">4.2. Error Handling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-03-parameter-directions.html">4.3. Parameter Directions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-04-collections.html">4.4. Collections</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-05-methods-with-syntax-support.html">4.5. Methods With Syntax Support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-06-multi-threading.html">4.6. Multi-Threading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-07-the-main-loop.html">4.7. The Main Loop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-08-asynchronous-methods.html">4.8. Asynchronous Methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-09-weak-references.html">4.9. Weak References</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-10-ownership.html">4.10. Ownership</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-11-variable-length-argument-lists.html">4.11. Variable-Length Argument Lists</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-12-pointers.html">4.12. Pointers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-13-non-object-classes.html">4.13. Non-Object classes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-14-d-bus-integration.html">4.14. D-Bus Integration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../04-00-advanced-features/04-15-profiles.html">4.15. Profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../05-00-experimental-features/index.html">5. Experimental Features</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of 5. Experimental Features</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../05-00-experimental-features/05-01-chained-relational-expressions.html">5.1. Chained Relational Expressions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../05-00-experimental-features/05-02-regular-expression-literals.html">5.2. Regular Expression Literals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../05-00-experimental-features/05-03-strict-non-null-mode.html">5.3. Strict Non-Null Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../06-00-libraries/index.html">6. Libraries</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of 6. Libraries</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../06-00-libraries/06-01-using-libraries.html">6.1. Using Libraries</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06-00-libraries/06-02-creating-a-library.html">6.2. Creating a Library</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../06-00-libraries/06-03-binding-libraries-with-vapi-files.html">6.3. Binding Libraries with VAPI Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../07-00-tools/index.html">7. Tools</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of 7. Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../07-00-tools/07-01-valac.html">7.1. valac</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../07-00-tools/07-02-vapigen.html">7.2. vapigen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../07-00-tools/07-03-vala-gen-introspect.html">7.3. vala-gen-introspect</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../08-00-techniques/index.html">8. Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of 8. Techniques</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../08-00-techniques/08-01-debugging.html">8.1. Debugging</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../08-00-techniques/08-02-using-glib.html">8.2. Using GLib</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/colinkiama/vala-docs/edit/main/source/tutorials/main/02-00-basics/02-04-data-types.rst" title="Edit this page">
+    <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+      <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+    </svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="data-types">
+<h1><span class="section-number">2.4. </span>Data Types<a class="headerlink" href="#data-types" title="Permalink to this heading">¶</a></h1>
+<p>Broadly speaking there are two types of data in Vala: <em>reference types</em> and <em>value types</em>.  These names describe how instances of the types are passed around the system - a value type is copied whenever it is assigned to a new identifier, a reference type is not copied, instead the new identifier is simply a new reference to the same object.</p>
+<p>A constant is defined by putting <code class="docutils literal notranslate"><span class="pre">const</span></code> before the type.  The naming convention for constants is <code class="docutils literal notranslate"><span class="pre">ALL_UPPER_CASE</span></code>.</p>
+<section id="value-types">
+<h2><span class="section-number">2.4.1. </span>Value Types<a class="headerlink" href="#value-types" title="Permalink to this heading">¶</a></h2>
+<p>Vala supports a set of the simple types as most other languages do.</p>
+<ul class="simple">
+<li><p>Byte, <code class="docutils literal notranslate"><span class="pre">char</span></code>, <code class="docutils literal notranslate"><span class="pre">uchar</span></code>; their names are <em>char</em> for historical reasons.</p></li>
+<li><p>Character, <code class="docutils literal notranslate"><span class="pre">unichar</span></code>; a 32-bit Unicode character</p></li>
+<li><p>Integer, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code></p></li>
+<li><p>Long Integer, <code class="docutils literal notranslate"><span class="pre">long</span></code>, <code class="docutils literal notranslate"><span class="pre">ulong</span></code></p></li>
+<li><p>Short Integer, <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">ushort</span></code></p></li>
+<li><p>Guaranteed-size Integer, <code class="docutils literal notranslate"><span class="pre">int8</span></code>, <code class="docutils literal notranslate"><span class="pre">int16</span></code>, <code class="docutils literal notranslate"><span class="pre">int32</span></code>, <code class="docutils literal notranslate"><span class="pre">int64</span></code> as well as their unsigned siblings <code class="docutils literal notranslate"><span class="pre">uint8</span></code>, <code class="docutils literal notranslate"><span class="pre">uint16</span></code>, <code class="docutils literal notranslate"><span class="pre">uint32</span></code>, <code class="docutils literal notranslate"><span class="pre">uint64</span></code>. The numbers indicate the lengths in bits.</p></li>
+<li><p>Float number, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code></p></li>
+<li><p>Boolean, <code class="docutils literal notranslate"><span class="pre">bool</span></code>; possible values are <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code></p></li>
+<li><p>Compound, <code class="docutils literal notranslate"><span class="pre">struct</span></code></p></li>
+<li><p>Enumeration, <code class="docutils literal notranslate"><span class="pre">enum</span></code>; represented by integer values, not as classes like Java’s enums</p></li>
+</ul>
+<p>Here are some examples.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">unichar</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;u&#39;</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">percentile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.75f</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">MU_BOHR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">927.400915E-26</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">the_box_has_crashed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+
+<span class="cm">/* defining a struct */</span>
+<span class="kd">struct</span><span class="w"> </span><span class="nc">Vector</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">z</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* defining an enum */</span>
+<span class="k">enum</span><span class="w"> </span><span class="n">WindowType</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">TOPLEVEL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">POPUP</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Most of these types may have different sizes on different platforms, except for the guaranteed-size integer types.  The <code class="docutils literal notranslate"><span class="pre">sizeof</span></code> operator returns the size that a variable of a given type occupies in bytes:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">ulong</span><span class="w"> </span><span class="n">nbytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">sizeof</span><span class="p">(</span><span class="kt">int32</span><span class="p">);</span><span class="w">    </span><span class="c1">// nbytes will be 4 (= 32 bits)</span>
+</pre></div>
+</div>
+<p>You can determine the minimum and maximum values of a numerical type with <em>.MIN</em> and <em>.MAX</em>, e.g. <code class="docutils literal notranslate"><span class="pre">int.MIN</span></code> and <code class="docutils literal notranslate"><span class="pre">int.MAX</span></code>.</p>
+</section>
+<section id="strings">
+<h2><span class="section-number">2.4.2. </span>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">¶</a></h2>
+<p>The data type for strings is <code class="docutils literal notranslate"><span class="pre">string</span></code>. Vala strings are UTF-8 encoded and immutable.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;A string literal&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Vala offers a feature called <em>verbatim strings</em>.  These are strings in which escape sequences (such as <code class="docutils literal notranslate"><span class="pre">\n</span></code>) won’t be interpreted, line breaks will be preserved and quotation marks don’t have to be masked.  They are enclosed with triple double quotation marks.  Possible indentations after a line break are part of the string as well.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span>string verbatim = &quot;&quot;&quot;This is a so-called &quot;verbatim string&quot;.
+Verbatim strings don&#39;t process escape sequences, such as \n, \t, \\, etc.
+They may contain quotes and may span multiple lines.&quot;&quot;&quot;;
+</pre></div>
+</div>
+<p>Strings prefixed with ‘&#64;’ are string templates. They can evaluate embedded variables and expressions prefixed with ‘$’:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">@&quot;$a * $b = $(a * b)&quot;</span><span class="p">;</span><span class="w">  </span><span class="c1">// =&gt; &quot;6 * 7 = 42&quot;</span>
+</pre></div>
+</div>
+<p>The equality operators <code class="docutils literal notranslate"><span class="pre">==</span></code> and <code class="docutils literal notranslate"><span class="pre">!=</span></code> compare the content of two strings, contrary to Java’s behaviour which in this case would check for referential equality.</p>
+<p>You can slice a string with <code class="docutils literal notranslate"><span class="pre">[start:end]</span></code>.  Negative values represent positions relative to the end of the string:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">greeting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello, world&quot;</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greeting</span><span class="p">[</span><span class="mi">7</span><span class="o">:</span><span class="mi">12</span><span class="p">];</span><span class="w">        </span><span class="c1">// =&gt; &quot;world&quot;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greeting</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="o">:-</span><span class="mi">2</span><span class="p">];</span><span class="w">       </span><span class="c1">// =&gt; &quot;or&quot;</span>
+</pre></div>
+</div>
+<p>Note that indices in Vala start with 0 as in most other programming languages.  Starting with Vala 0.11 you can access a single byte of a string with <code class="docutils literal notranslate"><span class="pre">[index]</span></code>:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greeting</span><span class="p">[</span><span class="mi">7</span><span class="p">];</span><span class="w">             </span><span class="c1">// =&gt; 0x77</span>
+</pre></div>
+</div>
+<p>However, you cannot assign a new byte value to this position, since Vala strings are immutable.</p>
+<p>Many of the basic types have reasonable methods for parsing from and converting to strings, for example:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">bool</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s">&quot;false&quot;</span><span class="p">);</span><span class="w">           </span><span class="c1">// =&gt; false</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s">&quot;-52&quot;</span><span class="p">);</span><span class="w">               </span><span class="c1">// =&gt; -52</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">double</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s">&quot;6.67428E-11&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// =&gt; 6.67428E-11</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">s1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span><span class="w">           </span><span class="c1">// =&gt; &quot;true&quot;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">21.</span><span class="n">to_string</span><span class="p">();</span><span class="w">             </span><span class="c1">// =&gt; &quot;21&quot;</span>
+</pre></div>
+</div>
+<p>Two useful methods for writing and reading strings to/from the console (and for your first explorations with Vala) are <em>stdout.printf()</em> and <em>stdin.read_line()</em>:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">stdout</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, world</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="n">stdout</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %g %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span><span class="w"> </span><span class="mf">3.1415</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Vala&quot;</span><span class="p">);</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stdin</span><span class="p">.</span><span class="n">read_line</span><span class="p">();</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">stdin</span><span class="p">.</span><span class="n">read_line</span><span class="p">());</span>
+</pre></div>
+</div>
+<p>You already know <em>stdout.printf()</em> from the <em>Hello World</em> example.  Actually, it can take an arbitrary number of arguments of different types, whereas the first argument is a <em>format string</em>, following the same rules as <a class="reference external" href="http://en.wikipedia.org/wiki/Printf">C format strings</a>. If you must output an error message you can use <em>stderr.printf()</em> instead of <em>stdout.printf()</em>.</p>
+<p>In addition the <em>in</em> operation can be used to determine whether one string contains another, e.g.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;ere&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s">&quot;Able was I ere I saw Elba.&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">...</span>
+</pre></div>
+</div>
+<p>For more information, please report to <a class="reference external" href="http://www.valadoc.org/glib-2.0/string.html">the complete overview of the string class</a>.</p>
+<p>A <span class="xref std std-doc">sample program</span> demonstrating string usage is also available.</p>
+</section>
+<section id="arrays">
+<h2><span class="section-number">2.4.3. </span>Arrays<a class="headerlink" href="#arrays" title="Permalink to this heading">¶</a></h2>
+<p>An array is declared by giving a type name followed by <code class="docutils literal notranslate"><span class="pre">[]</span></code> and created by using the <code class="docutils literal notranslate"><span class="pre">new</span></code> operator e.g. <code class="docutils literal notranslate"><span class="pre">int[]</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">int[10]</span></code> to create an array of integers.  The length of such an array can be obtained by the <em>length</em> member variable e.g. <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">count</span> <span class="pre">=</span> <span class="pre">a.length</span></code>.  Note that if you write <code class="docutils literal notranslate"><span class="pre">Object[]</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Object[10]</span></code> no objects will be created, just the array to store them in.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="p">};</span>
+</pre></div>
+</div>
+<p>You can slice an array with <code class="docutils literal notranslate"><span class="pre">[start:end]</span></code>:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">3</span><span class="p">];</span><span class="w">     </span><span class="c1">// =&gt; { 4, 6 }</span>
+</pre></div>
+</div>
+<p>Slicing an array will result in a reference to the requested data, not a copy.  However, assigning the slice to an owned variable (as is done above) will result in a copy.  If you would like to avoid a copy, you must either assign the slice to an unowned array or pass it directly to an argument (arguments are, by default, unowned):</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">unowned</span><span class="w"> </span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="o">:</span><span class="mi">3</span><span class="p">];</span><span class="w">     </span><span class="c1">// =&gt; { 4, 6 }</span>
+</pre></div>
+</div>
+<p>Multi-dimensional arrays are defined with <code class="docutils literal notranslate"><span class="pre">[,]</span></code> or <code class="docutils literal notranslate"><span class="pre">[,,]</span></code> etc.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[,]</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">];</span>
+<span class="kt">int</span><span class="p">[,]</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">}};</span>
+<span class="n">d</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This sort of array is represented by a single contiguous memory block.  Jagged multi-dimensional arrays (<code class="docutils literal notranslate"><span class="pre">[][]</span></code>, also known as “stacked arrays” or “arrays of arrays”), where each row may have a different length, are not yet supported.</p>
+<p>To find the length of each dimension in a multi-dimensional array, the <em>length</em> member becomes an array, storing the length of each respective dimension.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[,]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">length</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">.</span><span class="n">length</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</pre></div>
+</div>
+<p>Please note that you can’t get a mono-dimensional array from a multidimensional array, or even slice a multidimensional array:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[,]</span><span class="w"> </span><span class="n">arr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">},</span>
+<span class="w">             </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">}};</span>
+<span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span><span class="w">  </span><span class="c1">// won&#39;t work</span>
+<span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">,];</span><span class="w">  </span><span class="c1">// won&#39;t work</span>
+<span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="o">:</span><span class="p">,</span><span class="mi">0</span><span class="p">];</span><span class="w">  </span><span class="c1">// won&#39;t work</span>
+<span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">];</span><span class="w">  </span><span class="c1">// won&#39;t work</span>
+<span class="kt">int</span><span class="p">[,]</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="o">:</span><span class="mi">1</span><span class="p">];</span><span class="w">  </span><span class="c1">// won&#39;t work</span>
+</pre></div>
+</div>
+<p>You can append array elements dynamically with the <code class="docutils literal notranslate"><span class="pre">+=</span></code> operator.  However, this works only for locally defined or private arrays.  The array is automatically reallocated if needed.  Internally this reallocation happens with sizes growing in powers of 2 for run-time efficiency reasons.  However, <code class="docutils literal notranslate"><span class="pre">.length</span></code> holds the actual number of elements, not the internal size.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+<span class="n">e</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">12</span><span class="p">;</span>
+<span class="n">e</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="n">e</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">37</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>You can resize an array by calling <em>resize()</em> on it. It will keep the original content (as much as fits).</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+<span class="n">a</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>You can move elements within an array by calling <em>move(src, dest, length)</em> on it. The original positions will be filled with 0.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8</span><span class="p">[]</span><span class="w"> </span><span class="n">chars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello world&quot;</span><span class="p">.</span><span class="n">data</span><span class="p">;</span>
+<span class="n">chars</span><span class="p">.</span><span class="n">move</span><span class="w"> </span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+<span class="n">print</span><span class="w"> </span><span class="p">((</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="n">chars</span><span class="p">);</span><span class="w"> </span><span class="c1">// &quot;world &quot;</span>
+</pre></div>
+</div>
+<p>If you put the square brackets <em>after</em> the identifier together with an indication of size you will get a fixed-size array.  Fixed-size arrays are allocated on the stack (if used as local variables) or in-line allocated (if used as fields) and you can’t reallocate them later.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">f</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span><span class="w">     </span><span class="c1">// no &#39;new ...&#39;</span>
+</pre></div>
+</div>
+<p>Vala does not do any bounds checking for array access at runtime.  If you need more safety you should use a more sophisticated data structure like an <em>ArrayList</em>. You will learn more about that later in the section about <em>collections</em>.</p>
+</section>
+<section id="reference-types">
+<h2><span class="section-number">2.4.4. </span>Reference Types<a class="headerlink" href="#reference-types" title="Permalink to this heading">¶</a></h2>
+<p>The reference types are all types declared as a class, regardless of whether they are descended from GLib’s <em>Object</em> or not. Vala will ensure that when you pass an object by reference the system will keep track of the number of references currently alive in order to manage the memory for you. The value of a reference that does not point anywhere is <code class="docutils literal notranslate"><span class="pre">null</span></code>. More on classes and their features in the section about object oriented programming.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="cm">/* defining a class */</span>
+<span class="kd">class</span><span class="w"> </span><span class="nc">Track</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">GLib</span><span class="p">.</span><span class="n">Object</span><span class="w"> </span><span class="p">{</span><span class="w">             </span><span class="cm">/* subclassing &#39;GLib.Object&#39; */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">mass</span><span class="p">;</span><span class="w">                 </span><span class="cm">/* a public field */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="cm">/* a public property */</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="n">terminated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span><span class="w"> </span><span class="cm">/* a private field */</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">terminate</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">           </span><span class="cm">/* a public method */</span>
+<span class="w">        </span><span class="n">terminated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="static-type-casting">
+<h2><span class="section-number">2.4.5. </span>Static Type Casting<a class="headerlink" href="#static-type-casting" title="Permalink to this heading">¶</a></h2>
+<p>In Vala, you can cast a variable from one type to another. For a static type cast, a variable is casted by the desired type name with parenthesis.  A static cast doesn’t impose any runtime type safety checking. It works for all Vala types. For example,</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Vala supports another casting mechanism called <em>dynamic cast</em> which performs runtime type checking and is described in the section about object oriented programming.</p>
+</section>
+<section id="type-inference">
+<h2><span class="section-number">2.4.6. </span>Type Inference<a class="headerlink" href="#type-inference" title="Permalink to this heading">¶</a></h2>
+<p>Vala has a mechanism called <em>type inference</em>, whereby a local variable may be defined using <code class="docutils literal notranslate"><span class="pre">var</span></code> instead of giving a type, so long as it is unambiguous what type is meant. The type is inferred from the right hand side of the assignment. It helps reduce unnecessary redundancy in your code without sacrificing static typing:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Person</span><span class="p">();</span><span class="w">     </span><span class="c1">// same as: Person p = new Person();</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">;</span><span class="w">          </span><span class="c1">// same as: string s = &quot;hello&quot;;</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">();</span><span class="w">  </span><span class="c1">// same as: List&lt;int&gt; l = new List&lt;int&gt;();</span>
+<span class="kd">var</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">               </span><span class="c1">// same as: int i = 10;</span>
+</pre></div>
+</div>
+<p>This only works for local variables.  Type inference is especially useful for types with generic type arguments (more on these later).  Compare</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">MyFoo</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">MyBar</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyFoo</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">MyBar</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>vs.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MyFoo</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="n">MyBar</span><span class="o">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="defining-new-type-from-other">
+<h2><span class="section-number">2.4.7. </span>Defining new Type from other<a class="headerlink" href="#defining-new-type-from-other" title="Permalink to this heading">¶</a></h2>
+<p>Defining a new type is a matter of derive it from the one you need. Here is an example:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="cm">/* defining an alias for a basic type (equivalent to typedef int Integer in C)*/</span>
+<span class="p">[</span><span class="nd">SimpleType</span><span class="p">]</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="nc">Integer</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">uint</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="cm">/* Define a new type from a container like GLib.List with elements type GLib.Value */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">ValueList</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">GLib</span><span class="p">.</span><span class="n">List</span><span class="o">&lt;</span><span class="n">GLib</span><span class="p">.</span><span class="n">Value</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">[</span><span class="nd">CCode</span><span class="w"> </span><span class="p">(</span><span class="n">has_construct_function</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">)]</span>
+<span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="n">ValueList</span><span class="w"> </span><span class="p">();</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">GLib</span><span class="p">.</span><span class="n">Type</span><span class="w"> </span><span class="n">get_type</span><span class="w"> </span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="02-05-operators.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><span class="section-number">2.5. </span>Operators</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="02-03-comments.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><span class="section-number">2.3. </span>Comments</div>
+                
+              </div>
+            </a>
+        </div>
+      
+      </footer>
+
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">2.4. Data Types</a><ul>
+<li><a class="reference internal" href="#value-types">2.4.1. Value Types</a></li>
+<li><a class="reference internal" href="#strings">2.4.2. Strings</a></li>
+<li><a class="reference internal" href="#arrays">2.4.3. Arrays</a></li>
+<li><a class="reference internal" href="#reference-types">2.4.4. Reference Types</a></li>
+<li><a class="reference internal" href="#static-type-casting">2.4.5. Static Type Casting</a></li>
+<li><a class="reference internal" href="#type-inference">2.4.6. Type Inference</a></li>
+<li><a class="reference internal" href="#defining-new-type-from-other">2.4.7. Defining new Type from other</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    </body>
+</html>

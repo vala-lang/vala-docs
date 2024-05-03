@@ -64,5 +64,5 @@ Assuming you have Vala installed, then all it takes to compile and execute this 
 
 *valac* is the Vala compiler, which will compile your Vala code into a binary.  The resulting binary will have the same name as the source file and can then be directly executed on the machine. You can probably guess the output.
 
-If you get some warnings from a C language compiler, please jump to :doc:`/tutorials/main/07-00-tools/07-01-valac` for the reason and solution.
+If you get some warnings from a C language compiler, please jump to :doc:`07-00-tools/07-01-valac` for the reason and solution.
 

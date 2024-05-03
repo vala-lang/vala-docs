@@ -45,4 +45,4 @@ At some point I will add in references to the Vala documentation, but that isn't
    :maxdepth: 1
    :glob:
 
-   *
+   main/*

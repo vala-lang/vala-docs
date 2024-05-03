@@ -9,7 +9,7 @@ Throughout this guide, we will explore the similarities and differences between 
 
 .. toctree::
    :maxdepth: 1
-   :hidden:
-
+   :numbered:
+   
    01-00-source-file-and-compilation
    01-01-simple-data-types

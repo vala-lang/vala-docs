@@ -6,6 +6,7 @@ Vala Documentation
 
    About <about>
    Installation Guide <installation-guide>
+   Developer Guides <developer-guides/index>
 
 Introduction
 ------------
@@ -23,7 +24,7 @@ Sections
 - `Tutorials <tutorials>`_
 - `Tooling <tooling>`_
 - `Contributor Guide <contributor-guide>`_
-- `Developer Guides <developer-guides>`_
+- `Developer Guides <developer-guides/index.html>`_
 
 External Resources
 ------------------

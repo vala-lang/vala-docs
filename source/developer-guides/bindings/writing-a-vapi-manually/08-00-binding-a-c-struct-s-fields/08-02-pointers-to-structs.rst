@@ -9,7 +9,7 @@ If the type is a parented struct or the field is possibly null, suffix the type 
 
    foo_t *myfoo;
 
-.. code-lock:: vala
+.. code-block:: vala
 
    public foo? myfoo;
 

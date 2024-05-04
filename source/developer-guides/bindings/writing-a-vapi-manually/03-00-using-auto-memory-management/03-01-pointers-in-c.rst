@@ -1,5 +1,5 @@
-Pointers in C (or what all these *'s mean)
-==========================================
+Pointers in C (or what all these \*'s mean)
+===========================================
 
 The asterisk, ``*``, is the indirection operator in C. Although, be aware it is also the multiplication operator. The indirection operator means an identifier contains a pointer to a memory location. Usually the data type held in the memory location is also indicated. For example ``int *identifier`` means an ``int`` is held at the memory location pointed to by ``identifier``. The data type, however, does not have to be specified and instead the "generic" type can be used: ``void *identifier``.
 

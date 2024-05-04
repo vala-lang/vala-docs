@@ -1,3 +1,6 @@
+Binding a C Function's Parameter and Return Types
+=================================================
+
 .. toctree::
    :maxdepth: 2
    :glob:

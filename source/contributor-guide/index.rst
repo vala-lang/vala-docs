@@ -5,7 +5,7 @@ Documentation for Contributors to Vala
    :maxdepth: 1
    :glob:
    
-   */*
+   *
 
 Vala follows a collaborative, open source development model. The following guidelines are here to help if you want to contribute back to the project.
 
@@ -76,7 +76,7 @@ Documentation
 The internal API documentation, in Valadoc form, should be built from the source:
 
 .. code-block:: console
-    
+
    make -C doc internal-api-docs
 
 This will generate output similar to `<https://gnome.pages.gitlab.gnome.org/vala/docs/index.html>`_

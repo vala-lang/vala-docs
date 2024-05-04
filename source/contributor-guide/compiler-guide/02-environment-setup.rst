@@ -14,6 +14,12 @@ A :doc:`list of IDE(s) </tooling/ide-support>` with Vala support is available.
 
 Vala support is available also for `build tools and editors <Vala/Tools#Tool_Support>`_.
 
+Files
+-----
+
+Vala source files are named in the GTK+ style, i.e. all lowercase, with no separators between words, in the format namespaceclassname.vala. For example, the filename for Vala.FormalParameter is valaformalparameter.vala.
+
+For the Vala compiler and library there is only one namespace, and it is called "Vala". Don't put "using Vala;"; instead qualify the name of types you declare. For example "class Vala.FormalParameter : Symbol".
 
 Coding Style
 ------------
@@ -52,17 +58,3 @@ The coding style used in Vala itself seems to be a variation of the GTK+ coding 
     * 	Programmer Name <programmer@email>
     */
 
-Files
------
-
-Vala source files are named in the GTK+ style, i.e. all lowercase, with no separators between words, in the format namespaceclassname.vala. For example, the filename for Vala.FormalParameter is valaformalparameter.vala.
-
-For the Vala compiler and library there is only one namespace, and it is called "Vala". Don't put "using Vala;"; instead qualify the name of types you declare. For example "class Vala.FormalParameter : Symbol".
-
-
-Website, Mailing List, Bug Tracker, Matrix Room
------------------------------------------------
-
-* `<https://vala.dev>`_
-* GNOME GitLab issues - `<https://gitlab.gnome.org/GNOME/vala/issues>`_
-* `Vala Matrix Room <https://matrix.to/#/#vala:gnome.org>`_

@@ -20,6 +20,7 @@ There are 4 memory management schemes in Vala:
 +-------------------+--------------------+--------------+---------------+
 
 .. toctree::
+   :maxdepth: 2
    :glob:
 
    03-00-using-auto-memory-management/*

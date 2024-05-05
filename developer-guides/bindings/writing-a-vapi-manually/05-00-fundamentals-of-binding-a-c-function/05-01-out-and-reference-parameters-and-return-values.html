@@ -427,10 +427,9 @@
 </pre></div>
 </div>
 <p>For arrays and delegates, this means returning both the parameter and its associated parameters:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">do_approximation</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">input_array</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">input_length</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">**</span><span class="n">output_array</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">output_length</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>void do_approximation(int <a href="#id1"><span class="problematic" id="id2">*</span></a>input_array, int input_length, int <a href="#id3"><span class="problematic" id="id4">**</span></a>output_array, int <a href="#id5"><span class="problematic" id="id6">*</span></a>output_length);</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">do_approximation</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -454,7 +453,7 @@ public void get_foo2 (int x, out Foo f);
 <span class="kt">int</span><span class="w"> </span><span class="nf">make_foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">**</span><span class="n">f</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The ownership rules in :doc:<code class="docutils literal notranslate"><span class="pre">05-02-ownership</span></code> apply.</p>
+<p>The ownership rules in <a class="reference internal" href="05-02-ownership.html"><span class="doc">Ownership</span></a> apply.</p>
 </section>
 
         </article>

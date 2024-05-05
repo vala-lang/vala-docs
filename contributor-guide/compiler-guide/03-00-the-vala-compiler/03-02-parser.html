@@ -1,0 +1,1029 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="author" title="About these documents" href="../../../about.html" /><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="3.3. Semantic Analyzer" href="03-03-semantic-analyzer.html" /><link rel="prev" title="3.1. Vala in a Nutshell" href="03-01-vala-in-a-nutshell.html" />
+
+    <link rel="shortcut icon" href="../../../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.04.27 -->
+        <title>3.2. Parser - Vala Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=46965ee0ad39e5260c2467c27b94afaae98bd900" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/gnome.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  --color-brand-primary: #A56DE2;
+  --color-brand-content: #A56DE2;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #A56DE2;
+  --color-brand-content: #A56DE2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  --color-brand-primary: #A56DE2;
+  --color-brand-content: #A56DE2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">Vala Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../_static/logo.png" alt="Logo"/>
+  </div>
+
+  
+  <span class="sidebar-brand-text">Vala Documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation-guide.html">Installation Guide</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/gui-programming.html">GUI Programming</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of GUI Programming</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference external" href="https://developer.gnome.org/documentation/tutorials.html">GNOME Developer Documenation - Tutorials</a></li>
+<li class="toctree-l3"><a class="reference external" href="https://docs.elementary.io/develop/writing-apps/the-basic-setup">elementary OS - Writing Apps</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../tutorials/programming-language.html">Programming Language</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Programming Language</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../tutorials/programming-language/main.html">Main Tutorial</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Main Tutorial</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../tutorials/programming-language/main/01-00-first-program.html">1. First Program</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../tutorials/programming-language/main/02-00-basics.html">2. Basics</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of 2. Basics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/02-00-basics/02-01-source-files-and-compilation.html">2.1. Source Files and Compilation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/02-00-basics/02-02-syntax-overview.html">2.2. Syntax Overview</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/02-00-basics/02-03-comments.html">2.3. Comments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/02-00-basics/02-04-data-types.html">2.4. Data Types</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/02-00-basics/02-05-operators.html">2.5. Operators</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/02-00-basics/02-06-control-structures.html">2.6. Control Structures</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/02-00-basics/02-07-language-elements.html">2.7. Language Elements</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/02-00-basics/02-08-code-attributes.html">2.8. Code Attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming.html">3. Object Oriented Programming</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of 3. Object Oriented Programming</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-01-basics.html">3.1. Basics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-02-construction.html">3.2. Construction</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-03-destruction.html">3.3. Destruction</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-04-signals.html">3.4. Signals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-05-properties.html">3.5. Properties</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-06-inheritance.html">3.6. Inheritance</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-07-abstract-classes.html">3.7. Abstract Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-08-interfaces.html">3.8. Interfaces</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-09-polymorphism.html">3.9. Polymorphism</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-10-method-hiding.html">3.10. Method Hiding</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-11-run-time-type-information.html">3.11. Run-Time Type Information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-12-dynamic-type-casting.html">3.12. Dynamic Type Casting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-13-generics.html">3.13. Generics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/03-00-object-oriented-programming/03-14-gobject-style-construction.html">3.14. GObject-Style Construction</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features.html">4. Advanced Features</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of 4. Advanced Features</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-01-assertions-and-contract-programming.html">4.1. Assertions and Contract Programming</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-02-error-handling.html">4.2. Error Handling</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-03-parameter-directions.html">4.3. Parameter Directions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-04-collections.html">4.4. Collections</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-05-methods-with-syntax-support.html">4.5. Methods With Syntax Support</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-06-multi-threading.html">4.6. Multi-Threading</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-07-the-main-loop.html">4.7. The Main Loop</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-08-asynchronous-methods.html">4.8. Asynchronous Methods</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-09-weak-references.html">4.9. Weak References</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-10-ownership.html">4.10. Ownership</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-11-variable-length-argument-lists.html">4.11. Variable-Length Argument Lists</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-12-pointers.html">4.12. Pointers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-13-non-object-classes.html">4.13. Non-Object classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-14-d-bus-integration.html">4.14. D-Bus Integration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/04-00-advanced-features/04-15-profiles.html">4.15. Profiles</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../tutorials/programming-language/main/05-00-experimental-features.html">5. Experimental Features</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of 5. Experimental Features</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/05-00-experimental-features/05-01-chained-relational-expressions.html">5.1. Chained Relational Expressions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/05-00-experimental-features/05-02-regular-expression-literals.html">5.2. Regular Expression Literals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/05-00-experimental-features/05-03-strict-non-null-mode.html">5.3. Strict Non-Null Mode</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../tutorials/programming-language/main/06-00-libraries.html">6. Libraries</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of 6. Libraries</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/06-00-libraries/06-01-using-libraries.html">6.1. Using Libraries</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/06-00-libraries/06-02-creating-a-library.html">6.2. Creating a Library</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/06-00-libraries/06-03-binding-libraries-with-vapi-files.html">6.3. Binding Libraries with VAPI Files</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../tutorials/programming-language/main/07-00-tools.html">7. Tools</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of 7. Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/07-00-tools/07-01-valac.html">7.1. valac</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/07-00-tools/07-02-vapigen.html">7.2. vapigen</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/07-00-tools/07-03-vala-gen-introspect.html">7.3. vala-gen-introspect</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../tutorials/programming-language/main/08-00-techniques.html">8. Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of 8. Techniques</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/08-00-techniques/08-01-debugging.html">8.1. Debugging</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../tutorials/programming-language/main/08-00-techniques/08-02-using-glib.html">8.2. Using GLib</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../index.html">Contributor Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Contributor Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../compiler-guide.html">Compiler Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Compiler Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../01-00-project-information.html">1. Project Information</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02-00-environment-setup.html">2. Environment Setup</a></li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../03-00-the-vala-compiler.html">3. The Vala Compiler</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of 3. The Vala Compiler</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="03-01-vala-in-a-nutshell.html">3.1. Vala in a Nutshell</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">3.2. Parser</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03-03-semantic-analyzer.html">3.3. Semantic Analyzer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03-04-symbol-resolution.html">3.4. Symbol Resolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03-05-flow-analyzer.html">3.5. Flow Analyzer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03-06-c-code-generation.html">3.6. C Code Generation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03-07-c-code-compilation-and-linking.html">3.7. C Code Compilation and Linking</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../04-00-vala-bindings-vapi.html">4. Vala Bindings - VAPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../05-00-internal-libgee.html">5. libgee Internal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06-00-other-tools.html">6. Other Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../07-00-testing.html">7. Testing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08-00-documentation.html">8. Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09-00-build-system.html">9. Build System</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../developer-guides/index.html">Developer Guides</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Developer Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../developer-guides/bindings.html">Bindings</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Bindings</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually.html">Writing a VAPI Manually</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of Writing a VAPI Manually</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/01-00-prerequisites.html">1. Prerequisites</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/02-00-getting-started.html">2. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of 2. Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/02-00-getting-started/02-01-the-vapi-file.html">2.1. The VAPI File</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/02-00-getting-started/02-02-attribution-and-license.html">2.2. Attribution and License</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/02-00-getting-started/02-03-the-ccode-attribute.html">2.3. The CCode Attribute</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/02-00-getting-started/02-04-create-a-root-namespace.html">2.4. Create a Root Namespace</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/02-00-getting-started/02-05-include-the-c-header-files.html">2.5. Include the C Header Files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/02-00-getting-started/02-06-symbol-name-translations.html">2.6. Symbol Name Translations</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/02-00-getting-started/02-07-code-formatting-conventions.html">2.7. Code Formatting Conventions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/02-00-getting-started/02-08-documentation-and-valadoc-org.html">2.8. Documentation and Valadoc.org</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/02-00-getting-started/02-09-the-version-attribute.html">2.9. The Version Attribute</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/03-00-using-auto-memory-management.html">3. Using Vala’s Automatic Memory Management</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle navigation of 3. Using Vala’s Automatic Memory Management</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/03-00-using-auto-memory-management/03-01-pointers-in-c.html">3.1. Pointers in C (or what all these *’s mean)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/03-00-using-auto-memory-management/03-02-constants-the-stack-and-the-heap-in-c.html">3.2. Constants, the Stack and the Heap in C</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/03-00-using-auto-memory-management/03-03-the-concept-of-ownership-in-vala.html">3.3. The Concept of “Ownership” in Vala</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/03-00-using-auto-memory-management/03-04-binding-to-c-heap-handnlers.html">3.4. Binding to C Heap Handlers</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code.html">4. Recognizing Vala Semantics in C Code</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle navigation of 4. Recognizing Vala Semantics in C Code</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code/04-01-constants.html">4.1. Constants</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code/04-02-enums-and-flags.html">4.2. Enums and Flags</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code/04-03-simple-type-structs.html">4.3. Simple Type Structs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code/04-04-structs.html">4.4. Structs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code/04-05-compact-classes.html">4.5. Compact Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code/04-06-functions.html">4.6. Functions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code/04-07-delegates.html">4.7. Delegates</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function.html">5. Fundamentals of Binding a C Function</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle navigation of 5. Fundamentals of Binding a C Function</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function/05-01-out-and-reference-parameters-and-return-values.html">5.1. Out and Reference Parameters and Return Values</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function/05-02-ownership.html">5.2. Ownership</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function/05-03-nullability.html">5.3. Nullability</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function/05-04-static-methods.html">5.4. Static Methods</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function/05-05-changing-the-position-of-generated-arguments.html">5.5. Changing the Position of Generated Arguments</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function/05-06-default-values-and-changing-an-argument-s-position.html">5.6. Default Values and Changing an Argument’s Position</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function/05-07-adapting-a-signature-with-a-vala-wrapper.html">5.7. Adapting a Signature with a Vala Wrapper</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function/05-08-variadic-arguments.html">5.8. Variadic Arguments (a.k.a. “…”)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function/05-09-functions-that-do-not-return.html">5.9. Functions That Do Not Return</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function/05-10-methods-that-change-the-instance-reference.html">5.10. Methods that Change the Instance Reference</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function/05-11-methods-that-destroy-the-instance-reference.html">5.11. Methods that Destroy the Instance Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/06-00-adding-vala-friendly-semantics.html">6. Adding Vala Friendly Semantics</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle navigation of 6. Adding Vala Friendly Semantics</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/06-00-adding-vala-friendly-semantics/06-01-to-string-methods.html">6.1. to_string () Methods</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/06-00-adding-vala-friendly-semantics/06-02-properties.html">6.2. Properties</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/06-00-adding-vala-friendly-semantics/06-03-collections.html">6.3. Collections</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types.html">7. Binding a C Function’s Parameter and Return Types</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle navigation of 7. Binding a C Function’s Parameter and Return Types</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types/07-01-basic-types.html">7.1. Basic Types</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types/07-02-structs.html">7.2. Structs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types/07-03-arrays.html">7.3. Arrays</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types/07-04-strings-and-buffers.html">7.4. Strings and Buffers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types/07-05-function-pointers.html">7.5. Function Pointers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types/07-06-parameters-of-variable-type-generics.html">7.6. Parameters of Variable Type (Generics)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types/07-07-pointers.html">7.7. Pointers</a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/08-00-binding-a-c-struct-s-fields.html">8. Binding a C Struct’s Fields</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle navigation of 8. Binding a C Struct’s Fields</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/08-00-binding-a-c-struct-s-fields/08-01-structs.html">8.1. Structs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/08-00-binding-a-c-struct-s-fields/08-02-pointers-to-structs.html">8.2. Pointers to Structs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/08-00-binding-a-c-struct-s-fields/08-03-arrays.html">8.3. Arrays</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/08-00-binding-a-c-struct-s-fields/08-04-function-pointers.html">8.4. Function Pointers</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/08-00-binding-a-c-struct-s-fields/08-05-unions.html">8.5. Unions</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/09-00-extra-hints.html">9. Extra Hints</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/10-00-awkward-situations.html">10. Awkward Situations</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle navigation of 10. Awkward Situations</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/10-00-awkward-situations/10-01-array-lengths.html">10.1. Array Lengths</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/10-00-awkward-situations/10-02-dependently-typed-ownership.html">10.2. Dependently Typed Ownership</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/10-00-awkward-situations/10-03-member-length.html">10.3. Member Length</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/10-00-awkward-situations/10-04-owned-array-of-unowned-objects.html">10.4. Owned Array of Unowned Objects</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../../developer-guides/bindings/writing-a-vapi-manually/10-00-awkward-situations/10-05-shared-context-delgates.html">10.5. Shared Context Delegates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/colinkiama/vala-docs/edit/main/source/contributor-guide/compiler-guide/03-00-the-vala-compiler/03-02-parser.rst" title="Edit this page">
+    <svg aria-hidden="true" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+      <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
+    </svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="parser">
+<h1><span class="section-number">3.2. </span>Parser<a class="headerlink" href="#parser" title="Permalink to this heading">¶</a></h1>
+<p>The parser reads Vala and VAPI code and outputs an AST. In the eyes of the parser, Vala and VAPI are the same thing. The difference to us is that VAPI files never have method definitions, but the parser will read pretty much everything as long as it seems syntactically correct. Most errors are caught later by the Semantic Analyzer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before 0.3.1, Vala’s parser was the classic flex scanner and Bison LALR parser combination. But as of <a class="reference external" href="http://git.gnome.org/browse/vala/commit/?id=eba85accb7d719808c26d2624ed04d81c4b7c3ab">Commit eba85a</a>, the parser is a hand-crafted recursive descent parser. The parser is in <code class="docutils literal notranslate"><span class="pre">vala/valaparser.vala</span></code> and its lexer is in <code class="docutils literal notranslate"><span class="pre">vala/valascanner.vala</span></code>.</p>
+</div>
+<p>The entry point of the parser is <code class="docutils literal notranslate"><span class="pre">Vala.Parser.parse()</span></code>. This method is called by <code class="docutils literal notranslate"><span class="pre">Vala.Compiler.run()</span></code>. Vala.Parser is an implementation of <code class="docutils literal notranslate"><span class="pre">Vala.CodeVisitor</span></code> for source files.</p>
+<section id="visitors-and-ping-pong">
+<h2><span class="section-number">3.2.1. </span>Visitors and Ping Pong<a class="headerlink" href="#visitors-and-ping-pong" title="Permalink to this heading">¶</a></h2>
+<p>CodeVisitor is an abstract base class which provides 75 empty virtual methods for each kind of code node. A class which inherits CodeVisitor is supposed to do some kind of processing of the code tree. Here are all the CodeVisitor classes in Vala:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">CodeVisitor</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">CodeGenerator</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeVisitor</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">CodeWriter</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeVisitor</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">FlowAnalyzer</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeVisitor</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">GenieParser</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeVisitor</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">GirParser</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeVisitor</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">GIdlParser</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeVisitor</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Parser</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeVisitor</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">SemanticAnalyzer</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeVisitor</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">SymbolResolver</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeVisitor</span>
+</pre></div>
+</div>
+<p>CodeVisitor works closely with the different <code class="docutils literal notranslate"><span class="pre">Vala.CodeNode</span></code> classes to traverse the code tree. Here are all the code node types in Vala grouped by superclass:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">CodeNode</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Attribute</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">CatchClause</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">DataType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Expression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">MemberInitializer</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Statement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">SwitchLabel</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Symbol</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">UsingDirective</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span>
+</pre></div>
+</div>
+<p>Data types:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">CType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">DelegateType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">FieldPrototype</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">GenericType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">InvalidType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">MethodType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">PointerType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ReferenceType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">SignalType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">UnresolvedType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ValueType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">VoidType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">DataType</span>
+</pre></div>
+</div>
+<p>Reference data types:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ArrayType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ReferenceType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ClassType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ReferenceType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ErrorType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ReferenceType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">InterfaceType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ReferenceType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">NullType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ReferenceType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ObjectType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ReferenceType</span>
+</pre></div>
+</div>
+<p>Value data types:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">BooleanType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ValueType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">EnumValueType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ValueType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">FloatingType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ValueType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">IntegerType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ValueType</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">StructValueType</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">ValueType</span>
+</pre></div>
+</div>
+<p>Expressions:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">AddressofExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ArrayCreationExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Assignment</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">BaseAccess</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">BinaryExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">CastExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ConditionalExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ElementAccess</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">InitializerList</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">LambdaExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Literal</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">MemberAccess</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">MethodCall</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">NamedArgument</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ObjectCreationExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">PointerIndirection</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">PostfixExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ReferenceTransferExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">SizeofExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">SliceExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Template</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Tuple</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">TypeCheck</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">TypeofExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">UnaryExpression</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Expression</span>
+</pre></div>
+</div>
+<p>Literal expressions:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">BooleanLiteral</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Literal</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">CharacterLiteral</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Literal</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">IntegerLiteral</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Literal</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ListLiteral</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Literal</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">MapLiteral</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Literal</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">NullLiteral</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Literal</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">RealLiteral</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Literal</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">RegexLiteral</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Literal</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">SetLiteral</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Literal</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">StringLiteral</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Literal</span>
+</pre></div>
+</div>
+<p>Statements:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">BreakStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ContinueStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">DeclarationStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">DeleteStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">DoStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">EmptyStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ExpressionStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ForStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">IfStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">LockStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Loop</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ReturnStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">StatementList</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">SwitchStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ThrowStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">TryStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">UnlockStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">WhileStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">YieldStatement</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">CodeNode</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+</pre></div>
+</div>
+<p>Symbols:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Block</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span><span class="p">,</span><span class="w"> </span><span class="n">Statement</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Constructor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Destructor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">EnumValue</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">FormalParameter</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">LocalVariable</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Member</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Namespace</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">PropertyAccessor</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">TypeParameter</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">TypeSymbol</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">UnresolvedSymbol</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Symbol</span>
+</pre></div>
+</div>
+<p>Members:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Lockable</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Constant</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Member</span><span class="p">,</span><span class="w"> </span><span class="n">Lockable</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Field</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Member</span><span class="p">,</span><span class="w"> </span><span class="n">Lockable</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Method</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Member</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Property</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Member</span><span class="p">,</span><span class="w"> </span><span class="n">Lockable</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Signal</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Member</span><span class="p">,</span><span class="w"> </span><span class="n">Lockable</span>
+</pre></div>
+</div>
+<p>Type symbols:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Delegate</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">TypeSymbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Enum</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">TypeSymbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ErrorCode</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">TypeSymbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ErrorDomain</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">TypeSymbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">ObjectTypeSymbol</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">TypeSymbol</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Struct</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">TypeSymbol</span>
+</pre></div>
+</div>
+<p>Last but not least:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Comment</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">Scope</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">SourceFile</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Vala</span><span class="p">.</span><span class="n">SourceReference</span>
+</pre></div>
+</div>
+<p>The SourceFile class is an exception when visiting nodes, because it’s not a CodeNode but there is a visit_source_file in the CodeVisitor.</p>
+<p>All CodeNodes except the root have a non-null parent CodeNode. Some specializations of CodeNode may have children. The type and number of children are declared in the specialized class.</p>
+<p>The two important methods in a CodeNode are <em>accept</em> and <em>accept_children</em>. The accept() method lets the node declare to the CodeVisitor what it is, so the CodeVisitor can act on it. For example, Vala.Struct.accept():</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">override</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">accept</span><span class="w"> </span><span class="p">(</span><span class="n">CodeVisitor</span><span class="w"> </span><span class="n">visitor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="n">visitor</span><span class="p">.</span><span class="n">visit_struct</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"> </span><span class="cm">/* I am a struct! */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The accept_children() method lets the node accept all of its children so they can declare themselves to the CodeVisitor. This is the recursive part of the traversal. For example, a Struct code node has a list of base types, type parameters, fields, constants, and methods. Vala.Struct.accept_children() accepts all of these.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">override</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">accept_children</span><span class="w"> </span><span class="p">(</span><span class="n">CodeVisitor</span><span class="w"> </span><span class="n">visitor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">base_type</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">base_type</span><span class="p">.</span><span class="n">accept</span><span class="w"> </span><span class="p">(</span><span class="n">visitor</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">TypeParameter</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">type_parameters</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">p</span><span class="p">.</span><span class="n">accept</span><span class="w"> </span><span class="p">(</span><span class="n">visitor</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Field</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">fields</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">f</span><span class="p">.</span><span class="n">accept</span><span class="w"> </span><span class="p">(</span><span class="n">visitor</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Constant</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">constants</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">c</span><span class="p">.</span><span class="n">accept</span><span class="w"> </span><span class="p">(</span><span class="n">visitor</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Method</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">methods</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">m</span><span class="p">.</span><span class="n">accept</span><span class="w"> </span><span class="p">(</span><span class="n">visitor</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">Property</span><span class="w"> </span><span class="n">prop</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">properties</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">prop</span><span class="p">.</span><span class="n">accept</span><span class="w"> </span><span class="p">(</span><span class="n">visitor</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>As you can see, the CodeVisitor is repeatedly asked to visit different code nodes. It can do whatever analysis is necessary and then traverse deeper into the code tree. This is what a hypothetical implementation of XmlGenerator.visit_struct() might look like:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">override</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">visit_struct</span><span class="w"> </span><span class="p">(</span><span class="n">Struct</span><span class="w"> </span><span class="n">st</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="cm">/* Do some processing of this struct. */</span>
+<span class="w">    </span><span class="n">stdout</span><span class="p">.</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;&lt;vala:struct name=</span><span class="se">\&quot;</span><span class="s">%s</span><span class="se">\&quot;</span><span class="s">&gt;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">st</span><span class="p">.</span><span class="n">name</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* recurse through struct&#39;s children */</span>
+<span class="w">    </span><span class="n">st</span><span class="p">.</span><span class="n">accept_children</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Do some more processing of the struct, now that its</span>
+<span class="cm">      * children have been accepted. */</span>
+<span class="w">    </span><span class="n">stdout</span><span class="p">.</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;&lt;/vala:struct&gt;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The visit_ methods of a CodeVisitor needn’t call CodeNode.accept_children(), if it isn’t necessary to traverse the whole depth of the code tree. It also isn’t necessary to write visit_ methods for every kind of code node, because empty implementations are already provided in CodeVisitor.</p>
+<p>What does this have to do with ping pong? Well, the flow of control bounces between the CodeVisitor and the CodeNodes: accept, visit, accept, visit, … When you navigate the code you will probably find yourself bouncing between different classes.</p>
+</section>
+<section id="back-to-the-parser">
+<h2><span class="section-number">3.2.2. </span>Back to the Parser<a class="headerlink" href="#back-to-the-parser" title="Permalink to this heading">¶</a></h2>
+<p>Vala.Parser is a highly specialized CodeVisitor - the only type of code node it visits is a Vala.SourceFile. However the Parser calls back to the context and uses it to create code nodes (mentioned before), then adds these code nodes into the context’s root code node.</p>
+</section>
+<section id="error-handling">
+<h2><span class="section-number">3.2.3. </span>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this heading">¶</a></h2>
+<p>I don’t want to spoil your fun too much by going into the details of the parser, other than that every parse_ function can throw a ParseError. ParseError is caught when parsing a block or the declarations of a namespace, class, struct, or interface. Fixme.</p>
+</section>
+<section id="grammar-of-vala">
+<h2><span class="section-number">3.2.4. </span>Grammar of Vala<a class="headerlink" href="#grammar-of-vala" title="Permalink to this heading">¶</a></h2>
+<p>This grammar is hand-generated from Vala.Parser. Sometimes the structure of this grammar diverges slightly from the code, for example optional non-terminal symbols. However the non-terminal symbol names usually match a parse_ method in Vala.Parser.</p>
+<p>More literal-specific grammar at <a class="reference external" href="https://gnome.pages.gitlab.gnome.org/vala/manual/index.html">https://gnome.pages.gitlab.gnome.org/vala/manual/index.html</a></p>
+<div class="highlight-bnf notranslate"><div class="highlight"><pre><span></span>// parse_file
+input <span class="o">::=</span> using_directive* namespace_member*
+
+// parse_using_directives
+using_directive <span class="o">::=</span> &quot;using&quot; symbol [ &quot;,&quot; symbol ]* &quot;;&quot;
+
+// parse_symbol_name
+symbol <span class="o">::=</span> symbol_part [ &quot;.&quot; symbol_part ]*
+
+symbol_part <span class="o">::=</span> ( &quot;global::&quot; identifier ) | identifier
+
+namespace_member <span class="o">::=</span> [ attributes ]
+                     ( namespace_declaration |
+                       class_declaration |
+                       interface_declaration |
+                       struct_declaration |
+                       enum_declaration |
+                       errordomain_declaration |
+                       method_declaration |
+                       field_declaration |
+                       constant_declaration )
+
+attributes <span class="o">::=</span> attribute*
+
+attribute <span class="o">::=</span> &quot;[&quot; identifier [ attribute_arguments ] &quot;]&quot;
+
+attribute_arguments <span class="o">::=</span> &quot;(&quot; attribute_argument [ &quot;,&quot; attribute_argument ]* &quot;)&quot;
+
+attribute_argument <span class="o">::=</span> identifier &quot;=&quot; expression
+
+expression <span class="o">::=</span> lambda_expression | ( conditional_expression [ assignment_operator expression ] )
+
+// get_assignment_operator plus &gt;&gt;=
+assignment_operator <span class="o">::=</span> &quot;=&quot; | &quot;+=&quot; | &quot;-=&quot; | &quot;|=&quot; | &quot;&amp;=&quot; | &quot;^=&quot; | &quot;/=&quot; | &quot;*=&quot; | &quot;%=&quot; | &quot;&lt;<span class="p">&lt;</span><span class="nc">=&quot; | &quot;</span><span class="p">&gt;</span>&gt;=&quot;
+
+conditional_expression <span class="o">::=</span> coalescing_expression [ &quot;?&quot; expression &quot;:&quot; expression ]
+
+coalescing_expression <span class="o">::=</span> conditional_or_expression [ &quot;??&quot; coalescing_expression ]
+
+conditional_or_expression <span class="o">::=</span> conditional_and_expression [ &quot;||&quot; conditional_and_expression ]
+
+conditional_and_expression <span class="o">::=</span> in_expression [ &quot;&amp;&amp;&quot; in_expression ]
+
+in_expression <span class="o">::=</span> inclusive_or_expression [ &quot;in&quot; inclusive_or_expression ]
+
+inclusive_or_expression <span class="o">::=</span> exclusive_or_expression [ &quot;|&quot; exclusive_or_expression ]
+
+exclusive_or_expression <span class="o">::=</span> and_expression [ &quot;^&quot; and_expression ]
+
+and_expression <span class="o">::=</span> equality_expression [ &quot;&amp;&quot; equality_expression ]
+
+equality_expression <span class="o">::=</span> relational_expression [ ( &quot;==&quot; | &quot;!=&quot; ) relational_expression ]*
+
+relational_expression <span class="o">::=</span> shift_expression [ ( &quot;&lt;&quot; | &quot;<span class="p">&lt;</span><span class="nc">=&quot; | &quot;</span><span class="p">&gt;</span>&quot; | &quot;&gt;=&quot; ) shift_expression ) |
+                                             ( &quot;is&quot; type ) | ( &quot;as&quot; type ) ]*
+
+// parse_type
+type <span class="o">::=</span> ( &quot;void&quot; [ &quot;*&quot; ]* ) | ( [ &quot;dynamic&quot; ] [ &quot;unowned&quot; ] symbol [ type_arguments ] [ &quot;*&quot; ]* [ &quot;?&quot; ] array_type* )
+
+// parse_type can_weak
+type_weak <span class="o">::=</span> ( &quot;void&quot; [ &quot;*&quot; ]* ) | ( [ &quot;dynamic&quot; ] [ &quot;unowned&quot; | &quot;weak&quot; ] symbol [ type_arguments ] [ &quot;*&quot; ]* [ &quot;?&quot; ] array_type* )
+
+array_type <span class="o">::=</span> &quot;[&quot; array_size &quot;]&quot; [ &quot;?&quot; ]
+
+shift_expression <span class="o">::=</span> additive_expression [ ( &quot;&lt;<span class="p">&lt;</span><span class="nc">&quot; | &quot;</span><span class="p">&gt;</span>&gt;&quot; ) additive_expression ]*
+
+additive_expression <span class="o">::=</span> multiplicative_expression [ ( &quot;+&quot; | &quot;-&quot; ) multiplicative_expression ]*
+
+multiplicative_expression <span class="o">::=</span> unary_expression [ ( &quot;*&quot; | &quot;/&quot; | &quot;%&quot; ) unary_expression ]*
+
+unary_expression <span class="o">::=</span> ( unary_operator unary_expression ) |
+                     ( &quot;(&quot; ( &quot;owned&quot; | &quot;void&quot; | &quot;dynamic&quot; | &quot;!&quot; | type ) &quot;)&quot; unary_expression ) |
+                     primary_expression
+
+// get_unary_operator
+unary_operator <span class="o">::=</span> &quot;+&quot; | &quot;-&quot; | &quot;!&quot; | &quot;~&quot; | &quot;++&quot; | &quot;--&quot; | &quot;*&quot; | &quot;&amp;&quot; | &quot;(owned)&quot; | &quot;(void)&quot; | &quot;(dynamic)&quot; | &quot;(!)&quot;
+
+primary_expression <span class="o">::=</span> ( literal | initializer | tuple | template | open_regex_literal | this_access | base_access |
+                       object_or_array_creation_expression | yield_expression | sizeof_expression | typeof_expression |
+                       simple_name )
+                       [ member_access | pointer_member_access | method_call | element_access |
+                         post_increment_expression | post_decrement_expression ]*
+
+literal <span class="o">::=</span> &quot;true&quot; | &quot;false&quot; | &quot;null&quot; | integer_literal | real_literal | character_literal | regex_literal |
+            string_literal | template_string_literal | verbatim_string_literal
+
+initializer <span class="o">::=</span> &quot;{&quot; argument [ &quot;,&quot; argument ]* &quot;}&quot;
+
+// parse_argument_list
+arguments <span class="o">::=</span> argument [ &quot;,&quot; argument ]*
+
+argument <span class="o">::=</span> &quot;ref&quot; expression | &quot;out&quot; expression | expression | identifier [ &quot;:&quot; expression ]
+
+tuple <span class="o">::=</span> &quot;(&quot; expression [ &quot;,&quot; expression ]* &quot;)&quot;
+
+template <span class="o">::=</span> &#39;@&quot;&#39; [ expression &quot;,&quot; ]* &#39;&quot;&#39;
+
+// parse_regex_literal
+open_regex_literal <span class="o">::=</span> &quot;/&quot; literal
+
+this_access <span class="o">::=</span> &quot;this&quot;
+
+base_access <span class="o">::=</span> &quot;base&quot;
+
+object_or_array_creation_expression <span class="o">::=</span> &quot;new&quot; member ( object_creation_expression | array_creation_expression )
+
+object_creation_expression <span class="o">::=</span> &quot;(&quot; [ arguments ] &quot;)&quot; [ object_initializer ]
+
+object_initializer <span class="o">::=</span> &quot;{&quot; member_initializer [ &quot;,&quot; member_initializer ] &quot;}&quot;
+
+member_initializer <span class="o">::=</span> identifier &quot;=&quot; expression
+
+array_creation_expression <span class="o">::=</span> [ &quot;[&quot; &quot;]&quot; ]* [ &quot;[&quot; [ array_size ] &quot;]&quot; ] [ initializer ]
+
+array_size <span class="o">::=</span> expression [ &quot;,&quot; expression ]*
+
+// parse_member_name
+member <span class="o">::=</span> member_part [ &quot;.&quot; member_part ]*
+
+member_part <span class="o">::=</span> ( &quot;global::&quot; identifier || identifier ) [ type_arguments ]
+
+// parse_type_argument_list
+type_arguments <span class="o">::=</span> &quot;<span class="p">&lt;</span><span class="nc">&quot; type [ &quot;,&quot; type ]* &quot;</span><span class="p">&gt;</span>&quot;
+
+yield_expression <span class="o">::=</span> &quot;yield&quot; [ base_access &quot;.&quot; ] member method_call
+
+method_call <span class="o">::=</span> &quot;(&quot; [ arguments ] &quot;)&quot; [ object_initializer ]
+
+sizeof_expression <span class="o">::=</span> &quot;sizeof&quot; &quot;(&quot; type &quot;)&quot;
+
+typeof_expression <span class="o">::=</span> &quot;typeof&quot; &quot;(&quot; type &quot;)&quot;
+
+simple_name <span class="o">::=</span> ( &quot;global::&quot; identifier | identifier ) [ type_arguments ]
+
+lambda_expression <span class="o">::=</span> lambda_expression_params &quot;=&gt;&quot; lambda_expression_body
+
+lambda_expression_params <span class="o">::=</span> identifier | ( &quot;(&quot; [ identifier [ &quot;,&quot; identifier ]* ] &quot;)&quot; )
+
+lambda_expression_body <span class="o">::=</span> expression | block
+
+member_declaration_modifiers <span class="o">::=</span> member_declaration_modifier [ &quot; &quot; member_declaration_modifier ]*
+member_declaration_modifier <span class="o">::=</span> &quot;async&quot; | &quot;class&quot; | &quot;extern&quot; | &quot;inline&quot; | &quot;static&quot; | &quot;abstract&quot; | &quot;virtual&quot; | &quot;override&quot; | &quot;new&quot;
+
+constructor_declaration <span class="o">::=</span> [ constructor_declaration_modifiers ] &quot;construct&quot; block
+
+constructor_declaration_modifiers <span class="o">::=</span> constructor_declaration_modifier [ &quot; &quot; constructor_declaration_modifier ]*
+constructor_declaration_modifier <span class="o">::=</span> &quot;async&quot; | &quot;class&quot; | &quot;extern&quot; | &quot;inline&quot; | &quot;static&quot; | &quot;abstract&quot; | &quot;virtual&quot; | &quot;override&quot;
+
+destructor_declaration <span class="o">::=</span> [ constructor_declaration_modifiers ] &quot;~&quot; &quot;(&quot; &quot;)&quot; block
+
+class_declaration <span class="o">::=</span> [ access_modifier ] [ type_declaration_modifiers ] &quot;class&quot; symbol [ type_arguments ]
+                      [ &quot;:&quot; base_types ] &quot;{&quot; class_member* &quot;}&quot;
+
+base_types <span class="o">::=</span> type [ &quot;,&quot; type ]*
+
+class_member <span class="o">::=</span> [ attributes ]
+                 ( class_declaration |
+                   struct_declaration |
+                   enum_declaration |
+                   delegate_declaration |
+                   method_declaration |
+                   signal_declaration |
+                   field_declaration |
+                   constant_declaration |
+                   property_declaration |
+                   constructor_declaration |
+                   destructor_declaration )
+
+access_modifier <span class="o">::=</span> &quot;private&quot; &quot;protected&quot; &quot;internal&quot; &quot;public&quot;
+
+type_declaration_modifiers <span class="o">::=</span> type_declaration_modifier [ &quot; &quot; type_declaration_modifier ]*
+type_declaration_modifier <span class="o">::=</span> &quot;abstract&quot; | &quot;extern&quot; | &quot;static&quot;
+
+enum_declaration <span class="o">::=</span> [ access_modifier ] [ type_declaration_modifiers ] &quot;enum&quot; symbol
+                     &quot;{&quot; enumvalues [ &quot;;&quot; [ method_declaration | constant_declaration ]* ] &quot;}&quot;
+
+enumvalues <span class="o">::=</span> enumvalue [ &quot;,&quot; enumvalue ]*
+enumvalue <span class="o">::=</span> [ attributes ] identifier [ &quot;=&quot; expression ]
+
+errordomain_declaration <span class="o">::=</span> [ access_modifier ] [ type_declaration_modifiers ] &quot;errordomain&quot; symbol
+                            &quot;{&quot; errorcodes [ &quot;;&quot; method_declaration* ] &quot;}&quot;
+
+errorcodes <span class="o">::=</span> errorcode [ &quot;,&quot; errorcode ]*
+errorcode <span class="o">::=</span> [ attributes ] identifier [ &quot;=&quot; expression ]
+
+interface_declaration <span class="o">::=</span> [ access_modifier ] [ type_declaration_modifiers ] &quot;interface&quot; symbol [ type_parameters ]
+                          [ &quot;:&quot; base_types ] &quot;{&quot; interface_member* &quot;}&quot;
+
+// parse_type_parameter_list
+type_parameters <span class="o">::=</span> &quot;<span class="p">&lt;</span><span class="nc">&quot; identifier [ &quot;,&quot; identifier ]* &quot;</span><span class="p">&gt;</span>&quot;
+
+interface_member <span class="o">::=</span> [ attributes ]
+                     ( class_declaration |
+                       struct_declaration |
+                       enum_declaration |
+                       delegate_declaration |
+                       method_declaration |
+                       signal_declaration |
+                       field_declaration |
+                       constant_declaration |
+                       property_declaration )
+
+namespace_declaration <span class="o">::=</span> &quot;namespace&quot; symbol &quot;{&quot; using_directive* namespace_member* &quot;}&quot;
+
+struct_declaration <span class="o">::=</span> [ access_modifier ] [ type_declaration_modifiers ] &quot;struct&quot; symbol
+                       [ &quot;:&quot; base_types ] &quot;{&quot; struct_member* &quot;}&quot;
+
+struct_member <span class="o">::=</span> [ attributes ] ( method_declaration | field_declaration | constant_declaration | property_declaration )
+
+creation_method_declaration <span class="o">::=</span> [ access_modifier ] [ constructor_declaration_modifiers ] symbol
+                                &quot;(&quot; [ parameters ] &quot;)&quot; [ throws ] [ requires ] [ ensures ] ( &quot;;&quot; | block )
+
+parameters <span class="o">::=</span> parameter [ &quot;,&quot; parameter ]*
+
+parameter <span class="o">::=</span> [ attributes ] ( &quot;...&quot; | ( [ &quot;params&quot; ] [ &quot;out&quot; | &quot;ref&quot; ] type identifier [ &quot;=&quot; expression ] ) )
+
+throws <span class="o">::=</span> &quot;throws&quot; type [ &quot;,&quot; type ]*
+
+requires <span class="o">::=</span> &quot;requires&quot; &quot;(&quot; expression &quot;)&quot; [ requires ]
+
+ensures <span class="o">::=</span> &quot;ensures&quot; &quot;(&quot; expression &quot;)&quot; [ ensures ]
+
+delegate_declaration <span class="o">::=</span> [ access_modifier ] [ delegate_declaration_modifiers ] type symbol [ type_parameters ]
+                         &quot;(&quot; [ parameters ] &quot;)&quot; [ throws ] &quot;;&quot;
+
+delegate_declaration_modifiers <span class="o">::=</span> delegate_declaration_modifier [ &quot; &quot; delegate_declaration_modifier ]*
+delegate_declaration_modifier <span class="o">::=</span> &quot;async&quot; | &quot;class&quot; | &quot;extern&quot; | &quot;inline&quot; | &quot;abstract&quot; | &quot;virtual&quot; | &quot;override&quot;
+
+signal_declaration <span class="o">::=</span> [ access_modifier ] [ signal_declaration_modifiers ] &quot;signal&quot; type identifier
+                       &quot;(&quot; [ parameters ] &quot;)&quot; ( &quot;;&quot; | block )
+
+signal_declaration_modifiers <span class="o">::=</span> signal_declaration_modifier [ &quot; &quot; signal_declaration_modifier ]*
+signal_declaration_modifier <span class="o">::=</span> &quot;async&quot; | &quot;extern&quot; | &quot;inline&quot; | &quot;abstract&quot; | &quot;virtual&quot; | &quot;override&quot; | &quot;new&quot;
+
+method_declaration <span class="o">::=</span> [ access_modifier ] [ member_declaration_modifier ] type identifier [ type_parameters ]
+                       &quot;(&quot; [ parameters ] &quot;)&quot; [ throws ] [ requires ] [ ensures ] ( &quot;;&quot; | block )
+
+constant_declaration <span class="o">::=</span> [ access_modifier ] [ member_declaration_modifiers ] &quot;const&quot; type identifier [ inline_array_type ]
+                         [ &quot;=&quot; expression ] &quot;;&quot;
+
+inline_array_type <span class="o">::=</span> &quot;[&quot; integer_literal &quot;]&quot;
+
+field_declaration <span class="o">::=</span> [ access_modifier ] [ member_declaration_modifiers ] type_weak identifier [ &quot;=&quot; expression ] &quot;;&quot;
+
+property_declaration <span class="o">::=</span> [ access_modifier ] [ property_declaration_modifiers ] type_weak identifier
+                         &quot;{&quot; property_declaration_part* &quot;}&quot;
+
+property_declaration_part <span class="o">::=</span> ( &quot;default&quot; &quot;=&quot; expression &quot;;&quot; ) | property_accessor
+
+property_accessor <span class="o">::=</span> [ attributes ] [ access_modifier ] ( property_get_accessor | property_set_construct_accessor )
+
+property_get_accessor <span class="o">::=</span> &quot;get&quot; ( &quot;;&quot; | block )
+
+property_set_construct_accessor <span class="o">::=</span> ( &quot;set&quot; &quot;construct&quot; | &quot;construct&quot; &quot;set&quot; ) ( &quot;;&quot; | block )
+
+property_declaration_modifiers <span class="o">::=</span> property_declaration_modifier [ &quot; &quot; property_declaration_modifier ]*
+property_declaration_modifier <span class="o">::=</span> &quot;class&quot; | &quot;static&quot; | &quot;extern&quot; | &quot;inline&quot; | &quot;abstract&quot; | &quot;virtual&quot; | &quot;override&quot; | &quot;new&quot;
+
+block <span class="o">::=</span> &quot;{&quot; statement* &quot;}&quot;
+
+// parse_statements
+statement <span class="o">::=</span> block | &quot;;&quot; | if_statement | switch_statement | while_statement | for_statement | foreach_statement |
+              break_statement | continue_statement | return_statement | yield_statement | throw_statement |
+              try_statement | lock_statement | delete_statement | local_variable_declarations | expression_statement
+
+if_statement <span class="o">::=</span> &quot;if&quot; &quot;(&quot; expression &quot;)&quot; embedded_statement [ &quot;else&quot; embedded_statement ]
+
+embedded_statement <span class="o">::=</span> block | embedded_statement_without_block
+
+embedded_statement_without_block <span class="o">::=</span> &quot;;&quot; | if_statement | switch_statement | while_statement | for_statement |
+                                     foreach_statement | break_statement | continue_statement | return_statement |
+                                     yield_statement | throw_statement | try_statement | lock_statement | delete_statement |
+                                     expression_statement
+
+switch_statement <span class="o">::=</span> &quot;switch&quot; &quot;(&quot; expression &quot;)&quot; &quot;{&quot; switch_section* &quot;}&quot;
+
+switch_section <span class="o">::=</span> ( &quot;case&quot; | &quot;default&quot; ) expression &quot;:&quot;
+
+while_statement <span class="o">::=</span> &quot;while&quot; &quot;(&quot; expression &quot;)&quot; embedded_statement
+
+do_statement <span class="o">::=</span> &quot;do&quot; embedded_statement &quot;while&quot; &quot;(&quot; expression &quot;)&quot; &quot;;&quot;
+
+for_statement <span class="o">::=</span> &quot;for&quot; &quot;(&quot; [ for_initializer ] &quot;;&quot; [ expression ] &quot;;&quot; [ for_iterator ] &quot;)&quot; embedded_statement
+
+for_initializer <span class="o">::=</span> local_variable_declarations | ( statement_expression [ &quot;,&quot; statement_expression ]* )
+
+for_iterator <span class="o">::=</span> statement_expression [ &quot;,&quot; statement_expression ]*
+
+statement_expression <span class="o">::=</span> expression
+
+foreach_statement <span class="o">::=</span> &quot;foreach&quot; &quot;(&quot; ( &quot;var&quot; | type) identifier &quot;in&quot; expression &quot;)&quot; embedded_statement
+
+break_statement <span class="o">::=</span> &quot;break&quot; &quot;;&quot;
+
+continue_statement <span class="o">::=</span> &quot;continue&quot; &quot;;&quot;
+
+return_statement <span class="o">::=</span> &quot;return&quot; [ expression ] &quot;;&quot;
+
+yield_statement <span class="o">::=</span> &quot;yield&quot; [ expression_statement | &quot;return&quot; expression ] &quot;;&quot;
+
+throw_statement <span class="o">::=</span> &quot;throw&quot; expression &quot;;&quot;
+
+try_statement <span class="o">::=</span> &quot;try&quot; block catch_clause* [ finally_clause ]
+
+catch_clause <span class="o">::=</span> &quot;catch&quot; [ &quot;(&quot; type_weak identifier &quot;)&quot; ] block
+
+finally_clause <span class="o">::=</span> &quot;finally&quot; block
+
+lock_statement <span class="o">::=</span> &quot;lock&quot; &quot;(&quot; expression &quot;)&quot; embedded_statement
+
+delete_statement <span class="o">::=</span> &quot;delete&quot; expression &quot;;&quot;
+
+local_variable_declarations <span class="o">::=</span> ( &quot;var&quot; | type ) local_variable_declaration [ &quot;,&quot; local_variable_declaration ]*
+
+local_variable_declartion <span class="o">::=</span> local_tuple_declaration | local_variable
+
+local_tuple_declaration <span class="o">::=</span> &quot;(&quot; identifier [ &quot;,&quot; identifier ]* &quot;)&quot; &quot;=&quot; expression
+
+local_variable <span class="o">::=</span> identifier [ inline_array_type ] [ &quot;=&quot; expression ]
+
+expression_statement <span class="o">::=</span> statement_expression &quot;;&quot;
+</pre></div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="03-03-semantic-analyzer.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><span class="section-number">3.3. </span>Semantic Analyzer</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="03-01-vala-in-a-nutshell.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><span class="section-number">3.1. </span>Vala in a Nutshell</div>
+                
+              </div>
+            </a>
+        </div>
+      
+      </footer>
+
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">3.2. Parser</a><ul>
+<li><a class="reference internal" href="#visitors-and-ping-pong">3.2.1. Visitors and Ping Pong</a></li>
+<li><a class="reference internal" href="#back-to-the-parser">3.2.2. Back to the Parser</a></li>
+<li><a class="reference internal" href="#error-handling">3.2.3. Error Handling</a></li>
+<li><a class="reference internal" href="#grammar-of-vala">3.2.4. Grammar of Vala</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    </body>
+</html>

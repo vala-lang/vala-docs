@@ -9,10 +9,10 @@ Consider the following:
 
 .. code-block:: c
 
-int div_and_mod(int a, int b, int *mod) {
-    *mod = a % b;
-    return a / b;
-}
+   int div_and_mod(int a, int b, int *mod) {
+       *mod = a % b;
+       return a / b;
+   }
 
 .. code-block:: vala
 

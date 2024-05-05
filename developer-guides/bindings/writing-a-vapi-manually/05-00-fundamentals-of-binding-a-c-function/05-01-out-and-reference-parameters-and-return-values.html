@@ -405,15 +405,12 @@
 <p>C makes rather heavy use of out parameters as an alternate method to returning. Unfortunately, because of the non-uniform nature of this return system, it is rather confusing.</p>
 <p>For all types except structs, when returned, the instance is returned, per usual. Any supplementary information (delegate targets, array lengths) are quietly appended as out parameters. To return another value, a parameter may be declared as <code class="docutils literal notranslate"><span class="pre">out</span></code>. Vala will assume the function will accept a pointer to this value, which it will populate upon return. A <code class="docutils literal notranslate"><span class="pre">ref</span></code> parameter is similar, but the parameter must be initialised before the function is called and the function may manipulate its value.</p>
 <p>Consider the following:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">div_and_mod</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="o">*</span><span class="n">mod</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="n">mod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<dl class="simple">
-<dt>int div_and_mod(int a, int b, int <a href="#id1"><span class="problematic" id="id2">*</span></a>mod) {</dt><dd><p><a href="#id3"><span class="problematic" id="id4">*</span></a>mod = a % b;
-return a / b;</p>
-</dd>
-</dl>
-<p>}</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">div_and_mod</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">mod</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -433,7 +430,7 @@ return a / b;</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
-<p>void do_approximation(int <a href="#id5"><span class="problematic" id="id6">*</span></a>input_array, int input_length, int <a href="#id7"><span class="problematic" id="id8">**</span></a>output_array, int <a href="#id9"><span class="problematic" id="id10">*</span></a>output_length);</p>
+<p>void do_approximation(int <a href="#id1"><span class="problematic" id="id2">*</span></a>input_array, int input_length, int <a href="#id3"><span class="problematic" id="id4">**</span></a>output_array, int <a href="#id5"><span class="problematic" id="id6">*</span></a>output_length);</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">do_approximation</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">output</span><span class="p">);</span>
 </pre></div>
 </div>

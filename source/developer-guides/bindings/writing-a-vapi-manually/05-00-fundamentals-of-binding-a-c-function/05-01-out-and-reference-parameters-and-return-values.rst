@@ -38,7 +38,7 @@ For arrays and delegates, this means returning both the parameter and its associ
 
 .. code-block:: c
 
-void do_approximation(int *input_array, int input_length, int **output_array, int *output_length);
+   void do_approximation(int *input_array, int input_length, int **output_array, int *output_length);
 
 .. code-block:: vala
 

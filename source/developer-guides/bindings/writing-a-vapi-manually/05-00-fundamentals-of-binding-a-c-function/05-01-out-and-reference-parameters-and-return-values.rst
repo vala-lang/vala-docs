@@ -72,5 +72,5 @@ To return a struct directly, the question mark operator will box it, and make it
    foo *get_foo(int x);
    int make_foo(int y, foo **f);
 
-The ownership rules in :doc:``05-02-ownership`` apply.
+The ownership rules in :doc:`05-02-ownership` apply.
 

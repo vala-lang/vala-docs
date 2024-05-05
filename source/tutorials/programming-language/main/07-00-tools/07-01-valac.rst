@@ -8,7 +8,7 @@ Vala has better information than the C compiler, so it knows certain things are 
 
 Unfortunately we can't just add casts everywhere since there are situations where we can't generate a valid cast (and, what's more, no way to know what those situations are).
 
-For example, compiling the :doc:`Hello World program </../01-00-first-program>` will give us some warnings because ``valac`` by default generates code which is compatible with older versions of the ``GLib``.Some methods may have been deprecated in your new version of GLib so that C language compiler will warn you.
+For example, compiling the :doc:`Hello World program <../01-00-first-program>` will give us some warnings because ``valac`` by default generates code which is compatible with older versions of the ``GLib``.Some methods may have been deprecated in your new version of GLib so that C language compiler will warn you.
 
 Imagine a machine with older glib version want to run your vala program!
 

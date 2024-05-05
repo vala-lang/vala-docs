@@ -10,4 +10,4 @@ It is often the case that a function will return one of its input values, partic
 
 Often C programmers will mark return values as const when they are unowned.
 
-See also: :doc:`10-00-awkward-situations/10-02-dependently-typed-ownership`.
+See also: :doc:`../10-00-awkward-situations/10-02-dependently-typed-ownership`.

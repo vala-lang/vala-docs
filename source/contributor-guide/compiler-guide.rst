@@ -1,5 +1,5 @@
-Hackers' Guide to the Vala Compiler
-===================================
+Compiler Guide
+==============
 
 The goal of this document is to provide a single point of information for developers interested in improving Vala.
 

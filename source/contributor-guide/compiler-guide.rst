@@ -11,6 +11,43 @@ The Vala code is fresh, and easy to read. The variable and class names are descr
 
 This document has been ported from docbook to this wiki in order to be team-maintained and more up-to-date with latest releases of the Vala compiler.
 
+
+License
+-------
+
+The complete text of the GNU Free Documentation License can be found here: `<http://www.gnu.org/licenses/fdl.html>`_.
+
+Acknowledgements
+----------------
+
+This document was originally created in 2008 and updated in 2010. Acknowledgements to the original authors:
+
+**Rodney Lorrimar**
+
+Document Author
+
+**Jürg Billeter**
+
+Vala Author
+
+**Raffaele Sandrini**
+
+Vala Author
+
+**Philip van Hoof**
+
+Contribution of the building Vala section.
+
+Edited by
+~~~~~~~~~
+
+Rodney Lorrimar <rodney@rodney.id.au>
+
+Luca Bruno <lethalman88@gmail.com>
+
+Chapters
+--------
+
 .. toctree::
    :glob:
    :maxdepth: 1

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="author" title="About these documents" href="../../about.html" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="1. Prerequisites" href="writing-a-vapi-manually/01-00-prerequisites.html" /><link rel="prev" title="Why Distribute Bindings Upstream" href="upstream-guide.html" />
+<link rel="author" title="About these documents" href="../../about.html" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Why Distribute Bindings Upstream" href="upstream-guide.html" /><link rel="prev" title="Bindings" href="../bindings.html" />
 
     <link rel="shortcut icon" href="../../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.05.06 -->
-        <title>Writing a VAPI Manually - Vala Documentation</title>
+        <title>Generating a VAPI with GObject Introspection - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7eec22261a5d8917218cec534344987d69e122f4" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -190,7 +190,7 @@
         </button>
       </div>
 
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
 
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
@@ -328,9 +328,9 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Developer Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Developer Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../bindings.html">Bindings</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Bindings</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="generating-a-vapi-with-gobject-introspection.html">Generating a VAPI with GObject Introspection</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Generating a VAPI with GObject Introspection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="upstream-guide.html">Why Distribute Bindings Upstream</a></li>
-<li class="toctree-l3 current has-children current-page"><a class="current reference internal" href="#">Writing a VAPI Manually</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of Writing a VAPI Manually</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="writing-a-vapi-manually.html">Writing a VAPI Manually</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of Writing a VAPI Manually</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing-a-vapi-manually/01-00-prerequisites.html">1. Prerequisites</a></li>
 <li class="toctree-l4 has-children"><a class="reference internal" href="writing-a-vapi-manually/02-00-getting-started.html">2. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of 2. Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l5"><a class="reference internal" href="writing-a-vapi-manually/02-00-getting-started/02-01-the-vapi-file.html">2.1. The VAPI File</a></li>
@@ -434,7 +434,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/colinkiama/vala-docs/edit/main/source/developer-guides/bindings/writing-a-vapi-manually.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/colinkiama/vala-docs/edit/main/source/developer-guides/bindings/generating-a-vapi-with-gobject-introspection.rst" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -446,55 +446,298 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="writing-a-vapi-manually">
-<h1>Writing a VAPI Manually<a class="headerlink" href="#writing-a-vapi-manually" title="Permalink to this heading">¶</a></h1>
-<p>This document intends to be a tutorial and reference on how to write a Vala binding to an existing C library. If the library uses GLib, do not follow this document. Instead read <a class="reference internal" href="generating-a-vapi-with-gobject-introspection.html"><span class="doc">Generating a VAPI with GObject Introspection</span></a>. A library may not follow the GLib coding practices precisely, but it is better to fix the library to work with GObject Introspection than to write a manual binding.</p>
-<p>C programmers are a rather liberal bunch; certain procedures are done in a multitude of ways depending on the mood of the programmer, whereas Vala is much more restricted. This guide cannot possibly cover all possible cases of different APIs written by C programmers. It is your job to understand the C API and present it with Vala-friendly semantics.</p>
-<p>There is a lot of material in this document and that can make it hard to take in at first. A practical approach to working through the tutorial would be to:</p>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line">Bind an enum first because enums are easy to test.</div>
-</div>
-<div class="line-block">
-<div class="line">Once your test gives the expected result you know that the build process works. This means working through the “Getting Started” section and the “Enums and Flags” sub-section. Binding an enum also introduces the idea that there isn’t a straight mapping from C to Vala</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">Bind the creation and destruction of a compact class next.</div>
-</div>
-<div class="line-block">
-<div class="line">This means working through the “Using Vala’s Automatic Memory Management” section and starting to understand that a struct in C can be bound as either a simple type, a struct or a compact class in Vala. The binding can be tested by looking at the C code produced from a single line in Vala like <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">MyBoundCompactClass</span> <span class="pre">();</span></code></div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">Bind methods of the compact class.</div>
-</div>
-<div class="line-block">
-<div class="line">This is when your binding starts to become useful and it will also give an overview of this document. Once you have an overview the document becomes more of a reference for solving tricky function bindings</div>
-</div>
-</li>
-</ol>
-<p>The above assumes that the library is written in an object oriented style of C. A C binding, however, is only made up of structs and functions so understanding that in enough detail is the purpose of the approach.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/01-00-prerequisites.html">1. Prerequisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/02-00-getting-started.html">2. Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/03-00-using-auto-memory-management.html">3. Using Vala’s Automatic Memory Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code.html">4. Recognizing Vala Semantics in C Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function.html">5. Fundamentals of Binding a C Function</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/06-00-adding-vala-friendly-semantics.html">6. Adding Vala Friendly Semantics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types.html">7. Binding a C Function’s Parameter and Return Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/08-00-binding-a-c-struct-s-fields.html">8. Binding a C Struct’s Fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/09-00-extra-hints.html">9. Extra Hints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/10-00-awkward-situations.html">10. Awkward Situations</a></li>
+          <section id="generating-a-vapi-with-gobject-introspection">
+<h1>Generating a VAPI with GObject Introspection<a class="headerlink" href="#generating-a-vapi-with-gobject-introspection" title="Permalink to this heading">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
+<p>Vala is designed to use existing libraries that have a C ABI (Application Binary Interface) without the need for runtime bindings. A Vala program requires a Vala API file (<code class="docutils literal notranslate"><span class="pre">.vapi</span></code>) at compile-time for each library used. A VAPI file contains declarations for a library’s classes, methods, etc. in Vala syntax and how to translate them to C.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">vapigen</span></code> tool is used to generate a VAPI file from a GIR (GObject Introspection Repository) file. <code class="docutils literal notranslate"><span class="pre">vapigen</span></code> is usually included with <code class="docutils literal notranslate"><span class="pre">valac</span></code> by the distributions or a separate Vala tools/development package.</p>
+<p>The binding generation follows several steps:</p>
+<ul class="simple">
+<li><p>get the library’s GIR file</p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">vapigen</span></code> to generate the VAPI binding from the GIR file</p></li>
+<li><p>tweak the binding generation with metadata and custom code</p></li>
 </ul>
+<p>Also read the <a class="reference internal" href="upstream-guide.html"><span class="doc">Upstream Guide</span></a> for details about adding VAPI generation to a projects’ build system. This includes Autotools integration.</p>
+<p>For libraries without annotations for GObject introspection see <a class="reference internal" href="writing-a-vapi-manually.html"><span class="doc">Writing a VAPI Manually</span></a>.</p>
+<p>To use the binding at compile time you will still need the C headers and library installed.</p>
+</section>
+<section id="gobject-introspection-repository-files">
+<h2>GObject Introspection Repository Files<a class="headerlink" href="#gobject-introspection-repository-files" title="Permalink to this heading">¶</a></h2>
+<p>This section explains how a GIR file is created. This is useful when fixing VAPI generation because it is better to fix the GObject introspection annotations in the source file. Then all bindings can benefit from the fix.</p>
+<p>There is also some background information on typelib files and other languages that produce C ABI compatible libraries. This helps put the Vala binding generation process in a wider context.</p>
+<p>If a library generates a GIR file it can usually be obtained from your distribution as part of the development files for the library.</p>
+<section id="source-code-annotations-and-g-ir-scanner">
+<h3>Source Code Annotations and g-ir-scanner<a class="headerlink" href="#source-code-annotations-and-g-ir-scanner" title="Permalink to this heading">¶</a></h3>
+<p>A GIR file is an XML file that describes the objects, structures, constants, enumerations and functions of a library’s public interface.</p>
+<p>The public interface is identified with the use of documentation comments. The comments are in GTK-Doc format. Here is an example from <a class="reference external" href="https://gitlab.gnome.org/GNOME/gtk/blob/gtk-3-22/gtk/gtkbutton.c">gtkbutton.c</a> of the GTK+ graphical user interface library, version 3.22. The GObject introspection annotations are between the parentheses in the comments:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * gtk_button_new_from_icon_name:</span>
+<span class="cm"> * @icon_name: (nullable): an icon name or %NULL</span>
+<span class="cm"> * @size: (type int): an icon size (#GtkIconSize)</span>
+<span class="cm"> *</span>
+<span class="cm"> * Creates a new button containing an icon from the current icon theme.</span>
+<span class="cm"> *</span>
+<span class="cm"> * If the icon name isn’t known, a “broken image” icon will be</span>
+<span class="cm"> * displayed instead. If the current icon theme is changed, the icon</span>
+<span class="cm"> * will be updated appropriately.</span>
+<span class="cm"> *</span>
+<span class="cm"> * This function is a convenience wrapper around gtk_button_new() and</span>
+<span class="cm"> * gtk_button_set_image().</span>
+<span class="cm"> *</span>
+<span class="cm"> * Returns: a new #GtkButton displaying the themed icon</span>
+<span class="cm"> *</span>
+<span class="cm"> * Since: 3.10</span>
+<span class="cm"> */</span>
+<span class="n">GtkWidget</span><span class="o">*</span>
+<span class="nf">gtk_button_new_from_icon_name</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">gchar</span><span class="w"> </span><span class="o">*</span><span class="n">icon_name</span><span class="p">,</span>
+<span class="w">                            </span><span class="n">GtkIconSize</span><span class="w">  </span><span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">GtkWidget</span><span class="w"> </span><span class="o">*</span><span class="n">button</span><span class="p">;</span>
+<span class="w">  </span><span class="n">GtkWidget</span><span class="w"> </span><span class="o">*</span><span class="n">image</span><span class="p">;</span>
+
+<span class="w">  </span><span class="n">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gtk_image_new_from_icon_name</span><span class="w"> </span><span class="p">(</span><span class="n">icon_name</span><span class="p">,</span><span class="w"> </span><span class="n">size</span><span class="p">);</span>
+<span class="w">  </span><span class="n">button</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="n">g_object_new</span><span class="w"> </span><span class="p">(</span><span class="n">GTK_TYPE_BUTTON</span><span class="p">,</span>
+<span class="w">                       </span><span class="s">&quot;image&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">image</span><span class="p">,</span>
+<span class="w">                       </span><span class="nb">NULL</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">button</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 </div>
+<p>In this example the parameter, <code class="docutils literal notranslate"><span class="pre">icon_name</span></code>, has been annotated as nullable. For more details and a list of the annotations read <a class="reference external" href="https://gi.readthedocs.io/en/latest/annotations/giannotations.html">GObject-Introspection Annotations</a>.</p>
+<p>The program <code class="docutils literal notranslate"><span class="pre">g-ir-scanner</span></code> is used to read the C source files and generate the GIR. This is how <code class="docutils literal notranslate"><span class="pre">gtk_button_new_from_icon_name</span></code> looks in the Gtk-3.0.gir file:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;constructor</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;new_from_icon_name&quot;</span>
+<span class="w">           </span><span class="na">c:identifier=</span><span class="s">&quot;gtk_button_new_from_icon_name&quot;</span>
+<span class="w">           </span><span class="na">version=</span><span class="s">&quot;3.10&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;doc</span><span class="w"> </span><span class="na">xml:space=</span><span class="s">&quot;preserve&quot;</span><span class="nt">&gt;</span>Creates<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>button<span class="w"> </span>containing<span class="w"> </span>an<span class="w"> </span>icon<span class="w"> </span>from<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>icon<span class="w"> </span>theme.
+
+If<span class="w"> </span>the<span class="w"> </span>icon<span class="w"> </span>name<span class="w"> </span>isn&#39;t<span class="w"> </span>known,<span class="w"> </span>a<span class="w"> </span>“broken<span class="w"> </span>image”<span class="w"> </span>icon<span class="w"> </span>will<span class="w"> </span>be
+displayed<span class="w"> </span>instead.<span class="w"> </span>If<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>icon<span class="w"> </span>theme<span class="w"> </span>is<span class="w"> </span>changed,<span class="w"> </span>the<span class="w"> </span>icon
+will<span class="w"> </span>be<span class="w"> </span>updated<span class="w"> </span>appropriately.
+
+This<span class="w"> </span>function<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>convenience<span class="w"> </span>wrapper<span class="w"> </span>around<span class="w"> </span>gtk_button_new()<span class="w"> </span>and
+gtk_button_set_image().<span class="nt">&lt;/doc&gt;</span>
+<span class="nt">&lt;return-value</span><span class="w"> </span><span class="na">transfer-ownership=</span><span class="s">&quot;none&quot;</span><span class="nt">&gt;</span>
+<span class="w">  </span><span class="nt">&lt;doc</span><span class="w"> </span><span class="na">xml:space=</span><span class="s">&quot;preserve&quot;</span><span class="nt">&gt;</span>a<span class="w"> </span>new<span class="w"> </span>#GtkButton<span class="w"> </span>displaying<span class="w"> </span>the<span class="w"> </span>themed<span class="w"> </span>icon<span class="nt">&lt;/doc&gt;</span>
+<span class="w">  </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Widget&quot;</span><span class="w"> </span><span class="na">c:type=</span><span class="s">&quot;GtkWidget*&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/return-value&gt;</span>
+<span class="nt">&lt;parameters&gt;</span>
+<span class="w">  </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;icon_name&quot;</span>
+<span class="w">             </span><span class="na">transfer-ownership=</span><span class="s">&quot;none&quot;</span>
+<span class="w">             </span><span class="na">nullable=</span><span class="s">&quot;1&quot;</span>
+<span class="w">             </span><span class="na">allow-none=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;doc</span><span class="w"> </span><span class="na">xml:space=</span><span class="s">&quot;preserve&quot;</span><span class="nt">&gt;</span>an<span class="w"> </span>icon<span class="w"> </span>name<span class="w"> </span>or<span class="w"> </span>%NULL<span class="nt">&lt;/doc&gt;</span>
+<span class="w">    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;utf8&quot;</span><span class="w"> </span><span class="na">c:type=</span><span class="s">&quot;const gchar*&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/parameter&gt;</span>
+<span class="w">  </span><span class="nt">&lt;parameter</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;size&quot;</span><span class="w"> </span><span class="na">transfer-ownership=</span><span class="s">&quot;none&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;doc</span><span class="w"> </span><span class="na">xml:space=</span><span class="s">&quot;preserve&quot;</span><span class="nt">&gt;</span>an<span class="w"> </span>icon<span class="w"> </span>size<span class="w"> </span>(#GtkIconSize)<span class="nt">&lt;/doc&gt;</span>
+<span class="w">    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;gint&quot;</span><span class="w"> </span><span class="na">c:type=</span><span class="s">&quot;GtkIconSize&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/parameter&gt;</span>
+<span class="nt">&lt;/parameters&gt;</span>
+<span class="nt">&lt;/constructor&gt;</span>
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">icon_name</span></code> parameter has <code class="docutils literal notranslate"><span class="pre">nullable=&quot;1&quot;</span></code>. The documentation comments are also included in the GIR and these can be used by Valadoc to create documentation for the interface. For example here is the <a class="reference external" href="https://valadoc.org/gtk+-3.0/Gtk.Button.Button.from_icon_name.html">Button.from_icon_name</a> documentation at Valadoc.org.</p>
+<p>For completeness this next sample shows how <code class="docutils literal notranslate"><span class="pre">Button.from_icon_name</span></code> appears in the gtk+-3.0.vapi:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nd">CCode</span><span class="w"> </span><span class="p">(</span><span class="n">cheader_filename</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gtk/gtk.h&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">type_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;gtk_button_get_type ()&quot;</span><span class="p">)]</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">Button</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Gtk</span><span class="p">.</span><span class="n">Bin</span><span class="p">,</span><span class="w"> </span><span class="n">Atk</span><span class="p">.</span><span class="n">Implementor</span><span class="p">,</span><span class="w"> </span><span class="n">Gtk</span><span class="p">.</span><span class="n">Actionable</span><span class="p">,</span><span class="w"> </span><span class="n">Gtk</span><span class="p">.</span><span class="n">Activatable</span><span class="p">,</span><span class="w"> </span><span class="n">Gtk</span><span class="p">.</span><span class="n">Buildable</span><span class="w"> </span><span class="p">{</span>
+<span class="w">     </span><span class="p">[</span><span class="nd">CCode</span><span class="w"> </span><span class="p">(</span><span class="n">has_construct_function</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GtkWidget*&quot;</span><span class="p">)]</span>
+<span class="w">     </span><span class="p">[</span><span class="n">Version</span><span class="w"> </span><span class="p">(</span><span class="n">since</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;3.10&quot;</span><span class="p">)]</span>
+<span class="w">     </span><span class="kd">public</span><span class="w"> </span><span class="n">Button</span><span class="p">.</span><span class="n">from_icon_name</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="o">?</span><span class="w"> </span><span class="n">icon_name</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="nd">CCode</span><span class="w"> </span><span class="p">(</span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GtkIconSize&quot;</span><span class="p">)]</span><span class="w"> </span><span class="n">Gtk</span><span class="p">.</span><span class="n">IconSize</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Gtk</span><span class="p">.</span><span class="n">IconSize</span><span class="p">.</span><span class="n">BUTTON</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The VAPI has <code class="docutils literal notranslate"><span class="pre">icon_name</span></code> correctly marked as nullable.</p>
+<p>For more details on GObject introspection read <a class="reference external" href="https://gi.readthedocs.io/en/latest/">https://gi.readthedocs.io/en/latest/</a>.</p>
+</section>
+<section id="typelib-files-and-libgirepository">
+<h3>Typelib Files and libgirepository<a class="headerlink" href="#typelib-files-and-libgirepository" title="Permalink to this heading">¶</a></h3>
+<p>You may come across documentation about generating a GIR from a typelib file, but GIR files generated in this way will have lost relevant information and lead to an awkward binding with Vala.</p>
+</section>
+<section id="other-languages-that-support-the-c-abi">
+<h3>Other Languages that Support the C ABI<a class="headerlink" href="#other-languages-that-support-the-c-abi" title="Permalink to this heading">¶</a></h3>
+<p>At present GObject introspection only works with annotations of C code. Other languages, however, can compile libraries that maintain the C ABI. For example Go has the <code class="docutils literal notranslate"><span class="pre">-buildmode=c-shared</span></code> option. This tutorial, <a class="reference external" href="https://medium.com/learning-the-go-programming-language/calling-go-functions-from-other-languages-4c7d8bcc69bf">Calling Go Functions from Other Languages</a> explains more about Go’s <code class="docutils literal notranslate"><span class="pre">c-shared</span></code> build mode. Rust also can produce C ABI compatible code with the <code class="docutils literal notranslate"><span class="pre">extern</span></code> keyword and <code class="docutils literal notranslate"><span class="pre">#[no_mangle]</span></code>. See the ‘Calling Rust code from C’ section of <a class="reference external" href="https://doc.rust-lang.org/book/first-edition/ffi.html">FFI - The Rust Programming Language</a>. GIR files can be used to create bindings for many languages, including Python, Lua, Javascript and Haskell. If Go or Rust or any other language that can compile code to the C ABI can also produce GIR files then it may be possible to automatically generate bindings using existing generators like <code class="docutils literal notranslate"><span class="pre">vapigen</span></code>.</p>
+</section>
+</section>
+<section id="generating-the-vapi-file">
+<h2>Generating the VAPI File<a class="headerlink" href="#generating-the-vapi-file" title="Permalink to this heading">¶</a></h2>
+<p>To convert the <code class="docutils literal notranslate"><span class="pre">.gir</span></code> file into a Vala API file use:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>vapigen<span class="w"> </span>--library<span class="w"> </span>poppler-glib<span class="w"> </span>poppler-glib/poppler-glib.gir
+</pre></div>
+</div>
+<p>If you are updating an officially maintained vala binding in the source code tree, you can go in the vapi directory and run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>../vapigen/vapigen<span class="w"> </span>--library<span class="w"> </span>clutter-gtk-1.0<span class="w"> </span>--vapidir<span class="o">=</span>.<span class="w"> </span>--metadatadir<span class="o">=</span>packages/clutter-gtk-1.0/<span class="w"> </span>packages/clutter-gtk-1.0/clutter-gtk-1.0.gir
+</pre></div>
+</div>
+<p>or just:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>make<span class="w"> </span>clutter-gtk-1.0
+</pre></div>
+</div>
+<p>Do not forget to include the packages needed by the library. If the library uses GTK+ and GConf, use:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>vapigen<span class="w"> </span>--pkg<span class="w"> </span>gtk+-2.0<span class="w"> </span>--pkg<span class="w"> </span>gconf-2.0<span class="w"> </span>--library<span class="w"> </span><span class="o">[</span>...<span class="o">]</span>
+</pre></div>
+</div>
+<p>Otherwise you’ll get errors like that, or an incomplete binding:</p>
+<div class="highlight-output notranslate"><div class="highlight"><pre><span></span><span class="go">error: The type name ``GLib.tkWidget&#39; could not be found</span>
+</pre></div>
+</div>
+</section>
+<section id="fixing-vapi-generation-with-metadata">
+<h2>Fixing VAPI Generation with Metadata<a class="headerlink" href="#fixing-vapi-generation-with-metadata" title="Permalink to this heading">¶</a></h2>
+<p>Sometimes it is necessary to fix up the generated VAPI file; for instance, <code class="docutils literal notranslate"><span class="pre">vapigen</span></code> might not identify <code class="docutils literal notranslate"><span class="pre">out</span></code> or <code class="docutils literal notranslate"><span class="pre">ref</span></code> parameters, or identify structures that should generally be put on the stack instead of allocated, and passed by reference to methods.</p>
+<p>Instead of updating the VAPI file, and keeping it updated with every upstream API change, <code class="docutils literal notranslate"><span class="pre">vapigen</span></code> output can be tweaked with a <code class="docutils literal notranslate"><span class="pre">.metadata</span></code> file. For instance, in <em>poppler-glib</em> the <em>poppler_page_get_size</em> function has two out parameters, <em>width</em> and <em>height</em>; in order to create a valid Vala signature in our VAPI file, we need to add these lines inside the <code class="docutils literal notranslate"><span class="pre">poppler-glib.metadata</span></code> file:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>poppler_page_get_size.width<span class="w"> </span>is_out=&quot;1&quot;
+poppler_page_get_size.height<span class="w"> </span>is_out=&quot;1&quot;
+</pre></div>
+</div>
+<p>Which translates to: “the <em>width</em> parameter of <em>poppler_page_get_size</em> is an out parameter” and “the <em>height</em> parameter of <em>poppler_page_get_size</em> is an out parameter”.</p>
+<p>Metadata files must have the same base name as the GIR, but instead of a <code class="docutils literal notranslate"><span class="pre">gir</span></code> extension they use <code class="docutils literal notranslate"><span class="pre">metadata</span></code>.</p>
+<p>To get vapigen to pick up your metadata file, you must provide the name of the directory to look for it in:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vapigen \</span>
+<span class="go">    --library foo \</span>
+<span class="go">    --pkg bar-1.0 \</span>
+<span class="go">    --metadatadir ./metadata/ \</span>
+<span class="go">    Foo-1.0.gir</span>
+</pre></div>
+</div>
+<p>GObject Introspection and Vala support different things. Sometimes one not supporting something the other does is a bug, sometimes it is that one has made certain assumptions about APIs that the other does not. If there is a problem generating the VAPI then it is best to work through the problem in this order:</p>
+<ol class="arabic simple">
+<li><p>Check the C source for missing GObject Introspection annotations, e.g. null</p></li>
+<li><p>Check the arguments to <code class="docutils literal notranslate"><span class="pre">g-ir-scanner</span></code>, e.g. C header files</p></li>
+<li><p>Add metadata for <code class="docutils literal notranslate"><span class="pre">vapigen</span></code></p></li>
+</ol>
+<p>For detailed information on the features and syntax of metadata files, see the Vala Manual section on <a class="reference external" href="https://gnome.pages.gitlab.gnome.org/vala/manual/gir-metadata-format.html">GIR metadata format</a>.</p>
+</section>
+<section id="c-headers">
+<h2>C Headers<a class="headerlink" href="#c-headers" title="Permalink to this heading">¶</a></h2>
+<p>Most libraries tend to install one header file, which will then include any additional headers. If the VAPI does not have the correct header filename then the best fix is to amened the generation process of the GIR. To include a C header filename in a GIR <code class="docutils literal notranslate"><span class="pre">g-ir-scanner</span></code> has the <code class="docutils literal notranslate"><span class="pre">--c-include</span></code> option. For example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">g-ir-scanner --c-include=example/example.h project_source.c</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">vapigen</span></code> will then use this filename from the GIR.</p>
+<p>Some libraries need multiple header files in the VAPI. Using <code class="docutils literal notranslate"><span class="pre">--c-include</span></code> multiple times will allow these to be included in the GIR and so included in the VAPI.</p>
+<p>If it is not possible to amend the GIR generation then the header can be included using <code class="docutils literal notranslate"><span class="pre">vapigen</span></code> and metadata. This can be done for a namespace or for a type. For example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>PnpIds<span class="w"> </span>cheader_filename=&quot;libgnome-desktop/gnome-pnp-ids.h&quot;
+</pre></div>
+</div>
+<section id="duplicate-symbols">
+<h3>Duplicate Symbols<a class="headerlink" href="#duplicate-symbols" title="Permalink to this heading">¶</a></h3>
+<p>The single most common error seen the first time one tries to generate a VAPI is one about duplicate symbols. Vala has a single scope for methods, virtual methods, signals, and properties. Assuming that the signatures match, vapigen will automatically combine several of these into a single entity–the most extreme example of this is probably a virtual signal, which can combine a signal, virtual method, and method in one item. For example, GIO has the following in GLib.Application:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">HasEmitter</span><span class="p">]</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">virtual</span><span class="w"> </span><span class="kd">signal</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">activate</span><span class="w"> </span><span class="p">();</span>
+</pre></div>
+</div>
+<p>That said, some conflicts cannot be resolved automatically by vapigen and will require some metadata. The most common conflict is when a method, virtual method, or signal disagrees with another method, virtual method, or signal with the same name regarding arguments or return values. For example, <a class="reference external" href="https://developer-old.gnome.org/clutter/stable/ClutterActor.html">ClutterActor</a> has an <a class="reference external" href="https://developer-old.gnome.org/clutter/stable/ClutterActor.html#ClutterActor-event">event signal</a>, which takes a single argument: a <a class="reference external" href="http://developer-old.gnome.org/clutter/stable/clutter-Events.html#ClutterEvent">ClutterEvent</a> intance. It also has an <a class="reference external" href="http://developer-old.gnome.org/clutter/stable/ClutterActor.html#clutter-actor-event">event method</a> which takes two arguments: a ClutterEvent instance and a boolean. In this case, we resolve the conflict by renaming the method to “emit_event”:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>Actor.event#method<span class="w"> </span>name=&quot;emit_event&quot;
+</pre></div>
+</div>
+<p>Another common problem is when a symbol of a subclass has the same name as that of a base class but the signatures do not match. Depending on the situation, you can rename or skip one of the symbols (usually in the subclass).</p>
+</section>
+<section id="nested-namespaces">
+<h3>Nested Namespaces<a class="headerlink" href="#nested-namespaces" title="Permalink to this heading">¶</a></h3>
+<p>GIR does not support nested namespaces (<a class="reference external" href="https://bugzilla.gnome.org/show_bug.cgi?id=660879">bug #660879</a>), but Vala does. If you prefer, you can just ignore this Vala feature, but some bindings can be quite a bit cleaner if we make use of it.</p>
+<p>A good example of nested namespaces in Vala is moving the hundreds of keysmys in Clutter into a Clutter.Key namespace, allowing us to use Clutter.Key.Right instead of Clutter.KEY_Right. This is accomplished with a single line of metadata:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>KEY_*<span class="w"> </span>skip=false<span class="w"> </span>name=&quot;KEY_(.+)&quot;<span class="w"> </span>parent=&quot;Clutter.Key&quot;
+</pre></div>
+</div>
+<p>We can also use the same technique to group similar functions together, like for the <a class="reference external" href="http://developer-old.gnome.org/gio/stable/gio-GContentType.html">GContentType</a> family in GIO:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>content_type_*<span class="w"> </span>parent=&quot;GLib.ContentType&quot;<span class="w"> </span>name=&quot;content_type_(.*)&quot;
+</pre></div>
+</div>
+</section>
+<section id="nullability-of-return-values">
+<h3>Nullability of Return Values<a class="headerlink" href="#nullability-of-return-values" title="Permalink to this heading">¶</a></h3>
+<p>GIR assumes all pointer return values are nullable (“allow-none” in G-I terminology) and does not provide a way to override this assumption (<a class="reference external" href="https://bugzilla.gnome.org/show_bug.cgi?id=660879">bug #660879</a>). Vala, on the other hand, assumes return values are not nullable unless otherwise otherwise specified, and comparing a non-nullable value to null (e.g., to check for validity) will cause a warning. Luckily, making a value nullable is easy to do from a metadata file, as you can see from this example (for <a class="reference external" href="http://developer-old.gnome.org/clutter/stable/ClutterActor.html#clutter-actor-get-parent">clutter_actor_get_parent</a>):</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>Actor.get_parent<span class="w"> </span>nullable
+</pre></div>
+</div>
+</section>
+<section id="variadic-functions">
+<h3>Variadic Functions<a class="headerlink" href="#variadic-functions" title="Permalink to this heading">¶</a></h3>
+<p>GObject introspection does not currently support variadic methods. It actually generates all the information Vala needs to do so, but it will mark the function as introspectable=”0”, which is the same that happens when you add a “skip” annotation to the method. Therefore, in order to expose these functions in Vala, we need a simple annotation to un-skip the symbol. For example, this is how <a class="reference external" href="http://developer-old.gnome.org/clutter/stable/clutter-Implicit-Animations.html#clutter-actor-animate">clutter_actor_animate</a> is exposed from metadata:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>Actor.animate<span class="w"> </span>skip=false
+</pre></div>
+</div>
+</section>
+<section id="ownership-of-struct-fields">
+<h3>Ownership of Struct Fields<a class="headerlink" href="#ownership-of-struct-fields" title="Permalink to this heading">¶</a></h3>
+<p>GObject introspection does not currently offer a way to specify whether or not fields contain an owned reference. It is therefore impossible for Vala to know whether or not it should ref or copy a value being assigned to this field. Again, this is easy to fix with metadata… using <a class="reference external" href="http://developer.gnome.org/gio/stable/gio-D-Bus-Introspection-Data.html#GDBusAnnotationInfo-struct">GDBusAnnotationInfo</a> as an example:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>DBusAnnotationInfo.*#field<span class="w"> </span>unowned=false
+</pre></div>
+</div>
+</section>
+<section id="virtual-methods-without-invokers">
+<h3>Virtual Methods Without Invokers<a class="headerlink" href="#virtual-methods-without-invokers" title="Permalink to this heading">¶</a></h3>
+<p>Some libraries contain virtual methods without emitters, which GObject introspection does not currently offer a way to annotate (<a class="reference external" href="https://bugzilla.gnome.org/show_bug.cgi?id=730480">bug #730480</a>). Fixing these basically means adding any information that would normally go in annotations to the metadata.</p>
+</section>
+<section id="abstract-virtual-distinction">
+<h3>Abstract/Virtual Distinction<a class="headerlink" href="#abstract-virtual-distinction" title="Permalink to this heading">¶</a></h3>
+<p>Vala distinguishes between abstract and virtual methods (virtual methods do not need to be implemented by an class which implements the interface whereas abstract methods do require an implementation) while GIR does not. In order to mark a method as virtual instead of abstract, you could do something like this (from <a class="reference external" href="http://developer-old.gnome.org/gtksourceview/stable/GtkSourceCompletionProposal.html#gtk-source-completion-proposal-equal">gtk_source_completion_proposal_equal</a>):</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>CompletionProposal.equal#virtual_method<span class="w"> </span>virtual
+</pre></div>
+</div>
+</section>
+<section id="generic-types">
+<h3>Generic Types<a class="headerlink" href="#generic-types" title="Permalink to this heading">¶</a></h3>
+<p>GObject Introspection only supports a few different generic types, and that support is hard-coded and cannot currently be extended to other types which should be generic (<a class="reference external" href="https://bugzilla.gnome.org/show_bug.cgi?id=639908">bug #639908</a>). For example, <a class="reference external" href="http://developer-old.gnome.org/glib/unstable/glib-Keyed-Data-Lists.html">GDataList</a> is a generic in Vala but is not supported as such by GObject Introspection, so the the following is necessary for <a class="reference external" href="http://developer.gnome.org/libsoup/stable/libsoup-2.4-HTML-Form-Support.html#soup-form-encode-datalist">soup_form_encode_datalist</a>:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>form_encode_datalist.form_data_set<span class="w"> </span>type_arguments=&quot;string&quot;
+</pre></div>
+</div>
+</section>
+<section id="gclosure-types">
+<h3>GClosure Types<a class="headerlink" href="#gclosure-types" title="Permalink to this heading">¶</a></h3>
+<p>GIR does not provide a way to annotate the type of a callback (<a class="reference external" href="https://bugzilla.gnome.org/show_bug.cgi?id=636812">bug #636812</a>) contained in a <a class="reference external" href="http://developer-old.gnome.org/gobject/stable/gobject-Closures.html">GClosure</a>. Although this is not an error which will cause bindings to not be generated, the result is an API that is extremely difficult to use correctly. For example, you can provide the delegate type of <a class="reference external" href="http://developer-old.gnome.org/clutter/stable/clutter-Key-Bindings.html#clutter-binding-pool-install-closure">clutter_binding_pool_install_closure</a> from the metadata:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>BindingPool.install_closure.closure<span class="w"> </span>type=&quot;owned<span class="w"> </span>BindingActionFunc&quot;
+</pre></div>
+</div>
+</section>
+<section id="inheritance">
+<h3>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this heading">¶</a></h3>
+<p>GObject Introspection currently only handles inheritance for GObject-derived types (<a class="reference external" href="https://bugzilla.gnome.org/show_bug.cgi?id=560692">bug #560692</a>).  To get around it in metadata you can use “base_type”:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>Buffer<span class="w"> </span>base_type=&quot;Gst.MiniObject&quot;
+</pre></div>
+</div>
+</section>
+<section id="asynchronous-finish-functions">
+<h3>Asynchronous Finish Functions<a class="headerlink" href="#asynchronous-finish-functions" title="Permalink to this heading">¶</a></h3>
+<p>GObject Introspection does not currently offer a way to annotate the relationship between an async function and its corresponding finish function (<a class="reference external" href="https://bugzilla.gnome.org/show_bug.cgi?id=623635">bug #623635</a>).  By default Vala will look for function with the same base name, but a “_finish” suffix, but you can point it to other functions in metadata using “finish_name”:</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span>Service.lookupv<span class="w"> </span>finish_name=&quot;secret_service_lookup_finish&quot;
+</pre></div>
+</div>
+</section>
+<section id="macros">
+<h3>Macros<a class="headerlink" href="#macros" title="Permalink to this heading">¶</a></h3>
+<p>Since GObject Introspection is focused primarily on runtime bindings for languages such as Python and JavaScript, it ignores preprocessor macros.  Although this decision makes sense for them (you can’t dlsym(3) a macro), Vala is capable of utilizing macros.  However, since no information on macros is included in the GIR the only way to expose macros is by adding them to a <a href="#id2"><span class="problematic" id="id3">*</span></a>-custom.vala file.</p>
+</section>
+</section>
+<section id="fixing-vapi-generation-with-custom-vala-code">
+<h2>Fixing VAPI Generation with Custom Vala Code<a class="headerlink" href="#fixing-vapi-generation-with-custom-vala-code" title="Permalink to this heading">¶</a></h2>
+<p>Remember that thing about the world not being perfect? Well, a metadata file isn’t always enough either. Sometimes you’ll need the ability to inject custom Vala code into your VAPI. Technically, this file can have any name and there can be more than one per package, but the convention is to use the same file name and directory as the GIR followed by “-custom.vala”. For instance, our Foo-1.0.gir might have a corresponding metadata file named Foo-1.0-custom.vala. Once you have your custom Vala file, simply include it in the argument list you pass to <code class="docutils literal notranslate"><span class="pre">vapigen</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vapigen \</span>
+<span class="go">    --library foo-1.0 \</span>
+<span class="go">    --pkg bar-1.0 \</span>
+<span class="go">    --metadatadir ./metadata/ \</span>
+<span class="go">    Foo-1.0.gir \</span>
+<span class="go">    Foo-1.0-custom.vala</span>
+</pre></div>
+</div>
+<section id="no-generic-methods">
+<h3>No Generic Methods<a class="headerlink" href="#no-generic-methods" title="Permalink to this heading">¶</a></h3>
+<p>Vala supports generic methods, such as <a class="reference external" href="http://developer.gnome.org/gobject/stable/gobject-The-Base-Object-Type.html#g-object-get">g_object_get</a>, while GObject Introspection does not. Unfortunately, metadata alone cannot currently resolve this issue–you will need to skip the method in metadata and recreate it in custom.vala.</p>
+</section>
+</section>
+<section id="a-note-on-the-deprecated-gidl-method">
+<h2>A Note on the Deprecated GIDL Method<a class="headerlink" href="#a-note-on-the-deprecated-gidl-method" title="Permalink to this heading">¶</a></h2>
+<p>The traditional approach was to use <a class="reference external" href="https://wiki.gnome.org/Projects/Vala/Bindings/GI">vala-gen-introspect</a> to generate <code class="docutils literal notranslate"><span class="pre">.gi</span></code> files. Then use <code class="docutils literal notranslate"><span class="pre">vapigen</span></code> to generate the VAPI. This method is now deprecated.</p>
+<p>For the maintenance of existing bindings see the Vala Manual <a class="reference external" href="https://gnome.pages.gitlab.gnome.org/vala/manual/gidl-metadata-format.html">GIDL metadata format</a>. This metadata format was used to control the generation of the VAPI from a <code class="docutils literal notranslate"><span class="pre">.gi</span></code> file.</p>
+</section>
 </section>
 
         </article>
@@ -502,23 +745,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="writing-a-vapi-manually/01-00-prerequisites.html">
+          <a class="next-page" href="upstream-guide.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title"><span class="section-number">1. </span>Prerequisites</div>
+                <div class="title">Why Distribute Bindings Upstream</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="upstream-guide.html">
+          <a class="prev-page" href="../bindings.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Why Distribute Bindings Upstream</div>
+                <div class="title">Bindings</div>
                 
               </div>
             </a>
@@ -527,8 +770,55 @@
       </footer>
 
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Generating a VAPI with GObject Introspection</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#gobject-introspection-repository-files">GObject Introspection Repository Files</a><ul>
+<li><a class="reference internal" href="#source-code-annotations-and-g-ir-scanner">Source Code Annotations and g-ir-scanner</a></li>
+<li><a class="reference internal" href="#typelib-files-and-libgirepository">Typelib Files and libgirepository</a></li>
+<li><a class="reference internal" href="#other-languages-that-support-the-c-abi">Other Languages that Support the C ABI</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#generating-the-vapi-file">Generating the VAPI File</a></li>
+<li><a class="reference internal" href="#fixing-vapi-generation-with-metadata">Fixing VAPI Generation with Metadata</a></li>
+<li><a class="reference internal" href="#c-headers">C Headers</a><ul>
+<li><a class="reference internal" href="#duplicate-symbols">Duplicate Symbols</a></li>
+<li><a class="reference internal" href="#nested-namespaces">Nested Namespaces</a></li>
+<li><a class="reference internal" href="#nullability-of-return-values">Nullability of Return Values</a></li>
+<li><a class="reference internal" href="#variadic-functions">Variadic Functions</a></li>
+<li><a class="reference internal" href="#ownership-of-struct-fields">Ownership of Struct Fields</a></li>
+<li><a class="reference internal" href="#virtual-methods-without-invokers">Virtual Methods Without Invokers</a></li>
+<li><a class="reference internal" href="#abstract-virtual-distinction">Abstract/Virtual Distinction</a></li>
+<li><a class="reference internal" href="#generic-types">Generic Types</a></li>
+<li><a class="reference internal" href="#gclosure-types">GClosure Types</a></li>
+<li><a class="reference internal" href="#inheritance">Inheritance</a></li>
+<li><a class="reference internal" href="#asynchronous-finish-functions">Asynchronous Finish Functions</a></li>
+<li><a class="reference internal" href="#macros">Macros</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#fixing-vapi-generation-with-custom-vala-code">Fixing VAPI Generation with Custom Vala Code</a><ul>
+<li><a class="reference internal" href="#no-generic-methods">No Generic Methods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#a-note-on-the-deprecated-gidl-method">A Note on the Deprecated GIDL Method</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

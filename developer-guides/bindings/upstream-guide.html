@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="author" title="About these documents" href="../../about.html" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="1. Prerequisites" href="writing-a-vapi-manually/01-00-prerequisites.html" /><link rel="prev" title="Why Distribute Bindings Upstream" href="upstream-guide.html" />
+<link rel="author" title="About these documents" href="../../about.html" /><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Writing a VAPI Manually" href="writing-a-vapi-manually.html" /><link rel="prev" title="Generating a VAPI with GObject Introspection" href="generating-a-vapi-with-gobject-introspection.html" />
 
     <link rel="shortcut icon" href="../../_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.05.06 -->
-        <title>Writing a VAPI Manually - Vala Documentation</title>
+        <title>Why Distribute Bindings Upstream - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7eec22261a5d8917218cec534344987d69e122f4" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -190,7 +190,7 @@
         </button>
       </div>
 
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
 
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
@@ -329,8 +329,8 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Developer Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Developer Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../bindings.html">Bindings</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Bindings</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="generating-a-vapi-with-gobject-introspection.html">Generating a VAPI with GObject Introspection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="upstream-guide.html">Why Distribute Bindings Upstream</a></li>
-<li class="toctree-l3 current has-children current-page"><a class="current reference internal" href="#">Writing a VAPI Manually</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of Writing a VAPI Manually</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Why Distribute Bindings Upstream</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="writing-a-vapi-manually.html">Writing a VAPI Manually</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of Writing a VAPI Manually</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="writing-a-vapi-manually/01-00-prerequisites.html">1. Prerequisites</a></li>
 <li class="toctree-l4 has-children"><a class="reference internal" href="writing-a-vapi-manually/02-00-getting-started.html">2. Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle navigation of 2. Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l5"><a class="reference internal" href="writing-a-vapi-manually/02-00-getting-started/02-01-the-vapi-file.html">2.1. The VAPI File</a></li>
@@ -434,7 +434,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/colinkiama/vala-docs/edit/main/source/developer-guides/bindings/writing-a-vapi-manually.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/colinkiama/vala-docs/edit/main/source/developer-guides/bindings/upstream-guide.rst" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -446,55 +446,161 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="writing-a-vapi-manually">
-<h1>Writing a VAPI Manually<a class="headerlink" href="#writing-a-vapi-manually" title="Permalink to this heading">¶</a></h1>
-<p>This document intends to be a tutorial and reference on how to write a Vala binding to an existing C library. If the library uses GLib, do not follow this document. Instead read <a class="reference internal" href="generating-a-vapi-with-gobject-introspection.html"><span class="doc">Generating a VAPI with GObject Introspection</span></a>. A library may not follow the GLib coding practices precisely, but it is better to fix the library to work with GObject Introspection than to write a manual binding.</p>
-<p>C programmers are a rather liberal bunch; certain procedures are done in a multitude of ways depending on the mood of the programmer, whereas Vala is much more restricted. This guide cannot possibly cover all possible cases of different APIs written by C programmers. It is your job to understand the C API and present it with Vala-friendly semantics.</p>
-<p>There is a lot of material in this document and that can make it hard to take in at first. A practical approach to working through the tutorial would be to:</p>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line">Bind an enum first because enums are easy to test.</div>
+          <section id="why-distribute-bindings-upstream">
+<h1>Why Distribute Bindings Upstream<a class="headerlink" href="#why-distribute-bindings-upstream" title="Permalink to this heading">¶</a></h1>
+<p>While a number of bindings for third-party libraries are maintained as part of Vala itself, this is not the recommended method for providing Vala bindings. When possible, projects are encouraged to distribute their own Vala bindings. Doing so provides a number of advantages to both you and your users, including:</p>
+<section id="catch-errors-earlier">
+<h2>Catch errors earlier<a class="headerlink" href="#catch-errors-earlier" title="Permalink to this heading">¶</a></h2>
+<p>In order to find problems with most GObject Introspection bindings you must actually write code to test that code path. Since vapigen generates a VAPI for an entire API ahead of time it will help you detect many common problems, such as mismatched methods and virtual methods.  Furthermore, since VAPIs are much easier to read than GIR XML, taking a quick look at the generated VAPI when changing API can help you spot bugs before they even make it into your repository.</p>
+</section>
+<section id="annotation-bugs-get-fixed-quicker">
+<h2>Annotation bugs get fixed quicker<a class="headerlink" href="#annotation-bugs-get-fixed-quicker" title="Permalink to this heading">¶</a></h2>
+<p>Vala users will often find bugs which aren’t actually specific to the Vala bindings, but rather exist in any GObject Introspection consumer. Distributing bindings with your library means you will receive bug reports about such issues sooner.</p>
+</section>
+<section id="matching-the-version-of-the-installed-software">
+<h2>Matching the version of the installed software<a class="headerlink" href="#matching-the-version-of-the-installed-software" title="Permalink to this heading">¶</a></h2>
+<p>When bindings are distributed with Vala, or externally, it’s unlikely the version of your software the bindings are targeted at is the same as the version that is actually installed.  Bindings which are targeted at an older release may not expose features present in the newer version, and bindings targeted at a newer release may result in C compiler errors.</p>
+</section>
+<section id="higher-quality-bindings">
+<h2>Higher quality bindings<a class="headerlink" href="#higher-quality-bindings" title="Permalink to this heading">¶</a></h2>
+<p>You know your library better than the Vala developers do and you can make sure your APIs look, and behave, as you intended.</p>
+</section>
+<section id="api-documentation">
+<h2>API documentation<a class="headerlink" href="#api-documentation" title="Permalink to this heading">¶</a></h2>
+<p>We provide documentation for many libraries which ship a VAPI on <a class="reference external" href="https://www.valadoc.org/">Valadoc.org</a>.</p>
+<p><strong>But…</strong></p>
+</section>
+<section id="why-not-use-gobject-introspection-directly">
+<h2>Why not use GObject Introspection directly?<a class="headerlink" href="#why-not-use-gobject-introspection-directly" title="Permalink to this heading">¶</a></h2>
+<p>Sometimes it can, but we generally discourage it for several reasons.  Obviously, you’ll no longer receive the benefits mentioned in the preceding section, but there are also several problems that occur for people attempting to consume your API in Vala.</p>
+<p>Using a GIRs directly tends to cause people to use other GIRs directly, either on accident or because they believe there is nothing wrong with doing so, but even if your GIR doesn’t require any metadata others likely will.  For example, if your GIR includes Gio-2.0 and the user doesn’t pass --pkg gio-2.0, the GIR for GIO will be included automatically by the compiler instead of the VAPI.  GIO is one of those libraries which does require metadata, and valac will exit with an error.  These issues can be circumvented by passing the appropriate flags to valac, although this can be a bit confusing for users who expect valac automatically handle dependencies for them.</p>
+<p>GObject Introspection also allows for some things which Vala does not, which is where the real problems begin. These issues can cause errors from Vala’s GIR parser (like the ones mentioned earier from GIO), resulting in your GIR being useless to valac.  The classic example of this is duplicate symbols; GObject Introspection allows for methods, virtual methods, and signals with the same name but different signatures to coexist, whereas Vala does not.</p>
+<p>In general, Vala allows for much more API to be exposed than what GObject Introspection allows for, including generics (other than the ones built into glib), variadic arguments, default values, non-GObject inheritance, and much more. Not distributing a VAPI can deprive Vala consumers of many extremely interesting features.</p>
+<p>Those libraries who choose not to distribute a VAPI are likely to end up eventually shipping a GIR which causes errors for Vala, breaking working applications.</p>
+</section>
+<section id="i-don-t-know-anything-about-vala-or-vala-bindings">
+<h2>I Don’t Know Anything About Vala (or Vala Bindings)<a class="headerlink" href="#i-don-t-know-anything-about-vala-or-vala-bindings" title="Permalink to this heading">¶</a></h2>
+<p>Don’t worry about it. The people who maintain Vala are happy to help maintain bindings distributed upstream. After all, it isn’t really any more effort to fix something in your repository than in Vala’s. Just drop by the <a class="reference external" href="https://matrix.to/#/#vala:gnome.org">Vala Matrix Room</a>.</p>
+</section>
+<section id="how-vala-bindings-work">
+<h2>How Vala Bindings Work<a class="headerlink" href="#how-vala-bindings-work" title="Permalink to this heading">¶</a></h2>
+<p>Vala bindings tend to be much smaller, and simpler, than those for traditional languages such as Python, PHP, and even C++. This is because instead of creating functions which will convert between the C API you want to use and the data structures used natively by your language of choice Vala simply uses the C API directly.</p>
+<p>The names of Vala bindings correspond to <a class="reference external" href="http://www.freedesktop.org/wiki/Software/pkg-config">pkg-config</a> files, which allows valac to build and link software without any information other than the code to compile and a list of packages to use. All (one or two) of the files which should be distributed are simply the pkg-config name and an extension.</p>
+<p>The only required file is a VAPI, which tells valac how to map Vala code to C. Sometimes these files are handwritten, but where <a class="reference external" href="https://gi.readthedocs.io/en/latest/index.html">GObject Introspection</a> support is available the bindings can be automatically generated from a GIR. For examples of VAPI files, please see <a class="reference external" href="http://git.gnome.org/browse/vala/tree/vapi">the bindings distributed with Vala</a>.</p>
+<p>The only other file that should be distributed is a <cite>deps</cite> file, which lists <cite>pkg-config</cite> names of any dependencies exposed in the public API. Although not technically required, this file helps avoid confusing errors about undefined symbols.</p>
+<p>There are three methods for creating a VAPI, one of which (generation from GIDL) is deprecated and shall not be described in this document. The easy way to generate a VAPI is by using vapigen to create one from a GObject Introspection Repository (GIR). When that is not possible, you can always write the VAPI by hand.</p>
+</section>
+<section id="generating-a-vapi-from-gobject-introspection">
+<h2>Generating a VAPI from GObject Introspection<a class="headerlink" href="#generating-a-vapi-from-gobject-introspection" title="Permalink to this heading">¶</a></h2>
+<p>If your library is based on GObject, you will probably want to use <a class="reference external" href="https://gi.readthedocs.io/en/latest/index.html">GObject Introspection</a>. Besides being the easiest way to get Vala bindings, you also get bindings for a growing number of other languages and most of the maintenance burden is shared.</p>
+<section id="generating-a-gir">
+<h3>Generating a GIR<a class="headerlink" href="#generating-a-gir" title="Permalink to this heading">¶</a></h3>
+<p>The first step to generating Vala bindings from a GIR is to make sure you have a GIR. A GIR can be generated from source code using <cite>g-ir-scanner</cite>. Documentation for <a class="reference external" href="https://gi.readthedocs.io/en/latest/buildsystems/autotoolsintegration.html">integration with autotools is available</a></p>
+<p>The GObject introspection team provides lots of information on <a class="reference external" href="https://gi.readthedocs.io/en/latest/index.html">GObject Introspection</a> which will not be repeated here.</p>
+</section>
+<section id="generating-a-vapi-from-a-gir">
+<h3>Generating a VAPI from a GIR<a class="headerlink" href="#generating-a-vapi-from-a-gir" title="Permalink to this heading">¶</a></h3>
+<p>Once you have a GIR, you can get to work on generating a VAPI, which means executing vapigen. If the pkg-config name of your library were “foo-1.0”, it would look something like this:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vapigen \</span>
+<span class="go">    --library foo-1.0 \</span>
+<span class="go">    Foo-1.0.gir</span>
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line">Once your test gives the expected result you know that the build process works. This means working through the “Getting Started” section and the “Enums and Flags” sub-section. Binding an enum also introduces the idea that there isn’t a straight mapping from C to Vala</div>
+<p>You will most likely also need to provide a list of dependencies to vapigen:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">vapigen \</span>
+<span class="go">    --library foo-1.0 \</span>
+<span class="go">    --pkg bar-1.0 \</span>
+<span class="go">    Foo-1.0.gir</span>
+</pre></div>
 </div>
-</li>
-<li><div class="line-block">
-<div class="line">Bind the creation and destruction of a compact class next.</div>
+<p>The VAPI generation process may require some further tweaking. This is done with a <cite>.metadata</cite> file passed to <cite>vapigen</cite>. Sometimes custom Vala code also needs to be passed. See <a class="reference internal" href="generating-a-vapi-with-gobject-introspection.html"><span class="doc">Generating a VAPI with GObject Introspection</span></a> for more details.</p>
+</section>
+<section id="autotools-integration">
+<h3>Autotools Integration<a class="headerlink" href="#autotools-integration" title="Permalink to this heading">¶</a></h3>
+<p>Since version 0.16, Vala has provided autotools integration for vapigen similar to what GI provides for g-ir-scanner in the form of an autoconf macro and a Makefile. In order to avoid introducing a hard dependency to your project, it is recommended you copy the <a class="reference external" href="https://gitlab.gnome.org/GNOME/vala/-/blob/master/vapigen/vapigen.m4">vapigen.m4</a> file into your macro directory (usually an m4/ folder in the top level of your project). The macro has the following signature:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">VAPIGEN_CHECK([VERSION], [API_VERSION], [FOUND-INTROSPECTION], [DEFAULT])</span>
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line">This means working through the “Using Vala’s Automatic Memory Management” section and starting to understand that a struct in C can be bound as either a simple type, a struct or a compact class in Vala. The binding can be tested by looking at the C code produced from a single line in Vala like <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">MyBoundCompactClass</span> <span class="pre">();</span></code></div>
+<p>All four arguments are optional.</p>
+<dl class="simple">
+<dt>VERSION</dt><dd><p>Require the specified version of vapigen in order for the test to pass. You can use this to make sure vapigen is as recent as you need it to be.</p>
+</dd>
+<dt>API_VERSION</dt><dd><p>Limit matches to the specified API version. This will cause the version specific vapidir to be used as the default installation location. You should not set this argument unless your vapi only works with a specific version of Vala.</p>
+</dd>
+<dt>FOUND-INTROSPECTION</dt><dd><p>Used to explicitly specify that GObject introspection support was found. Generally, you should omit this argument unless you are not using the GOBJECT_INTROSPECTION_CHECK macro from GI.</p>
+</dd>
+<dt>DEFAULT</dt><dd><p>The default value of the argument (yes, no, or auto).  The default default is auto.</p>
+</dd>
+</dl>
+<p>This macro will define three variables for you to use in your automake files:</p>
+<dl class="simple">
+<dt>VAPIGEN</dt><dd><p>Path to the vapigen executable</p>
+</dd>
+<dt>VAPIGEN_VAPIDIR</dt><dd><p>The location to install the your bindings to</p>
+</dd>
+<dt>VAPIGEN_MAKEFILE</dt><dd><p>The location of a Makefile you can include to help you generate the VAPI</p>
+</dd>
+</dl>
+<p>At this point, you can include <a class="reference external" href="https://gitlab.gnome.org/GNOME/vala/-/blob/master/vapigen/Makefile.vapigen">Makefile.vapigen</a> to help you easily generate your VAPI. This should be done conditionally based on the ENABLE_VAPIGEN conditional:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="cp">if ENABLE_VAPIGEN</span>
+<span class="cp">-include $(VAPIGEN_MAKEFILE)</span>
+<span class="cp">endif</span>
+</pre></div>
 </div>
-</li>
-<li><div class="line-block">
-<div class="line">Bind methods of the compact class.</div>
+<p>The Makefile will make use of several variables which you should populate:</p>
+<dl class="simple">
+<dt>VAPIGEN_FILES</dt><dd><p>A list of VAPIs to generate</p>
+</dd>
+<dt>*_DEPS / VAPIGEN_DEPS</dt><dd><p>List of dependencies. Usually these are pkg-config names so the VAPIs are used, but it is technically possible to use a raw GIR here, so long as no metadata is required to generate a VAPI from that GIR. Corresponds to the --pkg arguments.</p>
+</dd>
+<dt>*_METADATADIRS / VAPIGEN_METADATADIRS</dt><dd><p>List of directories containing the metadata files. Corresponds to the --metadatadir arguments.</p>
+</dd>
+<dt>*_VAPIDIRS / VAPIGEN_VAPIDIRS</dt><dd><p>List of directories to look for VAPI dependencies. Corresponds to the --vapidir arguments.</p>
+</dd>
+<dt>*_GIRDIRS / VAPIGEN_GIRDIRS</dt><dd><p>List of directories to look for GIR dependencies. Corresponds to the --girdir arguments.  Note that this only specifies where vapigen will look for dependencies, not for the source files (i.e., files listed in <a href="#id3"><span class="problematic" id="id4">*</span></a>_FILES).</p>
+</dd>
+<dt>*_FILES</dt><dd><p>The GIR file to generate the VAPI from</p>
+</dd>
+</dl>
+<p>To use our “Foo” example from eariler:</p>
+<div class="highlight-make notranslate"><div class="highlight"><pre><span></span><span class="cp">if ENABLE_VAPIGEN</span>
+<span class="cp">-include $(VAPIGEN_MAKEFILE)</span>
+
+<span class="nf">foo-1.0.vapi</span><span class="o">:</span><span class="w"> </span><span class="n">Foo</span>-1.0.<span class="n">gir</span> <span class="n">Foo</span>-1.0-<span class="n">custom</span>.<span class="n">vala</span> <span class="n">foo</span>-1.0.<span class="n">deps</span>
+
+<span class="nv">VAPIGEN_VAPIS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>foo-1.0.vapi
+
+<span class="nv">foo_1_0_vapi_DEPS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>foo-1.0
+<span class="nv">foo_1_0_vapi_METADATADIRS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>srcdir<span class="k">)</span>
+<span class="nv">foo_1_0_vapi_FILES</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Foo-1.0.gir<span class="w"> </span>Foo-1.0-custom.vala
+
+<span class="nv">vapidir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>datadir<span class="k">)</span>/vala/vapi
+<span class="nv">vapi_DATA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">$(</span>VAPIGEN_VAPIS<span class="k">)</span><span class="w"> </span><span class="k">$(</span>VAPIGEN_VAPIS:.vapi<span class="o">=</span>.deps<span class="k">)</span>
+
+<span class="nv">EXTRA_DIST</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span>Foo-1.0.metadata<span class="w"> </span>foo-1.0.deps<span class="w"> </span>Foo-1.0-custom.vala
+<span class="cp">endif</span>
+</pre></div>
 </div>
-<div class="line-block">
-<div class="line">This is when your binding starts to become useful and it will also give an overview of this document. Once you have an overview the document becomes more of a reference for solving tricky function bindings</div>
-</div>
-</li>
-</ol>
-<p>The above assumes that the library is written in an object oriented style of C. A C binding, however, is only made up of structs and functions so understanding that in enough detail is the purpose of the approach.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/01-00-prerequisites.html">1. Prerequisites</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/02-00-getting-started.html">2. Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/03-00-using-auto-memory-management.html">3. Using Vala’s Automatic Memory Management</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code.html">4. Recognizing Vala Semantics in C Code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function.html">5. Fundamentals of Binding a C Function</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/06-00-adding-vala-friendly-semantics.html">6. Adding Vala Friendly Semantics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types.html">7. Binding a C Function’s Parameter and Return Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/08-00-binding-a-c-struct-s-fields.html">8. Binding a C Struct’s Fields</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/09-00-extra-hints.html">9. Extra Hints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-a-vapi-manually/10-00-awkward-situations.html">10. Awkward Situations</a></li>
-</ul>
-</div>
+</section>
+</section>
+<section id="writing-a-vapi-by-hand">
+<h2>Writing a VAPI By Hand<a class="headerlink" href="#writing-a-vapi-by-hand" title="Permalink to this heading">¶</a></h2>
+<p>If GObject Introspection support isn’t an option for you, you can still write a VAPI by hand. The process isn’t as easy as generating one from a GIR, but it is surprisingly easy for people who are already familiar with Vala. The syntax is the same as for Vala, but values and method bodies are omitted, and annotations (especially CCode annotations) are much more common. For a guide on how to convert a non-GLib C API to a Vala binding, see <a class="reference internal" href="writing-a-vapi-manually.html"><span class="doc">Writing a VAPI Manually</span></a>.</p>
+<section id="namespaces">
+<h3>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this heading">¶</a></h3>
+<p>VAPIs should enclose their API in a namespace. The namespace need not be unique but generally are. Nested namespaces can be used to further group similar functionality if desired.</p>
+</section>
+<section id="data-types">
+<h3>Data Types<a class="headerlink" href="#data-types" title="Permalink to this heading">¶</a></h3>
+<p>The first step in writing a VAPI by hand is figuring out to represent your types in Vala. There is a graphic in the FAQ (under the <span class="xref std std-doc">What does [SimpleType] and [Compact] in bindings mean?</span> question) which provides a good idea of when you should use which types.</p>
+</section>
+</section>
 </section>
 
         </article>
@@ -502,23 +608,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="writing-a-vapi-manually/01-00-prerequisites.html">
+          <a class="next-page" href="writing-a-vapi-manually.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title"><span class="section-number">1. </span>Prerequisites</div>
+                <div class="title">Writing a VAPI Manually</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="upstream-guide.html">
+          <a class="prev-page" href="generating-a-vapi-with-gobject-introspection.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Why Distribute Bindings Upstream</div>
+                <div class="title">Generating a VAPI with GObject Introspection</div>
                 
               </div>
             </a>
@@ -527,8 +633,45 @@
       </footer>
 
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Why Distribute Bindings Upstream</a><ul>
+<li><a class="reference internal" href="#catch-errors-earlier">Catch errors earlier</a></li>
+<li><a class="reference internal" href="#annotation-bugs-get-fixed-quicker">Annotation bugs get fixed quicker</a></li>
+<li><a class="reference internal" href="#matching-the-version-of-the-installed-software">Matching the version of the installed software</a></li>
+<li><a class="reference internal" href="#higher-quality-bindings">Higher quality bindings</a></li>
+<li><a class="reference internal" href="#api-documentation">API documentation</a></li>
+<li><a class="reference internal" href="#why-not-use-gobject-introspection-directly">Why not use GObject Introspection directly?</a></li>
+<li><a class="reference internal" href="#i-don-t-know-anything-about-vala-or-vala-bindings">I Don’t Know Anything About Vala (or Vala Bindings)</a></li>
+<li><a class="reference internal" href="#how-vala-bindings-work">How Vala Bindings Work</a></li>
+<li><a class="reference internal" href="#generating-a-vapi-from-gobject-introspection">Generating a VAPI from GObject Introspection</a><ul>
+<li><a class="reference internal" href="#generating-a-gir">Generating a GIR</a></li>
+<li><a class="reference internal" href="#generating-a-vapi-from-a-gir">Generating a VAPI from a GIR</a></li>
+<li><a class="reference internal" href="#autotools-integration">Autotools Integration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#writing-a-vapi-by-hand">Writing a VAPI By Hand</a><ul>
+<li><a class="reference internal" href="#namespaces">Namespaces</a></li>
+<li><a class="reference internal" href="#data-types">Data Types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

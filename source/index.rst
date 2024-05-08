@@ -7,6 +7,7 @@ Vala Documentation
    About <about>
    Installation Guide <installation-guide>
    Tutorials <tutorials/index>
+   Tooling <tooling/index>
    Contributor Guide <contributor-guide/index>
    Developer Guides <developer-guides/index>
    FAQ <faq>

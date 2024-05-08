@@ -184,7 +184,7 @@ Note that ``yourstr.data`` will give you an array without the terminating 0 byte
 How do I create an array of structs?
 ------------------------------------
 
-First of all, take a look to the ways structs can be created at :ref:`structs-tutorial.
+First of all, take a look to the ways structs can be created at :ref:`structs-tutorial`.
 
 If the array is constant:
 

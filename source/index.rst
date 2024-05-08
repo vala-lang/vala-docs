@@ -9,6 +9,7 @@ Vala Documentation
    Tutorials <tutorials/index>
    Contributor Guide <contributor-guide/index>
    Developer Guides <developer-guides/index>
+   FAQ <faq>
 
 Introduction
 ------------
@@ -27,6 +28,7 @@ Sections
 - `Tooling <tooling>`_
 - `Contributor Guide <contributor-guide>`_
 - `Developer Guides <developer-guides>`_
+- `FAQ <faq>`_ 
 
 External Resources
 ------------------

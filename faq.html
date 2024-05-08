@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="author" title="About these documents" href="about.html" /><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="About Vala" href="about.html" />
+<link rel="author" title="About these documents" href="about.html" /><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="10.5. Shared Context Delegates" href="developer-guides/bindings/writing-a-vapi-manually/10-00-awkward-situations/10-05-shared-context-delgates.html" />
 
     <link rel="shortcut icon" href="_static/logo.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.05.06 -->
-        <title>Vala Documentation</title>
+        <title>Vala FAQ - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=7eec22261a5d8917218cec534344987d69e122f4" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -178,7 +178,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Vala Documentation</div></a>
+      <a href="index.html"><div class="brand">Vala Documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -200,7 +200,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="_static/logo.png" alt="Logo"/>
@@ -215,7 +215,7 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  <ul>
+  <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation-guide.html">Installation Guide</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="tutorials/index.html">Tutorials</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -414,7 +414,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">FAQ</a></li>
 </ul>
 
 </div>
@@ -435,7 +435,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/colinkiama/vala-docs/edit/main/source/index.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/colinkiama/vala-docs/edit/main/source/faq.rst" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -453,49 +453,228 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="vala-documentation">
-<h1>Vala Documentation<a class="headerlink" href="#vala-documentation" title="Permalink to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
+          <section id="vala-faq">
+<h1>Vala FAQ<a class="headerlink" href="#vala-faq" title="Permalink to this heading">¶</a></h1>
+<section id="why-have-you-created-a-whole-new-programming-language-why-didn-t-you-just-use-c-c-d-java-python">
+<h2>Why have you created a whole new programming language? Why didn’t you just use C++, C#, D, Java, Python,…?<a class="headerlink" href="#why-have-you-created-a-whole-new-programming-language-why-didn-t-you-just-use-c-c-d-java-python" title="Permalink to this heading">¶</a></h2>
+<p>The type system of GObject doesn’t fit perfectly well with the type system of any existing programming language. Vala is designed for GObject, this makes it easy to develop GObject-based libraries with Vala that can be used from a variety of other languages and runtime environments just like all the other GObject-based libraries out there. Just like Qt’s Meta````Object is an extension to C++ to provide signals, slots, and object properties, Vala is a modification of C# to better match the GObject type system. We want to use the same syntax as C# wherever it makes sense to keep the entry barrier low.</p>
+</section>
+<section id="how-can-i-use-vala-libraries-from-c-c-c-d-java-python">
+<h2>How can I use Vala libraries from C, C++, C#, D, Java, Python,…?<a class="headerlink" href="#how-can-i-use-vala-libraries-from-c-c-c-d-java-python" title="Permalink to this heading">¶</a></h2>
+<p>You can always use Vala libraries just like they were GObject/C libraries, they provide C header files and use GObject for all classes. In contrast to C, Vala generates <a class="reference external" href="https://gi.readthedocs.io/en/latest/index.html">GObjectIntrospection</a> metadata for you so you do not need to care about binding your libraries to any language for which gobject-introspection <a class="reference external" href="https://wiki.gnome.org/action/show/Projects/GObjectIntrospection/Users">support exists</a>.</p>
+</section>
+<section id="how-does-the-performance-of-vala-applications-compare-to-other-applications">
+<h2>How does the performance of Vala applications compare to other applications?<a class="headerlink" href="#how-does-the-performance-of-vala-applications-compare-to-other-applications" title="Permalink to this heading">¶</a></h2>
+<p>The performance should be pretty similar to GObject/C-based code as there is no Vala-specific runtime library/environment that needs to be loaded. The C compiler can also apply the same optimizations on Vala-generated C code and plain GObject/C code. The Vala compiler uses reference counting in more places than most GObject/C-based applications do. However, Vala allows to fine-tune that easily in performance-critical sections with the <code class="docutils literal notranslate"><span class="pre">weak</span></code> modifier.</p>
+</section>
+<section id="vala-is-quite-similiar-to-c-do-you-plan-to-replace-mono">
+<h2>Vala is quite similiar to C#. Do you plan to replace Mono?<a class="headerlink" href="#vala-is-quite-similiar-to-c-do-you-plan-to-replace-mono" title="Permalink to this heading">¶</a></h2>
+<p>Vala wants to be a convenient tool for creating libraries which can be consumed by any programming language supported by the GNOME platform - including Mono. Vala tries to integrate, not to separate.</p>
+</section>
+<section id="what-does-string-foo-mean">
+<h2>What does “string? foo” mean?<a class="headerlink" href="#what-does-string-foo-mean" title="Permalink to this heading">¶</a></h2>
+<p>The ?-modifier tells the vala compiler that a passed or returned value may be <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+</section>
+<section id="can-i-use-keywords-as-identifiers">
+<h2>Can I use keywords as identifiers?<a class="headerlink" href="#can-i-use-keywords-as-identifiers" title="Permalink to this heading">¶</a></h2>
+<p>Yes, if you prepend the identifier with an ‘&#64;’.</p>
+</section>
+<section id="why-do-i-have-to-inherit-from-gobject">
+<h2>Why do I have to inherit from GObject?<a class="headerlink" href="#why-do-i-have-to-inherit-from-gobject" title="Permalink to this heading">¶</a></h2>
+<p>Since Vala is based on GObject it’s needed to inherit almost every class from GObject. However, it’s not mandatory, but if you don’t inherit, you will only get a very restricted class. Unless you know what you’re doing you want to inherit from GObject. The ../BasicSample shows how to achieve a full-featured class.</p>
+</section>
+<section id="can-i-use-pointer-arithmetic-inside-strings">
+<h2>Can I use pointer arithmetic inside strings?<a class="headerlink" href="#can-i-use-pointer-arithmetic-inside-strings" title="Permalink to this heading">¶</a></h2>
+<p>If I write this, I get an error:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">string</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;baer&quot;</span><span class="p">;</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;e&#39;</span><span class="p">;</span>
+<span class="n">stdout</span><span class="p">.</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+</pre></div>
 </div>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
-<p>Vala is a programming language using modern high level abstractions without imposing additional runtime requirements and without using a different ABI compared to applications and libraries written in C.</p>
-<p>Vala uses the GObject type system and has additional code generation routines that make targeting the GNOME stack simple. Vala has many other uses where native binaries are required.</p>
-<p><a class="reference external" href="about">Learn more about Vala</a></p>
+<p>A vala string is a <code class="docutils literal notranslate"><span class="pre">char\*</span></code> if I look at the C version. Why isn’t it allowed, and what is the solution?</p>
+<p>One reason why it’s not allowed is that Vala strings are encoded in
+UTF-8, which uses a variable number of bytes per character. This means
+that replacing a single character as in your example might require
+resizing the string, which we don’t want to happen implicitly.</p>
+<p>There are two possibilities how to modify strings in Vala. The
+recommended way is to use the GLib.!StringBuilder class, which is a
+binding for GString. The other possibility is to use raw pointers just
+like in C, however, you have to care about encoding and memory
+management yourself, then.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span><span class="o">*</span><span class="w"> </span><span class="n">str_ptr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">char</span><span class="p">[</span><span class="mi">64</span><span class="p">];</span>
+<span class="n">str_ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;e&#39;</span><span class="p">;</span>
+<span class="kt">string</span><span class="w"> </span><span class="n">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="n">str_ptr</span><span class="p">;</span>
+<span class="k">delete</span><span class="w"> </span><span class="n">str_ptr</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>(<a class="reference external" href="http://mail.gnome.org/archives/vala-list/2008-April/msg00058.html">source</a>)</p>
 </section>
-<section id="sections">
-<h2>Sections<a class="headerlink" href="#sections" title="Permalink to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="installation-guide">Installation Guide</a></p></li>
-<li><p><a class="reference external" href="tutorials">Tutorials</a></p></li>
-<li><p><a class="reference external" href="tooling">Tooling</a></p></li>
-<li><p><a class="reference external" href="contributor-guide">Contributor Guide</a></p></li>
-<li><p><a class="reference external" href="developer-guides">Developer Guides</a></p></li>
-<li><p><a class="reference external" href="faq">FAQ</a></p></li>
-</ul>
+<section id="how-to-test-if-an-object-is-some-class-or-subclass">
+<h2>How to test if an object is some class or subclass?<a class="headerlink" href="#how-to-test-if-an-object-is-some-class-or-subclass" title="Permalink to this heading">¶</a></h2>
+<p>Use the “<code class="docutils literal notranslate"><span class="pre">is</span></code>” operator.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="n">wi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Gtk</span><span class="p">.</span><span class="n">Button</span><span class="p">();</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wi</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Gtk</span><span class="p">.</span><span class="n">Widget</span><span class="p">)</span>
+<span class="w">    </span><span class="n">stdout</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Is a Widget.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">wi</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">Gtk</span><span class="p">.</span><span class="n">Button</span><span class="p">)</span>
+<span class="w">    </span><span class="n">stdout</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Is a Button.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Works with interfaces too.</p>
 </section>
-<section id="external-resources">
-<h2>External Resources<a class="headerlink" href="#external-resources" title="Permalink to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://valadoc.org">API References (valadoc.org)</a></p></li>
-<li><p><a class="reference external" href="https://gnome.pages.gitlab.gnome.org/vala/manual/index.html">Reference Manual</a></p></li>
-<li><p><a class="reference external" href="https://developer.gnome.org/documentation/">GNOME Developer Documentation</a></p></li>
-<li><p><a class="reference external" href="https://docs.elementary.io/develop">elementary OS Developer Documentation</a></p></li>
-<li><p><a class="reference external" href="https://vala.dev">Vala Website</a></p></li>
-<li><p><a class="reference external" href="https://wiki.gnome.org/Projects/Vala">Vala Project GNOME Wiki (Deprecated)</a></p></li>
-</ul>
+<section id="how-to-force-cast-an-object-from-one-type-to-another-type">
+<h2>How to force cast an object from one type to another type?<a class="headerlink" href="#how-to-force-cast-an-object-from-one-type-to-another-type" title="Permalink to this heading">¶</a></h2>
+<p>Use “<code class="docutils literal notranslate"><span class="pre">(Klass)</span> <span class="pre">object</span></code>”.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">Gtk</span><span class="p">.</span><span class="n">Button</span><span class="w"> </span><span class="n">btn1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">Gtk</span><span class="p">.</span><span class="n">Button</span><span class="p">)</span><span class="w"> </span><span class="n">awidget</span><span class="p">;</span>
+</pre></div>
+</div>
 </section>
-<section id="community">
-<h2>Community<a class="headerlink" href="#community" title="Permalink to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://vala.dev/#community">Vala Community Links</a></p></li>
-</ul>
+<section id="does-vala-have-a-preprocessor">
+<h2>Does Vala have a preprocessor?<a class="headerlink" href="#does-vala-have-a-preprocessor" title="Permalink to this heading">¶</a></h2>
+<p>Starting with version 0.7.0, Vala supports the preprocessing directives <code class="docutils literal notranslate"><span class="pre">#if</span></code>, <code class="docutils literal notranslate"><span class="pre">#elif</span></code>, <code class="docutils literal notranslate"><span class="pre">#else</span></code>, and <code class="docutils literal notranslate"><span class="pre">#endif</span></code>. The supported operators for conditionals are <code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!</span></code>, <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> and <code class="docutils literal notranslate"><span class="pre">||</span></code>. There is no intention to ever support macros as found in the C preprocessor.</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span>int main (string[] args) {
+#if COND
+  message (&quot;COND IS DEFINED&quot;);
+#else
+  message (&quot;COND IS NOT DEFINED&quot;);
+#endif
+  return 0;
+}
+</pre></div>
+</div>
+<p>You must add <code class="docutils literal notranslate"><span class="pre">-D</span> <span class="pre">COND</span></code> to the valac command line to enable conditional compilation for the above example.</p>
+<p>For more details see <a class="reference external" href="https://gnome.pages.gitlab.gnome.org/vala/manual/preprocessor.html">Preprocessor - Vala Reference Manual</a>.</p>
 </section>
-<section id="contribute">
-<h2>Contribute<a class="headerlink" href="#contribute" title="Permalink to this heading">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/colinkiama/vala-docs">View the source code of this documentation</a></p></li>
-</ul>
+<section id="what-does-simpletype-and-compact-in-bindings-mean">
+<h2>What does [SimpleType] and [Compact] in bindings mean?<a class="headerlink" href="#what-does-simpletype-and-compact-in-bindings-mean" title="Permalink to this heading">¶</a></h2>
+<p>Have a look at this graphic:</p>
+<img alt="Vala SimpleType and Compact explanation diagram" src="_images/vala-structs-classes.png" />
+<p>NOTE 1: Structs are always shallow copied before they are passed to C functions. The difference with [SimpleType] is only at the C implementation, semantics in Vala don’t change. This might not be very clear in the image above.</p>
+<p>NOTE 2: Only GObject classes have gobject propertes (introspectable at runtime). This feature is not emphasized in the above image.</p>
+</section>
+<section id="how-do-i-read-from-stdin">
+<h2>How do I read from stdin?<a class="headerlink" href="#how-do-i-read-from-stdin" title="Permalink to this heading">¶</a></h2>
+<p>Allocating space for strings to be read in can be tricky. See <span class="xref std std-doc">developer-guides/other/input-samples/</span> for an example.</p>
+</section>
+<section id="how-do-i-get-the-gtype-for-something">
+<h2>How do I get the GType for something?<a class="headerlink" href="#how-do-i-get-the-gtype-for-something" title="Permalink to this heading">¶</a></h2>
+<p>Try the <code class="docutils literal notranslate"><span class="pre">typeof</span></code> operator. Fx <code class="docutils literal notranslate"><span class="pre">typeof(string)</span></code> is a <code class="docutils literal notranslate"><span class="pre">G_TYPE_STRING</span></code>.</p>
+</section>
+<section id="why-do-static-members-not-get-initialized">
+<h2>Why do static members not get initialized?<a class="headerlink" href="#why-do-static-members-not-get-initialized" title="Permalink to this heading">¶</a></h2>
+<p>There’s currently <a class="reference external" href="http://bugzilla.gnome.org/show_bug.cgi?id=543189">a bug</a> about that. Unfortunately, due to C limitations and a missing coherent design for that, it’s hard to implement.</p>
+<p>You can work around this with a dummy instantiation before first access to a static class member:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nc">Statico</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">test_value</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">static</span><span class="w"> </span><span class="k">construct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">test_value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Statico</span><span class="w"> </span><span class="p">();</span><span class="w">   </span><span class="c1">// dummy instantiation</span>
+<span class="w">    </span><span class="n">stdout</span><span class="p">.</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Statico</span><span class="p">.</span><span class="n">test_value</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="why-can-t-i-chain-up-to-base-constructor">
+<h2>Why can’t I chain up to base constructor?<a class="headerlink" href="#why-can-t-i-chain-up-to-base-constructor" title="Permalink to this heading">¶</a></h2>
+<p>Often external libraries do not offer functionality for <code class="docutils literal notranslate"><span class="pre">base()</span></code> usage. Therefore you have to use GObject-based costruction using <code class="docutils literal notranslate"><span class="pre">Object(prop1:</span> <span class="pre">value1,</span> <span class="pre">...)</span></code>. As an example:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nc">MyWindow</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Gtk</span><span class="p">.</span><span class="n">Window</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">MyWindow</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Object</span><span class="w"> </span><span class="p">(</span><span class="n">type</span><span class="o">:</span><span class="w"> </span><span class="n">Gtk</span><span class="p">.</span><span class="n">WindowType</span><span class="p">.</span><span class="n">TOPLEVEL</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="how-do-i-convert-from-uint8-or-char-to-string-and-viceversa">
+<h2>How do I convert from uint8[] (or char[]) to string and viceversa?<a class="headerlink" href="#how-do-i-convert-from-uint8-or-char-to-string-and-viceversa" title="Permalink to this heading">¶</a></h2>
+<p>From uint8[] (or what else) to string it’s as simple as casting to string: <code class="docutils literal notranslate"><span class="pre">(string)</span> <span class="pre">array</span></code>.
+From string to uint8[] array it’s about accessing the data member: <code class="docutils literal notranslate"><span class="pre">yourstr.data</span></code>.</p>
+<p>If the uint8[] array doesn’t have a terminating 0 byte at the end, you must append one before converting to a string.
+Note that <code class="docutils literal notranslate"><span class="pre">yourstr.data</span></code> will give you an array without the terminating 0 byte, so <code class="docutils literal notranslate"><span class="pre">(string)</span> <span class="pre">yourstr.data</span> <span class="pre">==</span> <span class="pre">yourstr</span></code> is incorrect.</p>
+</section>
+<section id="how-do-i-create-an-array-of-structs">
+<h2>How do I create an array of structs?<a class="headerlink" href="#how-do-i-create-an-array-of-structs" title="Permalink to this heading">¶</a></h2>
+<p>First of all, take a look to the ways structs can be created at <a class="reference internal" href="tutorials/programming-language/main/02-00-basics/02-07-language-elements.html#structs-tutorial"><span class="std std-ref">Structs</span></a>.</p>
+<p>If the array is constant:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="n">YourStruct</span><span class="p">[]</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">value1</span><span class="p">,</span><span class="w"> </span><span class="n">value2</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">...};</span>
+</pre></div>
+</div>
+<p>Otherwise:</p>
+<blockquote>
+<div><p>YourStruct[] s = { YourStruct() { field1=value1, field2=value2, … }, …};</p>
+</div></blockquote>
+<p>Alternatively, if you are the author of YourStruct (that is not external) you can provide a constructor to simplify the above expression:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="nc">YourStruct</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">field1</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">field2</span><span class="p">;</span>
+<span class="w">  </span><span class="p">...</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="n">YourStruct</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">field2</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">field1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">field1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">field2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">field2</span><span class="p">;</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Then you can create the array like this:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">YourStruct</span><span class="p">[]</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">YourStruct</span><span class="w"> </span><span class="p">(</span><span class="n">field1</span><span class="p">,</span><span class="w"> </span><span class="n">field2</span><span class="p">,</span><span class="w"> </span><span class="p">...),</span><span class="w"> </span><span class="p">...};</span>
+</pre></div>
+</div>
+</section>
+<section id="how-do-i-pass-user-data-for-a-callback">
+<h2>How do I pass user data for a callback?<a class="headerlink" href="#how-do-i-pass-user-data-for-a-callback" title="Permalink to this heading">¶</a></h2>
+<p>Vala automatically passes user data to callbacks depending on the context. There are mainly two techniques for passing a callback. The first is by passing an instance method:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">the_method</span><span class="w"> </span><span class="p">(</span><span class="n">some_instance</span><span class="p">.</span><span class="n">some_method</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In this case Vala will automatically pass some_instance as user data, so that when some_method is called “this” exists in the method scope.</p>
+<p>The other way to provide custom user data is to use closures:</p>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span><span class="w"> </span><span class="n">some_var</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">...;</span>
+<span class="n">the_method</span><span class="w"> </span><span class="p">(()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">some_var</span><span class="w"> </span><span class="p">});</span>
+</pre></div>
+</div>
+<p>Vala automatically creates the user data with all the variables captured by the closure, so that they exist at the time when the callback is called.</p>
+</section>
+<section id="i-have-a-config-vapi-binding-for-config-h-but-it-is-not-the-first-file-included">
+<h2>I have a config.vapi binding for config.h, but it is not the first file included<a class="headerlink" href="#i-have-a-config-vapi-binding-for-config-h-but-it-is-not-the-first-file-included" title="Permalink to this heading">¶</a></h2>
+<p>Vala doesn’t know that your binding should be included first. However, you can tell your C compiler to include arbitrary files first by using “-include config.h” argument. With vala, you could use “vala -X ‘-include config.h’” to pass this argument to the C compiler.</p>
+</section>
+<section id="how-can-i-fix-cc-warnings">
+<h2>How can I fix CC warnings?<a class="headerlink" href="#how-can-i-fix-cc-warnings" title="Permalink to this heading">¶</a></h2>
+<p>Unfortunately you can’t usually, and you can ignore CC warnings safely most of the time. You only want to look for Vala warnings usually.</p>
+</section>
+<section id="why-don-t-you-use-typelib-instead-of-gir">
+<h2>Why don’t you use .typelib instead of .gir?<a class="headerlink" href="#why-don-t-you-use-typelib-instead-of-gir" title="Permalink to this heading">¶</a></h2>
+<p>Because the .gir file contains some information that gets stripped in .typelib files.
+.. todo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="n">some</span> <span class="n">of</span> <span class="n">these</span>
+</pre></div>
+</div>
+</section>
+<section id="why-should-i-use-vapi-instead-of-gir-with-pkg">
+<h2>Why should I use .vapi instead of .gir with --pkg?<a class="headerlink" href="#why-should-i-use-vapi-instead-of-gir-with-pkg" title="Permalink to this heading">¶</a></h2>
+<p>The .gir files are produced by libraries, while the .vapi are produced with <code class="docutils literal notranslate"><span class="pre">vapigen</span></code> using the .gir plus metadata files.
+These are the reasons why vala developers highly suggest using the .vapi instead of the .gir:</p>
+<ol class="arabic simple">
+<li><p>Parsing .gir files is way slower because the gir parser is not much optimized. The .vapi representation is vala code thus it doesn’t need particular processing compared to the .gir. Remember that .gir is a different language that needs to be transformed into vala.</p></li>
+<li><p>Parsing a .gir file does also involve parsing the dependant .gir files, which means having the necessary metadata for all the .gir files, which neither vala nor libraries distribute (not yet).</p></li>
+<li><p>With a .vapi file you have a human readable representation of how vapigen interprets the .gir file plus metadata. So it serves as documentation for yourself, instead of going wild guessing the name of the symbols or whatelse.</p></li>
+<li><p>You can easily compare two .vapi files for differences because a symbol is usually defined on one line, while with .gir a single symbol is defined on multiple lines.</p></li>
+<li><p>A .gir file is heavy weight whereas the .vapi file is very light weight, which means it’s suitable for being copied locally in your project. For example, Gtk-3.0.gir is 5 MB while gkt+-3.0.vapi is 0.4 MB.</p></li>
+</ol>
+</section>
+<section id="is-having-a-local-copy-of-a-vapi-in-my-project-good-practice">
+<h2>Is having a local copy of a .vapi in my project good practice?<a class="headerlink" href="#is-having-a-local-copy-of-a-vapi-in-my-project-good-practice" title="Permalink to this heading">¶</a></h2>
+<p>It isn’t inherently good or bad.  There are some advantages, disadvantages, and trade-offs to having a local copy of the VAPI embedded in your codebase.  The issue is quite similar to the question of whether to include a copy of libraries you depend on in your code tree, or link to a system-wide version.</p>
+<p>Perhaps the most significant advantage is that it is possible that the “upgraded” bindings will include a backwards-incompatible change which can break your project.  Such changes were common when Vala was younger but these days such changes are exceedingly rare, particularly for bindings distributed with Vala or generated from GObject Introspection repositories.</p>
+<p>Probably the biggest disadvantage is that you will not automatically benefit from backwards-compatible fixes and improvements that happen in bindings over time.  It is quite common for updated bindings to fix bugs (most prominently memory leaks), and if you use a local copy of the binding you will not benefit from such changes until you update the copy of the bindings your software uses.</p>
+<p>Of course, sometimes it isn’t really feasible to depend on the system-wide binding because there isn’t one installed.  While we generally prefer for Vala bindings to be distributed with the project they bind, or with Vala itself for some popular libraries, third-party bindings generally aren’t installed system-wide and including a local copy is considered the preferred method of use.  For example, the <a class="reference external" href="https://github.com/nemequ/vala-extra-vapis">vala-extra-vapis</a> repository (which contains many third-party bindings) is intended to be usable as a git submodule or subtree.</p>
+<p>One more thing to consider is that using a local copy of bindings can make <a class="reference external" href="https://valadoc.org">https://valadoc.org</a> less useful. Typically, valadoc.org content tracks the latest stable version, if you’re using a current Linux distribution, is likely the same version you have on your system.  If you make a local copy of the bindings you use they will often be older versions which don’t match what <a class="reference external" href="https://valadoc.org">valadoc.org</a> says.</p>
 </section>
 </section>
 
@@ -504,16 +683,18 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="about.html">
+          
+          <a class="prev-page" href="developer-guides/bindings/writing-a-vapi-manually/10-00-awkward-situations/10-05-shared-context-delgates.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
-                  <span>Next</span>
+                  <span>Previous</span>
                 </div>
-                <div class="title">About Vala</div>
+                
+                <div class="title"><span class="section-number">10.5. </span>Shared Context Delegates</div>
+                
               </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          
         </div>
       
       </footer>
@@ -531,12 +712,31 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Vala Documentation</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#sections">Sections</a></li>
-<li><a class="reference internal" href="#external-resources">External Resources</a></li>
-<li><a class="reference internal" href="#community">Community</a></li>
-<li><a class="reference internal" href="#contribute">Contribute</a></li>
+<li><a class="reference internal" href="#">Vala FAQ</a><ul>
+<li><a class="reference internal" href="#why-have-you-created-a-whole-new-programming-language-why-didn-t-you-just-use-c-c-d-java-python">Why have you created a whole new programming language? Why didn’t you just use C++, C#, D, Java, Python,…?</a></li>
+<li><a class="reference internal" href="#how-can-i-use-vala-libraries-from-c-c-c-d-java-python">How can I use Vala libraries from C, C++, C#, D, Java, Python,…?</a></li>
+<li><a class="reference internal" href="#how-does-the-performance-of-vala-applications-compare-to-other-applications">How does the performance of Vala applications compare to other applications?</a></li>
+<li><a class="reference internal" href="#vala-is-quite-similiar-to-c-do-you-plan-to-replace-mono">Vala is quite similiar to C#. Do you plan to replace Mono?</a></li>
+<li><a class="reference internal" href="#what-does-string-foo-mean">What does “string? foo” mean?</a></li>
+<li><a class="reference internal" href="#can-i-use-keywords-as-identifiers">Can I use keywords as identifiers?</a></li>
+<li><a class="reference internal" href="#why-do-i-have-to-inherit-from-gobject">Why do I have to inherit from GObject?</a></li>
+<li><a class="reference internal" href="#can-i-use-pointer-arithmetic-inside-strings">Can I use pointer arithmetic inside strings?</a></li>
+<li><a class="reference internal" href="#how-to-test-if-an-object-is-some-class-or-subclass">How to test if an object is some class or subclass?</a></li>
+<li><a class="reference internal" href="#how-to-force-cast-an-object-from-one-type-to-another-type">How to force cast an object from one type to another type?</a></li>
+<li><a class="reference internal" href="#does-vala-have-a-preprocessor">Does Vala have a preprocessor?</a></li>
+<li><a class="reference internal" href="#what-does-simpletype-and-compact-in-bindings-mean">What does [SimpleType] and [Compact] in bindings mean?</a></li>
+<li><a class="reference internal" href="#how-do-i-read-from-stdin">How do I read from stdin?</a></li>
+<li><a class="reference internal" href="#how-do-i-get-the-gtype-for-something">How do I get the GType for something?</a></li>
+<li><a class="reference internal" href="#why-do-static-members-not-get-initialized">Why do static members not get initialized?</a></li>
+<li><a class="reference internal" href="#why-can-t-i-chain-up-to-base-constructor">Why can’t I chain up to base constructor?</a></li>
+<li><a class="reference internal" href="#how-do-i-convert-from-uint8-or-char-to-string-and-viceversa">How do I convert from uint8[] (or char[]) to string and viceversa?</a></li>
+<li><a class="reference internal" href="#how-do-i-create-an-array-of-structs">How do I create an array of structs?</a></li>
+<li><a class="reference internal" href="#how-do-i-pass-user-data-for-a-callback">How do I pass user data for a callback?</a></li>
+<li><a class="reference internal" href="#i-have-a-config-vapi-binding-for-config-h-but-it-is-not-the-first-file-included">I have a config.vapi binding for config.h, but it is not the first file included</a></li>
+<li><a class="reference internal" href="#how-can-i-fix-cc-warnings">How can I fix CC warnings?</a></li>
+<li><a class="reference internal" href="#why-don-t-you-use-typelib-instead-of-gir">Why don’t you use .typelib instead of .gir?</a></li>
+<li><a class="reference internal" href="#why-should-i-use-vapi-instead-of-gir-with-pkg">Why should I use .vapi instead of .gir with --pkg?</a></li>
+<li><a class="reference internal" href="#is-having-a-local-copy-of-a-vapi-in-my-project-good-practice">Is having a local copy of a .vapi in my project good practice?</a></li>
 </ul>
 </li>
 </ul>

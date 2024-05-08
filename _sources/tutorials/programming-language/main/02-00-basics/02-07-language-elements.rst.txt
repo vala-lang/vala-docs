@@ -206,6 +206,8 @@ Namespaces can be nested, either by nesting one declaration inside another, or b
 
 Several other types of definition can declare themselves to be inside a namespace by following the same naming convention, e.g. `class NameSpace1.Test { ... }`.  Note that when doing this, the final namespace of the definition will be the one the declaration is nested in plus the namespaces declared in the definition.
 
+.. _structs-tutorial:
+
 Structs
 -------
 
@@ -248,7 +250,7 @@ This is how you can initialise a struct:
 
 Structs are stack/inline allocated and copied on assignment.
 
-To define an array of structs, please see the `FAQ <guides/faq#how-do-i-create-an-array-of-structs>`_
+To define an array of structs, please see the `FAQ <faq#how-do-i-create-an-array-of-structs>`_
 
 Classes
 -------

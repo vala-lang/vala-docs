@@ -191,4 +191,4 @@ VAPIs should enclose their API in a namespace. The namespace need not be unique 
 Data Types
 ~~~~~~~~~~
 
-The first step in writing a VAPI by hand is figuring out to represent your types in Vala. There is a graphic in the FAQ (under the :doc:`What does [SimpleType] and [Compact] in bindings mean? <faq#what-does-simple-type-and-compact-in-bindings-mean.3F>` question) which provides a good idea of when you should use which types.
+The first step in writing a VAPI by hand is figuring out to represent your types in Vala. There is a graphic in the FAQ (under the :ref:`What does [SimpleType] and [Compact] in bindings mean?` question) which provides a good idea of when you should use which types.

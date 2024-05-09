@@ -1,0 +1,11 @@
+Syntax Support
+==============
+
+* `GtkSourceView <https://wiki.gnome.org/Projects/GtkSourceView>`_ extends the !GtkTextView widget to provide syntax highlighting for applications using GTK+, this includes the elementary OS Code, gedit and GNOME Builder editors. Syntax highlighting for each language is through a ``.lang`` file. GtkSourceView has both a `Vala lang file <https://git.gnome.org/browse/gtksourceview/tree/data/language-specs/vala.lang>`_ and a `Genie lang file <https://git.gnome.org/browse/gtksourceview/tree/data/language-specs/genie.lang>`_ 
+* Although `TextMate <http://macromates.com/>`_ is a macOS editor, its language bundles can be imported into many other editors, for example: `Visual Studio Code <https://code.visualstudio.com/docs/extensions/yocode>`_, `Sublime Text <http://docs.sublimetext.info/en/latest/extensibility/syntaxdefs.html>`_, the `JetBrains IntelliJ collection of editors <https://plugins.jetbrains.com/plugin/7221-textmate-bundles-support>`_, `Atom <https://flight-manual.atom.io/hacking-atom/sections/converting-from-textmate/>`_, `Ace web editor <https://ace.c9.io/>`_ and `Linuguist <https://github.com/github/linguist/blob/master/CONTRIBUTING.md>`_, used for GitHub syntax highlighting. A `Vala TextMate bundle <https://github.com/technosophos/Vala-TMBundle>`_ does already exist. To understand more about how to write a language bundle read `TextMate Language Grammars <https://manual.macromates.com/en/language_grammars>`_, `TextMate Scope Selectors <https://manual.macromates.com/en/scope_selectors.html|>`_, `Writing a TextMate Grammar: Some Lessons Learned <https://www.apeth.com/nonblog/stories/textmatebundle.html>`_ and `Notes on how to create a Language Grammar <https://benparizek.com/notebook/notes-on-how-to-create-a-language-grammar-and-custom-theme-for-a-textmate-bundle>`_
+* `GNU source-highlight <http://www.gnu.org/software/src-highlite/>`_
+* `highlight.js <http://github.com/isagalaev/highlight.js>`_ - Client side syntax highlighter (JS+HTML)
+* `MoinMoin Wiki <https://wiki.gnome.org/Projects/Vala/MoinMoin>`_ parser.
+* `Pygments <http://pygments.org/>`_ has a lexer since version 1.1.
+* `Tree-Sitter by Prince781 <https://github.com/vala-lang/tree-sitter-vala>`_
+

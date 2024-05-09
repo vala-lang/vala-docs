@@ -136,12 +136,12 @@ Text editors with additional features for handling computer code can be called "
 
 Syntax highlighting and code formatting affect the visual display of the code in the editor. For example syntax highlighting will color keywords differently to identifiers to make it easier to read the code. Code formatting will change indentation and spacing to match a given coding style, such as inserting a space between a function name and the opening parenthesis of its arguments.
 
-Static code analysis shows diagnostic messages in the editor about syntax errors. These are usually the same messages that appear when compiling from the command line because many editors use `libvala` to analyse the code.
+Static code analysis shows diagnostic messages in the editor about syntax errors. These are usually the same messages that appear when compiling from the command line because many editors use ``libvala`` to analyse the code.
 
-Auto-completion and jump to definition require the editor to parse the code in the project and store the locations where identifiers are defined. Auto-completion is often triggered with the `CTRL + SPACE` key combination. If there is more than one possible completion a list of options will usually appear. Jump to definition is used to navigate the project and read an identifiers' related code, such as the code block of a function definition.
+Auto-completion and jump to definition require the editor to parse the code in the project and store the locations where identifiers are defined. Auto-completion is often triggered with the ``CTRL + SPACE`` key combination. If there is more than one possible completion a list of options will usually appear. Jump to definition is used to navigate the project and read an identifiers' related code, such as the code block of a function definition.
 
-Integrated documentation provides documentation for symbols in the editor. The documentation is likely to be from the same sources used by [[https://valadoc.org/|Valadoc.org|target="_blank"]].
+Integrated documentation provides documentation for symbols in the editor. The documentation is likely to be from the same sources used by `Valadoc.org <https://valadoc.org>`_.
 
-Integrated build, test and debug is probably best understood in relation to the [[http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html|Red-Green-Refactor cycle|target="_blank"]] of test driven development. The editor provides a user interface to make it easy to build the project or component, then run the test suite and see the test report. Tests that are failing can be run, step by step, through a debugger to identify why the code is not working as expected.
+Integrated build, test and debug is probably best understood in relation to the `Red-Green-Refactor cycle <http://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html>`_ of test driven development. The editor provides a user interface to make it easy to build the project or component, then run the test suite and see the test report. Tests that are failing can be run, step by step, through a debugger to identify why the code is not working as expected.
 
 Refactoring tools provide support for techniques like extracting repeated code into a method or renaming an identifier to make its intent clearer.

@@ -8,6 +8,9 @@ Vala Documentation
    Installation Guide <installation-guide>
    Developer Guides <developer-guides/index>
    Tutorials <tutorials/index>
+   Contributor Guide <contributor-guide/index>
+   Developer Guides <developer-guides/index>
+   FAQ <faq>
 
 Introduction
 ------------
@@ -25,7 +28,8 @@ Sections
 - `Tutorials <tutorials>`_
 - `Tooling <tooling>`_
 - `Contributor Guide <contributor-guide>`_
-- `Developer Guides <developer-guides/index.html>`_
+- `Developer Guides <developer-guides>`_
+- `FAQ <faq>`_ 
 
 External Resources
 ------------------
@@ -41,4 +45,9 @@ Community
 ---------
 
 - `Vala Community Links <https://vala.dev/#community>`_
+
+Contribute
+----------
+
+- `View the source code of this documentation <https://github.com/colinkiama/vala-docs>`_
 

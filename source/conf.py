@@ -52,10 +52,12 @@ html_theme_options = {
     "light_css_variables": {
         "color-brand-primary": "#A56DE2",
         "color-brand-content": "#A56DE2",
+        "font-stack": "Cantarell, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
     },
     "dark_css_variables": {
         "color-brand-primary": "#A56DE2",
         "color-brand-content": "#A56DE2",
+        "font-stack": "Cantarell, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
     },
     "source_edit_link": "https://github.com/colinkiama/vala-docs/edit/main/source/{filename}",
 }

@@ -11,5 +11,12 @@ Throughout this guide, we will explore the similarities and differences between 
    :maxdepth: 1
    :numbered:
    
-   01-00-source-file-and-compilation
-   01-01-simple-data-types
+   01-source-file-and-compilation
+   02-simple-data-types
+   03-strings
+   04-arrays
+   05-naming-conventions
+   06-foreach
+   07-inheritance
+   08-methods
+   09-type-inference

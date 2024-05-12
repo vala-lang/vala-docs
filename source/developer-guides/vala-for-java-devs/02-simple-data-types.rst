@@ -26,6 +26,7 @@ Constant Modifier
 
 In Vala, the ``const`` keyword is used to declare constants, similar to ``final`` in Java.
 
+
 Methods on Basic Types
 ----------------------
 

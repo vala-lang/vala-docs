@@ -1,8 +1,8 @@
 Methods
-======
+=========
 
 Method overloading
------------------
+-------------------
 
 Java:
 
@@ -41,7 +41,7 @@ Vala does not support method overloading because libraries written in Vala are i
 
 
 Method overriding
-----------------
+-------------------
 
 Java:
 

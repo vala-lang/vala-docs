@@ -1,9 +1,6 @@
 Type Inference
 ===========================
 
-Type Inference
---------------
-
 Vala supports a mechanism called type inference (implicit typing) for local variables: Local variables may be declared using the ``var`` keyword instead of the type name if the compiler can deduce (infer) the type from the initial assignment. This helps avoiding unnecessary redundancy and is especially useful for generic types. Examples:
 
 .. code-block:: vala

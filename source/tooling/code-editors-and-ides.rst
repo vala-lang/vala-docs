@@ -3,6 +3,9 @@ Code Editors and IDEs
 
 Text editors with additional features for handling computer code can be called "code editors". The most fully featured ones are often called "integrated development environments". There are a number of editors that can handle Vala code. Many are listed below along with a list of features they implement.
 
+.. note::
+   
+   This is a list of known code editors with some form of Vala support. There may be other editors not listed here that support Vala.  
 
 .. list-table::
    :header-rows: 1
@@ -34,7 +37,7 @@ Text editors with additional features for handling computer code can be called "
      -
      -
      -
-   * - Emacs
+   * - `Emacs <https://www.gnu.org/software/emacs/>`_
      - Yes
      -
      -
@@ -52,7 +55,7 @@ Text editors with additional features for handling computer code can be called "
      -
      -
      -
-   * - gedit
+   * - `gedit <https://gedit-technology.github.io/apps/gedit/>`_
      - Yes
      -
      -
@@ -97,16 +100,16 @@ Text editors with additional features for handling computer code can be called "
      -
      -
      -
-   * - Sublime Text
+   * - `Sublime Text <https://www.sublimetext.com/>`_
      - `Yes <https://packagecontrol.io/packages/Vala-TMBundle>`_
      -
-     - `Yes <https://lsp.sublimetext.io/language_servers/#vala>`_
+     - `Yes <https://lsp.sublimetext.i`o/language_servers/#vala>`_
      - `Yes <https://lsp.sublimetext.io/language_servers/#vala>`_
      - `Yes <https://lsp.sublimetext.io/language_servers/#vala>`_ 
      - `Yes <https://lsp.sublimetext.io/language_servers/#vala>`_
      -
      -
-   * - TextMate
+   * - `TextMate <https://macromates.com/>`_
      - `Yes <https://github.com/technosophos/Vala-TMBundle>`_
      -
      - `Basic <https://github.com/technosophos/Vala-TMBundle>`_ 

@@ -2,7 +2,7 @@
 
 This is the source code repository for the Vala Documentation website.
 
-You can view the website online here: https://colinkiama.github.io/vala-docs/
+You can view the website online here: https://docs.vala.org/
 
 [Outline of work to do](./outline.md)
 

@@ -59,7 +59,7 @@ html_theme_options = {
         "color-brand-content": "#A56DE2",
         "font-stack": "Cantarell, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
     },
-    "source_edit_link": "https://github.com/colinkiama/vala-docs/edit/main/source/{filename}",
+    "source_edit_link": "https://github.com/vala-lang/vala-docs/edit/main/source/{filename}",
 }
 
 # add custom files that are stored in _static
@@ -85,6 +85,6 @@ copybutton_prompt_text = r'[\$>] '
 copybutton_prompt_is_regexp = True
 
 # -- Options for opengraph ---------------------------------------------------
-ogp_site_url = "https://colinkiama.github.io/vala-docs/"
+ogp_site_url = "https://docs.vala.dev/"
 ogp_image = "static/card.png"
 

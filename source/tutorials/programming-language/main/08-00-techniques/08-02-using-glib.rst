@@ -34,7 +34,7 @@ The APIs are not identical between C and Vala, but these naming rules should mea
 File Handling
 -------------
 
-For flexible file I/O and file handling see :doc:`GIO Samples </developer-guides/gio-samples>`.
+For flexible file I/O and file handling see `GIO Samples <https://wiki.gnome.org/Projects/Vala/GIOSamples>`_.
 
 You can also use !FileUtils.get_contents to load a file into a string.
 

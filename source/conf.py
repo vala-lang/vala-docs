@@ -30,6 +30,8 @@ source_suffix = {
     '.rst': 'restructuredtext'
 }
 
+suppress_warnings = ['autosectionlabel.*']
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 

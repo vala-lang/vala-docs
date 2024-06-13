@@ -101,16 +101,16 @@ Text editors with additional features for handling computer code can be called "
      -
      -
    * - `Sublime Text <https://www.sublimetext.com/>`_
-     - `Yes <https://packagecontrol.io/packages/Vala-TMBundle>`_
+     - `Yes <https://packagecontrol.io/packages/Vala-TMBundle>`__
      -
-     - `Yes <https://lsp.sublimetext.i`o/language_servers/#vala>`_
-     - `Yes <https://lsp.sublimetext.io/language_servers/#vala>`_
-     - `Yes <https://lsp.sublimetext.io/language_servers/#vala>`_ 
-     - `Yes <https://lsp.sublimetext.io/language_servers/#vala>`_
+     - `Yes <https://lsp.sublimetext.io/language_servers/#vala>`__
+     - `Yes <https://lsp.sublimetext.io/language_servers/#vala>`__
+     - `Yes <https://lsp.sublimetext.io/language_servers/#vala>`__
+     - `Yes <https://lsp.sublimetext.io/language_servers/#vala>`__
      -
      -
    * - `TextMate <https://macromates.com/>`_
-     - `Yes <https://github.com/technosophos/Vala-TMBundle>`_
+     - `Yes <https://github.com/technosophos/Vala-TMBundle>`__
      -
      - `Basic <https://github.com/technosophos/Vala-TMBundle>`_ 
      -
@@ -119,22 +119,22 @@ Text editors with additional features for handling computer code can be called "
      -
      -
    * - `Vim <https://wiki.gnome.org/Projects/Vala/Tools/Vim>`_
-     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/Vim#Syntax_Highlighting>`_
+     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/Vim#Syntax_Highlighting>`__
      -
-     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/Vim#Static_Code_Analysis>`_
+     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/Vim#Static_Code_Analysis>`__
      -
-     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/Vim#Jump_to_Definition>`_
+     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/Vim#Jump_to_Definition>`__
      -
      -
      -
    * - `VS Code <https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode>`_
-     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Syntax_Highlighting>`_
-     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Code_Formatting>`_
-     - `Yes <https://github.com/vala-lang/vala-language-server>`_
-     - `Yes <https://github.com/vala-lang/vala-language-server>`_
-     - `Yes <https://github.com/vala-lang/vala-language-server>`_
-     - `Yes <https://imgur.com/KQKhCNY>`_
-     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging>`_ (`GDB <https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging>`_, `Meson <https://marketplace.visualstudio.com/items?itemName=mesonbuild.mesonbuild>`_)
+     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Syntax_Highlighting>`__
+     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Code_Formatting>`__
+     - `Yes <https://github.com/vala-lang/vala-language-server>`__
+     - `Yes <https://github.com/vala-lang/vala-language-server>`__
+     - `Yes <https://github.com/vala-lang/vala-language-server>`__
+     - `Yes <https://imgur.com/KQKhCNY>`__
+     - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging>`__ (`GDB <https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging>`_, `Meson <https://marketplace.visualstudio.com/items?itemName=mesonbuild.mesonbuild>`_)
      -
 
 Syntax highlighting and code formatting affect the visual display of the code in the editor. For example syntax highlighting will color keywords differently to identifiers to make it easier to read the code. Code formatting will change indentation and spacing to match a given coding style, such as inserting a space between a function name and the opening parenthesis of its arguments.

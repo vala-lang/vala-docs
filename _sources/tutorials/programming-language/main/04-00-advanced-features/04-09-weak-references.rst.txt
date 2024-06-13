@@ -14,5 +14,5 @@ In these cases objects could keep themselves alive simply by referencing to each
        public Node next;
    }
 
-This topic is explained in detail on this page: :doc:`Memory Management </developer-guides/memory-management>`.
+This topic is explained in detail on this page: `Memory Management <https://wiki.gnome.org/Projects/Vala/ReferenceHandling>`_.
 

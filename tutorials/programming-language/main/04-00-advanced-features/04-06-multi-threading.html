@@ -216,6 +216,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation-guide.html">Installation Guide</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../../index.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -443,7 +444,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/colinkiama/vala-docs/edit/main/source/tutorials/programming-language/main/04-00-advanced-features/04-06-multi-threading.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/vala-lang/vala-docs/edit/main/source/tutorials/programming-language/main/04-00-advanced-features/04-06-multi-threading.rst" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -508,7 +509,7 @@ According to this fact, we should tell the primary thread to wait for child thre
 <p>Because of the method <code class="docutils literal notranslate"><span class="pre">join</span></code>, the primary thread has to wait for child thread to finish.</p>
 <p>What’s more, it is possible for a thread to tell the system that it currently has no need to execute, and thereby suggest that another thread should be run instead, this is done using the static method <em>Thread.yield()</em>. If this statement was placed at the end of the above <em>main</em> method, the runtime system will pause the main thread for an instant and check if there are other threads that can be run - on finding the newly created thread in a runnable state, it will run that instead until it is finished - and the program will act is it appears it should.  However, there is no guarantee that this will happen still. The system is able to decide when threads run, and as such might not allow the new thread to finish before the primary thread is restarted and the program ends.</p>
 <p>All these examples have a potential problem, in that the newly created thread doesn’t know the context in which it should run.  In C you would supply the thread creation method with some data, in Vala instead you would normally pass an instance method, instead of a static method.</p>
-<p>More samples in <span class="xref std std-doc">Threading Samples</span>.</p>
+<p>More samples in <a class="reference external" href="https://wiki.gnome.org/Projects/Vala/ThreadingSamples">Threading Samples</a>.</p>
 </section>
 <section id="resource-control">
 <h2><span class="section-number">4.6.2. </span>Resource Control<a class="headerlink" href="#resource-control" title="Permalink to this heading">¶</a></h2>

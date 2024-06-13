@@ -216,6 +216,7 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Home</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../about.html">About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation-guide.html">Installation Guide</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../../../index.html">Tutorials</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Tutorials</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -443,7 +444,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/colinkiama/vala-docs/edit/main/source/tutorials/programming-language/main/04-00-advanced-features/04-04-collections.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/vala-lang/vala-docs/edit/main/source/tutorials/programming-language/main/04-00-advanced-features/04-04-collections.rst" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -463,7 +464,7 @@
         <article role="main" id="furo-main-content">
           <section id="collections">
 <h1><span class="section-number">4.4. </span>Collections<a class="headerlink" href="#collections" title="Permalink to this heading">¶</a></h1>
-<p><span class="xref std std-doc">Gee</span> is a library of collection classes, written in Vala.  The classes should all be familiar to users of libraries such as Java’s Foundation Classes. Gee consists of a set of interfaces and various types that implement these in different ways.</p>
+<p><a class="reference external" href="https://wiki.gnome.org/Projects/Libgee">Gee</a> is a library of collection classes, written in Vala.  The classes should all be familiar to users of libraries such as Java’s Foundation Classes. Gee consists of a set of interfaces and various types that implement these in different ways.</p>
 <p>If you want to use Gee in your own application, install the library separately on your system.  Gee can be obtained from <a class="reference external" href="http://wiki.gnome.org/Projects/Libgee">http://wiki.gnome.org/Projects/Libgee</a>. In order to use the library you must compile your programs with <code class="docutils literal notranslate"><span class="pre">--pkg</span> <span class="pre">gee-0.8</span></code>.</p>
 <p>The fundamental types of collection are:</p>
 <ul class="simple">
@@ -474,7 +475,7 @@
 <p>All the lists and sets in the library implement the <em>Collection</em> interface, and all maps the <em>Map</em> interface. Lists also implement <em>List</em> and sets <em>Set</em>. These common interfaces means not only that all collections of a similar type can be used interchangeably, but also that new collections can be written using the same interfaces, and therefore used with existing code.</p>
 <p>Also common to every <em>Collection</em> type is the <em>Iterable</em> interface. This means that any object in this category can be iterated through using a standard set of methods, or directly in Vala using the <code class="docutils literal notranslate"><span class="pre">foreach</span></code> syntax.</p>
 <p>All classes and interfaces use the generics system. This means that they must be instantiated with a particular type or set of types that they will contain.  The system will ensure that only the intended types can be put into the collections, and that when objects are retrieved they are returned as the correct type.</p>
-<p><a class="reference external" href="http://valadoc.org/gee-0.8/index.htm">Gee API documentation</a>, <span class="xref std std-doc">Gee Examples</span>.</p>
+<p><a class="reference external" href="http://valadoc.org/gee-0.8/index.htm">Gee API documentation</a>, <a class="reference external" href="https://wiki.gnome.org/Projects/Vala/GeeSamples">Gee Examples</a>.</p>
 <p>Some important Gee classes are:</p>
 <section id="arraylist-g">
 <h2><span class="section-number">4.4.1. </span>ArrayList&lt;G&gt;<a class="headerlink" href="#arraylist-g" title="Permalink to this heading">¶</a></h2>

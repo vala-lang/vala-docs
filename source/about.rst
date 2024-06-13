@@ -3,7 +3,7 @@ About Vala
 
 **valac**, the Vala compiler, is a self-hosting compiler that translates Vala source code into C source and header files. It uses the GObject type system to create classes and interfaces declared in the Vala source code.
 
-`The syntax of Vala <developer-guides/syntax>`_ is similar to C#, modified to better fit the GObject type system. Vala supports modern language features as the following:
+`The syntax of Vala <https://wiki.gnome.org/Projects/Vala/Syntax>`_ is similar to C#, modified to better fit the GObject type system. Vala supports modern language features as the following:
 
 * Interfaces
 * Properties

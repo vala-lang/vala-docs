@@ -168,5 +168,5 @@ itself, and then gives back control to its own caller.
 Examples
 --------
 
-See :doc:`Async Method Samples </developer-guides/async-samples>` for examples of different ways that async may be used.
+See `Async Method Samples <https://wiki.gnome.org/Projects/Vala/AsyncSamples>`_ for examples of different ways that async may be used.
 

@@ -113,7 +113,7 @@ Delegates may also be created locally. A member method can also be assigned to a
        }
    }
 
-More samples in :doc:`Delegates Manual </developer-guides/delegates>`.
+More samples in `Delegates Manual <https://wiki.gnome.org/Projects/Vala/Manual/Delegates>`_.
 
 Anonymous Methods / Closures
 ----------------------------

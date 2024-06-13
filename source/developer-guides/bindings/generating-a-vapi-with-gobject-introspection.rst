@@ -340,7 +340,7 @@ GObject Introspection does not currently offer a way to annotate the relationshi
 Macros
 ~~~~~~
 
-Since GObject Introspection is focused primarily on runtime bindings for languages such as Python and JavaScript, it ignores preprocessor macros.  Although this decision makes sense for them (you can't dlsym(3) a macro), Vala is capable of utilizing macros.  However, since no information on macros is included in the GIR the only way to expose macros is by adding them to a *-custom.vala file.
+Since GObject Introspection is focused primarily on runtime bindings for languages such as Python and JavaScript, it ignores preprocessor macros.  Although this decision makes sense for them (you can't dlsym(3) a macro), Vala is capable of utilizing macros.  However, since no information on macros is included in the GIR the only way to expose macros is by adding them to a \*-custom.vala file.
 
 
 Fixing VAPI Generation with Custom Vala Code

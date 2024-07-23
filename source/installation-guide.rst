@@ -1,7 +1,7 @@
 Installation Guide
 ==================
 
-Vala is available on multiple operating systems. Follow the isntallation instructions below for your operating system.
+Vala is available on multiple operating systems. Follow the installation instructions below for your operating system.
 
 Linux
 -----

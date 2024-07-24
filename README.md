@@ -29,8 +29,6 @@ Note: You may need to make the `./build-docs` script executable first:
 chmod +x ./build-docs
 ```
 
-or if you are using GNOME builder, you can click on the "Build" button.
-
 2. In the `build` directory, open a html file in your favourite web browser. `index.html` contains the home page.
 
 3. Whenever you want to rebuild the site with changes you make in `source`, repeat step 1.

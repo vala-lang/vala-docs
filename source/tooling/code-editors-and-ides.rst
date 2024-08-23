@@ -136,6 +136,15 @@ Text editors with additional features for handling computer code can be called "
      - `Yes <https://imgur.com/KQKhCNY>`__
      - `Yes <https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging>`__ (`GDB <https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging>`_, `Meson <https://marketplace.visualstudio.com/items?itemName=mesonbuild.mesonbuild>`_)
      -
+   * - `Zed <https://zed.dev/>`_
+     - `Yes <https://github.com/EbonJaeger/zed-vala>`__
+     - `Yes <https://github.com/EbonJaeger/zed-vala>`__
+     - `Yes <https://github.com/EbonJaeger/zed-vala>`__
+     - `Yes <https://github.com/EbonJaeger/zed-vala>`__
+     - `Yes <https://github.com/EbonJaeger/zed-vala>`__
+     - Yes
+     - 
+     - 
 
 Syntax highlighting and code formatting affect the visual display of the code in the editor. For example syntax highlighting will color keywords differently to identifiers to make it easier to read the code. Code formatting will change indentation and spacing to match a given coding style, such as inserting a space between a function name and the opening parenthesis of its arguments.
 

@@ -34,6 +34,15 @@ Arch Linux
 
    $ sudo pacman -S vala
 
+ALT Linux
+~~~~~~~~~
+
+Development library packages are named as `lib*-devel`. Example: `libgee-devel`.
+
+.. code-block:: console
+
+   # apt-get install vala
+
 \*BSD
 -----
 

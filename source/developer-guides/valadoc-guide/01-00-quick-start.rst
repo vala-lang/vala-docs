@@ -11,7 +11,7 @@ Basic Usage
 
 First find an empty directory/create a new directory.
 
-Then, in the directory, create a file called ``lib.vala`` with the following contents:
+Then, in that directory, create a file called ``lib.vala`` with the following contents:
 
 .. code-block:: vala
 

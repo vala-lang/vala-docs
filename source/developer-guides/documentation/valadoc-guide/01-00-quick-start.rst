@@ -58,7 +58,7 @@ Generate the documentation for the by running the following command:
 
 This will generate a the documentation of the code in the ``docs`` directory.
 
-Opening `docs/index.html` to view the generated documentation:
+Open ``docs/index.html`` in a web browser to view the generated documentation:
 
 .. image:: assets/simon-says-home.png
    :alt: Simon Says Documentation Home
@@ -68,7 +68,7 @@ Select the "simon-says" package to view its contents:
 .. image:: assets/simon-says-package.png
    :alt: Simon Says Package Documentation
 
-Now, you can see the ``simon_says`` function that you wrote in `lib.vala`. Select it to view the full documentation of the function:
+Now, you can see the ``simon_says`` function that you wrote in ``lib.vala``. Select it to view the full documentation of the function:
 
 .. image:: assets/simon-says-function.png
    :alt: Simon Says Function Documentation

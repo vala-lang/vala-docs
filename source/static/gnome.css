@@ -421,3 +421,9 @@ footer {
 .sidebar-logo {
   border-radius: 20px;
 }
+
+/* Workaround for restructuredText not supporting underlines */
+.underline {
+    text-decoration: underline;
+}
+

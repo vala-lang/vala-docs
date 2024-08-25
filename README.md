@@ -2,7 +2,7 @@
 
 This is the source code repository for the Vala Documentation website.
 
-You can view the website online here: https://docs.vala.org/
+You can view the website online here: https://docs.vala.dev/
 
 ## Requirements
 

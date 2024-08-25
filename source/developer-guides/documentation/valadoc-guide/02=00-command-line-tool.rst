@@ -1,6 +1,11 @@
 Command Line Tool
 =================
 
+.. warning::
+
+   The ``valadoc`` command line tool may not be bundled with your installation of the Vala.
+   You will need to find a way to install it on your operating system.
+
 Usage:
 
 .. code-block:: console

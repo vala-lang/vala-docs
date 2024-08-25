@@ -13,7 +13,8 @@ Vala's documentation comment formatting syntax is inspired by wiki markup (`wiki
 Linebreaks and paragraphs
 -------------------------
 
-Example:
+Comment
+~~~~~~~
 
 .. code-block:: vala
 
@@ -25,7 +26,8 @@ Example:
     * second paragraph, second line
     */
 
-Output:
+Output
+~~~~~~
 
 First paragraph, still the first paragraph
 
@@ -35,7 +37,8 @@ second paragraph, second line
 Text Highlighting
 -----------------
 
-Example:
+Comment
+~~~~~~~
 
 .. code-block:: vala
 
@@ -44,7 +47,8 @@ Example:
     * ''//__bold italic underlined__//''
     */
 
-Output:
+Output
+~~~~~~
 
 ..
    Workaround for restructredText not supporting comments
@@ -67,11 +71,12 @@ Output:
    </strong>
 
 Lists
------
+~~~~~
 
 Two spaces are required after new lines
 
-Example:
+Comment
+~~~~~~~
 
 .. code-block:: vala
 
@@ -115,7 +120,8 @@ Example:
     *  A. alphabetical list
     */
 
-Output:
+Output
+~~~~~~
 
 short description
 
@@ -158,4 +164,35 @@ B. alphabetical list
    b. alphabetical list
 
 C. alphabetical list
+
+Code Block
+----------
+
+Comment
+~~~~~~~
+
+.. code-block:: vala
+
+   /**
+   * Short description
+   *
+   * {{{
+   *   static int main (string[] arg) {
+   *      return 0;
+   *   }
+   * }}}
+   *
+   */
+
+Output
+~~~~~~
+
+Short description
+
+.. code-block:: vala
+   
+   static int main (string[] arg) {
+       return 0;
+   }
+   
 

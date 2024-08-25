@@ -166,7 +166,7 @@ B. alphabetical list
 C. alphabetical list
 
 Code Blocks
-----------
+-----------
 
 Comment
 ~~~~~~~
@@ -223,3 +223,26 @@ Output
 .. image:: assets/logo.png
    :alt: alt-message
 
+Tables
+------
+
+Comment
+~~~~~~~
+
+.. code-block:: vala
+
+   /**
+    * Short description
+    *
+    * || ''headline'' || ''headline'' ||
+    * || one cell || one cell ||
+    * || one cell || one cell ||
+    *
+    */
+
+Output
+~~~~~~
+
+|| **headline** || **headline** ||
+|| one cell || one cell ||
+|| one cell || one cell ||

@@ -10,7 +10,7 @@ Vala's documentation comment formatting syntax is inspired by wiki markup (`wiki
    In reality the outputs may look slightly different. This page gives
    you an idea of the expected output.
 
-Linebreaks and paragraphs
+Linebreaks and Paragraphs
 -------------------------
 
 Comment
@@ -165,7 +165,7 @@ B. alphabetical list
 
 C. alphabetical list
 
-Code Block
+Code Blocks
 ----------
 
 Comment

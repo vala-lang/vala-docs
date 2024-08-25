@@ -81,7 +81,7 @@ Comment
 .. code-block:: vala
 
    /**
-    * short description
+    * Short description
     *
     *  1. numbered list
     *  1. numbered list
@@ -123,7 +123,7 @@ Comment
 Output
 ~~~~~~
 
-short description
+Short description
 
 1. numbered list
 2. numbered list
@@ -243,9 +243,38 @@ Comment
 Output
 ~~~~~~
 
+Short description
+
 ============ ============ 
 **headline** **headline** 
 ============ ============
 one cell     one cell
 one cell     one cell
 ============ ============
+
+Headers
+-------
+
+Comment
+~~~~~~~
+
+.. code-block:: vala
+
+   /**
+    * Short description
+    *
+    * = headline 1 =
+    * == headline 2 ==
+    * === headline 3 ===
+    * ==== headline 4 ====
+    */
+
+Output
+~~~~~~
+
+.. raw:: html
+   
+   <h1>header 1</h1>
+   <h2>header 2</h2>
+   <h3>header 3</h3>
+   <h4>header 4</h4>

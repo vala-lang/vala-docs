@@ -195,4 +195,31 @@ Short description
        return 0;
    }
    
+Images and Links
+----------------
+
+Comment
+~~~~~~~
+
+.. note::
+
+   Only local images can be used
+
+.. code-block:: vala
+
+   /**
+    * [[https://vala.dev|Vala]] [[https://vala.dev]]
+    *
+    * {{/assets/logo.png}} {{/assets/logo.png|alt-message}}
+    */
+
+Output
+~~~~~~
+
+`Vala <https://vala.dev>`_ `<https://vala.dev>`_
+
+.. image:: assets/logo.png 
+
+.. image:: assets/logo.png
+   :alt: alt-message
 

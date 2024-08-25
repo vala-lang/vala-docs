@@ -243,6 +243,9 @@ Comment
 Output
 ~~~~~~
 
-|| **headline** || **headline** ||
-|| one cell || one cell ||
-|| one cell || one cell ||
+============ ============ 
+**headline** **headline** 
+============ ============
+one cell     one cell
+one cell     one cell
+============ ============

@@ -72,3 +72,4 @@ Now, you can see the ``simon_says`` function that you wrote in ``lib.vala``. Sel
 
 .. image:: assets/simon-says-function.png
    :alt: Simon Says Function Documentation
+

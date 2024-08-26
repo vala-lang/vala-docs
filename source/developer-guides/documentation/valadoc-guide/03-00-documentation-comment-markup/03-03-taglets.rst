@@ -5,6 +5,7 @@ Taglets are used to refer to other symbols
 and add metadata to symbols when generating documentation.
 
 There are two types of taglets:
+
 - Inline Taglets
 - Block Taglets
 

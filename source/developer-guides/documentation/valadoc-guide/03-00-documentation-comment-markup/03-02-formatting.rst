@@ -263,10 +263,10 @@ Comment
    /**
     * Short description
     *
-    * = headline 1 =
-    * == headline 2 ==
-    * === headline 3 ===
-    * ==== headline 4 ====
+    * = header 1 =
+    * == header 2 ==
+    * === header 3 ===
+    * ==== header 4 ====
     */
 
 Output

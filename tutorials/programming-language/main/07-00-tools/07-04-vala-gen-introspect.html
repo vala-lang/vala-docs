@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="author" title="About these documents" href="../../../../about.html" /><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="3.2. Construction" href="03-02-construction.html" /><link rel="prev" title="3. Object Oriented Programming" href="../03-00-object-oriented-programming.html" />
+<link rel="author" title="About these documents" href="../../../../about.html" /><link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="8. Techniques" href="../08-00-techniques.html" /><link rel="prev" title="7.3. vapigen" href="07-03-vapigen.html" />
 
     <link rel="shortcut icon" href="../../../../_static/favicon.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.08.06 -->
-        <title>3.1. Basics - Vala Documentation</title>
+        <title>7.4. vala-gen-introspect - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=04c057b233f3c8d71940eee6080f658a04e2027d" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -226,21 +226,21 @@
 <li class="toctree-l5"><a class="reference internal" href="../02-00-basics/02-08-code-attributes.html">2.8. Code Attributes</a></li>
 </ul>
 </li>
-<li class="toctree-l4 current has-children"><a class="reference internal" href="../03-00-object-oriented-programming.html">3. Object Oriented Programming</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of 3. Object Oriented Programming</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l5 current current-page"><a class="current reference internal" href="#">3.1. Basics</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-02-construction.html">3.2. Construction</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-03-destruction.html">3.3. Destruction</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-04-signals.html">3.4. Signals</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-05-properties.html">3.5. Properties</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-06-inheritance.html">3.6. Inheritance</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-07-abstract-classes.html">3.7. Abstract Classes</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-08-interfaces.html">3.8. Interfaces</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-09-polymorphism.html">3.9. Polymorphism</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-10-method-hiding.html">3.10. Method Hiding</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-11-run-time-type-information.html">3.11. Run-Time Type Information</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-12-dynamic-type-casting.html">3.12. Dynamic Type Casting</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-13-generics.html">3.13. Generics</a></li>
-<li class="toctree-l5"><a class="reference internal" href="03-14-gobject-style-construction.html">3.14. GObject-Style Construction</a></li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../03-00-object-oriented-programming.html">3. Object Oriented Programming</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of 3. Object Oriented Programming</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-01-basics.html">3.1. Basics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-02-construction.html">3.2. Construction</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-03-destruction.html">3.3. Destruction</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-04-signals.html">3.4. Signals</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-05-properties.html">3.5. Properties</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-06-inheritance.html">3.6. Inheritance</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-07-abstract-classes.html">3.7. Abstract Classes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-08-interfaces.html">3.8. Interfaces</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-09-polymorphism.html">3.9. Polymorphism</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-10-method-hiding.html">3.10. Method Hiding</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-11-run-time-type-information.html">3.11. Run-Time Type Information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-12-dynamic-type-casting.html">3.12. Dynamic Type Casting</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-13-generics.html">3.13. Generics</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../03-00-object-oriented-programming/03-14-gobject-style-construction.html">3.14. GObject-Style Construction</a></li>
 </ul>
 </li>
 <li class="toctree-l4 has-children"><a class="reference internal" href="../04-00-advanced-features.html">4. Advanced Features</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of 4. Advanced Features</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -276,11 +276,11 @@
 <li class="toctree-l5"><a class="reference internal" href="../06-00-libraries/06-06-using-autotools.html">6.6. Using Autotools</a></li>
 </ul>
 </li>
-<li class="toctree-l4 has-children"><a class="reference internal" href="../07-00-tools.html">7. Tools</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of 7. Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l5"><a class="reference internal" href="../07-00-tools/07-01-valac.html">7.1. valac</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../07-00-tools/07-02-valadoc.html">7.2. valadoc</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../07-00-tools/07-03-vapigen.html">7.3. vapigen</a></li>
-<li class="toctree-l5"><a class="reference internal" href="../07-00-tools/07-04-vala-gen-introspect.html">7.4. vala-gen-introspect</a></li>
+<li class="toctree-l4 current has-children"><a class="reference internal" href="../07-00-tools.html">7. Tools</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of 7. Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l5"><a class="reference internal" href="07-01-valac.html">7.1. valac</a></li>
+<li class="toctree-l5"><a class="reference internal" href="07-02-valadoc.html">7.2. valadoc</a></li>
+<li class="toctree-l5"><a class="reference internal" href="07-03-vapigen.html">7.3. vapigen</a></li>
+<li class="toctree-l5 current current-page"><a class="current reference internal" href="#">7.4. vala-gen-introspect</a></li>
 </ul>
 </li>
 <li class="toctree-l4 has-children"><a class="reference internal" href="../08-00-techniques.html">8. Techniques</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of 8. Techniques</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -450,7 +450,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/vala-lang/vala-docs/edit/main/source/tutorials/programming-language/main/03-00-object-oriented-programming/03-01-basics.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/vala-lang/vala-docs/edit/main/source/tutorials/programming-language/main/07-00-tools/07-04-vala-gen-introspect.rst" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -468,63 +468,9 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="basics">
-<h1><span class="section-number">3.1. </span>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">¶</a></h1>
-<p>Although Vala doesn’t force you to work with objects, some features are not available any other way. As such, you will certainly want to program in an object-oriented style most of the time. As with most current languages, in order to define your own object types, you write a class definition.</p>
-<p>A class definition states what data each object of its type has, what other object types it can hold references to, and what methods can be executed on it.  The definition can include a name of another class which the new one should be a subclass of.  An instance of a class is also an instance of all it’s class’s super classes, as it inherits from them all their methods and data, although it may not be able to access all of this itself.  A class may also implement any number of interfaces, which are sets of method definitions that must be implemented by the class - an instance of a class is also an instance of each interface implemented by its class or super classes.</p>
-<p>Classes in Vala may also have “static” members.  This modifier allows either data or methods to be defined as belonging to the class as a whole, rather than to a specific instance of it.  Such members can be accessed without possessing an instance of the class.</p>
-<p>A simple class may be defined as follows:</p>
-<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">TestClass</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">GLib</span><span class="p">.</span><span class="n">Object</span><span class="w"> </span><span class="p">{</span>
-
-<span class="w">    </span><span class="cm">/* Fields */</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">first_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">second_data</span><span class="p">;</span>
-
-<span class="w">    </span><span class="cm">/* Constructor */</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">TestClass</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="n">second_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="cm">/* Method */</span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">method_1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">stdout</span><span class="p">.</span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;private data: %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">second_data</span><span class="p">);</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">second_data</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>This code will define a new type (which is registered automatically with the <em>gobject</em> library’s type system) that contains three members. There are two data members, the integers defined at the top, and one method called <em>method_1</em>, which returns an integer. The class declaration states that this class is a subclass of <em>GLib.Object</em>, and therefore instances of it are also <em>Objects</em>, and contain all the members of that type also. The fact that this class is descended from <em>Object</em> also means that there are special features of Vala that can be used to easily access some of <em>Object’s</em> features.</p>
-<p>This class is described as <code class="docutils literal notranslate"><span class="pre">public</span></code> (by default, classes are <code class="docutils literal notranslate"><span class="pre">internal</span></code>). The implication of this is that it can referenced directly by code outside of this file - if you are a C programmer of glib/gobject, you will recognise this as being equivalent to defining the class interfaces in a header file that other code can include.</p>
-<p>The members are also all described as either <code class="docutils literal notranslate"><span class="pre">public</span></code> or <code class="docutils literal notranslate"><span class="pre">private</span></code>. The member <em>first_data</em> is <code class="docutils literal notranslate"><span class="pre">public</span></code>, so it is visible directly to any user of the class, and can be modified without the containing instance being aware of it. The second data member is <code class="docutils literal notranslate"><span class="pre">private</span></code>, and so can only be referenced by code belonging to this class. Vala supports four different access modifiers:</p>
-<div class="table-wrapper docutils container">
-<table class="docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">public</span></code></p></td>
-<td><p>No restrictions to access</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">private</span></code></p></td>
-<td><p>Access is limited to within the class/struct definition.
-This is the default if no access modifier is specified</p></td>
-</tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">protected</span></code></p></td>
-<td><p>Access is limited to within the class definition and any
-class that inherits from the class</p></td>
-</tr>
-<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">internal</span></code></p></td>
-<td><p>Access is limited exclusively to classes defined within
-the same package</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>The constructor initialises new instances of a class.  It has the same name as the class, may take zero or more arguments and is defined without return type.</p>
-<p>The final part of this class is a method definition.  This method is to be called <em>method_1</em>, and it will return an integer.  As this method is not static, it can only be executed on an instance of this class, and may therefore access members of that instance.  It can do this through the <code class="docutils literal notranslate"><span class="pre">this</span></code> reference, which always points to the instance the method is being called on.  Unless there is an ambiguity, the <code class="docutils literal notranslate"><span class="pre">this</span></code> identifier can be omitted if wished.</p>
-<p>You can use this new class as follows:</p>
-<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">TestClass</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TestClass</span><span class="p">();</span>
-<span class="n">t</span><span class="p">.</span><span class="n">first_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
-<span class="n">t</span><span class="p">.</span><span class="n">method_1</span><span class="p">();</span>
-</pre></div>
-</div>
+          <section id="vala-gen-introspect">
+<h1><span class="section-number">7.4. </span>vala-gen-introspect<a class="headerlink" href="#vala-gen-introspect" title="Permalink to this heading">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">vala-gen-introspect</span></code> is a tool for extracting metainformation about GObject based libraries. Nowadays, the preferred method is to use GObjectIntrospection instead, as vapigen can use GIR files directly. See also <a class="reference internal" href="../../../../developer-guides/bindings/generating-a-vapi-with-gobject-introspection.html"><span class="doc">Vala Bindings Tutorial</span></a>.</p>
 </section>
 
         </article>
@@ -532,23 +478,23 @@ the same package</p></td>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="03-02-construction.html">
+          <a class="next-page" href="../08-00-techniques.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title"><span class="section-number">3.2. </span>Construction</div>
+                <div class="title"><span class="section-number">8. </span>Techniques</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../03-00-object-oriented-programming.html">
+          <a class="prev-page" href="07-03-vapigen.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title"><span class="section-number">3. </span>Object Oriented Programming</div>
+                <div class="title"><span class="section-number">7.3. </span>vapigen</div>
                 
               </div>
             </a>

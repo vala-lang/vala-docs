@@ -71,7 +71,7 @@ Output
    </strong>
 
 Lists
-~~~~~
+-----
 
 Two spaces are required after new lines
 

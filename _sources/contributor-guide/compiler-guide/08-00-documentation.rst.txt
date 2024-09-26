@@ -13,4 +13,4 @@ The source code for the compiler guide is in `<https://github.com/vala-lang/vala
 
    Add libvala documentation
 
-`<https://github.com/vala-lang/vala-docs>`_ - The documentation repository is open to anyone who would like to make a quality contribution.
+`<https://github.com/vala-lang/vala-docs>`_ - The documentation repository (the source code for this website) is open to anyone who would like to make a quality contribution.

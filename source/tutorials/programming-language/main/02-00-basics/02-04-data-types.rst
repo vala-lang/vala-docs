@@ -15,6 +15,7 @@ Vala supports a set of the simple types as most other languages do.
 * Integer, ``int``, ``uint``
 * Long Integer, ``long``, ``ulong``
 * Short Integer, ``short``, ``ushort``
+* Size  ``ssize_t``, ``size_t``  an unsigned integer type, the size of which is platform-dependent
 * Guaranteed-size Integer, ``int8``, ``int16``, ``int32``, ``int64`` as well as their unsigned siblings ``uint8``, ``uint16``, ``uint32``, ``uint64``. The numbers indicate the lengths in bits.
 * Float number, ``float``, ``double``
 * Boolean, ``bool``; possible values are ``true`` and ``false``
@@ -103,16 +104,9 @@ Many of the basic types have reasonable methods for parsing from and converting 
    string s1 = true.to_string();           // => "true"
    string s2 = 21.to_string();             // => "21"
 
-Two useful methods for writing and reading strings to/from the console (and for your first explorations with Vala) are *stdout.printf()* and *stdin.read_line()*:
 
-.. code-block:: vala
+If you want learn how print your string jump it :doc:`02-09-output-input.rst`
 
-   stdout.printf("Hello, world\n");
-   stdout.printf("%d %g %s\n", 42, 3.1415, "Vala");
-   string input = stdin.read_line();
-   int number = int.parse(stdin.read_line());
-
-You already know *stdout.printf()* from the *Hello World* example.  Actually, it can take an arbitrary number of arguments of different types, whereas the first argument is a *format string*, following the same rules as `C format strings <http://en.wikipedia.org/wiki/Printf>`_. If you must output an error message you can use *stderr.printf()* instead of *stdout.printf()*.
 
 In addition the *in* operation can be used to determine whether one string contains another, e.g.
 

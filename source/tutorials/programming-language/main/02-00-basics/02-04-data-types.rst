@@ -105,7 +105,7 @@ Many of the basic types have reasonable methods for parsing from and converting 
    string s2 = 21.to_string();             // => "21"
 
 
-If you want learn how print your string jump it :doc:`02-09-output-input.rst`
+If you want learn how print your string jump it :doc:`02-09-output-input`
 
 
 In addition the *in* operation can be used to determine whether one string contains another, e.g.

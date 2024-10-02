@@ -59,9 +59,11 @@ Vala supports a set of the simple types as most other languages do.
      - Varies
      - Compound type
    * - Enumeration
-     - enum :doc:`02-07-language-elements#structs`
-     - Varies
+     - enum 
+     - 4 bytes (int)
      - Represented by integer values, not as classes like Java's enums
+
+For more information on structs and enums, please refer to :doc:`02-07-language-elements`
 
 Here are some examples.
 
@@ -127,11 +129,14 @@ You can slice a string with ``[start:end]``.  Negative values represent position
    string s1 = greeting[7:12];        // => "world"
    string s2 = greeting[-4:-2];       // => "or"
 
-Note that indices in Vala start with 0 as in most other programming languages.  Starting with Vala 0.11 you can access a single byte of a string with ``[index]``:
+.. note::
+    that indices in Vala start with 0 as in most other programming languages
+
+you can access a single byte of a string with ``[index]``:
 
 .. code-block:: vala
 
-   uint8 b = greeting[7];             // => 0x77
+   uint8 b = greeting[7];            // => 119, the ASCII value of 'w'
 
 However, you cannot assign a new byte value to this position, since Vala strings are immutable.
 

@@ -56,3 +56,14 @@ Or use *stdin.scanf()* function to read formatted input from the console.
     stdin.scanf("%d/%d/%d", out day, out month, out year);
     stdout.printf("You were born on %d/%d/%d\n", day, month, year);
 
+.. warning::
+
+   if you want ``stdin.scanf()`` with %s format, you must create a buffer to store the input. 
+
+    .. code-block:: vala
+
+        uint8 buffer[128];
+        stdin.scanf("%s", out buffer);
+        stdout.printf("You entered: %s\n", (string)buffer);
+    
+    if you don't create a buffer or too small, you will get a segmentation fault.

@@ -10,17 +10,58 @@ Value Types
 
 Vala supports a set of the simple types as most other languages do.
 
-* Byte, ``char``, ``uchar``; their names are *char* for historical reasons.
-* Character, ``unichar``; a 32-bit Unicode character
-* Integer, ``int``, ``uint``
-* Long Integer, ``long``, ``ulong``
-* Short Integer, ``short``, ``ushort``
-* Size  ``ssize_t``, ``size_t``  an unsigned integer type, the size of which is platform-dependent
-* Guaranteed-size Integer, ``int8``, ``int16``, ``int32``, ``int64`` as well as their unsigned siblings ``uint8``, ``uint16``, ``uint32``, ``uint64``. The numbers indicate the lengths in bits.
-* Float number, ``float``, ``double``
-* Boolean, ``bool``; possible values are ``true`` and ``false``
-* Compound, ``struct``
-* Enumeration, ``enum``; represented by integer values, not as classes like Java's enums
+.. list-table:: 
+   :widths: 10 18 10 50
+   :header-rows: 1
+
+   * - NameType
+     - Type
+     - Size
+     - Description
+   * - Byte
+     - char, uchar
+     - 1 byte
+     - Their names are "char" for historical reasons.
+   * - Character
+     - unichar
+     - 4 bytes
+     - 32-bit Unicode character
+   * - Integer
+     - int, uint
+     - 4 bytes
+     - Integer
+   * - Long Integer
+     - long, ulong
+     - 8 bytes
+     - Long integer
+   * - Short Integer
+     - short, ushort
+     - 2 bytes
+     - Short integer
+   * - Platform-Specific Integer 
+     - ssize_t, size_t
+     - Depend on platform
+     - Unsigned integer type, the size of which is platform-dependent
+   * - Guaranteed-size Integer
+     - int8, uint8, int16, uint16, int32, uint32, int64, uint64 
+     - 1, 2, 4, 8 bytes
+     - Integers of guaranteed sizes (8, 16, 32, 64 bits) and their unsigned versions
+   * - Float number
+     - float, double
+     - 4, 8 bytes
+     - Floating-point number
+   * - Boolean
+     - bool
+     - 1 byte
+     - Possible values: true and false
+   * - Compound
+     - struct
+     - Varies
+     - Compound type
+   * - Enumeration
+     - enum :doc:`02-07-language-elements#structs`
+     - Varies
+     - Represented by integer values, not as classes like Java's enums
 
 Here are some examples.
 
@@ -265,7 +306,6 @@ Defining a new type is a matter of derive it from the one you need. Here is an e
 .. code-block:: vala
 
    /* defining an alias for a basic type (equivalent to typedef int Integer in C)*/
-   [SimpleType]
    public struct Integer : uint {
    }
 

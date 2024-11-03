@@ -56,7 +56,7 @@ Generate the documentation for the by running the following command:
 
    However, be aware that ``--force`` does not remove any documentation. It only adds and overwrites documentation.
 
-This will generate a the documentation of the code in the ``docs`` directory.
+This will generate the documentation of the code in the ``docs`` directory.
 
 Open ``docs/index.html`` in a web browser to view the generated documentation:
 

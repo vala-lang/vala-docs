@@ -16,7 +16,7 @@ Documentation Comment Structure
 
 .. note::
 
-   When no comments are present, Valadoc will only extact symbols to use in the documentation.
+   When no comments are present, Valadoc will only extract symbols to use in the documentation.
 
 In this chapter, we'll explain how to fill each section of a documentation comment.
 

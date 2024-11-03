@@ -1,7 +1,7 @@
 Brief Description
 =================
 
-The brief description is used thoughout the entire documentation as a short summary for the symbol you're documenting.
+The brief description is used throughout the entire documentation as a short summary for the symbol you're documenting.
 
 Example
 -------

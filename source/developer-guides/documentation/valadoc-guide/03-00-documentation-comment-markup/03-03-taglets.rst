@@ -15,7 +15,7 @@ Inline Taglets
 Inline Taglets are used in descriptions.
 
 **{@inheritDoc}**
-   Used to diectly inherit descriptions from the parent symbol
+   Used to directly inherit descriptions from the parent symbol
 
 **{@link [node]}**
    Used to link to another symbol. ``[node]`` is the fully qualified name of the
@@ -45,4 +45,4 @@ Block taglets are used at the end of each documentation comment.
    Add description of result of data returned from a symbol.
 
 **@throws [type-name] [description]**
-   Specify an eror that could get thrown through the usage of a symbol
+   Specify an error that could get thrown through the usage of a symbol

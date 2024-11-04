@@ -4,6 +4,8 @@ This is the source code repository for the Vala Documentation website.
 
 You can view the website online here: https://docs.vala.dev/
 
+Also, you can contribute to the Vala programming language website here: https://github.com/vala-lang/vala-www
+
 ## Requirements
 
 - python3

@@ -71,7 +71,7 @@ An async method may be called with either of these two forms:
    });
 
 Both forms starts the async method running with the given arguments.
-The second form in addition registers an !AsyncReadyCallback which is
+The second form in addition registers an ``AsyncReadyCallback`` which is
 executed when the method finishes. The callback
 takes a source object, ``obj``, and an instance of GAyncResult, ``res``,
 as arguments. In the callback the ``.end()`` method should be called to receive the
@@ -118,7 +118,7 @@ other code to use to resume the method's execution:
    [... store 'callback' somewhere ...]
    yield;
 
-Some code elsewhere must now call the stored !SourceFunc in order for
+Some code elsewhere must now call the stored ``SourceFunc`` in order for
 the method to be resumed.  This could be done by scheduling the GLib
 main loop to run it:
 

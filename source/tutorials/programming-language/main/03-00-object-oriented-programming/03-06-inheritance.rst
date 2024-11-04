@@ -31,11 +31,11 @@ When writing the definition of a class it is possible to exercise precise contro
        }
    }
 
-*data* is an instance data member of *!SuperClass*.  There will be a member of this type in every instance of *!SuperClass*, and it is declared ``private`` so will only be accessible by code that is a part of *!SuperClass*.
+*data* is an instance data member of *SuperClass*.  There will be a member of this type in every instance of *SuperClass*, and it is declared ``private`` so will only be accessible by code that is a part of *SuperClass*.
 
-*protected_method* is an instance method of *!SuperClass*.  You will be able to execute this method only an instance of *!SuperClass* or of one of its subclasses, and only from code that belongs to *!SuperClass* or one of its subclasses - this latter rule being the result of the ``protected`` modifier.
+*protected_method* is an instance method of *SuperClass*.  You will be able to execute this method only an instance of *SuperClass* or of one of its subclasses, and only from code that belongs to *SuperClass* or one of its subclasses - this latter rule being the result of the ``protected`` modifier.
 
-*public_static_method* has two modifiers. The ``static`` modifier means that this method may be called without owning an instance of *!SuperClass* or of one of its subclasses.  As a result, this method will not have access to a ``this`` reference when it is executed.  The ``public`` modifier means that this method can be called from any code, no matter its relationship with *!SuperClass* or its subclasses.
+*public_static_method* has two modifiers. The ``static`` modifier means that this method may be called without owning an instance of *SuperClass* or of one of its subclasses.  As a result, this method will not have access to a ``this`` reference when it is executed.  The ``public`` modifier means that this method can be called from any code, no matter its relationship with *SuperClass* or its subclasses.
 
 Given these definitions, an instance of *SubClass* will contain all three members of *SuperClass*, but will only be able to access the non-private members.  External code will only be able to access the public method.
 

@@ -43,7 +43,7 @@ When using GTK+, a main loop will be created automatically, and will be started 
        Gtk.main();
    }
 
-A common requirement in GUI programs is to execute some code as soon as possible, but only when it will not disturb the user. For this, you use !IdleSource instances. These send events to the programs main loop, but request they only be dealt with when there is nothing more important to do.
+A common requirement in GUI programs is to execute some code as soon as possible, but only when it will not disturb the user. For this, you use ``IdleSource`` instances. These send events to the programs main loop, but request they only be dealt with when there is nothing more important to do.
 
 For more information about event loops, `see the GLib and GTK+ documentation <https://docs.gtk.org/glib/main-loop.html>`_.
 

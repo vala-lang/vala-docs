@@ -29,7 +29,7 @@ A very simplified example:
 
    Originally, UNIX did not have threads, which means some traditional UNIX APIs are problematic in threaded programs.
 
-   Using this test could check whether the currnt environment supports threads.
+   Using this test could check whether the current environment supports threads.
 
    In most cases, it can be omitted.
 

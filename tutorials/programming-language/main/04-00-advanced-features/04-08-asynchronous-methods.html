@@ -528,7 +528,7 @@ the CPU back to its caller.</p>
 </pre></div>
 </div>
 <p>Both forms starts the async method running with the given arguments.
-The second form in addition registers an !AsyncReadyCallback which is
+The second form in addition registers an <code class="docutils literal notranslate"><span class="pre">AsyncReadyCallback</span></code> which is
 executed when the method finishes. The callback
 takes a source object, <code class="docutils literal notranslate"><span class="pre">obj</span></code>, and an instance of GAyncResult, <code class="docutils literal notranslate"><span class="pre">res</span></code>,
 as arguments. In the callback the <code class="docutils literal notranslate"><span class="pre">.end()</span></code> method should be called to receive the
@@ -567,7 +567,7 @@ other code to use to resume the method’s execution:</p>
 yield;
 </pre></div>
 </div>
-<p>Some code elsewhere must now call the stored !SourceFunc in order for
+<p>Some code elsewhere must now call the stored <code class="docutils literal notranslate"><span class="pre">SourceFunc</span></code> in order for
 the method to be resumed.  This could be done by scheduling the GLib
 main loop to run it:</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">Idle</span><span class="p">.</span><span class="n">add</span><span class="p">((</span><span class="kd">owned</span><span class="p">)</span><span class="w"> </span><span class="n">callback</span><span class="p">);</span>

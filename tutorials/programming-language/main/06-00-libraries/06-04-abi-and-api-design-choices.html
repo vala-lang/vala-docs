@@ -531,8 +531,8 @@ techniques are not available in all bindings.</p>
 <p>Since GObject Introspection does not handle generics, using them in APIs is harmful, since GI will generate 3 new
 parameters in the constructors of each generic class: one for the GType function, one for the duplication function and
 another for the destruction. These parameters are quite complicated to handle in languages like Python or Javascript.</p>
-<p>In addition to this, the properties that expose the generic type parameter will be exposed as <code class="docutils literal notranslate"><span class="pre">gpointer``s,</span> <span class="pre">which</span> <span class="pre">makes</span> <span class="pre">it</span>
-<span class="pre">even</span> <span class="pre">more</span> <span class="pre">complicated.</span> <span class="pre">Even</span> <span class="pre">generic</span> <span class="pre">methods</span> <span class="pre">like</span> <span class="pre">Gee's</span> <span class="pre">``add</span> <span class="pre">()</span></code> will expect a <code class="docutils literal notranslate"><span class="pre">gpointer</span></code> in GI, so doing something like
+<p>In addition to this, the properties that expose the generic type parameter will be exposed as several objects of the <code class="docutils literal notranslate"><span class="pre">gpointer</span></code> type, which makes it
+even more complicated. Even generic methods like Gee’s <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">()</span></code> will expect a <code class="docutils literal notranslate"><span class="pre">gpointer</span></code> in GI, so doing something like
 this in Python will result in an error, contrary to what you expect.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span> <span class="o">=</span> <span class="n">get_a_list_of_strings</span> <span class="p">()</span>
 <span class="nb">list</span><span class="o">.</span><span class="n">add</span> <span class="p">(</span><span class="s1">&#39;Hi&#39;</span><span class="p">)</span>

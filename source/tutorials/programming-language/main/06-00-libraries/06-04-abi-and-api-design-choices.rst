@@ -82,7 +82,7 @@ Since GObject Introspection does not handle generics, using them in APIs is harm
 parameters in the constructors of each generic class: one for the GType function, one for the duplication function and
 another for the destruction. These parameters are quite complicated to handle in languages like Python or Javascript.
 
-In addition to this, the properties that expose the generic type parameter will be exposed as ``gpointer``s, which makes it
+In addition to this, the properties that expose the generic type parameter will be exposed as several objects of ``gpointer`` type, which makes it
 even more complicated. Even generic methods like Gee's ``add ()`` will expect a ``gpointer`` in GI, so doing something like 
 this in Python will result in an error, contrary to what you expect.
 

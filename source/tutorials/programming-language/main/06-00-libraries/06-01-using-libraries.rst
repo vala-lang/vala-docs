@@ -7,7 +7,7 @@ Using a library in Vala is largely automated if you use the *valac* compiler.  T
 
    $ valac --pkg gee-1.0 test.vala
 
-This command means your program can use any of the definitions in the *gee-1.0.vapi* file, and also any in any of the packages that *gee-1.0* depends on.  These dependencies would be be listed in *gee-1.0.deps* if there were any.  In this example *valac* is set to build all the way to binary, and will therefore incorporate information from *pkg-config* to link the correct libraries.  This is why the *pkg-config* names are also used for Vala package names.
+This command means your program can use any of the definitions in the *gee-1.0.vapi* file, and also any in any of the packages that *gee-1.0* depends on.  These dependencies would be listed in *gee-1.0.deps* if there were any.  In this example *valac* is set to build all the way to binary, and will therefore incorporate information from *pkg-config* to link the correct libraries.  This is why the *pkg-config* names are also used for Vala package names.
 
 Packages are generally used with namespaces, but they are not technically related.  This means that even though your application is built with reference to the package, you must still include the required ``using`` statements in each file as appropriate, or else use the fully qualified names of all symbols.
 

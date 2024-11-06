@@ -1,7 +1,7 @@
 Collections
 ===========
 
-:doc:`Gee </developer-guides/libgee>` is a library of collection classes, written in Vala.  The classes should all be familiar to users of libraries such as Java's Foundation Classes. Gee consists of a set of interfaces and various types that implement these in different ways.
+`Gee <https://wiki.gnome.org/Projects/Libgee>`_ is a library of collection classes, written in Vala.  The classes should all be familiar to users of libraries such as Java's Foundation Classes. Gee consists of a set of interfaces and various types that implement these in different ways.
 
 If you want to use Gee in your own application, install the library separately on your system.  Gee can be obtained from `<http://wiki.gnome.org/Projects/Libgee>`_. In order to use the library you must compile your programs with ``--pkg gee-0.8``.
 
@@ -17,7 +17,7 @@ Also common to every *Collection* type is the *Iterable* interface. This means t
 
 All classes and interfaces use the generics system. This means that they must be instantiated with a particular type or set of types that they will contain.  The system will ensure that only the intended types can be put into the collections, and that when objects are retrieved they are returned as the correct type.
 
-`Gee API documentation <http://valadoc.org/gee-0.8/index.htm>`_, :doc:`Gee Examples </developer-guides/gee-examples>`.
+`Gee API documentation <http://valadoc.org/gee-0.8/index.htm>`_, `Gee Examples <https://wiki.gnome.org/Projects/Vala/GeeSamples>`_.
 
 Some important Gee classes are:
 

@@ -10,7 +10,7 @@ The `Vala README.md <https://gitlab.gnome.org/GNOME/vala/blob/master/README.md>`
 Setting up your editor
 --------------------------
 
-A :doc:`list of IDE(s) </tooling/ide-support>` with Vala support is available.
+A :doc:`list of IDE(s) </tooling/code-editors-and-ides>` with Vala support is available.
 
 Vala support is available also for `build tools and editors <Vala/Tools#Tool_Support>`_.
 

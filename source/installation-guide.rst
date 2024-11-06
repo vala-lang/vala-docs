@@ -1,7 +1,7 @@
 Installation Guide
 ==================
 
-Vala is available on multiple operating systems. Follow the isntallation instructions below for your operating system.
+Vala is available on multiple operating systems. Follow the installation instructions below for your operating system.
 
 Linux
 -----
@@ -33,6 +33,15 @@ Arch Linux
 .. code-block:: console
 
    $ sudo pacman -S vala
+
+ALT Linux
+~~~~~~~~~
+
+Development library packages are named as `lib*-devel`. Example: `libgee-devel`.
+
+.. code-block:: console
+
+   # apt-get install vala
 
 \*BSD
 -----

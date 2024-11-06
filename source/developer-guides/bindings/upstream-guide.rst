@@ -151,7 +151,7 @@ VAPIGEN_FILES
 \*_VAPIDIRS / VAPIGEN_VAPIDIRS
    List of directories to look for VAPI dependencies. Corresponds to the -\-vapidir arguments.
 \*_GIRDIRS / VAPIGEN_GIRDIRS
-   List of directories to look for GIR dependencies. Corresponds to the -\-girdir arguments.  Note that this only specifies where vapigen will look for dependencies, not for the source files (i.e., files listed in *_FILES).
+   List of directories to look for GIR dependencies. Corresponds to the -\-girdir arguments.  Note that this only specifies where vapigen will look for dependencies, not for the source files (i.e., files listed in \*_FILES).
 \*_FILES
    The GIR file to generate the VAPI from
 

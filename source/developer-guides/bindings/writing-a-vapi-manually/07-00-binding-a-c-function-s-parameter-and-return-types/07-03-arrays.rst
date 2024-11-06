@@ -43,5 +43,5 @@ If the array length is unknown, setting ``array_length = false`` in the ``CCode`
 Array Length is Known by Some Awkward Means
 -------------------------------------------
 
-This is only applicable for arrays being returned. If the array's length can be determined, but non-trivially, a wrapper function can be included that sets the array's ``.length property`` to the correct value. See :doc:`Array Lengths <../10-00-awkward-situations/array-lengths>`.
+This is only applicable for arrays being returned. If the array's length can be determined, but non-trivially, a wrapper function can be included that sets the array's ``.length property`` to the correct value. See :doc:`Array Lengths <../10-00-awkward-situations/10-01-array-lengths>`.
 

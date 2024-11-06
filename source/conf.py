@@ -30,6 +30,8 @@ source_suffix = {
     '.rst': 'restructuredtext'
 }
 
+suppress_warnings = ['autosectionlabel.*']
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -59,14 +61,14 @@ html_theme_options = {
         "color-brand-content": "#A56DE2",
         "font-stack": "Cantarell, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji",
     },
-    "source_edit_link": "https://github.com/colinkiama/vala-docs/edit/main/source/{filename}",
+    "source_edit_link": "https://github.com/vala-lang/vala-docs/edit/main/source/{filename}",
 }
 
 # add custom files that are stored in _static
 html_css_files = ['gnome.css']
 
 html_logo = 'logo.png'
-html_favicon = 'logo.png'
+html_favicon = 'favicon.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -85,6 +87,6 @@ copybutton_prompt_text = r'[\$>] '
 copybutton_prompt_is_regexp = True
 
 # -- Options for opengraph ---------------------------------------------------
-ogp_site_url = "https://colinkiama.github.io/vala-docs/"
+ogp_site_url = "https://docs.vala.dev/"
 ogp_image = "static/card.png"
 

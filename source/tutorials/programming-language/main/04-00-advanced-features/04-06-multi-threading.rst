@@ -29,7 +29,7 @@ A very simplified example:
 
    Originally, UNIX did not have threads, which means some traditional UNIX APIs are problematic in threaded programs.
 
-   Using this test could check whether the currnt environment supports threads.
+   Using this test could check whether the current environment supports threads.
 
    In most cases, it can be omitted.
 
@@ -63,7 +63,7 @@ What's more, it is possible for a thread to tell the system that it currently ha
 
 All these examples have a potential problem, in that the newly created thread doesn't know the context in which it should run.  In C you would supply the thread creation method with some data, in Vala instead you would normally pass an instance method, instead of a static method.
 
-More samples in :doc:`Threading Samples </developer-guides/threading-samples>`.
+More samples in `Threading Samples <https://wiki.gnome.org/Projects/Vala/ThreadingSamples>`_.
 
 
 Resource Control

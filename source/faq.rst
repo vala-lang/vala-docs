@@ -129,7 +129,7 @@ NOTE 2: Only GObject classes have gobject propertes (introspectable at runtime).
 How do I read from stdin?
 --------------------------
 
-Allocating space for strings to be read in can be tricky. See :doc:`developer-guides/other/input-samples/` for an example.
+Allocating space for strings to be read in can be tricky. See `Input Samples <https://wiki.gnome.org/Projects/Vala/InputSamples>`_ for an example.
 
 How do I get the GType for something?
 -------------------------------------
@@ -166,7 +166,7 @@ Often external libraries do not offer functionality for ``base()`` usage. Theref
 
 .. code-block:: vala
 
-   class MyWindow : Gtk.Window {
+   class MyWindow : Gtk.Window {https://wiki.gnome.org/Projects/Vala/InputSamples
      public MyWindow () {
        Object (type: Gtk.WindowType.TOPLEVEL);
      }

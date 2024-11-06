@@ -4,10 +4,12 @@ Vala Documentation
 .. toctree::
    :hidden:
 
+   Home <self>
    About <about>
    Installation Guide <installation-guide>
    Developer Guides <developer-guides/index>
    Tutorials <tutorials/index>
+   Tooling <tooling/index>
    Contributor Guide <contributor-guide/index>
    Developer Guides <developer-guides/index>
    FAQ <faq>
@@ -38,6 +40,7 @@ External Resources
 - `Reference Manual <https://gnome.pages.gitlab.gnome.org/vala/manual/index.html>`_
 - `GNOME Developer Documentation <https://developer.gnome.org/documentation/>`_
 - `elementary OS Developer Documentation <https://docs.elementary.io/develop>`_
+- `Vala Compiler Repository <https://gitlab.gnome.org/GNOME/vala>`_
 - `Vala Website <https://vala.dev>`_
 - `Vala Project GNOME Wiki (Deprecated) <https://wiki.gnome.org/Projects/Vala>`_
 
@@ -49,5 +52,5 @@ Community
 Contribute
 ----------
 
-- `View the source code of this documentation <https://github.com/colinkiama/vala-docs>`_
+- `View the source code of this documentation <https://github.com/vala-lang/vala-docs>`_
 

@@ -30,7 +30,7 @@ Sections
 - `Tooling <tooling>`_
 - `Contributor Guide <contributor-guide>`_
 - `Developer Guides <developer-guides>`_
-- `FAQ <faq>`_ 
+- `FAQ <faq>`_
 
 External Resources
 ------------------

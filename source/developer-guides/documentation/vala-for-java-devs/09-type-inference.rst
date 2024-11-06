@@ -1,5 +1,5 @@
 Type Inference
-===========================
+==============
 
 Vala supports a mechanism called type inference (implicit typing) for local variables: Local variables may be declared using the ``var`` keyword instead of the type name if the compiler can deduce (infer) the type from the initial assignment. This helps avoiding unnecessary redundancy and is especially useful for generic types. Examples:
 
@@ -45,7 +45,7 @@ Vala: no implicit inheritance from ``Object`` (``GLib.Object``):
 What happens if you don't inherit from ``Object``? Nothing terrible. These classes will be slightly more lightweight, however, they will lack some features such as property change notifications, and your objects won't have a common base class. Usually inheriting from ``Object`` is what you want.
 
 Multiple Constructors
--------------------
+---------------------
 
 Java: constructor overloading:
 
@@ -86,7 +86,7 @@ Java: this():
         public Foo() {
             this("bar");
         }
-        
+
         public Foo(string bar) {
         }
     }
@@ -99,7 +99,7 @@ Vala: this() or this.name_addition():
         public Foo () {
             this.with_bar ("bar");
         }
-        
+
         public Foo.with_bar (string bar) {
         }
     }

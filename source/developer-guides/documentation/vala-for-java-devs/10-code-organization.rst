@@ -1,5 +1,5 @@
 Code Organization
------------------
+=================
 
 Files
 -----
@@ -13,7 +13,7 @@ Vala:
  - file name doesn't need to resemble a class name
 
 Hierarchy
---------
+---------
 
 Java:
  - packages, represented by directory hierarchy
@@ -48,3 +48,4 @@ Java:
 
 Vala:
  - namespace ``GLib`` imported by default
+

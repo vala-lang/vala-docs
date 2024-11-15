@@ -165,6 +165,55 @@ to the called method which runs until its first ``yield`` and then drops
 back to the calling method, which completes the ``yield`` statement
 itself, and then gives back control to its own caller.
 
+Thread with Async Methods
+-------------------------
+
+An async method may be used to control a background thread.
+the supra_calculator function execute a blocking thread just after it will use the ``yield`` keyword which makes us return to the main and it can continue to print the 'Hi !' every second. once the Thread has finished executing it uses ``Idle.add(supra_calculator.callback);`` which indicates that the program can return to the function at the time of the yield. we join the thread and retrieve the calculation and we return it to retrieve it in the main
+
+``yield`` keyword is like a pause in the execution of the program, it allows to execute other code and then return to the function where the ``yield`` was used.
+
+.. code-block:: vala
+    :linenos:
+
+    async int supra_calculator (int ms) {
+        var thread = new Thread<int> (null, () => {
+            int n = 0;
+            // make a hard calculation:
+            n = 12 * ms;
+            Thread.usleep(ms * 1000);
+            Idle.add(supra_calculator.callback);
+            return n;
+        });
+        yield;
+
+        var result = thread.join ();
+        return result;
+    }
+
+    async void main() {
+
+        // Every second, print "Hi !"
+        Timeout.add(1000, () => {
+            print (@"Hi !\n");
+            return true;
+        });
+
+        int res = yield supra_calculator(4000);
+        print (@"result: $res\n");
+    }
+
+
+the output:
+
+    Hi !
+
+    Hi !
+
+    Hi !
+
+    result: 48000
+
 Examples
 --------
 

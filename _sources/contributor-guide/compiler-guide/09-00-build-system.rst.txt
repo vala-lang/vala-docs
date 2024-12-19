@@ -7,6 +7,9 @@ Vala is built using the standard GNU Autotools. The built executables are actual
 
    Add Vala debug instructions.
 
+   Feel free to help: `Vala Docs Repository <https://github.com/vala-lang/vala-docs>`_.
+
+
 **./configure** uses the AC_PATH_PROG macro to choose the **valac** which is on your path, or one specified in the VALAC environment variable. Therefore, to build Vala with your own **valac**, type this, for example:
 
 .. code-block:: console

@@ -3,6 +3,6 @@ Tutorials
 
 .. toctree::
    :maxdepth: 2
-   :glob:
 
-   *
+   programming-language
+   gui-programming

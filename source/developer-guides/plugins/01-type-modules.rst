@@ -1,12 +1,11 @@
 Type Modules
 ============
 
-This example shows you how to implement a GLib.TypeModule based plugin in Vala. It also shows the usage of static construct/destruct block. Plugin itself: plugin.vala
+This example shows you how to implement a GLib.TypeModule based plugin in Vala. It also shows the usage of static construct/destruct block.
 
 .. code-block:: vala
 
    // plugin.vala
-
    public class MyClass : Object
    {
            static construct

@@ -51,10 +51,10 @@ Returning structs is rather different. Because struct's memory is allocated by t
 
 .. code-block:: vala
 
-   public struct Foo { … }
+   public struct Foo { /* … */ }
    public Foo get_foo (int x);
    public void get_foo2 (int x, out Foo f);
-   
+
 .. code-block:: c
 
    void get_foo(int x, foo *ret);
@@ -73,4 +73,3 @@ To return a struct directly, the question mark operator will box it, and make it
    int make_foo(int y, foo **f);
 
 The ownership rules in :doc:`05-02-ownership` apply.
-

@@ -58,4 +58,4 @@ Vala
 
 Vala's GTK+ API is very close to the original GTK+ API. In fact, you're using GTK+ functions directly, only with different syntax.
 
-See `GTK+ Examples <https://docs.vala.dev/tutorials/gui-programming/gtk4-samples>`_
+See :doc:`GTK+ Examples </tutorials/gui-programming/gtk4-samples>`

@@ -12,7 +12,7 @@ C#:
    /// <param name="bar">...</param>
    /// <returns>...</returns>
 
-Vala: `Valadoc <https://docs.vala.dev/tutorials/programming-language/main/02-00-basics/02-03-comments>`_
+Vala: :doc:`Valadoc </tutorials/programming-language/main/02-00-basics/02-03-comments>`
 comments
 
 .. code-block:: vala

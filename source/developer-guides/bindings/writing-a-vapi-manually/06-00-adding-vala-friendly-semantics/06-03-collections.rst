@@ -77,11 +77,11 @@ For container-like instances, Vala provides syntactic sugar to convert certain o
 
 .. code-block:: vala
 
-   x in a → a.contains (x)
-   a[x, y] → a.get (x, y)
-   a[x, y] = z → a.set (x, y, z);
-   foreach (var x in a) { … } → var x; var i = a.iterator (); while ((x = i.next_value ()) != null) {...}
-   foreach (var x in a) { … } → var i = a.iterator (); while (i.next ()) { var x = i.get (); … }
+   x in a // → a.contains (x)
+   a[x, y] // → a.get (x, y)
+   a[x, y] = z // → a.set (x, y, z);
+   foreach (var x in a) { /* … */ } // → var x; var i = a.iterator (); while ((x = i.next_value ()) != null) { /* … */ }
+   foreach (var x in a) { /* … */ } // → var i = a.iterator (); while (i.next ()) { var x = i.get (); /* … */ }
 
 If appropriate, providing methods that match these prototypes will allow use of the sugar.
 
@@ -90,4 +90,3 @@ If appropriate, providing methods that match these prototypes will allow use of 
 Iterators require an intermediate object to be the holder of the iteration state. That class must implement a next_value function that returns the next value or null if iteration is to stop or it may have a next method with signature ``bool next ()`` that moves to the next element and returns true if there is one and a method ``T get ()`` to retrieve the current value of the iterator. It is rare for a C program to have the interface needed to do this.
 
 Use your best judgement in deciding whether or not to use these conventions. This is modifying the interface, but it does tend to make the resulting interface easier to use.
-

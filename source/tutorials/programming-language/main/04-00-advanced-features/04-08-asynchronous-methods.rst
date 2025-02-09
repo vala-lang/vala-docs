@@ -41,7 +41,7 @@ example:
 
    async void display_jpeg(string fnam) {
        // Load JPEG in a background thread and display it when loaded
-       [...]
+       // [...]
    }
 
 
@@ -52,7 +52,7 @@ or:
    async int fetch_webpage(string url, out string text) throws IOError {
        // Fetch a webpage asynchronously and when ready return the
        // HTTP status code and put the page contents in 'text'
-       [...]
+       // [...]
        text = result;
        return status;
    }
@@ -115,7 +115,7 @@ other code to use to resume the method's execution:
 .. code-block:: vala
 
    SourceFunc callback = fetch_webpage.callback;
-   [... store 'callback' somewhere ...]
+   /* … store 'callback' somewhere … */
    yield;
 
 Some code elsewhere must now call the stored ``SourceFunc`` in order for
@@ -169,4 +169,3 @@ Examples
 --------
 
 See `Async Method Samples <https://wiki.gnome.org/Projects/Vala/AsyncSamples>`_ for examples of different ways that async may be used.
-

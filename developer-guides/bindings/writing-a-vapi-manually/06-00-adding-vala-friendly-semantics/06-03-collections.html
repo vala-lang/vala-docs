@@ -539,11 +539,11 @@
 </pre></div>
 </div>
 <p>For container-like instances, Vala provides syntactic sugar to convert certain operations into method calls:</p>
-<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span>x in a → a.contains (x)
-a[x, y] → a.get (x, y)
-a[x, y] = z → a.set (x, y, z);
-foreach (var x in a) { … } → var x; var i = a.iterator (); while ((x = i.next_value ()) != null) {...}
-foreach (var x in a) { … } → var i = a.iterator (); while (i.next ()) { var x = i.get (); … }
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="c1">// → a.contains (x)</span>
+<span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">]</span><span class="w"> </span><span class="c1">// → a.get (x, y)</span>
+<span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">z</span><span class="w"> </span><span class="c1">// → a.set (x, y, z);</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* … */</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// → var x; var i = a.iterator (); while ((x = i.next_value ()) != null) { /* … */ }</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="kd">var</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">a</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* … */</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">// → var i = a.iterator (); while (i.next ()) { var x = i.get (); /* … */ }</span>
 </pre></div>
 </div>
 <p>If appropriate, providing methods that match these prototypes will allow use of the sugar.</p>

@@ -520,7 +520,7 @@ must be built with the <code class="docutils literal notranslate"><span class="p
 example:</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">async</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">display_jpeg</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">fnam</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Load JPEG in a background thread and display it when loaded</span>
-<span class="w">    </span><span class="p">[...]</span>
+<span class="w">    </span><span class="c1">// [...]</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -528,7 +528,7 @@ example:</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">async</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">fetch_webpage</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOError</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Fetch a webpage asynchronously and when ready return the</span>
 <span class="w">    </span><span class="c1">// HTTP status code and put the page contents in &#39;text&#39;</span>
-<span class="w">    </span><span class="p">[...]</span>
+<span class="w">    </span><span class="c1">// [...]</span>
 <span class="w">    </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">status</span><span class="p">;</span>
 <span class="p">}</span>
@@ -579,9 +579,9 @@ resume the method when there are no more events to process:</p>
 </div>
 <p>This form gives up control, and stores the callback details for some
 other code to use to resume the method’s execution:</p>
-<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span>SourceFunc callback = fetch_webpage.callback;
-[... store &#39;callback&#39; somewhere ...]
-yield;
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="n">SourceFunc</span><span class="w"> </span><span class="n">callback</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fetch_webpage</span><span class="p">.</span><span class="n">callback</span><span class="p">;</span>
+<span class="cm">/* … store &#39;callback&#39; somewhere … */</span>
+<span class="k">yield</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>Some code elsewhere must now call the stored <code class="docutils literal notranslate"><span class="pre">SourceFunc</span></code> in order for

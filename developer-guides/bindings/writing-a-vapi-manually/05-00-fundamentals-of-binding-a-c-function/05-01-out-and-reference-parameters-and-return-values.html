@@ -520,9 +520,9 @@
 </div>
 <p>Note that when you think of an “out array” what you may actually want is just a buffer. If the caller allocates the memory, you want a buffer, not an out array.</p>
 <p>Returning structs is rather different. Because struct’s memory is allocated by the caller, an out parameter for a struct is indistinguishable from a regular pointer. Moreover, returning a struct actually means including a hidden out parameter.</p>
-<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span>public struct Foo { … }
-public Foo get_foo (int x);
-public void get_foo2 (int x, out Foo f);
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">struct</span><span class="w"> </span><span class="nc">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* … */</span><span class="w"> </span><span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="n">get_foo</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">get_foo2</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="n">f</span><span class="p">);</span>
 </pre></div>
 </div>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">get_foo</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">foo</span><span class="w"> </span><span class="o">*</span><span class="n">ret</span><span class="p">);</span>

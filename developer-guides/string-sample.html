@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="author" title="About these documents" href="../about.html" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Vala for C# Programmers" href="documentation/vala-for-csharp-devs.html" /><link rel="prev" title="10.5. Shared Context Delegates" href="bindings/writing-a-vapi-manually/10-00-awkward-situations/10-05-shared-context-delgates.html" />
+<link rel="author" title="About these documents" href="../about.html" /><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Vala FAQ" href="../faq.html" /><link rel="prev" title="Libpeas" href="plugins/02-libpeas.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 6.2.0 and Furo 2024.08.06 -->
-        <title>Documentation - Vala Documentation</title>
+        <title>String Sample - Vala Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=04c057b233f3c8d71940eee6080f658a04e2027d" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
@@ -424,7 +424,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="documentation.html">Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle navigation of Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3 has-children"><a class="reference internal" href="documentation/vala-for-csharp-devs.html">Vala for C# Programmers</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle navigation of Vala for C# Programmers</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="documentation/vala-for-csharp-devs/01-sources-files.html">Source Files</a></li>
 <li class="toctree-l4"><a class="reference internal" href="documentation/vala-for-csharp-devs/02-compilation.html">Compilation</a></li>
@@ -485,7 +485,7 @@
 <li class="toctree-l3"><a class="reference internal" href="plugins/02-libpeas.html">Libpeas</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="string-sample.html">String Sample</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">String Sample</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
@@ -509,7 +509,7 @@
         </a>
         <div class="content-icon-container">
           <div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/vala-lang/vala-docs/edit/main/source/developer-guides/documentation.rst" title="Edit this page">
+  <a class="muted-link" href="https://github.com/vala-lang/vala-docs/edit/main/source/developer-guides/string-sample.rst" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -527,13 +527,107 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="documentation">
-<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="documentation/vala-for-csharp-devs.html">Vala for C# Programmers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="documentation/valadoc-guide.html">Valadoc Guide</a></li>
-</ul>
+          <section id="string-sample">
+<h1>String Sample<a class="headerlink" href="#string-sample" title="Permalink to this heading">¶</a></h1>
+<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">str</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">stdout</span><span class="p">.</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="cm">/* Strings are of data type &#39;string&#39; and can be concatenated with the plus</span>
+<span class="cm">     * operator resulting in a new string:</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Concatenated &quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;string&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* If you want to have a mutable string you should use StringBuilder.</span>
+<span class="cm">     * With its help you are able to build strings ad libitum by prepending,</span>
+<span class="cm">     * appending, inserting or removing parts. It&#39;s faster than multiple</span>
+<span class="cm">     * concatenations. In order to obtain the final product you access the</span>
+<span class="cm">     * field &#39;.str&#39;.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="n">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StringBuilder</span><span class="w"> </span><span class="p">();</span>
+<span class="w">    </span><span class="n">builder</span><span class="p">.</span><span class="n">append</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;built &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">builder</span><span class="p">.</span><span class="n">prepend</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;String &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">builder</span><span class="p">.</span><span class="n">append</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;StringBuilder&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">builder</span><span class="p">.</span><span class="n">append_unichar</span><span class="w"> </span><span class="p">(</span><span class="sc">&#39;.&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">builder</span><span class="p">.</span><span class="n">insert</span><span class="w"> </span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;by &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">str</span><span class="p">);</span><span class="w"> </span><span class="c1">// =&gt; &quot;String built by StringBuilder.&quot;</span>
+
+<span class="w">    </span><span class="cm">/* You can create a new string according to a format string by calling the</span>
+<span class="cm">     * method &#39;printf&#39; on it. Format strings follow the usual rules, known from</span>
+<span class="cm">     * C and similar programming languages.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">formatted</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PI %s equals %g.&quot;</span><span class="p">.</span><span class="n">printf</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;approximately&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="n">PI</span><span class="p">);</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="n">formatted</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* Strings prefixed with &#39;@&#39; are string templates. They can evaluate</span>
+<span class="cm">     * embedded variables and expressions prefixed with &#39;$&#39;.</span>
+<span class="cm">     * Since Vala 0.7.8.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Dave&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="s">@&quot;Good morning, $name!&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="s">@&quot;4 + 3 = $(4 + 3)&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="cm">/* The equality operator compares the content of two strings, contrary to</span>
+<span class="cm">     * Java&#39;s behaviour which in this case would check for referential equality.</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;foo&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;String == operator compares content, not reference.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">assert_not_reached</span><span class="w"> </span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/* You can compare strings in lexicographical order with the &lt; and &gt; operators: */</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s">&quot;red&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s">&quot;orange&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="s">&quot;green&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;blue is less than red and orange is greater than green&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Switch statement</span>
+<span class="w">    </span><span class="kt">string</span><span class="w"> </span><span class="n">pl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;vala&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">pl</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;java&quot;</span><span class="o">:</span>
+<span class="w">        </span><span class="n">assert_not_reached</span><span class="w"> </span><span class="p">();</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;vala&quot;</span><span class="o">:</span>
+<span class="w">        </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;Switch statement works fine with strings.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="s">&quot;ruby&quot;</span><span class="o">:</span>
+<span class="w">        </span><span class="n">assert_not_reached</span><span class="w"> </span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="cm">/* You can apply various operations on strings. Here&#39;s a small selection: */</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;from lower case to upper case&quot;</span><span class="p">.</span><span class="n">up</span><span class="w"> </span><span class="p">());</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;reversed string&quot;</span><span class="p">.</span><span class="n">reverse</span><span class="w"> </span><span class="p">());</span>
+<span class="w">    </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;...substring...&quot;</span><span class="p">.</span><span class="n">substring</span><span class="w"> </span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">9</span><span class="p">));</span>
+
+<span class="w">    </span><span class="cm">/* The &#39;in&#39; keyword is syntactic sugar for checking if one string contains</span>
+<span class="cm">     * another string. The following expression is identical to</span>
+<span class="cm">     * &quot;swordfish&quot;.contains (&quot;word&quot;)</span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;word&quot;</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s">&quot;swordfish&quot;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;word is a part of swordfish&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Regular expressions</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="n">regex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Regex</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;(jaguar|tiger|leopard)&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="kt">string</span><span class="w"> </span><span class="n">animals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;wolf, tiger, eagle, jaguar, leopard, bear&quot;</span><span class="p">;</span>
+<span class="w">        </span><span class="n">println</span><span class="w"> </span><span class="p">(</span><span class="n">regex</span><span class="p">.</span><span class="n">replace</span><span class="w"> </span><span class="p">(</span><span class="n">animals</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;kitty&quot;</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">RegexError</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">warning</span><span class="w"> </span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">e</span><span class="p">.</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Compile and Run</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>valac<span class="w"> </span>string-sample.vala
+$<span class="w"> </span>./string-sample
+</pre></div>
 </div>
 </section>
 
@@ -542,23 +636,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="documentation/vala-for-csharp-devs.html">
+          <a class="next-page" href="../faq.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Vala for C# Programmers</div>
+                <div class="title">Vala FAQ</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="bindings/writing-a-vapi-manually/10-00-awkward-situations/10-05-shared-context-delgates.html">
+          <a class="prev-page" href="plugins/02-libpeas.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title"><span class="section-number">10.5. </span>Shared Context Delegates</div>
+                <div class="title">Libpeas</div>
                 
               </div>
             </a>

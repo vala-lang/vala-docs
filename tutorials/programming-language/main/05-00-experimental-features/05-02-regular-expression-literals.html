@@ -555,6 +555,7 @@ if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.match(email)) {
 <li><p><em>m</em>, the “start of line” and “end of line” constructs match immediately following or immediately before any newline in the string, respectively, as well as at the very start and end.</p></li>
 <li><p><em>s</em>, a dot metacharater <em>.</em> in the pattern matches all characters, including newlines. Without it, newlines are excluded.</p></li>
 <li><p><em>x</em>, whitespace data characters in the pattern are totally ignored except when escaped or inside a character class.</p></li>
+<li><p><em>o</em>, request JIT compilation of a regular expression. It allows to execute this regex much faster at the cost of extra time taken to compile it. This option is most benificial, when the same compiled pattern is used for matching several times.</p></li>
 </ul>
 </section>
 

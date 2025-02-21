@@ -17,7 +17,7 @@ Also common to every *Collection* type is the *Iterable* interface. This means t
 
 All classes and interfaces use the generics system. This means that they must be instantiated with a particular type or set of types that they will contain.  The system will ensure that only the intended types can be put into the collections, and that when objects are retrieved they are returned as the correct type.
 
-`Gee API documentation <http://valadoc.org/gee-0.8/index.htm>`_, `Gee Examples <https://wiki.gnome.org/Projects/Vala/GeeSamples>`_.
+`Gee API documentation <http://valadoc.org/gee-0.8/index.htm>`_, :doc:`Gee Examples </developer-guides/gee-samples>`.
 
 Some important Gee classes are:
 

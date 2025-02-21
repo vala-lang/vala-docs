@@ -1,6 +1,14 @@
 using Gee;
 
-class RangeIterator : Object, Iterator<int> {
+public class RangeIterator : Object, Iterator<int>, Traversable<int> {
+
+   public bool read_only {
+       get { return true; }
+   }
+
+   public bool valid {
+       get { return true; }
+   }
 
    private Range range;
    private int current;
@@ -22,11 +30,6 @@ class RangeIterator : Object, Iterator<int> {
        return this.current < this.range.to;
    }
 
-   public bool first () {
-       this.current = range.from;
-       return true;
-   }
-
    /* Here the 'new' keyword is used because Object already
       has a 'get' method. This will hide the original method.
       Otherwise you'll get a warning. */
@@ -34,12 +37,25 @@ class RangeIterator : Object, Iterator<int> {
        return this.current;
    }
 
+   public new RangeIterator dup_data (string key, DuplicateFunc<RangeIterator> f) {
+       return this;
+   }
+
    public void remove () {
        assert_not_reached ();
    }
+
+   public bool @foreach(ForallFunc<int> f) {
+       for (int i = this.range.from; i < this.range.to; i++) {
+           if (! f (i)) {
+               return false;
+           }
+       }
+       return true;
+   }
 }
 
-public class Range : Object, Iterable<int> {
+public class Range : Object, Iterable<int>, Traversable<int> {
 
    public int from { get; private set; }
    public int to { get; private set; }
@@ -56,6 +72,13 @@ public class Range : Object, Iterable<int> {
 
    public Iterator<int> iterator () {
        return new RangeIterator (this);
+   }
+
+   public bool @foreach(ForallFunc<int> f) {
+       for (int i = this.from; i < this.to; i++) {
+           f (i);
+       }
+       return true;
    }
 }
 

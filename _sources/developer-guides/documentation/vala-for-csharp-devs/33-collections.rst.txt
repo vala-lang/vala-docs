@@ -29,7 +29,7 @@ IList                      List
                            Deque
 ========================== ===
 
-See `Gee Examples <https://wiki.gnome.org/Projects/Vala/GeeSamples>`_
+See :doc:`Gee Examples </developer-guides/gee-samples>`
 
 You can access and assign Gee collection items via indexers (e.g.
 ``my_map[key]`` is equivalent to ``my_map.get (key)``). Vala supports an ``in``

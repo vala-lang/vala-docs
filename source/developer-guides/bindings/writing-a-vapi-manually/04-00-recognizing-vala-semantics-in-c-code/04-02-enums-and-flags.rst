@@ -65,9 +65,45 @@ There is also a common tendency to use combinable bit patterns. These are conver
    }
 
 
-In Vala, enums and flags may have member functions. In particular, ``strerr``-like functions are best converted to member functions. 
+In Vala, enums and flags may have member functions and properties. In particular, ``strerr``-like functions are best converted to member functions. 
 
-Enums may also inherit, so if one set of flags is a superset of another, but they are logically separate, this can be done using inheritance.
+The default function ``to_string()`` can cause problems if the enum has aliases (the C error ``duplicate case`` will trigger). So to solve this, 
+you can create additional constants after the enum has been declared to add this missing enum aliases.
+
+For example this enum:
+
+.. code-block:: c
+
+   typedef enum {
+       BAR_A,
+       BAR_B,
+       BAR_C,
+       BAR_D,
+       BAR_FIRST = BAR_A,
+       BAR_LAST = BAR_D,
+   } bar_e;
+
+Will become:
+
+.. code-block:: vala
+
+   [CCode (cname = "bar_e", cprefix = "BAR_", has_type_id = false)]
+   public enum Bar {
+       A,
+       B,
+       C;
+
+       [CCode (cname = "BAR_")]
+       public const Bar FIRST;
+
+       [CCode (cname = "BAR_")]
+       public const Bar LAST;
+   }
+
+If one set of flags is a superset of another, but they are logically separate, You can create a different set of enums that refer to the same enum
+or defines.
+
+For example:
 
 .. code-block:: c
 
@@ -80,10 +116,17 @@ Enums may also inherit, so if one set of flags is a superset of another, but the
    /* takes any FOO_ value */
    void do_something_else(int);
 
+Can become this:
+
 .. code-block:: vala
 
    [CCode (cname = "int", cprefix = "FOO_", has_type_id = false)]
    public enum Foo { A, B }
    [CCode (cname = "int", cprefix = "FOO_", has_type_id = false)]
-   public enum FooExtended : Foo { C, D }
+   public enum FooExtended { C, D }
 
+You can then cast one enum to another:
+
+.. code.block:: vala
+
+var foo_enum = (Foo) FooExtended.C;

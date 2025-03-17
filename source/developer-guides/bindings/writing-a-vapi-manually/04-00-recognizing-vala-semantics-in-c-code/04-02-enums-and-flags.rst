@@ -64,11 +64,51 @@ There is also a common tendency to use combinable bit patterns. These are conver
        CREATE
    }
 
+Supersets
+---------
 
-In Vala, enums and flags may have member functions and properties. In particular, ``strerr``-like functions are best converted to member functions. 
+If one set of enums or flags is a superset of another, but they are logically separate, You can create a different set of enums that refer to the same enum
+or defines.
+
+For example:
+
+.. code-block:: c
+
+   #define FOO_A 1
+   #define FOO_B 2
+   #define FOO_C 3
+   #define FOO_D 4
+   /* takes FOO_A or B only */
+   void do_something(int);
+   /* takes any FOO_ value */
+   void do_something_else(int);
+
+Can become this:
+
+.. code-block:: vala
+
+   [CCode (cname = "int", cprefix = "FOO_", has_type_id = false)]
+   public enum Foo { A, B }
+   [CCode (cname = "int", cprefix = "FOO_", has_type_id = false)]
+   public enum FooExtended { C, D }
+
+You can then cast one enum to another:
+
+.. code-block:: vala
+    
+   var foo_enum = (Foo) FooExtended.C;
+
+Member functions and constants
+------------------------------
+
+In Vala, enums and flags may have member functions and constants.
+In particular, ``strerr``-like functions are best converted to member functions. 
+
+Enum aliases and ``to_string()``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The default function ``to_string()`` can cause problems if the enum has aliases (the C error ``duplicate case`` will trigger). So to solve this, 
-you can create additional constants after the enum has been declared to add this missing enum aliases.
+you can create additional constants after the enum has been declared to add the missing enum aliases.
 
 For example this enum:
 
@@ -99,34 +139,3 @@ Will become:
        [CCode (cname = "BAR_")]
        public const Bar LAST;
    }
-
-If one set of flags is a superset of another, but they are logically separate, You can create a different set of enums that refer to the same enum
-or defines.
-
-For example:
-
-.. code-block:: c
-
-   #define FOO_A 1
-   #define FOO_B 2
-   #define FOO_C 3
-   #define FOO_D 4
-   /* takes FOO_A or B only */
-   void do_something(int);
-   /* takes any FOO_ value */
-   void do_something_else(int);
-
-Can become this:
-
-.. code-block:: vala
-
-   [CCode (cname = "int", cprefix = "FOO_", has_type_id = false)]
-   public enum Foo { A, B }
-   [CCode (cname = "int", cprefix = "FOO_", has_type_id = false)]
-   public enum FooExtended { C, D }
-
-You can then cast one enum to another:
-
-.. code.block:: vala
-
-var foo_enum = (Foo) FooExtended.C;

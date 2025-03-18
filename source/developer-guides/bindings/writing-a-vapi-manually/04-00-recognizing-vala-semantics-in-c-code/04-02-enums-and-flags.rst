@@ -64,26 +64,4 @@ There is also a common tendency to use combinable bit patterns. These are conver
        CREATE
    }
 
-
 In Vala, enums and flags may have member functions. In particular, ``strerr``-like functions are best converted to member functions. 
-
-Enums may also inherit, so if one set of flags is a superset of another, but they are logically separate, this can be done using inheritance.
-
-.. code-block:: c
-
-   #define FOO_A 1
-   #define FOO_B 2
-   #define FOO_C 3
-   #define FOO_D 4
-   /* takes FOO_A or B only */
-   void do_something(int);
-   /* takes any FOO_ value */
-   void do_something_else(int);
-
-.. code-block:: vala
-
-   [CCode (cname = "int", cprefix = "FOO_", has_type_id = false)]
-   public enum Foo { A, B }
-   [CCode (cname = "int", cprefix = "FOO_", has_type_id = false)]
-   public enum FooExtended : Foo { C, D }
-

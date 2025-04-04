@@ -962,6 +962,8 @@ And then it can be used as
     :lines: 1996-2012
     :language: vala
 
+*********************************************************************
+
  **🚦 Wrap Up Folks**
 
 And that about wraps it up. I will continue to improve this, so you might want to watch/star this repository to revisit. Also, I have plans on writing the same about the architectural patterns, stay tuned for it.
@@ -974,4 +976,5 @@ And that about wraps it up. I will continue to improve this, so you might want t
 - Reach out to me directly at kamranahmed.se@gmail.com or on twitter `@kamranahmedse <http://twitter.com/kamranahmedse>`_
 
  **License**
+
 MIT © `Kamran Ahmed <http://kamranahmed.info>`_

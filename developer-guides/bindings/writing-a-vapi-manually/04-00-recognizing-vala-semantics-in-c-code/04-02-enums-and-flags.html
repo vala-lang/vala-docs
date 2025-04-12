@@ -587,23 +587,6 @@
 </pre></div>
 </div>
 <p>In Vala, enums and flags may have member functions. In particular, <code class="docutils literal notranslate"><span class="pre">strerr</span></code>-like functions are best converted to member functions.</p>
-<p>Enums may also inherit, so if one set of flags is a superset of another, but they are logically separate, this can be done using inheritance.</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define FOO_A 1</span>
-<span class="cp">#define FOO_B 2</span>
-<span class="cp">#define FOO_C 3</span>
-<span class="cp">#define FOO_D 4</span>
-<span class="cm">/* takes FOO_A or B only */</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">do_something</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
-<span class="cm">/* takes any FOO_ value */</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">do_something_else</span><span class="p">(</span><span class="kt">int</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nd">CCode</span><span class="w"> </span><span class="p">(</span><span class="n">cname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;int&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cprefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;FOO_&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">has_type_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">)]</span>
-<span class="kd">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="p">}</span>
-<span class="p">[</span><span class="nd">CCode</span><span class="w"> </span><span class="p">(</span><span class="n">cname</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;int&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">cprefix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;FOO_&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">has_type_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">)]</span>
-<span class="kd">public</span><span class="w"> </span><span class="k">enum</span><span class="w"> </span><span class="n">FooExtended</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">Foo</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">C</span><span class="p">,</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="p">}</span>
-</pre></div>
-</div>
 </section>
 
         </article>

@@ -8,7 +8,7 @@ Source Code
 
    Don't use this code for creating applications.
 
-   Unless you know what you are sure about what you're doing,
+   Unless you are sure about what you're doing,
    follow the :doc:`Basic App Sample <basic-app>` instead.
 
 .. code-block:: vala

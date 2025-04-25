@@ -19,6 +19,7 @@ realize relationships between entities.
 -  `Proxy <#proxy>`__
 
 .. _adapter:
+
 🔌 Adapter
 ----------
 
@@ -113,6 +114,7 @@ And now the ``WildDog`` can be used in our game using
    hunter.hunt (wild_dog_adapter);
 
 .. _bridge:
+
 🚡 Bridge
 ---------
 
@@ -212,6 +214,7 @@ And both the hierarchies
    print ("%s", careers.get_content ()); // "Careers page in Dark Black";
 
 .. _composite:
+
 🌿 Composite
 ------------
 
@@ -317,6 +320,7 @@ And then it can be used as
    print ("Net salaries: " + organization.get_net_salaries ().to_string () + "\n");
 
 .. _decorator:
+
 ☕ Decorator
 ------------
 
@@ -436,6 +440,7 @@ Lets make a coffee now
    print ("%s\n", some_coffee.get_description ()); // Simple Coffee, milk, vanilla
 
 .. _facade:
+
 📦 Facade
 ---------
 
@@ -521,6 +526,7 @@ Now to use the facade
        computer.turn_off (); // Bup bup buzzz! Haah! Zzzzz
 
 .. _flyweight:
+
 🍃 Flyweight
 ------------
 
@@ -606,6 +612,7 @@ And it can be used as below
    // Serving tea to table# 5
 
 .. _proxy:
+
 🎱 Proxy
 --------
 

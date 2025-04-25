@@ -24,6 +24,7 @@ flexibility in carrying out this communication.
 -  `Template Method <#template-method>`__
 
 .. _chain-of-responsibility:
+
 🔗 Chain of Responsibility
 --------------------------
 
@@ -137,6 +138,7 @@ Paypal, Bitcoin)
    // Paid 259 using Bitcoin!
 
 .. _command:
+
 👮 Command
 ----------
 
@@ -260,6 +262,7 @@ good otherwise just iterate through the history and keep executing the
 ``undo`` on all the executed commands.
 
 .. _iterator:
+
 ➿ Iterator
 -----------
 
@@ -359,6 +362,7 @@ And then it can be used as
    station_list.remove_station (new RadioStation (89.0f)); // Will remove station 89
 
 .. _mediator:
+
 👽 Mediator
 -----------
 
@@ -439,6 +443,7 @@ And the usage
    // Feb 14, 10:58 [Jane]: Hey!
 
 .. _memento:
+
 💾 Memento
 ----------
 
@@ -529,6 +534,7 @@ And then it can be used as
    print ("%s\n", editor.get_content ());
 
 .. _observer:
+
 😎 Observer
 -----------
 
@@ -625,6 +631,7 @@ Then it can be used as
    // Hi Jane Doe! New job posted: Software Engineer
 
 .. _visitor:
+
 🏃 Visitor
 ----------
 
@@ -771,6 +778,7 @@ And for the usage
    dolphin.accept (jump);  // Walked on water a little and disappeared
 
 .. _strategy:
+
 💡 Strategy
 -----------
 
@@ -848,6 +856,7 @@ And it can be used as
    sorter.sort (dataset); // Output : Sorting using quick sort
 
 .. _state:
+
 💢 State
 --------
 
@@ -946,6 +955,7 @@ And then it can be used as
    // fifth line
 
 .. _template-method:
+
 📒 Template Method
 ------------------
 

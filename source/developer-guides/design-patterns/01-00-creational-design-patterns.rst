@@ -1,13 +1,9 @@
 Creational Design Patterns
 ==========================
 
-In plain words 
+In plain words > Creational patterns are focused towards how to instantiate an object or group of related objects.
 
--  Creational patterns are focused towards how to instantiate an object or group of related objects.
-
-Wikipedia says 
-
-- In software engineering, creational design patterns are
+Wikipedia says > In software engineering, creational design patterns are
 design patterns that deal with object creation mechanisms, trying to
 create objects in a manner suitable to the situation. The basic form of
 object creation could result in design problems or added complexity to
@@ -22,6 +18,7 @@ controlling this object creation.
 -  `Singleton <#singleton>`__
 
 .. _simple-factory:
+
 🏠 Simple Factory
 -----------------
 
@@ -92,6 +89,7 @@ logic, it makes sense to put it in a dedicated factory instead of
 repeating the same code everywhere.
 
 .. _factory-method:
+
 🏭 Factory Method
 -----------------
 
@@ -182,6 +180,7 @@ sub-class is dynamically decided at runtime. Or putting it in other
 words, when the client doesn’t know what exact sub-class it might need.
 
 .. _abstract-factory:
+
 🔨 Abstract Factory
 -------------------
 
@@ -311,6 +310,7 @@ When there are interrelated dependencies with not-that-simple creation
 logic involved
 
 .. _builder:
+
 👷 Builder
 ----------
 
@@ -431,6 +431,7 @@ process while builder pattern is to be used when the creation is a multi
 step process.
 
 .. _prototype:
+
 🐑 Prototype
 ------------
 
@@ -510,6 +511,7 @@ When an object is required that is similar to existing object or when
 the creation would be expensive as compared to cloning.
 
 .. _singleton:
+
 💍 Singleton
 ------------
 

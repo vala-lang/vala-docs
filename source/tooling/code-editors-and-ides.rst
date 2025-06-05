@@ -82,13 +82,13 @@ Text editors with additional features for handling computer code can be called "
      -
      -
      -
-   * - `IntelliJ IDEA <https://www.jetbrains.com/idea/>`_
-     - Yes
-     -
-     -
-     -
-     -
-     -
+   * - `JetBrain IDEs <https://www.jetbrains.com/ides/>`_
+     - `Yes <https://github.com/Tbusk/vala-jetbrains-plugin>`__
+     - `Yes <https://github.com/Tbusk/vala-jetbrains-plugin>`__
+     - `Yes <https://github.com/Tbusk/vala-jetbrains-plugin>`__
+     - `Yes <https://github.com/Tbusk/vala-jetbrains-plugin>`__
+     - `Yes <https://github.com/Tbusk/vala-jetbrains-plugin>`__
+     - `Yes <https://github.com/Tbusk/vala-jetbrains-plugin>`__
      -
      -
    * - `medit <https://mooedit.sourceforge.net/>`_

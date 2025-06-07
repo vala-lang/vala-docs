@@ -9,8 +9,14 @@ The source code for the compiler guide is in `<https://github.com/vala-lang/vala
 
    Add Generated binding documentation
 
+   Feel free to help: `Vala Docs Repository <https://github.com/vala-lang/vala-docs>`_.
+
+
 .. todo::
 
    Add libvala documentation
+
+   Feel free to help: `Vala Docs Repository <https://github.com/vala-lang/vala-docs>`_.
+
 
 `<https://github.com/vala-lang/vala-docs>`_ - The documentation repository (the source code for this website) is open to anyone who would like to make a quality contribution.

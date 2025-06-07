@@ -16,7 +16,10 @@ Inside the process_attributes() method of each of these objects, a series of str
 
 .. todo::
 
-   fixme: mention Vala.Parser.set_attributes()
+   Mention Vala.Parser.set_attributes()
+
+   Feel free to help: `Vala Docs Repository <https://github.com/vala-lang/vala-docs>`_.
+
 
 Attributes Recognized by Vala
 

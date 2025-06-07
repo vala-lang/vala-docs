@@ -45,7 +45,9 @@ Committing Patches
 
 .. todo::
 
-   TODO
+   Add information about how to commit patches to the compiler project.
+
+   Feel free to help: `Vala Docs Repository <https://github.com/vala-lang/vala-docs>`_.
 
 Maintaining Bindings
 --------------------

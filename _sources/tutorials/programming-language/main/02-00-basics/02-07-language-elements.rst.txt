@@ -250,7 +250,7 @@ This is how you can initialise a struct:
 
 Structs are stack/inline allocated and copied on assignment.
 
-To define an array of structs, please see the `FAQ <faq#how-do-i-create-an-array-of-structs>`_
+To define an array of structs, please see the `FAQ </faq#how-do-i-create-an-array-of-structs>`_
 
 Classes
 -------

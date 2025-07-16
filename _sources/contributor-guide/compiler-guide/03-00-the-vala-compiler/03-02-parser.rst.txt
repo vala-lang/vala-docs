@@ -279,8 +279,8 @@ Error Handling
 I don't want to spoil your fun too much by going into the details of the parser, other than that every parse\_ function can throw a ParseError. ParseError is caught when parsing a block or the declarations of a namespace, class, struct, or interface. Fixme.
 
 
-Grammar of Vala
----------------
+Grammar of Vala (BNF Notation)
+------------------------------
 
 This grammar is hand-generated from Vala.Parser. Sometimes the structure of this grammar diverges slightly from the code, for example optional non-terminal symbols. However the non-terminal symbol names usually match a parse\_ method in Vala.Parser.
 

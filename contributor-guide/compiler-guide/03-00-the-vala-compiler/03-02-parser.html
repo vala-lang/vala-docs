@@ -776,8 +776,8 @@
 <h2><span class="section-number">3.2.3. </span>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this heading">¶</a></h2>
 <p>I don’t want to spoil your fun too much by going into the details of the parser, other than that every parse_ function can throw a ParseError. ParseError is caught when parsing a block or the declarations of a namespace, class, struct, or interface. Fixme.</p>
 </section>
-<section id="grammar-of-vala">
-<h2><span class="section-number">3.2.4. </span>Grammar of Vala<a class="headerlink" href="#grammar-of-vala" title="Permalink to this heading">¶</a></h2>
+<section id="grammar-of-vala-bnf-notation">
+<h2><span class="section-number">3.2.4. </span>Grammar of Vala (BNF Notation)<a class="headerlink" href="#grammar-of-vala-bnf-notation" title="Permalink to this heading">¶</a></h2>
 <p>This grammar is hand-generated from Vala.Parser. Sometimes the structure of this grammar diverges slightly from the code, for example optional non-terminal symbols. However the non-terminal symbol names usually match a parse_ method in Vala.Parser.</p>
 <p>More literal-specific grammar at <a class="reference external" href="https://gnome.pages.gitlab.gnome.org/vala/manual/index.html">https://gnome.pages.gitlab.gnome.org/vala/manual/index.html</a></p>
 <div class="highlight-bnf notranslate"><div class="highlight"><pre><span></span>// parse_file
@@ -1152,7 +1152,7 @@ expression_statement <span class="o">::=</span> statement_expression &quot;;&quo
 <li><a class="reference internal" href="#visitors-and-ping-pong">3.2.1. Visitors and Ping Pong</a></li>
 <li><a class="reference internal" href="#back-to-the-parser">3.2.2. Back to the Parser</a></li>
 <li><a class="reference internal" href="#error-handling">3.2.3. Error Handling</a></li>
-<li><a class="reference internal" href="#grammar-of-vala">3.2.4. Grammar of Vala</a></li>
+<li><a class="reference internal" href="#grammar-of-vala-bnf-notation">3.2.4. Grammar of Vala (BNF Notation)</a></li>
 </ul>
 </li>
 </ul>

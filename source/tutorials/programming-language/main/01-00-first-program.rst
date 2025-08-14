@@ -66,3 +66,34 @@ Assuming you have Vala installed, then all it takes to compile and execute this 
 
 If you get some warnings from a C language compiler, please jump to :doc:`07-00-tools/07-01-valac` for the reason and solution.
 
+Running as a Script
+-------------------
+
+On Unix-like operating systems, you can also run a Vala source file directly as a script. This is achieved by adding a 'shebang' line at the very beginning of the file. For example, you could save the "Hello, World" program as ``hello.vala`` with the following content:
+
+.. code-block:: vala
+   :emphasize-lines: 1
+
+   #!/usr/bin/env vala
+   class Demo.HelloWorld : GLib.Object {
+       public static int main(string[] args) {
+           stdout.printf("Hello, World\n");
+           return 0;
+       }
+   }
+
+The first line, ``#!/usr/bin/env vala``, is the shebang. It tells the system to use the ``vala`` command to execute this file.
+
+Before running it, you need to grant the file executable permissions:
+
+.. code-block:: console
+
+   $ chmod +x hello.vala
+
+Now you can run it directly from your terminal:
+
+.. code-block:: console
+
+   $ ./hello.vala
+
+This will produce the same "Hello, World" output. Behind the scenes, the system invokes the Vala compiler to compile the source code into a temporary binary file, and then executes that binary.

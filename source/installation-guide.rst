@@ -69,9 +69,9 @@ then install vala with the following commands:
 
 .. code-block:: console
 
-   $ pacman -S mingw-w64-x86_64-gcc
-   $ pacman -S mingw-w64-x86_64-pkg-config
-   $ pacman -S mingw-w64-x86_64-vala
+   $ pacman -S mingw-w64-ucrt-x86_64-gcc
+   $ pacman -S mingw-w64-ucrt-x86_64-pkg-config
+   $ pacman -S mingw-w64-ucrt-x86_64-vala
 
 You also need to install all the libraries that you want to use individually.
 

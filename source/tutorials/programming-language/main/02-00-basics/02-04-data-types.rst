@@ -10,16 +10,60 @@ Value Types
 
 Vala supports a set of the simple types as most other languages do.
 
-* Byte, ``char``, ``uchar``; their names are *char* for historical reasons.
-* Character, ``unichar``; a 32-bit Unicode character
-* Integer, ``int``, ``uint``
-* Long Integer, ``long``, ``ulong``
-* Short Integer, ``short``, ``ushort``
-* Guaranteed-size Integer, ``int8``, ``int16``, ``int32``, ``int64`` as well as their unsigned siblings ``uint8``, ``uint16``, ``uint32``, ``uint64``. The numbers indicate the lengths in bits.
-* Float number, ``float``, ``double``
-* Boolean, ``bool``; possible values are ``true`` and ``false``
-* Compound, ``struct``
-* Enumeration, ``enum``; represented by integer values, not as classes like Java's enums
+.. list-table:: 
+   :widths: 10 18 10 50
+   :header-rows: 1
+
+   * - NameType
+     - Type
+     - Size
+     - Description
+   * - Byte
+     - char, uchar
+     - 1 byte
+     - Their names are "char" for historical reasons.
+   * - Character
+     - unichar
+     - 4 bytes
+     - 32-bit Unicode character
+   * - Integer
+     - int, uint
+     - 4 bytes
+     - Integer
+   * - Long Integer
+     - long, ulong
+     - 8 bytes
+     - Long integer
+   * - Short Integer
+     - short, ushort
+     - 2 bytes
+     - Short integer
+   * - Platform-Specific Integer 
+     - ssize_t, size_t
+     - Depend on platform
+     - Unsigned integer type, the size of which is platform-dependent
+   * - Guaranteed-size Integer
+     - int8, uint8, int16, uint16, int32, uint32, int64, uint64 
+     - 1, 2, 4, 8 bytes
+     - Integers of guaranteed sizes (8, 16, 32, 64 bits) and their unsigned versions
+   * - Float number
+     - float, double
+     - 4, 8 bytes
+     - Floating-point number
+   * - Boolean
+     - bool
+     - 1 byte
+     - Possible values: true and false
+   * - Compound
+     - struct
+     - Varies
+     - Compound type
+   * - Enumeration
+     - enum 
+     - 4 bytes (int)
+     - Represented by integer values, not as classes like Java's enums
+
+For more information on structs and enums, please refer to :doc:`02-07-language-elements`
 
 Here are some examples.
 
@@ -85,11 +129,14 @@ You can slice a string with ``[start:end]``.  Negative values represent position
    string s1 = greeting[7:12];        // => "world"
    string s2 = greeting[-4:-2];       // => "or"
 
-Note that indices in Vala start with 0 as in most other programming languages.  Starting with Vala 0.11 you can access a single byte of a string with ``[index]``:
+.. note::
+    that indices in Vala start with 0 as in most other programming languages
+
+you can access a single byte of a string with ``[index]``:
 
 .. code-block:: vala
 
-   uint8 b = greeting[7];             // => 0x77
+   uint8 b = greeting[7];            // => 119, the ASCII value of 'w'
 
 However, you cannot assign a new byte value to this position, since Vala strings are immutable.
 
@@ -103,16 +150,9 @@ Many of the basic types have reasonable methods for parsing from and converting 
    string s1 = true.to_string();           // => "true"
    string s2 = 21.to_string();             // => "21"
 
-Two useful methods for writing and reading strings to/from the console (and for your first explorations with Vala) are *stdout.printf()* and *stdin.read_line()*:
 
-.. code-block:: vala
+If you want learn how print your string jump it :doc:`02-09-output-input`
 
-   stdout.printf("Hello, world\n");
-   stdout.printf("%d %g %s\n", 42, 3.1415, "Vala");
-   string input = stdin.read_line();
-   int number = int.parse(stdin.read_line());
-
-You already know *stdout.printf()* from the *Hello World* example.  Actually, it can take an arbitrary number of arguments of different types, whereas the first argument is a *format string*, following the same rules as `C format strings <http://en.wikipedia.org/wiki/Printf>`_. If you must output an error message you can use *stderr.printf()* instead of *stdout.printf()*.
 
 In addition the *in* operation can be used to determine whether one string contains another, e.g.
 
@@ -271,7 +311,6 @@ Defining a new type is a matter of derive it from the one you need. Here is an e
 .. code-block:: vala
 
    /* defining an alias for a basic type (equivalent to typedef int Integer in C)*/
-   [SimpleType]
    public struct Integer : uint {
    }
 

@@ -115,7 +115,7 @@ Delegates may also be created locally. A member method can also be assigned to a
 
 More samples in `Delegates Manual <https://wiki.gnome.org/Projects/Vala/Manual/Delegates>`_.
 
-Anonymous Methods / Closures
+Anonymous Methods / Closures (lambda expressions)
 ----------------------------
 
 .. code-block:: vala
@@ -217,14 +217,15 @@ Structs
        public int a;
    }
 
-defines a `struct` type, i.e. a compound value type.  A Vala struct may have methods in a limited way and also may have private members, meaning the explicit `public` access modifier is required.
+defines a `struct` type, i.e. a compound value type.  A Vala struct may have methods in a limited way and also may have private members
+``public`` keyword is optional and can be omitted. however, one method can be private or public.
 
 .. code-block:: vala
 
    struct Color {
-       public double red;
-       public double green;
-       public double blue;
+       double red;
+       double green;
+       double blue;
    }
 
 This is how you can initialise a struct:
@@ -248,9 +249,123 @@ This is how you can initialise a struct:
        blue = 1.0
    };
 
+Structs can have methods: 
+
+.. code-block:: vala
+
+   struct Point {
+       public double x;
+       public double y;
+
+       public double distance_to(Point other) {
+           return Math.sqrt((x - other.x) * (x - other.x) + (y - other.y) * (y - other.y));
+       }
+   }
+
+   void main() {
+       Point p1 = { 1.0, 2.0 };
+       Point p2 = { 4.0, 6.0 };
+
+       p1.distance_to(p2);  // returns 5.0
+   }
+
 Structs are stack/inline allocated and copied on assignment.
 
 To define an array of structs, please see the `FAQ </faq#how-do-i-create-an-array-of-structs>`_
+
+
+Enums
+-----
+
+Enums are a way to define a set of named integer constants.  They are useful for defining a set of related values that are not necessarily sequential.  For example, the following code defines an enum named *EnumName* with three values:
+
+.. code-block:: vala
+
+   enum EnumName {
+       VALUE1,
+       VALUE2,
+       VALUE3
+   }
+
+The values of the enum are accessed by the name of the enum followed by a period and the name of the value, e.g. *EnumName.VALUE1*.
+
+
+An enum can contains functions:
+
+.. code-block:: vala
+
+    enum EnumName {
+        VALUE1,
+        VALUE2,
+        VALUE3;
+
+        public unowned string to_string() {
+            switch (this) {
+                case VALUE1: return "Value 1";
+                case VALUE2: return "Value 2";
+                case VALUE3: return "Value 3";
+                default: return "Unknown";
+            }
+        }
+    }
+
+    void main() {
+        print(EnumName.VALUE1.to_string());  // prints "Value 1"
+        print(EnumName.VALUE2.to_string());  // prints "Value 2"
+        print(EnumName.VALUE3.to_string());  // prints "Value 3"
+    }
+
+
+.. note::
+    an enum can be set in a class
+
+Flags
+-----
+
+Enums can be used like flags by using the `[Flags]` attribute on the enum definition.
+This allows you to combine the values using the `+` operator and check if a value is set using the `in` operator.
+
+For example:
+
+.. code-block:: vala
+
+    [Flags]
+    enum MyFlags {
+        FLAG1,
+        FLAG2,
+        FLAG3
+    }
+
+    void main() {
+        MyFlags flags;
+
+        flags = MyFlags.FLAG1 + MyFlags.FLAG3;
+
+        if (MyFlags.FLAG1 in flags)
+            print("FLAG1 is set");
+        if (MyFlags.FLAG2 in flags)
+            print("FLAG2 is set");
+        if (MyFlags.FLAG3 in flags)
+            print("FLAG3 is set");
+    }
+
+.. list-table:: Operators for Enumerations (Flags)
+   :widths: 10 70
+   :header-rows: 1
+
+   * - Operator
+     - Description
+   * - ``+=``
+     - Adds flags to this
+   * - ``-=``
+     - Removes flags from this
+   * - ``+``
+     - Combines two flags.
+   * - ``-``
+     - Subtracts the flags.
+   * - ``in``
+     - Checks if a flag is set. 
+
 
 Classes
 -------
@@ -261,6 +376,8 @@ Classes
    }
 
 Defines a class, i.e. a reference type. In contrast to structs, instances of classes are heap allocated. There is much more syntax related to classes, which is discussed more fully in the section about object oriented programming.
+
+:doc:`../03-00-object-oriented-programming` and  :doc:`../03-00-object-oriented-programming/03-01-basics`
 
 Interfaces
 ----------

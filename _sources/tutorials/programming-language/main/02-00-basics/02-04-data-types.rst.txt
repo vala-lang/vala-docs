@@ -85,7 +85,9 @@ You can slice a string with ``[start:end]``.  Negative values represent position
    string s1 = greeting[7:12];        // => "world"
    string s2 = greeting[-4:-2];       // => "or"
 
-Note that indices in Vala start with 0 as in most other programming languages.  Starting with Vala 0.11 you can access a single byte of a string with ``[index]``:
+Note that indices in Vala start with 0 as in most other programming languages; the start index is inclusive and the end index is exclusive. An empty slice may be `null`.
+
+You can access a single byte of a string with ``[index]``:
 
 .. code-block:: vala
 

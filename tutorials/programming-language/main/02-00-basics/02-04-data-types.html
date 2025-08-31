@@ -612,7 +612,8 @@ They may contain quotes and may span multiple lines.&quot;&quot;&quot;;
 <span class="kt">string</span><span class="w"> </span><span class="n">s2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greeting</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="o">:-</span><span class="mi">2</span><span class="p">];</span><span class="w">       </span><span class="c1">// =&gt; &quot;or&quot;</span>
 </pre></div>
 </div>
-<p>Note that indices in Vala start with 0 as in most other programming languages.  Starting with Vala 0.11 you can access a single byte of a string with <code class="docutils literal notranslate"><span class="pre">[index]</span></code>:</p>
+<p>Note that indices in Vala start with 0 as in most other programming languages; the start index is inclusive and the end index is exclusive. An empty slice may be <cite>null</cite>.</p>
+<p>You can access a single byte of a string with <code class="docutils literal notranslate"><span class="pre">[index]</span></code>:</p>
 <div class="highlight-vala notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">greeting</span><span class="p">[</span><span class="mi">7</span><span class="p">];</span><span class="w">             </span><span class="c1">// =&gt; 0x77</span>
 </pre></div>
 </div>

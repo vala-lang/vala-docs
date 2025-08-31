@@ -4,7 +4,7 @@ ABI and API Design Choices
 ABI
 ---
 
-``abit-compliance-checker`` is a cross-platform tool for checcking the stability
+``abit-compliance-checker`` is a cross-platform tool for checking the stability
 of an ABI. Supported platforms are GNU/Linux, FreeBSD, Mac OS X and MS Windows. 
 See `ABI Compliance Checker <https://lvc.github.io/abi-compliance-checker/>`_ for
 more details.

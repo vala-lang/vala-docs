@@ -70,7 +70,7 @@ This example shows you how to implement a GLib.TypeModule based plugin in Vala. 
    }
 
    // Never unref instance of GTypeModule
-   // http://www.lanedo.com/~mitch/module-system-talk-guadec-2006/Module-System-Talk-Guadec-2006.pdf
+   // https://web.archive.org/web/20111109085729/http://www.lanedo.com/~mitch/module-system-talk-guadec-2006/Module-System-Talk-Guadec-2006.pdf
    static TypeModule module = null;
 
    int main()

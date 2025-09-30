@@ -4,3 +4,8 @@
 
 build
 
+# VitePress
+/docs/.vitepress/cache/
+
+# NPM
+/node_modules

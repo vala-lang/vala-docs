@@ -6,6 +6,7 @@ build
 
 # VitePress
 /docs/.vitepress/cache/
+/docs/.vitepress/dist/
 
 # NPM
 /node_modules

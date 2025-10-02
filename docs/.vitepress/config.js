@@ -30,8 +30,7 @@ export default {
         ],
         lastUpdated: true,
         editLink: {
-            //TODO: update link to main repository
-            pattern: 'https://github.com/vala-lang/vala-docs/edit/next/docs/:path',
+            pattern: 'https://github.com/vala-lang/vala-docs/edit/main/docs/:path',
         },
         search: {
             provider: 'local'

@@ -15,10 +15,10 @@ uses where native binaries are required.
 ## Sections
 
 - [Installation Guide](installation-guide)
-- [Tutorials](tutorials)
-- [Tooling](tooling)
-- [Contributor Guide](contributor-guide)
-- [Developer Guides](developer-guides)
+- [Tutorials](tutorials/)
+- [Tooling](tooling/)
+- [Contributor Guide](contributor-guide/)
+- [Developer Guides](developer-guides/)
 - [FAQ](faq)
 
 ## External Resources

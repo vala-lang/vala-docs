@@ -10,7 +10,7 @@ export default {
           'link',
           {
               rel: 'icon',
-              href: '/assets/favicon.png'
+              href: '/favicon.png'
           }
       ]
     ],
@@ -22,7 +22,7 @@ export default {
     },
     themeConfig: {
         // theme-level options
-        logo: '/assets/logo.png',
+        logo: '/logo.png',
         socialLinks: [
             {
                 icon: 'github', link: 'https://github.com/vala-lang/vala-docs'

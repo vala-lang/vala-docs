@@ -1,0 +1,16 @@
+{
+  "name": "vala-docs",
+  "version": "1.0.0",
+  "description": "Official documentation for the Vala programming language",
+  "license": "CC-BY-SA-4.0",
+  "scripts": {
+    "build": "tsc",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  },
+  "private": true
+}

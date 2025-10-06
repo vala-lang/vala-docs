@@ -52,67 +52,9 @@ export default {
                     },
                     {
                         text: 'Tutorials',
-                        link: '/tutorials',
+                        link: '/tutorials/',
                         collapsed: true,
                         items: [
-                            {
-                                text: 'GUI Programming',
-                                link: '/tutorials/gui-programming',
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: 'GTK4 Samples',
-                                        link: '/tutorials/gui-programming/gtk4-samples',
-                                        collapsed: true,
-                                        items: [
-                                            {
-                                                text: 'Minimal App',
-                                                link: '/tutorials/gui-programming/gtk4-samples/minimal-app'
-                                            },
-                                            {
-                                                text: 'Basic App',
-                                                link: '/tutorials/gui-programming/gtk4-samples/basic-app'
-                                            },
-                                            {
-                                                text: 'Synchronising Widgets',
-                                                link: '/tutorials/gui-programming/gtk4-samples/synchronising-widgets'
-                                            },
-                                            {
-                                                text: 'Text File Viewer',
-                                                link: '/tutorials/gui-programming/gtk4-samples/text-file-viewer'
-                                            },
-                                            {
-                                                text: 'ListView',
-                                                link: '/tutorials/gui-programming/gtk4-samples/list-view'
-                                            },
-                                            {
-                                                text: 'ListView with CheckButtons',
-                                                link: '/tutorials/gui-programming/gtk4-samples/list-view-check-buttons'
-                                            },
-                                            {
-                                                text: 'ColumnView',
-                                                link: '/tutorials/gui-programming/gtk4-samples/column-view'
-                                            },
-                                            {
-                                                text: 'Clipboard',
-                                                link: '/tutorials/gui-programming/gtk4-samples/clipboard'
-                                            },
-                                            {
-                                                text: 'Entry Completion with Two Cells',
-                                                link: '/tutorials/gui-programming/gtk4-samples/entry-completion-two-cells'
-                                            },
-                                        ]
-                                    },
-                                    {
-                                        text: 'GNOME Developer Documentation - Tutorials',
-                                        link: 'https://developer.gnome.org/documentation/tutorials.html'
-                                    },
-                                    {
-                                        text: 'elementary OS - Writing Apps',
-                                        link: 'https://docs.elementary.io/develop/writing-apps/the-basic-setup'
-                                    }
-                                ]
-                            },
                             {
                                 text: 'Programming Language',
                                 link: '/tutorials/programming-language',
@@ -387,12 +329,62 @@ export default {
                                         ]
                                     }
                                 ]
+                            },
+                            {
+                                text: 'GUI Programming',
+                                link: '/tutorials/gui-programming',
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: 'GTK4 Samples',
+                                        link: '/tutorials/gui-programming/gtk4-samples',
+                                        collapsed: true,
+                                        items: [
+                                            {
+                                                text: 'Minimal App',
+                                                link: '/tutorials/gui-programming/gtk4-samples/minimal-app'
+                                            },
+                                            {
+                                                text: 'Basic App',
+                                                link: '/tutorials/gui-programming/gtk4-samples/basic-app'
+                                            },
+                                            {
+                                                text: 'Synchronising Widgets',
+                                                link: '/tutorials/gui-programming/gtk4-samples/synchronising-widgets'
+                                            },
+                                            {
+                                                text: 'Text File Viewer',
+                                                link: '/tutorials/gui-programming/gtk4-samples/text-file-viewer'
+                                            },
+                                            {
+                                                text: 'ListView',
+                                                link: '/tutorials/gui-programming/gtk4-samples/list-view'
+                                            },
+                                            {
+                                                text: 'ListView with CheckButtons',
+                                                link: '/tutorials/gui-programming/gtk4-samples/list-view-check-buttons'
+                                            },
+                                            {
+                                                text: 'ColumnView',
+                                                link: '/tutorials/gui-programming/gtk4-samples/column-view'
+                                            },
+                                            {
+                                                text: 'Clipboard',
+                                                link: '/tutorials/gui-programming/gtk4-samples/clipboard'
+                                            },
+                                            {
+                                                text: 'Entry Completion with Two Cells',
+                                                link: '/tutorials/gui-programming/gtk4-samples/entry-completion-two-cells'
+                                            },
+                                        ]
+                                    },
+                                ]
                             }
                         ]
                     },
                     {
                         text: 'Tooling',
-                        link: '/tooling',
+                        link: '/tooling/',
                         collapsed: true,
                         items: [
                             {
@@ -419,7 +411,7 @@ export default {
                     },
                     {
                         text: 'Contributor Guide',
-                        link: '/contributor-guide',
+                        link: '/contributor-guide/',
                         collapsed: true,
                         items: [
                             {
@@ -500,7 +492,7 @@ export default {
                     },
                     {
                         text: 'Developer Guides',
-                        link: '/developer-guides',
+                        link: '/developer-guides/',
                         collapsed: true,
                         items: [
                             {

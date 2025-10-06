@@ -813,6 +813,44 @@ export default {
                                 link: '/developer-guides/documentation',
                                 collapsed: true,
                                 items: [
+                                        {
+                                        text: 'Valadoc Guide',
+                                        link: '/developer-guides/documentation/valadoc-guide',
+                                        collapsed: true,
+                                        items: [
+                                            {
+                                                text: '1. Quick Start',
+                                                link: '/developer-guides/documentation/valadoc-guide/01-00-quick-start'
+                                            },
+                                            {
+                                                text: '2. Command Line Tool',
+                                                link: '/developer-guides/documentation/valadoc-guide/02-00-command-line-tool'
+                                            },
+                                            {
+                                                text: '3. Documentation Comment Markup',
+                                                link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup',
+                                                collapsed: true,
+                                                items: [
+                                                    {
+                                                        text: '3.1.1. Brief Description',
+                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-01-brief-description'
+                                                    },
+                                                    {
+                                                        text: '3.1.2. Formatting',
+                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-02-formatting'
+                                                    },
+                                                    {
+                                                        text: '3.1.3. Taglets',
+                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-03-taglets'
+                                                    },
+                                                    {
+                                                        text: '3.1.4. Contributing to Valadoc',
+                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-04-contributing-to-valadoc'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
                                     {
                                         text: 'Vala for C# Programmers',
                                         link: '/developer-guides/documentation/vala-for-csharp-devs',
@@ -973,43 +1011,52 @@ export default {
                                         ]
                                     },
                                     {
-                                        text: 'Valadoc Guide',
-                                        link: '/developer-guides/documentation/valadoc-guide',
+                                        text: 'Vala for Java Programmers',
+                                        link: '/developer-guides/documentation/vala-for-java-devs',
                                         collapsed: true,
                                         items: [
                                             {
-                                                text: '1. Quick Start',
-                                                link: '/developer-guides/documentation/valadoc-guide/01-00-quick-start'
+                                                text: 'Source File and Compilation',
+                                                link: '/developer-guides/documentation/vala-for-java-devs/01-source-file-and-compilation'
                                             },
                                             {
-                                                text: '2. Command Line Tool',
-                                                link: '/developer-guides/documentation/valadoc-guide/02-00-command-line-tool'
+                                                text: 'Simple Data Types',
+                                                link: '/developer-guides/documentation/vala-for-java-devs/02-simple-data-types'
                                             },
                                             {
-                                                text: '3. Documentation Comment Markup',
-                                                link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup',
-                                                collapsed: true,
-                                                items: [
-                                                    {
-                                                        text: '3.1.1. Brief Description',
-                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-01-brief-description'
-                                                    },
-                                                    {
-                                                        text: '3.1.2. Formatting',
-                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-02-formatting'
-                                                    },
-                                                    {
-                                                        text: '3.1.3. Taglets',
-                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-03-taglets'
-                                                    },
-                                                    {
-                                                        text: '3.1.4. Contributing to Valadoc',
-                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-04-contributing-to-valadoc'
-                                                    }
-                                                ]
-                                            }
+                                                text: 'Strings',
+                                                link: '/developer-guides/documentation/vala-for-java-devs/03-strings'
+                                            },
+                                            {
+                                                text: 'Arrays',
+                                                link: '/developer-guides/documentation/vala-for-java-devs/04-arrays'
+                                            },
+                                            {
+                                                text: 'Naming Conventions',
+                                                link: '/developer-guides/documentation/vala-for-java-devs/05-naming-conventions'
+                                            },
+                                            {
+                                                text: 'Foreach',
+                                                link: '/developer-guides/documentation/vala-for-java-devs/06-foreach'
+                                            },
+                                            {
+                                                text: 'Inheritance',
+                                                link: '/developer-guides/documentation/vala-for-java-devs/07-inheritance'
+                                            },
+                                            {
+                                                text: 'Methods',
+                                                link: '/developer-guides/documentation/vala-for-java-devs/08-methods'
+                                            },
+                                            {
+                                                text: 'Type Inference',
+                                                link: '/developer-guides/documentation/vala-for-java-devs/09-type-inference'
+                                            },
+                                            {
+                                                text: 'Code Organisation',
+                                                link: '/developer-guides/documentation/vala-for-java-devs/10-code-organisation'
+                                            },
                                         ]
-                                    }
+                                    },
                                 ]
                             },
                             {

@@ -41,11 +41,11 @@ int main (string[] args) {
 Compile:
 
 ```shell
-valac --pkg gtk4 MinimalAppSample.vala
+valac --pkg gtk4 MinimalApp.vala
 ```
 
 Run:
 
 ```shell
-./MinimalAppSample.vala
+./MinimalApp
 ```

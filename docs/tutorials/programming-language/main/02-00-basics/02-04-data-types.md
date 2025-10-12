@@ -169,6 +169,14 @@ int[] a = new int[10];
 int[] b = { 2, 4, 6, 8 };
 ```
 
+By default, the type of the array length is `int`, but a different type
+can be specified. For example, `uint8[:size_t] data` declares an array
+whose indices are `size_t`, which can therefore store any number of
+bytes that can be addressed (an `int`-indexed array can only have up to
+2^32 elements). Conversely, `string[] list = new string[10:uint8]`
+declares an array whose indices are bytes, which might be useful to save
+memory when many small array indices are stored.
+
 You can slice an array with `[start:end]`:
 
 ```vala

@@ -30,6 +30,7 @@ uses where native binaries are required.
 - [Vala Compiler Repository](https://gitlab.gnome.org/GNOME/vala)
 - [Vala Website](https://vala.dev)
 - [Vala Project GNOME Wiki (Deprecated)](https://wiki.gnome.org/Projects/Vala)
+- [Introducing Vala Programming (O'Reilly Book)](https://www.oreilly.com/library/view/introducing-vala-programming/9781484253809/)
 
 ## Community
 

@@ -169,6 +169,14 @@ int[] a = new int[10];
 int[] b = { 2, 4, 6, 8 };
 ```
 
+By default, the type of the array length is `int`, but a different type
+can be specified. For example, `uint8[:size_t] data` declares an array
+whose indices are `size_t`, which can therefore store any number of
+bytes that can be addressed (an `int`-indexed array can only have up to
+2^32 elements). Conversely, `string[] list = new string[10:uint8]`
+declares an array whose indices are bytes, which might be useful to save
+memory when many small array indices are stored.
+
 You can slice an array with `[start:end]`:
 
 ```vala
@@ -353,4 +361,46 @@ public class ValueList : GLib.List<GLib.Value> {
     protected ValueList ();
     public static GLib.Type get_type ();
 }
+```
+
+## 2.4.8. Numeric Type Suffixes
+
+Like many other languages, Vala supports numeric type suffixes. 
+
+The following sections list the supported suffixes, which are case-insensitive:
+
+### 2.4.8.1. Integer Suffixes
+
+| Suffix | Type   |
+|--------|--------|
+|        | int    |
+| u      | uint   |
+| l      | long   |
+| ll     | int64  |
+| ul     | ulong  |
+| ull    | uint64 |
+
+Here are some examples:
+```vala
+var a = 123; // int
+var b = 123u; // uint
+var c = 123l; // long
+var d = 123ll; // ulong
+var e = 123ul; // ulong
+var f = 123ull; // uint64
+```
+
+### 2.4.8.2. Floating-point Suffixes
+
+| Suffix | Type   |
+|--------|--------|
+|        | double |
+| f      | float  |
+| d      | double |
+
+Here are some examples:
+```vala
+var a = 123.0; // double
+var b = 123.0f; // float
+var c = 123.0d; // double
 ```

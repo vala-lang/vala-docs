@@ -3,7 +3,7 @@
 ## 3.1.4.1. Valadoc Guide (What you're reading now!)
 
 One way to help is by improving this guide. Feel free to update the
-pages in this guide by pressing the edit icon on the top right of pages
+pages in this guide by pressing the edit button on the bottom of pages
 in the guide.
 
 You can also add your own pages to this guide too.

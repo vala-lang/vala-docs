@@ -12,6 +12,7 @@
 - [2.4.5. Static Type Casting](02-00-basics/02-04-data-types#_2-4-5-static-type-casting)
 - [2.4.6. Type Inference](02-00-basics/02-04-data-types#_2-4-6-type-inference)
 - [2.4.7. Defining new Type from other](02-00-basics/02-04-data-types#_2-4-7-defining-new-type-from-other)
+- [2.4.8. Numeric Type Suffixes](02-00-basics/02-04-data-types#_2-4-8-numeric-type-suffixes)
 
 #### [2.5. Operators](02-00-basics/02-05-operators)
 #### [2.6. Control Structures](02-00-basics/02-06-control-structures)

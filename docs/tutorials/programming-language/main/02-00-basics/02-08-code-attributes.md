@@ -46,3 +46,5 @@ int integer = 1;
 ```
 
 You can use as many attributes and arguments in the attributes as you want.
+
+For more information on attributes, refer to the [reference manual](https://gnome.pages.gitlab.gnome.org/vala/manual/attributes.html).

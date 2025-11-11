@@ -2,7 +2,7 @@
 
 C#: `System.Collections.Generic` namespace
 
-Vala: `Gee` namespace, `--pkg gee-1.0`,
+Vala: `Gee` namespace, `--pkg gee-0.8`,
 [Libgee](https://wiki.gnome.org/Projects/Libgee)
 
 Rough equivalents:

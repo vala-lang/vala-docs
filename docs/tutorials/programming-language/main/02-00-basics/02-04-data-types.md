@@ -13,22 +13,94 @@ convention for constants is `ALL_UPPER_CASE`.
 
 Vala supports a set of the simple types as most other languages do.
 
--   Byte, `char`, `uchar`; their names are *char* for historical
-    reasons.
--   Character, `unichar`; a 32-bit Unicode character
--   Integer, `int`, `uint`
--   Long Integer, `long`, `ulong`
--   Short Integer, `short`, `ushort`
--   Guaranteed-size Integer, `int8`, `int16`, `int32`, `int64` as well
-    as their unsigned siblings `uint8`, `uint16`, `uint32`, `uint64`.
-    The numbers indicate the lengths in bits.
--   Float number, `float`, `double`
--   Boolean, `bool`; possible values are `true` and `false`
--   Compound, `struct`
--   Enumeration, `enum`; represented by integer values, not as classes
-    like Java's enums
+### 2.4.1.1 Byte
 
-Here are some examples.
+| Type    | Size   | Range       |
+|---------|--------|-------------|
+| `char`  | 1 byte | -128 to 127 |
+| `uchar` | 1 byte | 0 to 255    |
+
+These have the name `char` in them for historical reasons.
+
+### 2.4.1.2 Integers
+
+| Type   | Size    | Range                           |
+|--------|---------|---------------------------------|
+| `int`  | 4 bytes | -2,147,483,648 to 2,147,483,647 |
+| `uint` | 4 bytes | 0 to 4,294,967,295              |
+
+### 2.4.1.3 Long
+
+| Type    | Size    | Range                           |
+|---------|---------|---------------------------------|
+| `long`  | 4 bytes | -2,147,483,648 to 2,147,483,647 |
+| `ulong` | 4 bytes | 0 to 4,294,967,295              |
+
+### 2.4.1.4 Short
+
+| Type     | Size    | Range             |
+|----------|---------|-------------------|
+| `short`  | 2 bytes | -32,768 to 32,767 |
+| `ushort` | 2 bytes | 0 to 65,535       |
+
+### 2.4.1.5 Guaranteed-size Signed Integers
+
+| Type    | Size    | Range                                                   |
+|---------|---------|---------------------------------------------------------|
+| `int8`  | 1 byte  | -128 to 127                                             |
+| `int16` | 2 bytes | -32,768 to 32,767                                       |
+| `int32` | 4 bytes | -2,147,483,648 to 2,147,483,647                         |
+| `int64` | 8 bytes | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
+
+### 2.4.1.6 Guaranteed-size Unsigned Integers
+
+| Type     | Size    | Range                           |
+|----------|---------|---------------------------------|
+| `uint8`  | 1 byte  | 0 to 255                        |
+| `uint16` | 2 bytes | 0 to 65,535                     |
+| `uint32` | 4 bytes | 0 to 4,294,967,295              |
+| `uint64` | 8 bytes | 0 to 18,446,744,073,709,551,615 |
+
+### 2.4.1.7 Floating Points
+
+| Type     | Size    | Range                  | Precision  |
+|----------|---------|------------------------|------------|
+| `float`  | 4 bytes | 1.18e-38 to 3.4e+38    | ~7 digits  |
+| `double` | 8 bytes | 2.23e-308 to 1.80e+308 | ~16 digits |
+
+Based on the IEEE 754-1985 standard.
+
+### 2.4.1.8 Array Indexing / Loop Counting
+
+| Type      | Size         | Range                                                   |
+|-----------|--------------|---------------------------------------------------------|
+| `size_t`  | 2 to 8 bytes | 0 to 18,446,744,073,709,551,615                         |
+| `ssize_t` | 2 to 8 bytes | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
+
+Typically, these are compiler and architecture dependent. 
+
+For more information, please refer to [size_t](https://en.cppreference.com/w/c/types/size_t.html) on the C++ reference.
+
+### 2.4.1.9 Booleans
+
+| Type   | Size   | Values        |
+|--------|--------|---------------|
+| `bool` | 1 byte | true or false |
+
+### 2.4.1.10 Unicode Characters
+
+| Type       | Size         | Standard |
+|------------|--------------|----------|
+| `unichar`  | 4 bytes      | UTF-32   |
+| `unichar2` | 1 to 2 bytes | UTF-16   |
+
+### 2.4.1.1 Compound
+- `struct`
+
+### 2.4.1.12 Enumeration
+- `enum` : values are integers, unlike Java's enums
+
+### Examples
 
 ```vala
 unichar c = 'u';
@@ -63,8 +135,13 @@ with *.MIN* and *.MAX*, e.g. `int.MIN` and `int.MAX`.
 
 ## 2.4.2. Strings
 
-The data type for strings is `string`. Vala strings are UTF-8 encoded
-and immutable.
+| Type                | Size per Character | Max Length (theoretical)     |
+|---------------------|--------------------|------------------------------|
+| `string` (UTF-8)    | 1 byte             | 0 - 2,147,483,647 characters |
+| `string16` (UTF-16) | 1 to 2 bytes       | 0 - 2,147,483,647 characters |
+| `string32` (UTF-32) | 4 bytes            | 0 - 2,147,483,647 characters |
+
+Strings in Vala are immutable.
 
 ```vala
 string text = "A string literal";
@@ -385,7 +462,7 @@ Here are some examples:
 var a = 123; // int
 var b = 123u; // uint
 var c = 123l; // long
-var d = 123ll; // ulong
+var d = 123ll; // int64
 var e = 123ul; // ulong
 var f = 123ull; // uint64
 ```

@@ -94,7 +94,7 @@ For more information, please refer to [size_t](https://en.cppreference.com/w/c/t
 | `unichar`  | 4 bytes      | UTF-32   |
 | `unichar2` | 1 to 2 bytes | UTF-16   |
 
-### 2.4.1.1 Compound
+### 2.4.1.11 Compound
 - `struct`
 
 ### 2.4.1.12 Enumeration

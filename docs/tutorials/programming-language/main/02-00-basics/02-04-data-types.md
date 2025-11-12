@@ -27,10 +27,10 @@ These have the name `char` in them for historical reasons.
 
 ### 2.4.1.2 Integers
 
-| Type   | Size    | Range                           |
-|--------|---------|---------------------------------|
-| `int`  | 4 bytes | -2,147,483,647 to 2,147,483,647 |
-| `uint` | 4 bytes | 0 to at least 4,294,967,295     |
+| Type   | Size    | Range                                    |
+|--------|---------|------------------------------------------|
+| `int`  | 4 bytes | at least -2,147,483,647 to 2,147,483,647 |
+| `uint` | 4 bytes | 0 to at least 4,294,967,295              |
 
 ### 2.4.1.3 Long
 

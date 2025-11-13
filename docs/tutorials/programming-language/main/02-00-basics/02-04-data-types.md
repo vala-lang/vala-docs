@@ -18,51 +18,51 @@ the platform, the compiler, the CPU architecture, etc.
 
 ### 2.4.1.1 Byte
 
-| Type    | Size   | Range                |
-|---------|--------|----------------------|
-| `char`  | 1 byte | at least -127 to 127 |
-| `uchar` | 1 byte | 0 to at least 255    |
+| Type    | Size     | Range                |
+|---------|----------|----------------------|
+| `char`  | 1+ bytes | at least -127 to 127 |
+| `uchar` | 1+ bytes | 0 to at least 255    |
 
 These have the name `char` in them for historical reasons.
 
 ### 2.4.1.2 Integers
 
-| Type   | Size    | Range                                    |
-|--------|---------|------------------------------------------|
-| `int`  | 4 bytes | at least -2,147,483,647 to 2,147,483,647 |
-| `uint` | 4 bytes | 0 to at least 4,294,967,295              |
+| Type   | Size     | Range                                    |
+|--------|----------|------------------------------------------|
+| `int`  | 4+ bytes | at least -2,147,483,647 to 2,147,483,647 |
+| `uint` | 4+ bytes | 0 to at least 4,294,967,295              |
 
 ### 2.4.1.3 Long
 
-| Type    | Size    | Range                                    |
-|---------|---------|------------------------------------------|
-| `long`  | 4 bytes | at least -2,147,483,647 to 2,147,483,647 |
-| `ulong` | 4 bytes | 0 to at least 4,294,967,295              |
+| Type    | Size     | Range                                    |
+|---------|----------|------------------------------------------|
+| `long`  | 4+ bytes | at least -2,147,483,647 to 2,147,483,647 |
+| `ulong` | 4+ bytes | 0 to at least 4,294,967,295              |
 
 ### 2.4.1.4 Short
 
-| Type     | Size    | Range                      |
-|----------|---------|----------------------------|
-| `short`  | 2 bytes | at least -32,767 to 32,767 |
-| `ushort` | 2 bytes | 0 to at least 65,535       |
+| Type     | Size     | Range                      |
+|----------|----------|----------------------------|
+| `short`  | 2+ bytes | at least -32,767 to 32,767 |
+| `ushort` | 2+ bytes | 0 to at least 65,535       |
 
 ### 2.4.1.5 Guaranteed-size Signed Integers
 
-| Type    | Size    | Range                                                            |
-|---------|---------|------------------------------------------------------------------|
-| `int8`  | 1 byte  | at least -127 to 127                                             |
-| `int16` | 2 bytes | at least -32,767 to 32,767                                       |
-| `int32` | 4 bytes | at least -2,147,483,647 to 2,147,483,647                         |
-| `int64` | 8 bytes | at least -9,223,372,036,854,775,807 to 9,223,372,036,854,775,807 |
+| Type    | Size     | Range                                                            |
+|---------|----------|------------------------------------------------------------------|
+| `int8`  | 1+ byte  | at least -127 to 127                                             |
+| `int16` | 2+ bytes | at least -32,767 to 32,767                                       |
+| `int32` | 4+ bytes | at least -2,147,483,647 to 2,147,483,647                         |
+| `int64` | 8+ bytes | at least -9,223,372,036,854,775,807 to 9,223,372,036,854,775,807 |
 
 ### 2.4.1.6 Guaranteed-size Unsigned Integers
 
-| Type     | Size    | Range                                    |
-|----------|---------|------------------------------------------|
-| `uint8`  | 1 byte  | 0 to at least 255                        |
-| `uint16` | 2 bytes | 0 to at least 65,535                     |
-| `uint32` | 4 bytes | 0 to at least 4,294,967,295              |
-| `uint64` | 8 bytes | 0 to at least 18,446,744,073,709,551,615 |
+| Type     | Size     | Range                                    |
+|----------|----------|------------------------------------------|
+| `uint8`  | 1+ byte  | 0 to at least 255                        |
+| `uint16` | 2+ bytes | 0 to at least 65,535                     |
+| `uint32` | 4+ bytes | 0 to at least 4,294,967,295              |
+| `uint64` | 8+ bytes | 0 to at least 18,446,744,073,709,551,615 |
 
 ### 2.4.1.7 Floating Points
 
@@ -84,9 +84,9 @@ For more information, please refer to [size_t](https://en.cppreference.com/w/c/t
 
 ### 2.4.1.9 Booleans
 
-| Type   | Size   | Values        |
-|--------|--------|---------------|
-| `bool` | 1 byte | true or false |
+| Type   | Size  | Values        |
+|--------|-------|---------------|
+| `bool` | 1 bit | true or false |
 
 ### 2.4.1.10 Unicode Characters
 

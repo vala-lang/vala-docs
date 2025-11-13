@@ -12,6 +12,7 @@
 
 #### [Documentation](documentation)
 - [Vala for C# Programmers](documentation/vala-for-csharp-devs)
+- [Vala for Java Programmers](documentation/vala-for-java-devs)
 - [Valadoc Guide](documentation/valadoc-guide)
 
 #### [Vala Collections: libgee](gee-samples)

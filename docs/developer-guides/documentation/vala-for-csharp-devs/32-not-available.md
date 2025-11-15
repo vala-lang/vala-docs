@@ -10,9 +10,7 @@
 -   No constraints on generic type parameters (i.e. no `where`)
 -   No generic delegates
 -   No conversion operators (i.e. no `explicit` and `implicit`)
--   No `partial` classes and methods
--   No `sealed` classes
-    ([planned](https://mail.gnome.org/archives/vala-list/2009-September/msg00325.html))
+-   No `partial` methods
 -   No static classes (use nested namespaces instead. Vala supports
     namespace methods, they are implicitly static)
 -   No `goto`, no labeled statements

@@ -26,3 +26,5 @@
 - [Libpeas](plugins/02-libpeas)
 
 #### [String Sample](string-sample)
+
+#### [Syntax Guide](syntax-guide)

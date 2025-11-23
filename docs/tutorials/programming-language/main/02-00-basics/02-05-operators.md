@@ -26,9 +26,17 @@ Basic arithmetic, applied to left and right operands.
 ```vala
 var a = 1;
 a = a + 2; // => a = 3
+
+a = 1;
 a = a - 2; // => a = -1
+
+a = 1;
 a = a / 2; // => a = 0 (integer division)
+
+a = 1;
 a = a * 2; // => a = 2
+
+a = 1;
 a = a % 2; // => a = 1
 ```
 
@@ -55,9 +63,17 @@ string greeting_message = "Hello " + name + ".";
 ```vala
 var a = 1;
 a += 2; // a = a + 2 => a = 3
+
+a = 1;
 a -= 2; // a = a - 2 => a = -1
+
+a = 1;
 a /= 2; // a = a / 2 => a = 0 (integer division)
+
+a = 1;
 a *= 2; // a = a * 2 => a = 2
+
+a = 1;
 a %= 2; // a = a % 2 => a = 1
 ```
 

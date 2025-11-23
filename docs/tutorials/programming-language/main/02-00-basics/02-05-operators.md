@@ -119,16 +119,16 @@ equivalent operation is just `a = ~a`).
 
 ### Bit Shift Operators
 
-| Values    |
-|-----------|
-| `<<`,`>>` |
+| Values     |
+|------------|
+| `<<`, `>>` |
 
 Bit shift operations, shifting the left operand a number of bits
 according the right operand.
 
-| Values      |
-|-------------|
-| `<<=`,`>>=` |
+| Values       |
+|--------------|
+| `<<=`, `>>=` |
 
 Bit shift operations, shifting the left operand a number of bits
 according the right operand. The left operand must be an identifier, to
@@ -158,8 +158,38 @@ these operators compare the lexicographical order.
 |-------------------|
 | `!`, `&&`, `\|\|` |
 
-Logic operations: not, and, or. These operations can be applied to
+These operations can be applied to
 Boolean values - the first taking just one value the others two.
+
+**Not Operator**  `!`
+```vala
+string password = "shinyBoat$111";
+
+bool has_number = /\d+/.match (password); 
+// regex for contains one or more numbers
+
+if (!has_number) {
+    // ... do something if there aren't any numbers in the password
+}
+```
+
+**And Operator** `&&`
+```vala
+string product_name = "long wool socks";
+
+if (product_name.contains ("socks") && product_name.contains ("wool")) {
+    // ... do something if both are true
+}
+```
+
+**Or Operator** `||`
+```vala
+string role = "lead_admin";
+
+if (role.contains ("admin") || role.contains ("staff")) {
+    // ... do something if either is true
+}
+```
 
 ### Ternary Conditional Operator
 

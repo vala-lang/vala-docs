@@ -27,14 +27,14 @@ This line identifies the beginning of a class definition. Classes in
 Vala are very similar in concept to other languages. A class is
 basically a type of object, of which instances can be created, all
 having the same properties. The implementation of classed types is taken
-care of by the *gobject* library, but details of this are not important
+care of by the `GObject` library, but details of this are not important
 for general usage.
 
 What is important to note is that this class is specifically described
-as being a subclass of *GLib.Object*. This is because Vala allows other
+as being a subclass of `GLib.Object`. This is because Vala allows other
 types of class, but in most cases, this is the sort that you want. In
 fact, some language features of Vala are only allowed if your class is
-descended from GLib's *Object*.
+descended from GLib's `Object`.
 
 Other parts of this line show namespacing and fully qualified names,
 although these will be explained later.
@@ -63,9 +63,9 @@ arguments is optional.
 stdout.printf("Hello, World\n");
 ```
 
-*stdout* is an object in the *GLib* namespace that Vala ensures you have
+`stdout` is an object in the `GLib` namespace that Vala ensures you have
 access to whenever required. This line instructs Vala to execute the
-method called *printf* of the *stdout* object, with the hello string as
+method called `printf` of the `stdout` object, with the hello string as
 an argument. In Vala, this is always the syntax you use to call a method
 on an object, or to access an object's data. `\n` is the escape
 sequence for a new line.
@@ -91,7 +91,7 @@ valac hello.vala
 ./hello
 ```
 
-*valac* is the Vala compiler, which will compile your Vala code into a
+`valac` is the Vala compiler, which will compile your Vala code into a
 binary. The resulting binary will have the same name as the source file
 and can then be directly executed on the machine. You can probably guess
 the output.
@@ -103,7 +103,7 @@ and solution.
 ## 1.3. Running as a Script
 
 On Unix-like operating systems, you can also run a Vala source file directly as a script. 
-This is achieved by adding a 'shebang' line at the very beginning of the file. 
+This is achieved by adding a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) line at the very beginning of the file. 
 For example, you could save the "Hello, World" program as `hello.vala` with the following content:
 
 ```vala

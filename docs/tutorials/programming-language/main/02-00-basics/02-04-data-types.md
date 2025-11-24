@@ -7,7 +7,8 @@ assigned to a new identifier. A reference type is not copied, but instead
 the new identifier is simply a new reference to the same object.
 
 A constant is defined by putting `const` before the type. The naming
-convention for constants is `ALL_UPPER_CASE`.
+convention for these, like many other languages, is [screaming snake case](https://en.wikipedia.org/wiki/Snake_case), 
+like `CURRENCY_USD` or in the following example, `PI`.
 
 ```vala
 const double PI = 3.14;
@@ -103,7 +104,7 @@ For more information, please refer to [size_t](https://en.cppreference.com/w/c/t
 - `struct`
 
 ### 2.4.1.12 Enumeration
-- `enum` : values are integers, unlike Java's enums
+- `enum` : values are integers, unlike [Java's enums](https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)
 
 ### Examples
 
@@ -152,7 +153,7 @@ Strings in Vala are immutable.
 string text = "A string literal";
 ```
 
-Vala offers a feature called `verbatim strings`. These are strings in
+Vala offers a feature called **verbatim strings**. These are strings in
 which [escape sequences](https://en.wikipedia.org/wiki/Escape_sequence) like `\n` won't be interpreted, line breaks
 will be preserved, and quotation marks don't have to be masked. They are
 enclosed with triple double quotation marks. Possible indentations after
@@ -173,8 +174,8 @@ string s = @"$a * $b = $(a * b)";  // => "6 * 7 = 42"
 ```
 
 The equality operators `==` and `!=` compare the content of two strings,
-contrary to Java's behaviour which in this case would check for
-referential equality.
+contrary to [Java's behaviour](https://docs.oracle.com/javase/tutorial/java/data/comparestrings.html) which in this case would check for
+referential rather than content equality.
 
 You can slice a string with `[start:end]`. Negative values represent
 positions relative to the end of the string:
@@ -200,30 +201,30 @@ Many of the basic types have reasonable methods for parsing from and
 converting to strings, for example:
 
 ```vala
-bool b = bool.parse("false");           // => false
-int i = int.parse("-52");               // => -52
-double d = double.parse("6.67428E-11"); // => 6.67428E-11
-string s1 = true.to_string();           // => "true"
-string s2 = 21.to_string();             // => "21"
+bool b = bool.parse ("false");           // => false
+int i = int.parse ("-52");               // => -52
+double d = double.parse ("6.67428E-11"); // => 6.67428E-11
+string s1 = true.to_string ();           // => "true"
+string s2 = 21.to_string ();             // => "21"
 ```
 
 Two useful methods for writing and reading strings to/from the console
-(and for your first explorations with Vala) are `stdout.printf()` and
-`stdin.read_line()`:
+(and for your first explorations with Vala) are `stdout.printf ()` and
+`stdin.read_line ()`:
 
 ```vala
-stdout.printf("Hello, world\n");
-stdout.printf("%d %g %s\n", 42, 3.1415, "Vala");
-string input = stdin.read_line();
-int number = int.parse(stdin.read_line());
+stdout.printf ("Hello, world\n");
+stdout.printf ("%d %g %s\n", 42, 3.1415, "Vala");
+string input = stdin.read_line ();
+int number = int.parse (stdin.read_line ());
 ```
 
-You already know `stdout.printf()` from the [Hello World](../01-00-first-program) example.
+You already know `stdout.printf ()` from the [Hello World](../01-00-first-program) example.
 Actually, it can take an arbitrary number of arguments of different
 types, whereas the first argument is a *format string*, following the
 same rules as [C format strings](http://en.wikipedia.org/wiki/Printf).
-If you must output an error message, you can use `stderr.printf()`
-instead of `stdout.printf()`.
+If you must output an error message, you can use `stderr.printf ()`
+instead of `stdout.printf ()`.
 
 Additionally, the `in` operation can be used to determine whether one
 string contains another, e.g.
@@ -337,15 +338,15 @@ e += 5;
 e += 37;
 ```
 
-You can resize an array by calling `resize()` on it. It will keep the
+You can resize an array by calling `resize ()` on it. It will keep the
 original content (as much as it can fit).
 
 ```vala
 int[] a = new int[5];
-a.resize(12);
+a.resize (12);
 ```
 
-You can move elements within an array by calling `move(src, dest,
+You can move elements within an array by calling `move (src, dest,
 length)` on it. The original positions will be filled with 0.
 
 ```vala
@@ -374,7 +375,7 @@ on [collections](../04-00-advanced-features/04-04-collections).
 ## 2.4.4. Reference Types
 
 The reference types are all types declared as a class, regardless of
-whether they are descended from GLib's `Object` or not. Vala will
+whether they are descended from GLib's [Object](https://valadoc.org/gobject-2.0/GLib.Object.html) or not. Vala will
 ensure that when you pass an object by reference, the system will keep
 track of the number of references currently alive to manage the
 memory for you. The value of a reference that does not point anywhere is
@@ -387,7 +388,7 @@ class Track : GLib.Object {             /* subclassing 'GLib.Object' */
     public double mass;                 /* a public field */
     public double name { get; set; } /* a public property */
     private bool terminated = false; /* a private field */
-    public void terminate() {           /* a public method */
+    public void terminate () {           /* a public method */
         terminated = true;
     }
 }
@@ -405,9 +406,9 @@ int i = 10;
 float j = (float) i;
 ```
 
-Vala supports another casting mechanism called `dynamic cast`, 
+Vala supports another casting mechanism called **dynamic cast**,
 which performs runtime type checking. More on this will be covered in the section on object-oriented programming 
-[3.12 Dynamic Type Casting](../03-00-object-oriented-programming/03-12-dynamic-type-casting).
+[Dynamic Type Casting](../03-00-object-oriented-programming/03-12-dynamic-type-casting).
 
 ## 2.4.6. Type Inference
 
@@ -418,9 +419,9 @@ side of the assignment. It helps reduce unnecessary redundancy in your
 code without sacrificing static typing:
 
 ```vala
-var p = new Person();     // same as: Person p = new Person();
+var p = new Person ();     // same as: Person p = new Person ();
 var s = "hello";          // same as: string s = "hello";
-var l = new List<int>();  // same as: List<int> l = new List<int>();
+var l = new List<int> ();  // same as: List<int> l = new List<int> ();
 var i = 10;               // same as: int i = 10;
 ```
 
@@ -428,13 +429,13 @@ This only works for local variables. Type inference is especially useful
 for types with generic type arguments (more on these later). Compare
 
 ```vala
-MyFoo<string, MyBar<string, int>> foo = new MyFoo<string, MyBar<string, int>>();
+MyFoo<string, MyBar<string, int>> foo = new MyFoo<string, MyBar<string, int>> ();
 ```
 
 with
 
 ```vala
-var foo = new MyFoo<string, MyBar<string, int>>();
+var foo = new MyFoo<string, MyBar<string, int>> ();
 ```
 
 ## 2.4.7. Defining new Type from other

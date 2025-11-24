@@ -50,7 +50,7 @@ string greeting_message = "Hello " + name + ".";
 
 > [!note]
 > String concatenation is fine for a small number of operations, like in the example above, but
-> for larger operations, consider using the `StringBuilder` class.
+> for larger operations, consider using the [StringBuilder](https://valadoc.org/glib-2.0/GLib.StringBuilder.html) class.
 > 
 > Also consider formatting strings (like shown in the previous tutorial) instead for better readability.
 
@@ -127,26 +127,20 @@ var money_after_operation = --money;
 |-----------------------------------------|
 | `\|`, `^`, `&`, `~`, ` \|=`, `&=`, `^=` |
 
-Bitwise operations: or, exclusive or, and, not. The second set includes
-assignments and is analogous to the arithmetic versions. These can be
-applied to any of the simple value types. (There is no assignment
+[Bitwise operations](https://en.wikipedia.org/wiki/Bitwise_operations_in_C): 
+or, xor, and, unary, assignment or, assignment and, and assignment xor. 
+These can be applied to any of the simple value types. (There is no assignment
 operator associated with `~` because this is a unary operator. The
 equivalent operation is just `a = ~a`).
 
+
 ### Bit Shift Operators
 
-| Values     |
-|------------|
-| `<<`, `>>` |
+| Values                   |
+|--------------------------|
+| `<<`, `>>`, `<<=`, `>>=` |
 
-Bit shift operations, shifting the left operand a number of bits
-according the right operand.
-
-| Values       |
-|--------------|
-| `<<=`, `>>=` |
-
-Bit shift operations, shifting the left operand a number of bits
+[Bit shift operations](https://en.wikipedia.org/wiki/Bitwise_operations_in_C), shifting the left operand a number of bits
 according the right operand. The left operand must be an identifier, to
 which the result is assigned.
 
@@ -155,7 +149,6 @@ which the result is assigned.
 | Values                           |
 |----------------------------------|
 | `==`, `!=`, `<`, `>`, `>=`, `<=` |
-
 
 Evaluates to a `bool` value dependent on whether the left
 and right operands are equal. In the case of value types this means
@@ -167,6 +160,60 @@ Inequality tests. Evaluate to a `bool` value dependent on whether the
 left and right operands are different in the manner described. These are
 valid for simple value data types, and the `string` type. For strings
 these operators compare the lexicographical order.
+
+**Equality Operator** `==`
+```vala
+int balance = 10;
+
+if (balance == 0) {
+    // ... do something if balance is 0
+}
+```
+
+**Inequality Operator** `!=`
+```vala
+int balance = 10;
+
+if (balance != 0) {
+    // ... do something if balance is not 0
+}
+```
+
+**Less Than Operator** `<`
+```vala
+int balance = 10;
+
+if (balance < 0) {
+    // ... do something if balance is less than 0
+}
+```
+
+**Greater Than Operator** `>`
+```vala
+int balance = 10;
+
+if (balance > 1000) {
+    // ... do something if balance is greater than 1000
+}
+```
+
+**Less Than or Equal To Operator** `<=`
+```vala
+int balance = 10;
+
+if (balance <= 1000) {
+    // ... do something if balance is less than or equal to 1000
+}
+```
+
+**Greater Than or Equal To Operator** `>=`
+```vala
+int balance = 10;
+
+if (balance >= 1000) {
+    // ... do something if balance is greater than or equal to 1000
+}
+```
 
 ### Logic Operators
 
@@ -209,9 +256,9 @@ if (role.contains ("admin") || role.contains ("staff")) {
 
 ### Ternary Conditional Operator
 
-| Values |
-|--------|
-| `?`    |
+| Values  |
+|---------|
+| `?` `:` |
 
 Evaluates a condition and returns either
 the value of the left or the right sub-expression based on whether the
@@ -242,7 +289,7 @@ This operator is useful to provide a default value in case a
 reference is `null`:
 
 ```vala
-stdout.printf("Hello, %s!\n", name ?? "unknown person");
+stdout.printf ("Hello, %s!\n", name ?? "unknown person");
 ```
 
 ### In Operator
@@ -253,7 +300,7 @@ stdout.printf("Hello, %s!\n", name ?? "unknown person");
 
 Checks if the right operand contains the left operand. This operator
 works on arrays, strings, collections or any other type that has an
-appropriate `contains()` method. For strings, it performs a substring
+appropriate `contains ()` method. For strings, it performs a substring
 search.
 
 ```vala
@@ -261,8 +308,8 @@ var numbers = {1, 2, 3};
 if (4 in numbers) {
     // ...
 }
-````
+```
 
-Operators cannot be overloaded in Vala. There are extra operators that
+Operators **cannot** be overloaded in Vala. There are extra operators that
 are valid in the context of lambda declarations and other specific
 tasks - these are explained in the context they are applicable.

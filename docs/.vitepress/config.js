@@ -1057,6 +1057,10 @@ export default {
                             {
                                 text: 'String Sample',
                                 link: '/developer-guides/string-sample'
+                            },
+                            {
+                                text: 'Syntax Guide',
+                                link: '/developer-guides/syntax-guide'
                             }
                         ]
                     },

@@ -1,0 +1,57 @@
+name: Bug report
+description: Create a report to help us improve
+title: "bug: "
+labels: ["Bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What Happened?
+      description: Please provide a clear and concise description of what the bug is.
+      placeholder: It does not recognize the valid keyword 'partial', which is permitted to be used in classes.
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Please list the steps that are needed to reproduce the issue if possible.
+      value: |
+        1.
+        ...
+      render: bash
+    validations:
+      required: false
+  - type: dropdown
+    id: web-browser
+    attributes:
+      label: Web Browser
+      description: Which web browser are you using?
+      options:
+        - Google Chrome
+        - Mozilla Firefox
+        - Microsoft Edge
+        - GNOME Web
+        - Safari
+        - Other (Please add the details to Additional Information section)
+      validations:
+        required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating System / Version
+      description: What operating system and version are you using?
+      placeholder: Ubuntu 24.0.2
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Information
+      description: Anything else that may be helpful, including logs, error messages, article links, etc.
+    validations:
+      required: false

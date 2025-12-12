@@ -1,0 +1,24 @@
+name: Change request
+description: Suggest a change that can help the project
+title: "change: "
+labels: ["Change Request"]
+
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to provide recommendations!
+  - type: textarea
+    id: change-description
+    attributes:
+      label: Description
+      description: Please describe what changes you would like.
+      placeholder: I would like ...
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Info
+      description: Please provide anything else that might be helpful, including screenshots, links, potential solutions, etc.
+    validations:
+      required: false

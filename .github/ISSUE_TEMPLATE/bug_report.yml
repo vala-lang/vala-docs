@@ -38,8 +38,8 @@ body:
         - GNOME Web
         - Safari
         - Other (Please add the details to Additional Information section)
-      validations:
-        required: true
+    validations:
+      required: true
   - type: input
     id: os
     attributes:

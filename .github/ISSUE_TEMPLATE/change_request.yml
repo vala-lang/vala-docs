@@ -1,7 +1,7 @@
 name: Change request
 description: Suggest a change that can help the project
 title: "change: "
-labels: ["Change Request"]
+labels: ["enhancement"]
 
 body:
   - type: markdown

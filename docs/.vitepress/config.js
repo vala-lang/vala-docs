@@ -815,160 +815,160 @@ export default {
                                 items: [
                                     {
                                         text: 'Vala for C# Programmers',
-                                        link: '/developer-guides/documentation/vala-for-csharp-devs',
+                                        link: '/developer-guides/documentation/vala-for-csharp-programmers',
                                         collapsed: true,
                                         items: [
                                             {
                                                 text: 'Source Files',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/01-sources-files'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/01-sources-files'
                                             },
                                             {
                                                 text: 'Compilation',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/02-compilation'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/02-compilation'
                                             },
                                             {
                                                 text: 'Naming Conventions',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/03-naming-conventions'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/03-naming-conventions'
                                             },
                                             {
                                                 text: 'Main Entry Point',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/04-main-entry-point'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/04-main-entry-point'
                                             },
                                             {
                                                 text: 'System Namespace',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/05-system-namespace'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/05-system-namespace'
                                             },
                                             {
                                                 text: 'Value Types',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/06-value-types'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/06-value-types'
                                             },
                                             {
                                                 text: 'Verbatim String Literals',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/07-verbatim-string-literals'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/07-verbatim-string-literals'
                                             },
                                             {
                                                 text: 'Documentation Comments',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/08-documentation-comments'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/08-documentation-comments'
                                             },
                                             {
                                                 text: 'Object Base Class',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/09-object-base-class'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/09-object-base-class'
                                             },
                                             {
                                                 text: 'Method Overloading',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/10-method-overloading'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/10-method-overloading'
                                             },
                                             {
                                                 text: 'Multiple Constructors',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/11-multiple-constructors'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/11-multiple-constructors'
                                             },
                                             {
                                                 text: 'Constructor Chaining',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/12-constructor-chaining'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/12-constructor-chaining'
                                             },
                                             {
                                                 text: 'Delegates / Lambdas',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/13-delegates-lambdas'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/13-delegates-lambdas'
                                             },
                                             {
                                                 text: 'Events',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/14-events'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/14-events'
                                             },
                                             {
                                                 text: 'Interfaces',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/15-interfaces'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/15-interfaces'
                                             },
                                             {
                                                 text: 'Enums',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/16-enums'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/16-enums'
                                             },
                                             {
                                                 text: 'Struct Initialization',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/17-struct-initialization'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/17-struct-initialization'
                                             },
                                             {
                                                 text: 'Multi-dimensional Arrays',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/18-multi-dimensional-arrays'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/18-multi-dimensional-arrays'
                                             },
                                             {
                                                 text: 'Nullable Types',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/19-nullable-types'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/19-nullable-types'
                                             },
                                             {
                                                 text: 'Code Attributes',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/20-code-attributes'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/20-code-attributes'
                                             },
                                             {
                                                 text: 'Properties',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/21-properties'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/21-properties'
                                             },
                                             {
                                                 text: 'Exceptions',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/22-exceptions'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/22-exceptions'
                                             },
                                             {
                                                 text: 'Argument Checking',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/23-argument-checking'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/23-argument-checking'
                                             },
                                             {
                                                 text: 'Unsafe Code and Pointers',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/24-unsafe-code-and-pointers'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/24-unsafe-code-and-pointers'
                                             },
                                             {
                                                 text: 'Conditional Compilation Directives',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/25-conditional-compilation-directives'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/25-conditional-compilation-directives'
                                             },
                                             {
                                                 text: 'Resource Disposing',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/26-resource-disposing'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/26-resource-disposing'
                                             },
                                             {
                                                 text: 'Memory Management',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/27-memory-management'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/27-memory-management'
                                             },
                                             {
                                                 text: 'Asynchronous Calls',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/28-asynchronous-calls'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/28-asynchronous-calls'
                                             },
                                             {
                                                 text: 'Static Constructors',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/29-static-constructors'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/29-static-constructors'
                                             },
                                             {
                                                 text: 'External Methods',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/30-external-methods'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/30-external-methods'
                                             },
                                             {
                                                 text: 'Reflection',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/31-reflection'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/31-reflection'
                                             },
                                             {
                                                 text: 'Not Available',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/32-not-available'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/32-not-available'
                                             },
                                             {
                                                 text: 'Collections',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/33-collections'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/33-collections'
                                             },
                                             {
                                                 text: 'Indexers',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/34-indexers'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/34-indexers'
                                             },
                                             {
                                                 text: 'IO, Network Sockets',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/35-io-network-sockets'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/35-io-network-sockets'
                                             },
                                             {
                                                 text: 'Console Input / Output',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/36-console-input-output'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/36-console-input-output'
                                             },
                                             {
                                                 text: 'GTK+ Demo App',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/37-gtk-demo-app'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/37-gtk-demo-app'
                                             },
                                             {
                                                 text: 'Bindings',
-                                                link: '/developer-guides/documentation/vala-for-csharp-devs/38-bindings'
+                                                link: '/developer-guides/documentation/vala-for-csharp-programmers/38-bindings'
                                             }
                                         ]
                                     },

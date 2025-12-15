@@ -5,16 +5,20 @@
 Vala is an ongoing project, and its features may change so feel free to
 help keep the docs up-to-date.
 
-You can press the edit button on the bottom of each page.
+You can press the `Edit this page` button on the bottom of each page.
 :::
 
 ## Introduction
 
-Disclaimer: Vala is an ongoing project, and its features may change. I
+::: tip Disclaimer
+
+Vala is an ongoing project, and its features may change. I
 will try to keep this tutorial as up to date as I can, but I'm not
 perfect. Also, I can't promise that the techniques which I suggest are
 necessarily the best in practice, but again I will try to keep up with
 that sort of thing.
+
+:::
 
 ### What is Vala?
 
@@ -65,7 +69,21 @@ Vala far easier to come by.
 
 ### Conventions
 
-Code will be in `monospaced text`, commands will say `bash` or `shell` to the right. 
+Code will be in either an in-line code fragment like `format ()` or [shiki](https://shiki.style/)-highlighted code blocks with the language specified to the upper-right corner.
+
+```vala
+public static void main () {
+    // do something
+}
+```
+
+Commands in particular will say `bash` or `shell` as the language.
+
+```bash
+# list directory contents
+ls -l
+```
+
 Other than that, everything should be obvious. I tend to
 code very explicitly, including some information that is actually
 implied. I will try to explain where some things can be omitted, but

@@ -8,7 +8,7 @@ in any situation where an instance of that interface is expected.
 
 The procedure for implementing an interface is the same as for
 inheriting from classes with abstract methods in - if the class is to be
-useful it must provide implementations for all methods that are
+useful, it must provide implementations for all methods that are
 described but not yet implemented.
 
 A simple interface definition looks like:
@@ -111,7 +111,7 @@ public interface Callable : GLib.Object {
 
 Interface `Callable` defines an abstract property called `answering`,
 where any class implementing this interface can monitor the state of a
-call, details about `answer` a call is a mautter of the implementator,
+call, details about `answer` a call is a matter of the implementor,
 but `hang` defines a default implementation to set `answering` to false
 when hanging a call.
 
@@ -160,17 +160,17 @@ public class TechPhone : GLib.Object, Callable
 In this case `TechPhone` is another implementation to `Callable`, then
 when `hang()` method is called on an instance of `TechPhone` it will
 always return `false` and print the message
-`TechPhone.hang () implementation!`, hidding completelly
+`TechPhone.hang () implementation!`, hiding completely
 `Callable.hang()` default implementation.
 
 ## 3.8.3. Properties
 
 An interface can define properties that must be implemented for classes.
-Implementator class must define a property with the same signature and
+Implementor class must define a property with the same signature and
 access permissions to the property's `get` and `set`.
 
 As any GObject property, you can define a body to property's `set` and
-`get` in the implementator class, when no body is used values are set
+`get` in the implementor class, when no body is used values are set
 and get by default. If given, you must define a `private` field to store
 the properties values to be used outside or inside the class.
 

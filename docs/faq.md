@@ -199,7 +199,7 @@ class MyWindow : Gtk.Window
 }
 ```
 
-## How do I convert from uint8[] (or char[]) to string and viceversa?
+## How do I convert from uint8[] (or char[]) to string and vice versa?
 
 From uint8[] (or what else) to string it's as simple as casting to
 string: `(string) array`. From string to uint8[] array it's about
@@ -311,7 +311,7 @@ why vala developers highly suggest using the .vapi instead of the .gir:
 3.  With a .vapi file you have a human readable representation of how
     vapigen interprets the .gir file plus metadata. So it serves as
     documentation for yourself, instead of going wild guessing the name
-    of the symbols or whatelse.
+    of the symbols or what else.
 4.  You can easily compare two .vapi files for differences because a
     symbol is usually defined on one line, while with .gir a single
     symbol is defined on multiple lines.

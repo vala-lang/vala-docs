@@ -16,9 +16,9 @@ void method_with_varargs(int x, ...) {
 In this example `x` is a fixed argument to meet the requirements. You
 obtain the varargs list with `va_list()`. Then you can retrieve the
 arguments one after another by calling the generic method `arg<T>()`
-sequently on this list, with T being the type that the argument should
-be interpreted as. If the type is evident from the context (as in our
-example) the type is inferred automatically and you can just call
+sequentialy on this list, with T being the type that the argument should
+be interpreted as. If the type is clear from the context (as in our
+example), the type is inferred automatically, and you can just call
 `arg()` without the generic type argument.
 
 This example parses an arbitrary number of *string - double* argument

@@ -3,7 +3,7 @@
 ## 4.6.1. Threads in Vala
 
 A program written in Vala may have more than one thread of execution,
-allowing it it do more than one thing at a time. Exactly how this is
+allowing it to do more than one thing at a time. Exactly how this is
 managed is outside of Vala's scope - threads may be sharing a single
 processor core or not, depending on the environment.
 
@@ -42,7 +42,7 @@ Now look at the following statement:
 var thread = new Thread<void> ("new_thread", thread_func);
 ```
 
-We create a new thread and it will start immediately. The first argument
+We create a new thread, and it will start immediately. The first argument
 is its name,the second one is the content of the new thread. The generic
 parameter is the type of value which a thread returns.
 
@@ -132,7 +132,7 @@ statements here, Vala will guarantee that if one thread has locked
 "a", another thread that needs the same lock will have to wait its
 turn.
 
-In Vala it is only possible to lock members of the object that is
+In Vala, it is only possible to lock members of the object that is
 executing the code. This might appear to be a major restriction, but in
 fact the standard use for this technique should involve classes that are
 individually responsible for controlling a resource, and so all locking

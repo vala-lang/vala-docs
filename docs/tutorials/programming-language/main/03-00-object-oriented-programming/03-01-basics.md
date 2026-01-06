@@ -55,7 +55,7 @@ means that there are special features of Vala that can be used to easily
 access some of *Object's* features.
 
 This class is described as `public` (by default, classes are
-`internal`). The implication of this is that it can referenced directly
+`internal`). The implication of this is that it can be referenced directly
 by code outside of this file - if you are a C programmer of
 glib/gobject, you will recognise this as being equivalent to defining
 the class interfaces in a header file that other code can include.

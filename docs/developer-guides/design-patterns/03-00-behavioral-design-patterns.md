@@ -274,9 +274,9 @@ container-specific and thus cannot be decoupled.
 
 **Programmatic example**
 
-In Vala we'll use Libgee which implements collections and derivatives,
-includind iterators. Translating our radio stations example from above.
-First of all we have `RadioStation`
+In Vala, we'll use Libgee, which implements collections and derivatives,
+including iterators. Translating our radio stations example from above.
+First, we have `RadioStation`
 
 ```vala
 class RadioStation {
@@ -370,10 +370,10 @@ program's running behavior.
 
 **Programmatic Example**
 
-Here is the simplest example of a chat room (i.e. mediator) with users
-(i.e. colleagues) sending messages to each other.
+Here is the simplest example of a chat room (i.e., mediator) with users
+(i.e., colleagues) sending messages to each other.
 
-First of all, we have the mediator i.e. the chat room
+First of all, we have the mediator, i.e., the chat room
 
 ```vala
 interface ChatRoomMediator : Object {
@@ -390,7 +390,7 @@ class ChatRoom : Object, ChatRoomMediator {
 }
 ```
 
-Then we have our users i.e. colleagues
+Then we have our users, i.e., colleagues
 
 ```vala
 class User {
@@ -430,10 +430,10 @@ jane.send ("Hey!");
 
 ## 3.5. 💾 Memento
 
-Real world example > Take the example of calculator (i.e. originator),
-where whenever you perform some calculation the last calculation is
-saved in memory (i.e. memento) so that you can get back to it and maybe
-get it restored using some action buttons (i.e. caretaker).
+Real world example > Take the example of calculator (i.e., originator),
+where whenever you perform some calculation and the last calculation is
+saved in memory (i.e., memento) so that you can get back to it and maybe
+get it restored using some action buttons (i.e., a caretaker).
 
 In plain words > Memento pattern is about capturing and storing the
 current state of an object in a manner that it can be restored later on
@@ -447,10 +447,10 @@ Usually useful when you need to provide some sort of undo functionality.
 
 **Programmatic Example**
 
-Lets take an example of text editor which keeps saving the state from
+Let’s take an example of text-editor which keeps saving the state from
 time to time and that you can restore if you want.
 
-First of all we have our memento object that will be able to hold the
+First of all, we have our memento object that will be able to hold the
 editor state
 
 ```vala
@@ -467,7 +467,7 @@ class EditorMemento {
 }
 ```
 
-Then we have our editor i.e. originator that is going to use memento
+Then, we have our editor i.e. originator that is going to use memento
 object
 
 ```vala
@@ -568,7 +568,7 @@ class JobSeeker : Object, Observer {
 }
 ```
 
-Then we have our job postings to which the job seekers will subscribe
+Then we have our job postings to which the job-seekers will subscribe
 
 ```vala
 class JobPostings : Observable {
@@ -613,7 +613,7 @@ job_postings.add_job (new JobPost ("Software Engineer"));
 ## 3.7. 🏃 Visitor
 
 Real world example > Consider someone visiting Dubai. They just need a
-way (i.e. visa) to enter Dubai. After arrival, they can come and visit
+way (i.e., visa) to enter Dubai. After arrival, they can come and visit
 any place in Dubai on their own without having to ask for permission or
 to do some leg work in order to visit any place here; just let them know
 of a place and they can visit it. Visitor pattern lets you do just that,
@@ -633,8 +633,8 @@ way to follow the open/closed principle.
 **Programmatic example**
 
 Let's take an example of a zoo simulation where we have several
-different kinds of animals and we have to make them Sound. Let's
-translate this using visitor pattern
+different kinds of animals, and we have to make them Sound. Let's
+translate this using the visitor pattern
 
 ```vala
 // Visitee
@@ -716,9 +716,9 @@ lion.accept (speak);    // Roaaar!
 dolphin.accept (speak); // Tuut tutt tuutt!
 ```
 
-We could have done this simply by having a inheritance hierarchy for the
-animals but then we would have to modify the animals whenever we would
-have to add new actions to animals. But now we will not have to change
+We could have done this simply by having an inheritance hierarchy for the
+animals, but then we would have to modify the animals whenever we would
+have to add new actions to animals. But now, we will not have to change
 them. For example, let's say we are asked to add the jump behavior to
 the animals, we can simply add that by creating a new visitor i.e.
 
@@ -756,11 +756,11 @@ dolphin.accept (jump);  // Walked on water a little and disappeared
 
 ## 3.8. 💡 Strategy
 
-Real world example > Consider the example of sorting, we implemented
-bubble sort but the data started to grow and bubble sort started getting
-very slow. In order to tackle this we implemented Quick sort. But now
+Real world example > Consider the example of sorting. We implemented
+bubble sort, but, the data started to grow, and bubble sort started getting
+very slow. In order to tackle this, we implemented Quick sort. But now
 although the quick sort algorithm was doing better for large datasets,
-it was very slow for smaller datasets. In order to handle this we
+it was very slow for smaller datasets. In order to handle this, we
 implemented a strategy where for small datasets, bubble sort will be
 used and for larger, quick sort.
 

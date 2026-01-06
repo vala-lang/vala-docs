@@ -12,10 +12,10 @@ methods might wait for include: waiting for data from a remote server,
 or waiting for calculations in another thread to complete, or waiting
 for data to load from a disk drive.
 
-Asynchronous methods are normally used with a GLib main loop running,
+Asynchronous methods are normally used with a GLib main loop running
 because idle callbacks are used to handle some of the internal
-callbacks. However under certain conditions `async` may be used without
-the GLib main loop, for example if the async methods always yield and
+callbacks. However, under certain conditions `async` may be used without
+the GLib main loop, for example, if the async methods always yield and
 `Idle.add()` is never used.
 
 ::: info TODO
@@ -104,7 +104,7 @@ Idle.add(fetch_webpage.callback);
 yield;
 ```
 
-This form gives up control, and stores the callback details for some
+This form gives up control and stores the callback details for some
 other code to use to resume the method's execution:
 
 ```vala
@@ -121,7 +121,7 @@ loop to run it:
 Idle.add((owned) callback);
 ```
 
-or alternatively a direct call may be made if the caller is running in
+or alternatively, a direct call may be made if the caller is running in
 the main thread:
 
 ```vala
@@ -132,7 +132,7 @@ If the direct call above is used, then the resumed asynchronous method
 takes control of the CPU immediately and runs until its next `yield`
 before returning to the code that executed `callback()`. The
 `Idle.add()` method is useful if the callback must be made from a
-background thread, e.g. to resume the async method after completion of
+background thread, e.g., to resume the async method after completion of
 some background processing. (The `(owned)` cast is necessary to avoid a
 warning about copying delegates.)
 

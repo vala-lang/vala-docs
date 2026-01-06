@@ -176,21 +176,21 @@ the properties values to be used outside or inside the class.
 
 `Callable` interface definition, defines an `answering` property. In
 this case this interface defines a `answering` with a `protected set`,
-allowing a read only property for any object using an instance of
+allowing a read-only property for any object using an instance of
 `Callable`, but allows class implementors to write values to it, like
 `TechPhone` class does when implements `hang()` method.
 
 ## 3.8.4. Mixins and Multiple Inheritance
 
-As described above, Vala while it is backed by C and GObject, can
-provide a limited multiple inheritance mechanism, by adding virtual
-methods to Interfaces. Is possible to add some ways to define default
+As described above, Vala, while it is backed by C and GObject, can
+provide a limited multiple inheritance mechanism by adding virtual
+methods to Interfaces. It is possible to add some ways to define default
 method implementations in interface implementor class and allow derived
-classes to override that methods.
+classes to override those methods.
 
 If you define a `virtual` method in an interface and implement it in a
 class, you can't override interface's method without leaving derived
-classes unable to access to interface default one. Consider following
+classes unable to access to interface default one. Consider the following
 code:
 
 ```vala

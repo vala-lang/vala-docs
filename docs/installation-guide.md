@@ -43,7 +43,7 @@ apt-get install vala
 
 ## *BSD
 
-First you install the port:
+First, you install the port:
 
 ```shell
 cd /usr/ports/lang/vala/ && make install clean

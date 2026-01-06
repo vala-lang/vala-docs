@@ -17,14 +17,14 @@ if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.match(email)) {
 }
 ```
 
-The trailing *i* makes the expression case insensitive. You can store a
+The trailing *i* makes the expression case-insensitive. You can store a
 regular expression in a variable of type *Regex*:
 
 ```vala
 Regex regex = /foo/;
 ```
 
-A example of regular expression replacement:
+An example of regular expression replacement:
 
 ```vala
 var r = /(foo|bar|cow)/;
@@ -42,7 +42,7 @@ The following trailing characters can be used:
     including newlines. Without it, newlines are excluded.
 -   *x*, whitespace data characters in the pattern are totally ignored
     except when escaped or inside a character class.
--   *o*, request JIT compilation of a regular expression. It allows to
+-   *o*, request JIT compilation of a regular expression. It allows you to
     execute this regex much faster at the cost of extra time taken to
-    compile it. This option is most benificial, when the same compiled
+    compile it. This option is most beneficial when the same compiled
     pattern is used for matching several times.

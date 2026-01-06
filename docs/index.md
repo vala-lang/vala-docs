@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Vala is a programming language using modern high level abstractions
+Vala is a programming language using modern high-level abstractions
 without imposing additional runtime requirements and without using a
 different ABI compared to applications and libraries written in C.
 

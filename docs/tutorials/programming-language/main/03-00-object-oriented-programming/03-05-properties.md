@@ -1,12 +1,12 @@
 # 3.5. Properties
 
-It is good object oriented programming practice to hide implementation
+It is good object-oriented programming practice to hide implementation
 details from the users of your classes ([information hiding principle](http://en.wikipedia.org/wiki/Information_hiding)), 
 so you can later change the internals without breaking the public API. One practice
 is to make fields private and provide accessor methods for getting and
 setting their values (getters and setters).
 
-If you're a Java programmer you will probably think of something like
+If you're a Java programmer, you will probably think of something like
 this:
 
 ```vala
@@ -70,7 +70,7 @@ class Person : Object {
 }
 ```
 
-With properties you can change the internal working of classes without
+With properties, you can change the internal working of classes without
 changing the public API. For example:
 
 ```vala
@@ -91,7 +91,7 @@ that you can do more than just simple variable access or assignment
 within the get and set blocks. You could do a database access, logging,
 cache updates, etc.
 
-If you want to make a property read-only for the users of the class you
+If you want to make a property read-only for the users of the class, you
 should make the setter private:
 
 ```vala
@@ -120,9 +120,9 @@ public int age { get; set; default = 32; }
 ```
 
 Properties and their additional descriptions can be queried at runtime.
-Some programs such as the [Glade](http://glade.gnome.org/) graphical
-user interface designer make use of this information. In this way Glade
-can present human readable descriptions for properties of GTK+ widgets.
+Some programs, such as the [Glade](http://glade.gnome.org/) graphical
+user interface designer, make use of this information. In this way Glade
+can present human-readable descriptions for properties of GTK+ widgets.
 
 Every instance of a class derived from `GLib.Object` has a signal called
 `notify`. This signal gets emitted every time a property of its object
@@ -137,7 +137,7 @@ obj.notify.connect((s, p) => {
 
 `s` is the source of the signal (`obj` in this example), `p` is the
 property information of type **ParamSpec** for the changed property. If
-you\'re only interested in change notifications of a single property you
+you\'re only interested in change notifications of a single property, you
 can use this syntax:
 
 ```vala
@@ -167,7 +167,7 @@ public class MyObject : Object {
 There's another type of properties called **construct properties** that
 are described later in the section about gobject-style construction.
 
-Note: in case your property is type of struct, to get the property value
+Note: in case your property is a type of struct, to get the property value
 with Object.get(), you have to declare your variable as example below
 
 ```vala
@@ -191,5 +191,5 @@ int main()
 }
 ```
 
-This way, c is an reference instead of an instance of Color on stack.
+This way, c is a reference instead of an instance of Color on stack.
 What you passed into s.get() is "Color **" instead of "Color *".

@@ -135,5 +135,5 @@ public class Test : GLib.Object {
 
 This example has two error domains, both of which can be thrown by the
 "thrower" method. Catcher can only throw the second type of error, and
-so must handle the first type if "thrower" throws it. Finally the
+so must handle the first type if "thrower" throws it. Finally, the
 "main" method will handle any errors from "catcher".

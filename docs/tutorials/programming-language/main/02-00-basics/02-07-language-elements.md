@@ -39,7 +39,7 @@ void draw(Shape shape) { }  // not possible
 ```
 
 This is due to the fact that libraries produced with Vala are intended
-to be usable for C programmers as well. In Vala you would do something
+to be usable for C programmers as well. In Vala, you would do something
 like this instead:
 
 ```vala
@@ -238,7 +238,7 @@ struct StructName {
 }
 ```
 
-defines a _struct_ type, i.e. a compound value type. A Vala
+defines a _struct_ type, i.e., a compound value type. A Vala
 struct may have methods in a limited way and also may have private
 members, meaning the explicit _public_ access modifier is
 required.
@@ -287,7 +287,7 @@ class ClassName : SuperClassName, InterfaceName {
 Defines a class, i.e. a reference type. In contrast to structs,
 instances of classes are heap allocated. There is much more syntax
 related to classes, which is discussed more fully in the section about
-object oriented programming.
+object-oriented programming.
 
 ## 2.7.7. Interfaces
 
@@ -296,9 +296,9 @@ interface InterfaceName : SuperInterfaceName {
 }
 ```
 
-Defines an interface, i.e. a non instantiable type. In order to create
-an instance of an interface you must first implement its abstract
+Defines an interface, i.e., a non-instantiable type. In order to create
+an instance of an interface, you must first implement its abstract
 methods in a non-abstract class. Vala interfaces are more powerful than
 Java or C# interfaces. In fact, they can be used as
 [mixins](https://en.wikipedia.org/wiki/Mixin). The details of interfaces
-are described in the section about object oriented programming.
+are described in the section about object-oriented programming.

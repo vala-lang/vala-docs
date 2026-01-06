@@ -297,7 +297,7 @@ yourself bouncing between different classes.
 ## 3.2.2. Back to the Parser
 
 Vala.Parser is a highly specialized CodeVisitor - the only type of code
-node it visits is a Vala.SourceFile. However the Parser calls back to
+node it visits is a Vala.SourceFile. However, the Parser calls back to
 the context and uses it to create code nodes (mentioned before), then
 adds these code nodes into the context's root code node.
 
@@ -312,7 +312,7 @@ declarations of a namespace, class, struct, or interface. Fixme.
 
 This grammar is hand-generated from Vala.Parser. Sometimes the structure
 of this grammar diverges slightly from the code, for example optional
-non-terminal symbols. However the non-terminal symbol names usually
+non-terminal symbols. However, the non-terminal symbol names usually
 match a parse_ method in Vala.Parser.
 
 More literal-specific grammar at

@@ -110,7 +110,7 @@ in
 
 Checks if the right operand contains the left operand. This operator
 works on arrays, strings, collections or any other type that has an
-appropriate *contains()* method. For strings it performs a substring
+appropriate *contains()* method. For strings, it performs a substring
 search.
 
 Operators cannot be overloaded in Vala. There are extra operators that

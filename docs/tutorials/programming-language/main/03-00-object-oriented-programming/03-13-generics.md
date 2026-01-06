@@ -32,9 +32,9 @@ This "Wrapper" class must be restricted with a type in order to
 instantiate it - in this case the type will be identified as "G", and
 so instances of this class will store one object of "G" type.
 
-In order to instantiate this class, a type must be chosen, for example
+In order to instantiate this class, a type must be chosen, for example,
 the built in `string` type (in Vala there is no restriction on what type
-may be used in a generic). To create an briefly use this class:
+may be used in a generic). To create and briefly use this class:
 
 ```vala
 void main () {

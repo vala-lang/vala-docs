@@ -5,7 +5,7 @@ with the `DestroysInstance` attribute. The method must return void.
 Although in most cases such a method would be bound as the
 `free_function` of the compact class.
 
-If a function destroys an instance but provides a useable return value,
+If a function destroys an instance but provides a usable return value,
 instead, bind it as a static method which takes an owned variable for
 the instance:
 

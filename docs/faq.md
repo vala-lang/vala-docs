@@ -48,10 +48,10 @@ Yes, if you prepend the identifier with an `@`.
 
 ## Why do I have to inherit from GObject?
 
-Since Vala is based on GObject it's needed to inherit almost every
+Since Vala is based on GObject, it's necessary to inherit almost every
 class from GObject. However, it's not mandatory, but if you don't
 inherit, you will only get a very restricted class. Unless you know what
-you're doing you want to inherit from GObject. The ../BasicSample shows
+you're doing, you want to inherit from GObject. The ../BasicSample shows
 how to achieve a full-featured class.
 
 ## Can I use pointer arithmetic inside strings?
@@ -339,7 +339,7 @@ Probably the biggest disadvantage is that you will not automatically
 benefit from backwards-compatible fixes and improvements that happen in
 bindings over time. It is quite common for updated bindings to fix bugs
 (most prominently memory leaks), and if you use a local copy of the
-binding you will not benefit from such changes until you update the copy
+binding, you will not benefit from such changes until you update the copy
 of the bindings your software uses.
 
 Of course, sometimes it isn't really feasible to depend on the
@@ -356,6 +356,6 @@ One more thing to consider is that using a local copy of bindings can
 make [https://valadoc.org](https://valadoc.org) less useful. Typically, valadoc.org content
 tracks the latest stable version, if you're using a current Linux
 distribution, is likely the same version you have on your system. If you
-make a local copy of the bindings you use they will often be older
-versions which don't match what [valadoc.org](https://valadoc.org)
+make a local copy of the bindings you use, they will often be older
+versions, which don't match what [valadoc.org](https://valadoc.org)
 says.

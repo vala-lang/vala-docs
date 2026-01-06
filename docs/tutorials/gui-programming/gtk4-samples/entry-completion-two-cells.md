@@ -33,8 +33,8 @@ public class EntryCompletionTwoCellsSample : Gtk.Application {
         completion.set_text_column (0);
 
         var cell = new Gtk.CellRendererText ();
-        completion.pack_start(cell, false);
-        completion.add_attribute(cell, "text", 1);
+        completion.pack_start (cell, false);
+        completion.add_attribute (cell, "text", 1);
 
         Gtk.TreeIter iter;
 

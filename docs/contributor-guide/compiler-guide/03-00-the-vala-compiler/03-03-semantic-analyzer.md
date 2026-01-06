@@ -13,10 +13,10 @@ are used in emitted C code.
 
 All attributes except for Conditional are handled from
 Vala.AttributeProcessor. I don't know where and how conditional is
-handled, but there is a function ignore_node() in Vala.CodeContext.
+handled, but there is a function ignore_node () in Vala.CodeContext.
 
 Vala.AttributeProcessor is a CodeVisitor which simply calls the
-process_attributes() method on every namespace, class, struct,
+process_attributes () method on every namespace, class, struct,
 interface, enum, method, constructor, parameter, property, delegate,
 constant, field, and signal that it visits.
 
@@ -26,7 +26,7 @@ the attribute is called "CCode", then the process_ccode_attributes()
 function will be called to parse the key-value pairs supplied.
 
 ::: info TODO
-Mention Vala.Parser.set_attributes()
+Mention Vala.Parser.set_attributes ()
 
 Feel free to help: [Vala Docs Repository](https://github.com/vala-lang/vala-docs).
 :::

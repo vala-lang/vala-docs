@@ -22,8 +22,8 @@ unowned reference, e.g.:
 class Test {
     private Object o;
 
-    public unowned Object get_unowned_ref() {
-        this.o = new Object();
+    public unowned Object get_unowned_ref () {
+        this.o = new Object ();
         return this.o;
     }
 }
@@ -33,7 +33,7 @@ When calling this method, in order to collect a reference to the
 returned object, you must expect to receive a weak reference:
 
 ```vala
-unowned Object o = get_unowned_ref();
+unowned Object o = get_unowned_ref ();
 ```
 
 The reason for this seemingly over complicated example because of the
@@ -51,7 +51,7 @@ concept of ownership.
 If the calling code is written as
 
 ```vala
-Object o = get_unowned_ref();
+Object o = get_unowned_ref ();
 ```
 
 Vala will try to either obtain a reference of or a duplicate of the
@@ -72,7 +72,7 @@ As such, the following example will result in a compilation error:
 ```vala
 public Object property {
     get {
-        return new Object();   // WRONG: property returns an unowned reference,
+        return new Object ();   // WRONG: property returns an unowned reference,
                                // the newly created object will be deleted when
                                // the getter scope ends the caller of the
                                // getter ends up receiving an invalid reference
@@ -86,11 +86,11 @@ nor can you do this:
 ```vala
 public string property {
     get {
-        return getter_method();   // WRONG: for the same reason above.
+        return getter_method ();   // WRONG: for the same reason above.
     }
 }
 
-public string getter_method() {
+public string getter_method () {
     return "some text"; // "some text" is duplicated and returned at this point.
 }
 ```
@@ -100,11 +100,11 @@ on the other hand, this is perfectly fine
 ```vala
 public string property {
     get {
-        return getter_method();   // GOOD: getter_method returns an unowned value
+        return getter_method ();   // GOOD: getter_method returns an unowned value
     }
 }
 
-public unowned string getter_method() {
+public unowned string getter_method () {
     return "some text";
     // Don't be alarmed that the text is not assigned to any strong variable.
     // Literal strings in Vala are always owned by the program module itself,
@@ -137,7 +137,7 @@ be problems in your design. Anyways, the following code is a correct
 segment:
 
 ```vala
-public owned Object property { owned get { return new Object(); } }
+public owned Object property { owned get { return new Object (); } }
 ```
 
 Unowned references play a similar role to pointers which are described

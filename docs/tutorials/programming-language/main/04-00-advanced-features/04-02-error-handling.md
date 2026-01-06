@@ -23,7 +23,7 @@ Using exceptions (or *errors* in Vala terminology) is a matter of:
 1)  Declaring that a method may raise an error:
 
 ```vala
-void my_method() throws IOError {
+void my_method () throws IOError {
     // ...
 }
 ```
@@ -32,7 +32,7 @@ void my_method() throws IOError {
 
 ```vala
 if (something_went_wrong) {
-    throw new IOError.FILE_NOT_FOUND("Requested file could not be found.");
+    throw new IOError.FILE_NOT_FOUND ("Requested file could not be found.");
 }
 ```
 
@@ -40,9 +40,9 @@ if (something_went_wrong) {
 
 ```vala
 try {
-    my_method();
+    my_method ();
 } catch (IOError e) {
-    stdout.printf("Error: %s\n", e.message);
+    stdout.printf ("Error: %s\n", e.message);
 }
 ```
 
@@ -51,12 +51,12 @@ try {
 ```vala
 IOChannel channel;
 try {
-    channel = new IOChannel.file("/tmp/my_lock", "w");
+    channel = new IOChannel.file ("/tmp/my_lock", "w");
 } catch (FileError e) {
-    if(e is FileError.EXIST) {
+    if (e is FileError.EXIST) {
         throw e;
     }
-    GLib.error("", e.message);
+    GLib.error ("", e.message);
 }
 ```
 
@@ -105,13 +105,13 @@ public errordomain ErrorType2 {
 }
 
 public class Test : GLib.Object {
-    public static void thrower() throws ErrorType1, ErrorType2 {
-        throw new ErrorType1.CODE_1A("Error");
+    public static void thrower () throws ErrorType1, ErrorType2 {
+        throw new ErrorType1.CODE_1A ("Error");
     }
 
-    public static void catcher() throws ErrorType2 {
+    public static void catcher () throws ErrorType2 {
         try {
-            thrower();
+            thrower ();
         } catch (ErrorType1 e) {
             // Deal with ErrorType1
         } finally {
@@ -119,9 +119,9 @@ public class Test : GLib.Object {
         }
     }
 
-    public static int main(string[] args) {
+    public static int main (string[] args) {
         try {
-            catcher();
+            catche ();
         } catch (ErrorType2 e) {
             // Deal with ErrorType2
             if (e is ErrorType2.CODE_2B) {

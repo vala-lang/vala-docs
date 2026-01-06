@@ -16,7 +16,7 @@ Asynchronous methods are normally used with a GLib main loop running,
 because idle callbacks are used to handle some of the internal
 callbacks. However under certain conditions `async` may be used without
 the GLib main loop, for example if the async methods always yield and
-`Idle.add()` is never used.
+`Idle.add ()` is never used.
 
 ::: info TODO
 Add the exact conditions `async` may be used without the GLib main loop
@@ -35,7 +35,7 @@ must be built with the `--pkg=gio-2.0` option.
 An asynchronous method is defined with the `async` keyword. For example:
 
 ```vala
-async void display_jpeg(string fnam) {
+async void display_jpeg (string fnam) {
     // Load JPEG in a background thread and display it when loaded
     // [...]
 }
@@ -44,7 +44,7 @@ async void display_jpeg(string fnam) {
 or:
 
 ```vala
-async int fetch_webpage(string url, out string text) throws IOError {
+async int fetch_webpage (string url, out string text) throws IOError {
     // Fetch a webpage asynchronously and when ready return the
     // HTTP status code and put the page contents in 'text'
     // [...]
@@ -60,9 +60,9 @@ back to its caller.
 An async method may be called with either of these two forms:
 
 ```vala
-display_jpeg.begin("test.jpg");
-display_jpeg.begin("test.jpg", (obj, res) => {
-    display_jpeg.end(res);
+display_jpeg.begin ("test.jpg");
+display_jpeg.begin ("test.jpg", (obj, res) => {
+    display_jpeg.end (res);
 });
 ```
 
@@ -70,19 +70,19 @@ Both forms starts the async method running with the given arguments. The
 second form in addition registers an `AsyncReadyCallback` which is
 executed when the method finishes. The callback takes a source object,
 `obj`, and an instance of GAyncResult, `res`, as arguments. In the
-callback the `.end()` method should be called to receive the return
+callback the `.end ()` method should be called to receive the return
 value of the asynchronous method if it has one. If the async method can
-throw an exception, the `.end()` call is where the exception arrives and
+throw an exception, the `.end ()` call is where the exception arrives and
 must be caught. If the method has `out` arguments, then these should be
-omitted from the `.begin()` call and added to the `.end()` call instead.
+omitted from the `.begin ()` call and added to the `.end ()` call instead.
 
 For example:
 
 ```vala
-fetch_webpage.begin("http://www.example.com/", (obj, res) => {
+fetch_webpage.begin ("http://www.example.com/", (obj, res) => {
     try {
         string text;
-        var status = fetch_webpage.end(res, out text);
+        var status = fetch_webpage.end (res, out text);
         // Result of call is in 'text' and 'status' ...
     } catch (IOError e) {
         // Problem ...
@@ -100,7 +100,7 @@ This form gives up control, but arranges for the GLib main loop to
 resume the method when there are no more events to process:
 
 ```vala
-Idle.add(fetch_webpage.callback);
+Idle.add (fetch_webpage.callback);
 yield;
 ```
 
@@ -118,20 +118,20 @@ the method to be resumed. This could be done by scheduling the GLib main
 loop to run it:
 
 ```vala
-Idle.add((owned) callback);
+Idle.add ((owned) callback);
 ```
 
 or alternatively a direct call may be made if the caller is running in
 the main thread:
 
 ```vala
-callback();
+callback ();
 ```
 
 If the direct call above is used, then the resumed asynchronous method
 takes control of the CPU immediately and runs until its next `yield`
-before returning to the code that executed `callback()`. The
-`Idle.add()` method is useful if the callback must be made from a
+before returning to the code that executed `callback ()`. The
+`Idle.add ()` method is useful if the callback must be made from a
 background thread, e.g. to resume the async method after completion of
 some background processing. (The `(owned)` cast is necessary to avoid a
 warning about copying delegates.)
@@ -140,13 +140,13 @@ The third common way of using `yield` is when calling another
 asynchronous method, for example:
 
 ```vala
-yield display_jpeg(fnam);
+yield display_jpeg (fnam);
 ```
 
 or
 
 ```vala
-var status = yield fetch_webpage(url, out text);
+var status = yield fetch_webpage (url, out text);
 ```
 
 In both cases, the calling method gives up control of the CPU and does

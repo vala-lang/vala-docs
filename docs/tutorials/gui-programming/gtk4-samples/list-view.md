@@ -31,7 +31,7 @@ public class ListViewSample : Gtk.Application {
             default_height = 400
         };
 
-        var customers = new GLib.ListStore(typeof (Customer));
+        var customers = new GLib.ListStore (typeof (Customer));
         var selection_model = new Gtk.SingleSelection (customers) {
             autoselect = true
         };

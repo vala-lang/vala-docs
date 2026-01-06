@@ -32,7 +32,7 @@ public class TextFileViewerSample : Gtk.Application {
 
         var open_button = new Gtk.Button ();
         open_button.child = open_button_box;
-        open_button.clicked.connect(on_open_button_clicked);
+        open_button.clicked.connect (on_open_button_clicked);
 
         toolbar.append (open_button);
 

@@ -15,14 +15,14 @@ Will decrement *a* repeatedly, checking after each iteration that *a* is
 greater than *b*.
 
 ```vala
-for (int a = 0; a < 10; a++) { stdout.printf("%d\n", a); }
+for (int a = 0; a < 10; a++) { stdout.printf ("%d\n", a); }
 ```
 
 Will initialize *a* to 0, then print *a* repeatedly until *a* is no
 longer less than 10, incrementing *a* after each iteration.
 
 ```vala
-foreach (int a in int_array) { stdout.printf("%d\n", a); }
+foreach (int a in int_array) { stdout.printf ("%d\n", a); }
 ```
 
 Will print out each integer in an array, or another iterable collection.
@@ -34,9 +34,9 @@ loop to immediately terminate, while `continue` will jump straight to
 the test part of the iteration.
 
 ```vala
-if (a > 0) { stdout.printf("a is greater than 0\n"); }
-else if (a < 0) { stdout.printf("a is less than 0\n"); }
-else { stdout.printf("a is equal to 0\n"); }
+if (a > 0) { stdout.printf ("a is greater than 0\n"); }
+else if (a < 0) { stdout.printf ("a is less than 0\n"); }
+else { stdout.printf ("a is equal to 0\n"); }
 ```
 
 Executes a particular piece of code based on a set of conditions. The
@@ -47,14 +47,14 @@ number of else if blocks is allowed, and zero or one else blocks.
 ```vala
 switch (a) {
 case 1:
-    stdout.printf("one\n");
+    stdout.printf ("one\n");
     break;
 case 2:
 case 3:
-    stdout.printf("two or three\n");
+    stdout.printf ("two or three\n");
     break;
 default:
-    stdout.printf("unknown\n");
+    stdout.printf ("unknown\n");
     break;
 }
 ```

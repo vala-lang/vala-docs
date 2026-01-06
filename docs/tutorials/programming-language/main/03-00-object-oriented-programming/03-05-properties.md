@@ -13,11 +13,11 @@ this:
 class Person : Object {
     private int age = 32;
 
-    public int get_age() {
+    public int get_age () {
         return this.age;
     }
 
-    public void set_age(int age) {
+    public void set_age (int age) {
         this.age = age;
     }
 }
@@ -28,8 +28,8 @@ are cumbersome to work with. Let's suppose that you want to increase
 the age of a person by one year:
 
 ```vala
-var alice = new Person();
-alice.set_age(alice.get_age() + 1);
+var alice = new Person ();
+alice.set_age (alice.get_age () + 1);
 ```
 
 This is where properties come into play:
@@ -55,7 +55,7 @@ Now you can access the property as if it was a public field. But behind
 the scenes the code in the get and set blocks is executed.
 
 ```vala
-var alice = new Person();
+var alice = new Person ();
 alice.age = alice.age + 1;  // or even shorter:
 alice.age++;
 ```
@@ -115,7 +115,7 @@ Properties may not only have a name but also a short description (called
 these with a special attribute:
 
 ```vala
-[Description(nick = "age in years", blurb = "This is the person's age in years")]
+[Description (nick = "age in years", blurb = "This is the person's age in years")]
 public int age { get; set; default = 32; }
 ```
 
@@ -130,8 +130,8 @@ changes. So you can connect to this signal if you're interested in
 change notifications in general:
 
 ```vala
-obj.notify.connect((s, p) => {
-    stdout.printf("Property '%s' has changed!\n", p.name);
+obj.notify.connect ((s, p) => {
+    stdout.printf ("Property '%s' has changed!\n", p.name);
 });
 ```
 
@@ -141,8 +141,8 @@ you\'re only interested in change notifications of a single property you
 can use this syntax:
 
 ```vala
-alice.notify["age"].connect((s, p) => {
-    stdout.printf("age has changed\n");
+alice.notify["age"].connect ((s, p) => {
+    stdout.printf ("age has changed\n");
 });
 ```
 
@@ -156,7 +156,7 @@ immediately before the declaration of the property:
 
 ```vala
 public class MyObject : Object {
-    [CCode(notify = false)]
+    [CCode (notify = false)]
     // notify signal is NOT emitted upon changes in the property
     public int without_notification { get; set; }
     // notify signal is emitted upon changes in the property
@@ -168,28 +168,28 @@ There's another type of properties called **construct properties** that
 are described later in the section about gobject-style construction.
 
 Note: in case your property is type of struct, to get the property value
-with Object.get(), you have to declare your variable as example below
+with Object.get (), you have to declare your variable as example below
 
 ```vala
 struct Color
 {
     public uint32 argb;
 
-    public Color() { argb = 0x12345678; }
+    public Color () { argb = 0x12345678; }
 }
 
 class Shape: GLib.Object
 {
-    public Color c { get; set; default = Color(); }
+    public Color c { get; set; default = Color (); }
 }
 
-int main()
+int main ()
 {
     Color? c = null;
-    Shape s = new Shape();
-    s.get("c", out c);
+    Shape s = new Shape ();
+    s.get ("c", out c);
 }
 ```
 
 This way, c is an reference instead of an instance of Color on stack.
-What you passed into s.get() is "Color **" instead of "Color *".
+What you passed into s.get () is "Color **" instead of "Color *".

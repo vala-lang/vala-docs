@@ -128,7 +128,7 @@ except for the guaranteed-size integer types. The `sizeof` operator
 returns the size that a variable of a given type occupies in bytes:
 
 ```vala
-ulong nbytes = sizeof(int32);    // nbytes will be 4 (= 32 bits)
+ulong nbytes = sizeof (int32);    // nbytes will be 4 (= 32 bits)
 ```
 
 You can determine the minimum and maximum values of a numerical type
@@ -196,30 +196,30 @@ Many of the basic types have reasonable methods for parsing from and
 converting to strings, for example:
 
 ```vala
-bool b = bool.parse("false");           // => false
-int i = int.parse("-52");               // => -52
-double d = double.parse("6.67428E-11"); // => 6.67428E-11
-string s1 = true.to_string();           // => "true"
-string s2 = 21.to_string();             // => "21"
+bool b = bool.parse ("false");           // => false
+int i = int.parse ("-52");               // => -52
+double d = double.parse ("6.67428E-11"); // => 6.67428E-11
+string s1 = true.to_string ();           // => "true"
+string s2 = 21.to_string ();             // => "21"
 ```
 
 Two useful methods for writing and reading strings to/from the console
-(and for your first explorations with Vala) are *stdout.printf()* and
-*stdin.read_line()*:
+(and for your first explorations with Vala) are *stdout.printf ()* and
+*stdin.read_line ()*:
 
 ```vala
-stdout.printf("Hello, world\n");
-stdout.printf("%d %g %s\n", 42, 3.1415, "Vala");
-string input = stdin.read_line();
-int number = int.parse(stdin.read_line());
+stdout.printf ("Hello, world\n");
+stdout.printf ("%d %g %s\n", 42, 3.1415, "Vala");
+string input = stdin.read_line ();
+int number = int.parse (stdin.read_line ());
 ```
 
-You already know *stdout.printf()* from the *Hello World* example.
+You already know *stdout.printf ()* from the *Hello World* example.
 Actually, it can take an arbitrary number of arguments of different
 types, whereas the first argument is a *format string*, following the
 same rules as [C format strings](http://en.wikipedia.org/wiki/Printf).
-If you must output an error message you can use *stderr.printf()*
-instead of *stdout.printf()*.
+If you must output an error message you can use *stderr.printf ()*
+instead of *stdout.printf ()*.
 
 In addition the *in* operation can be used to determine whether one
 string contains another, e.g.
@@ -323,12 +323,12 @@ e += 5;
 e += 37;
 ```
 
-You can resize an array by calling *resize()* on it. It will keep the
+You can resize an array by calling *resize ()* on it. It will keep the
 original content (as much as fits).
 
 ```vala
 int[] a = new int[5];
-a.resize(12);
+a.resize (12);
 ```
 
 You can move elements within an array by calling *move(src, dest,
@@ -370,7 +370,7 @@ class Track : GLib.Object {             /* subclassing 'GLib.Object' */
     public double mass;                 /* a public field */
     public double name { get; set; } /* a public property */
     private bool terminated = false; /* a private field */
-    public void terminate() {           /* a public method */
+    public void terminate () {           /* a public method */
         terminated = true;
     }
 }
@@ -401,9 +401,9 @@ side of the assignment. It helps reduce unnecessary redundancy in your
 code without sacrificing static typing:
 
 ```vala
-var p = new Person();     // same as: Person p = new Person();
+var p = new Person ();     // same as: Person p = new Person ();
 var s = "hello";          // same as: string s = "hello";
-var l = new List<int>();  // same as: List<int> l = new List<int>();
+var l = new List<int> ();  // same as: List<int> l = new List<int> ();
 var i = 10;               // same as: int i = 10;
 ```
 
@@ -411,13 +411,13 @@ This only works for local variables. Type inference is especially useful
 for types with generic type arguments (more on these later). Compare
 
 ```vala
-MyFoo<string, MyBar<string, int>> foo = new MyFoo<string, MyBar<string, int>>();
+MyFoo<string, MyBar<string, int>> foo = new MyFoo<string, MyBar<string, int>> ();
 ```
 
 vs.
 
 ```vala
-var foo = new MyFoo<string, MyBar<string, int>>();
+var foo = new MyFoo<string, MyBar<string, int>> ();
 ```
 
 ## 2.4.7. Defining new Type from other

@@ -43,7 +43,7 @@ public class ClipboardSample : Gtk.Application {
             try {
                 var content = clipboard.read_text_async.end (res);
                 // Only load text from clipboard when the app starts
-                this.clipboard.changed.disconnect(this.on_clipboard_changed);
+                this.clipboard.changed.disconnect (this.on_clipboard_changed);
                 this.entry.text = content;
             } catch (GLib.Error err) {
                 stderr.printf ("Error: %s", err.message);

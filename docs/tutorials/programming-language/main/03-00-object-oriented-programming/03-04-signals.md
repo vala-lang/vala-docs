@@ -11,23 +11,23 @@ important to Vala programs.
 
 A signal is defined as a member of a class, and appears similar to a
 method with no body. Signal handlers can then be added to the signal
-using the `connect()` method. In order to dive right in at the deep end,
+using the `connect ()` method. In order to dive right in at the deep end,
 the following example also introduces lambda expressions, a very useful
 way to write signal handling code in Vala:
 
 ```vala
 public class Test : GLib.Object {
 
-    public signal void sig_1(int a);
+    public signal void sig_1 (int a);
 
-    public static int main(string[] args) {
-        Test t1 = new Test();
+    public static int main (string[] args) {
+        Test t1 = new Test ();
 
-        t1.sig_1.connect((t, a) => {
-            stdout.printf("%d\n", a);
+        t1.sig_1.connect ((t, a) => {
+            stdout.printf ("%d\n", a);
         });
 
-        t1.sig_1(5);
+        t1.sig_1 (5);
 
         return 0;
     }

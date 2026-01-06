@@ -10,16 +10,16 @@ processor core or not, depending on the environment.
 A very simplified example:
 
 ```vala
-void thread_func() {
-    stdout.printf("child_thread is running.\n");
+void thread_func () {
+    stdout.printf ("child_thread is running.\n");
 }
 
-void main() {
-    if (!Thread.supported()) {
-        error("Cannot run without thread support.\n");
+void main () {
+    if (!Thread.supported ()) {
+        error ("Cannot run without thread support.\n");
     }
     var thread = new Thread<void> ("child_thread", thread_func);
-    stdout.printf("main_thread is running");
+    stdout.printf ("main_thread is running");
 }
 ```
 
@@ -62,8 +62,8 @@ wait for child threads to finish, by invoking a method `join` in module
 ```vala
 // ......
 var thread = new Thread<void> ("child_thread", thread_func);
-stdout.printf("main_thread is running");
-thread.join();   // Note
+stdout.printf ("main_thread is running");
+thread.join ();   // Note
 ```
 
 Because of the method `join`, the primary thread has to wait for child
@@ -106,7 +106,7 @@ public class Test : GLib.Object {
 
     private int a { get; set; }
 
-    public void action_1() {
+    public void action_1 () {
         lock (a) {
             int tmp = a;
             tmp++;
@@ -114,7 +114,7 @@ public class Test : GLib.Object {
         }
     }
 
-    public void action_2() {
+    public void action_2 () {
         lock (a) {
             int tmp = a;
             tmp--;

@@ -22,7 +22,7 @@ public struct Foo {
     public int x;
     public int y;
 };
-void compute_foo(Foo f);
+void compute_foo (Foo f);
 ```
 
 Very rarely, a C library function is written to receive a struct passed
@@ -48,5 +48,5 @@ public struct Foo {
     public int x;
     public int y;
 }
-void compute_foo(Foo f);
+void compute_foo (Foo f);
 ```

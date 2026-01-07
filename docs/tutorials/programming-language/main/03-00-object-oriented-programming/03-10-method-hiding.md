@@ -7,11 +7,11 @@ method hiding does not exhibit polymorphic behaviour.
 
 ```vala
 class Foo : Object {
-    public void my_method() { }
+    public void my_method () { }
 }
 
 class Bar : Foo {
-    public new void my_method() { }
+    public new void my_method () { }
 }
 ```
 
@@ -19,9 +19,9 @@ You can still call the original method by casting to the base class or
 interface:
 
 ```vala
-void main() {
-    var bar = new Bar();
-    bar.my_method();
-    (bar as Foo).my_method();
+void main () {
+    var bar = new Bar ();
+    bar.my_method ();
+    (bar as Foo).my_method ();
 }
 ```

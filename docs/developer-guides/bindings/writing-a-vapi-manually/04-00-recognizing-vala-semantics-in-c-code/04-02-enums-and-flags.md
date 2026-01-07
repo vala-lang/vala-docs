@@ -110,9 +110,9 @@ var foo_enum = (Foo) FooExtended.C;
 In Vala, enums and flags may have member functions and constants.
 In particular, `strerr`-like functions are best converted to member functions.
 
-### Enum aliases and `to_string()`
+### Enum aliases and `to_string ()`
 
-The default function `to_string()` can cause problems if the enum has aliases (the C error `duplicate case` will trigger). So to solve this,
+The default function `to_string ()` can cause problems if the enum has aliases (the C error `duplicate case` will trigger). So to solve this,
 you can create additional constants after the enum has been declared to add the missing enum aliases.
 
 For example this enum:

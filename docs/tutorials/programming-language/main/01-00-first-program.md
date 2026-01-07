@@ -6,8 +6,8 @@ Sadly predictable, but still:
 
 ```vala
 class Demo.HelloWorld : GLib.Object {
-    public static int main(string[] args) {
-        stdout.printf("Hello, World\n");
+    public static int main (string[] args) {
+        stdout.printf ("Hello, World\n");
         return 0;
     }
 }
@@ -40,7 +40,7 @@ Other parts of this line show namespacing and fully qualified names,
 although these will be explained later.
 
 ```vala
-public static int main(string[] args) {
+public static int main (string[] args) {
     //...
 }
 ```
@@ -60,7 +60,7 @@ with exit code 0. The string array parameter holding the command line
 arguments is optional.
 
 ```vala
-stdout.printf("Hello, World\n");
+stdout.printf ("Hello, World\n");
 ```
 
 *stdout* is an object in the *GLib* namespace that Vala ensures you have
@@ -109,8 +109,8 @@ For example, you could save the "Hello, World" program as `hello.vala` with the 
 ```vala
 #!/usr/bin/env vala // [!code warning]
 class Demo.HelloWorld : GLib.Object {
-    public static int main(string[] args) {
-        stdout.printf("Hello, World\n");
+    public static int main (string[] args) {
+        stdout.printf ("Hello, World\n");
         return 0;
     }
 }

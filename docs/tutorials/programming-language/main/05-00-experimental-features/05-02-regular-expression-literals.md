@@ -12,8 +12,8 @@ Example:
 
 ```vala
 string email = "tux@kernel.org";
-if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.match(email)) {
-    stdout.printf("Valid email address\n");
+if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.match (email)) {
+    stdout.printf ("Valid email address\n");
 }
 ```
 

@@ -20,21 +20,21 @@ class SuperClass : GLib.Object {
 
     private int data;
 
-    public SuperClass(int data) {
+    public SuperClass (int data) {
         this.data = data;
     }
 
-    protected void protected_method() {
+    protected void protected_method () {
     }
 
-    public static void public_static_method() {
+    public static void public_static_method () {
     }
 }
 
 class SubClass : SuperClass {
 
-    public SubClass() {
-        base(10);
+    public SubClass () {
+        base (10);
     }
 }
 ```

@@ -5,7 +5,7 @@ that is slightly different to the one described before, but closer to
 the way GObject construction works. Which one you prefer depends on
 whether you come from the GObject side or from the Java or C# side. The
 gobject-style construction scheme introduces some new syntax elements:
-*construct properties*, a special `Object(...)` call and a `construct`
+*construct properties*, a special `Object (...)` call and a `construct`
 block. Let's take a look at how this works:
 
 ```vala
@@ -15,24 +15,24 @@ public class Person : Object {
     public string name { get; construct; }
     public int age { get; construct set; }
 
-    public Person(string name) {
-        Object(name: name);
+    public Person (string name) {
+        Object (name: name);
     }
 
-    public Person.with_age(string name, int years) {
-        Object(name: name, age: years);
+    public Person.with_age (string name, int years) {
+        Object (name: name, age: years);
     }
 
     construct {
         // do anything else
-        stdout.printf("Welcome %s\n", this.name);
+        stdout.printf ("Welcome %s\n", this.name);
     }
 }
 ```
 
 With the gobject-style construction scheme each construction method only
-contains an `Object(...)` call for setting so-called *construct
-properties*. The `Object(...)` call takes a variable number of named
+contains an `Object (...)` call for setting so-called *construct
+properties*. The `Object (...)` call takes a variable number of named
 arguments in the form of `property: value`. These properties must be
 declared as `construct` or `set` properties. They will be set to the
 given values and afterwards all `construct {}` blocks in the hierarchy

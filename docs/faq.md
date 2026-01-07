@@ -92,11 +92,11 @@ delete str_ptr;
 Use the "`is`" operator.
 
 ```vala
-var wi = Gtk.Button();
+var wi = Gtk.Button ();
 if (wi is Gtk.Widget)
-    stdout.printf("Is a Widget.n");
+    stdout.printf ("Is a Widget.n");
 if (wi is Gtk.Button)
-    stdout.printf("Is a Button.n");
+    stdout.printf ("Is a Button.n");
 ```
 
 Works with interfaces too.
@@ -157,7 +157,7 @@ Allocating space for strings to be read in can be tricky. See
 
 ## How do I get the GType for something?
 
-Try the `typeof` operator. Fx `typeof(string)` is a `G_TYPE_STRING`.
+Try the `typeof` operator. Fx `typeof (string)` is a `G_TYPE_STRING`.
 
 ## Why do static members not get initialized?
 
@@ -186,9 +186,9 @@ void main () {
 
 ## Why can't I chain up to base constructor?
 
-Often external libraries do not offer functionality for `base()` usage.
+Often external libraries do not offer functionality for `base ()` usage.
 Therefore you have to use GObject-based construction using
-`Object(prop1: value1, ...)`. As an example:
+`Object (prop1: value1, ...)`. As an example:
 
 ```vala
 // https://wiki.gnome.org/Projects/Vala/InputSamples
@@ -224,7 +224,7 @@ const YourStruct[] s = { { value1, value2, ... }, ...};
 Otherwise:
 
 ```vala
-YourStruct[] s = { YourStruct() { field1=value1, field2=value2, ... }, ...};
+YourStruct[] s = { YourStruct () { field1=value1, field2=value2, ... }, ...};
 ```
 
 Alternatively, if you are the author of YourStruct (that is not

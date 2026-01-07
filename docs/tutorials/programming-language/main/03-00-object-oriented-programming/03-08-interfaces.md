@@ -16,7 +16,7 @@ A simple interface definition looks like:
 ```vala
 public interface ITest : GLib.Object {
     public abstract int data_1 { get; set; }
-    public abstract void method_1();
+    public abstract void method_1 ();
 }
 ```
 
@@ -35,7 +35,7 @@ The simplest possible full implementation of this interface is:
 ```vala
 public class Test1 : GLib.Object, ITest {
     public int data_1 { get; set; }
-    public void method_1() {
+    public void method_1 () {
     }
 }
 ```
@@ -43,11 +43,11 @@ public class Test1 : GLib.Object, ITest {
 And may be used as follows:
 
 ```vala
-var t = new Test1();
-t.method_1();
+var t = new Test1 ();
+t.method_1 ();
 
 ITest i = t;
-i.method_1();
+i.method_1 ();
 ```
 
 ## 3.8.1. Defining Prerequisites
@@ -127,16 +127,16 @@ public class Phone : GLib.Object, Callable {
    {
       var f = new Phone ();
       if (f.hang ())
-         stdout.printf("Hand done.\n");
+         stdout.printf ("Hand done.\n");
       else
-         stdout.printf("Hand Error!\n");
-      stdout.printf("END\n");
+         stdout.printf ("Hand Error!\n");
+      stdout.printf ("END\n");
    }
 }
 ```
 
 When compiling and running, you will find that `Phone` class actually no
-implements `Callable.hang()` method, but it is able to use it, then the
+implements `Callable.hang ()` method, but it is able to use it, then the
 result is a message `Hang done.`
 
 ```vala
@@ -158,10 +158,10 @@ public class TechPhone : GLib.Object, Callable
 ```
 
 In this case `TechPhone` is another implementation to `Callable`, then
-when `hang()` method is called on an instance of `TechPhone` it will
+when `hang ()` method is called on an instance of `TechPhone` it will
 always return `false` and print the message
 `TechPhone.hang () implementation!`, hiding completely
-`Callable.hang()` default implementation.
+`Callable.hang ()` default implementation.
 
 ## 3.8.3. Properties
 
@@ -178,7 +178,7 @@ the properties values to be used outside or inside the class.
 this case this interface defines a `answering` with a `protected set`,
 allowing a read-only property for any object using an instance of
 `Callable`, but allows class implementors to write values to it, like
-`TechPhone` class does when implements `hang()` method.
+`TechPhone` class does when implements `hang ()` method.
 
 ## 3.8.4. Mixins and Multiple Inheritance
 
@@ -211,7 +211,7 @@ public abstract class Caller : GLib.Object, Callable
    public bool answering { get; protected set; }
    public void answer ()
    {
-     stdout.printf ("At Caller.answer()\n");
+     stdout.printf ("At Caller.answer ()\n");
      answering = true;
      hang ();
    }
@@ -224,7 +224,7 @@ public class TechPhone : Caller {
 
 public class Phone : Caller {
    public override bool hang () {
-   stdout.printf ("At Phone.hang()\n");
+   stdout.printf ("At Phone.hang ()\n");
    return false;
 }
 
@@ -233,17 +233,17 @@ public class Phone : Caller {
       var f = (Callable) new Phone ();
       f.answer ();
       if (f.hang ())
-         stdout.printf("Hand done.\n");
+         stdout.printf ("Hand done.\n");
       else
-         stdout.printf("Hand Error!\n");
+         stdout.printf ("Hand Error!\n");
 
       var t = (Callable) new TechPhone ();
       t.answer ();
       if (t.hang ())
-         stdout.printf("Tech Hand done.\n");
+         stdout.printf ("Tech Hand done.\n");
       else
-         stdout.printf("Tech Hand Error!\n");
-      stdout.printf("END\n");
+         stdout.printf ("Tech Hand Error!\n");
+      stdout.printf ("END\n");
    }
 }
 ```
@@ -266,26 +266,26 @@ Example:
 
 ```vala
 interface Foo {
-   public abstract int m();
+   public abstract int m ();
 }
 
 interface Bar {
-   public abstract string m();
+   public abstract string m ();
 }
 
 class Cls: Foo, Bar {
-   public int Foo.m() {
+   public int Foo.m () {
       return 10;
    }
 
-   public string Bar.m() {
+   public string Bar.m () {
       sreturn "bar";
    }
 }
 
 void main () {
    var cls = new Cls ();
-   message ("%d %s", ((Foo) cls).m(), ((Bar) cls).m());
+   message ("%d %s", ((Foo) cls).m (), ((Bar) cls).m ());
 }
 ```
 

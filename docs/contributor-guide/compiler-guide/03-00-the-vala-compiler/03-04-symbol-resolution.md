@@ -31,19 +31,19 @@ when a class is visited, current_scope is set to that class's scope.
 
 When the parser parses a type, e.g., in the statement Gtk.Window
 main_window, the type Gtk.Window is initially a Vala.UnresolvedType. In
-visit_data_type(), the UnresolvedType code node asks its parent to
-replace it with a new Vala.DataType created with resolve_type().
+visit_data_type (), the UnresolvedType code node asks its parent to
+replace it with a new Vala.DataType created with resolve_type ().
 
-UnresolvedTypes have UnresolvedSymbols. resolve_type() uses
-resolve_symbol() to find the Typesymbol referred to, and then wraps it
+UnresolvedTypes have UnresolvedSymbols. resolve_type () uses
+resolve_symbol () to find the Typesymbol referred to, and then wraps it
 in a new DataType object.
 
-resolve_symbol() is a recursive method which looks up an unresolved
+resolve_symbol () is a recursive method which looks up an unresolved
 symbol's name in the current scope and returns the corresponding
 Typesymbol. The base case is when the UnresolvedSymbol has no
 qualifiers, e.g. Window. The recursive case is when the symbol looks
 like Gtk.Window or Gtk.Orientation.HORIZONTAL. In
-Vala.Parser.parse_symbol_name(), the symbol is built inside-out, so
+Vala.Parser.parse_symbol_name (), the symbol is built inside-out, so
 Gtk.Orientation.HORIZONTAL is parsed as:
 
 ```vala
@@ -62,10 +62,10 @@ the symbol is not found there, then the scope of all imported namespaces
 is searched. If more than one imported namespace contains the symbol, an
 "ambiguous reference" error will be reported.
 
-In the recursive case, resolve_symbol() is called on the child node to
+In the recursive case, resolve_symbol () is called on the child node to
 give a parent scope, in which the symbol is looked up.
 
-One last function of SymbolResolver is in visit_variable_declarator() -
+One last function of SymbolResolver is in visit_variable_declarator () -
 to mark a variable type reference as "nullable" if the variable's
 type is a class, interface, array or error (reference type). This is
 used later by Vala.NullChecker.

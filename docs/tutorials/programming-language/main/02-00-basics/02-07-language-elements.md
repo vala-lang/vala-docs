@@ -7,7 +7,7 @@ defined inside a class or not. From now on we will stick to the term
 *method*.
 
 ```vala
-int method_name(int arg1, Object arg2) {
+int method_name (int arg1, Object arg2) {
     return 1;
 }
 ```
@@ -34,8 +34,8 @@ It is not possible to have multiple methods with the same name but
 different signature within the same scope ("method overloading"):
 
 ```vala
-void draw(string text) { }
-void draw(Shape shape) { }  // not possible
+void draw (string text) { }
+void draw (Shape shape) { }  // not possible
 ```
 
 This is due to the fact that libraries produced with Vala are intended
@@ -43,8 +43,8 @@ to be usable for C programmers as well. In Vala, you would do something
 like this instead:
 
 ```vala
-void draw_text(string text) { }
-void draw_shape(Shape shape) { }
+void draw_text (string text) { }
+void draw_shape (Shape shape) { }
 ```
 
 By choosing slightly different names you can avoid a name clash. In
@@ -53,9 +53,9 @@ convenience methods with less parameters that chain up to the most
 general method:
 
 ```vala
-void f(int x, string s, double z) { }
-void f(int x, string s) { f(x, s, 0.5); }  // not possible
-void f(int x) { f(x, "hello"); }           // not possible
+void f (int x, string s, double z) { }
+void f (int x, string s) { f (x, s, 0.5); }  // not possible
+void f (int x) { f (x, "hello"); }           // not possible
 ```
 
 In this case you can use
@@ -64,18 +64,18 @@ You can define default values for the last parameters of a method, so that you d
 have to pass them explicitly to a method call:
 
 ```vala
-void f(int x, string s = "hello", double z = 0.5) { }
+void f (int x, string s = "hello", double z = 0.5) { }
 ```
 
 Some possible calls of this method might be:
 
 ```vala
-f(2);
-f(2, "hi");
-f(2, "hi", 0.75);
+f (2);
+f (2, "hi");
+f (2, "hi", 0.75);
 ```
 
-It's even possible to define methods with real variable-length argument lists (*varargs*) like *stdout.printf()*, 
+It's even possible to define methods with real variable-length argument lists (*varargs*) like *stdout.printf ()*, 
 although not necessarily recommended.  You will learn how to do that later.  
 Vala performs a basic nullability check on the method parameters and return values.  
 If it is allowable for a method parameter or a return value to be _null_, the type symbol should be postfixed with a _?_ 
@@ -83,7 +83,7 @@ modifier.  This extra information helps the Vala compiler to perform static chec
 preconditions of the methods, which may help in avoiding related errors such as dereferencing a _null_
 reference.
 ```vala
-string? method_name(string? text, Foo? foo, Bar bar) {
+string? method_name (string? text, Foo? foo, Bar bar) {
     // ...
 }
 ```
@@ -91,7 +91,7 @@ In this example _text_, _foo_ and the return value may be _null_, however, _bar_
 
 ## 2.7.2. Delegates
 ```vala     
-delegate void DelegateType(int a);
+delegate void DelegateType (int a);
 ```
 Delegates represent methods, allowing chunks of code to be passed around like objects.  
 The example above defines a new type named *DelegateType* which represents methods taking an *int* and not returning a 
@@ -99,18 +99,18 @@ value.  Any method that matches this signature may be assigned to a variable of 
 of this type.
 
 ```vala     
-delegate void DelegateType(int a);
+delegate void DelegateType (int a);
 
-void f1(int a) {
-    stdout.printf("%d\n", a);
+void f1 (int a) {
+    stdout.printf ("%d\n", a);
 }
 
-void f2(DelegateType d, int a) {
-    d(a);       // Calling a delegate
+void f2 (DelegateType d, int a) {
+    d (a);       // Calling a delegate
 }
 
-void main() {
-    f2(f1, 5);  // Passing a method as delegate argument to another method
+void main () {
+    f2 (f1, 5);  // Passing a method as delegate argument to another method
 }
 ```
 This code will execute the method *f2*, passing in a reference to method *f1* and the number 5.
@@ -118,15 +118,15 @@ This code will execute the method *f2*, passing in a reference to method *f1* an
 Delegates may also be created locally. A member method can also be assigned to a delegate, e.g.
 ```vala     
 class Foo {
-    public void f1(int a) {
-        stdout.printf("a = %d\n", a);
+    public void f1 (int a) {
+        stdout.printf ("a = %d\n", a);
     }
-    delegate void DelegateType(int a);
+    delegate void DelegateType (int a);
     
-    public static int main(string[] args) {
-        Foo foo = new Foo();
+    public static int main (string[] args) {
+        Foo foo = new Foo ();
         DelegateType d1 = foo.f1;
-        d1(10);
+        d1 (10);
         return 0;
     }    
 }
@@ -136,7 +136,7 @@ More samples in [Delegates Manual](https://wiki.gnome.org/Projects/Vala/Manual/D
 ## 2.7.3. Anonymous Methods / Closures
 
 ```vala     
-(a) => { stdout.printf("%d\n", a); }
+(a) => { stdout.printf ("%d\n", a); }
 ```
 
 An *anonymous method*, also known as *lambda expression*, *function literal* or *closure*, can be defined in Vala with 
@@ -148,30 +148,30 @@ Instead the types are inferred from the signature of the delegate it is used wit
 Assigning an anonymous method to a delegate variable:
 
 ```vala     
-delegate void PrintIntFunc(int a);
+delegate void PrintIntFunc (int a);
 
-void main() {
-    PrintIntFunc p1 = (a) => { stdout.printf("%d\n", a);};
+void main () {
+    PrintIntFunc p1 = (a) => { stdout.printf ("%d\n", a);};
     p1(10);
 
     // Curly braces are optional if the body contains only one statement:
-    PrintIntFunc p2 = (a) => stdout.printf("%d\n", a);
-    p2(20);
+    PrintIntFunc p2 = (a) => stdout.printf ("%d\n", a);
+    p2 (20);
 }
 ```
 Passing an anonymous method to another method:
 
 ```vala     
-delegate int Comparator(int a, int b);
+delegate int Comparator (int a, int b);
 
-void my_sorting_algorithm(int[] data, Comparator compare) {
+void my_sorting_algorithm (int[] data, Comparator compare) {
     // ... ``compare`` is called somewhere in here ...
 }
 
-void main() {
+void main () {
     int[] data = { 3, 9, 2, 7, 5 };
     // An anonymous method is passed as the second argument:
-    my_sorting_algorithm(data, (a, b) => {
+    my_sorting_algorithm (data, (a, b) => {
         if (a < b) return -1;
         if (a > b) return 1;
         return 0;
@@ -182,14 +182,14 @@ Anonymous methods are real [Closures](http://en.wikipedia.org/wiki/Closure_(comp
 This means you can access the local variables of the outer method within the lambda expression:
 
 ```vala     
-delegate int IntOperation(int i);     
+delegate int IntOperation (int i);     
 
-IntOperation curried_add(int a) {        
+IntOperation curried_add (int a) {        
     return (b) => a + b;  // ``a`` is an outer variable    
 }     
 
-void main() {        
-    stdout.printf("2 + 4 = %d\n", curried_add(2)(4));    
+void main () {        
+    stdout.printf ("2 + 4 = %d\n", curried_add (2)(4));    
 }  
 ```
 
@@ -255,17 +255,17 @@ This is how you can initialise a struct:
 
 ```vala
 // without type inference
-Color c1 = Color();  // or Color c1 = {};
+Color c1 = Color ();  // or Color c1 = {};
 Color c2 = { 0.5, 0.5, 1.0 };
-Color c3 = Color() {
+Color c3 = Color () {
     red = 0.5,
     green = 0.5,
     blue = 1.0
 };
 
 // with type inference
-var c4 = Color();
-var c5 = Color() {
+var c4 = Color ();
+var c5 = Color () {
     red = 0.5,
     green = 0.5,
     blue = 1.0

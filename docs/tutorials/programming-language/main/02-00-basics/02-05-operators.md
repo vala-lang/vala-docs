@@ -101,7 +101,7 @@ This operator is useful for example to provide a default value in case a
 reference is *null*:
 
 ```vala
-stdout.printf("Hello, %s!\n", name ?? "unknown person");
+stdout.printf ("Hello, %s!\n", name ?? "unknown person");
 ```
 
 ```vala
@@ -110,7 +110,7 @@ in
 
 Checks if the right operand contains the left operand. This operator
 works on arrays, strings, collections or any other type that has an
-appropriate *contains()* method. For strings, it performs a substring
+appropriate *contains ()* method. For strings, it performs a substring
 search.
 
 Operators cannot be overloaded in Vala. There are extra operators that

@@ -107,8 +107,8 @@ If the icon name isn't known, a “broken image” icon will be
 displayed instead. If the current icon theme is changed, the icon
 will be updated appropriately.
 
-This function is a convenience wrapper around gtk_button_new() and
-gtk_button_set_image().</doc>
+This function is a convenience wrapper around gtk_button_new () and
+gtk_button_set_image ().</doc>
 <return-value transfer-ownership="none">
   <doc xml:space="preserve">a new #GtkButton displaying the themed icon</doc>
   <type name="Widget" c:type="GtkWidget*"/>

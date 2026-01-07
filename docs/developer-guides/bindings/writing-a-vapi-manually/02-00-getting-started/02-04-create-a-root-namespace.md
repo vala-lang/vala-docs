@@ -16,7 +16,7 @@ namespace, e.g.:
 
 ```vala
 void main () {
-    Foo.library_function();
+    Foo.library_function ();
 }
 ```
 

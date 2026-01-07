@@ -958,18 +958,18 @@ build algorithm
 abstract class Builder {
 
     // Template method
-    public void build()
+    public void build ()
     {
-        this.test();
-        this.lint();
-        this.assemble();
-        this.deploy();
+        this.test ();
+        this.lint ();
+        this.assemble ();
+        this.deploy ();
     }
 
-    public abstract void test();
-    public abstract void lint();
-    public abstract void assemble();
-    public abstract void deploy();
+    public abstract void test ();
+    public abstract void lint ();
+    public abstract void assemble ();
+    public abstract void deploy ();
 }
 ```
 
@@ -977,44 +977,44 @@ Then we can have our implementations
 
 ```vala
 class AndroidBuilder : Builder {
-    public override void test()
+    public override void test ()
     {
         print ("Running android tests\n");
     }
 
-    public override void lint()
+    public override void lint ()
     {
         print ("Linting the android code\n");
     }
 
-    public override void assemble()
+    public override void assemble ()
     {
         print ("Assembling the android build\n");
     }
 
-    public override void deploy()
+    public override void deploy ()
     {
         print ("Deploying android build to server\n");
     }
 }
 
 class IosBuilder : Builder {
-    public override void test()
+    public override void test ()
     {
         print ("Running ios tests\n");
     }
 
-    public override void lint()
+    public override void lint ()
     {
         print ("Linting the ios code\n");
     }
 
-    public override void assemble()
+    public override void assemble ()
     {
         print ("Assembling the ios build\n");
     }
 
-    public override void deploy()
+    public override void deploy ()
     {
         print ("Deploying ios build to server\n");
     }
@@ -1024,7 +1024,7 @@ class IosBuilder : Builder {
 And then it can be used as
 
 ```vala
-var android_builder = new AndroidBuilder();
+var android_builder = new AndroidBuilder ();
 android_builder.build ();
 
 // Output:

@@ -11,25 +11,25 @@ very simple to work out how to translate into Vala.
 The GLib functions are available in Vala through the following naming
 convention:
 
-| Language | Code                  |
-|----------|-----------------------|
-| C        | `g_topic_foobar()`    |
-| Vala     | `GLib.Topic.foobar()` |
+| Language | Code                   |
+|----------|------------------------|
+| C        | `g_topic_foobar()`     |
+| Vala     | `GLib.Topic.foobar ()` |
 
 **Example:**
 
 ```vala
-GLib.Path.get_basename()
+GLib.Path.get_basename ()
 ```
 
 The GLib types can be used similarly:
 
 ```vala
 /* Instantiate with: */
-GLib.Foo foo = new GLib.Foo();
+GLib.Foo foo = new GLib.Foo ();
 
 /* Call an object member with: */
-foo.bar();
+foo.bar ();
 ```
 
 The APIs are not identical between C and Vala, but these naming rules
@@ -46,5 +46,5 @@ You can also use !FileUtils.get_contents to load a file into a string.
 
 ```vala
 string content;
-FileUtils.get_contents("file.vala", out content);
+FileUtils.get_contents ("file.vala", out content);
 ```

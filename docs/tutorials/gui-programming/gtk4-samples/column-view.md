@@ -31,7 +31,7 @@ public class ColumnViewSample : Gtk.Application {
             default_height = 150
         };
 
-        var accounts = new GLib.ListStore(typeof (Account));
+        var accounts = new GLib.ListStore (typeof (Account));
         var selection_model = new Gtk.SingleSelection (accounts) {
             autoselect = true
         };
@@ -60,9 +60,9 @@ public class ColumnViewSample : Gtk.Application {
         balance_column.expand = true;
 
         var column_view = new Gtk.ColumnView (selection_model);
-        column_view.append_column(name_column);
-        column_view.append_column(account_type_column);
-        column_view.append_column(balance_column);
+        column_view.append_column (name_column);
+        column_view.append_column (account_type_column);
+        column_view.append_column (balance_column);
 
         window.child = column_view;
         window.present ();

@@ -58,7 +58,7 @@ class Demo {
 ```
 
 No extra delegate declaration, signals can be emitted directly (no null
-checking necessary). Use `.connect()` and `.disconnect()` instead of
+checking necessary). Use `.connect ()` and `.disconnect ()` instead of
 `+=` and `-=`. Both is possible in Vala, however `+=` and `-=` may
 become deprecated for signal connection.
 

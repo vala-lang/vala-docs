@@ -38,9 +38,9 @@ may be used in a generic). To create an briefly use this class:
 
 ```vala
 void main () {
-    var w = new Wrapper<string>();
+    var w = new Wrapper<string> ();
     w.data = "test";
-    stdout.printf(w.data);
+    stdout.printf (w.data);
 }
 ```
 
@@ -58,12 +58,12 @@ generated C code.)
 class TestClass : GLib.Object {
 }
 
-void accept_object_wrapper(Wrapper<Glib.Object> w) {
+void accept_object_wrapper (Wrapper<Glib.Object> w) {
 }
 
 ...
-var test_wrapper = new Wrapper<TestClass>();
-accept_object_wrapper(test_wrapper);
+var test_wrapper = new Wrapper<TestClass> ();
+accept_object_wrapper (test_wrapper);
 ...
 ```
 

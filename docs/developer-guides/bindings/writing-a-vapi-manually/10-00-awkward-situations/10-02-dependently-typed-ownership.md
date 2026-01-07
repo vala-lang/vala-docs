@@ -10,12 +10,12 @@ void somefunc(foo *data, bool free_when_done);
 
 ```vala
 [CCode (cname = "somefunc")]
-private _somefunc(Foo data, bool free_when_done);
+private _somefunc (Foo data, bool free_when_done);
 [CCode (cname = "")]
 private _sink_foo (owned Foo foo);
 [CCode (cname = "vala_somefunc")]
 public somefunc (Foo data) {
-    _somefunc(data, false);
+    _somefunc (data, false);
 }
 [CCode (cname = "vala_somefunc_owned")]
 public somefunc_owned (owned Foo data) {

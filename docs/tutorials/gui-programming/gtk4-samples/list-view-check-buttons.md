@@ -29,7 +29,7 @@ public class ListViewCheckButtonsSample : Gtk.Application {
             default_height = 200
         };
 
-        var items = new GLib.ListStore(typeof (Item));
+        var items = new GLib.ListStore (typeof (Item));
         var selection_model = new Gtk.SingleSelection (items) {
             autoselect = true
         };

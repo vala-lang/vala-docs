@@ -7,8 +7,8 @@ syntax is the same as in C# and C++:
 
 ```vala
 class Demo : Object {
-    ~Demo() {
-        stdout.printf("in destructor");
+    ~Demo () {
+        stdout.printf ("in destructor");
     }
 }
 ```

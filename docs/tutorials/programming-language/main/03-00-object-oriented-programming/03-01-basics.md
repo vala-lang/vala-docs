@@ -32,13 +32,13 @@ public class TestClass : GLib.Object {
     private int second_data;
 
     /* Constructor */
-    public TestClass() {
+    public TestClass () {
         this.second_data = 5;
     }
 
     /* Method */
-    public int method_1() {
-        stdout.printf("private data: %d", this.second_data);
+    public int method_1 () {
+        stdout.printf ("private data: %d", this.second_data);
         return this.second_data;
     }
 }
@@ -89,7 +89,7 @@ be omitted if wished.
 You can use this new class as follows:
 
 ```vala
-TestClass t = new TestClass();
+TestClass t = new TestClass ();
 t.first_data = 5;
-t.method_1();
+t.method_1 ();
 ```

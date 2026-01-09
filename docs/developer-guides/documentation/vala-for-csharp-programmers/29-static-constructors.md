@@ -25,6 +25,6 @@ class Foo : Object {
 }
 ```
 
-Additionally a Vala class can have a class construct { } block. This
+Additionally, a Vala class can have a class construct { } block. This
 block will be executed once at the first use of its class, and once at
 the first use of each subclass of this class.

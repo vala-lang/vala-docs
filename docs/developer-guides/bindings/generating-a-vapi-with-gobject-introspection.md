@@ -202,7 +202,7 @@ library uses GTK+ and GConf, use:
 vapigen --pkg gtk+-2.0 --pkg gconf-2.0 --library [...]
 ```
 
-Otherwise you'll get errors like that, or an incomplete binding:
+Otherwise, you'll get errors like that, or an incomplete binding:
 
 ```shell
 error: The type name ``GLib.tkWidget' could not be found
@@ -309,7 +309,7 @@ values. For example,
 has an [event signal](https://developer-old.gnome.org/clutter/stable/ClutterActor.html#ClutterActor-event),
 which takes a single argument: a
 [ClutterEvent](http://developer-old.gnome.org/clutter/stable/clutter-Events.html#ClutterEvent)
-intance. It also has an [event method](http://developer-old.gnome.org/clutter/stable/ClutterActor.html#clutter-actor-event)
+instance. It also has an [event method](http://developer-old.gnome.org/clutter/stable/ClutterActor.html#clutter-actor-event)
 which takes two arguments: a ClutterEvent instance and a boolean. In
 this case, we resolve the conflict by renaming the method to
 "emit_event":
@@ -353,7 +353,7 @@ GIR assumes all pointer return values are nullable ("allow-none" in
 G-I terminology) and does not provide a way to override this assumption
 ([bug #660879](https://bugzilla.gnome.org/show_bug.cgi?id=660879)).
 Vala, on the other hand, assumes return values are not nullable unless
-otherwise otherwise specified, and comparing a non-nullable value to
+otherwise specified, and comparing a non-nullable value to
 null (e.g., to check for validity) will cause a warning. Luckily, making
 a value nullable is easy to do from a metadata file, as you can see from
 this example (for
@@ -401,7 +401,7 @@ annotations to the metadata.
 ### Abstract/Virtual Distinction
 
 Vala distinguishes between abstract and virtual methods (virtual methods
-do not need to be implemented by an class which implements the interface
+do not need to be implemented by a class which implements the interface
 whereas abstract methods do require an implementation) while GIR does
 not. In order to mark a method as virtual instead of abstract, you could
 do something like this (from
@@ -419,7 +419,7 @@ types which should be generic ([bug #639908](https://bugzilla.gnome.org/show_bug
 example,
 [GDataList](http://developer-old.gnome.org/glib/unstable/glib-Keyed-Data-Lists.html)
 is a generic in Vala but is not supported as such by GObject
-Introspection, so the the following is necessary for
+Introspection, so the following is necessary for
 [soup_form_encode_datalist](http://developer.gnome.org/libsoup/stable/libsoup-2.4-HTML-Form-Support.html#soup-form-encode-datalist):
 
 ```xml
@@ -455,8 +455,8 @@ Buffer base_type="Gst.MiniObject"
 
 GObject Introspection does not currently offer a way to annotate the
 relationship between an async function and its corresponding finish
-function ([bug #623635](https://bugzilla.gnome.org/show_bug.cgi?id=623635)). By default
-Vala will look for function with the same base name, but a "_finish"
+function ([bug #623635](https://bugzilla.gnome.org/show_bug.cgi?id=623635)). By default,
+Vala will look for a function with the same base name, but a "_finish"
 suffix, but you can point it to other functions in metadata using
 "finish_name":
 

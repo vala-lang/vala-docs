@@ -51,7 +51,7 @@ valadoc --directory docs --force --package-name mybinding mybinding.vapi
 
 This will generate the HTML documentation in the `docs` directory.
 `valadoc` expects the `docs` directory to not exist, but `--force`
-overrides this. `--package-name mybinding` will create a sub-directory
+overrides this. `--package-name mybinding` will create a subdirectory
 called `mybinding` in `docs` that contains the generated documentation
 for `mybinding.vapi`.
 

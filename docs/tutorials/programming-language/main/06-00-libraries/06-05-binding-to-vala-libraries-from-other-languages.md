@@ -2,15 +2,15 @@
 
 Vala produces C code and also produces C headers. Binding from C is
 relatively easy, although the library may make use of a lot of GObject
-boiler plate code.
+boilerplate code.
 
-For Vala based projects, using either the Vala or Genie syntax, a VAPI
+For Vala-based projects, using either the Vala or Genie syntax, a VAPI
 can be produced that makes bindings easy.
 
 The Vala compiler can also produce a GObject Introspection Repository
 (GIR) file. This makes bindings from languages that support GObject
-Introspection very easy. Often the binding is at runtime so a typelib
-file also needs to be produced and libgirepository and libffi are used
+Introspection very easy. Often, the binding is at runtime, so a typelib
+file also needs to be produced, and libgirepository and libffi are used
 at runtime for the binding.
 
 ## 6.5.1. Haskell
@@ -35,7 +35,7 @@ gobject-introspectable library is supported"
 [node-gir](https://github.com/creationix/node-gir) - "Node-gir is
 Node.js bindings to GObject Introspection making it possible to make
 automatic and dynamic calls to any library that has GI annotations
-installed...With it you can also write the performance-intensive parts
+installed...With it, you can also write the performance-intensive parts
 of your applications in Vala and call them from Node.js and other
 languages."
 

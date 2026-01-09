@@ -38,7 +38,7 @@ GNOME platform. This has several consequences, but most importantly:
 -   A Vala application can do nothing that a C equivalent cannot. Whilst
     Vala introduces a lot of language features that are not available in
     C, these are all mapped to C constructs, although they are often
-    ones that are difficult or too time consuming to write directly.
+    ones that are difficult or too time-consuming to write directly.
 
 As such, whilst Vala is a modern language with all of the features you
 would expect, it gains its power from an existing platform, and must in

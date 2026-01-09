@@ -5,11 +5,11 @@ management is handled by the Vala compiler. There is usually no need to
 manually claim and free memory. When writing a binding, however, it is
 an important part of the process to accurately instruct the Vala
 compiler how to use the C library's memory management calls. This is a
-one time job and means anyone then using the binding can take advantage
+one-time job and means anyone then using the binding can take advantage
 of a binding that is much easier to write code for.
 
 Vala's memory allocation and types are a bit more involved than most
-languages. In Python, everything is a dynamically-typed object and it is
+languages. In Python, everything is a dynamically-typed object, and it is
 allocated out of the ether then gets garbage collected. In C, memory
 allocation is largely handled by the user and types are simply
 descriptions of memory considered at compile time. Vala lives somewhere

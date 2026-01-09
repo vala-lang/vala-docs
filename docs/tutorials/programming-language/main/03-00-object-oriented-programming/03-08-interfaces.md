@@ -8,7 +8,7 @@ in any situation where an instance of that interface is expected.
 
 The procedure for implementing an interface is the same as for
 inheriting from classes with abstract methods in - if the class is to be
-useful it must provide implementations for all methods that are
+useful, it must provide implementations for all methods that are
 described but not yet implemented.
 
 A simple interface definition looks like:
@@ -111,7 +111,7 @@ public interface Callable : GLib.Object {
 
 Interface `Callable` defines an abstract property called `answering`,
 where any class implementing this interface can monitor the state of a
-call, details about `answer` a call is a mautter of the implementator,
+call, details about `answer` a call is a matter of the implementor,
 but `hang` defines a default implementation to set `answering` to false
 when hanging a call.
 
@@ -160,37 +160,37 @@ public class TechPhone : GLib.Object, Callable
 In this case `TechPhone` is another implementation to `Callable`, then
 when `hang ()` method is called on an instance of `TechPhone` it will
 always return `false` and print the message
-`TechPhone.hang () implementation!`, hidding completelly
+`TechPhone.hang () implementation!`, hiding completely
 `Callable.hang ()` default implementation.
 
 ## 3.8.3. Properties
 
 An interface can define properties that must be implemented for classes.
-Implementator class must define a property with the same signature and
+Implementor class must define a property with the same signature and
 access permissions to the property's `get` and `set`.
 
 As any GObject property, you can define a body to property's `set` and
-`get` in the implementator class, when no body is used values are set
+`get` in the implementor class, when no body is used values are set
 and get by default. If given, you must define a `private` field to store
 the properties values to be used outside or inside the class.
 
 `Callable` interface definition, defines an `answering` property. In
 this case this interface defines a `answering` with a `protected set`,
-allowing a read only property for any object using an instance of
+allowing a read-only property for any object using an instance of
 `Callable`, but allows class implementors to write values to it, like
 `TechPhone` class does when implements `hang ()` method.
 
 ## 3.8.4. Mixins and Multiple Inheritance
 
-As described above, Vala while it is backed by C and GObject, can
-provide a limited multiple inheritance mechanism, by adding virtual
-methods to Interfaces. Is possible to add some ways to define default
+As described above, Vala, while it is backed by C and GObject, can
+provide a limited multiple inheritance mechanism by adding virtual
+methods to Interfaces. It is possible to add some ways to define default
 method implementations in interface implementor class and allow derived
-classes to override that methods.
+classes to override those methods.
 
 If you define a `virtual` method in an interface and implement it in a
 class, you can't override interface's method without leaving derived
-classes unable to access to interface default one. Consider following
+classes unable to access to interface default one. Consider the following
 code:
 
 ```vala

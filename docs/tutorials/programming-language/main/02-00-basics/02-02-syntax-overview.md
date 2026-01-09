@@ -6,7 +6,7 @@ and in light of this I have kept things brief.
 
 Scope is defined using braces. An object or reference is only valid
 between `{` and `}`. These are also the delimiters used to define
-classes, methods, code blocks etc, so they automatically have their own
+classes, methods, code blocks, etc., so they automatically have their own
 scope. Vala is not strict about where variables are declared.
 
 An identifier is defined by its type and a name, e.g. `int c` meaning an

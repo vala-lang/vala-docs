@@ -1,6 +1,6 @@
 # 3.12. Dynamic Type Casting
 
-For the dynamic cast, a variable is casted by a postfix expression
+For the dynamic cast, a variable is cast by a postfix expression
 `as DesiredTypeName`. Vala will include a runtime type checking to
 ensure this casting is reasonable - if it is an illegal casting, `null`
 will be returned. However, this requires both the source type and the

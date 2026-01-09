@@ -182,7 +182,7 @@ string s2 = greeting[-4:-2];       // => "or"
 ```
 
 Note that indices in Vala start with 0 as in most other programming
-languages. Starting with Vala 0.11 you can access a single byte of a
+languages. Starting with Vala 0.11, you can access a single byte of a
 string with `[index]`:
 
 ```vala
@@ -218,10 +218,10 @@ You already know *stdout.printf ()* from the *Hello World* example.
 Actually, it can take an arbitrary number of arguments of different
 types, whereas the first argument is a *format string*, following the
 same rules as [C format strings](http://en.wikipedia.org/wiki/Printf).
-If you must output an error message you can use *stderr.printf ()*
+If you must output an error message, you can use *stderr.printf ()*
 instead of *stdout.printf ()*.
 
-In addition the *in* operation can be used to determine whether one
+In addition, the *in* operation can be used to determine whether one
 string contains another, e.g.
 
 ```vala
@@ -271,7 +271,7 @@ an argument (arguments are, by default, unowned):
 unowned int[] c = b[1:3];     // => { 4, 6 }
 ```
 
-Multi-dimensional arrays are defined with `[,]` or `[,,]` etc.
+Multidimensional arrays are defined with `[,]` or `[,,]` etc.
 
 ```vala
 int[,] c = new int[3,4];
@@ -282,11 +282,11 @@ d[2,3] = 42;
 ```
 
 This sort of array is represented by a single contiguous memory block.
-Jagged multi-dimensional arrays (`[][]`, also known as "stacked
+Jagged multidimensional arrays (`[][]`, also known as "stacked
 arrays" or "arrays of arrays"), where each row may have a different
 length, are not yet supported.
 
-To find the length of each dimension in a multi-dimensional array, the
+To find the length of each dimension in a multidimensional array, the
 *length* member becomes an array, storing the length of each respective
 dimension.
 
@@ -297,7 +297,7 @@ int c = arr.length[1];
 ```
 
 Please note that you can't get a mono-dimensional array from a
-multidimensional array, or even slice a multidimensional array:
+multidimensional array or even slice a multidimensional array:
 
 ```vala
 int[,] arr = {{1,2},
@@ -311,7 +311,7 @@ int[,] f = arr[0:1,0:1];  // won't work
 
 You can append array elements dynamically with the `+=` operator.
 However, this works only for locally defined or private arrays. The
-array is automatically reallocated if needed. Internally this
+array is automatically reallocated if needed. Internally, this
 reallocation happens with sizes growing in powers of 2 for run-time
 efficiency reasons. However, `.length` holds the actual number of
 elements, not the internal size.
@@ -341,7 +341,7 @@ print ((string) chars); // "world "
 ```
 
 If you put the square brackets *after* the identifier together with an
-indication of size you will get a fixed-size array. Fixed-size arrays
+indication of size, you will get a fixed-size array. Fixed-size arrays
 are allocated on the stack (if used as local variables) or in-line
 allocated (if used as fields) and you can't reallocate them later.
 
@@ -350,7 +350,7 @@ int f[10];     // no 'new ...'
 ```
 
 Vala does not do any bounds checking for array access at runtime. If you
-need more safety you should use a more sophisticated data structure like
+need more safety, you should use a more sophisticated data structure like
 an *ArrayList*. You will learn more about that later in the section
 about *collections*.
 
@@ -358,11 +358,10 @@ about *collections*.
 
 The reference types are all types declared as a class, regardless of
 whether they are descended from GLib's *Object* or not. Vala will
-ensure that when you pass an object by reference the system will keep
+ensure that when you pass an object by reference, the system will keep
 track of the number of references currently alive in order to manage the
 memory for you. The value of a reference that does not point anywhere is
-`null`. More on classes and their features in the section about object
-oriented programming.
+`null`. More on classes and their features in the section about object-oriented programming.
 
 ```vala
 /* defining a class */
@@ -379,7 +378,7 @@ class Track : GLib.Object {             /* subclassing 'GLib.Object' */
 ## 2.4.5. Static Type Casting
 
 In Vala, you can cast a variable from one type to another. For a static
-type cast, a variable is casted by the desired type name with
+type cast, a variable is cast by the desired type name with
 parenthesis. A static cast doesn't impose any runtime type safety
 checking. It works for all Vala types. For example,
 
@@ -390,13 +389,13 @@ float j = (float) i;
 
 Vala supports another casting mechanism called *dynamic cast* which
 performs runtime type checking and is described in the section about
-object oriented programming.
+object-oriented programming.
 
 ## 2.4.6. Type Inference
 
 Vala has a mechanism called *type inference*, whereby a local variable
 may be defined using `var` instead of giving a type, so long as it is
-unambiguous what type is meant. The type is inferred from the right hand
+unambiguous what type is meant. The type is inferred from the right-hand 
 side of the assignment. It helps reduce unnecessary redundancy in your
 code without sacrificing static typing:
 

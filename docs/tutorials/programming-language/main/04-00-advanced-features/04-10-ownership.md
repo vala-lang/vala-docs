@@ -36,12 +36,12 @@ returned object, you must expect to receive a weak reference:
 unowned Object o = get_unowned_ref ();
 ```
 
-The reason for this seemingly over complicated example because of the
+The reason for this seemingly overcomplicated example is because of the
 concept of ownership.
 
--   If the Object "o" was not stored in the class, then when the
+-   If the Object "o" was not stored in the class, then, when the
     method "get_unowned_ref" returned, "o" would become unowned
-    (i.e. there would be no references to it). If this were the case,
+    (i.e., there would be no references to it). If this were the case,
     the object would be deleted and the method would never return a
     valid reference.
 -   If the return value was not defined as unowned, the ownership would
@@ -130,7 +130,7 @@ public Object property {
 ```
 
 The keyword `owned` can be used to specifically ask a property to return
-a owned reference of the value, therefore causing the property value be
+an owned reference of the value, therefore causing the property value be
 reproduced in the object side. Think twice before adding the `owned`
 keyword. Is it a property or simply a `get_xxx` method? There may also
 be problems in your design. Anyways, the following code is a correct
@@ -152,7 +152,7 @@ The keyword `owned` is used to transfer ownership.
 
 -   As a prefix of a parameter type, it means that ownership of the
     object is transferred into this code context.
--   As an type conversion operator, it can be used to avoid duplicating
+-   As a type conversion operator, it can be used to avoid duplicating
     non-reference counting classes, which is usually impossible in Vala.
     For example,
 

@@ -1,6 +1,6 @@
 # 4.1. Constants
 
-This sub-section introduces: * the `#define` pre-processor directive in
+This subsection introduces: * the `#define` pre-processor directive in
 C * the stages the Vala compiler follows
 
 A constant does not vary during the running of a program and must be a

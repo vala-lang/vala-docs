@@ -1,6 +1,6 @@
-# Multi-Dimensional Arrays
+# Multidimensional Arrays
 
-C#: both rectangular `[,]` and jagged `[][]` multi-dimensional arrays
+C#: both rectangular `[,]` and jagged `[][]` multidimensional arrays
 
-Vala: only rectangular `[,]` multi-dimensional arrays, jagged array
+Vala: only rectangular `[,]` multidimensional arrays, jagged array
 support planned

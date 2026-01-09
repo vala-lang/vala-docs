@@ -2,7 +2,7 @@
 
 This document intends to be a tutorial and reference on how to write a
 Vala binding to an existing C library. If the library uses GLib, do not
-follow this document. Instead read
+follow this document. Instead, read
 [Generating a VAPI with GObject Introspection](generating-a-vapi-with-gobject-introspection). 
 A library may not follow the GLib coding practices
 precisely, but it is better to fix the library to work with GObject
@@ -20,9 +20,9 @@ would be to:
 
 1.  Bind an enum first because enums are easy to test.
 
->   Once your test gives the expected result you know that the build
+>   Once your test gives the expected result, you know that the build
     process works. This means working through the "Getting Started"
-    section and the "Enums and Flags" sub-section. Binding an enum
+    section and the "Enums and Flags" subsection. Binding an enum
     also introduces the idea that there isn't a straight mapping from
     C to Vala
 
@@ -42,9 +42,9 @@ would be to:
     document becomes more of a reference for solving tricky function
     bindings
 
-The above assumes that the library is written in an object oriented
+The above assumes that the library is written in an object-oriented
 style of C. A C binding, however, is only made up of structs and
-functions so understanding that in enough detail is the purpose of the
+functions, so understanding that in enough detail is the purpose of the
 approach.
 
 #### [1. Prerequisites](writing-a-vapi-manually/01-00-prerequisites){style="color: white;"}

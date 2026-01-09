@@ -67,7 +67,7 @@ Interfaces in Vala may not inherit from other interfaces, but they may
 declare other interfaces to be prerequisites, which works in roughly the
 same way. Interfaces may also have a class as a prerequisite. This is
 often used to ensure that an instance of an interface is also an
-`Object` subclass. The fact that interfaces can not inherit from other
+`Object` subclass. The fact that interfaces cannot inherit from other
 interfaces is mostly only a technical distinction - in practice Vala's
 system works the same as C# in this area, but with the extra feature of
-prerequsite classes.
+prerequisite classes.

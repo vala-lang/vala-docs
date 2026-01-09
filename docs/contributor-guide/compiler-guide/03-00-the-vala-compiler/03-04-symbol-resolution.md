@@ -11,9 +11,9 @@ implement themselves.
 
 Every expression has a static type. This is computed by the semantic
 analyzer. Vala.DataType is called a "type reference" because it
-contains a reference to a Vala.Typesymbol (a class, interface, etc) as
-well as information about the expression's type e.g. if it can be null,
-if it's an out parameter.
+contains a reference to a Vala.Typesymbol (a class, interface, etc.) as
+well as information about the expression's type, e.g., if it can be null,
+or, if it's an out parameter.
 
 ::: info TODO
 expand this section
@@ -29,12 +29,12 @@ variables, scope also determines their lifetime. As the code tree is
 traversed, SymbolResolver keeps track of the current scope. For example,
 when a class is visited, current_scope is set to that class's scope.
 
-When the parser parses a type, e.g. in the statement Gtk.Window
-main_window;, the type Gtk.Window is initially a Vala.UnresolvedType. In
+When the parser parses a type, e.g., in the statement Gtk.Window
+main_window, the type Gtk.Window is initially a Vala.UnresolvedType. In
 visit_data_type (), the UnresolvedType code node asks its parent to
 replace it with a new Vala.DataType created with resolve_type ().
 
-UnresolvedTypes have UnresolvedSymbols.resolve_type () uses
+UnresolvedTypes have UnresolvedSymbols. resolve_type () uses
 resolve_symbol () to find the Typesymbol referred to, and then wraps it
 in a new DataType object.
 

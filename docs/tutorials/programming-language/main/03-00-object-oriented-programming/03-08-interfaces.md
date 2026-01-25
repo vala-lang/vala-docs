@@ -15,8 +15,8 @@ A simple interface definition looks like:
 
 ```vala
 public interface ITest : GLib.Object {
-    public abstract int data_1 { get; set; }
-    public abstract void method_1 ();
+   public abstract int data_1 { get; set; }
+   public abstract void method_1 ();
 }
 ```
 
@@ -34,9 +34,9 @@ The simplest possible full implementation of this interface is:
 
 ```vala
 public class Test1 : GLib.Object, ITest {
-    public int data_1 { get; set; }
-    public void method_1 () {
-    }
+   public int data_1 { get; set; }
+   public void method_1 () {
+   }
 }
 ```
 
@@ -120,7 +120,7 @@ public class Phone : GLib.Object, Callable {
    public bool answering { get; protected set; }
    public void answer ()
    {
-     /* answer code implementation */
+      /* answer code implementation */
    }
 
    public static void main ()
@@ -145,7 +145,7 @@ public class TechPhone : GLib.Object, Callable
    public bool answering { get; protected set; }
    public void answer ()
    {
-     /* answer code implementation */
+      /* answer code implementation */
    }
 
    public bool hang ()
@@ -211,22 +211,22 @@ public abstract class Caller : GLib.Object, Callable
    public bool answering { get; protected set; }
    public void answer ()
    {
-     stdout.printf ("At Caller.answer ()\n");
-     answering = true;
-     hang ();
+      stdout.printf ("At Caller.answer ()\n");
+      answering = true;
+      hang ();
    }
    public virtual bool hang () { return Callable.default_hang (this); }
 }
 
 public class TechPhone : Caller {
-    public string number { get; set; }
+   public string number { get; set; }
 }
 
 public class Phone : Caller {
    public override bool hang () {
-   stdout.printf ("At Phone.hang ()\n");
-   return false;
-}
+      stdout.printf ("At Phone.hang ()\n");
+      return false;
+   }
 
    public static void main ()
    {

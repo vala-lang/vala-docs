@@ -6,13 +6,13 @@ export default {
     title: 'Vala Documentation',
     description: 'Official documentation for the Vala programming language',
     head: [
-      [
-          'link',
-          {
-              rel: 'icon',
-              href: '/favicon.png'
-          }
-      ]
+        [
+            'link',
+            {
+                rel: 'icon',
+                href: '/favicon.png'
+            }
+        ]
     ],
     locales: {
         root: {
@@ -334,51 +334,6 @@ export default {
                                 text: 'GUI Programming',
                                 link: '/tutorials/gui-programming',
                                 collapsed: true,
-                                items: [
-                                    {
-                                        text: 'GTK4 Samples',
-                                        link: '/tutorials/gui-programming/gtk4-samples',
-                                        collapsed: true,
-                                        items: [
-                                            {
-                                                text: 'Minimal App',
-                                                link: '/tutorials/gui-programming/gtk4-samples/minimal-app'
-                                            },
-                                            {
-                                                text: 'Basic App',
-                                                link: '/tutorials/gui-programming/gtk4-samples/basic-app'
-                                            },
-                                            {
-                                                text: 'Synchronising Widgets',
-                                                link: '/tutorials/gui-programming/gtk4-samples/synchronising-widgets'
-                                            },
-                                            {
-                                                text: 'Text File Viewer',
-                                                link: '/tutorials/gui-programming/gtk4-samples/text-file-viewer'
-                                            },
-                                            {
-                                                text: 'ListView',
-                                                link: '/tutorials/gui-programming/gtk4-samples/list-view'
-                                            },
-                                            {
-                                                text: 'ListView with CheckButtons',
-                                                link: '/tutorials/gui-programming/gtk4-samples/list-view-check-buttons'
-                                            },
-                                            {
-                                                text: 'ColumnView',
-                                                link: '/tutorials/gui-programming/gtk4-samples/column-view'
-                                            },
-                                            {
-                                                text: 'Clipboard',
-                                                link: '/tutorials/gui-programming/gtk4-samples/clipboard'
-                                            },
-                                            {
-                                                text: 'Entry Completion with Two Cells',
-                                                link: '/tutorials/gui-programming/gtk4-samples/entry-completion-two-cells'
-                                            },
-                                        ]
-                                    },
-                                ]
                             }
                         ]
                     },
@@ -1062,6 +1017,56 @@ export default {
                                 text: 'Syntax Guide',
                                 link: '/developer-guides/syntax-guide'
                             }
+                        ]
+                    },
+                    {
+                        text: 'Sample Code',
+                        link: '/sample-code/',
+                        collapsed: true,
+                        items: [
+                            {
+                                text: 'GTK4 Samples',
+                                link: '/sample-code/gtk4-samples',
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: 'Minimal App',
+                                        link: '/sample-code/gtk4-samples/minimal-app'
+                                    },
+                                    {
+                                        text: 'Basic App',
+                                        link: '/sample-code/gtk4-samples/basic-app'
+                                    },
+                                    {
+                                        text: 'Synchronising Widgets',
+                                        link: '/sample-code/gtk4-samples/synchronising-widgets'
+                                    },
+                                    {
+                                        text: 'Text File Viewer',
+                                        link: '/sample-code/gtk4-samples/text-file-viewer'
+                                    },
+                                    {
+                                        text: 'ListView',
+                                        link: '/sample-code/gtk4-samples/list-view'
+                                    },
+                                    {
+                                        text: 'ListView with CheckButtons',
+                                        link: '/sample-code/gtk4-samples/list-view-check-buttons'
+                                    },
+                                    {
+                                        text: 'ColumnView',
+                                        link: '/sample-code/gtk4-samples/column-view'
+                                    },
+                                    {
+                                        text: 'Clipboard',
+                                        link: '/sample-code/gtk4-samples/clipboard'
+                                    },
+                                    {
+                                        text: 'Entry Completion with Two Cells',
+                                        link: '/sample-code/gtk4-samples/entry-completion-two-cells'
+                                    },
+                                ]
+                            },
                         ]
                     },
                     {

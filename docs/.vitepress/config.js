@@ -968,33 +968,6 @@ export default {
                                 ]
                             },
                             {
-                                text: 'Vala Collections: libgee',
-                                link: '/developer-guides/gee-samples',
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: 'List Sample',
-                                        link: '/developer-guides/gee-samples/01-list-sample'
-                                    },
-                                    {
-                                        text: 'Set Sample',
-                                        link: '/developer-guides/gee-samples/02-set-sample'
-                                    },
-                                    {
-                                        text: 'Map Example',
-                                        link: '/developer-guides/gee-samples/03-map-sample'
-                                    },
-                                    {
-                                        text: 'Syntactic Sugar',
-                                        link: '/developer-guides/gee-samples/04-syntactic-sugar'
-                                    },
-                                    {
-                                        text: 'Customizing the equality function',
-                                        link: '/developer-guides/gee-samples/05-custom-equality'
-                                    }
-                                ]
-                            },
-                            {
                                 text: 'Plugins',
                                 collapsed: true,
                                 link: '/developer-guides/plugins',
@@ -1010,10 +983,6 @@ export default {
                                 ]
                             },
                             {
-                                text: 'String Sample',
-                                link: '/developer-guides/string-sample'
-                            },
-                            {
                                 text: 'Syntax Guide',
                                 link: '/developer-guides/syntax-guide'
                             }
@@ -1024,6 +993,37 @@ export default {
                         link: '/sample-code/',
                         collapsed: true,
                         items: [
+                            {
+                                text: 'String Sample',
+                                link: '/sample-code/string-sample'
+                            },
+                            {
+                                text: 'Vala Collections: libgee',
+                                link: '/sample-code/gee-samples',
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: 'List Sample',
+                                        link: '/sample-code/gee-samples/01-list-sample'
+                                    },
+                                    {
+                                        text: 'Set Sample',
+                                        link: '/sample-code/gee-samples/02-set-sample'
+                                    },
+                                    {
+                                        text: 'Map Example',
+                                        link: '/sample-code/gee-samples/03-map-sample'
+                                    },
+                                    {
+                                        text: 'Syntactic Sugar',
+                                        link: '/sample-code/gee-samples/04-syntactic-sugar'
+                                    },
+                                    {
+                                        text: 'Customizing the equality function',
+                                        link: '/sample-code/gee-samples/05-custom-equality'
+                                    }
+                                ]
+                            },
                             {
                                 text: 'GTK4 Samples',
                                 link: '/sample-code/gtk4-samples',

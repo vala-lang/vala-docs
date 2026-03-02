@@ -1,6 +1,6 @@
 # String Sample
 
-<<< @/developer-guides/assets/string-sample.vala
+<<< @/sample-code/assets/string-sample.vala
 
 Compile and Run
 

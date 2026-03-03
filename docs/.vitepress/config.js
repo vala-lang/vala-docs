@@ -1002,6 +1002,10 @@ export default {
                                 link: '/sample-code/signals-and-callbacks'
                             },
                             {
+                                text: 'Threading Samples',
+                                link: '/sample-code/threading-samples'
+                            },
+                            {
                                 text: 'Vala Collections: libgee',
                                 link: '/sample-code/gee-samples',
                                 collapsed: true,

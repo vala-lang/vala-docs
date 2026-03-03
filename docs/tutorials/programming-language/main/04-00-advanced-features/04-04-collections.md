@@ -35,7 +35,7 @@ put into the collections, and that when objects are retrieved they are
 returned as the correct type.
 
 [Gee API documentation](http://valadoc.org/gee-0.8/index.htm),
-[Gee Examples](../../../../developer-guides/gee-samples).
+[Gee Examples](../../../../sample-code/gee-samples).
 
 Some important Gee classes are:
 

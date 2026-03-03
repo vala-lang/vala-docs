@@ -30,7 +30,7 @@ _Interfaces_:
 | IEnumerator                | Iterator           |
 | IList                      | List, Queue, Deque |
 
-See [Gee Examples](../../gee-samples)
+See [Gee Examples](../../../sample-code/gee-samples)
 
 You can access and assign Gee collection items via indexers (e.g.
 `my_map[key]` is equivalent to `my_map.get (key)`). Vala supports an

@@ -66,4 +66,4 @@ Signals can be annotated with any combination of flags:
 public signal void sig_1 ();
 ```
 
-More samples in [Signal Samples](https://wiki.gnome.org/Projects/Vala/SignalsAndCallbacks).
+More samples in [Signal Samples](../../../../sample-code/signals-and-callbacks).

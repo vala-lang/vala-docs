@@ -998,6 +998,10 @@ export default {
                                 link: '/sample-code/string-sample'
                             },
                             {
+                                text: 'Signals and Callbacks',
+                                link: '/sample-code/signals-and-callbacks'
+                            },
+                            {
                                 text: 'Vala Collections: libgee',
                                 link: '/sample-code/gee-samples',
                                 collapsed: true,

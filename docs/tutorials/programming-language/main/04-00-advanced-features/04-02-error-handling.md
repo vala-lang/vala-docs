@@ -121,7 +121,7 @@ public class Test : GLib.Object {
 
     public static int main (string[] args) {
         try {
-            catche ();
+            catcher ();
         } catch (ErrorType2 e) {
             // Deal with ErrorType2
             if (e is ErrorType2.CODE_2B) {

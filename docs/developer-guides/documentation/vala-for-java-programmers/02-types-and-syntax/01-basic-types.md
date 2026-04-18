@@ -1,6 +1,4 @@
-# Simple Data Types
-
-## Basic Types
+# 2.1. Basic Types
 
 In Vala, the sizes of standard types (`int`, `long`, etc.) are
 architecture-dependent. To get the size of a type in bytes, you can use
@@ -31,10 +29,10 @@ In Vala, the `const` keyword is used to declare constants, similar to
 
 ## Methods on Basic Types
 
-Vala\'s basic types have methods that can be called directly on the
+Vala's basic types have methods that can be called directly on the
 values. For example:
 
-``` vala
+```vala
 int a = (-4).abs ();
 string s = a.to_string ();
 int b = int.max (5, 7);      // static method call on 'int'
@@ -48,5 +46,5 @@ In the above code:
 - `int.max (5, 7)` calls the static `max` method on the `int` type,
   returning the maximum value between `5` and `7`.
 
-These are just a few examples of the methods available on Vala\'s basic
+These are just a few examples of the methods available on Vala's basic
 types.

@@ -1,4 +1,4 @@
-# Code Organization
+# 1.5. Code Organization
 
 ## Files
 
@@ -10,7 +10,7 @@ Java:
 Vala:
 
 - a Vala source file may contain multiple classes
-- file name doesn\'t need to resemble a class name
+- file name doesn't need to resemble a class name
 
 ## Hierarchy
 

@@ -1,4 +1,4 @@
-# Naming Conventions
+# 1.4. Naming Conventions
 
 ## Java
 
@@ -8,7 +8,7 @@
 
 Example:
 
-``` java
+```java
 public class MyClass {
     private static final int MAX_VALUE = 100;
     private String myField;
@@ -28,12 +28,12 @@ public class MyClass {
 
 Example:
 
-``` vala
+```vala
 public class MyClass {
     private const int MAX_VALUE = 100;
     private string my_field;
 
-    public void my_method() {
+    public void my_method () {
         int local_variable = 42;
     }
 }

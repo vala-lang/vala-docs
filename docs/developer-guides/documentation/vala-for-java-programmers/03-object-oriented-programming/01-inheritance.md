@@ -1,4 +1,4 @@
-# Inheritance
+# 3.1. Inheritance
 
 Java: `extends`, `implements`:
 

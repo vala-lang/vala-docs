@@ -1,4 +1,4 @@
-# Foreach
+# 2.5. Foreach
 
 Java:
 

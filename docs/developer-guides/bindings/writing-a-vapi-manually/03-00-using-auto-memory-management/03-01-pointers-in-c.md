@@ -18,7 +18,7 @@ relevant to binding function signatures, which is covered in a later
 section. For a comprehensive explanation of pointers in C see 
 [you need to know about pointers in C](http://boredzo.org/pointers).
 
-For now it is enough to understand that the pointer gives no indication
+For now, it is enough to understand that the pointer gives no indication
 of how the memory pointed to is managed. It is not known from seeing a
 pointer in the C code whether the memory is constant, stack allocated or
 heap allocated.

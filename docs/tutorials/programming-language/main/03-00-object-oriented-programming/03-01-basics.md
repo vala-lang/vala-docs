@@ -32,13 +32,13 @@ public class TestClass : GLib.Object {
     private int second_data;
 
     /* Constructor */
-    public TestClass() {
+    public TestClass () {
         this.second_data = 5;
     }
 
     /* Method */
-    public int method_1() {
-        stdout.printf("private data: %d", this.second_data);
+    public int method_1 () {
+        stdout.printf ("private data: %d", this.second_data);
         return this.second_data;
     }
 }
@@ -55,7 +55,7 @@ means that there are special features of Vala that can be used to easily
 access some of *Object's* features.
 
 This class is described as `public` (by default, classes are
-`internal`). The implication of this is that it can referenced directly
+`internal`). The implication of this is that it can be referenced directly
 by code outside of this file - if you are a C programmer of
 glib/gobject, you will recognise this as being equivalent to defining
 the class interfaces in a header file that other code can include.
@@ -89,7 +89,7 @@ be omitted if wished.
 You can use this new class as follows:
 
 ```vala
-TestClass t = new TestClass();
+TestClass t = new TestClass ();
 t.first_data = 5;
-t.method_1();
+t.method_1 ();
 ```

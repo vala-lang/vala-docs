@@ -40,11 +40,11 @@ var partition = partitions [count];
 must return `void`.
 
 Both the index methods, `get` and `set`, can take as many parameters as
-the C function allowing for multi-dimensional indexes to be bound. With
+the C function allowing for multidimensional indexes to be bound. With
 `set` in Vala the final parameter must be the new value.
 
 By binding a `size` property in Vala to a function that returns the size
-of the collection in C then Vala's `foreach` keyword can be used with
+of the collection in C, then Vala's `foreach` keyword can be used with
 the collection. The `get` index method is also required. The following
 example continues with the !PartitionList example above. The C function
 signature to get the size of the list is:
@@ -106,7 +106,7 @@ use of the sugar.
 
 Iterators require an intermediate object to be the holder of the
 iteration state. That class must implement a next_value function that
-returns the next value or null if iteration is to stop or it may have a
+returns the next value or null if iteration is to stop, or it may have a
 next method with signature `bool next ()` that moves to the next element
 and returns true if there is one and a method `T get ()` to retrieve the
 current value of the iterator. It is rare for a C program to have the

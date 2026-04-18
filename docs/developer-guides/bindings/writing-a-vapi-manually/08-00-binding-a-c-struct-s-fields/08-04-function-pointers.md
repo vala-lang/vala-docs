@@ -18,7 +18,7 @@ typedef struct {
 
 ```vala
 [CCode (cname = "foo_func")]
-public delegate void FooFunc(int a);
+public delegate void FooFunc (int a);
 
 public struct Foo {
     [CCode (delegate_target_cname = "callback_context")]
@@ -44,7 +44,7 @@ typedef struct {
 
 ```vala
 [CCode (cname = "foo_func")]
-public delegate void FooFunc(int a);
+public delegate void FooFunc (int a);
 
 public struct Foo {
     [CCode (delegate_target_cname = "callback_context", delegate_target_destroy_notify_cname = "callback_free")]

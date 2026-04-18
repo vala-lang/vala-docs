@@ -3,23 +3,23 @@
 ## 4.6.1. Threads in Vala
 
 A program written in Vala may have more than one thread of execution,
-allowing it it do more than one thing at a time. Exactly how this is
+allowing it to do more than one thing at a time. Exactly how this is
 managed is outside of Vala's scope - threads may be sharing a single
 processor core or not, depending on the environment.
 
 A very simplified example:
 
 ```vala
-void thread_func() {
-    stdout.printf("child_thread is running.\n");
+void thread_func () {
+    stdout.printf ("child_thread is running.\n");
 }
 
-void main() {
-    if (!Thread.supported()) {
-        error("Cannot run without thread support.\n");
+void main () {
+    if (!Thread.supported ()) {
+        error ("Cannot run without thread support.\n");
     }
     var thread = new Thread<void> ("child_thread", thread_func);
-    stdout.printf("main_thread is running");
+    stdout.printf ("main_thread is running");
 }
 ```
 
@@ -42,7 +42,7 @@ Now look at the following statement:
 var thread = new Thread<void> ("new_thread", thread_func);
 ```
 
-We create a new thread and it will start immediately. The first argument
+We create a new thread, and it will start immediately. The first argument
 is its name,the second one is the content of the new thread. The generic
 parameter is the type of value which a thread returns.
 
@@ -62,8 +62,8 @@ wait for child threads to finish, by invoking a method `join` in module
 ```vala
 // ......
 var thread = new Thread<void> ("child_thread", thread_func);
-stdout.printf("main_thread is running");
-thread.join();   // Note
+stdout.printf ("main_thread is running");
+thread.join ();   // Note
 ```
 
 Because of the method `join`, the primary thread has to wait for child
@@ -87,7 +87,7 @@ thread doesn't know the context in which it should run. In C you would
 supply the thread creation method with some data, in Vala instead you
 would normally pass an instance method, instead of a static method.
 
-More samples in [Threading Samples](https://wiki.gnome.org/Projects/Vala/ThreadingSamples).
+More samples in [Threading Samples](../../../../sample-code/threading-samples).
 
 ## 4.6.2. Resource Control
 
@@ -106,7 +106,7 @@ public class Test : GLib.Object {
 
     private int a { get; set; }
 
-    public void action_1() {
+    public void action_1 () {
         lock (a) {
             int tmp = a;
             tmp++;
@@ -114,7 +114,7 @@ public class Test : GLib.Object {
         }
     }
 
-    public void action_2() {
+    public void action_2 () {
         lock (a) {
             int tmp = a;
             tmp--;
@@ -132,7 +132,7 @@ statements here, Vala will guarantee that if one thread has locked
 "a", another thread that needs the same lock will have to wait its
 turn.
 
-In Vala it is only possible to lock members of the object that is
+In Vala, it is only possible to lock members of the object that is
 executing the code. This might appear to be a major restriction, but in
 fact the standard use for this technique should involve classes that are
 individually responsible for controlling a resource, and so all locking

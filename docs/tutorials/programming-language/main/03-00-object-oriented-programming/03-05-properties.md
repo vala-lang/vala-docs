@@ -1,23 +1,23 @@
 # 3.5. Properties
 
-It is good object oriented programming practice to hide implementation
+It is good object-oriented programming practice to hide implementation
 details from the users of your classes ([information hiding principle](http://en.wikipedia.org/wiki/Information_hiding)), 
 so you can later change the internals without breaking the public API. One practice
 is to make fields private and provide accessor methods for getting and
 setting their values (getters and setters).
 
-If you're a Java programmer you will probably think of something like
+If you're a Java programmer, you will probably think of something like
 this:
 
 ```vala
 class Person : Object {
     private int age = 32;
 
-    public int get_age() {
+    public int get_age () {
         return this.age;
     }
 
-    public void set_age(int age) {
+    public void set_age (int age) {
         this.age = age;
     }
 }
@@ -28,8 +28,8 @@ are cumbersome to work with. Let's suppose that you want to increase
 the age of a person by one year:
 
 ```vala
-var alice = new Person();
-alice.set_age(alice.get_age() + 1);
+var alice = new Person ();
+alice.set_age (alice.get_age () + 1);
 ```
 
 This is where properties come into play:
@@ -55,7 +55,7 @@ Now you can access the property as if it was a public field. But behind
 the scenes the code in the get and set blocks is executed.
 
 ```vala
-var alice = new Person();
+var alice = new Person ();
 alice.age = alice.age + 1;  // or even shorter:
 alice.age++;
 ```
@@ -70,7 +70,7 @@ class Person : Object {
 }
 ```
 
-With properties you can change the internal working of classes without
+With properties, you can change the internal working of classes without
 changing the public API. For example:
 
 ```vala
@@ -91,7 +91,7 @@ that you can do more than just simple variable access or assignment
 within the get and set blocks. You could do a database access, logging,
 cache updates, etc.
 
-If you want to make a property read-only for the users of the class you
+If you want to make a property read-only for the users of the class, you
 should make the setter private:
 
 ```vala
@@ -115,14 +115,14 @@ Properties may not only have a name but also a short description (called
 these with a special attribute:
 
 ```vala
-[Description(nick = "age in years", blurb = "This is the person's age in years")]
+[Description (nick = "age in years", blurb = "This is the person's age in years")]
 public int age { get; set; default = 32; }
 ```
 
 Properties and their additional descriptions can be queried at runtime.
-Some programs such as the [Glade](http://glade.gnome.org/) graphical
-user interface designer make use of this information. In this way Glade
-can present human readable descriptions for properties of GTK+ widgets.
+Some programs, such as the [Glade](http://glade.gnome.org/) graphical
+user interface designer, make use of this information. In this way Glade
+can present human-readable descriptions for properties of GTK+ widgets.
 
 Every instance of a class derived from `GLib.Object` has a signal called
 `notify`. This signal gets emitted every time a property of its object
@@ -130,19 +130,19 @@ changes. So you can connect to this signal if you're interested in
 change notifications in general:
 
 ```vala
-obj.notify.connect((s, p) => {
-    stdout.printf("Property '%s' has changed!\n", p.name);
+obj.notify.connect ((s, p) => {
+    stdout.printf ("Property '%s' has changed!\n", p.name);
 });
 ```
 
 `s` is the source of the signal (`obj` in this example), `p` is the
 property information of type **ParamSpec** for the changed property. If
-you\'re only interested in change notifications of a single property you
+you\'re only interested in change notifications of a single property, you
 can use this syntax:
 
 ```vala
-alice.notify["age"].connect((s, p) => {
-    stdout.printf("age has changed\n");
+alice.notify["age"].connect ((s, p) => {
+    stdout.printf ("age has changed\n");
 });
 ```
 
@@ -156,7 +156,7 @@ immediately before the declaration of the property:
 
 ```vala
 public class MyObject : Object {
-    [CCode(notify = false)]
+    [CCode (notify = false)]
     // notify signal is NOT emitted upon changes in the property
     public int without_notification { get; set; }
     // notify signal is emitted upon changes in the property
@@ -167,29 +167,31 @@ public class MyObject : Object {
 There's another type of properties called **construct properties** that
 are described later in the section about gobject-style construction.
 
-Note: in case your property is type of struct, to get the property value
-with Object.get(), you have to declare your variable as example below
+Note: in case your property is a type of struct, to get the property value
+with Object.get (), you have to declare your variable as example below
 
 ```vala
 struct Color
 {
     public uint32 argb;
 
-    public Color() { argb = 0x12345678; }
+    public Color () { argb = 0x12345678; }
 }
 
 class Shape: GLib.Object
 {
-    public Color c { get; set; default = Color(); }
+    public Color c { get; set; default = Color (); }
 }
 
-int main()
+int main ()
 {
     Color? c = null;
-    Shape s = new Shape();
-    s.get("c", out c);
+    Shape s = new Shape ();
+    s.get ("c", out c);
 }
 ```
 
-This way, c is an reference instead of an instance of Color on stack.
-What you passed into s.get() is "Color **" instead of "Color *".
+This way, c is a reference instead of an instance of Color on stack.
+What you passed into s.get () is "Color **" instead of "Color *".
+
+More samples: [Properties Sample](../../../../sample-code/language-features-and-introductory-samples/properties-sample).

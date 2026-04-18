@@ -15,7 +15,7 @@
     [Ace web editor](https://ace.c9.io/) and
     [Linuguist](https://github.com/github/linguist/blob/master/CONTRIBUTING.md),
     used for GitHub syntax highlighting. A [Vala TextMate bundle](https://github.com/technosophos/Vala-TMBundle) does already
-    exist. To understand more about how to write a language bundle read
+    exist. To understand more about how to write a language bundle, read
     [TextMate Language Grammars](https://manual.macromates.com/en/language_grammars),
     [TextMate Scope Selectors](https://manual.macromates.com/en/scope_selectors.html%7C),
     [Writing a TextMate Grammar: Some Lessons Learned](https://www.apeth.com/nonblog/stories/textmatebundle.html)

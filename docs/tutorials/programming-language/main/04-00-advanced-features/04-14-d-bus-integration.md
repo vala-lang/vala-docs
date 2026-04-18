@@ -8,7 +8,7 @@ with the *DBus* code attribute and register an instance of this class
 with your local D-Bus session.
 
 ```vala
-[DBus(name = "org.example.DemoService")]
+[DBus (name = "org.example.DemoService")]
 public class DemoService : Object {
     /* Private field, not exported via D-Bus */
     int counter;
@@ -22,20 +22,20 @@ public class DemoService : Object {
     /* Public signal, exported via D-Bus
      * Can be emitted on the server side and can be connected to on the client side.
      */
-    public signal void sig1();
+    public signal void sig1 ();
 
     /* Public method, exported via D-Bus */
-    public void some_method() {
+    public void some_method () {
         counter++;
-        stdout.printf("heureka! counter = %d\n", counter);
-        sig1();  // emit signal
+        stdout.printf ("heureka! counter = %d\n", counter);
+        sig1 ();  // emit signal
     }
 
     /* Public method, exported via D-Bus and showing the sender who is
        is calling the method (not exported in the D-Bus interface) */
-    public void some_method_sender(string message, GLib.BusName sender) {
+    public void some_method_sender (string message, GLib.BusName sender) {
         counter++;
-        stdout.printf("heureka! counter = %d, '%s' message from sender %s\n",
+        stdout.printf ("heureka! counter = %d, '%s' message from sender %s\n",
                       counter, message, sender);
     }
 }
@@ -47,7 +47,7 @@ Register an instance of the service and start a main loop:
 void on_bus_aquired (DBusConnection conn) {
     try {
         // start service and register it as dbus object
-        var service = new DemoService();
+        var service = new DemoService ();
         conn.register_object ("/org/example/demo", service);
     } catch (IOError e) {
         stderr.printf ("Could not register service: %s\n", e.message);

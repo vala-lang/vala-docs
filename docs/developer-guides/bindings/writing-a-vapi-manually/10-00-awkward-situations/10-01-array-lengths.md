@@ -37,6 +37,6 @@ private void _get_data (out array_with_length a);
 public foo[] get_data () {
     array_with_length temp;
     _get_data (out temp);
-    return (owned) a.data;
+    return (owned) temp.data;
 }
 ```

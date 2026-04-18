@@ -13,24 +13,24 @@ The result of this is to prevent any instantiation of the type.
 ```vala
 public abstract class Animal : Object {
 
-    public void eat() {
-        stdout.printf("*chomp chomp*\n");
+    public void eat () {
+        stdout.printf ("*chomp chomp*\n");
     }
 
-    public abstract void say_hello();
+    public abstract void say_hello ();
 }
 
 public class Tiger : Animal {
 
-    public override void say_hello() {
-        stdout.printf("*roar*\n");
+    public override void say_hello () {
+        stdout.printf ("*roar*\n");
     }
 }
 
 public class Duck : Animal {
 
-    public override void say_hello() {
-        stdout.printf("*quack*\n");
+    public override void say_hello () {
+        stdout.printf ("*quack*\n");
     }
 }
 ```
@@ -81,16 +81,16 @@ public class Contact : Caller {
    {
       var c = new Contact ();
       c.update ("John Strauss");
-      stdout.printf(@"Name: $(c.name)\n");
+      stdout.printf (@"Name: $(c.name)\n");
       c.reset ();
-      stdout.printf(@"Reset Name: $(c.name)\n");
+      stdout.printf (@"Reset Name: $(c.name)\n");
 
       var cv = new ContactCV ();
       cv.update ("Xochitl Calva");
-      stdout.printf(@"Name: $(cv.name)\n");
+      stdout.printf (@"Name: $(cv.name)\n");
       cv.reset ();
-      stdout.printf(@"Reset Name: $(cv.name)\n");
-      stdout.printf("END\n");
+      stdout.printf (@"Reset Name: $(cv.name)\n");
+      stdout.printf ("END\n");
    }
 }
 ```
@@ -99,6 +99,6 @@ As you can see in the above example, `Caller` is an `abstract` class
 defining both an abstract property and a method, but adds a `virtual`
 method which can be overridden by derived classes. `Contact` class
 implements abstract methods and properties of `Caller`, while using the
-default implementation for `reset()` by avoiding to define a new one.
+default implementation for `reset ()` by avoiding to define a new one.
 `ContactCV` class implements all abstract definitions on `Caller`, but
-overrides `reset()` so as to define its own implementation.
+overrides `reset ()` so as to define its own implementation.

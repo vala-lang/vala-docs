@@ -24,5 +24,4 @@ class Node {
 }
 ```
 
-This topic is explained in detail on this page: 
-[Memory Management](https://wiki.gnome.org/Projects/Vala/ReferenceHandling).
+This topic is explained in detail in the [Memory management](../../../../developer-guides/memory-management) guide.

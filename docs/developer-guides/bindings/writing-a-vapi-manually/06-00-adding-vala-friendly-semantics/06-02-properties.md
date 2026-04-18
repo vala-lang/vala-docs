@@ -6,8 +6,8 @@ implementations will provide a collection of functions to query state
 about the instance. These can be converted to properties given the
 following:
 
--   The `get` method has the signature `T get(I self)` and the set
-    method has the signature `void set(I self, T val)`. They need not
+-   The `get` method has the signature `T get (I self)` and the set
+    method has the signature `void set (I self, T val)`. They need not
     actually occur in pairs.
 -   The `get` method does not have side effects that are not obvious to
     the user.

@@ -57,12 +57,14 @@ Luca Bruno <[lethalman88@gmail.com](mailto:lethalman88@gmail.com)>
 
 ## Chapters
 
-#### [1. Project Information](compiler-guide/01-00-project-information)
-#### [2. Environment Setup](compiler-guide/02-00-environment-setup)
-#### [3. The Vala Compiler](compiler-guide/03-00-the-vala-compiler)
-#### [4. Vala Bindings - VAPI](compiler-guide/04-00-vala-bindings-vapi)
-#### [5. libgee Internal](compiler-guide/05-00-internal-libgee)
-#### [6. Other Tools](compiler-guide/06-00-other-tools)
-#### [7. Testing](compiler-guide/07-00-testing)
-#### [8. Documentation](compiler-guide/08-00-documentation)
-#### [9. Build System](compiler-guide/09-00-build-system)
+<ul class="section-toc">
+<li><a href="compiler-guide/01-00-project-information">1. Project Information</a></li>
+<li><a href="compiler-guide/02-00-environment-setup">2. Environment Setup</a></li>
+<li><a href="compiler-guide/03-00-the-vala-compiler">3. The Vala Compiler</a></li>
+<li><a href="compiler-guide/04-00-vala-bindings-vapi">4. Vala Bindings - VAPI</a></li>
+<li><a href="compiler-guide/05-00-internal-libgee">5. libgee Internal</a></li>
+<li><a href="compiler-guide/06-00-other-tools">6. Other Tools</a></li>
+<li><a href="compiler-guide/07-00-testing">7. Testing</a></li>
+<li><a href="compiler-guide/08-00-documentation">8. Documentation</a></li>
+<li><a href="compiler-guide/09-00-build-system">9. Build System</a></li>
+</ul>

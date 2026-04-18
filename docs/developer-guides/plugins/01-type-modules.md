@@ -9,19 +9,19 @@ public class MyClass : Object
 {
         static construct
         {
-                message("MyClass init");
+                message ("MyClass init");
         }
 
-        static ~MyClass()
+        static ~MyClass ()
         {
-                message("MyClass deinit");
+                message ("MyClass deinit");
         }
 }
 
 [ModuleInit]
-Type plugin_init(GLib.TypeModule type_modul)
+Type plugin_init (GLib.TypeModule type_modul)
 {
-        return typeof(MyClass);
+        return typeof (MyClass);
 }
 ```
 
@@ -30,28 +30,28 @@ Type plugin_init(GLib.TypeModule type_modul)
 class MyModule : TypeModule
 {
       [CCode (has_target = false)]
-      private delegate Type PluginInitFunc(TypeModule module);
+      private delegate Type PluginInitFunc (TypeModule module);
 
       private GLib.Module module = null;
 
       private string name = null;
 
-      public MyModule(string name)
+      public MyModule (string name)
       {
                this.name = name;
       }
 
-      public override bool load()
+      public override bool load ()
       {
-               string path = Module.build_path(null, name);
-               module = Module.open(path, GLib.ModuleFlags.BIND_LAZY);
-               if(null == module) {
-                        error("Module not found");
+               string path = Module.build_path (null, name);
+               module = Module.open (path, GLib.ModuleFlags.BIND_LAZY);
+               if (null == module) {
+                        error ("Module not found");
                }
 
                void * plugin_init = null;
-               if(! module.symbol("plugin_init", out plugin_init)) {
-                        error("No such symbol");
+               if (! module.symbol ("plugin_init", out plugin_init)) {
+                        error ("No such symbol");
                }
 
                ((PluginInitFunc) plugin_init)(this);
@@ -59,11 +59,11 @@ class MyModule : TypeModule
                return true;
       }
 
-      public override void unload()
+      public override void unload ()
       {
                module = null;
 
-               message("Library unloaded");
+               message ("Library unloaded");
       }
 }
 
@@ -71,12 +71,12 @@ class MyModule : TypeModule
 // http://www.lanedo.com/~mitch/module-system-talk-guadec-2006/Module-System-Talk-Guadec-2006.pdf
 static TypeModule module = null;
 
-int main()
+int main ()
 {
-      module = new MyModule("plugin");
-      module.load();
+      module = new MyModule ("plugin");
+      module.load ();
 
-      var o = GLib.Object.new(Type.from_name("MyClass"));
+      var o = GLib.Object.new (Type.from_name ("MyClass"));
 
       // free last instance, plugin unload
       o = null;

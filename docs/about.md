@@ -32,7 +32,7 @@ C is not difficult. The Vala library only has to install the generated
 header files and C applications may then access the GObject-based API of
 the Vala library as usual. It should also be easily possible to write a
 bindings generator for access to Vala libraries from applications
-written in e.g. C# as the Vala parser is written as a library, so that
+written in e.g., C# as the Vala parser is written as a library, so that
 all compile-time information is available when generating a binding.
 
 ## Why Vala?

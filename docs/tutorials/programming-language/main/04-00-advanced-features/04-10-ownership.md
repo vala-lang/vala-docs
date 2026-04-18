@@ -8,7 +8,7 @@ the object in memory, it is also recorded in the object itself that this
 pointer exists. Similarly, whenever another reference to the object is
 created, this is also recorded. As an object knows how many references
 there are to it, it can automatically be removed when needed. This is
-the basis of [memory management](https://wiki.gnome.org/Projects/Vala/ReferenceHandling).
+the basis of [memory management](../../../../developer-guides/memory-management).
 
 ## 4.10.2. Methods ownership
 
@@ -22,8 +22,8 @@ unowned reference, e.g.:
 class Test {
     private Object o;
 
-    public unowned Object get_unowned_ref() {
-        this.o = new Object();
+    public unowned Object get_unowned_ref () {
+        this.o = new Object ();
         return this.o;
     }
 }
@@ -33,15 +33,15 @@ When calling this method, in order to collect a reference to the
 returned object, you must expect to receive a weak reference:
 
 ```vala
-unowned Object o = get_unowned_ref();
+unowned Object o = get_unowned_ref ();
 ```
 
-The reason for this seemingly over complicated example because of the
+The reason for this seemingly overcomplicated example is because of the
 concept of ownership.
 
--   If the Object "o" was not stored in the class, then when the
+-   If the Object "o" was not stored in the class, then, when the
     method "get_unowned_ref" returned, "o" would become unowned
-    (i.e. there would be no references to it). If this were the case,
+    (i.e., there would be no references to it). If this were the case,
     the object would be deleted and the method would never return a
     valid reference.
 -   If the return value was not defined as unowned, the ownership would
@@ -51,7 +51,7 @@ concept of ownership.
 If the calling code is written as
 
 ```vala
-Object o = get_unowned_ref();
+Object o = get_unowned_ref ();
 ```
 
 Vala will try to either obtain a reference of or a duplicate of the
@@ -72,7 +72,7 @@ As such, the following example will result in a compilation error:
 ```vala
 public Object property {
     get {
-        return new Object();   // WRONG: property returns an unowned reference,
+        return new Object ();   // WRONG: property returns an unowned reference,
                                // the newly created object will be deleted when
                                // the getter scope ends the caller of the
                                // getter ends up receiving an invalid reference
@@ -86,11 +86,11 @@ nor can you do this:
 ```vala
 public string property {
     get {
-        return getter_method();   // WRONG: for the same reason above.
+        return getter_method ();   // WRONG: for the same reason above.
     }
 }
 
-public string getter_method() {
+public string getter_method () {
     return "some text"; // "some text" is duplicated and returned at this point.
 }
 ```
@@ -100,11 +100,11 @@ on the other hand, this is perfectly fine
 ```vala
 public string property {
     get {
-        return getter_method();   // GOOD: getter_method returns an unowned value
+        return getter_method ();   // GOOD: getter_method returns an unowned value
     }
 }
 
-public unowned string getter_method() {
+public unowned string getter_method () {
     return "some text";
     // Don't be alarmed that the text is not assigned to any strong variable.
     // Literal strings in Vala are always owned by the program module itself,
@@ -130,14 +130,14 @@ public Object property {
 ```
 
 The keyword `owned` can be used to specifically ask a property to return
-a owned reference of the value, therefore causing the property value be
+an owned reference of the value, therefore causing the property value be
 reproduced in the object side. Think twice before adding the `owned`
 keyword. Is it a property or simply a `get_xxx` method? There may also
 be problems in your design. Anyways, the following code is a correct
 segment:
 
 ```vala
-public owned Object property { owned get { return new Object(); } }
+public owned Object property { owned get { return new Object (); } }
 ```
 
 Unowned references play a similar role to pointers which are described
@@ -152,7 +152,7 @@ The keyword `owned` is used to transfer ownership.
 
 -   As a prefix of a parameter type, it means that ownership of the
     object is transferred into this code context.
--   As an type conversion operator, it can be used to avoid duplicating
+-   As a type conversion operator, it can be used to avoid duplicating
     non-reference counting classes, which is usually impossible in Vala.
     For example,
 

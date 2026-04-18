@@ -33,11 +33,11 @@ program.
 ```vala
 public class MyLib : Object {
 
-    public void hello() {
-        stdout.printf("Hello World, MyLib\n");
+    public void hello () {
+        stdout.printf ("Hello World, MyLib\n");
     }
 
-    public int sum(int x, int y) {
+    public int sum (int x, int y) {
         return x + y;
     }
 }
@@ -61,11 +61,11 @@ Save the following code to a file called *hello.vala*. This is the code
 that will use the library we have created.
 
 ```vala
-void main() {
-    var test = new MyLib();
-    test.hello();
+void main () {
+    var test = new MyLib ();
+    test.hello ();
     int x = 4, y = 5;
-    stdout.printf("The sum of %d and %d is %d\n", x, y, test.sum(x, y));
+    stdout.printf ("The sum of %d and %d is %d\n", x, y, test.sum (x, y));
 }
 ```
 

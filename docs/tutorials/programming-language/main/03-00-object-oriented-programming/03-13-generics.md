@@ -32,15 +32,15 @@ This "Wrapper" class must be restricted with a type in order to
 instantiate it - in this case the type will be identified as "G", and
 so instances of this class will store one object of "G" type.
 
-In order to instantiate this class, a type must be chosen, for example
+In order to instantiate this class, a type must be chosen, for example,
 the built in `string` type (in Vala there is no restriction on what type
-may be used in a generic). To create an briefly use this class:
+may be used in a generic). To create and briefly use this class:
 
 ```vala
 void main () {
-    var w = new Wrapper<string>();
+    var w = new Wrapper<string> ();
     w.data = "test";
-    stdout.printf(w.data);
+    stdout.printf (w.data);
 }
 ```
 
@@ -58,12 +58,12 @@ generated C code.)
 class TestClass : GLib.Object {
 }
 
-void accept_object_wrapper(Wrapper<Glib.Object> w) {
+void accept_object_wrapper (Wrapper<Glib.Object> w) {
 }
 
 ...
-var test_wrapper = new Wrapper<TestClass>();
-accept_object_wrapper(test_wrapper);
+var test_wrapper = new Wrapper<TestClass> ();
+accept_object_wrapper (test_wrapper);
 ...
 ```
 

@@ -1,0 +1,53 @@
+/**
+ * Section navigation lists — typography aligned with default VitePress h4
+ * (see issue #130: outline uses ul/li instead of skipped heading levels).
+ */
+.vp-doc .section-toc {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.vp-doc .section-toc > li {
+    margin: 0.5rem 0;
+}
+
+.vp-doc .section-toc a {
+    font-weight: 600;
+    /* Default theme h4-sized body text in doc content */
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--vp-c-text-1);
+    text-decoration: none;
+}
+
+.vp-doc .section-toc a:hover {
+    color: var(--vp-c-brand-1);
+}
+
+.vp-doc .section-toc .section-toc-num {
+    margin-right: 0.25rem;
+    color: var(--vp-c-text-2);
+    font-weight: 600;
+    font-size: 0.9375rem;
+}
+
+/* Child links (in-page anchors, extra resources) under one section-toc entry */
+.vp-doc .section-toc .section-toc-sub {
+    list-style: none;
+    padding-left: 1.25rem;
+    margin: 0.35rem 0 0;
+}
+
+.vp-doc .section-toc .section-toc-sub > li {
+    margin: 0.25rem 0;
+}
+
+.vp-doc .section-toc .section-toc-sub a {
+    font-weight: 500;
+    color: var(--vp-c-text-2);
+}
+
+.vp-doc .section-toc .section-toc-sub a:hover {
+    color: var(--vp-c-brand-1);
+}

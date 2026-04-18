@@ -33,10 +33,10 @@ coding style.
 -   Hanging braces.
 -   Cuddled else.
 -   Braces necessary for single-line blocks.
--   Variable and method identifiers in lowercase, words seperated by
+-   Variable and method identifiers in lowercase, words separated by
     underscores.
 -   Type identifiers in CamelCase.
--   Enum members and constants in ALL_CAPS, words seperated by
+-   Enum members and constants in ALL_CAPS, words separated by
     underscores.
 -   C-style _/* comments. */_
 -   Hungarian notation not used.
@@ -45,7 +45,7 @@ coding style.
 -   No function-length limit.
 -   Space between method name and parameters' opening parenthesis.
 -   Property _get_, _set_, _default_
-    declaration all on one line, seperated by semicolons, if default
+    declaration all on one line, separated by semicolons, if default
     implementations are used.
 -   If properties have implementations, then _get {_, _set {_ open new lines.
 -   Attributes on their own line.

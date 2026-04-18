@@ -11,24 +11,99 @@ convention for constants is `ALL_UPPER_CASE`.
 
 ## 2.4.1. Value Types
 
-Vala supports a set of the simple types as most other languages do.
+Vala supports a set of the simple types as most other languages do. 
 
--   Byte, `char`, `uchar`; their names are *char* for historical
-    reasons.
--   Character, `unichar`; a 32-bit Unicode character
--   Integer, `int`, `uint`
--   Long Integer, `long`, `ulong`
--   Short Integer, `short`, `ushort`
--   Guaranteed-size Integer, `int8`, `int16`, `int32`, `int64` as well
-    as their unsigned siblings `uint8`, `uint16`, `uint32`, `uint64`.
-    The numbers indicate the lengths in bits.
--   Float number, `float`, `double`
--   Boolean, `bool`; possible values are `true` and `false`
--   Compound, `struct`
--   Enumeration, `enum`; represented by integer values, not as classes
-    like Java's enums
+The following ranges may differ based on a variety of factors, such as
+the platform, the compiler, the CPU architecture, etc.
 
-Here are some examples.
+### 2.4.1.1 Byte
+
+| Type    | Size     | Range                |
+|---------|----------|----------------------|
+| `char`  | 1+ bytes | at least -127 to 127 |
+| `uchar` | 1+ bytes | 0 to at least 255    |
+
+These have the name `char` in them for historical reasons.
+
+### 2.4.1.2 Integers
+
+| Type   | Size     | Range                                    |
+|--------|----------|------------------------------------------|
+| `int`  | 4+ bytes | at least -2,147,483,647 to 2,147,483,647 |
+| `uint` | 4+ bytes | 0 to at least 4,294,967,295              |
+
+### 2.4.1.3 Long
+
+| Type    | Size     | Range                                    |
+|---------|----------|------------------------------------------|
+| `long`  | 4+ bytes | at least -2,147,483,647 to 2,147,483,647 |
+| `ulong` | 4+ bytes | 0 to at least 4,294,967,295              |
+
+### 2.4.1.4 Short
+
+| Type     | Size     | Range                      |
+|----------|----------|----------------------------|
+| `short`  | 2+ bytes | at least -32,767 to 32,767 |
+| `ushort` | 2+ bytes | 0 to at least 65,535       |
+
+### 2.4.1.5 Guaranteed-size Signed Integers
+
+| Type    | Size     | Range                                                            |
+|---------|----------|------------------------------------------------------------------|
+| `int8`  | 1+ byte  | at least -127 to 127                                             |
+| `int16` | 2+ bytes | at least -32,767 to 32,767                                       |
+| `int32` | 4+ bytes | at least -2,147,483,647 to 2,147,483,647                         |
+| `int64` | 8+ bytes | at least -9,223,372,036,854,775,807 to 9,223,372,036,854,775,807 |
+
+### 2.4.1.6 Guaranteed-size Unsigned Integers
+
+| Type     | Size     | Range                                    |
+|----------|----------|------------------------------------------|
+| `uint8`  | 1+ byte  | 0 to at least 255                        |
+| `uint16` | 2+ bytes | 0 to at least 65,535                     |
+| `uint32` | 4+ bytes | 0 to at least 4,294,967,295              |
+| `uint64` | 8+ bytes | 0 to at least 18,446,744,073,709,551,615 |
+
+### 2.4.1.7 Floating Points
+
+| Type     | Size    | Range                  | Precision  |
+|----------|---------|------------------------|------------|
+| `float`  | 4 bytes | 1.18e-38 to 3.4e+38    | ~7 digits  |
+| `double` | 8 bytes | 2.23e-308 to 1.80e+308 | ~16 digits |
+
+Based on the IEEE 754-1985 standard.
+
+### 2.4.1.8 Array Indexing / Loop Counting
+
+| Type      | Size         | Range                                                            |
+|-----------|--------------|------------------------------------------------------------------|
+| `size_t`  | 2 to 8 bytes | 0 to at least 18,446,744,073,709,551,615                         |
+| `ssize_t` | 2 to 8 bytes | at least -9,223,372,036,854,775,807 to 9,223,372,036,854,775,807 |
+
+For more information, please refer to [size_t](https://en.cppreference.com/w/c/types/size_t.html) on the C++ reference.
+
+### 2.4.1.9 Booleans
+
+| Type   | Size  | Values        |
+|--------|-------|---------------|
+| `bool` | 1 bit | true or false |
+
+### 2.4.1.10 Unicode Characters
+
+| Type       | Size         | Standard |
+|------------|--------------|----------|
+| `unichar`  | 4 bytes      | UTF-32   |
+| `unichar2` | 1 to 2 bytes | UTF-16   |
+
+For iterating UTF-8 text and inspecting [`UnicodeType`](https://valadoc.org/glib-2.0/GLib.UnicodeType.html), see [Character Sample](../../../../sample-code/language-features-and-introductory-samples/character-sample).
+
+### 2.4.1.11 Compound
+- `struct`
+
+### 2.4.1.12 Enumeration
+- `enum` : values are integers, unlike Java's enums
+
+### Examples
 
 ```vala
 unichar c = 'u';
@@ -55,7 +130,7 @@ except for the guaranteed-size integer types. The `sizeof` operator
 returns the size that a variable of a given type occupies in bytes:
 
 ```vala
-ulong nbytes = sizeof(int32);    // nbytes will be 4 (= 32 bits)
+ulong nbytes = sizeof (int32);    // nbytes will be 4 (= 32 bits)
 ```
 
 You can determine the minimum and maximum values of a numerical type
@@ -63,8 +138,13 @@ with *.MIN* and *.MAX*, e.g. `int.MIN` and `int.MAX`.
 
 ## 2.4.2. Strings
 
-The data type for strings is `string`. Vala strings are UTF-8 encoded
-and immutable.
+| Type                | Size per Character | Max Length (theoretical)     |
+|---------------------|--------------------|------------------------------|
+| `string` (UTF-8)    | 1 byte             | 0 - 2,147,483,647 characters |
+| `string16` (UTF-16) | 1 to 2 bytes       | 0 - 2,147,483,647 characters |
+| `string32` (UTF-32) | 4 bytes            | 0 - 2,147,483,647 characters |
+
+Strings in Vala are immutable.
 
 ```vala
 string text = "A string literal";
@@ -104,7 +184,7 @@ string s2 = greeting[-4:-2];       // => "or"
 ```
 
 Note that indices in Vala start with 0 as in most other programming
-languages. Starting with Vala 0.11 you can access a single byte of a
+languages. Starting with Vala 0.11, you can access a single byte of a
 string with `[index]`:
 
 ```vala
@@ -118,42 +198,42 @@ Many of the basic types have reasonable methods for parsing from and
 converting to strings, for example:
 
 ```vala
-bool b = bool.parse("false");           // => false
-int i = int.parse("-52");               // => -52
-double d = double.parse("6.67428E-11"); // => 6.67428E-11
-string s1 = true.to_string();           // => "true"
-string s2 = 21.to_string();             // => "21"
+bool b = bool.parse ("false");           // => false
+int i = int.parse ("-52");               // => -52
+double d = double.parse ("6.67428E-11"); // => 6.67428E-11
+string s1 = true.to_string ();           // => "true"
+string s2 = 21.to_string ();             // => "21"
 ```
 
 Two useful methods for writing and reading strings to/from the console
-(and for your first explorations with Vala) are *stdout.printf()* and
-*stdin.read_line()*:
+(and for your first explorations with Vala) are *stdout.printf ()* and
+*stdin.read_line ()*:
 
 ```vala
-stdout.printf("Hello, world\n");
-stdout.printf("%d %g %s\n", 42, 3.1415, "Vala");
-string input = stdin.read_line();
-int number = int.parse(stdin.read_line());
+stdout.printf ("Hello, world\n");
+stdout.printf ("%d %g %s\n", 42, 3.1415, "Vala");
+string input = stdin.read_line ();
+int number = int.parse (stdin.read_line ());
 ```
 
-You already know *stdout.printf()* from the *Hello World* example.
+You already know *stdout.printf ()* from the *Hello World* example.
 Actually, it can take an arbitrary number of arguments of different
 types, whereas the first argument is a *format string*, following the
 same rules as [C format strings](http://en.wikipedia.org/wiki/Printf).
-If you must output an error message you can use *stderr.printf()*
-instead of *stdout.printf()*.
+If you must output an error message, you can use *stderr.printf ()*
+instead of *stdout.printf ()*.
 
-In addition the *in* operation can be used to determine whether one
+In addition, the *in* operation can be used to determine whether one
 string contains another, e.g.
 
 ```vala
 if ("ere" in "Able was I ere I saw Elba.") //...
 ```
 
-For more information, please report to 
+For more information, please refer to 
 [the complete overview of the string class](http://www.valadoc.org/glib-2.0/string.html).
 
-A [sample program](../../../../developer-guides/string-sample) demonstrating string usage is also available.
+A [sample program](../../../../sample-code/string-sample) demonstrating string usage is also available.
 
 ## 2.4.3. Arrays
 
@@ -168,6 +248,14 @@ array to store them in.
 int[] a = new int[10];
 int[] b = { 2, 4, 6, 8 };
 ```
+
+By default, the type of the array length is `int`, but a different type
+can be specified. For example, `uint8[:size_t] data` declares an array
+whose indices are `size_t`, which can therefore store any number of
+bytes that can be addressed (an `int`-indexed array can only have up to
+2^32 elements). Conversely, `string[] list = new string[10:uint8]`
+declares an array whose indices are bytes, which might be useful to save
+memory when many small array indices are stored.
 
 You can slice an array with `[start:end]`:
 
@@ -185,7 +273,7 @@ an argument (arguments are, by default, unowned):
 unowned int[] c = b[1:3];     // => { 4, 6 }
 ```
 
-Multi-dimensional arrays are defined with `[,]` or `[,,]` etc.
+Multidimensional arrays are defined with `[,]` or `[,,]` etc.
 
 ```vala
 int[,] c = new int[3,4];
@@ -196,11 +284,11 @@ d[2,3] = 42;
 ```
 
 This sort of array is represented by a single contiguous memory block.
-Jagged multi-dimensional arrays (`[][]`, also known as "stacked
+Jagged multidimensional arrays (`[][]`, also known as "stacked
 arrays" or "arrays of arrays"), where each row may have a different
 length, are not yet supported.
 
-To find the length of each dimension in a multi-dimensional array, the
+To find the length of each dimension in a multidimensional array, the
 *length* member becomes an array, storing the length of each respective
 dimension.
 
@@ -211,7 +299,7 @@ int c = arr.length[1];
 ```
 
 Please note that you can't get a mono-dimensional array from a
-multidimensional array, or even slice a multidimensional array:
+multidimensional array or even slice a multidimensional array:
 
 ```vala
 int[,] arr = {{1,2},
@@ -225,7 +313,7 @@ int[,] f = arr[0:1,0:1];  // won't work
 
 You can append array elements dynamically with the `+=` operator.
 However, this works only for locally defined or private arrays. The
-array is automatically reallocated if needed. Internally this
+array is automatically reallocated if needed. Internally, this
 reallocation happens with sizes growing in powers of 2 for run-time
 efficiency reasons. However, `.length` holds the actual number of
 elements, not the internal size.
@@ -237,12 +325,12 @@ e += 5;
 e += 37;
 ```
 
-You can resize an array by calling *resize()* on it. It will keep the
+You can resize an array by calling *resize ()* on it. It will keep the
 original content (as much as fits).
 
 ```vala
 int[] a = new int[5];
-a.resize(12);
+a.resize (12);
 ```
 
 You can move elements within an array by calling *move(src, dest,
@@ -255,7 +343,7 @@ print ((string) chars); // "world "
 ```
 
 If you put the square brackets *after* the identifier together with an
-indication of size you will get a fixed-size array. Fixed-size arrays
+indication of size, you will get a fixed-size array. Fixed-size arrays
 are allocated on the stack (if used as local variables) or in-line
 allocated (if used as fields) and you can't reallocate them later.
 
@@ -264,7 +352,7 @@ int f[10];     // no 'new ...'
 ```
 
 Vala does not do any bounds checking for array access at runtime. If you
-need more safety you should use a more sophisticated data structure like
+need more safety, you should use a more sophisticated data structure like
 an *ArrayList*. You will learn more about that later in the section
 about *collections*.
 
@@ -272,11 +360,10 @@ about *collections*.
 
 The reference types are all types declared as a class, regardless of
 whether they are descended from GLib's *Object* or not. Vala will
-ensure that when you pass an object by reference the system will keep
+ensure that when you pass an object by reference, the system will keep
 track of the number of references currently alive in order to manage the
 memory for you. The value of a reference that does not point anywhere is
-`null`. More on classes and their features in the section about object
-oriented programming.
+`null`. More on classes and their features in the section about object-oriented programming.
 
 ```vala
 /* defining a class */
@@ -284,7 +371,7 @@ class Track : GLib.Object {             /* subclassing 'GLib.Object' */
     public double mass;                 /* a public field */
     public double name { get; set; } /* a public property */
     private bool terminated = false; /* a private field */
-    public void terminate() {           /* a public method */
+    public void terminate () {           /* a public method */
         terminated = true;
     }
 }
@@ -293,7 +380,7 @@ class Track : GLib.Object {             /* subclassing 'GLib.Object' */
 ## 2.4.5. Static Type Casting
 
 In Vala, you can cast a variable from one type to another. For a static
-type cast, a variable is casted by the desired type name with
+type cast, a variable is cast by the desired type name with
 parenthesis. A static cast doesn't impose any runtime type safety
 checking. It works for all Vala types. For example,
 
@@ -304,20 +391,20 @@ float j = (float) i;
 
 Vala supports another casting mechanism called *dynamic cast* which
 performs runtime type checking and is described in the section about
-object oriented programming.
+object-oriented programming.
 
 ## 2.4.6. Type Inference
 
 Vala has a mechanism called *type inference*, whereby a local variable
 may be defined using `var` instead of giving a type, so long as it is
-unambiguous what type is meant. The type is inferred from the right hand
+unambiguous what type is meant. The type is inferred from the right-hand 
 side of the assignment. It helps reduce unnecessary redundancy in your
 code without sacrificing static typing:
 
 ```vala
-var p = new Person();     // same as: Person p = new Person();
+var p = new Person ();     // same as: Person p = new Person ();
 var s = "hello";          // same as: string s = "hello";
-var l = new List<int>();  // same as: List<int> l = new List<int>();
+var l = new List<int> ();  // same as: List<int> l = new List<int> ();
 var i = 10;               // same as: int i = 10;
 ```
 
@@ -325,13 +412,13 @@ This only works for local variables. Type inference is especially useful
 for types with generic type arguments (more on these later). Compare
 
 ```vala
-MyFoo<string, MyBar<string, int>> foo = new MyFoo<string, MyBar<string, int>>();
+MyFoo<string, MyBar<string, int>> foo = new MyFoo<string, MyBar<string, int>> ();
 ```
 
 vs.
 
 ```vala
-var foo = new MyFoo<string, MyBar<string, int>>();
+var foo = new MyFoo<string, MyBar<string, int>> ();
 ```
 
 ## 2.4.7. Defining new Type from other
@@ -353,4 +440,46 @@ public class ValueList : GLib.List<GLib.Value> {
     protected ValueList ();
     public static GLib.Type get_type ();
 }
+```
+
+## 2.4.8. Numeric Type Suffixes
+
+Like many other languages, Vala supports numeric type suffixes. 
+
+The following sections list the supported suffixes, which are case-insensitive:
+
+### 2.4.8.1. Integer Suffixes
+
+| Suffix | Type   |
+|--------|--------|
+|        | int    |
+| u      | uint   |
+| l      | long   |
+| ll     | int64  |
+| ul     | ulong  |
+| ull    | uint64 |
+
+Here are some examples:
+```vala
+var a = 123; // int
+var b = 123u; // uint
+var c = 123l; // long
+var d = 123ll; // int64
+var e = 123ul; // ulong
+var f = 123ull; // uint64
+```
+
+### 2.4.8.2. Floating-point Suffixes
+
+| Suffix | Type   |
+|--------|--------|
+|        | double |
+| f      | float  |
+| d      | double |
+
+Here are some examples:
+```vala
+var a = 123.0; // double
+var b = 123.0f; // float
+var c = 123.0d; // double
 ```

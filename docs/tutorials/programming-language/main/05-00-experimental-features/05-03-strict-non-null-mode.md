@@ -11,8 +11,8 @@ compiler will run in strict non-null type checking mode and consider
 declared nullable by marking it with a question mark:
 
 ```vala
-Object o1 = new Object();     // not nullable
-Object? o2 = new Object();    // nullable
+Object o1 = new Object ();     // not nullable
+Object? o2 = new Object ();    // nullable
 ```
 
 The compiler will perform a static compile-time analysis to ensure that

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Vala is a programming language using modern high level abstractions
+Vala is a programming language using modern high-level abstractions
 without imposing additional runtime requirements and without using a
 different ABI compared to applications and libraries written in C.
 
@@ -19,6 +19,7 @@ uses where native binaries are required.
 - [Tooling](tooling/)
 - [Contributor Guide](contributor-guide/)
 - [Developer Guides](developer-guides/)
+- [Sample Code](sample-code/)
 - [FAQ](faq)
 
 ## External Resources
@@ -29,7 +30,8 @@ uses where native binaries are required.
 - [elementary OS Developer Documentation](https://docs.elementary.io/develop)
 - [Vala Compiler Repository](https://gitlab.gnome.org/GNOME/vala)
 - [Vala Website](https://vala.dev)
-- [Vala Project GNOME Wiki (Deprecated)](https://wiki.gnome.org/Projects/Vala)
+- [Vala Project GNOME Wiki (Retired)](https://wiki.gnome.org/Projects/Vala)
+- [Introducing Vala Programming (O'Reilly Book)](https://www.oreilly.com/library/view/introducing-vala-programming/9781484253809/)
 
 ## Community
 

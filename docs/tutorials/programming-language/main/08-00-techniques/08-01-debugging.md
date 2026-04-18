@@ -9,9 +9,9 @@ class Foo : Object {
     public int field;
 }
 
-void main() {
+void main () {
     Foo? foo = null;
-    stdout.printf("%d\n", foo.field);
+    stdout.printf ("%d\n", foo.field);
 }
 ```
 

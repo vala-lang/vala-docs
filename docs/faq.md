@@ -48,10 +48,10 @@ Yes, if you prepend the identifier with an `@`.
 
 ## Why do I have to inherit from GObject?
 
-Since Vala is based on GObject it's needed to inherit almost every
+Since Vala is based on GObject, it's necessary to inherit almost every
 class from GObject. However, it's not mandatory, but if you don't
 inherit, you will only get a very restricted class. Unless you know what
-you're doing you want to inherit from GObject. The ../BasicSample shows
+you're doing, you want to inherit from GObject. The [Basic Samples](sample-code/language-features-and-introductory-samples/basic-samples) page shows
 how to achieve a full-featured class.
 
 ## Can I use pointer arithmetic inside strings?
@@ -92,11 +92,11 @@ delete str_ptr;
 Use the "`is`" operator.
 
 ```vala
-var wi = Gtk.Button();
+var wi = Gtk.Button ();
 if (wi is Gtk.Widget)
-    stdout.printf("Is a Widget.n");
+    stdout.printf ("Is a Widget.n");
 if (wi is Gtk.Button)
-    stdout.printf("Is a Button.n");
+    stdout.printf ("Is a Button.n");
 ```
 
 Works with interfaces too.
@@ -132,6 +132,7 @@ compilation for the above example.
 
 For more details see [Preprocessor - Vala Reference
 Manual](https://gnome.pages.gitlab.gnome.org/vala/manual/preprocessor.html).
+Examples: [Conditional Compilation Sample](sample-code/language-features-and-introductory-samples/conditional-compilation-sample).
 
 ## What does [SimpleType] and [Compact] in bindings mean?
 
@@ -152,12 +153,11 @@ This feature is not emphasized in the above image.
 
 ## How do I read from stdin?
 
-Allocating space for strings to be read in can be tricky. See 
-[Input Samples](https://wiki.gnome.org/Projects/Vala/InputSamples) for an example.
+Allocating space for strings to be read in can be tricky. See [Basic Samples — reading user input](sample-code/language-features-and-introductory-samples/basic-samples#reading-user-input) for an example.
 
 ## How do I get the GType for something?
 
-Try the `typeof` operator. Fx `typeof(string)` is a `G_TYPE_STRING`.
+Try the `typeof` operator. Fx `typeof (string)` is a `G_TYPE_STRING`.
 
 ## Why do static members not get initialized?
 
@@ -186,20 +186,20 @@ void main () {
 
 ## Why can't I chain up to base constructor?
 
-Often external libraries do not offer functionality for `base()` usage.
+Often external libraries do not offer functionality for `base ()` usage.
 Therefore you have to use GObject-based construction using
-`Object(prop1: value1, ...)`. As an example:
+`Object (prop1: value1, ...)`. As an example:
 
 ```vala
 // https://wiki.gnome.org/Projects/Vala/InputSamples
-class MyWindow : Gtk.Window
+class MyWindow : Gtk.Window {
   public MyWindow () {
     Object (type: Gtk.WindowType.TOPLEVEL);
   }
 }
 ```
 
-## How do I convert from uint8[] (or char[]) to string and viceversa?
+## How do I convert from uint8[] (or char[]) to string and vice versa?
 
 From uint8[] (or what else) to string it's as simple as casting to
 string: `(string) array`. From string to uint8[] array it's about
@@ -224,7 +224,7 @@ const YourStruct[] s = { { value1, value2, ... }, ...};
 Otherwise:
 
 ```vala
-YourStruct[] s = { YourStruct() { field1=value1, field2=value2, ... }, ...};
+YourStruct[] s = { YourStruct () { field1=value1, field2=value2, ... }, ...};
 ```
 
 Alternatively, if you are the author of YourStruct (that is not
@@ -311,7 +311,7 @@ why vala developers highly suggest using the .vapi instead of the .gir:
 3.  With a .vapi file you have a human readable representation of how
     vapigen interprets the .gir file plus metadata. So it serves as
     documentation for yourself, instead of going wild guessing the name
-    of the symbols or whatelse.
+    of the symbols or what else.
 4.  You can easily compare two .vapi files for differences because a
     symbol is usually defined on one line, while with .gir a single
     symbol is defined on multiple lines.
@@ -339,7 +339,7 @@ Probably the biggest disadvantage is that you will not automatically
 benefit from backwards-compatible fixes and improvements that happen in
 bindings over time. It is quite common for updated bindings to fix bugs
 (most prominently memory leaks), and if you use a local copy of the
-binding you will not benefit from such changes until you update the copy
+binding, you will not benefit from such changes until you update the copy
 of the bindings your software uses.
 
 Of course, sometimes it isn't really feasible to depend on the
@@ -356,6 +356,6 @@ One more thing to consider is that using a local copy of bindings can
 make [https://valadoc.org](https://valadoc.org) less useful. Typically, valadoc.org content
 tracks the latest stable version, if you're using a current Linux
 distribution, is likely the same version you have on your system. If you
-make a local copy of the bindings you use they will often be older
-versions which don't match what [valadoc.org](https://valadoc.org)
+make a local copy of the bindings you use, they will often be older
+versions, which don't match what [valadoc.org](https://valadoc.org)
 says.

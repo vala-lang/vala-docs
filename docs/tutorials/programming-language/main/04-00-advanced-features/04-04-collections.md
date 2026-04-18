@@ -35,7 +35,7 @@ put into the collections, and that when objects are retrieved they are
 returned as the correct type.
 
 [Gee API documentation](http://valadoc.org/gee-0.8/index.htm),
-[Gee Examples](../../../../developer-guides/gee-samples).
+[Gee Examples](../../../../sample-code/gee-samples).
 
 Some important Gee classes are:
 
@@ -61,7 +61,7 @@ You can optionally pass custom hash and equal functions to the
 constructor, for example:
 
 ```vala
-var map = new Gee.HashMap<Foo, Object>(foo_hash, foo_equal);
+var map = new Gee.HashMap<Foo, Object> (foo_hash, foo_equal);
 ```
 
 For strings and integers the hash and equal functions are detected

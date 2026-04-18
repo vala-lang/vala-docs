@@ -21,10 +21,10 @@ controlling this object creation.
 
 Real world example > Consider, you are building a house and you need
 doors. It would be a mess if every time you need a door, you put on your
-carpenter clothes and start making a door in your house. Instead you get
+carpenter clothes and start making a door in your house. Instead, you get
 it made from a factory.
 
-In plain words > Simple factory simply generates an instance for client
+In plain words > Simple factory simply generates an instance for a client
 without exposing any instantiation logic to the client
 
 Wikipedia says > In object-oriented programming (OOP), a factory is an
@@ -306,8 +306,8 @@ specific deal, lets say, "Big Hardee" and they hand it over to you
 without *any questions*; this is the example of simple factory. But
 there are cases when the creation logic might involve more steps. For
 example you want a customized Subway deal, you have several options in
-how your burger is made e.g what bread do you want? what types of sauces
-would you like? What cheese would you want? etc. In such cases builder
+how your burger is made e.g., what bread do you want? what types of sauces
+would you like? What cheese would you want? Etc., In such cases, the builder
 pattern comes to the rescue.
 
 In plain words > Allows you to create different flavors of an object
@@ -317,10 +317,10 @@ creation of an object.
 
 Wikipedia says > The builder pattern is an object creation software
 design pattern with the intentions of finding a solution to the
-telescoping constructor anti-pattern.
+telescoping constructor antipattern.
 
-Having said that let me add a bit about what telescoping constructor
-anti-pattern is. At one point or the other we have all seen a
+Having said that, let me add a bit about what telescoping constructor
+antipattern is. At one point or the other we have all seen a
 constructor like below:
 
 ```vala
@@ -328,15 +328,15 @@ public Burger (int size, bool cheese = true, bool pepperoni = true, bool tomato 
 }
 ```
 
-As you can see; the number of constructor parameters can quickly get out
-of hand and it might become difficult to understand the arrangement of
-parameters. Plus this parameter list could keep on growing if you would
+As you can see, the number of constructor parameters can quickly get out
+of hand, and it might become difficult to understand the arrangement of
+parameters. Plus, this parameter list could keep on growing if you would
 want to add more options in future. This is called telescoping
-constructor anti-pattern.
+constructor antipattern.
 
 **Programmatic Example**
 
-The sane alternative is to use the builder pattern. First of all we have
+The sane alternative is to use the builder pattern. First of all, we have
 our burger that we want to make
 
 ```vala
@@ -413,9 +413,8 @@ var burger = (new BurgerBuilder (14))
 
 When there could be several flavors of an object and to avoid the
 constructor telescoping. The key difference from the factory pattern is
-that; factory pattern is to be used when the creation is a one step
-process while builder pattern is to be used when the creation is a multi
-step process.
+that factory pattern is to be used when the creation is a one-step
+process while builder pattern is to be used when the creation is a multistep process.
 
 ## 1.5. 🐑 Prototype
 

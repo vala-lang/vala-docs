@@ -14,8 +14,8 @@ the parser is a hand-crafted recursive descent parser. The parser is in
 `vala/valaparser.vala` and its lexer is in `vala/valascanner.vala`.
 :::
 
-The entry point of the parser is `Vala.Parser.parse()`. This method is
-called by `Vala.Compiler.run()`. Vala.Parser is an implementation of
+The entry point of the parser is `Vala.Parser.parse ()`. This method is
+called by `Vala.Compiler.run ()`. Vala.Parser is an implementation of
 `Vala.CodeVisitor` for source files.
 
 ## 3.2.1. Visitors and Ping Pong
@@ -220,9 +220,9 @@ specializations of CodeNode may have children. The type and number of
 children are declared in the specialized class.
 
 The two important methods in a CodeNode are *accept* and
-*accept_children*. The accept() method lets the node declare to the
+*accept_children*. The accept () method lets the node declare to the
 CodeVisitor what it is, so the CodeVisitor can act on it. For example,
-Vala.Struct.accept():
+Vala.Struct.accept ():
 
 ```vala
 public override void accept (CodeVisitor visitor) {
@@ -230,11 +230,11 @@ public override void accept (CodeVisitor visitor) {
 }
 ```
 
-The accept_children() method lets the node accept all of its children so
+The accept_children () method lets the node accept all of its children so
 they can declare themselves to the CodeVisitor. This is the recursive
 part of the traversal. For example, a Struct code node has a list of
 base types, type parameters, fields, constants, and methods.
-Vala.Struct.accept_children() accepts all of these.
+Vala.Struct.accept_children () accepts all of these.
 
 ```vala
 public override void accept_children (CodeVisitor visitor) {
@@ -267,7 +267,7 @@ public override void accept_children (CodeVisitor visitor) {
 As you can see, the CodeVisitor is repeatedly asked to visit different
 code nodes. It can do whatever analysis is necessary and then traverse
 deeper into the code tree. This is what a hypothetical implementation of
-XmlGenerator.visit_struct() might look like:
+XmlGenerator.visit_struct () might look like:
 
 ```vala
 public override void visit_struct (Struct st) {
@@ -284,7 +284,7 @@ public override void visit_struct (Struct st) {
 ```
 
 The visit_ methods of a CodeVisitor needn't call
-CodeNode.accept_children(), if it isn't necessary to traverse the whole
+CodeNode.accept_children (), if it isn't necessary to traverse the whole
 depth of the code tree. It also isn't necessary to write visit_
 methods for every kind of code node, because empty implementations are
 already provided in CodeVisitor.
@@ -297,7 +297,7 @@ yourself bouncing between different classes.
 ## 3.2.2. Back to the Parser
 
 Vala.Parser is a highly specialized CodeVisitor - the only type of code
-node it visits is a Vala.SourceFile. However the Parser calls back to
+node it visits is a Vala.SourceFile. However, the Parser calls back to
 the context and uses it to create code nodes (mentioned before), then
 adds these code nodes into the context's root code node.
 
@@ -312,7 +312,7 @@ declarations of a namespace, class, struct, or interface. Fixme.
 
 This grammar is hand-generated from Vala.Parser. Sometimes the structure
 of this grammar diverges slightly from the code, for example optional
-non-terminal symbols. However the non-terminal symbol names usually
+non-terminal symbols. However, the non-terminal symbol names usually
 match a parse_ method in Vala.Parser.
 
 More literal-specific grammar at

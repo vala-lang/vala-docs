@@ -21,13 +21,13 @@ when you might resort to manual memory management are:
 In order to create an instance of a type, and receive a pointer to it:
 
 ```vala
-Object* o = new Object();
+Object* o = new Object ();
 ```
 
 In order to access members of that instance:
 
 ```vala
-o->method_1();
+o->method_1 ();
 o->data_1;
 ```
 
@@ -50,7 +50,7 @@ The behavior is a bit different with reference types, you can omit the
 address-of and indirection operator on assignment:
 
 ```vala
-Foo f = new Foo();
+Foo f = new Foo ();
 Foo* f_ptr = f;    // address-of
 Foo g = f_ptr;     // indirection
 

@@ -52,7 +52,7 @@ generator object. This object walks the code tree and generates code.
 
 Vala.CodeContext contains an important method called `accept`, which
 initiates a depth-first traversal of the code tree. This method, and the
-CodeVisitor pattern will be discussed later.
+CodeVisitor pattern, will be discussed later.
 
 **Data diagram**
 

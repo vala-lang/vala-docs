@@ -14,13 +14,13 @@ multiple constructors you may give them different name additions:
 ```vala
 public class Button : Object {
 
-    public Button() {
+    public Button () {
     }
 
-    public Button.with_label(string label) {
+    public Button.with_label (string label) {
     }
 
-    public Button.from_stock(string stock_id) {
+    public Button.from_stock (string stock_id) {
     }
 }
 ```
@@ -28,34 +28,34 @@ public class Button : Object {
 Instantiation is analogous:
 
 ```vala
-new Button();
-new Button.with_label("Click me");
-new Button.from_stock(Gtk.STOCK_OK);
+new Button ();
+new Button.with_label ("Click me");
+new Button.from_stock (Gtk.STOCK_OK);
 ```
 
-You may chain constructors via `this()` or `this.{name_extension}()`:
+You may chain constructors via `this ()` or `this.{name_extension} ()`:
 
 ```vala
 public class Point : Object {
     public double x;
     public double y;
 
-    public Point(double x, double y) {
+    public Point (double x, double y) {
         this.x = x;
         this.y = y;
     }
 
-    public Point.rectangular(double x, double y) {
-        this(x, y);
+    public Point.rectangular (double x, double y) {
+        this (x, y);
     }
 
-    public Point.polar(double radius, double angle) {
-        this.rectangular(radius * Math.cos(angle), radius * Math.sin(angle));
+    public Point.polar (double radius, double angle) {
+        this.rectangular (radius * Math.cos (angle), radius * Math.sin (angle));
     }
 }
 
-void main() {
-    var p1 = new Point.rectangular(5.7, 1.2);
-    var p2 = new Point.polar(5.7, 1.2);
+void main () {
+    var p1 = new Point.rectangular (5.7, 1.2);
+    var p2 = new Point.polar (5.7, 1.2);
 }
 ```

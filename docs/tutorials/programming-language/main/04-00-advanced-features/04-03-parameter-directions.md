@@ -30,8 +30,8 @@ This behaviour can be changed with the modifiers 'ref' and 'out'.
 >   the parameter is considered initialised and you may change it or not
 
 ```vala
-void method_1(int a, out int b, ref int c) { ... }
-void method_2(Object o, out Object p, ref Object q) { ... }
+void method_1 (int a, out int b, ref int c) { ... }
+void method_2 (Object o, out Object p, ref Object q) { ... }
 ```
 
 These methods can be called as follows:
@@ -40,12 +40,12 @@ These methods can be called as follows:
 int a = 1;
 int b;
 int c = 3;
-method_1(a, out b, ref c);
+method_1 (a, out b, ref c);
 
-Object o = new Object();
+Object o = new Object ();
 Object p;
-Object q = new Object();
-method_2(o, out p, ref q);
+Object q = new Object ();
+method_2 (o, out p, ref q);
 ```
 
 The treatment of each variable will be:
@@ -76,10 +76,10 @@ The treatment of each variable will be:
     will ensure that in this instance "q" actually refers to any
     object, and is not set to `null`.
 
-Here is an example of how to implement `method_1()`:
+Here is an example of how to implement `method_1 ()`:
 
 ```vala
-void method_1(int a, out int b, ref int c) {
+void method_1 (int a, out int b, ref int c) {
     b = a + c;
     c = 3;
 }
@@ -87,4 +87,4 @@ void method_1(int a, out int b, ref int c) {
 
 When setting the value to the out argument "b", Vala will ensure that
 "b" is not `null`. So you can safely pass `null` as the second
-argument of `method_1()` if you are not interested by this value.
+argument of `method_1 ()` if you are not interested by this value.

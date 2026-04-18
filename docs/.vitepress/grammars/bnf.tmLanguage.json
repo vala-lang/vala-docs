@@ -1,0 +1,29 @@
+{
+  "name": "bnf",
+  "scopeName": "source.bnf",
+  "patterns": [
+    {
+      "name": "comment.line.double-slash.bnf",
+      "match": "//.*$"
+    },
+    {
+      "name": "string.quoted.double.bnf",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.bnf",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "keyword.operator.bnf",
+      "match": "(::=|\\||\\*|\\+|\\?|\\(|\\)|\\[|\\])"
+    },
+    {
+      "name": "entity.name.function.bnf",
+      "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+    }
+  ]
+}

@@ -6,12 +6,12 @@ package. You tell the compiler that a package is needed by your program
 as follows:
 
 ```shell
-valac --pkg gee-1.0 test.vala
+valac --pkg gee-0.8 test.vala
 ```
 
 This command means your program can use any of the definitions in the
-*gee-1.0.vapi* file, and also any in any of the packages that *gee-1.0*
-depends on. These dependencies would be listed in *gee-1.0.deps* if
+*gee-0.8.vapi* file, and also any in any of the packages that *gee-0.8*
+depends on. These dependencies would be listed in *gee-0.8.deps* if
 there were any. In this example *valac* is set to build all the way to
 binary, and will therefore incorporate information from *pkg-config* to
 link the correct libraries. This is why the *pkg-config* names are also

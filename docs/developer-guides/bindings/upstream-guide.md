@@ -34,12 +34,12 @@ errors.
 
 ## Higher quality bindings
 
-You know your library better than the Vala developers do and you can
-make sure your APIs look, and behave, as you intended.
+You know your library better than the Vala developers do, and you can
+make sure your APIs look and behave as you intended.
 
 ## API documentation
 
-We provide documentation for many libraries which ship a VAPI on
+We provide documentation for many libraries that ship a VAPI on
 [Valadoc.org](https://www.valadoc.org/).
 
 **But...**
@@ -64,7 +64,7 @@ valac automatically handle dependencies for them.
 
 GObject Introspection also allows for some things which Vala does not,
 which is where the real problems begin. These issues can cause errors
-from Vala's GIR parser (like the ones mentioned earier from GIO),
+from Vala's GIR parser (like the ones mentioned earlier from GIO),
 resulting in your GIR being useless to valac. The classic example of
 this is duplicate symbols; GObject Introspection allows for methods,
 virtual methods, and signals with the same name but different signatures
@@ -172,7 +172,7 @@ similar to what GI provides for g-ir-scanner in the form of an autoconf
 macro and a Makefile. In order to avoid introducing a hard dependency to
 your project, it is recommended you copy the
 [vapigen.m4](https://gitlab.gnome.org/GNOME/vala/-/blob/master/vapigen/vapigen.m4)
-file into your macro directory (usually an m4/ folder in the top level
+file into your macro directory (usually a m4/ folder in the top level
 of your project). The macro has the following signature:
 
 ```shell
@@ -202,8 +202,7 @@ FOUND-INTROSPECTION
 
 DEFAULT
 
->   The default value of the argument (yes, no, or auto). The default
-    default is auto.
+>   The default value of the argument (yes, no, or auto). The default value of default is auto.
 
 This macro will define three variables for you to use in your automake
 files:
@@ -214,7 +213,7 @@ VAPIGEN
 
 VAPIGEN_VAPIDIR
 
->   The location to install the your bindings to
+>   The location to install your bindings to
 
 VAPIGEN_MAKEFILE
 
@@ -267,7 +266,7 @@ FILES
 
 >   The GIR file to generate the VAPI from
 
-To use our "Foo" example from eariler:
+To use our "Foo" example from earlier:
 
 ```make
 if ENABLE_VAPIGEN

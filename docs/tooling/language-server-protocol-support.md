@@ -17,7 +17,7 @@ server for Vala:
     Alpine Linux. See the README for more information.
 -   [GVls (GNOME Vala Language Server)](https://gitlab.gnome.org/esodan/gvls) - Supports Meson
     introspection provided by Clients or auto-detected. Supports
-    diagnostics, completion, signature help, document's symbos,
+    diagnostics, completion, signature help, document's symbols,
     workspace symbols, find symbols, documentation. Server supports
     stdio and internet connection, from clients. Provides a fast LSP
     Client supporting connection using stdio and internet connections.

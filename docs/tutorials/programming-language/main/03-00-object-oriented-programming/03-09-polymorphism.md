@@ -13,14 +13,14 @@ example of what will happen if you do not directly aim for this goal:
 
 ```vala
 class SuperClass : GLib.Object {
-    public void method_1() {
-        stdout.printf("SuperClass.method_1()\n");
+    public void method_1 () {
+        stdout.printf ("SuperClass.method_1 ()\n");
     }
 }
 
 class SubClass : SuperClass {
-    public void method_1() {
-        stdout.printf("SubClass.method_1()\n");
+    public void method_1 () {
+        stdout.printf ("SubClass.method_1 ()\n");
     }
 }
 ```
@@ -31,10 +31,10 @@ inherits one from "`SuperClass`". Each of these may be called as the
 following code shows:
 
 ```vala
-SubClass o1 = new SubClass();
-o1.method_1();
+SubClass o1 = new SubClass ();
+o1.method_1 ();
 SuperClass o2 = o1;
-o2.method_1();
+o2.method_1 ();
 ```
 
 This will actually result in two different methods being called. The
@@ -50,14 +50,14 @@ rewritten version of the last example:
 
 ```vala
 class SuperClass : GLib.Object {
-    public virtual void method_1() {
-        stdout.printf("SuperClass.method_1()\n");
+    public virtual void method_1 () {
+        stdout.printf ("SuperClass.method_1 ()\n");
     }
 }
 
 class SubClass : SuperClass {
-    public override void method_1() {
-        stdout.printf("SubClass.method_1()\n");
+    public override void method_1 () {
+        stdout.printf ("SubClass.method_1 ()\n");
     }
 }
 ```
@@ -94,9 +94,9 @@ still need the parent class' method to be called. The following example
 shows this case:
 
 ```vala
-public override void method_name() {
-    base.method_name();
-    extra_task();
+public override void method_name () {
+    base.method_name ();
+    extra_task ();
 }
 ```
 

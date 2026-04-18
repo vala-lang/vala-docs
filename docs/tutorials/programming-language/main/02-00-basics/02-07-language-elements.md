@@ -131,7 +131,7 @@ class Foo {
     }    
 }
 ```
-More samples in [Delegates Manual](https://wiki.gnome.org/Projects/Vala/Manual/Delegates).  
+More samples in the [Delegates section of the Vala Reference Manual](https://gnome.pages.gitlab.gnome.org/vala/manual/delegates.html).  
 
 ## 2.7.3. Anonymous Methods / Closures
 

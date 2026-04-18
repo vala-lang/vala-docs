@@ -1,3 +1,11 @@
+import { readFileSync } from 'node:fs'
+import { dirname, join } from 'node:path'
+import { fileURLToPath } from 'node:url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const bnfGrammar = JSON.parse(
+    readFileSync(join(__dirname, 'grammars/bnf.tmLanguage.json'), 'utf-8')
+)
 
 export default {
     // site-level options
@@ -19,6 +27,9 @@ export default {
             label: 'English',
             lang: 'en'
         }
+    },
+    markdown: {
+        languages: [bnfGrammar],
     },
     themeConfig: {
         // theme-level options

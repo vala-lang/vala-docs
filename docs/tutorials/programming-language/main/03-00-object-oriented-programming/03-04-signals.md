@@ -66,4 +66,4 @@ Signals can be annotated with any combination of flags:
 public signal void sig_1 ();
 ```
 
-More samples in [Signal Samples](../../../../sample-code/signals-and-callbacks).
+More samples in [Signals and Callbacks](../../../../sample-code/signals-and-callbacks). For a compact class that combines a property, signal, and lambda handler, see [Intermediate Samples](../../../../sample-code/language-features-and-introductory-samples/intermediate-samples).

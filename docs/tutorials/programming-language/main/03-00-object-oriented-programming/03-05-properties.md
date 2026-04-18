@@ -193,3 +193,5 @@ int main ()
 
 This way, c is a reference instead of an instance of Color on stack.
 What you passed into s.get () is "Color **" instead of "Color *".
+
+More samples: [Properties Sample](../../../../sample-code/language-features-and-introductory-samples/properties-sample).

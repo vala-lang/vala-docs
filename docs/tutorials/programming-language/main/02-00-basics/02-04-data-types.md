@@ -95,6 +95,8 @@ For more information, please refer to [size_t](https://en.cppreference.com/w/c/t
 | `unichar`  | 4 bytes      | UTF-32   |
 | `unichar2` | 1 to 2 bytes | UTF-16   |
 
+For iterating UTF-8 text and inspecting [`UnicodeType`](https://valadoc.org/glib-2.0/GLib.UnicodeType.html), see [Character Sample](../../../../sample-code/language-features-and-introductory-samples/character-sample).
+
 ### 2.4.1.11 Compound
 - `struct`
 

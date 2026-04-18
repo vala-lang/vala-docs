@@ -51,7 +51,7 @@ Yes, if you prepend the identifier with an `@`.
 Since Vala is based on GObject, it's necessary to inherit almost every
 class from GObject. However, it's not mandatory, but if you don't
 inherit, you will only get a very restricted class. Unless you know what
-you're doing, you want to inherit from GObject. The ../BasicSample shows
+you're doing, you want to inherit from GObject. The [Basic Samples](sample-code/language-features-and-introductory-samples/basic-samples) page shows
 how to achieve a full-featured class.
 
 ## Can I use pointer arithmetic inside strings?
@@ -132,6 +132,7 @@ compilation for the above example.
 
 For more details see [Preprocessor - Vala Reference
 Manual](https://gnome.pages.gitlab.gnome.org/vala/manual/preprocessor.html).
+Examples: [Conditional Compilation Sample](sample-code/language-features-and-introductory-samples/conditional-compilation-sample).
 
 ## What does [SimpleType] and [Compact] in bindings mean?
 
@@ -152,8 +153,7 @@ This feature is not emphasized in the above image.
 
 ## How do I read from stdin?
 
-Allocating space for strings to be read in can be tricky. See 
-[Input Samples](https://wiki.gnome.org/Projects/Vala/InputSamples) for an example.
+Allocating space for strings to be read in can be tricky. See [Basic Samples — reading user input](sample-code/language-features-and-introductory-samples/basic-samples#reading-user-input) for an example.
 
 ## How do I get the GType for something?
 
@@ -192,7 +192,7 @@ Therefore you have to use GObject-based construction using
 
 ```vala
 // https://wiki.gnome.org/Projects/Vala/InputSamples
-class MyWindow : Gtk.Window
+class MyWindow : Gtk.Window {
   public MyWindow () {
     Object (type: Gtk.WindowType.TOPLEVEL);
   }

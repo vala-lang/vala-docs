@@ -162,5 +162,5 @@ then gives back control to its own caller.
 
 ## 4.8.1. Examples
 
-See [Async Method Samples](/sample-code/async-samples) for examples of different
+See [Async Method Samples](../../../../sample-code/async-samples) for examples of different
 ways that `async` may be used.

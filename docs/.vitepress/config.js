@@ -1006,6 +1006,10 @@ export default {
                                 link: '/sample-code/threading-samples'
                             },
                             {
+                                text: 'Async Method Samples',
+                                link: '/sample-code/async-samples'
+                            },
+                            {
                                 text: 'Vala Collections: libgee',
                                 link: '/sample-code/gee-samples',
                                 collapsed: true,

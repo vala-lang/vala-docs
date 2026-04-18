@@ -34,14 +34,25 @@
     <ul class="section-toc section-toc-sub">
       <li><a href="02-00-basics/02-07-language-elements#_2-7-1-methods">2.7.1. Methods</a></li>
       <li><a href="02-00-basics/02-07-language-elements#_2-7-2-delegates">2.7.2. Delegates</a></li>
-      <li><a href="02-00-basics/02-07-language-elements#_2-7-3-anonymous-methods-closures">2.7.3. Anonymous Methods / Closures</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-3-anonymous-methods-closures-lambda-expressions">2.7.3. Anonymous Methods / Closures (lambda expressions)</a></li>
       <li><a href="02-00-basics/02-07-language-elements#_2-7-4-namespaces">2.7.4. Namespaces</a></li>
       <li><a href="02-00-basics/02-07-language-elements#_2-7-5-structs">2.7.5. Structs</a></li>
-      <li><a href="02-00-basics/02-07-language-elements#_2-7-6-classes">2.7.6. Classes</a></li>
-      <li><a href="02-00-basics/02-07-language-elements#_2-7-7-interfaces">2.7.7. Interfaces</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-6-enums">2.7.6. Enums</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-7-flags">2.7.7. Flags</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-8-classes">2.7.8. Classes</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-9-interfaces">2.7.9. Interfaces</a></li>
     </ul>
   </li>
   <li>
     <a href="02-00-basics/02-08-code-attributes">2.8. Code Attributes</a>
+  </li>
+  <li>
+    <a href="02-00-basics/02-09-input-output">2.9. Input / Output</a>
+    <ul class="section-toc section-toc-sub">
+      <li><a href="02-00-basics/02-09-input-output#stdout">Stdout</a></li>
+      <li><a href="02-00-basics/02-09-input-output#stderr">Stderr</a></li>
+      <li><a href="02-00-basics/02-09-input-output#stdin">Stdin</a></li>
+      <li><a href="02-00-basics/02-09-input-output#opening-files">Opening Files</a></li>
+    </ul>
   </li>
 </ul>

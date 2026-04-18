@@ -116,6 +116,10 @@ export default {
                                                     {
                                                         text: '2.8. Code Attributes',
                                                         link: '/tutorials/programming-language/main/02-00-basics/02-08-code-attributes'
+                                                    },
+                                                    {
+                                                        text: '2.9. Input / Output',
+                                                        link: '/tutorials/programming-language/main/02-00-basics/02-09-input-output'
                                                     }
                                                 ]
                                             },
@@ -265,6 +269,10 @@ export default {
                                                     {
                                                         text: '5.3. Strict Non-Null Mode',
                                                         link: '/tutorials/programming-language/main/05-00-experimental-features/05-03-strict-non-null-mode'
+                                                    },
+                                                    {
+                                                        text: '5.4. With Statement',
+                                                        link: '/tutorials/programming-language/main/05-00-experimental-features/05-04-with-statement'
                                                     }
                                                 ]
                                             },

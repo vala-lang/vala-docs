@@ -103,6 +103,8 @@ For iterating UTF-8 text and inspecting [`UnicodeType`](https://valadoc.org/glib
 ### 2.4.1.12 Enumeration
 - `enum` : values are integers, unlike Java's enums
 
+For more information on structs and enums, please refer to [02-07 Language Elements](02-07-language-elements)
+
 ### Examples
 
 ```vala
@@ -183,12 +185,16 @@ string s1 = greeting[7:12];        // => "world"
 string s2 = greeting[-4:-2];       // => "or"
 ```
 
-Note that indices in Vala start with 0 as in most other programming
-languages. Starting with Vala 0.11, you can access a single byte of a
-string with `[index]`:
+::: info
+
+Note that indices in Vala start with 0 as in most other programming languages
+
+:::
+
+you can access a single byte of a string with `[index]`:
 
 ```vala
-uint8 b = greeting[7];             // => 0x77
+uint8 b = greeting[7];            // => 119, the ASCII value of 'w'
 ```
 
 However, you cannot assign a new byte value to this position, since Vala
@@ -205,23 +211,7 @@ string s1 = true.to_string ();           // => "true"
 string s2 = 21.to_string ();             // => "21"
 ```
 
-Two useful methods for writing and reading strings to/from the console
-(and for your first explorations with Vala) are *stdout.printf ()* and
-*stdin.read_line ()*:
-
-```vala
-stdout.printf ("Hello, world\n");
-stdout.printf ("%d %g %s\n", 42, 3.1415, "Vala");
-string input = stdin.read_line ();
-int number = int.parse (stdin.read_line ());
-```
-
-You already know *stdout.printf ()* from the *Hello World* example.
-Actually, it can take an arbitrary number of arguments of different
-types, whereas the first argument is a *format string*, following the
-same rules as [C format strings](http://en.wikipedia.org/wiki/Printf).
-If you must output an error message, you can use *stderr.printf ()*
-instead of *stdout.printf ()*.
+If you want learn how print your string jump it [02-09 Input / Output](02-09-input-output)
 
 In addition, the *in* operation can be used to determine whether one
 string contains another, e.g.

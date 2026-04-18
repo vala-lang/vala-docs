@@ -11,4 +11,4 @@ in some cases. In these cases you must use
 [weak references](https://en.wikipedia.org/wiki/Weak_reference) in order to
 break those cycles. The Vala keyword for this is `weak`.
 
-See [Vala's Memory Management Explained](https://wiki.gnome.org/Projects/Vala/ReferenceHandling)
+See [Vala memory management](../../memory-management).

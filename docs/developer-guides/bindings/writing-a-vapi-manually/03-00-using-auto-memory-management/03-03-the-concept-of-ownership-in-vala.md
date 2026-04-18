@@ -1,7 +1,5 @@
 # 3.3. The Concept of "Ownership" in Vala
 
-::: info TODO
-This section was originally empty. 
-See [https://wiki.gnome.org/Projects/Vala/ReferenceHandling](https://wiki.gnome.org/Projects/Vala/ReferenceHandling)
-for information about ownership in Vala
+::: info
+For a full discussion of ownership and reference counting in Vala, see [Memory management](../../../memory-management).
 :::

@@ -764,6 +764,10 @@ export default {
                                 ]
                             },
                             {
+                                text: 'Memory Management',
+                                link: '/developer-guides/memory-management'
+                            },
+                            {
                                 text: 'Documentation',
                                 link: '/developer-guides/documentation',
                                 collapsed: true,

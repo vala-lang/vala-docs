@@ -231,7 +231,7 @@ if ("ere" in "Able was I ere I saw Elba.") //...
 For more information, please refer to 
 [the complete overview of the string class](http://www.valadoc.org/glib-2.0/string.html).
 
-A [sample program](../../../../developer-guides/string-sample) demonstrating string usage is also available.
+A [sample program](../../../../sample-code/string-sample) demonstrating string usage is also available.
 
 ## 2.4.3. Arrays
 

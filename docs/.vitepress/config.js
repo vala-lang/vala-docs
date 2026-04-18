@@ -6,13 +6,13 @@ export default {
     title: 'Vala Documentation',
     description: 'Official documentation for the Vala programming language',
     head: [
-      [
-          'link',
-          {
-              rel: 'icon',
-              href: '/favicon.png'
-          }
-      ]
+        [
+            'link',
+            {
+                rel: 'icon',
+                href: '/favicon.png'
+            }
+        ]
     ],
     locales: {
         root: {
@@ -334,51 +334,6 @@ export default {
                                 text: 'GUI Programming',
                                 link: '/tutorials/gui-programming',
                                 collapsed: true,
-                                items: [
-                                    {
-                                        text: 'GTK4 Samples',
-                                        link: '/tutorials/gui-programming/gtk4-samples',
-                                        collapsed: true,
-                                        items: [
-                                            {
-                                                text: 'Minimal App',
-                                                link: '/tutorials/gui-programming/gtk4-samples/minimal-app'
-                                            },
-                                            {
-                                                text: 'Basic App',
-                                                link: '/tutorials/gui-programming/gtk4-samples/basic-app'
-                                            },
-                                            {
-                                                text: 'Synchronising Widgets',
-                                                link: '/tutorials/gui-programming/gtk4-samples/synchronising-widgets'
-                                            },
-                                            {
-                                                text: 'Text File Viewer',
-                                                link: '/tutorials/gui-programming/gtk4-samples/text-file-viewer'
-                                            },
-                                            {
-                                                text: 'ListView',
-                                                link: '/tutorials/gui-programming/gtk4-samples/list-view'
-                                            },
-                                            {
-                                                text: 'ListView with CheckButtons',
-                                                link: '/tutorials/gui-programming/gtk4-samples/list-view-check-buttons'
-                                            },
-                                            {
-                                                text: 'ColumnView',
-                                                link: '/tutorials/gui-programming/gtk4-samples/column-view'
-                                            },
-                                            {
-                                                text: 'Clipboard',
-                                                link: '/tutorials/gui-programming/gtk4-samples/clipboard'
-                                            },
-                                            {
-                                                text: 'Entry Completion with Two Cells',
-                                                link: '/tutorials/gui-programming/gtk4-samples/entry-completion-two-cells'
-                                            },
-                                        ]
-                                    },
-                                ]
                             }
                         ]
                     },
@@ -1013,33 +968,6 @@ export default {
                                 ]
                             },
                             {
-                                text: 'Vala Collections: libgee',
-                                link: '/developer-guides/gee-samples',
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: 'List Sample',
-                                        link: '/developer-guides/gee-samples/01-list-sample'
-                                    },
-                                    {
-                                        text: 'Set Sample',
-                                        link: '/developer-guides/gee-samples/02-set-sample'
-                                    },
-                                    {
-                                        text: 'Map Example',
-                                        link: '/developer-guides/gee-samples/03-map-sample'
-                                    },
-                                    {
-                                        text: 'Syntactic Sugar',
-                                        link: '/developer-guides/gee-samples/04-syntactic-sugar'
-                                    },
-                                    {
-                                        text: 'Customizing the equality function',
-                                        link: '/developer-guides/gee-samples/05-custom-equality'
-                                    }
-                                ]
-                            },
-                            {
                                 text: 'Plugins',
                                 collapsed: true,
                                 link: '/developer-guides/plugins',
@@ -1055,13 +983,102 @@ export default {
                                 ]
                             },
                             {
-                                text: 'String Sample',
-                                link: '/developer-guides/string-sample'
-                            },
-                            {
                                 text: 'Syntax Guide',
                                 link: '/developer-guides/syntax-guide'
                             }
+                        ]
+                    },
+                    {
+                        text: 'Sample Code',
+                        link: '/sample-code/',
+                        collapsed: true,
+                        items: [
+                            {
+                                text: 'String Sample',
+                                link: '/sample-code/string-sample'
+                            },
+                            {
+                                text: 'Signals and Callbacks',
+                                link: '/sample-code/signals-and-callbacks'
+                            },
+                            {
+                                text: 'Threading Samples',
+                                link: '/sample-code/threading-samples'
+                            },
+                            {
+                                text: 'Async Method Samples',
+                                link: '/sample-code/async-samples'
+                            },
+                            {
+                                text: 'Vala Collections: libgee',
+                                link: '/sample-code/gee-samples',
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: 'List Sample',
+                                        link: '/sample-code/gee-samples/01-list-sample'
+                                    },
+                                    {
+                                        text: 'Set Sample',
+                                        link: '/sample-code/gee-samples/02-set-sample'
+                                    },
+                                    {
+                                        text: 'Map Example',
+                                        link: '/sample-code/gee-samples/03-map-sample'
+                                    },
+                                    {
+                                        text: 'Syntactic Sugar',
+                                        link: '/sample-code/gee-samples/04-syntactic-sugar'
+                                    },
+                                    {
+                                        text: 'Customizing the equality function',
+                                        link: '/sample-code/gee-samples/05-custom-equality'
+                                    }
+                                ]
+                            },
+                            {
+                                text: 'GTK4 Samples',
+                                link: '/sample-code/gtk4-samples',
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: 'Minimal App',
+                                        link: '/sample-code/gtk4-samples/minimal-app'
+                                    },
+                                    {
+                                        text: 'Basic App',
+                                        link: '/sample-code/gtk4-samples/basic-app'
+                                    },
+                                    {
+                                        text: 'Synchronising Widgets',
+                                        link: '/sample-code/gtk4-samples/synchronising-widgets'
+                                    },
+                                    {
+                                        text: 'Text File Viewer',
+                                        link: '/sample-code/gtk4-samples/text-file-viewer'
+                                    },
+                                    {
+                                        text: 'ListView',
+                                        link: '/sample-code/gtk4-samples/list-view'
+                                    },
+                                    {
+                                        text: 'ListView with CheckButtons',
+                                        link: '/sample-code/gtk4-samples/list-view-check-buttons'
+                                    },
+                                    {
+                                        text: 'ColumnView',
+                                        link: '/sample-code/gtk4-samples/column-view'
+                                    },
+                                    {
+                                        text: 'Clipboard',
+                                        link: '/sample-code/gtk4-samples/clipboard'
+                                    },
+                                    {
+                                        text: 'Entry Completion with Two Cells',
+                                        link: '/sample-code/gtk4-samples/entry-completion-two-cells'
+                                    },
+                                ]
+                            },
                         ]
                     },
                     {

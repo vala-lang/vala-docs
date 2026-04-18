@@ -87,7 +87,7 @@ thread doesn't know the context in which it should run. In C you would
 supply the thread creation method with some data, in Vala instead you
 would normally pass an instance method, instead of a static method.
 
-More samples in [Threading Samples](https://wiki.gnome.org/Projects/Vala/ThreadingSamples).
+More samples in [Threading Samples](../../../../sample-code/threading-samples).
 
 ## 4.6.2. Resource Control
 

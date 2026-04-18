@@ -783,6 +783,44 @@ export default {
                                 link: '/developer-guides/documentation',
                                 collapsed: true,
                                 items: [
+                                        {
+                                        text: 'Valadoc Guide',
+                                        link: '/developer-guides/documentation/valadoc-guide',
+                                        collapsed: true,
+                                        items: [
+                                            {
+                                                text: '1. Quick Start',
+                                                link: '/developer-guides/documentation/valadoc-guide/01-00-quick-start'
+                                            },
+                                            {
+                                                text: '2. Command Line Tool',
+                                                link: '/developer-guides/documentation/valadoc-guide/02-00-command-line-tool'
+                                            },
+                                            {
+                                                text: '3. Documentation Comment Markup',
+                                                link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup',
+                                                collapsed: true,
+                                                items: [
+                                                    {
+                                                        text: '3.1.1. Brief Description',
+                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-01-brief-description'
+                                                    },
+                                                    {
+                                                        text: '3.1.2. Formatting',
+                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-02-formatting'
+                                                    },
+                                                    {
+                                                        text: '3.1.3. Taglets',
+                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-03-taglets'
+                                                    },
+                                                    {
+                                                        text: '3.1.4. Contributing to Valadoc',
+                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-04-contributing-to-valadoc'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
                                     {
                                         text: 'Vala for C# Programmers',
                                         link: '/developer-guides/documentation/vala-for-csharp-programmers',
@@ -943,43 +981,244 @@ export default {
                                         ]
                                     },
                                     {
-                                        text: 'Valadoc Guide',
-                                        link: '/developer-guides/documentation/valadoc-guide',
+                                        text: 'Vala for Java Programmers',
+                                        link: '/developer-guides/documentation/vala-for-java-programmers',
                                         collapsed: true,
                                         items: [
                                             {
-                                                text: '1. Quick Start',
-                                                link: '/developer-guides/documentation/valadoc-guide/01-00-quick-start'
-                                            },
-                                            {
-                                                text: '2. Command Line Tool',
-                                                link: '/developer-guides/documentation/valadoc-guide/02-00-command-line-tool'
-                                            },
-                                            {
-                                                text: '3. Documentation Comment Markup',
-                                                link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup',
+                                                text: '1. Project Setup and Toolchain',
+                                                link: '/developer-guides/documentation/vala-for-java-programmers/01-project-setup',
                                                 collapsed: true,
                                                 items: [
                                                     {
-                                                        text: '3.1.1. Brief Description',
-                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-01-brief-description'
+                                                        text: '1.1. Source Files',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/01-project-setup/01-source-files'
                                                     },
                                                     {
-                                                        text: '3.1.2. Formatting',
-                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-02-formatting'
+                                                        text: '1.2. Compilation',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/01-project-setup/02-compilation'
                                                     },
                                                     {
-                                                        text: '3.1.3. Taglets',
-                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-03-taglets'
+                                                        text: '1.3. Using Libraries',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/01-project-setup/03-using-libraries'
                                                     },
                                                     {
-                                                        text: '3.1.4. Contributing to Valadoc',
-                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-04-contributing-to-valadoc'
+                                                        text: '1.4. Naming Conventions',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/01-project-setup/04-naming-conventions'
+                                                    },
+                                                    {
+                                                        text: '1.5. Code Organization',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/01-project-setup/05-code-organization'
+                                                    },
+                                                    {
+                                                        text: '1.6. Main Entry Point',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/01-project-setup/06-main-entry-point'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                text: '2. Types and Core Syntax',
+                                                link: '/developer-guides/documentation/vala-for-java-programmers/02-types-and-syntax',
+                                                collapsed: true,
+                                                items: [
+                                                    {
+                                                        text: '2.1. Basic Types',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/02-types-and-syntax/01-basic-types'
+                                                    },
+                                                    {
+                                                        text: '2.2. Strings',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/02-types-and-syntax/02-strings'
+                                                    },
+                                                    {
+                                                        text: '2.3. Arrays',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/02-types-and-syntax/03-arrays'
+                                                    },
+                                                    {
+                                                        text: '2.4. Type Inference',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/02-types-and-syntax/04-type-inference'
+                                                    },
+                                                    {
+                                                        text: '2.5. Foreach',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/02-types-and-syntax/05-foreach'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                text: '3. Object-Oriented Programming',
+                                                link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming',
+                                                collapsed: true,
+                                                items: [
+                                                    {
+                                                        text: '3.1. Inheritance',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/01-inheritance'
+                                                    },
+                                                    {
+                                                        text: '3.2. Object Base Class',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/02-object-base-class'
+                                                    },
+                                                    {
+                                                        text: '3.3. Method Overloading',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/03-method-overloading'
+                                                    },
+                                                    {
+                                                        text: '3.4. Multiple Constructors',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/04-multiple-constructors'
+                                                    },
+                                                    {
+                                                        text: '3.5. Constructor Chaining',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/05-constructor-chaining'
+                                                    },
+                                                    {
+                                                        text: '3.6. Overriding',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/06-overriding'
+                                                    },
+                                                    {
+                                                        text: '3.7. Access Modifiers',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/07-access-modifiers'
+                                                    },
+                                                    {
+                                                        text: '3.8. Interfaces',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/08-interfaces'
+                                                    },
+                                                    {
+                                                        text: '3.9. Enums',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/09-enums'
+                                                    },
+                                                    {
+                                                        text: '3.10. Run-Time Type Information',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/10-run-time-type-information'
+                                                    },
+                                                    {
+                                                        text: '3.11. Object Destruction',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/11-object-destruction'
+                                                    },
+                                                    {
+                                                        text: '3.12. Annotations',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/03-object-oriented-programming/12-annotations'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                text: '4. Properties, Events, and Delegates',
+                                                link: '/developer-guides/documentation/vala-for-java-programmers/04-properties-events-delegates',
+                                                collapsed: true,
+                                                items: [
+                                                    {
+                                                        text: '4.1. Properties',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/04-properties-events-delegates/01-properties'
+                                                    },
+                                                    {
+                                                        text: '4.2. Delegates and Closures',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/04-properties-events-delegates/02-delegates-closures'
+                                                    },
+                                                    {
+                                                        text: '4.3. Notification',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/04-properties-events-delegates/03-notification'
+                                                    },
+                                                    {
+                                                        text: '4.4. Property Change Notification',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/04-properties-events-delegates/04-property-change-notification'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                text: '5. Exceptions and API Contracts',
+                                                link: '/developer-guides/documentation/vala-for-java-programmers/05-exceptions-and-contracts',
+                                                collapsed: true,
+                                                items: [
+                                                    {
+                                                        text: '5.1. Exceptions',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/05-exceptions-and-contracts/01-exceptions'
+                                                    },
+                                                    {
+                                                        text: '5.2. Parameter Directions',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/05-exceptions-and-contracts/02-parameter-directions'
+                                                    },
+                                                    {
+                                                        text: '5.3. Nullability',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/05-exceptions-and-contracts/03-nullability'
+                                                    },
+                                                    {
+                                                        text: '5.4. Argument Checking',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/05-exceptions-and-contracts/04-argument-checking'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                text: '6. Advanced Language and Runtime',
+                                                link: '/developer-guides/documentation/vala-for-java-programmers/06-advanced-language',
+                                                collapsed: true,
+                                                items: [
+                                                    {
+                                                        text: '6.1. Structs',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/06-advanced-language/01-structs'
+                                                    },
+                                                    {
+                                                        text: '6.2. Synchronizing',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/06-advanced-language/02-synchronizing'
+                                                    },
+                                                    {
+                                                        text: '6.3. Conditional Compilation',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/06-advanced-language/03-conditional-compilation'
+                                                    },
+                                                    {
+                                                        text: '6.4. Memory Management',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/06-advanced-language/04-memory-management'
+                                                    },
+                                                    {
+                                                        text: '6.5. Static Initialization',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/06-advanced-language/05-static-initialization'
+                                                    },
+                                                    {
+                                                        text: '6.6. Varargs',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/06-advanced-language/06-varargs'
+                                                    },
+                                                    {
+                                                        text: '6.7. Native Methods',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/06-advanced-language/07-native-methods'
+                                                    },
+                                                    {
+                                                        text: '6.8. Not Available',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/06-advanced-language/08-not-available'
+                                                    },
+                                                    {
+                                                        text: '6.9. Features Not Covered in This Tutorial',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/06-advanced-language/09-features-not-covered'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                text: '7. Collections and I/O',
+                                                link: '/developer-guides/documentation/vala-for-java-programmers/07-collections-and-io',
+                                                collapsed: true,
+                                                items: [
+                                                    {
+                                                        text: '7.1. Collections',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/07-collections-and-io/01-collections'
+                                                    },
+                                                    {
+                                                        text: '7.2. IO, Network Sockets',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/07-collections-and-io/02-io-network-sockets'
+                                                    },
+                                                    {
+                                                        text: '7.3. Console Input / Output',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/07-collections-and-io/03-console-input-output'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                text: '8. From Swing to GTK+',
+                                                link: '/developer-guides/documentation/vala-for-java-programmers/08-swing-to-gtk',
+                                                collapsed: true,
+                                                items: [
+                                                    {
+                                                        text: '8.1. From Swing to GTK+',
+                                                        link: '/developer-guides/documentation/vala-for-java-programmers/08-swing-to-gtk/01-from-swing-to-gtk'
                                                     }
                                                 ]
                                             }
                                         ]
-                                    }
+                                    },
                                 ]
                             },
                             {

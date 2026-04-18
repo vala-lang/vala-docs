@@ -25,7 +25,9 @@ There are 4 memory management schemes in Vala:
 | Singly-Owned      | Heap allocator     | Yes          | Expensive     |
 | Reference-Counted | Heap allocator     | Yes          | Cheap         |
 
-#### [3.1. Pointers in C (or what all these *'s mean)](03-00-using-auto-memory-management/03-01-pointers-in-c)
-#### [3.2. Constants, the Stack and the Heap in C](03-00-using-auto-memory-management/03-02-constants-the-stack-and-the-heap-in-c)
-#### [3.3. The Concept of "Ownership" in Vala](03-00-using-auto-memory-management/03-03-the-concept-of-ownership-in-vala)
-#### [3.4. Binding to C Heap Handlers](03-00-using-auto-memory-management/03-04-binding-to-c-heap-handnlers)
+<ul class="section-toc">
+<li><a href="03-00-using-auto-memory-management/03-01-pointers-in-c">3.1. Pointers in C (or what all these *'s mean)</a></li>
+<li><a href="03-00-using-auto-memory-management/03-02-constants-the-stack-and-the-heap-in-c">3.2. Constants, the Stack and the Heap in C</a></li>
+<li><a href="03-00-using-auto-memory-management/03-03-the-concept-of-ownership-in-vala">3.3. The Concept of &quot;Ownership&quot; in Vala</a></li>
+<li><a href="03-00-using-auto-memory-management/03-04-binding-to-c-heap-handnlers">3.4. Binding to C Heap Handlers</a></li>
+</ul>

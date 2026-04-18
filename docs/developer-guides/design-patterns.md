@@ -48,7 +48,9 @@ Wikipedia describes them as
 - [Structural](design-patterns/02-00-structural-design-patterns)
 - [Behavioral](design-patterns/03-00-behavioral-design-patterns)
 
-#### 1. [Creational Design Patterns](design-patterns/01-00-creational-design-patterns)
-#### 2. [Structural Design Patterns](design-patterns/02-00-structural-design-patterns)
-#### 3. [Behavioral Design Patterns](design-patterns/03-00-behavioral-design-patterns)
-#### 4. [🚦 Wrap Up Folks](design-patterns/04-00-wrap-up)
+<ul class="section-toc">
+<li><span class="section-toc-num">1.</span> <a href="design-patterns/01-00-creational-design-patterns">Creational Design Patterns</a></li>
+<li><span class="section-toc-num">2.</span> <a href="design-patterns/02-00-structural-design-patterns">Structural Design Patterns</a></li>
+<li><span class="section-toc-num">3.</span> <a href="design-patterns/03-00-behavioral-design-patterns">Behavioral Design Patterns</a></li>
+<li><span class="section-toc-num">4.</span> <a href="design-patterns/04-00-wrap-up">🚦 Wrap Up Folks</a></li>
+</ul>

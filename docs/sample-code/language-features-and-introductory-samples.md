@@ -7,10 +7,12 @@ This section is the maintained home for those introductory samples.
 
 ## Samples
 
-#### [Basic Samples](language-features-and-introductory-samples/basic-samples)
-#### [Intermediate Samples](language-features-and-introductory-samples/intermediate-samples)
-#### [String Sample](string-sample)
-#### [Character Sample](language-features-and-introductory-samples/character-sample)
-#### [Signals and Callbacks](signals-and-callbacks)
-#### [Properties Sample](language-features-and-introductory-samples/properties-sample)
-#### [Conditional Compilation Sample](language-features-and-introductory-samples/conditional-compilation-sample)
+<ul class="section-toc">
+<li><a href="language-features-and-introductory-samples/basic-samples">Basic Samples</a></li>
+<li><a href="language-features-and-introductory-samples/intermediate-samples">Intermediate Samples</a></li>
+<li><a href="string-sample">String Sample</a></li>
+<li><a href="language-features-and-introductory-samples/character-sample">Character Sample</a></li>
+<li><a href="signals-and-callbacks">Signals and Callbacks</a></li>
+<li><a href="language-features-and-introductory-samples/properties-sample">Properties Sample</a></li>
+<li><a href="language-features-and-introductory-samples/conditional-compilation-sample">Conditional Compilation Sample</a></li>
+</ul>

@@ -1,6 +1,8 @@
 # Documentation for Contributors to Vala
 
-#### [Compiler Guide](compiler-guide)
+<ul class="section-toc">
+<li><a href="compiler-guide">Compiler Guide</a></li>
+</ul>
 
 Vala follows a collaborative, open source development model. The
 following guidelines are here to help if you want to contribute back to

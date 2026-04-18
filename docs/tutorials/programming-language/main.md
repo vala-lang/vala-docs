@@ -74,11 +74,29 @@ that doesn't mean that I encourage you do to this.
 At some point I will add in references to the Vala documentation, but
 that isn't really possible yet.
 
-#### [1. First Program](main/01-00-first-program)
-#### [2. Basics](main/02-00-basics)
-#### [3. Object Oriented Programming](main/03-00-object-oriented-programming)
-#### [4. Advanced Features](main/04-00-advanced-features)
-#### [5. Experimental Features](main/05-00-experimental-features)
-#### [6. Libraries](main/06-00-libraries)
-#### [7. Tools](main/07-00-tools)
-#### [8. Techniques](main/08-00-techniques)
+<ul class="section-toc">
+  <li>
+    <a href="main/01-00-first-program">1. First Program</a>
+  </li>
+  <li>
+    <a href="main/02-00-basics">2. Basics</a>
+  </li>
+  <li>
+    <a href="main/03-00-object-oriented-programming">3. Object Oriented Programming</a>
+  </li>
+  <li>
+    <a href="main/04-00-advanced-features">4. Advanced Features</a>
+  </li>
+  <li>
+    <a href="main/05-00-experimental-features">5. Experimental Features</a>
+  </li>
+  <li>
+    <a href="main/06-00-libraries">6. Libraries</a>
+  </li>
+  <li>
+    <a href="main/07-00-tools">7. Tools</a>
+  </li>
+  <li>
+    <a href="main/08-00-techniques">8. Techniques</a>
+  </li>
+</ul>

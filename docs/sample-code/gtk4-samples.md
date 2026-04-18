@@ -24,12 +24,14 @@ The repository includes the sample code featured on this website.
 
 ## Samples
 
-#### [Minimal App](gtk4-samples/minimal-app)
-#### [Basic App](gtk4-samples/basic-app)
-#### [Synchronising Widgets](gtk4-samples/synchronising-widgets)
-#### [Text File Viewer](gtk4-samples/text-file-viewer)
-#### [ListView](gtk4-samples/list-view) 
-#### [ListView with CheckButtons](gtk4-samples/list-view-check-buttons)
-#### [ColumnView](gtk4-samples/column-view)
-#### [Clipboard](gtk4-samples/clipboard)
-#### [Entry Completion with Two Cells](gtk4-samples/entry-completion-two-cells)
+<ul class="section-toc">
+<li><a href="gtk4-samples/minimal-app">Minimal App</a></li>
+<li><a href="gtk4-samples/basic-app">Basic App</a></li>
+<li><a href="gtk4-samples/synchronising-widgets">Synchronising Widgets</a></li>
+<li><a href="gtk4-samples/text-file-viewer">Text File Viewer</a></li>
+<li><a href="gtk4-samples/list-view">ListView</a></li>
+<li><a href="gtk4-samples/list-view-check-buttons">ListView with CheckButtons</a></li>
+<li><a href="gtk4-samples/column-view">ColumnView</a></li>
+<li><a href="gtk4-samples/clipboard">Clipboard</a></li>
+<li><a href="gtk4-samples/entry-completion-two-cells">Entry Completion with Two Cells</a></li>
+</ul>

@@ -300,6 +300,6 @@ void main () {
 }
 ```
 
-```vala
+```shell
 vala threadpool.vala
 ```

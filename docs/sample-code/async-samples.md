@@ -1,10 +1,9 @@
 # Async Method Samples
 
 These examples show different ways to use asynchronous methods in Vala. The
-[Asynchronous Methods](/tutorials/programming-language/main/04-00-advanced-features/04-08-asynchronous-methods)
+[Asynchronous Methods](../tutorials/programming-language/main/04-00-advanced-features/04-08-asynchronous-methods)
 chapter in the main tutorial explains how `async`, `yield`, `.begin`, and `.end`
-work. For more file and I/O oriented examples, see the
-[GIO Samples](https://wiki.gnome.org/Projects/Vala/GIOSamples) page on the archived GNOME Wiki.
+work. For more file and I/O oriented examples, see the [GIO Samples](https://wiki.gnome.org/Projects/Vala/GIOSamples) page on the archived GNOME Wiki.
 
 Build the programs below with GIO, for example:
 

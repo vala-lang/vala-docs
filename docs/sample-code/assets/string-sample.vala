@@ -57,6 +57,15 @@ void main () {
         println ("blue is less than red and orange is greater than green");
     }
 
+    /* Verbatim strings: escape sequences are not interpreted, line breaks are
+     * preserved, and quotes need not be escaped. Indentation after a line break
+     * is part of the string.
+     */
+    string verbatim = """This is a so-called "verbatim string".
+Verbatim strings don't process escape sequences, such as \n, \t, \\, etc.
+They may contain quotes and may span multiple lines.""";
+    println (verbatim);
+
     // Switch statement
     string pl = "vala";
     switch (pl) {

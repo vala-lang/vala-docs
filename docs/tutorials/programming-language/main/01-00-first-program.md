@@ -130,3 +130,5 @@ Now you can run it directly from your terminal:
 ```
 
 This will produce the same "Hello, World" output. Behind the scenes, the system invokes the Vala compiler to compile the source code into a temporary binary file, and then executes that binary.
+
+Simpler console-oriented Hello World and related snippets: [Basic Samples](../../../sample-code/language-features-and-introductory-samples/basic-samples).

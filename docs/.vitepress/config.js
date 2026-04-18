@@ -994,12 +994,39 @@ export default {
                         collapsed: true,
                         items: [
                             {
-                                text: 'String Sample',
-                                link: '/sample-code/string-sample'
-                            },
-                            {
-                                text: 'Signals and Callbacks',
-                                link: '/sample-code/signals-and-callbacks'
+                                text: 'Language Features and Introductory Samples',
+                                link: '/sample-code/language-features-and-introductory-samples',
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: 'Basic Samples',
+                                        link: '/sample-code/language-features-and-introductory-samples/basic-samples'
+                                    },
+                                    {
+                                        text: 'Intermediate Samples',
+                                        link: '/sample-code/language-features-and-introductory-samples/intermediate-samples'
+                                    },
+                                    {
+                                        text: 'String Sample',
+                                        link: '/sample-code/string-sample'
+                                    },
+                                    {
+                                        text: 'Character Sample',
+                                        link: '/sample-code/language-features-and-introductory-samples/character-sample'
+                                    },
+                                    {
+                                        text: 'Signals and Callbacks',
+                                        link: '/sample-code/signals-and-callbacks'
+                                    },
+                                    {
+                                        text: 'Properties Sample',
+                                        link: '/sample-code/language-features-and-introductory-samples/properties-sample'
+                                    },
+                                    {
+                                        text: 'Conditional Compilation Sample',
+                                        link: '/sample-code/language-features-and-introductory-samples/conditional-compilation-sample'
+                                    }
+                                ]
                             },
                             {
                                 text: 'Threading Samples',

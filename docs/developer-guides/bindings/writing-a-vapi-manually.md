@@ -47,13 +47,15 @@ style of C. A C binding, however, is only made up of structs and
 functions, so understanding that in enough detail is the purpose of the
 approach.
 
-#### [1. Prerequisites](writing-a-vapi-manually/01-00-prerequisites){style="color: white;"}
-#### [2. Getting Started](writing-a-vapi-manually/02-00-getting-started){style="color: white;"}
-#### [3. Using Vala's Automatic Memory Management](writing-a-vapi-manually/03-00-using-auto-memory-management){style="color: white;"}
-#### [4. Recognizing Vala Semantics in C Code](writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code){style="color: white;"}
-#### [5. Fundamentals of Binding a C Function](writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function){style="color: white;"}
-#### [6. Adding Vala Friendly Semantics](writing-a-vapi-manually/06-00-adding-vala-friendly-semantics){style="color: white;"}
-#### [7. Binding a C Function's Parameter and Return Types](writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types){style="color: white;"}
-#### [8. Binding a C Struct's Fields](writing-a-vapi-manually/08-00-binding-a-c-struct-s-fields){style="color: white;"}
-#### [9. Extra Hints](writing-a-vapi-manually/09-00-extra-hints){style="color: white;"}
-#### [10. Awkward Situations](writing-a-vapi-manually/10-00-awkward-situations){style="color: white;"}
+<ul class="section-toc">
+<li><a href="writing-a-vapi-manually/01-00-prerequisites" style="color: white;">1. Prerequisites</a></li>
+<li><a href="writing-a-vapi-manually/02-00-getting-started" style="color: white;">2. Getting Started</a></li>
+<li><a href="writing-a-vapi-manually/03-00-using-auto-memory-management" style="color: white;">3. Using Vala's Automatic Memory Management</a></li>
+<li><a href="writing-a-vapi-manually/04-00-recognizing-vala-semantics-in-c-code" style="color: white;">4. Recognizing Vala Semantics in C Code</a></li>
+<li><a href="writing-a-vapi-manually/05-00-fundamentals-of-binding-a-c-function" style="color: white;">5. Fundamentals of Binding a C Function</a></li>
+<li><a href="writing-a-vapi-manually/06-00-adding-vala-friendly-semantics" style="color: white;">6. Adding Vala Friendly Semantics</a></li>
+<li><a href="writing-a-vapi-manually/07-00-binding-a-c-function-s-parameter-and-return-types" style="color: white;">7. Binding a C Function's Parameter and Return Types</a></li>
+<li><a href="writing-a-vapi-manually/08-00-binding-a-c-struct-s-fields" style="color: white;">8. Binding a C Struct's Fields</a></li>
+<li><a href="writing-a-vapi-manually/09-00-extra-hints" style="color: white;">9. Extra Hints</a></li>
+<li><a href="writing-a-vapi-manually/10-00-awkward-situations" style="color: white;">10. Awkward Situations</a></li>
+</ul>

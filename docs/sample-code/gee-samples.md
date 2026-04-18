@@ -6,8 +6,10 @@ distribution. More information about libgee is available from
 
 [Gee API Documentation](https://valadoc.org/gee-0.8/index.htm)
 
-#### [List Sample](gee-samples/01-list-sample)
-#### [Set Sample](gee-samples/02-set-sample)
-#### [Map Example](gee-samples/03-map-sample)
-#### [Syntactic Sugar](gee-samples/04-syntactic-sugar)
-#### [Customizing the equality function](gee-samples/05-custom-equality)
+<ul class="section-toc">
+<li><a href="gee-samples/01-list-sample">List Sample</a></li>
+<li><a href="gee-samples/02-set-sample">Set Sample</a></li>
+<li><a href="gee-samples/03-map-sample">Map Example</a></li>
+<li><a href="gee-samples/04-syntactic-sugar">Syntactic Sugar</a></li>
+<li><a href="gee-samples/05-custom-equality">Customizing the equality function</a></li>
+</ul>

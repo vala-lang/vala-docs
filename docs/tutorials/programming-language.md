@@ -1,3 +1,5 @@
 # Programming Language
 
-#### [Main Tutorial](programming-language/main)
+<ul class="section-toc">
+<li><a href="programming-language/main">Main Tutorial</a></li>
+</ul>

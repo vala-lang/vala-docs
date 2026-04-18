@@ -7,19 +7,22 @@ operator. The following table lists these special methods. *T* and *Tn*
 are only type placeholders in this table and meant to be replaced with
 real types.
 
-#### Indexers
+## Indexers
+
 | Method                          | Description                           |
 |---------------------------------|---------------------------------------|
 | `T2 get (T1 index)`             | Index access: `obj[index]`            |
 | `void set (T1 index, T2 item)`  | Index assignment: `obj[index] = item` |
 
-#### Indexers with multiple indices
+## Indexers with multiple indices
+
 | Method                                     | Description                                    |
 |--------------------------------------------|------------------------------------------------|
 | `T3 get (T1 index1, T2 index2)`            | Index access: `obj[index1, index2]`            |
 | `void set (T1 index1, T2 index2, T3 item)` | Index assignment: `obj[index1, index2] = item` |
 
-#### Others
+## Others
+
 | Method                                       | Description                                |
 |----------------------------------------------|--------------------------------------------|
 | `T slice (long start, long end)`             | Slicing: `obj[start:end]`                  |

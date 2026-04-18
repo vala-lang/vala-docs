@@ -13,6 +13,8 @@ file or a GIR file.
 If the library is written in Vala then valadoc can generate the
 documentation from the library's Vala source files.
 
-#### [1. Quick Start](valadoc-guide/01-00-quick-start)
-#### [2. Command Line Tool](valadoc-guide/02-00-command-line-tool)
-#### [3. Documentation Comment Markup](valadoc-guide/03-00-documentation-comment-markup)
+<ul class="section-toc">
+<li><a href="valadoc-guide/01-00-quick-start">1. Quick Start</a></li>
+<li><a href="valadoc-guide/02-00-command-line-tool">2. Command Line Tool</a></li>
+<li><a href="valadoc-guide/03-00-documentation-comment-markup">3. Documentation Comment Markup</a></li>
+</ul>

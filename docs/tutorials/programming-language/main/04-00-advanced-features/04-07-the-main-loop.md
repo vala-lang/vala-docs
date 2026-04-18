@@ -30,6 +30,23 @@ void main () {
 }
 ```
 
+Since vala 0.56, you can create an async main function
+async main create a main loop and run it, so you don't need to create a MainLoop object manually
+
+```vala
+async void main() {
+    Timeout.add(2000, () => {
+        stdout.printf("Time!\n");
+        Idle.add(main.callback);
+        return false;
+    });
+
+    yield;
+}
+```
+
+
+
 When using GTK+, a main loop will be created automatically, and will be
 started when you call the `Gtk.main ()` method. This marks the point
 where the program is ready to run and start accepting events from the

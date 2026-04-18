@@ -35,7 +35,8 @@
   <li>
     <a href="04-00-advanced-features/04-08-asynchronous-methods">4.8. Asynchronous Methods</a>
     <ul class="section-toc section-toc-sub">
-      <li><a href="04-00-advanced-features/04-08-asynchronous-methods#_4-8-1-examples">4.8.1. Examples</a></li>
+      <li><a href="04-00-advanced-features/04-08-asynchronous-methods#_4-8-1-thread-with-async-methods">4.8.1. Thread with Async Methods</a></li>
+      <li><a href="04-00-advanced-features/04-08-asynchronous-methods#_4-8-2-examples">4.8.2. Examples</a></li>
     </ul>
   </li>
   <li>

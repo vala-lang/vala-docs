@@ -223,14 +223,14 @@ class Test.Async : GLib.Object {
     }
 
     public static int main (string[] args) {
-        Test.Async myasync = new Test.Async ();
-        GLib.MainLoop mainloop = new GLib.MainLoop ();
-        myasync.say.begin ("helloworld", (obj, res) => {
-            string sentence = myasync.say.end (res);
+        Test.Async my_async = new Test.Async ();
+        GLib.MainLoop main_loop = new GLib.MainLoop ();
+        my_async.say.begin ("Hello World!", (obj, res) => {
+            string sentence = my_async.say.end (res);
             print ("%s\n", sentence);
-            mainloop.quit ();
+            main_loop.quit ();
         });
-        mainloop.run ();
+        main_loop.run ();
         return 0;
     }
 }

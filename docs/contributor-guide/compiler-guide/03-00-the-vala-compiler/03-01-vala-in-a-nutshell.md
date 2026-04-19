@@ -16,20 +16,20 @@ The code for **valac** can be found in `compiler/valacompiler.vala`.
 ## 3.1.1. Command-line Options
 
 These are handled in the normal way by the Vala binding to
-*GLib.OptionContext*. Most of the instance variables in Vala.Compiler
+`GLib.OptionContext`. Most of the instance variables in `Vala.Compiler`
 are referenced in the options array. It's not very interesting.
 
 ## 3.1.2. The Compilation Procedure and Vala.CodeContext
 
-Vala.Compiler plugs together the classes of libvala in a big pipeline.
+`Vala.Compiler` plugs together the classes of libvala in a big pipeline.
 This modular design makes Vala more maintainable and external tools can
 easily use this code.
 
 ## 3.1.3. The valac Pipeline
 
-1.  Initialize CodeContext with command-line options.
+1.  Initialize `CodeContext` with command-line options.
 2.  Add packages from command-line and others depending on the profile.
-3.  Add sources, Vala, Genie, Gir, VAPI, and C from command-line.
+3.  Add sources, Vala, Genie, GIR, VAPI, and C from command-line.
 4.  Parse everything.
 5.  Resolve symbols.
 6.  Run the Semantic Analyzer.
@@ -45,14 +45,14 @@ and a list of source files to compile. There is only one `CodeContext`
 instantiated and its reference is passed around a lot, so effectively
 it's a global variable.
 
-Vala.CodeContext is the root of the code tree, because it contains the
-root Namespace, which holds references to all parsed code nodes. In
+`Vala.CodeContext` is the root of the code tree, because it contains the
+root `Namespace`, which holds references to all parsed code nodes. In
 addition to the code tree, the context contains a reference to a code
 generator object. This object walks the code tree and generates code.
 
 Vala.CodeContext contains an important method called `accept`, which
 initiates a depth-first traversal of the code tree. This method, and the
-CodeVisitor pattern, will be discussed later.
+`CodeVisitor` pattern, will be discussed later.
 
 **Data diagram**
 

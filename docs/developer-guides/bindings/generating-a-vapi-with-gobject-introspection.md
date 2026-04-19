@@ -62,7 +62,7 @@ introspection annotations are between the parentheses in the comments:
  *
  * Creates a new button containing an icon from the current icon theme.
  *
- * If the icon name isn’t known, a “broken image” icon will be
+ * If the icon name isn't known, a “broken image” icon will be
  * displayed instead. If the current icon theme is changed, the icon
  * will be updated appropriately.
  *

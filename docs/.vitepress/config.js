@@ -1283,39 +1283,74 @@ export default {
                                 ]
                             },
                             {
-                                text: 'Threading Samples',
-                                link: '/sample-code/threading-samples'
-                            },
-                            {
-                                text: 'Async Method Samples',
-                                link: '/sample-code/async-samples'
-                            },
-                            {
-                                text: 'Vala Collections: libgee',
-                                link: '/sample-code/gee-samples',
+                                text: 'Basics: Collections, Files, I/O, Networking, IPC',
+                                link: '/sample-code/basics',
                                 collapsed: true,
                                 items: [
                                     {
-                                        text: 'List Sample',
-                                        link: '/sample-code/gee-samples/01-list-sample'
+                                        text: 'Vala Collections: libgee',
+                                        link: '/sample-code/gee-samples',
+                                        collapsed: true,
+                                        items: [
+                                            {
+                                                text: 'List Sample',
+                                                link: '/sample-code/gee-samples/01-list-sample'
+                                            },
+                                            {
+                                                text: 'Set Sample',
+                                                link: '/sample-code/gee-samples/02-set-sample'
+                                            },
+                                            {
+                                                text: 'Map Example',
+                                                link: '/sample-code/gee-samples/03-map-sample'
+                                            },
+                                            {
+                                                text: 'Syntactic Sugar',
+                                                link: '/sample-code/gee-samples/04-syntactic-sugar'
+                                            },
+                                            {
+                                                text: 'Customizing the equality function',
+                                                link: '/sample-code/gee-samples/05-custom-equality'
+                                            },
+                                            {
+                                                text: 'Iterable Sample',
+                                                link: '/sample-code/gee-samples/06-iterable-sample'
+                                            }
+                                        ]
                                     },
                                     {
-                                        text: 'Set Sample',
-                                        link: '/sample-code/gee-samples/02-set-sample'
+                                        text: 'GIO Samples',
+                                        link: '/sample-code/gio-samples'
                                     },
                                     {
-                                        text: 'Map Example',
-                                        link: '/sample-code/gee-samples/03-map-sample'
+                                        text: 'GIO Compression Sample',
+                                        link: '/sample-code/gio-compression-sample'
                                     },
                                     {
-                                        text: 'Syntactic Sugar',
-                                        link: '/sample-code/gee-samples/04-syntactic-sugar'
+                                        text: 'GIO Settings Sample',
+                                        link: '/sample-code/gio-settings-sample'
                                     },
                                     {
-                                        text: 'Customizing the equality function',
-                                        link: '/sample-code/gee-samples/05-custom-equality'
+                                        text: 'GIO Networking Sample',
+                                        link: '/sample-code/gio-networking-sample'
+                                    },
+                                    {
+                                        text: 'D-Bus Basic (GDBus) Samples',
+                                        link: '/sample-code/dbus-basic-samples'
+                                    },
+                                    {
+                                        text: 'D-Bus Client Examples',
+                                        link: '/sample-code/dbus-client-samples'
+                                    },
+                                    {
+                                        text: 'Async Method Samples',
+                                        link: '/sample-code/async-samples'
                                     }
                                 ]
+                            },
+                            {
+                                text: 'Threading Samples',
+                                link: '/sample-code/threading-samples'
                             },
                             {
                                 text: 'GTK4 Samples',

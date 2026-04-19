@@ -13,8 +13,8 @@ class Demo : Object {
 }
 ```
 
-Since Vala's memory management is based on *reference counting* instead
-of *tracing garbage collection*, destructors are deterministic and can
+Since Vala's memory management is based on **reference counting** instead
+of **tracing garbage collection**, destructors are deterministic and can
 be used to implement the [RAII](http://en.wikipedia.org/wiki/RAII)
 pattern for resource management (closing streams, database connections,
 ...).

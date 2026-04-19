@@ -12,7 +12,7 @@ the basis of [memory management](../../../../developer-guides/memory-management)
 
 ## 4.10.2. Methods ownership
 
-*Unowned references* conversely are not recorded in the object they
+**Unowned references** conversely are not recorded in the object they
 reference. This allows the object to be removed when it logically should
 be, regardless of the fact that there might be still references to it
 The usual way to achieve this is with a method defined to return an
@@ -160,5 +160,5 @@ The keyword `owned` is used to transfer ownership.
 Foo foo = (owned) bar;
 ```
 
-This means that *bar* will be set to *null* and *foo* inherits the
-reference/ownership of the object *bar* references.
+This means that `bar` will be set to `null` and `foo` inherits the
+reference/ownership of the object `bar` references.

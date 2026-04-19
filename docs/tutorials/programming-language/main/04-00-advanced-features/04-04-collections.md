@@ -13,18 +13,18 @@ In order to use the library you must compile your programs with `--pkg gee-0.8`.
 The fundamental types of collection are:
 
 -   Lists: Ordered collections of items, accessible by numeric index.
--   Sets: Unordered collections of distinct.
+-   Sets: Unordered collections of distinct items.
 -   Maps: Unordered collection of items, accessible by index of
     arbitrary type.
 
-All the lists and sets in the library implement the *Collection*
-interface, and all maps the *Map* interface. Lists also implement *List*
-and sets *Set*. These common interfaces means not only that all
+All the lists and sets in the library implement the `Collection`
+interface, and all maps the `Map` interface. Lists also implement `List`
+and sets `Set`. These common interfaces mean not only that all
 collections of a similar type can be used interchangeably, but also that
 new collections can be written using the same interfaces, and therefore
 used with existing code.
 
-Also common to every *Collection* type is the *Iterable* interface. This
+Also common to every `Collection` type is the `Iterable` interface. This
 means that any object in this category can be iterated through using a
 standard set of methods, or directly in Vala using the `foreach` syntax.
 
@@ -53,7 +53,7 @@ when the internal array is full.
 Implementing: Iterable\<Entry\<K,V\>\>, Map\<K,V\>
 
 A 1:1 map from elements of type `K` to elements of type `V`. The mapping
-is made by computing a hash value for each key - this can be customised
+is made by computing a hash value for each key - this can be customized
 by providing pointers to functions for hashing and testing equality of
 keys in specific ways.
 
@@ -67,19 +67,19 @@ var map = new Gee.HashMap<Foo, Object> (foo_hash, foo_equal);
 For strings and integers the hash and equal functions are detected
 automatically, objects are distinguished by their references by default.
 You have to provide custom hash and equal functions only if you want to
-override the default behaviour.
+override the default behavior.
 
 ## 4.4.3. HashSet\<G\>
 
 Implementing: Iterable\<G\>, Collection\<G\>, Set\<G\>
 
 A set of elements of type `G`. Duplicates are detected by computing a
-hash value for each key - this can be customised by providing pointers
+hash value for each key - this can be customized by providing pointers
 to functions for hashing and testing equality of keys in specific ways.
 
 ## 4.4.4. Read-Only Views
 
-You can get a read-only view of a collection via the *read_only_view*
+You can get a read-only view of a collection via the `read_only_view`
 property, e.g. `my_map.read_only_view`. This will return a wrapper that
 has the same interface as its contained collection, but will not allow
 any form of modification, or any access to the contained collection.

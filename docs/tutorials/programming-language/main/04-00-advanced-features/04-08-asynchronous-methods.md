@@ -6,7 +6,7 @@ main thread of an application where a method needs to wait for an
 external slow task to complete, but must not stop other processing from
 happening. (For example, one slow operation must not freeze the whole
 GUI). When the method has to wait, it gives control of the CPU back to
-its caller (i.e. it *yields*), but it arranges to be called back to
+its caller (i.e. it **yields**), but it arranges to be called back to
 resume execution when data becomes ready. External slow tasks that async
 methods might wait for include: waiting for data from a remote server,
 or waiting for calculations in another thread to complete, or waiting

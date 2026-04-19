@@ -2,9 +2,9 @@
 
 ## 2.7.1. Methods
 
-Functions are called *methods* in Vala, regardless of whether they are
+Functions are called **methods** in Vala, regardless of whether they are
 defined inside a class or not. From now on we will stick to the term
-*method*.
+**method**.
 
 ```vala
 int method_name (int arg1, Object arg2) {
@@ -12,22 +12,22 @@ int method_name (int arg1, Object arg2) {
 }
 ```
 
-This code defines a method, having the name *method_name*, taking two
-arguments, one an integer and the other an *Object* (the first passed by
+This code defines a method, having the name `method_name`, taking two
+arguments, one an integer and the other an `Object` (the first passed by
 value, the second as a reference as described). The method will return
 an integer, which in this case is 1.
 
 All Vala methods are C functions, and therefore take an arbitrary number
 of arguments and return one value (or none if the method is declared
-*void*). They may approximate more return values by placing data in
+`void`). They may approximate more return values by placing data in
 locations known to the calling code. Details of how to do this are in
 the "Parameter Directions" section in the advanced part of this
 tutorial.
 
-The naming convention for methods in Vala is *all_lower_case* with
+The naming convention for methods in Vala is `all_lower_case` with
 underscores as word separators. This may be a little bit unfamiliar to
-C# or Java programmers who are accustomed to *CamelCase* or
-*mixedCamelCase* method names. But with this style you will be
+C# or Java programmers who are accustomed to `CamelCase` or
+`mixedCamelCase` method names. But with this style you will be
 consistent with other Vala and C/GObject libraries.
 
 It is not possible to have multiple methods with the same name but
@@ -59,7 +59,7 @@ void f (int x) { f (x, "hello"); }           // not possible
 ```
 
 In this case you can use
-Vala's default argument feature for method parameters in order to achieve a similar behaviour with just one method.  
+Vala's default argument feature for method parameters in order to achieve a similar behavior with just one method.  
 You can define default values for the last parameters of a method, so that you don't
 have to pass them explicitly to a method call:
 
@@ -75,26 +75,26 @@ f (2, "hi");
 f (2, "hi", 0.75);
 ```
 
-It's even possible to define methods with real variable-length argument lists (*varargs*) like *stdout.printf ()*, 
+It's even possible to define methods with real variable-length argument lists (`varargs`) like `stdout.printf()`, 
 although not necessarily recommended.  You will learn how to do that later.  
 Vala performs a basic nullability check on the method parameters and return values.  
-If it is allowable for a method parameter or a return value to be _null_, the type symbol should be postfixed with a _?_ 
+If it is allowable for a method parameter or a return value to be `null`, the type symbol should be postfixed with a `?` 
 modifier.  This extra information helps the Vala compiler to perform static checks and to add runtime assertions on the 
-preconditions of the methods, which may help in avoiding related errors such as dereferencing a _null_
+preconditions of the methods, which may help in avoiding related errors such as dereferencing a `null`
 reference.
 ```vala
 string? method_name (string? text, Foo? foo, Bar bar) {
     // ...
 }
 ```
-In this example _text_, _foo_ and the return value may be _null_, however, _bar_ must not be _null_.
+In this example `text`, `foo` and the return value may be `null`, however, `bar` must not be `null`.
 
 ## 2.7.2. Delegates
 ```vala     
 delegate void DelegateType (int a);
 ```
 Delegates represent methods, allowing chunks of code to be passed around like objects.  
-The example above defines a new type named *DelegateType* which represents methods taking an *int* and not returning a 
+The example above defines a new type named `DelegateType` which represents methods taking an `int` and not returning a 
 value.  Any method that matches this signature may be assigned to a variable of this type or passed as a method argument 
 of this type.
 
@@ -113,8 +113,8 @@ void main () {
     f2 (f1, 5);  // Passing a method as delegate argument to another method
 }
 ```
-This code will execute the method *f2*, passing in a reference to method *f1* and the number 5.
-*f2* will then execute the method *f1*, passing it the number.  
+This code will execute the method `f2`, passing in a reference to method `f1` and the number 5.
+`f2` will then execute the method `f1`, passing it the number.  
 Delegates may also be created locally. A member method can also be assigned to a delegate, e.g.
 ```vala     
 class Foo {
@@ -139,7 +139,7 @@ More samples in the [Delegates section of the Vala Reference Manual](https://gno
 (a) => { stdout.printf ("%d\n", a); }
 ```
 
-An *anonymous method*, also known as *lambda expression*, *function literal* or *closure*, can be defined in Vala with 
+An **anonymous method**, also known as **lambda expression**, **function literal** or **closure**, can be defined in Vala with 
 the `=>` operator. The parameter list is on the left hand side of the operator, the method body on the right hand side.  
 An anonymous method standing by itself like the one above does not make much sense.  
 It is only useful if you assign it directly to a variable of a delegate type or pass it as a method argument to another 
@@ -193,8 +193,8 @@ void main () {
 }  
 ```
 
-In this example _curried_add_ (see [Currying](http://en.wikipedia.org/wiki/Currying)) returns a newly created method 
-that preserves the value of *a*. This returned method is directly called afterwards with 4 as argument 
+In this example `curried_add` (see [Currying](http://en.wikipedia.org/wiki/Currying)) returns a newly created method 
+that preserves the value of `a`. This returned method is directly called afterwards with 4 as argument 
 resulting in the sum of the two numbers.  
 
 ## 2.7.4. Namespaces
@@ -205,9 +205,9 @@ namespace NameSpaceName {
 }
 ```
 
-Everything between the braces in this statement is in the namespace *NameSpaceName* and must be referenced as such.  
+Everything between the braces in this statement is in the namespace `NameSpaceName` and must be referenced as such.  
 Any code outside this namespace must either use qualified names for anything within the name of the namespace, or be in 
-a file with an appropriate _using_ declaration in order to import this namespace:
+a file with an appropriate `using` declaration in order to import this namespace:
 
 ```vala     
 using NameSpaceName;     
@@ -215,18 +215,18 @@ using NameSpaceName;
 // ...
 ```
 
-For example, if the namespace *Gtk* is imported with _using Gtk;_ you can simply write *Window* instead of *Gtk.Window*. 
-A fully qualified name would only be necessary in case of ambiguity, for example between *GLib.Object* and *Gtk.Object*.  
-The namespace *GLib* is imported by default.  Imagine an invisible _using GLib;_ line at the beginning of every Vala 
+For example, if the namespace `Gtk` is imported with `using Gtk;` you can simply write `Window` instead of `Gtk.Window`. 
+A fully qualified name would only be necessary in case of ambiguity, for example between `GLib.Object` and `Gtk.Object`.  
+The namespace `GLib` is imported by default.  Imagine an invisible `using GLib;` line at the beginning of every Vala 
 file.  Everything that you don't put into a separate namespace will land in the anonymous global namespace. 
-If you have to reference the global namespace explicitly due to ambiguity you can do that with the _global::_ prefix.
+If you have to reference the global namespace explicitly due to ambiguity you can do that with the `global::` prefix.
 
 Namespaces can be nested, either by nesting one declaration inside
-another, or by giving a name of the form *NameSpace1.NameSpace2*.
+another, or by giving a name of the form `NameSpace1.NameSpace2`.
 
 Several other types of definition can declare themselves to be inside a
-namespace by following the same naming convention, e.g. _class
-NameSpace1.Test { ... }_. Note that when doing this, the
+namespace by following the same naming convention, e.g. `class
+NameSpace1.Test { ... }`. Note that when doing this, the
 final namespace of the definition will be the one the declaration is
 nested in plus the namespaces declared in the definition.
 
@@ -238,9 +238,9 @@ struct StructName {
 }
 ```
 
-defines a _struct_ type, i.e., a compound value type. A Vala
+defines a `struct` type, i.e., a compound value type. A Vala
 struct may have methods in a limited way and also may have private
-members, meaning the explicit _public_ access modifier is
+members, meaning the explicit `public` access modifier is
 required.
 
 ```vala
@@ -251,7 +251,7 @@ struct Color {
 }
 ```
 
-This is how you can initialise a struct:
+This is how you can initialize a struct:
 
 ```vala
 // without type inference

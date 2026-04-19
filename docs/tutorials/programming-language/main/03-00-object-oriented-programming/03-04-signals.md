@@ -2,11 +2,11 @@
 
 Signals are a system provided by the Object class in GLib, and made
 easily accessible by Vala to all descendants of Object. A signal is
-recognisable to C# programmers as an event, or to Java programmers as an
+recognizable to C# programmers as an event, or to Java programmers as an
 alternative way of implementing event listeners. In short, a signal is
 simply a way of executing an arbitrary number of externally identical
 methods (i.e. ones with the same signature) at approximately the same
-time. The actual methods of execution are internal to *gobject*, and not
+time. The actual methods of execution are internal to `gobject`, and not
 important to Vala programs.
 
 A signal is defined as a member of a class, and appears similar to a

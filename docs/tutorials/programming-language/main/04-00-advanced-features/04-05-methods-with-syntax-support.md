@@ -2,8 +2,8 @@
 
 Vala recognizes some methods with certain names and signatures and
 provides syntax support for them. For example, if a type has a
-*contains ()* method objects of this type can be used with the `in`
-operator. The following table lists these special methods. *T* and *Tn*
+`contains()` method objects of this type can be used with the `in`
+operator. The following table lists these special methods. `T` and `Tn`
 are only type placeholders in this table and meant to be replaced with
 real types.
 
@@ -31,13 +31,13 @@ real types.
 | `Iterator iterator ()`                       | Iterable via `foreach`                     |
 | `T2 get (T1 index)` <br/> `T1 size { get; }` | Iterable via `foreach`                     |
 
-The *Iterator* type can have any name and must implement one of these
+The `Iterator` type can have any name and must implement one of these
 two protocols:
 
 | Method                        | Description                                                                                                                                                                           |
 |-------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `bool next ()` `T get ()`     | Standard iterator protocol iterating until _next ()_ returns `false`. The current element retrieved via _.get ()_.                                                                    |
-| `T? next_value ()`            | Alternative iterator protocol: If the iterator object has a _.next_value ()_ function that returns a nullable type then we iterate by calling this function until it returns `null`.  |
+| `bool next ()` `T get ()`     | Standard iterator protocol iterating until `next()` returns `false`. The current element retrieved via `get()`.                                                                    |
+| `T? next_value ()`            | Alternative iterator protocol: If the iterator object has a `next_value()` function that returns a nullable type then we iterate by calling this function until it returns `null`.  |
 
 This example implements some of these methods:
 

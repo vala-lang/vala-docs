@@ -1,6 +1,6 @@
 # 4.3. Parameter Directions
 
-A method in Vala is passed zero or more arguments. The default behaviour
+A method in Vala is passed zero or more arguments. The default behavior
 when a method is called is as follows:
 
 -   Any value type parameters are copied to a location local to the
@@ -8,26 +8,26 @@ when a method is called is as follows:
 -   Any reference type parameters are not copied, instead just a
     reference to them is passed to the method.
 
-This behaviour can be changed with the modifiers 'ref' and 'out'.
+This behavior can be changed with the modifiers 'ref' and 'out'.
 
 'out' from the caller side
 
->   you may pass an uninitialised variable to the method and you may
-    expect it to be initialised after the method returns
+>   you may pass an uninitialized variable to the method and you may
+    expect it to be initialized after the method returns
 
 'out' from callee side
 
->   the parameter is considered uninitialised and you have to initialise
+>   the parameter is considered uninitialized and you have to initialize
     it
 
 'ref' from caller side
 
->   the variable you're passing to the method has to be initialised and
+>   the variable you're passing to the method has to be initialized and
     it may be changed or not by the method
 
 'ref' from callee side
 
->   the parameter is considered initialised and you may change it or not
+>   the parameter is considered initialized and you may change it or not
 
 ```vala
 void method_1 (int a, out int b, ref int c) { ... }

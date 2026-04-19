@@ -89,8 +89,7 @@ Boolean values - the first taking just one value the others two.
 
 Ternary conditional operator. Evaluates a condition and returns either
 the value of the left or the right sub-expression based on whether the
-condition is true or false: *condition* `?` *value if true* `:` *value
-if false*
+condition is true or false: `condition ? value_if_true : value_if_false`
 
 ```vala
 ??
@@ -98,7 +97,7 @@ if false*
 
 Null coalescing operator: `a ?? b` is equivalent to `a != null ? a : b`.
 This operator is useful for example to provide a default value in case a
-reference is *null*:
+reference is `null`:
 
 ```vala
 stdout.printf ("Hello, %s!\n", name ?? "unknown person");
@@ -110,7 +109,7 @@ in
 
 Checks if the right operand contains the left operand. This operator
 works on arrays, strings, collections or any other type that has an
-appropriate *contains ()* method. For strings, it performs a substring
+appropriate `contains()` method. For strings, it performs a substring
 search.
 
 Operators cannot be overloaded in Vala. There are extra operators that

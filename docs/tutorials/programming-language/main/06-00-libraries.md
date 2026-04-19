@@ -7,18 +7,18 @@ level of Vala specific information.
 
 A "Vala library" is therefore, the system part:
 
--   A system library (e.g. *libgee.so*)
--   A *pkg-config* entry (e.g. *gee-0.8.pc*)
+-   A system library (e.g. `libgee.so`)
+-   A `pkg-config` entry (e.g. `gee-0.8.pc`)
 
 Both of which are installed in the standard locations. And the Vala
 specific files:
 
--   A VAPI file (e.g. *gee-0.8.vapi*)
--   An optional dependency file (e.g. *gee-0.8.deps*)
+-   A VAPI file (e.g. `gee-0.8.vapi`)
+-   An optional dependency file (e.g. `gee-0.8.deps`)
 
 These files are explained later in this section. It should be noted that
 the library names are the same in the Vala specific files as in the
-*pkg-config* files.
+`pkg-config` files.
 
 <ul class="section-toc">
   <li>

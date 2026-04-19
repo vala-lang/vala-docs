@@ -4,7 +4,7 @@
 into the language and has never been easier than with Vala.
 
 To export a custom class as a D-Bus service you just need to annotate it
-with the *DBus* code attribute and register an instance of this class
+with the `DBus` code attribute and register an instance of this class
 with your local D-Bus session.
 
 ```vala
@@ -32,7 +32,7 @@ public class DemoService : Object {
     }
 
     /* Public method, exported via D-Bus and showing the sender who is
-       is calling the method (not exported in the D-Bus interface) */
+       calling the method (not exported in the D-Bus interface) */
     public void some_method_sender (string message, GLib.BusName sender) {
         counter++;
         stdout.printf ("heureka! counter = %d, '%s' message from sender %s\n",
@@ -44,7 +44,7 @@ public class DemoService : Object {
 Register an instance of the service and start a main loop:
 
 ```vala
-void on_bus_aquired (DBusConnection conn) {
+void on_bus_acquired (DBusConnection conn) {
     try {
         // start service and register it as dbus object
         var service = new DemoService ();
@@ -58,7 +58,7 @@ void main () {
     // try to register service name in session bus
     Bus.own_name (BusType.SESSION, "org.example.DemoService", /* name to register */
                   BusNameOwnerFlags.NONE, /* flags */
-                  on_bus_aquired, /* callback function on registration succeeded */
+                  on_bus_acquired, /* callback function on registration succeeded */
                   () => {}, /* callback on name register succeeded */
                   () => stderr.printf ("Could not acquire name\n")); /*callback on name lost */
 
@@ -67,7 +67,7 @@ void main () {
 }
 ```
 
-You must compile this example with the *gio-2.0* package:
+You must compile this example with the `gio-2.0` package:
 
 ```shell
 valac --pkg gio-2.0 dbus-demo-service.vala
@@ -75,9 +75,9 @@ valac --pkg gio-2.0 dbus-demo-service.vala
 ```
 
 All member names are automatically mangled from Vala's
-*lower_case_with_underscores* naming convention to D-Bus *CamelCase*
+`lower_case_with_underscores` naming convention to D-Bus **CamelCase**
 names. The exported D-Bus interface of this example will have a property
-*Something*, a signal *Sig1* and a method *SomeMethod*. You can open a
+`Something`, a signal `Sig1` and a method `SomeMethod`. You can open a
 new terminal window and call the method from command line with:
 
 ```shell

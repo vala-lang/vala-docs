@@ -1349,6 +1349,10 @@ export default {
                                 ]
                             },
                             {
+                                text: 'Testing Samples',
+                                link: '/sample-code/testing-samples'
+                            },
+                            {
                                 text: 'Threading Samples',
                                 link: '/sample-code/threading-samples'
                             },

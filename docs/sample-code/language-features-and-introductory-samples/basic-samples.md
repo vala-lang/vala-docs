@@ -91,8 +91,7 @@ The first command-line argument (`args[0]`) is always the program name.
 ## Reading and writing text file content
 
 Basic text file handling. For richer I/O with GIO (including asynchronous APIs),
-see [Async Method Samples](../async-samples). The retired GNOME Wiki
-also contains additional [GIO-oriented examples](https://wiki.gnome.org/Projects/Vala/GIOSamples).
+see [Async Method Samples](../async-samples) and [GIO Samples](../gio-samples).
 
 ```vala
 void main () {

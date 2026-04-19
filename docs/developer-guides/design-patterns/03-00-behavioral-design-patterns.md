@@ -447,7 +447,7 @@ Usually useful when you need to provide some sort of undo functionality.
 
 **Programmatic Example**
 
-Let’s take an example of text-editor which keeps saving the state from
+Let's take an example of text-editor which keeps saving the state from
 time to time and that you can restore if you want.
 
 First of all, we have our memento object that will be able to hold the

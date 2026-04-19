@@ -26,7 +26,7 @@ assert (a_byte == 0xA8);
 
 ::: tip C# and Java
 
-Java’s `String.length` and .NET’s `String.Length` count UTF-16 code units (often two bytes per unit). Vala counts UTF-8 code units (bytes). A string can therefore have different numeric “lengths” across these platforms for the same text.
+Java's `String.length` and .NET's `String.Length` count UTF-16 code units (often two bytes per unit). Vala counts UTF-8 code units (bytes). A string can therefore have different numeric “lengths” across these platforms for the same text.
 
 :::
 

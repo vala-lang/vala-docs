@@ -2,7 +2,7 @@
 
 You should install the Vala collection library, libgee, from your
 distribution. More information about libgee is available from
-[https://wiki.gnome.org/Projects/Libgee](https://wiki.gnome.org/Projects/Libgee)
+[https://gitlab.gnome.org/GNOME/libgee](https://gitlab.gnome.org/GNOME/libgee)
 
 [Gee API Documentation](https://valadoc.org/gee-0.8/index.htm)
 
@@ -12,4 +12,5 @@ distribution. More information about libgee is available from
 <li><a href="gee-samples/03-map-sample">Map Example</a></li>
 <li><a href="gee-samples/04-syntactic-sugar">Syntactic Sugar</a></li>
 <li><a href="gee-samples/05-custom-equality">Customizing the equality function</a></li>
+<li><a href="gee-samples/06-iterable-sample">Iterable Sample</a></li>
 </ul>

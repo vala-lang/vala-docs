@@ -39,7 +39,7 @@ hopefully suffice until more Vala documentation can be generated.
 
 ## 8.2.1. File Handling
 
-For flexible file I/O and file handling, see [Basic Samples](../../../../sample-code/language-features-and-introductory-samples/basic-samples#reading-and-writing-text-file-content) for simple synchronous reads and writes, [Async Method Samples](../../../../sample-code/async-samples) for asynchronous GIO, and the archived wiki’s [GIO Samples](https://wiki.gnome.org/Projects/Vala/GIOSamples) list for additional examples.
+For flexible file I/O and file handling, see [Basic Samples](../../../../sample-code/language-features-and-introductory-samples/basic-samples#reading-and-writing-text-file-content) for simple synchronous reads and writes, [Async Method Samples](../../../../sample-code/async-samples) for asynchronous GIO, and [GIO Samples](../../../../sample-code/gio-samples) for additional GIO examples.
 
 You can also use !FileUtils.get_contents to load a file into a string.
 

@@ -3,7 +3,7 @@
 These examples show different ways to use asynchronous methods in Vala. The
 [Asynchronous Methods](../tutorials/programming-language/main/04-00-advanced-features/04-08-asynchronous-methods)
 chapter in the main tutorial explains how `async`, `yield`, `.begin`, and `.end`
-work. For more file and I/O oriented examples, see the [GIO Samples](https://wiki.gnome.org/Projects/Vala/GIOSamples) page on the archived GNOME Wiki.
+work. For more file and I/O oriented examples, see [GIO Samples](gio-samples).
 
 Build the programs below with GIO, for example:
 
@@ -117,7 +117,7 @@ void main (string[] args) {
 
 ## Generator Example
 
-This pattern, based on Luca Bruno’s generator approach, uses `async` methods to
+This pattern, based on Luca Bruno's generator approach, uses `async` methods to
 write iterator-style code. It can run without driving a `MainLoop`.
 
 ```vala

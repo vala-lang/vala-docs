@@ -15,6 +15,7 @@
 ## Other samples
 
 <ul class="section-toc">
+<li><a href="testing-samples">Testing Samples</a></li>
 <li><a href="threading-samples">Threading Samples</a></li>
 <li><a href="gtk4-samples">GTK4 Samples</a></li>
 </ul>

@@ -1,6 +1,6 @@
 # 3. The Vala Compiler
 
-I suppose the best place to start is valac, the tool which Vala
+I suppose the best place to start is `valac`, the tool which Vala
 programmers know the best.
 
 <ul class="section-toc">

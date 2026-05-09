@@ -2,11 +2,15 @@
 
 Adapted from original samples in Vala GNOME Wiki: https://wiki.gnome.org/Projects(2f)Vala(2f)LibSoupSample.html
 
-However `libsoup-3.0` instead of `libsoup-2.4`.
+However `libsoup-3.0` is used instead of `libsoup-2.4`.
+
+All of these samples require the `libsoup-3.0` package to be installed.
 
 ## Fetch Latest Mastodon Status From a Username
 
 This sample requires both `libsoup-3.0` and `json-glib-1.0` packages to be installed
+
+### Source Code
 
 ```vala
 // mastodon-status-sample.vala
@@ -55,8 +59,46 @@ void main () {
 }
 ```
 
-Build instructions:
+### Compile and Run:
 
 ```vala
 valac --pkg libsoup-3.0 --pkg json-glib-1.0 mastodon-status-sample.vala
+./mastodon-status-sample.vala
+```
+
+## Synchronous HTTP Request
+
+### Source Code
+
+```vala
+// synchronous-http-request-sample.vala
+void main () {
+	var session = new Soup.Session ();
+	var fetch_message = new Soup.Message ("GET", "http://vala.dev");
+
+	/* Send a synchronous request */
+	var raw_fetch_response_data = session.send_and_read (fetch_message);
+	string fetch_response_data = (string) raw_fetch_response_data.get_data ();
+
+	// Loop through and output the response headers in from the request
+	stdout.printf ("Response headers:\n");
+	fetch_message.response_headers.foreach ((name, val) => {
+        stdout.printf ("Name: %s -> Value: %s\n", name, val);
+	});
+
+	stdout.printf ("\n");
+
+	// Show response body data length and the response data itself
+	stdout.printf ("Response body:\n");
+	stdout.printf ("Message length: %lld\n%s\n",
+					raw_fetch_response_data.length,
+					fetch_response_data);
+}
+```
+
+### Compile and Run
+
+```vala
+valac --pkg libsoup-3.0 synchronous-http-request-sample.vala
+./synchronous-http-request-sample.vala
 ```

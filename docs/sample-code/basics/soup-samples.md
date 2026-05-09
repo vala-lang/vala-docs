@@ -44,7 +44,7 @@ void main () {
 
 	// Get latest status from the account using the account ID
 	var statuses_message = new Soup.Message ("GET", @"$(base_url)/accounts/$(account_id)/statuses?limit=1");
-	var raw_statuses_message_response_data = session.send_and_read (statuses_message);
+	GLib.Bytes raw_statuses_message_response_data = session.send_and_read (statuses_message);
 	string statuses_message_response_data = (string) raw_statuses_message_response_data.get_data ();
 	
 	// Output account statuses response with pretty printing

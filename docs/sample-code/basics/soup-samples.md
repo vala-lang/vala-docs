@@ -76,7 +76,7 @@ void main () {
 	var session = new Soup.Session ();
 	var fetch_message = new Soup.Message ("GET", "http://vala.dev");
 
-	/* Send a synchronous request */
+	// Send a synchronous request
 	GLib.Bytes raw_fetch_response_data = session.send_and_read (fetch_message);
 	string fetch_response_data = (string) raw_fetch_response_data.get_data ();
 
@@ -90,7 +90,7 @@ void main () {
 
 	// Show response body data length and the response data itself
 	stdout.printf ("Response body:\n");
-	stdout.printf ("Message length: %lld\n%s\n",
+	stdout.printf ("Message length: %d\n%s\n",
 					raw_fetch_response_data.length,
 					fetch_response_data);
 }
@@ -101,4 +101,42 @@ void main () {
 ```vala
 valac --pkg libsoup-3.0 synchronous-http-request-sample.vala
 ./synchronous-http-request-sample.vala
+```
+
+## Asynchronous HTTP Request
+
+### Source Code
+
+```vala
+// asynchronous-http-request-sample.vala
+async void main () {
+	var session = new Soup.Session ();
+	var fetch_message = new Soup.Message ("GET", "http://vala.dev");
+
+	// Send an asynchronous request (great for programs like GUI Applications where you don't want to block the main thread)
+	GLib.Bytes raw_fetch_response_data = yield session.send_and_read_async (fetch_message, GLib.Priority.DEFAULT, null);
+	string fetch_response_data = (string) raw_fetch_response_data.get_data ();
+
+	// Loop through and output the response headers in from the request
+	stdout.printf ("Response headers:\n");
+	fetch_message.response_headers.foreach ((name, val) => {
+        stdout.printf ("Name: %s -> Value: %s\n", name, val);
+	});
+
+	stdout.printf ("\n");
+
+	// Show response body data length and the response data itself
+	stdout.printf ("Response body:\n");
+	stdout.printf ("Message length: %d\n%s\n",
+					raw_fetch_response_data.length,
+					fetch_response_data);
+
+}
+```
+
+### Compile and Run
+
+```vala
+valac --pkg libsoup-3.0 asynchronous-http-request-sample.vala
+./asynchronous-http-request-sample.vala
 ```

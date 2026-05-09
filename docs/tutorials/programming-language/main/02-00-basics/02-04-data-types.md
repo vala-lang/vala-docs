@@ -191,7 +191,7 @@ Note that indices in Vala start with 0 as in most other programming languages
 
 :::
 
-you can access a single byte of a string with `[index]`:
+You can access a single byte of a string with `[index]`:
 
 ```vala
 uint8 b = greeting[7];            // => 119, the ASCII value of 'w'
@@ -211,7 +211,7 @@ string s1 = true.to_string ();           // => "true"
 string s2 = 21.to_string ();             // => "21"
 ```
 
-If you want learn how print your string jump it [02-09 Input / Output](02-09-input-output)
+To learn how to print strings to the console, see [2.9. Input / Output](02-09-input-output).
 Two useful methods for writing and reading strings to/from the console
 (and for your first explorations with Vala) are `stdout.printf()` and
 `stdin.read_line()`:

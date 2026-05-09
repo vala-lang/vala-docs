@@ -66,10 +66,10 @@ display_jpeg.begin ("test.jpg", (obj, res) => {
 });
 ```
 
-Both forms starts the async method running with the given arguments. The
+Both forms start the async method running with the given arguments. The
 second form in addition registers an `AsyncReadyCallback` which is
 executed when the method finishes. The callback takes a source object,
-`obj`, and an instance of GAyncResult, `res`, as arguments. In the
+`obj`, and an instance of `GAsyncResult`, `res`, as arguments. In the
 callback the `.end ()` method should be called to receive the return
 value of the asynchronous method if it has one. If the async method can
 throw an exception, the `.end ()` call is where the exception arrives and
@@ -163,9 +163,10 @@ then gives back control to its own caller.
 ## 4.8.1. Thread with Async Methods
 
 An async method may be used to control a background thread.
-the supra_calculator function execute a blocking thread just after it will use the `yield` keyword which makes us return to the main and it can continue to print the 'Hi !' every second. once the Thread has finished executing it uses `Idle.add(supra_calculator.callback);` which indicates that the program can return to the function at the time of the yield. we join the thread and retrieve the calculation and we return it to retrieve it in the main
 
-`yield` keyword is like a pause in the execution of the program, it allows to execute other code and then return to the function where the `yield` was used.
+In the example below, `supra_calculator` starts a worker thread that performs a simulated calculation and sleeps for `ms` milliseconds. When the thread finishes, it schedules `supra_calculator.callback` with `Idle.add`, so the async method can resume after the `yield`. Meanwhile, `main` keeps printing `Hi!` every second from a `Timeout` callback. After `yield supra_calculator(4000)` completes, the joined result is printed.
+
+The `yield` keyword pauses execution of the async method so other code (such as the timeout) can run; execution later resumes at the point after the `yield`.
 
 ```vala
 async int supra_calculator (int ms) {
@@ -197,15 +198,14 @@ async void main() {
 ```
 
 
-the output:
+Example output:
 
-    Hi !
-
-    Hi !
-
-    Hi !
-
-    result: 48000
+```text
+Hi !
+Hi !
+Hi !
+result: 48000
+```
 
 ## 4.8.2. Examples
 

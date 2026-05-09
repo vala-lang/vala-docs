@@ -6,10 +6,10 @@ Experimental Feature
 
 :::
 
-The `with` statement creates data type scoped blocks which allow implicit member access to the given expression or declaration statement.
+The `with` statement creates scoped blocks in which members of the given expression can be accessed without repeating its name.
 
 ```bnf
-with ( [ var | unowned var | type-name) identifier = ] expression ) embedded_statement
+with ( [ ( var | unowned var | type-name identifier ) = ] expression ) embedded_statement
 ```
 
 ```vala
@@ -34,4 +34,9 @@ void main()
 ```
 
 
-The `with` statement is a convenient way to access members of a struct or class without having to prefix them with the object name. The with statement is not recommended for use in new code, as it can make the code harder to read and understand.
+The `with` statement is a convenient way to access members of a struct or class without prefixing them with the object name. 
+
+::: warning
+
+Use `with` statements carefully, as they can make programs harder to read and understand.
+:::

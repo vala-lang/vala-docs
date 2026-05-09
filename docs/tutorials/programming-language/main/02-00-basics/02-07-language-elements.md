@@ -300,7 +300,7 @@ To define an array of structs, please see the
 
 ## 2.7.6. Enums
 
-Enums are a way to define a set of named integer constants.  They are useful for defining a set of related values that are not necessarily sequential.  For example, the following code defines an enum named *EnumName* with three values:
+Enums are a way to define a set of named integer constants. They are useful for defining a set of related values that are not necessarily sequential. For example, the following code defines an enum named `EnumName` with three values:
 
 ```vala
 enum EnumName {
@@ -310,10 +310,10 @@ enum EnumName {
 }
 ```
 
-The values of the enum are accessed by the name of the enum followed by a period and the name of the value, e.g. *EnumName.VALUE1*.
+The values of the enum are accessed by the name of the enum followed by a period and the name of the value, e.g. `EnumName.VALUE1`.
 
 
-An enum can contains functions:
+An enum can contain methods:
 
 ```vala
 enum EnumName {
@@ -341,7 +341,7 @@ void main() {
 
 ::: info Note
 
-An enum can be set in a class
+An enum can be declared inside a class
 
 :::
 

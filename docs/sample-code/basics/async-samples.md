@@ -54,7 +54,7 @@ void main () {
 
 This sample runs work on a background thread and resumes the `async` method
 when the thread schedules the callback on the main context. It also shows how
-exceptions from an `async` method surface at `.end()`.
+exceptions from an `async` method surface at `.end ()`.
 
 On older Vala releases you may need `--target-glib` to match your GLib version
 (for example `--target-glib 2.44`) to silence deprecation or binding warnings.
@@ -179,7 +179,7 @@ void main (string[] args) {
 
 ## Async Sleep Example
 
-A `nap()` helper that waits without blocking the main loop, so the UI (or other
+A `nap ()` helper that waits without blocking the main loop, so the UI (or other
 idle work) can keep running.
 
 ```vala
@@ -209,7 +209,7 @@ private static int main (string[] args) {
 ## Simple Example
 
 A minimal `async` method that resumes from an idle callback and returns a value
-to the `.end()` caller.
+to the `.end ()` caller.
 
 ```vala
 // Demo class with async function

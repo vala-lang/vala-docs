@@ -35,10 +35,10 @@ void main () {
 Since Vala 0.56, you can declare an `async` `main` function. An async `main` creates a main loop and runs it, so you do not need to create a `MainLoop` object manually.
 
 ```vala
-async void main() {
-    Timeout.add(2000, () => {
-        stdout.printf("Time!\n");
-        Idle.add(main.callback);
+async void main () {
+    Timeout.add (2000, () => {
+        stdout.printf ("Time!\n");
+        Idle.add (main.callback);
         return false;
     });
 

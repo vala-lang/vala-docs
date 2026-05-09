@@ -72,7 +72,7 @@ thread to finish.
 What's more, it is possible for a thread to tell the system that it
 currently has no need to execute, and thereby suggest that another
 thread should be run instead, this is done using the static method
-`Thread.yield()`. If this statement was placed at the end of the above
+`Thread.yield ()`. If this statement was placed at the end of the above
 `main` method, the runtime system will pause the main thread for an
 instant and check if there are other threads that can be run - on
 finding the newly created thread in a runnable state, it will run that

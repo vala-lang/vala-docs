@@ -48,7 +48,7 @@ like `Gtk.Window` or `Gtk.Orientation.HORIZONTAL`. In
 ```vala
 (UnresolvedSymbol
     (UnresolvedSymbol
-        (UnresolvedSymbol(null, "Gtk"),
+        (UnresolvedSymbol (null, "Gtk"),
          "Orientation"),
      "HORIZONTAL")
 ```

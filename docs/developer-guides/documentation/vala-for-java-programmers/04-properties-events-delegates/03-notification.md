@@ -76,7 +76,7 @@ public class Demo {
 }
 ```
 
-Vala: signals (`signal` keyword, `.connect()` and `.disconnect()`)
+Vala: signals (`signal` keyword, `.connect ()` and `.disconnect ()`)
 
 ```vala
 public class MyButton : Object {

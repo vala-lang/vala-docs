@@ -164,7 +164,7 @@ then gives back control to its own caller.
 
 An async method may be used to control a background thread.
 
-In the example below, `supra_calculator` starts a worker thread that performs a simulated calculation and sleeps for `ms` milliseconds. When the thread finishes, it schedules `supra_calculator.callback` with `Idle.add`, so the async method can resume after the `yield`. Meanwhile, `main` keeps printing `Hi!` every second from a `Timeout` callback. After `yield supra_calculator(4000)` completes, the joined result is printed.
+In the example below, `supra_calculator` starts a worker thread that performs a simulated calculation and sleeps for `ms` milliseconds. When the thread finishes, it schedules `supra_calculator.callback` with `Idle.add`, so the async method can resume after the `yield`. Meanwhile, `main` keeps printing `Hi!` every second from a `Timeout` callback. After `yield supra_calculator (4000)` completes, the joined result is printed.
 
 The `yield` keyword pauses execution of the async method so other code (such as the timeout) can run; execution later resumes at the point after the `yield`.
 
@@ -174,8 +174,8 @@ async int supra_calculator (int ms) {
         int n = 0;
         // make a hard calculation:
         n = 12 * ms;
-        Thread.usleep(ms * 1000);
-        Idle.add(supra_calculator.callback);
+        Thread.usleep (ms * 1000);
+        Idle.add (supra_calculator.callback);
         return n;
     });
     yield;
@@ -184,15 +184,15 @@ async int supra_calculator (int ms) {
     return result;
 }
 
-async void main() {
+async void main () {
 
     // Every second, print "Hi !"
-    Timeout.add(1000, () => {
+    Timeout.add (1000, () => {
         print (@"Hi !\n");
         return true;
     });
 
-    int res = yield supra_calculator(4000);
+    int res = yield supra_calculator (4000);
     print (@"result: $res\n");
 }
 ```

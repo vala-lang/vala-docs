@@ -1,6 +1,6 @@
 # 4.1. Properties
 
-Java: Bean convention, `getX()` and `setX()` methods
+Java: Bean convention, `getX ()` and `setX ()` methods
 
 ```java
 public class Person {

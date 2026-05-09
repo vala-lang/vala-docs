@@ -5,33 +5,37 @@
 Sadly predictable, but still:
 
 ```vala
-void main() {
-    stdout.printf("Hello, World\n");
+void main () {
+    print ("Hello, World\n");
 }
 ```
 
 Of course, that is a Vala *Hello World* program. I expect you can recognise some parts of it well enough, but just to be thorough I shall go through it step by step.
 
 ```vala
-void main() {
+void main () {
 }
 ```
 
 This is the start of a method definition. A method is a function related to a type of object that can be executed on an object of that type. The fact that this method is called `main` and has the signature it does means that Vala will recognise it as the entry point for the program. `void` is the return type of the method, which means that the method does not return any value.
 
 ```vala
-void main() {
-    stdout.printf("Hello, World\n");
+void main () {
+    print ("Hello, World\n");
 }
 ```
 
-This line instructs Vala to execute the method called `printf` of the `stdout` object, with the "Hello..." string as an argument. In Vala, this is always the syntax you use to call a method on an object, or to access an object's data. `\n` is the escape sequence for a new line.
+This line calls `print ()`, a built-in that writes a string to standard output. The `"Hello..."` argument is a string literal; `\n` is the escape sequence for a new line.
 
----
+In some real-word projects people prefer `stdout.printf ()` instead: it works like C’s `printf`, supports format strings and multiple arguments. You will see both styles in this tutorial; for details see [2.9. Input / Output](02-00-basics/02-09-input-output).  
 
-There are several ways to write a `main` method in Vala. The following are all valid:
+## Main Method Variants
 
-```vala 
+There are several ways to write a `main` method in Vala. The following are all valid.
+
+The examples above use `print ()` to keep the first program small. When you need formatted output or want to match common library style, use `stdout.printf ()` as in [2.9. Input / Output](02-00-basics/02-09-input-output).
+
+```vala
 void main () {
 }
 
@@ -56,13 +60,11 @@ It is possible to declare a `main` method inside a class only if it is `public` 
 
 
 ```vala
-
-    public class Main {
-        public static void main(string[] args) {
-            //...
-        }
+public class Main {
+    public static void main (string[] args) {
+        //...
     }
-
+}
 
 ```
 
@@ -91,10 +93,10 @@ On Unix-like operating systems, you can also run a Vala source file directly as 
 This is achieved by adding a 'shebang' line at the very beginning of the file. 
 For example, you could save the "Hello, World" program as `hello.vala` with the following content:
 
-```vala
-#!/usr/bin/env vala // [!code warning]
-void main() {
-    stdout.printf("Hello, World\n");
+```vala{1}
+#!/usr/bin/env vala
+void main () {
+    print ("Hello, World\n");
 }
 ```
 The first line, `#!/usr/bin/env vala`, is the shebang. It tells the system to use the `vala` command to execute this file.

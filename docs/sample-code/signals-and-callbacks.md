@@ -41,7 +41,7 @@ void main () {
 ```
 
 Note that a class with signals always has to inherit from `Object` or one of its
-sub-classes. Callback functions get connected to a signal by calling ``.connect()``
+sub-classes. Callback functions get connected to a signal by calling ``.connect ()``
 on the signal.
 
 A signal may also have multiple parameters. The signatures of the
@@ -89,12 +89,12 @@ the definition of the signal.
 ## Disconnecting Signals
 
 You can disconnect signal callbacks in one of two ways.
-The first and simple one is to call `myobject.mysignal.disconnect(callback)`.
+The first and simple one is to call `myobject.mysignal.disconnect (callback)`.
 
 The more advanced way (which you'll need for closures for example)
-is to store the return value of the `connect()` call somewhere.
+is to store the return value of the `connect ()` call somewhere.
 Its a ulong containing a signal handler id. Pass this signal handler id to
-`myobject.disconnect()` - note that we are invoking `disconnect()` on
+`myobject.disconnect ()` - note that we are invoking `disconnect ()` on
 the object and not on the signal this time around.
 
 ```vala
@@ -119,7 +119,7 @@ class Demo : Object {
 
 Signal handlers are connected before (i.e. executed before) the
 default signal handler. If you want to connect a signal
-after the default handler use `connect_after()`:
+after the default handler use `connect_after ()`:
 
 ```vala
 void main () {

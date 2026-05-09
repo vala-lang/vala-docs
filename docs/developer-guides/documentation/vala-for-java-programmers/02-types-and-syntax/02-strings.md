@@ -3,7 +3,7 @@
 | Java                             | Vala                           |
 | -------------------------------- | ------------------------------ |
 | Data type: `String`              | Data type: `string` (lower case) |
-| Equality test: `str1.equals(str2)` | Equality test: `str1 == str2` |
+| Equality test: `str1.equals (str2)` | Equality test: `str1 == str2` |
 
 String comparisons compare content, not reference. You can compare
 strings lexicographically with `<`, `>`, `<=`, `>=` etc. Strings can be

@@ -54,7 +54,7 @@ Vala this is of the form:
 
 ```vala
 void main () {
-    Object.new (typeof(MyClass));
+    Object.new (typeof (MyClass));
 }
 ```
 

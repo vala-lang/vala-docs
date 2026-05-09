@@ -54,7 +54,7 @@ class MyModule : TypeModule
                         error ("No such symbol");
                }
 
-               ((PluginInitFunc) plugin_init)(this);
+               ((PluginInitFunc) plugin_init) (this);
 
                return true;
       }

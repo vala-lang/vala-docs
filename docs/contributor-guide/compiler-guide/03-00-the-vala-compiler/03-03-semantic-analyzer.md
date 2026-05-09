@@ -13,16 +13,16 @@ are used in emitted C code.
 
 All attributes except for `Conditional` are handled from
 `Vala.AttributeProcessor`. I don't know where and how the `Conditional`
-attribute is handled, but there is a function `ignore_node()` in `Vala.CodeContext`.
+attribute is handled, but there is a function `ignore_node ()` in `Vala.CodeContext`.
 
 `Vala.AttributeProcessor` is a `CodeVisitor` which simply calls the
-`process_attributes()` method on every namespace, class, struct,
+`process_attributes ()` method on every namespace, class, struct,
 interface, enum, method, constructor, parameter, property, delegate,
 constant, field, and signal that it visits.
 
-Inside the `process_attributes()` method of each of these objects, a
+Inside the `process_attributes ()` method of each of these objects, a
 series of string comparisons will be made to parse the attributes. If
-the attribute is called `CCode`, then the `process_ccode_attributes()`
+the attribute is called `CCode`, then the `process_ccode_attributes ()`
 function will be called to parse the key-value pairs supplied.
 
 ::: info TODO

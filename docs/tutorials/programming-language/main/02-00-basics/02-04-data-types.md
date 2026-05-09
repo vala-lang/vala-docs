@@ -213,8 +213,8 @@ string s2 = 21.to_string ();             // => "21"
 
 To learn how to print strings to the console, see [2.9. Input / Output](02-09-input-output).
 Two useful methods for writing and reading strings to/from the console
-(and for your first explorations with Vala) are `stdout.printf()` and
-`stdin.read_line()`:
+(and for your first explorations with Vala) are `stdout.printf ()` and
+`stdin.read_line ()`:
 
 ```vala
 stdout.printf ("Hello, world\n");
@@ -223,12 +223,7 @@ string input = stdin.read_line ();
 int number = int.parse (stdin.read_line ());
 ```
 
-You already know `stdout.printf()` from the **Hello World** example.
-Actually, it can take an arbitrary number of arguments of different
-types, whereas the first argument is a **format string**, following the
-same rules as [C format strings](http://en.wikipedia.org/wiki/Printf).
-If you must output an error message, you can use `stderr.printf()`
-instead of `stdout.printf()`.
+Chapter 1’s [Hello World](../01-00-first-program) used `print ()`; [Stdout in 2.9. Input / Output](02-09-input-output#stdout) explains how that relates to `stdout.printf ()`, **format strings**, and `stderr.printf ()` so this section can stay focused on string types.
 
 In addition, the `in` operation can be used to determine whether one
 string contains another, e.g.
@@ -332,7 +327,7 @@ e += 5;
 e += 37;
 ```
 
-You can resize an array by calling `resize()` on it. It will keep the
+You can resize an array by calling `resize ()` on it. It will keep the
 original content (as much as fits).
 
 ```vala

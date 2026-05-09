@@ -26,7 +26,7 @@ class IndexerDemo
 }
 ```
 
-Vala: implement `T get(int i)` and `void set(int i, T item)` methods
+Vala: implement `T get (int i)` and `void set (int i, T item)` methods
 
 ```vala
 class SampleCollection<T> {

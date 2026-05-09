@@ -45,6 +45,6 @@ Starting program: /home/valacoder/debug-demo
 
 Program received signal SIGSEGV, Segmentation fault.
 0x0804881f in _main () at debug-demo.vala:7
-7           stdout.printf("%d\n", foo.field);
+7           stdout.printf ("%d\n", foo.field);
 (gdb)
 ```

@@ -32,7 +32,7 @@ void main () {
 	stdout.printf ("Account lookup url: %s\n", account_id_lookup_url);
 
 	GLib.Bytes raw_id_lookup_response_data = session.send_and_read (id_lookup_message);
-	string id_lookup_response_data = (string) raw_id_lookup_response_data.get_data(); // It's a JSON response string (content-type: application/json)
+	string id_lookup_response_data = (string) raw_id_lookup_response_data.get_data (); // It's a JSON response string (content-type: application/json)
 
 	// Parse the account id lookup response data
 	var parser = new Json.Parser ();

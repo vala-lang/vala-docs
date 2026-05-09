@@ -34,7 +34,7 @@
     <ul class="section-toc section-toc-sub">
       <li><a href="02-00-basics/02-07-language-elements#_2-7-1-methods">2.7.1. Methods</a></li>
       <li><a href="02-00-basics/02-07-language-elements#_2-7-2-delegates">2.7.2. Delegates</a></li>
-      <li><a href="02-00-basics/02-07-language-elements#_2-7-3-anonymous-methods-closures-lambda-expressions">2.7.3. Anonymous Methods / Closures (lambda expressions)</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-3-anonymous-methods-closures">2.7.3. Anonymous Methods / Closures (Lambda Expressions)</a></li>
       <li><a href="02-00-basics/02-07-language-elements#_2-7-4-namespaces">2.7.4. Namespaces</a></li>
       <li><a href="02-00-basics/02-07-language-elements#_2-7-5-structs">2.7.5. Structs</a></li>
       <li><a href="02-00-basics/02-07-language-elements#_2-7-6-enums">2.7.6. Enums</a></li>

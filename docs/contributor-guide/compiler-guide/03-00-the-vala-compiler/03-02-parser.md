@@ -284,7 +284,7 @@ public override void visit_struct (Struct st) {
 ```
 
 The `visit_` methods of a `CodeVisitor` needn't call
-`CodeNode.accept_children()`, if it isn't necessary to traverse the whole
+`CodeNode.accept_children ()`, if it isn't necessary to traverse the whole
 depth of the code tree. It also isn't necessary to write `visit_`
 methods for every kind of code node, because empty implementations are
 already provided in `CodeVisitor`.

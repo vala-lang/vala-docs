@@ -1,6 +1,6 @@
 # 3.5. Constructor Chaining
 
-Java: `this()`
+Java: `this ()`
 
 ```java
 class Foo {

@@ -13,7 +13,7 @@ convention:
 
 | Language | Code                   |
 |----------|------------------------|
-| C        | `g_topic_foobar()`     |
+| C        | `g_topic_foobar ()`     |
 | Vala     | `GLib.Topic.foobar ()` |
 
 **Example:**

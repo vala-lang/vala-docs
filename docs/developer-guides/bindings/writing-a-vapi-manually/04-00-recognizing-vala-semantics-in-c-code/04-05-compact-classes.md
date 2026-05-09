@@ -59,7 +59,7 @@ public class Bar {
 ```
 
 In case explicit duplication is needed, include a member function of the
-copy function called `dup()`, if available.
+copy function called `dup ()`, if available.
 
 ## 4.5.2. Reference-Counted Classes
 

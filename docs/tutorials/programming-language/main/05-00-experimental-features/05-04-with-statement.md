@@ -19,7 +19,7 @@ struct Color {
     int blue;
 }
 
-void main()
+void main ()
 {
     Color c = {255, 0, 0};
 

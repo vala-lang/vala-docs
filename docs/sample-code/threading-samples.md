@@ -10,10 +10,10 @@ current environment supports threads:
 In most cases, it can be omitted.
 
 ```vala
-void main() {
+void main () {
     // Some code
-    if (!Thread.supported()) {
-        error("Cannot run without thread support.\n");
+    if (!Thread.supported ()) {
+        error ("Cannot run without thread support.\n");
     }
     // Some code
 }
@@ -24,23 +24,23 @@ For brevity, It will be omitted in the rest of following code.
 ## Simple
 
 ```vala
-int question(){
+int question (){
     // Some complex calculations ^^ 
     for (var i = 0; i < 3; i++){
-        stdout.printf(".");
+        stdout.printf (".");
         Thread.usleep (800000);
         stdout.flush ();
     }
     return 42;
 }
 
-void main() {
-    stdout.printf("The Ultimate Question of Life, the Universe, and Everything");
+void main () {
+    stdout.printf ("The Ultimate Question of Life, the Universe, and Everything");
 
     // Generic parameter is the type of return value
     var thread = new Thread<int> ("question", question);
 
-    stdout.printf(@" $(thread.join ())\n");
+    stdout.printf (@" $(thread.join ())\n");
 }
 ```
 
@@ -161,7 +161,7 @@ void main () {
         new Thread<void> (null, philosopher.run);
     }
 
-    new MainLoop().run();
+    new MainLoop ().run ();
 }
 ```
 

@@ -15,7 +15,7 @@ valac string-sample.vala
 
 ## String length and UTF-8
 
-Before Vala 0.11, `.length` was the number of Unicode code points and `.size()` was the length in bytes. Starting with Vala 0.11, `.length` is the length in bytes and indexing is byte-based. Strings remain UTF-8; indices, offsets, and lengths use UTF-8 code units (bytes), which matches many other string APIs and helps performance while still supporting Unicode text.
+Before Vala 0.11, `.length` was the number of Unicode code points and `.size ()` was the length in bytes. Starting with Vala 0.11, `.length` is the length in bytes and indexing is byte-based. Strings remain UTF-8; indices, offsets, and lengths use UTF-8 code units (bytes), which matches many other string APIs and helps performance while still supporting Unicode text.
 
 ```vala
 string dessert = "crème brûlée";

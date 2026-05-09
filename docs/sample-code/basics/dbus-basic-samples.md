@@ -86,7 +86,7 @@ interface Demo : Object {
 
 void main () {
     /* Needed only if your client is listening to signals; you can omit it otherwise */
-    var loop = new MainLoop();
+    var loop = new MainLoop ();
 
     /* Important: keep demo variable out of try/catch scope not lose signals! */
     Demo demo = null;
@@ -96,7 +96,7 @@ void main () {
                                                     "/org/example/demo");
 
         /* Connecting to signal pong! */
-        demo.pong.connect((c, m) => {
+        demo.pong.connect ((c, m) => {
             stdout.printf ("Got pong %d for msg '%s'\n", c, m);
             loop.quit ();
         });
@@ -113,7 +113,7 @@ void main () {
     } catch (IOError e) {
         stderr.printf ("%s\n", e.message);
     }
-    loop.run();
+    loop.run ();
 }
 ```
 
@@ -141,7 +141,7 @@ Run the server in one terminal, then the client in another (same session bus).
 | o | GLib.ObjectPath | Object path | |
 | a | array | Array | `ai` -> `int[]` |
 | a{} | GLib.HashTable<,> | Dictionary | `a{sv}` -> `HashTable<string, Variant>` |
-| () | struct | Struct | `a(ii)` maps to `Foo[]` where `Foo` might be defined as `struct Foo { public int a; public int b; };`<br>A struct representing `a(tsav)` might look like `struct Bar { public uint64 a; public string b; public Variant[] c;}` |
+| () | struct | Struct | `a (ii)` maps to `Foo[]` where `Foo` might be defined as `struct Foo { public int a; public int b; };`<br>A struct representing `a (tsav)` might look like `struct Bar { public uint64 a; public string b; public Variant[] c;}` |
 
 See [D-Bus struct mapping in the reference](https://dbus.freedesktop.org/doc/dbus-specification.html#type-system).
 

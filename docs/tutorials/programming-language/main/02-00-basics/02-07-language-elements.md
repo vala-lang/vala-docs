@@ -75,7 +75,7 @@ f (2, "hi");
 f (2, "hi", 0.75);
 ```
 
-It's even possible to define methods with real variable-length argument lists (`varargs`) like `stdout.printf()`, 
+It's even possible to define methods with real variable-length argument lists (`varargs`) like `stdout.printf ()`, 
 although not necessarily recommended.  You will learn how to do that later.  
 Vala performs a basic nullability check on the method parameters and return values.  
 If it is allowable for a method parameter or a return value to be `null`, the type symbol should be postfixed with a `?` 
@@ -133,7 +133,7 @@ class Foo {
 ```
 More samples in the [Delegates section of the Vala Reference Manual](https://gnome.pages.gitlab.gnome.org/vala/manual/delegates.html).  
 
-## 2.7.3. Anonymous Methods / Closures (lambda expressions)
+## 2.7.3. Anonymous Methods / Closures (Lambda Expressions) {#_2-7-3-anonymous-methods-closures}
 
 ```vala     
 (a) => { stdout.printf ("%d\n", a); }
@@ -152,7 +152,7 @@ delegate void PrintIntFunc (int a);
 
 void main () {
     PrintIntFunc p1 = (a) => { stdout.printf ("%d\n", a);};
-    p1(10);
+    p1 (10);
 
     // Curly braces are optional if the body contains only one statement:
     PrintIntFunc p2 = (a) => stdout.printf ("%d\n", a);
@@ -189,7 +189,7 @@ IntOperation curried_add (int a) {
 }     
 
 void main () {        
-    stdout.printf ("2 + 4 = %d\n", curried_add (2)(4));    
+    stdout.printf ("2 + 4 = %d\n", curried_add (2) (4));    
 }  
 ```
 
@@ -279,16 +279,16 @@ struct Point {
     public double x;
     public double y;
 
-    public double distance_to(Point other) {
-        return Math.sqrt((x - other.x) * (x - other.x) + (y - other.y) * (y - other.y));
+    public double distance_to (Point other) {
+        return Math.sqrt ((x - other.x) * (x - other.x) + (y - other.y) * (y - other.y));
     }
 }
 
-void main() {
+void main () {
     Point p1 = { 1.0, 2.0 };
     Point p2 = { 4.0, 6.0 };
 
-    p1.distance_to(p2);  // returns 5.0
+    p1.distance_to (p2);  // returns 5.0
 }
 ```
 
@@ -321,7 +321,7 @@ enum EnumName {
     VALUE2,
     VALUE3;
 
-    public unowned string to_string() {
+    public unowned string to_string () {
         switch (this) {
             case VALUE1: return "Value 1";
             case VALUE2: return "Value 2";
@@ -331,10 +331,10 @@ enum EnumName {
     }
 }
 
-void main() {
-    print(EnumName.VALUE1.to_string());  // prints "Value 1"
-    print(EnumName.VALUE2.to_string());  // prints "Value 2"
-    print(EnumName.VALUE3.to_string());  // prints "Value 3"
+void main () {
+    print (EnumName.VALUE1.to_string ());  // prints "Value 1"
+    print (EnumName.VALUE2.to_string ());  // prints "Value 2"
+    print (EnumName.VALUE3.to_string ());  // prints "Value 3"
 }
 ```
 
@@ -361,17 +361,17 @@ enum MyFlags {
     FLAG3
 }
 
-void main() {
+void main () {
     MyFlags flags;
 
     flags = MyFlags.FLAG1 + MyFlags.FLAG3;
 
     if (MyFlags.FLAG1 in flags)
-        print("FLAG1 is set");
+        print ("FLAG1 is set");
     if (MyFlags.FLAG2 in flags)
-        print("FLAG2 is set");
+        print ("FLAG2 is set");
     if (MyFlags.FLAG3 in flags)
-        print("FLAG3 is set");
+        print ("FLAG3 is set");
 }
 ```
 

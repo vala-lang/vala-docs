@@ -2,7 +2,7 @@
 
 ## Stdout
 
-You already know `stdout.printf ()` from the *Hello World* example. Actually, it can take an arbitrary number of arguments of different types. The first argument is always a *format string*, following the same rules as [C format strings](http://en.wikipedia.org/wiki/Printf). If you must output an error message you can use `stderr.printf ()` instead of `stdout.printf ()`.
+The [*Hello World* program](../01-00-first-program) in chapter 1 used `print ()` for a single string. For formatted output and for consistency with much existing C and GObject code, Vala also offers `stdout.printf ()`, which can take an arbitrary number of arguments of different types. The first argument is always a *format string*, following the same rules as [C format strings](http://en.wikipedia.org/wiki/Printf). If you must output an error message you can use `stderr.printf ()` instead of `stdout.printf ()`.
 
 To print a message to the console, you can use `stdout.printf ()` or `print ()`. Both are similar to `printf ()` in C. `stdout.printf ()` takes a format string and a list of arguments. The format string contains placeholders for the arguments; the placeholders are replaced with the argument values when the function is called.
 
@@ -38,7 +38,7 @@ To read a line from the console, you can use the `stdin.read_line ()` function. 
 
 ```vala
 string? line;
-while ((line = stdin.read_line()) != null) {
+while ((line = stdin.read_line ()) != null) {
     stdout.printf ("You entered: %s\n", line);
 }
 ```
@@ -108,8 +108,8 @@ string content;
 FileUtils.get_contents ("my_text.txt", out content);
 
 // Replace every 'a' with 'b' in the `content` string
-string new_content = content.replace("a", "b");
+string new_content = content.replace ("a", "b");
 
 // Write the updated text stored in the `content` string variable to the file
-FileUtils.set_contents("my_text.txt", new_content);
+FileUtils.set_contents ("my_text.txt", new_content);
 ```

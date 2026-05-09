@@ -61,7 +61,7 @@ void main () {
 
 ### Compile and Run:
 
-```vala
+```shell
 valac --pkg libsoup-3.0 --pkg json-glib-1.0 mastodon-status-sample.vala
 ./mastodon-status-sample.vala
 ```
@@ -98,7 +98,7 @@ void main () {
 
 ### Compile and Run
 
-```vala
+```shell
 valac --pkg libsoup-3.0 synchronous-http-request-sample.vala
 ./synchronous-http-request-sample.vala
 ```
@@ -136,7 +136,80 @@ async void main () {
 
 ### Compile and Run
 
-```vala
+```shell
 valac --pkg libsoup-3.0 asynchronous-http-request-sample.vala
 ./asynchronous-http-request-sample.vala
+```
+
+
+## Simple Server
+
+### Source Code
+
+```vala
+// simple-server-sample.vala
+void default_handler (Soup.Server server, Soup.ServerMessage msg, string path, HashTable<string, string>? query)
+{
+	var content_type_params = new HashTable<string, string> (GLib.str_hash, GLib.str_equal);
+	content_type_params["charset"] = "UTF-8";
+
+	msg.set_status (Soup.Status.OK, null);
+	msg.get_response_headers ().set_content_type ("text/html", content_type_params);
+
+	msg.get_response_body ().append_take ("""<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Simple Server Sample (Vala + libsoup-3.0)</title>
+</head>
+<body>
+  <body>
+    <p>Current location: %s</p>
+    <p><a href="/json">Test JSON</a></p>
+  </body>
+</html>
+    """.printf (path).data);
+}
+
+void json_handler (Soup.Server server, Soup.ServerMessage msg, string path, HashTable<string, string>? query)
+{
+	var content_type_params = new HashTable<string, string> (GLib.str_hash, GLib.str_equal);
+	content_type_params["charset"] = "UTF-8";
+	msg.set_status (Soup.Status.OK, null);
+	msg.get_response_headers ().set_content_type ("application/json", content_type_params);
+
+    msg.get_response_body ().append_take ("""{
+  "result": {
+    "message": "Test Passed"
+  } 
+}
+	""".data);
+}
+
+void main () {
+	const int port = 8088;
+
+    var server = new Soup.Server (null);
+    server.add_handler ("/", default_handler);
+    server.add_handler ("/json", json_handler);
+    
+    try {
+		server.listen_local (port, 0);
+		stdout.printf ("Server is running on http://localhost:%d\n", port);
+
+		var loop = new GLib.MainLoop ();
+		loop.run ();
+    } catch (Error e) {
+    	stderr.printf ("Could not start the server: %s\n", e.message);
+    }
+
+
+}
+```
+
+### Compile and Run
+
+```shell
+valac --pkg libsoup-3.0 simple-server-sample.vala
 ```

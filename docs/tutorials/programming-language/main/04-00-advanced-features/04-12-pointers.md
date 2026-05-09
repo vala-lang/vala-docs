@@ -37,7 +37,7 @@ In order to free the memory pointed to:
 delete o;
 ```
 
-Vala also supports the *address-of* (`&`) and *indirection* (`*`)
+Vala also supports the **address-of** (`&`) and **indirection** (`*`)
 operators known from C:
 
 ```vala

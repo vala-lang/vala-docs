@@ -58,6 +58,7 @@ it is possible to declare your main in a class only if it is public and static.
 `string[] args` is an array of strings that are passed to the program when it is executed. The first element of the array is the name of the program itself. The remaining elements are any arguments that are passed to the program when it is executed. The arguments are separated by spaces. For example, if you execute the program with the command `./hello arg1 arg2`, then the array will contain the following elements:
 
 
+
 ```vala
 
     public class Main {
@@ -79,7 +80,7 @@ valac hello.vala
 ./hello
 ```
 
-*valac* is the Vala compiler, which will compile your Vala code into a
+`valac` is the Vala compiler, which will compile your Vala code into a
 binary. The resulting binary will have the same name as the source file
 and can then be directly executed on the machine. You can probably guess
 the output.

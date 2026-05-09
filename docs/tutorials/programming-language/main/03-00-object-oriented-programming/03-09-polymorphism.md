@@ -1,9 +1,9 @@
 # 3.9. Polymorphism
 
-*Polymorphism* describes the way in which the same object can be used as
+**Polymorphism** describes the way in which the same object can be used as
 though it were more than one distinct type of thing. Several of the
 techniques already described here suggest how this is possible in Vala:
-An instance of a class may be used as in instance of a superclass, or of
+An instance of a class may be used as an instance of a superclass, or of
 any implemented interfaces, without any knowledge of its actual type.
 
 A logical extension of this power is to allow a subtype to behave
@@ -44,8 +44,8 @@ class's version of the method. The fourth line believes "o2" to be a
 
 The problem this example exposes, is that any code holding a reference
 to "`SuperClass`" will call the methods actually described in that
-class, even in the actual object is of a subclass. The way to change
-this behaviour is using virtual methods. Consider the following
+class, even if the actual object is of a subclass. The way to change
+this behavior is using virtual methods. Consider the following
 rewritten version of the last example:
 
 ```vala
@@ -72,7 +72,7 @@ This distinction is probably familiar to programmers of some languages,
 such as C++, but it is in fact the opposite of Java style languages, in
 which steps must be taken to prevent a method being virtual.
 
-You will probably now also have recognised that when method is declared
+You will probably now also have recognized that when a method is declared
 as `abstract` it must also be virtual. Otherwise, it would not be
 possible to execute that method given an apparent instance of the type
 it was declared in. When implementing an abstract method in a subclass,
@@ -87,7 +87,7 @@ be `virtual`, and then subclasses can override as required.
 
 When writing a class, it is common to want to use functionality defined
 in a class you have inherited from. This is complicated where the method
-name is used more than one in the inheritance tree for your class. For
+name is used more than once in the inheritance tree for your class. For
 this Vala provides the `base` keyword. The most common case is where you
 have overridden a virtual method to provide extra functionality, but
 still need the parent class' method to be called. The following example

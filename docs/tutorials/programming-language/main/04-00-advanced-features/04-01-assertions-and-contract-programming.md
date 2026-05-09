@@ -1,6 +1,6 @@
 # 4.1. Assertions and Contract Programming
 
-With *assertions* a programmer can check assumptions at runtime. The
+With **assertions** a programmer can check assumptions at runtime. The
 syntax is `assert (condition)`. If an assertion fails the program will
 terminate with an appropriate error message. There are a few more
 assertion methods within the GLib standard namespace, e.g.:
@@ -18,7 +18,7 @@ assertion methods within the GLib standard namespace, e.g.:
 You might be tempted to use assertions in order to check method
 arguments for `null`. However, this is not necessary, since Vala does
 that implicitly for all parameters that are not marked with `?` as being
-*nullable*.
+**nullable**.
 
 ```vala
 void method_name (Foo foo, Bar bar) {

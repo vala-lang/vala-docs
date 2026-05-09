@@ -1,6 +1,6 @@
 # 6.1. Using Libraries
 
-Using a library in Vala is largely automated if you use the *valac*
+Using a library in Vala is largely automated if you use the `valac`
 compiler. The Vala specific library files make up what is known as a
 package. You tell the compiler that a package is needed by your program
 as follows:
@@ -10,11 +10,11 @@ valac --pkg gee-0.8 test.vala
 ```
 
 This command means your program can use any of the definitions in the
-*gee-0.8.vapi* file, and also any in any of the packages that *gee-0.8*
-depends on. These dependencies would be listed in *gee-0.8.deps* if
-there were any. In this example *valac* is set to build all the way to
-binary, and will therefore incorporate information from *pkg-config* to
-link the correct libraries. This is why the *pkg-config* names are also
+`gee-0.8.vapi` file, and also any in any of the packages that `gee-0.8`
+depends on. These dependencies would be listed in `gee-0.8.deps` if
+there were any. In this example `valac` is set to build all the way to
+binary, and will therefore incorporate information from `pkg-config` to
+link the correct libraries. This is why the `pkg-config` names are also
 used for Vala package names.
 
 Packages are generally used with namespaces, but they are not
@@ -25,7 +25,7 @@ qualified names of all symbols.
 
 It is also possible to treat a local library (one that is not installed)
 as a package. For comparison, Vala itself uses an internal version of
-Gee. When *valac* is built it creates a VAPI file of this internal
+Gee. When `valac` is built it creates a VAPI file of this internal
 library and uses it roughly as follows:
 
 ```shell

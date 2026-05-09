@@ -46,10 +46,10 @@ We create a new thread, and it will start immediately. The first argument
 is its name,the second one is the content of the new thread. The generic
 parameter is the type of value which a thread returns.
 
-The program will still not act as we expected, because we just Without
+The program will still not act as we expected, because without
 any sort of event loop, a Vala program will terminate when its
 primary/root/parent thread (the one created to run "main") ends. In
-order to control this behaviour, you can allow threads to cooperate.
+order to control this behavior, you can allow threads to cooperate.
 This can be done powerfully using event loops and asynchronous queues,
 but in this introduction to threading we will just show the basic
 capabilities of threads.
@@ -72,11 +72,11 @@ thread to finish.
 What's more, it is possible for a thread to tell the system that it
 currently has no need to execute, and thereby suggest that another
 thread should be run instead, this is done using the static method
-*Thread.yield()*. If this statement was placed at the end of the above
-*main* method, the runtime system will pause the main thread for an
+`Thread.yield()`. If this statement was placed at the end of the above
+`main` method, the runtime system will pause the main thread for an
 instant and check if there are other threads that can be run - on
 finding the newly created thread in a runnable state, it will run that
-instead until it is finished - and the program will act is it appears it
+instead until it is finished - and the program will act as it appears it
 should. However, there is no guarantee that this will happen still. The
 system is able to decide when threads run, and as such might not allow
 the new thread to finish before the primary thread is restarted and the

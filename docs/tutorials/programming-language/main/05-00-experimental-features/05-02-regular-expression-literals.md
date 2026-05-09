@@ -17,8 +17,8 @@ if (/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.match (email)) {
 }
 ```
 
-The trailing *i* makes the expression case-insensitive. You can store a
-regular expression in a variable of type *Regex*:
+The trailing `i` makes the expression case-insensitive. You can store a
+regular expression in a variable of type `Regex`:
 
 ```vala
 Regex regex = /foo/;
@@ -34,15 +34,15 @@ print ("%s\n", o);
 
 The following trailing characters can be used:
 
--   *i*, letters in the pattern match both upper- and lowercase letters
--   *m*, the "start of line" and "end of line" constructs match
+-   `i`, letters in the pattern match both upper- and lowercase letters
+-   `m`, the "start of line" and "end of line" constructs match
     immediately following or immediately before any newline in the
     string, respectively, as well as at the very start and end.
--   *s*, a dot metacharater *.* in the pattern matches all characters,
+-   `s`, a dot metacharacter `.` in the pattern matches all characters,
     including newlines. Without it, newlines are excluded.
--   *x*, whitespace data characters in the pattern are totally ignored
+-   `x`, whitespace data characters in the pattern are totally ignored
     except when escaped or inside a character class.
--   *o*, request JIT compilation of a regular expression. It allows you to
+-   `o`, request JIT compilation of a regular expression. It allows you to
     execute this regex much faster at the cost of extra time taken to
     compile it. This option is most beneficial when the same compiled
     pattern is used for matching several times.

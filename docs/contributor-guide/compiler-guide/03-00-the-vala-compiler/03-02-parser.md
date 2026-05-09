@@ -4,7 +4,7 @@ The parser reads Vala and VAPI code and outputs an AST. In the eyes of
 the parser, Vala and VAPI are the same thing. The difference to us is
 that VAPI files never have method definitions, but the parser will read
 pretty much everything as long as it seems syntactically correct. Most
-errors are caught later by the Semantic Analyzer.
+errors are caught later by the **Semantic Analyzer**.
 
 ::: info Note
 
@@ -15,15 +15,15 @@ the parser is a hand-crafted recursive descent parser. The parser is in
 :::
 
 The entry point of the parser is `Vala.Parser.parse ()`. This method is
-called by `Vala.Compiler.run ()`. Vala.Parser is an implementation of
+called by `Vala.Compiler.run ()`. `Vala.Parser` is an implementation of
 `Vala.CodeVisitor` for source files.
 
 ## 3.2.1. Visitors and Ping Pong
 
-CodeVisitor is an abstract base class which provides 75 empty virtual
-methods for each kind of code node. A class which inherits CodeVisitor
+`CodeVisitor` is an abstract base class which provides 75 empty virtual
+methods for each kind of code node. A class which inherits `CodeVisitor`
 is supposed to do some kind of processing of the code tree. Here are all
-the CodeVisitor classes in Vala:
+the `CodeVisitor` classes in Vala:
 
 ```vala
 public abstract class Vala.CodeVisitor
@@ -38,7 +38,7 @@ public class Vala.SemanticAnalyzer : CodeVisitor
 public class Vala.SymbolResolver : CodeVisitor
 ```
 
-CodeVisitor works closely with the different `Vala.CodeNode` classes to
+`CodeVisitor` works closely with the different `Vala.CodeNode` classes to
 traverse the code tree. Here are all the code node types in Vala grouped
 by superclass:
 
@@ -212,17 +212,17 @@ public class Vala.SourceFile
 public class Vala.SourceReference
 ```
 
-The SourceFile class is an exception when visiting nodes, because it's
-not a CodeNode but there is a visit_source_file in the CodeVisitor.
+The `SourceFile` class is an exception when visiting nodes, because it's
+not a `CodeNode` but there is a `visit_source_file` in the `CodeVisitor`.
 
-All CodeNodes except the root have a non-null parent CodeNode. Some
-specializations of CodeNode may have children. The type and number of
+All `CodeNode`s except the root have a non-null parent `CodeNode`. Some
+specializations of `CodeNode` may have children. The type and number of
 children are declared in the specialized class.
 
-The two important methods in a CodeNode are *accept* and
-*accept_children*. The accept () method lets the node declare to the
-CodeVisitor what it is, so the CodeVisitor can act on it. For example,
-Vala.Struct.accept ():
+The two important methods in a `CodeNode` are `accept` and
+`accept_children`. The `accept ()` method lets the node declare to the
+`CodeVisitor` what it is, so the `CodeVisitor` can act on it. For example,
+`Vala.Struct.accept ()`:
 
 ```vala
 public override void accept (CodeVisitor visitor) {
@@ -230,11 +230,11 @@ public override void accept (CodeVisitor visitor) {
 }
 ```
 
-The accept_children () method lets the node accept all of its children so
-they can declare themselves to the CodeVisitor. This is the recursive
-part of the traversal. For example, a Struct code node has a list of
+The `accept_children ()` method lets the node accept all of its children so
+they can declare themselves to the `CodeVisitor`. This is the recursive
+part of the traversal. For example, a `Struct` code node has a list of
 base types, type parameters, fields, constants, and methods.
-Vala.Struct.accept_children () accepts all of these.
+`Vala.Struct.accept_children ()` accepts all of these.
 
 ```vala
 public override void accept_children (CodeVisitor visitor) {
@@ -264,10 +264,10 @@ public override void accept_children (CodeVisitor visitor) {
 }
 ```
 
-As you can see, the CodeVisitor is repeatedly asked to visit different
+As you can see, the `CodeVisitor` is repeatedly asked to visit different
 code nodes. It can do whatever analysis is necessary and then traverse
 deeper into the code tree. This is what a hypothetical implementation of
-XmlGenerator.visit_struct () might look like:
+`XmlGenerator.visit_struct ()` might look like:
 
 ```vala
 public override void visit_struct (Struct st) {
@@ -283,37 +283,37 @@ public override void visit_struct (Struct st) {
 }
 ```
 
-The visit_ methods of a CodeVisitor needn't call
-CodeNode.accept_children (), if it isn't necessary to traverse the whole
-depth of the code tree. It also isn't necessary to write visit_
+The `visit_` methods of a `CodeVisitor` needn't call
+`CodeNode.accept_children()`, if it isn't necessary to traverse the whole
+depth of the code tree. It also isn't necessary to write `visit_`
 methods for every kind of code node, because empty implementations are
-already provided in CodeVisitor.
+already provided in `CodeVisitor`.
 
 What does this have to do with ping pong? Well, the flow of control
-bounces between the CodeVisitor and the CodeNodes: accept, visit,
-accept, visit, ... When you navigate the code you will probably find
+bounces between the `CodeVisitor` and the `CodeNode`s: `accept`, `visit`,
+`accept`, `visit`, … When you navigate the code you will probably find
 yourself bouncing between different classes.
 
 ## 3.2.2. Back to the Parser
 
-Vala.Parser is a highly specialized CodeVisitor - the only type of code
-node it visits is a Vala.SourceFile. However, the Parser calls back to
+`Vala.Parser` is a highly specialized `CodeVisitor` — the only type of code
+node it visits is a `Vala.SourceFile`. However, the `Parser` calls back to
 the context and uses it to create code nodes (mentioned before), then
 adds these code nodes into the context's root code node.
 
 ## 3.2.3. Error Handling
 
 I don't want to spoil your fun too much by going into the details of
-the parser, other than that every parse_ function can throw a
-ParseError. ParseError is caught when parsing a block or the
+the parser, other than that every `parse_` function can throw a
+`ParseError`. `ParseError` is caught when parsing a block or the
 declarations of a namespace, class, struct, or interface. Fixme.
 
 ## 3.2.4. Grammar of Vala (BNF Notation)
 
-This grammar is hand-generated from Vala.Parser. Sometimes the structure
+This grammar is hand-generated from `Vala.Parser`. Sometimes the structure
 of this grammar diverges slightly from the code, for example optional
 non-terminal symbols. However, the non-terminal symbol names usually
-match a parse_ method in Vala.Parser.
+match a `parse_` method in `Vala.Parser`.
 
 More literal-specific grammar at
 [https://gnome.pages.gitlab.gnome.org/vala/manual/index.html](https://gnome.pages.gitlab.gnome.org/vala/manual/index.html)

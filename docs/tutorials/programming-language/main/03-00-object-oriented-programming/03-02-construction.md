@@ -8,7 +8,7 @@ section at the end of the chapter.
 Vala does not support constructor overloading for the same reasons that
 method overloading is not allowed, which means a class may not have
 multiple constructors with the same name. However, this is no problem
-because Vala supports *named constructors*. If you want to offer
+because Vala supports **named constructors**. If you want to offer
 multiple constructors you may give them different name additions:
 
 ```vala

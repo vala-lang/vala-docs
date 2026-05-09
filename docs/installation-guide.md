@@ -72,7 +72,7 @@ pacman -S mingw-w64-x86_64-vala
 You also need to install all the libraries that you want to use
 individually.
 
-### Windows Subsystem for Windows (WSL)
+### Windows Subsystem for Linux (WSL)
 
 Install a Linux distribution in WSL and then continue with the
 [installation instructions for Linux](installation-guide#linux).

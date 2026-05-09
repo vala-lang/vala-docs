@@ -135,8 +135,8 @@ public class Phone : GLib.Object, Callable {
 }
 ```
 
-When compiling and running, you will find that `Phone` class actually no
-implements `Callable.hang ()` method, but it is able to use it, then the
+When compiling and running, you will find that `Phone` class actually doesn't
+implement the `Callable.hang ()` method, but it is able to use it, then the
 result is a message `Hang done.`
 
 ```vala

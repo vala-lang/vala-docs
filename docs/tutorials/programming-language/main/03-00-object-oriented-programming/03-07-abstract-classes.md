@@ -4,7 +4,7 @@ There is another modifier for methods, called `abstract`. This modifier
 allows you to describe a method that is not actually implemented in the
 class. Instead, it must be implemented by subclasses before it can be
 called. This allows you to define operations that can be called on all
-instances of a type, whilst ensuring that all more specific types
+instances of a type, while ensuring that all more specific types
 provide their own version of the functionality.
 
 A class containing abstract methods must be declared `abstract` as well.

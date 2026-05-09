@@ -1,7 +1,7 @@
 # 2.8. Code Attributes
 
 Code attributes instruct the Vala compiler details about how the code is supposed to work on the target platform. 
-They are mostly used for bindings in *vapi* files.
+They are mostly used for bindings in `vapi` files.
 
 The most prominent example is the `[CCode (...)]` attribute:
 

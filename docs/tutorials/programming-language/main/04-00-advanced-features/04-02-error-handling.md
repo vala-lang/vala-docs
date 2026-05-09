@@ -13,12 +13,12 @@ requires a number greater than 0 as a parameter, it should fail on
 negative values using contract programming techniques such as
 preconditions or assertions described in the previous section.
 
-Vala errors are so-called *checked exceptions*, which means that errors
+Vala errors are so-called **checked exceptions**, which means that errors
 must get handled at some point. However, if you don't catch an error
 the Vala compiler will only issue a warning without stopping the
 compilation process.
 
-Using exceptions (or *errors* in Vala terminology) is a matter of:
+Using exceptions (or **errors** in Vala terminology) is a matter of:
 
 1)  Declaring that a method may raise an error:
 

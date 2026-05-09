@@ -33,14 +33,14 @@ which can be compiled to run with no extra library support beyond the
 GNOME platform. This has several consequences, but most importantly:
 
 -   Programs written in Vala should have broadly similar performance to
-    those written directly in C, whilst being easier and faster to write
+    those written directly in C, while being easier and faster to write
     and maintain.
--   A Vala application can do nothing that a C equivalent cannot. Whilst
+-   A Vala application can do nothing that a C equivalent cannot. While
     Vala introduces a lot of language features that are not available in
     C, these are all mapped to C constructs, although they are often
     ones that are difficult or too time-consuming to write directly.
 
-As such, whilst Vala is a modern language with all of the features you
+As such, while Vala is a modern language with all of the features you
 would expect, it gains its power from an existing platform, and must in
 some ways comply with the rules set down by it.
 
@@ -57,7 +57,7 @@ Vala shares a lot of syntax with C#, but I will try to avoid describing
 features in terms of their similarity or differences with either C# or
 Java, with the aim of making the tutorial more accessible.
 
-What will be useful is a reasonable understanding of C. Whilst this
+What will be useful is a reasonable understanding of C. While this
 isn't needed for understanding Vala per se, it is important to realise
 that Vala programs are executed as C, and will often interact with C
 libraries. Knowledge of C will certainly make a deeper understanding of
@@ -65,11 +65,11 @@ Vala far easier to come by.
 
 ### Conventions
 
-Code will be in `monospaced text`, commands will say `bash` or `shell` to the right. 
+Code will be in `monospaced text`, commands will say `bash` or `shell` to the right.
 Other than that, everything should be obvious. I tend to
 code very explicitly, including some information that is actually
 implied. I will try to explain where some things can be omitted, but
-that doesn't mean that I encourage you do to this.
+that doesn't mean that I encourage you to do this.
 
 At some point I will add in references to the Vala documentation, but
 that isn't really possible yet.

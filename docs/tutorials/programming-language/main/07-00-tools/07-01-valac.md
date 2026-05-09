@@ -15,7 +15,7 @@ way to know what those situations are).
 For example, compiling the
 [Hello World program](../01-00-first-program) will give us some warnings because `valac` by default
 generates code which is compatible with older versions of the
-`GLib`.Some methods may have been deprecated in your new version of GLib
+`GLib`. Some methods may have been deprecated in your new version of GLib
 so that C language compiler will warn you.
 
 Imagine a machine with older glib version want to run your vala program!
@@ -44,7 +44,7 @@ valac -o appname --pkg gee-0.8 file_name_1.vala file_name_2.vala
 
 The `-o` switch requests that an object file is created, rather than
 just outputting C source files. The `--pkg` option says that this build
-needs information from the *gee-0.8* package. You do not need to specify
+needs information from the `gee-0.8` package. You do not need to specify
 details about what libraries to link in, the package has this
 information internally. Finally, a list of source files is given. If you
 need a more complicated build process, use the `-C` switch to generate C

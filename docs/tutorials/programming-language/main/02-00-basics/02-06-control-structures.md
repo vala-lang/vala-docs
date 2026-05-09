@@ -6,7 +6,7 @@
 while (a > b) { a--; }
 ```
 
-Will decrement `a` repeatedly, checking before each iteration that *a*
+Will decrement `a` repeatedly, checking before each iteration that `a`
 is greater than `b`.
 
 ## do..while Loop
@@ -15,7 +15,7 @@ is greater than `b`.
 do { a--; } while (a > b);
 ```
 
-Will decrement `a` repeatedly, checking after each iteration that *a* is
+Will decrement `a` repeatedly, checking after each iteration that `a` is
 greater than `b`.
 
 ## for Loop

@@ -4,7 +4,7 @@
 
 Vala is not yet capable of directly creating dynamic or static
 libraries. To create a library, proceed with the `-c` (compile only)
-switch and link the object files with your favourite linker, i.e.
+switch and link the object files with your favorite linker, i.e.
 `libtool` or `ar`.
 
 ```shell
@@ -12,8 +12,8 @@ valac -c ...(source files)
 ar cx ...(object files)
 ```
 
-or by compiling the intermediate C code in the compiler of you choice.
-We'll be using *gcc* in these examples.
+or by compiling the intermediate C code in the compiler of your choice.
+We'll be using `gcc` in these examples.
 
 ```shell
 valac -C ...(source files)
@@ -26,7 +26,7 @@ The following is an example of how to write a simple library in Vala,
 and also to compile and test it locally without having to install it
 first.
 
-Save the following code to a file *test.vala*. This is the actual
+Save the following code to a file `test.vala`. This is the actual
 library code, containing the functions we want to call from our main
 program.
 
@@ -43,7 +43,7 @@ public class MyLib : Object {
 }
 ```
 
-Use the next command to generate *test.c*, *test.h* and *test.vapi*
+Use the next command to generate `test.c`, `test.h` and `test.vapi`
 files. These are the C versions of the library to be compiled, and the
 VAPI file representing the library's public interface.
 
@@ -57,7 +57,7 @@ Now compile the library:
 gcc --shared -fPIC -o libtest.so $(pkg-config --cflags --libs gobject-2.0) test.c
 ```
 
-Save the following code to a file called *hello.vala*. This is the code
+Save the following code to a file called `hello.vala`. This is the code
 that will use the library we have created.
 
 ```vala

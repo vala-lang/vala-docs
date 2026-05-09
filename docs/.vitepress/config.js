@@ -783,7 +783,7 @@ export default {
                                 link: '/developer-guides/documentation',
                                 collapsed: true,
                                 items: [
-                                        {
+                                    {
                                         text: 'Valadoc Guide',
                                         link: '/developer-guides/documentation/valadoc-guide',
                                         collapsed: true,
@@ -1333,6 +1333,10 @@ export default {
                                     {
                                         text: 'GIO Networking Sample',
                                         link: '/sample-code/basics/gio-networking-sample'
+                                    },
+                                    {
+                                        text: 'Libsoup Samples',
+                                        link: '/sample-code/basics/soup-samples'
                                     },
                                     {
                                         text: 'D-Bus Basic (GDBus) Samples',

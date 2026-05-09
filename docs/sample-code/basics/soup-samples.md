@@ -77,7 +77,7 @@ void main () {
 	var fetch_message = new Soup.Message ("GET", "http://vala.dev");
 
 	/* Send a synchronous request */
-	var raw_fetch_response_data = session.send_and_read (fetch_message);
+	GLib.Bytes raw_fetch_response_data = session.send_and_read (fetch_message);
 	string fetch_response_data = (string) raw_fetch_response_data.get_data ();
 
 	// Loop through and output the response headers in from the request

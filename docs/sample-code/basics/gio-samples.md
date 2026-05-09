@@ -10,7 +10,7 @@ Streams can be wrapped ([decorator pattern](http://en.wikipedia.org/wiki/Decorat
 `FileInputStream` in a `DataInputStream` to read line by line, or use a
 `FilterInputStream` for custom filtering.
 
-![Diagram: a DataInputStream wrapping an underlying FileInputStream](./assets/gio-stream-wrapping.png)
+![Diagram: a DataInputStream wrapping an underlying FileInputStream](../assets/gio-stream-wrapping.png)
 
 Build the programs below with GIO, for example:
 

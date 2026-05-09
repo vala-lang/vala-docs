@@ -102,5 +102,5 @@ You can also use a graphical D-Bus debugger like
 interfaces and call methods.
 
 Some comprehensive examples:
-[D-Bus Client Examples](../../../../sample-code/dbus-client-samples) and
-[D-Bus Basic (GDBus) Samples](../../../../sample-code/dbus-basic-samples).
+[D-Bus Client Examples](../../../../sample-code/basics/dbus-client-samples) and
+[D-Bus Basic (GDBus) Samples](../../../../sample-code/basics/dbus-basic-samples).

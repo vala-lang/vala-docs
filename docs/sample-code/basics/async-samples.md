@@ -1,7 +1,7 @@
 # Async Method Samples
 
 These examples show different ways to use asynchronous methods in Vala. The
-[Asynchronous Methods](../tutorials/programming-language/main/04-00-advanced-features/04-08-asynchronous-methods)
+[Asynchronous Methods](../../tutorials/programming-language/main/04-00-advanced-features/04-08-asynchronous-methods)
 chapter in the main tutorial explains how `async`, `yield`, `.begin`, and `.end`
 work. For more file and I/O oriented examples, see [GIO Samples](gio-samples).
 

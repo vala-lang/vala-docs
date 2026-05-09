@@ -4,7 +4,7 @@ Java: `java.util.*` package
 
 Vala: `Gee` namespace, `--pkg gee-1.0`, [Libgee](https://wiki.gnome.org/Projects/Libgee)
 
-See [Gee Examples](/sample-code/gee-samples), [Gee documentation](https://valadoc.org/gee-1.0/).
+See [Gee Examples](/sample-code/basics/gee-samples), [Gee documentation](https://valadoc.org/gee-1.0/).
 
 Vala allows array-like access for Gee collections (e.g. `my_map[key]` is equivalent to `my_map.get (key)`). Vala supports an `in` operator for collections: `x in my_collection` is equivalent to `my_collection.contains (x)`. This operator also works with strings, even though strings are not collections.
 

@@ -1289,62 +1289,62 @@ export default {
                                 items: [
                                     {
                                         text: 'Vala Collections: libgee',
-                                        link: '/sample-code/gee-samples',
+                                        link: '/sample-code/basics/gee-samples',
                                         collapsed: true,
                                         items: [
                                             {
                                                 text: 'List Sample',
-                                                link: '/sample-code/gee-samples/01-list-sample'
+                                                link: '/sample-code/basics/gee-samples/01-list-sample'
                                             },
                                             {
                                                 text: 'Set Sample',
-                                                link: '/sample-code/gee-samples/02-set-sample'
+                                                link: '/sample-code/basics/gee-samples/02-set-sample'
                                             },
                                             {
                                                 text: 'Map Example',
-                                                link: '/sample-code/gee-samples/03-map-sample'
+                                                link: '/sample-code/basics/gee-samples/03-map-sample'
                                             },
                                             {
                                                 text: 'Syntactic Sugar',
-                                                link: '/sample-code/gee-samples/04-syntactic-sugar'
+                                                link: '/sample-code/basics/gee-samples/04-syntactic-sugar'
                                             },
                                             {
                                                 text: 'Customizing the equality function',
-                                                link: '/sample-code/gee-samples/05-custom-equality'
+                                                link: '/sample-code/basics/gee-samples/05-custom-equality'
                                             },
                                             {
                                                 text: 'Iterable Sample',
-                                                link: '/sample-code/gee-samples/06-iterable-sample'
+                                                link: '/sample-code/basics/gee-samples/06-iterable-sample'
                                             }
                                         ]
                                     },
                                     {
                                         text: 'GIO Samples',
-                                        link: '/sample-code/gio-samples'
+                                        link: '/sample-code/basics/gio-samples'
                                     },
                                     {
                                         text: 'GIO Compression Sample',
-                                        link: '/sample-code/gio-compression-sample'
+                                        link: '/sample-code/basics/gio-compression-sample'
                                     },
                                     {
                                         text: 'GIO Settings Sample',
-                                        link: '/sample-code/gio-settings-sample'
+                                        link: '/sample-code/basics/gio-settings-sample'
                                     },
                                     {
                                         text: 'GIO Networking Sample',
-                                        link: '/sample-code/gio-networking-sample'
+                                        link: '/sample-code/basics/gio-networking-sample'
                                     },
                                     {
                                         text: 'D-Bus Basic (GDBus) Samples',
-                                        link: '/sample-code/dbus-basic-samples'
+                                        link: '/sample-code/basics/dbus-basic-samples'
                                     },
                                     {
                                         text: 'D-Bus Client Examples',
-                                        link: '/sample-code/dbus-client-samples'
+                                        link: '/sample-code/basics/dbus-client-samples'
                                     },
                                     {
                                         text: 'Async Method Samples',
-                                        link: '/sample-code/async-samples'
+                                        link: '/sample-code/basics/async-samples'
                                     }
                                 ]
                             },

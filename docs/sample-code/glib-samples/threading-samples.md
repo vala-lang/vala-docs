@@ -303,3 +303,60 @@ void main () {
 ```shell
 vala threadpool.vala
 ```
+
+## Thread pool sized to processor count
+
+For CPU-bound work it is common to cap concurrent workers near the number of logical processors. [`GLib.get_num_processors()`](https://valadoc.org/glib-2.0/GLib.get_num_processors.html) returns that count and can be passed as `max_threads` to [`ThreadPool.with_owned_data`](https://valadoc.org/glib-2.0/GLib.ThreadPool.with_owned_data.html).
+
+```vala
+class Worker {
+    public string thread_name { private set; get; }
+    public int x_times { private set; get; }
+    public int priority { private set; get; }
+
+    public Worker (string name, int x, int priority) {
+        this.priority = priority;
+        this.thread_name = name;
+        this.x_times = x;
+    }
+
+    public void run () {
+        for (int i = 0; i < this.x_times; i++) {
+            print ("%s: %d/%d\n", this.thread_name, i + 1, this.x_times);
+            // wait for a second.
+            Thread.usleep (1000000);
+        }
+    }
+}
+
+void main () {
+    try {
+        int max_threads = (int) GLib.get_num_processors ();
+        ThreadPool<Worker> pool = new ThreadPool<Worker>.with_owned_data ((worker) => {
+            worker.run ();
+        }, max_threads, false);
+
+        pool.set_sort_function ((worker1, worker2) => {
+            return (worker1.priority < worker2.priority) ? -1 :
+            (int) (worker1.priority > worker2.priority);
+        });
+
+        pool.add (new Worker ("Thread 1", 5, 4));
+        pool.add (new Worker ("Thread 2", 10, 3));
+        pool.add (new Worker ("Thread 4", 5, 2));
+        pool.add (new Worker ("Thread 5", 5, 1));
+
+        uint waiting = pool.unprocessed ();
+        uint allowed = pool.get_max_threads ();
+        uint running = pool.get_num_threads ();
+        print ("%u/%u threads are running, %u outstanding (pool max = %d from get_num_processors).\n",
+               running, allowed, waiting, max_threads);
+    } catch (ThreadError e) {
+        print ("ThreadError: %s\n", e.message);
+    }
+}
+```
+
+```shell
+vala threadpool-processors.vala
+```

@@ -77,14 +77,29 @@ individually.
 Install a Linux distribution in WSL and then continue with the
 [installation instructions for Linux](installation-guide#linux).
 
-## Mac OS X
+## macOS
 
-To install Vala on Mac OS X, you can use [brew](https://brew.sh), a package
-manager for OS X:
+To install Vala on macOS, you can use [brew](https://brew.sh):
 
 ```shell
 brew install vala
 ```
+
+::: warning
+
+Make sure that you have updated your shell's config for Homebrew.
+Otherwise, packages that you've installed using Homebrew may not be
+detected by the Vala compiler (`valac`) when you reference them.
+
+Add this to your shell's config file (~/.zshrc, ~/.bashrc etc.):
+
+```sh
+eval "$(<Homebrew prefix path>/bin/brew shellenv)"
+```
+
+For more info see: https://docs.brew.sh/Installation#post-installation-steps
+
+:::
 
 ## Verifying the Installation
 

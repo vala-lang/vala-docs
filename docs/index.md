@@ -20,6 +20,7 @@ uses where native binaries are required.
 - [Contributor Guide](contributor-guide/)
 - [Developer Guides](developer-guides/)
 - [Sample Code](sample-code/)
+- [Genie Programming Language](genie/)
 - [FAQ](faq)
 
 ## External Resources

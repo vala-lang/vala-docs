@@ -1453,6 +1453,91 @@ export default {
                         ]
                     },
                     {
+                        text: 'Genie Programming Lanugage',
+                        link: '/genie/',
+                        collapsed: true,
+                        items: [
+                            {
+                                text: 'Introduction to Genie',
+                                link: '/genie/introduction',
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: '1. Compiling and C',
+                                        link: '/genie/introduction/01-compiling'
+                                    },
+                                    {
+                                        text: '2. Language basics',
+                                        link: '/genie/introduction/02-language-basics'
+                                    },
+                                    {
+                                        text: '3. Types, functions, and errors',
+                                        link: '/genie/introduction/03-types-functions-and-errors'
+                                    },
+                                    {
+                                        text: '4. Objects',
+                                        link: '/genie/introduction/04-objects'
+                                    },
+                                    {
+                                        text: '5. Collections and C interoperability',
+                                        link: '/genie/introduction/05-collections-and-interop'
+                                    },
+                                    {
+                                        text: '6. Concurrency, IPC, and system interfaces',
+                                        link: '/genie/introduction/06-concurrency-and-systems'
+                                    },
+                                    {
+                                        text: '7. Advanced topics',
+                                        link: '/genie/introduction/07-advanced'
+                                    },
+                                ]
+                            },
+                            {
+                                text: 'Sample code',
+                                link: '/genie/sample-code/',
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: 'Basic samples',
+                                        link: '/genie/sample-code/basic-samples'
+                                    },
+                                    {
+                                        text: 'Advanced sample',
+                                        link: '/genie/sample-code/advanced-sample'
+                                    },
+                                    {
+                                        text: 'Cairo sample',
+                                        link: '/genie/sample-code/cairo-sample'
+                                    },
+                                    {
+                                        text: 'Curses sample',
+                                        link: '/genie/sample-code/curses-sample'
+                                    },
+                                    {
+                                        text: 'GIO networking sample',
+                                        link: '/genie/sample-code/gio-networking-sample'
+                                    },
+                                    {
+                                        text: 'LibSoup sample',
+                                        link: '/genie/sample-code/libsoup-sample'
+                                    },
+                                    {
+                                        text: 'XML sample',
+                                        link: '/genie/sample-code/xml-sample'
+                                    },
+                                ]
+                            },
+                            {
+                                text: 'Developing Genie',
+                                link: '/genie/developing-genie'
+                            },
+                            {
+                                text: 'Tutorials, Blogs and Code Examples',
+                                link: '/genie/resources'
+                            },
+                        ]
+                    },
+                    {
                         text: 'FAQ',
                         link: '/faq'
                     }

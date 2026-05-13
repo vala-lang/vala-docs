@@ -1,4 +1,4 @@
-# Plugin Sample (`GModule`)
+# Plugin Sample (GModule)
 
 This sample loads a shared library at runtime with [`GLib.Module`](https://valadoc.org/gmodule-2.0/GLib.Module.html)
 and calls an exported C symbol from Vala. It is a minimal **GModule** example (no

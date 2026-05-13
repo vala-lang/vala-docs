@@ -8,15 +8,15 @@ threading primitives.
 ## Samples
 
 <ul class="section-toc">
-<li><a href="/sample-code/glib-samples/date-time-sample">Date and time (<code>DateTime</code>)</a></li>
-<li><a href="/sample-code/glib-samples/io-channels-sample">IO channels and pipes</a></li>
-<li><a href="/sample-code/glib-samples/collections-sample">GLib <code>List</code> and <code>HashTable</code></a></li>
-<li><a href="/sample-code/glib-samples/markup-parser-sample">Markup parser (XML subset)</a></li>
-<li><a href="/sample-code/glib-samples/plugin-sample">Plugin loading with <code>GModule</code></a></li>
-<li><a href="/sample-code/glib-samples/value-sample"><code>GValue</code> boxing and unboxing</a></li>
-<li><a href="/sample-code/glib-samples/type-module-sample"><code>TypeModule</code> plugins</a></li>
-<li><a href="/sample-code/glib-samples/testing-samples">Testing samples (<code>GLib.Test</code>)</a></li>
-<li><a href="/sample-code/glib-samples/threading-samples">Threading samples</a></li>
+<li><a href="/sample-code/glib-samples/date-time-sample">Date and Time Sample</a></li>
+<li><a href="/sample-code/glib-samples/io-channels-sample">IO Channels Sample</a></li>
+<li><a href="/sample-code/glib-samples/collections-sample">GLib Collections Sample</a></li>
+<li><a href="/sample-code/glib-samples/markup-parser-sample">Markup Parser Sample (Simple XML)</a></li>
+<li><a href="/sample-code/glib-samples/plugin-sample">Plugin Sample (GModule)</a></li>
+<li><a href="/sample-code/glib-samples/value-sample">GValue Sample</a></li>
+<li><a href="/sample-code/glib-samples/type-module-sample">TypeModule Sample</a></li>
+<li><a href="/sample-code/glib-samples/testing-samples">Testing Samples</a></li>
+<li><a href="/sample-code/glib-samples/threading-samples">Threading Samples</a></li>
 </ul>
 
 For richer generic collections, see [Vala collections: libgee](/sample-code/basics/gee-samples).

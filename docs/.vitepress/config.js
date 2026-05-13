@@ -1366,23 +1366,23 @@ export default {
                                 collapsed: true,
                                 items: [
                                     {
-                                        text: 'Date and Time',
+                                        text: 'Date and Time Sample',
                                         link: '/sample-code/glib-samples/date-time-sample'
                                     },
                                     {
-                                        text: 'IO Channels',
+                                        text: 'IO Channels Sample',
                                         link: '/sample-code/glib-samples/io-channels-sample'
                                     },
                                     {
-                                        text: 'GLib Collections',
+                                        text: 'GLib Collections Sample',
                                         link: '/sample-code/glib-samples/collections-sample'
                                     },
                                     {
-                                        text: 'Markup Parser (XML Subset)',
+                                        text: 'Markup Parser Sample (Simple XML)',
                                         link: '/sample-code/glib-samples/markup-parser-sample'
                                     },
                                     {
-                                        text: 'Plugin Loading (GModule)',
+                                        text: 'Plugin Sample (GModule)',
                                         link: '/sample-code/glib-samples/plugin-sample'
                                     },
                                     {

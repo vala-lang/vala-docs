@@ -1,6 +1,6 @@
-# Threading
+# Threading Samples
 
-## Check Thread Support
+## Check thread support
 
 Originally, UNIX did not have threads.
 That means some traditional UNIX APIs are problematic in threaded programs.
@@ -48,7 +48,7 @@ void main () {
 vala simple.vala
 ```
 
-## Threads With Context
+## Threads with context
 
 ```vala
 class MyThread {
@@ -86,9 +86,9 @@ void main () {
 vala threads.vala
 ```
 
-## Synchronization With Mutex and Cond
+## Synchronization with mutex and condition
 
-This is an implementation of the [dining philosophers problem](http://en.wikipedia.org/wiki/Dining_philosophers_problem), a classic multi-process synchronization problem.
+This is an implementation of the [dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem), a classic multi-process synchronization problem.
 
 ```vala
 /** Fork pool used by the philosophers */
@@ -169,7 +169,7 @@ void main () {
 vala philosophers.vala
 ```
 
-## Communcation between two threads using async queues
+## Communication between two threads using async queues
 
 In this example data is sent from one thread to another.
 This is done via GLib's AsyncQueue. The pop and push functions of
@@ -247,7 +247,7 @@ void main () {
 vala async-queue-test.vala
 ```
 
-## Thread Pool
+## Thread pool
 
 ```vala
 class Worker {
@@ -277,7 +277,7 @@ void main () {
             worker.run ();
         }, 3, false);
 
-        // Define a priority (otpional)
+        // Define a priority (optional)
         pool.set_sort_function ((worker1, worker2) => {
             // A simple priority-compare, qsort-style
             return (worker1.priority < worker2.priority) ? -1 :

@@ -2,9 +2,7 @@
 
 This example shows how to register a minimal unit test with
 [`GLib.Test`](https://valadoc.org/glib-2.0/GLib.Test.html), run it, and exit
-with a useful status code. It adapts the “Simple test” section from the archived
-[Vala TestSample](https://wiki.gnome.org/Projects/Vala/TestSample) page on the
-GNOME Wiki.
+with a useful status code.
 
 ## Program
 

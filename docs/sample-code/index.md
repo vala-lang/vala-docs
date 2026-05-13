@@ -12,10 +12,14 @@
 <li><a href="basics">Basics: Collections, Files, I/O, Networking, IPC samples</a></li>
 </ul>
 
+## GLib samples
+
+<ul class="section-toc">
+<li><a href="glib-samples">GLib samples</a></li>
+</ul>
+
 ## Other samples
 
 <ul class="section-toc">
-<li><a href="testing-samples">Testing Samples</a></li>
-<li><a href="threading-samples">Threading Samples</a></li>
 <li><a href="gtk4-samples">GTK4 Samples</a></li>
 </ul>

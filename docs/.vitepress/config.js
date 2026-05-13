@@ -1361,12 +1361,47 @@ export default {
                                 ]
                             },
                             {
-                                text: 'Testing Samples',
-                                link: '/sample-code/testing-samples'
-                            },
-                            {
-                                text: 'Threading Samples',
-                                link: '/sample-code/threading-samples'
+                                text: 'GLib Samples',
+                                link: '/sample-code/glib-samples',
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: 'Date and Time',
+                                        link: '/sample-code/glib-samples/date-time-sample'
+                                    },
+                                    {
+                                        text: 'IO Channels',
+                                        link: '/sample-code/glib-samples/io-channels-sample'
+                                    },
+                                    {
+                                        text: 'GLib Collections',
+                                        link: '/sample-code/glib-samples/collections-sample'
+                                    },
+                                    {
+                                        text: 'Markup Parser (XML Subset)',
+                                        link: '/sample-code/glib-samples/markup-parser-sample'
+                                    },
+                                    {
+                                        text: 'Plugin Loading (GModule)',
+                                        link: '/sample-code/glib-samples/plugin-sample'
+                                    },
+                                    {
+                                        text: 'GValue Sample',
+                                        link: '/sample-code/glib-samples/value-sample'
+                                    },
+                                    {
+                                        text: 'TypeModule Sample',
+                                        link: '/sample-code/glib-samples/type-module-sample'
+                                    },
+                                    {
+                                        text: 'Testing Samples',
+                                        link: '/sample-code/glib-samples/testing-samples'
+                                    },
+                                    {
+                                        text: 'Threading Samples',
+                                        link: '/sample-code/glib-samples/threading-samples'
+                                    },
+                                ]
                             },
                             {
                                 text: 'GTK4 Samples',

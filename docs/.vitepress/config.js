@@ -1444,6 +1444,10 @@ export default {
                                         text: 'Entry Completion with Two Cells',
                                         link: '/sample-code/gtk4-samples/entry-completion-two-cells'
                                     },
+                                    {
+                                        text: 'Drag and Drop',
+                                        link: '/sample-code/gtk4-samples/drag-and-drop'
+                                    },
                                 ]
                             },
                         ]

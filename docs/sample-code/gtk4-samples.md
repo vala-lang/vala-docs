@@ -34,4 +34,5 @@ The repository includes the sample code featured on this website.
 <li><a href="gtk4-samples/column-view">ColumnView</a></li>
 <li><a href="gtk4-samples/clipboard">Clipboard</a></li>
 <li><a href="gtk4-samples/entry-completion-two-cells">Entry Completion with Two Cells</a></li>
+<li><a href="gtk4-samples/drag-and-drop">Drag and Drop</a></li>
 </ul>

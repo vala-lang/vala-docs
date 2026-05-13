@@ -820,12 +820,12 @@ export default {
                                                     {
                                                         text: '3.1.3. Taglets',
                                                         link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-03-taglets'
-                                                    },
-                                                    {
-                                                        text: '3.1.4. Contributing to Valadoc',
-                                                        link: '/developer-guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-04-contributing-to-valadoc'
                                                     }
                                                 ]
+                                            },
+                                            {
+                                                text: '4. Contributing to Valadoc',
+                                                link: '/developer-guides/documentation/valadoc-guide/04-00-contributing-to-valadoc'
                                             }
                                         ]
                                     },

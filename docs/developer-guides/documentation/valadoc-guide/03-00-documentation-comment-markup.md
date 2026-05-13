@@ -25,5 +25,4 @@ documentation comment.
 <li><a href="03-00-documentation-comment-markup/03-01-brief-description">3.1.1. Brief Description</a></li>
 <li><a href="03-00-documentation-comment-markup/03-02-formatting">3.1.2. Formatting</a></li>
 <li><a href="03-00-documentation-comment-markup/03-03-taglets">3.1.3. Taglets</a></li>
-<li><a href="03-00-documentation-comment-markup/03-04-contributing-to-valadoc">3.1.4. Contributing to Valadoc</a></li>
 </ul>

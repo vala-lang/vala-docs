@@ -17,4 +17,5 @@ documentation from the library's Vala source files.
 <li><a href="valadoc-guide/01-00-quick-start">1. Quick Start</a></li>
 <li><a href="valadoc-guide/02-00-command-line-tool">2. Command Line Tool</a></li>
 <li><a href="valadoc-guide/03-00-documentation-comment-markup">3. Documentation Comment Markup</a></li>
+<li><a href="valadoc-guide/04-00-contributing-to-valadoc">4. Contributing to Valadoc</a></li>
 </ul>

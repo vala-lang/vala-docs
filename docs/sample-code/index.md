@@ -21,5 +21,6 @@
 ## Other samples
 
 <ul class="section-toc">
+<li><a href="other/">Other samples (libraries, tooling, legacy bindings)</a></li>
 <li><a href="gtk4-samples">GTK4 Samples</a></li>
 </ul>

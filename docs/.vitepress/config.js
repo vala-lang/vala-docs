@@ -921,6 +921,10 @@ export default {
                                 link: "/developer-guides/memory-management",
                             },
                             {
+                                text: "Vala on Windows",
+                                link: "/developer-guides/vala-on-windows",
+                            },
+                            {
                                 text: "Documentation",
                                 link: "/developer-guides/documentation",
                                 collapsed: true,

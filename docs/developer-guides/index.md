@@ -21,6 +21,9 @@
     <a href="memory-management">Memory Management</a>
   </li>
   <li>
+    <a href="vala-on-windows">Vala on Windows</a>
+  </li>
+  <li>
     <a href="documentation">Documentation</a>
     <ul class="section-toc section-toc-sub">
       <li><a href="documentation/vala-for-csharp-programmers">Vala for C# Programmers</a></li>

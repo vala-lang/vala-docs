@@ -10,6 +10,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
+    "remove-markdown": "^0.6.4",
     "vitepress": "^1.6.4"
   },
   "private": true

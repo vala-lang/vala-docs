@@ -1542,6 +1542,25 @@ export default {
                                 ],
                             },
                             {
+                                text: "Database samples",
+                                link: "/sample-code/databases/",
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: "SQLite (sqlite3)",
+                                        link: "/sample-code/databases/sqlite-sample",
+                                    },
+                                    {
+                                        text: "PostgreSQL (libpq)",
+                                        link: "/sample-code/databases/postgresql-sample",
+                                    },
+                                    {
+                                        text: "GNOME Data Access (Libgda)",
+                                        link: "/sample-code/databases/gda-sample",
+                                    },
+                                ],
+                            },
+                            {
                                 text: "GTK4 Samples",
                                 link: "/sample-code/gtk4-samples",
                                 collapsed: true,

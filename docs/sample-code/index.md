@@ -18,6 +18,12 @@
 <li><a href="glib-samples">GLib samples</a></li>
 </ul>
 
+## Database samples
+
+<ul class="section-toc">
+<li><a href="databases/">Database samples (SQLite, PostgreSQL, Libgda)</a></li>
+</ul>
+
 ## Other samples
 
 <ul class="section-toc">

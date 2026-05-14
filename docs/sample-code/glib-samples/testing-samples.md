@@ -1,5 +1,9 @@
 # Testing Samples
 
+For a short narrative introduction to the same APIs, see
+[8.3. Unit Testing](/tutorials/programming-language/main/08-00-techniques/08-03-unit-testing)
+in the main tutorial.
+
 This example shows how to register a minimal unit test with
 [`GLib.Test`](https://valadoc.org/glib-2.0/GLib.Test.html), run it, and exit
 with a useful status code.

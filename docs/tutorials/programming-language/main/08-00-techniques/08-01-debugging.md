@@ -48,3 +48,25 @@ Program received signal SIGSEGV, Segmentation fault.
 7           stdout.printf ("%d\n", foo.field);
 (gdb)
 ```
+
+## LLDB (common on macOS)
+
+The same binary built with `valac -g` can be loaded into LLVM’s
+[`lldb`](https://lldb.llvm.org/). After `lldb debug-demo`, use `run` like in
+`gdb`, then `bt` (backtrace) to see Vala line numbers that were embedded at
+compile time.
+
+## GLib and GObject runtime checks
+
+Many crashes or warnings in GLib-based code come from misuse of reference
+counting, main-loop re-entrancy, or invalid object state. While debugging:
+
+- Set [`G_DEBUG`](https://docs.gtk.org/glib/running.html#environment-variables)
+  (for example `G_DEBUG=fatal-warnings` or `gc-friendly`) to turn selected
+  warnings into breakpoints or clearer logs.
+- Use `G_MESSAGES_DEBUG` to enable extra log output from components that honor
+  `G_LOG_DOMAIN` (see the GLib “Running GLib Applications” documentation).
+
+These do not replace a debugger, but they narrow down whether a failure is a
+plain segfault or a GLib `g_return_if_fail` path.
+

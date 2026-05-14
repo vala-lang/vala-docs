@@ -12,4 +12,7 @@
       </li>
     </ul>
   </li>
+  <li>
+    <a href="08-00-techniques/08-03-unit-testing">8.3. Unit Testing</a>
+  </li>
 </ul>

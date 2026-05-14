@@ -473,6 +473,10 @@ export default {
                                                         text: "8.2. Using GLib",
                                                         link: "/tutorials/programming-language/main/08-00-techniques/08-02-using-glib",
                                                     },
+                                                    {
+                                                        text: "8.3. Unit Testing",
+                                                        link: "/tutorials/programming-language/main/08-00-techniques/08-03-unit-testing",
+                                                    },
                                                 ],
                                             },
                                         ],

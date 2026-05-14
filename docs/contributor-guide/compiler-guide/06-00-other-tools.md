@@ -1,25 +1,10 @@
 # 6. Other Tools
 
-## 6.1. gen-introspect
+## 6.1. vapigen
 
-::: info TODO
-Add information about the gen-introspect tool
+`vapigen` is a tool to make bindings. It creates VAPI files from a library's metadata and any extra information required.
 
-Feel free to help: [Vala Docs Repository](https://github.com/vala-lang/vala-docs).
-:::
+## 6.2. vala-gen-introspect
 
-## 6.2. vapigen
+`vala-gen-introspect` is a tool for extracting metainformation about GObject based libraries. Nowadays, the preferred method is to use GObject Introspection instead, as `vapigen` can use GIR files directly.
 
-::: info TODO
-Add information about the vapigen tool
-
-Feel free to help: [Vala Docs Repository](https://github.com/vala-lang/vala-docs).
-:::
-
-## 6.3. vala-gen-introspect
-
-::: info TODO
-Add information about the vala-gen-introspect tool
-
-Feel free to help: [Vala Docs Repository](https://github.com/vala-lang/vala-docs).
-:::

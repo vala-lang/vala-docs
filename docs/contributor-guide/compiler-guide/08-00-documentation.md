@@ -9,17 +9,9 @@ The source code for the compiler guide is in
 HTML documentation is built by default. This document can be rebuilt by
 running `./build-docs` in the repository's root.
 
-::: info TODO
-Add Generated binding documentation
+Generated bindings documentation (via valadoc) from the compiler are available here: https://gnome.pages.gitlab.gnome.org/vala/docs/index.html
 
-Feel free to help: [Vala Docs Repository](https://github.com/vala-lang/vala-docs).
-:::
-
-::: info TODO
-Add libvala documentation
-
-Feel free to help: [Vala Docs Repository](https://github.com/vala-lang/vala-docs).
-:::
+libvala documentation is here: https://gnome.pages.gitlab.gnome.org/vala/docs/vala/index.htm
 
 [https://github.com/vala-lang/vala-docs](https://github.com/vala-lang/vala-docs) - The documentation repository
 (the source code for this website) is open to anyone who would like to

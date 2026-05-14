@@ -1618,6 +1618,14 @@ export default {
                                         link: "/sample-code/other/lua-sample",
                                     },
                                     {
+                                        text: "NTP client (Posix UDP)",
+                                        link: "/sample-code/other/ntp-client-sample",
+                                    },
+                                    {
+                                        text: "Weather HTTP client (GIO)",
+                                        link: "/sample-code/other/weather-http-client-sample",
+                                    },
+                                    {
                                         text: "TIFF",
                                         link: "/sample-code/other/tiff-sample",
                                     },

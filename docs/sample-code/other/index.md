@@ -10,6 +10,8 @@ These pages port miscellaneous Vala examples from the archived GNOME Wiki into t
 <li><a href="./interfaces-implemented-in-c">Interfaces implemented in C</a></li>
 <li><a href="./loudmouth-sample">Loudmouth (XMPP)</a></li>
 <li><a href="./lua-sample">Lua embedding</a></li>
+<li><a href="./ntp-client-sample">NTP client (Posix UDP)</a></li>
+<li><a href="./weather-http-client-sample">Weather HTTP client (GIO socket)</a></li>
 <li><a href="./tiff-sample">TIFF (libtiff)</a></li>
 <li><a href="./usb-sample">USB (libusb)</a></li>
 <li><a href="./xml-sample">XML (libxml2)</a></li>

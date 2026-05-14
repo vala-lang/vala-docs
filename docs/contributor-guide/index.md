@@ -23,7 +23,7 @@ Vala uses [GNOME's GitLab](https://gitlab.gnome.org/GNOME/vala/issues) to track 
 
 Patches should be submitted through Vala's GNOME GitLab instance as a
 [merge request](https://gitlab.gnome.org/GNOME/vala/merge_requests). See
-the [GNOME Wiki's GitLab documentation](https://wiki.gnome.org/GitLab)
+the [GNOME Project Handbook - Change Submission Page](https://handbook.gnome.org/development/change-submission.html/)
 for more details.
 
 If you are not a GNOME developer then you will need to first create a

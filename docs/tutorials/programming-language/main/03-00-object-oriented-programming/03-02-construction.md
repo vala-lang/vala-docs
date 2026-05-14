@@ -1,7 +1,7 @@
 # 3.2. Construction
 
 Vala supports two construction schemes that both target the same GObject type system:
-- Java/C#-style** constructors (named creation methods with bodies where you assign fields and call helpers)
+- Java/C#-style constructors (named creation methods with bodies where you assign fields and call helpers)
 - GObject-style construction (`Object (...)`, **construct properties**, and `construct { }` blocks).
 
 They are equally central to writing GObject types; which you emphasize depends on the API you publish and how subclasses and bindings should interact with your type.

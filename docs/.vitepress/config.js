@@ -314,10 +314,6 @@ export default {
                                                         text: "3.13. Generics",
                                                         link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-13-generics",
                                                     },
-                                                    {
-                                                        text: "3.14. GObject-Style Construction",
-                                                        link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-14-gobject-style-construction",
-                                                    },
                                                 ],
                                             },
                                             {

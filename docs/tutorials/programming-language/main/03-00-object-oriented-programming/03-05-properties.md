@@ -165,7 +165,7 @@ public class MyObject : Object {
 ```
 
 There's another type of properties called **construct properties** that
-are described later in the section about gobject-style construction.
+are covered under [GObject-style construction](03-02-construction#gobject-style-construction) in the Construction section.
 
 Note: in case your property is a type of struct, to get the property value
 with Object.get (), you have to declare your variable as example below

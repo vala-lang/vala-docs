@@ -26,4 +26,4 @@ Foo foo = (Foo) Object.new (type);
 ```
 
 Which constructor will be called? It's the `construct {}` block that
-will be described in the section about gobject-style construction.
+is described under [GObject-style construction](03-02-construction#gobject-style-construction) in the Construction section.

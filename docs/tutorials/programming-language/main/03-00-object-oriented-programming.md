@@ -49,7 +49,4 @@
   <li>
     <a href="03-00-object-oriented-programming/03-13-generics">3.13. Generics</a>
   </li>
-  <li>
-    <a href="03-00-object-oriented-programming/03-14-gobject-style-construction">3.14. GObject-Style Construction</a>
-  </li>
 </ul>

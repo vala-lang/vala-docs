@@ -43,11 +43,23 @@ up the changes and show them in the merge request.
 
 ### Committing Patches
 
-::: info TODO
-Add information about how to commit patches to the compiler project.
+#### Commit title conventions
 
-Feel free to help: [Vala Docs Repository](https://github.com/vala-lang/vala-docs).
-:::
+In commits made to the repo, the commit
+titles typically have the following format: `type_or_location_of_change: Summary of change`.
+
+Here's are some examples: 
+- "glib-2.0: allow FileUtils.open_tmp's first argument to be null".
+- "ci: Skip meson dist in flatpak jobs"
+- "vala: Keep depfile empty if no dependencies were written"
+
+If changes have been made to multiple parts of the repo, you can reference multiple locations in a comma-separated list
+like this: "vala, libvaladoc: Fix color support detection in log reporting".
+
+While this commit title format is not mandatory, it does give reviewers context of the changes made
+in your commits at a glance.
+
+Merge requests titles tend to use the same title conventions too.
 
 ## Maintaining Bindings
 

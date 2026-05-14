@@ -5,9 +5,8 @@ directory: [https://gitlab.gnome.org/GNOME/vala/-/tree/main/doc/manual](https://
 You can rebuild the docs by `cd`'ing into `doc/vala` and typing `make`.
 
 The source code for the compiler guide is in
-[https://github.com/vala-lang/vala-docs/tree/main/source/contributor-guide](https://github.com/vala-lang/vala-docs/tree/main/source/contributor-guide).
-HTML documentation is built by default. This document can be rebuilt by
-running `./build-docs` in the repository's root.
+[https://github.com/vala-lang/vala-docs/tree/main/docs/contributor-guide](https://github.com/vala-lang/vala-docs/tree/main/docs/contributor-guide).
+HTML documentation is built by default. Check out the README file at the root of the git repository for build instructions: https://github.com/vala-lang/vala-docs/
 
 Generated bindings documentation (via valadoc) from the compiler are available here: https://gnome.pages.gitlab.gnome.org/vala/docs/index.html
 

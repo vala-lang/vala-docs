@@ -37,13 +37,13 @@ When `.vapi` aren't distributed for a package you want to use, you can download 
 For example:
 
 ```sh
-valac --vapidir=/path/to/vapi --pkg pkg_name main.vala
+valac --vapidir /path/to/vapi --pkg pkg_name main.vala
 ```
 
 Typically you would set `--vapidir` to local directory called `vapi` in your project. For example:
 
 ```sh
-valac --vapidir=./vapi --pkg pkg_name main.vala
+valac --vapidir ./vapi --pkg pkg_name main.vala
 ```
 
 

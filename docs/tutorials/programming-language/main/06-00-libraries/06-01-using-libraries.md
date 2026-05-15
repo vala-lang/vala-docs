@@ -11,11 +11,21 @@ valac --pkg gee-0.8 test.vala
 
 This command means your program can use any of the definitions in the
 `gee-0.8.vapi` file, and also any in any of the packages that `gee-0.8`
-depends on. These dependencies would be listed in `gee-0.8.deps` if
-there were any. In this example `valac` is set to build all the way to
+depends on. These dependencies would be listed in `gee-0.8.deps`.
+
+If there were any. In this example `valac` is set to build all the way to
 binary, and will therefore incorporate information from `pkg-config` to
 link the correct libraries. This is why the `pkg-config` names are also
 used for Vala package names.
+
+`.deps` files contains a list of package names. For example for `gio-2.0.deps` contains the following:
+
+```txt
+glib-2.0
+gobject-2.0
+
+
+```
 
 Packages are generally used with namespaces, but they are not
 technically related. This means that even though your application is

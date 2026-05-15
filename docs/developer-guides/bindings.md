@@ -28,7 +28,7 @@ You can check them out in the `vapi` directory in the Vala compiler's repository
 
 You can also write your own `.vapi` files or use a custom `.vapi` file that someone else has written.
 
-Check out the contents of the guide below to see how to do so.
+Check out the [contents](#contents) of the guide to learn how.
 
 ## How to use VAPI files that aren't distributed with projects
 
@@ -46,6 +46,11 @@ Typically you would set `--vapidir` to local directory called `vapi` in your pro
 valac --vapidir ./vapi --pkg pkg_name main.vala
 ```
 
+## Documentation of Bindings
+
+Documentation of bindings may be included in [https://valadoc.org](https://valadoc.org)
+
+For more info on how to generate your own documentation, check out the [Valadoc Guide](./documentation/valadoc-guide).
 
 ## Contents
 

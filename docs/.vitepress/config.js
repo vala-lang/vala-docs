@@ -1561,6 +1561,41 @@ export default {
                                 ],
                             },
                             {
+                                text: "Multimedia and Graphics Samples",
+                                link: "/sample-code/multimedia-and-graphics/",
+                                collapsed: true,
+                                items: [
+                                    {
+                                        text: "GStreamer",
+                                        link: "/sample-code/multimedia-and-graphics/gstreamer-sample",
+                                    },
+                                    {
+                                        text: "Cairo",
+                                        link: "/sample-code/multimedia-and-graphics/cairo-sample",
+                                    },
+                                    {
+                                        text: "Pango and Cairo",
+                                        link: "/sample-code/multimedia-and-graphics/pango-cairo-sample",
+                                    },
+                                    {
+                                        text: "Poppler (PDF)",
+                                        link: "/sample-code/multimedia-and-graphics/poppler-sample",
+                                    },
+                                    {
+                                        text: "SDL",
+                                        link: "/sample-code/multimedia-and-graphics/sdl-sample",
+                                    },
+                                    {
+                                        text: "OpenGL",
+                                        link: "/sample-code/multimedia-and-graphics/opengl-samples",
+                                    },
+                                    {
+                                        text: "PulseAudio",
+                                        link: "/sample-code/multimedia-and-graphics/pulseaudio-sample",
+                                    },
+                                ],
+                            },
+                            {
                                 text: "GTK4 Samples",
                                 link: "/sample-code/gtk4-samples",
                                 collapsed: true,

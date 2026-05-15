@@ -24,6 +24,12 @@
 <li><a href="databases/">Database samples (SQLite, PostgreSQL, Libgda)</a></li>
 </ul>
 
+## Multimedia and Graphics Samples
+
+<ul class="section-toc">
+<li><a href="multimedia-and-graphics/">Multimedia and Graphics Samples</a></li>
+</ul>
+
 ## Other samples
 
 <ul class="section-toc">

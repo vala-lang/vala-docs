@@ -24,7 +24,6 @@ used for Vala package names.
 glib-2.0
 gobject-2.0
 
-
 ```
 
 Packages are generally used with namespaces, but they are not

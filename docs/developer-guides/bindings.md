@@ -32,6 +32,20 @@ Check out the contents of the guide below to see how to do so.
 
 ## How to use VAPI files that aren't distributed with projects
 
+When `.vapi` aren't distributed for a package you want to use, you can download or write your own `.vapi` file and compile your program with it by using the `--vapidir` option in `valac`.
+
+For example:
+
+```sh
+valac --vapidir=/path/to/vapi --pkg pkg_name main.vala
+```
+
+Typically you would set `--vapidir` to local directory called `vapi` in your project. For example:
+
+```sh
+valac --vapidir=./vapi --pkg pkg_name main.vala
+```
+
 
 ## Contents
 

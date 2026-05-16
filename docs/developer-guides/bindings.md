@@ -30,9 +30,9 @@ You can also write your own `.vapi` files or use a custom `.vapi` file that some
 
 Check out the [contents](#contents) of the guide to learn how.
 
-## How to use VAPI files that aren't distributed with projects
+## How to use VAPI files that aren't distributed with packages
 
-When `.vapi` aren't distributed for a package you want to use, you can download or write your own `.vapi` file and compile your program with it by using the `--vapidir` option in `valac`.
+When `.vapi` aren't distributed with a package you want to use, you can download or write your own `.vapi` file and compile your program with it by using the `--vapidir` option in `valac`.
 
 For example:
 

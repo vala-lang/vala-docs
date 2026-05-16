@@ -303,10 +303,12 @@ adds these code nodes into the context's root code node.
 
 ## 3.2.3. Error Handling
 
-I don't want to spoil your fun too much by going into the details of
-the parser, other than that every `parse_` function can throw a
-`ParseError`. `ParseError` is caught when parsing a block or the
-declarations of a namespace, class, struct, or interface. Fixme.
+Every `parse_` function can throw a `ParseError`.
+
+When an error with the parsing has been detected either of the following can happen:
+
+- `Vala.Parser.report_parse_error` method is called - The error is printed to the console and the error count in the context is incremented by 1
+- A `ParseError` is thrown, which will be pasesd up the call stack until a `parse_` function catches the error, possibly calling the `Vala.Parser.report_parse_error` method.
 
 ## 3.2.4. Grammar of Vala (BNF Notation)
 

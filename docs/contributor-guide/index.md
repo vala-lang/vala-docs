@@ -36,10 +36,16 @@ Patches will also be accepted as attachments to an issue.
 
 ### Reviewing and Updating Patches
 
-If your merge request requires updating after review then use
-`git rebase --interactive` to squash the changes and `git push --force`
-the updated branch to your GNOME GitLab instance. GitLab will then pick
-up the changes and show them in the merge request.
+#### Testing and Reviewing Merge Requests (As a non-maintainer)
+
+Testing and reviewing merge requests helps reduce the burden on the maintainers and helps speed up development of the project.
+
+For example: If there's a merge request that adds a feature that you like, helping test and review the merge request may speed up the amoount of time it takes to get the feature added into the project.
+
+#### Keeping your pending merge requests up-to-date
+
+If your merge request requires updating after review then squash the changes (`git rebase --interactive`) and force push (`git push --force`) the updated branch to your
+GNOME GitLab instance. GitLab will then pick up the changes and show them in the merge request.
 
 ### Committing Patches
 

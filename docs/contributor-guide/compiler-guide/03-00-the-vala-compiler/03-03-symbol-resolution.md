@@ -1,4 +1,4 @@
-# 3.4. Symbol Resolution
+# 3.3. Symbol Resolution
 
 `Vala.SymbolResolver` is a `CodeVisitor` that exchanges `Vala.UnresolvedType`
 nodes in the parse tree with `Vala.DataType` nodes and links `Vala.NamespaceReference`

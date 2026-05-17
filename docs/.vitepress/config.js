@@ -549,12 +549,12 @@ export default {
                                                 link: "/contributor-guide/compiler-guide/03-00-the-vala-compiler/03-02-parser",
                                             },
                                             {
-                                                text: "3.3. Semantic Analyzer",
-                                                link: "/contributor-guide/compiler-guide/03-00-the-vala-compiler/03-03-semantic-analyzer",
+                                                text: "3.3. Symbol Resolution",
+                                                link: "/contributor-guide/compiler-guide/03-00-the-vala-compiler/03-03-symbol-resolution",
                                             },
                                             {
-                                                text: "3.4. Symbol Resolution",
-                                                link: "/contributor-guide/compiler-guide/03-00-the-vala-compiler/03-04-symbol-resolution",
+                                                text: "3.4. Semantic Analyzer",
+                                                link: "/contributor-guide/compiler-guide/03-00-the-vala-compiler/03-04-semantic-analyzer",
                                             },
                                             {
                                                 text: "3.5. Flow Analyzer",

@@ -1,4 +1,4 @@
-# 3.3. Semantic Analyzer
+# 3.4. Semantic Analyzer
 
 ## 3.3.1. Attribute Processing
 

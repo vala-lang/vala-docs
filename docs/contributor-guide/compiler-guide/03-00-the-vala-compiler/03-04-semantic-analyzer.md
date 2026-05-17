@@ -1,6 +1,6 @@
 # 3.4. Semantic Analyzer
 
-## 3.3.1. Attribute Processing
+## 3.4.1. Attribute Processing
 
 `Vala.Attribute` nodes have a name and a possibly empty
 list of key-value arguments. Some types of code tree nodes have as

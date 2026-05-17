@@ -62,7 +62,7 @@ Luca Bruno <[lethalman88@gmail.com](mailto:lethalman88@gmail.com)>
 <li><a href="compiler-guide/02-00-environment-setup">2. Environment Setup</a></li>
 <li><a href="compiler-guide/03-00-the-vala-compiler">3. The Vala Compiler</a></li>
 <li><a href="compiler-guide/04-00-vala-bindings-vapi">4. Vala Bindings - VAPI</a></li>
-<li><a href="compiler-guide/05-00-internal-libgee">5. libgee Internal</a></li>
+<li><a href="compiler-guide/05-00-internal-libgee">5. Internal libgee</a></li>
 <li><a href="compiler-guide/06-00-other-tools">6. Other Tools</a></li>
 <li><a href="compiler-guide/07-00-testing">7. Testing</a></li>
 <li><a href="compiler-guide/08-00-documentation">8. Documentation</a></li>

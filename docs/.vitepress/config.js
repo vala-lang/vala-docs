@@ -575,7 +575,7 @@ export default {
                                         link: "/contributor-guide/compiler-guide/04-00-vala-bindings-vapi",
                                     },
                                     {
-                                        text: "5. libgee Internal",
+                                        text: "5. Internal libgee",
                                         link: "/contributor-guide/compiler-guide/05-00-internal-libgee",
                                     },
                                     {

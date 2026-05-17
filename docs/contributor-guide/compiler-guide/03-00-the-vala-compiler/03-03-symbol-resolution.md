@@ -7,7 +7,7 @@ for classes so that classes don't inherit from multiple classes or
 themselves, and likewise it checks that interfaces don't need to
 implement themselves.
 
-## 3.4.1. Data Types
+## 3.3.1. Data Types
 
 Every expression has a static type. This is computed by the semantic
 analyzer. `Vala.DataType` is called a "type reference" because it
@@ -19,7 +19,7 @@ or, if it's an out parameter.
 expand this section
 :::
 
-## 3.4.2. Symbols
+## 3.3.2. Symbols
 
 A `Vala.Symbol` is a specialization of `Vala.CodeNode`. All symbols except
 for the root symbol are contained within another's scope. Types have

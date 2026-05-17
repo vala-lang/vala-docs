@@ -9,15 +9,16 @@ implement themselves.
 
 ## 3.3.1. Data Types
 
-Every expression has a static type. This is computed by the semantic
-analyzer. `Vala.DataType` is called a "type reference" because it
-contains a reference to a `Vala.TypeSymbol` (a class, interface, etc.) as
-well as information about the expression's type, e.g., if it can be null,
-or, if it's an out parameter.
+Every expression has a static type. This is represented by `Vala.DataType`.
 
-::: info TODO
-expand this section
-:::
+`Vala.DataType` is called a "type reference" because because it contains a reference to a `Vala.TypeSymbol` (a class, interface, etc.) as well as information about the expression's type, e.g., if it can be `null`,
+or, if it's an `out` parameter.
+
+Type references are first discovered by the `Vala.Parser`.
+
+Then `Vala.SymbolResolver` will resolve the type references for symbols.
+
+Later on in the compilation process, the semantic analyzer (`Vala.SemanticAnalyzer`) will compute expressions, using the type references found in the previous steps of the compilation process, to ensure that the expressions are typed correctly.
 
 ## 3.3.2. Symbols
 

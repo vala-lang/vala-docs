@@ -1716,7 +1716,7 @@ export default {
                         ],
                     },
                     {
-                        text: "Genie Programming Lanugage",
+                        text: "Genie Programming Language",
                         link: "/genie/",
                         collapsed: true,
                         items: [

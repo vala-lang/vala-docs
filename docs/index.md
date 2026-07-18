@@ -33,6 +33,8 @@ uses where native binaries are required.
 - [Vala Website](https://vala.dev)
 - [Vala Project GNOME Wiki (Retired)](https://wiki.gnome.org/Projects/Vala)
 - [Introducing Vala Programming (O'Reilly Book)](https://www.oreilly.com/library/view/introducing-vala-programming/9781484253809/)
+- [vala-list (Mailing list archives)](https://mail.gnome.org/archives/vala-list/)
+- [vala-devel-list (Mailing list archives)](https://mail.gnome.org/archives/vala-devel-list/)
 
 ## Community
 

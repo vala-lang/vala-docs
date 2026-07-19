@@ -35,6 +35,7 @@ uses where native binaries are required.
 - [Introducing Vala Programming (O'Reilly Book)](https://www.oreilly.com/library/view/introducing-vala-programming/9781484253809/)
 - [vala-list (Mailing list archives)](https://mail.gnome.org/archives/vala-list/)
 - [vala-devel-list (Mailing list archives)](https://mail.gnome.org/archives/vala-devel-list/)
+- [awesome-vala (A curated list of Vala projects)](https://github.com/vala-lang/awesome-vala)
 
 ## Community
 

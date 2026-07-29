@@ -180,6 +180,21 @@ export default {
         search: {
             provider: "local",
         },
+        nav: [
+            { text: "Get Started", link: "/installation-guide" },
+            { text: "Tutorials", link: "/tutorials/" },
+            { text: "Guides", link: "/guides/" },
+            {
+                text: "Resources",
+                items: [
+                    { text: "About", link: "/about" },
+                    { text: "Sample Code", link: "/sample-code/" },
+                    { text: "Tooling", link: "/tooling/" },
+                    { text: "Genie", link: "/genie/" },
+                    { text: "FAQ", link: "/faq" },
+                ],
+            },
+        ],
         sidebar: [
             {
                 items: [

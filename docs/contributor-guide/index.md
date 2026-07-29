@@ -94,8 +94,8 @@ VAPI itself. The Vala repository keeps the generated VAPIs in version
 control as well as the metadata. There is no need for test cases to be
 added for bindings.
 
-- [Writing a VAPI Without Using GObject Introspection](../developer-guides/bindings/writing-a-vapi-manually) - detailed guide on writing a VAPI manually
-- [Generating a VAPI with GObject Introspection](../developer-guides/bindings/generating-a-vapi-with-gobject-introspection) - details on generating a VAPI using `vapigen`
+- [Writing a VAPI Without Using GObject Introspection](../guides/bindings/writing-a-vapi-manually) - detailed guide on writing a VAPI manually
+- [Generating a VAPI with GObject Introspection](../guides/bindings/generating-a-vapi-with-gobject-introspection) - details on generating a VAPI using `vapigen`
 
 ## Developing the Compiler
 

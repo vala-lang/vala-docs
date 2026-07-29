@@ -183,7 +183,7 @@ export default {
         },
         nav: [
             { text: "Get Started", link: "/installation-guide" },
-            { text: "Tutorials", link: "/tutorials/" },
+            { text: "Tutorials", link: "/tutorials/main" },
             { text: "Guides", link: "/guides/" },
             {
                 text: "Resources",
@@ -271,11 +271,14 @@ export default {
         );
         writeRedirect(
             join(outDir, "tutorials", "programming-language.html"),
-            "/tutorials/",
+            "/tutorials/main",
         );
         writeRedirect(
             join(outDir, "tutorials", "gui-programming.html"),
-            "/tutorials/",
+            "/tutorials/main",
         );
+        // The Tutorials index page is gone; the nav link now goes straight to
+        // the main tutorial.
+        writeRedirect(join(outDir, "tutorials", "index.html"), "/tutorials/main");
     },
 };

@@ -15,7 +15,7 @@ uses where native binaries are required.
 ## Sections
 
 - [Installation Guide](installation-guide)
-- [Tutorials](tutorials/)
+- [Tutorials](tutorials/main)
 - [Tooling](tooling/)
 - [Guides](guides/)
 - [Sample Code](sample-code/)

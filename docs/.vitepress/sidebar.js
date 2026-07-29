@@ -1260,277 +1260,291 @@ export const sidebar = {
                     text: "Tutorials",
                     items: [
                         {
-                            text: "Main Tutorial",
-                            collapsed: false,
-                            link: "/tutorials/programming-language/main",
+                            text: "Programming Language",
                             items: [
                                 {
-                                    text: "1. First Program",
-                                    link: "/tutorials/programming-language/main/01-00-first-program",
-                                },
-                                {
-                                    text: "2. Basics",
-                                    link: "/tutorials/programming-language/main/02-00-basics",
+                                    text: "Main Tutorial",
+                                    collapsed: false,
+                                    link: "/tutorials/main",
                                     items: [
-                                        {
-                                            text: "2.1. Source Files and Compilation",
-                                            link: "/tutorials/programming-language/main/02-00-basics/02-01-source-files-and-compilation",
-                                        },
-                                        {
-                                            text: "2.2. Syntax Overview",
-                                            link: "/tutorials/programming-language/main/02-00-basics/02-02-syntax-overview",
-                                        },
-                                        {
-                                            text: "2.3. Comments",
-                                            link: "/tutorials/programming-language/main/02-00-basics/02-03-comments",
-                                        },
-                                        {
-                                            text: "2.4. Data Types",
-                                            link: "/tutorials/programming-language/main/02-00-basics/02-04-data-types",
-                                        },
-                                        {
-                                            text: "2.5. Operators",
-                                            link: "/tutorials/programming-language/main/02-00-basics/02-05-operators",
-                                        },
-                                        {
-                                            text: "2.6. Control Structures",
-                                            link: "/tutorials/programming-language/main/02-00-basics/02-06-control-structures",
-                                        },
-                                        {
-                                            text: "2.7. Language Elements",
-                                            link: "/tutorials/programming-language/main/02-00-basics/02-07-language-elements",
-                                        },
-                                        {
-                                            text: "2.8. Code Attributes",
-                                            link: "/tutorials/programming-language/main/02-00-basics/02-08-code-attributes",
-                                        },
-                                        {
-                                            text: "2.9. Input / Output",
-                                            link: "/tutorials/programming-language/main/02-00-basics/02-09-input-output",
-                                        },
-                                    ],
-                                },
-                                {
-                                    text: "3. Object Oriented Programming",
-                                    link: "/tutorials/programming-language/main/03-00-object-oriented-programming",
-                                    items: [
-                                        {
-                                            text: "3.1. Basics",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-01-basics",
-                                        },
-                                        {
-                                            text: "3.2. Construction",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-02-construction",
-                                        },
-                                        {
-                                            text: "3.3. Destruction",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-03-destruction",
-                                        },
-                                        {
-                                            text: "3.4. Signals",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-04-signals",
-                                        },
-                                        {
-                                            text: "3.5. Properties",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-05-properties",
-                                        },
-                                        {
-                                            text: "3.6. Inheritance",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-06-inheritance",
-                                        },
-                                        {
-                                            text: "3.7. Abstract Classes",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-07-abstract-classes",
-                                        },
-                                        {
-                                            text: "3.8. Interfaces",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-08-interfaces",
-                                        },
-                                        {
-                                            text: "3.9. Polymorphism",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-09-polymorphism",
-                                        },
-                                        {
-                                            text: "3.10. Method Hiding",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-10-method-hiding",
-                                        },
-                                        {
-                                            text: "3.11. Run-Time Type Information",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-11-run-time-type-information",
-                                        },
-                                        {
-                                            text: "3.12. Dynamic Type Casting",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-12-dynamic-type-casting",
-                                        },
-                                        {
-                                            text: "3.13. Generics",
-                                            link: "/tutorials/programming-language/main/03-00-object-oriented-programming/03-13-generics",
-                                        },
-                                    ],
-                                },
-                                {
-                                    text: "4. Advanced Features",
-                                    link: "/tutorials/programming-language/main/04-00-advanced-features",
-                                    items: [
-                                        {
-                                            text: "4.1. Assertions and Contract Programming",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-01-assertions-and-contract-programming",
-                                        },
-                                        {
-                                            text: "4.2. Error Handling",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-02-error-handling",
-                                        },
-                                        {
-                                            text: "4.3. Parameter Directions",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-03-parameter-directions",
-                                        },
-                                        {
-                                            text: "4.4. Collections",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-04-collections",
-                                        },
-                                        {
-                                            text: "4.5. Methods with Syntax Support",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-05-methods-with-syntax-support",
-                                        },
-                                        {
-                                            text: "4.6. Multi-Threading",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-06-multi-threading",
-                                        },
-                                        {
-                                            text: "4.7. The Main Loop",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-07-the-main-loop",
-                                        },
-                                        {
-                                            text: "4.8. Asynchronous Methods",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-08-asynchronous-methods",
-                                        },
-                                        {
-                                            text: "4.9. Weak References",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-09-weak-references",
-                                        },
-                                        {
-                                            text: "4.10. Ownership",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-10-ownership",
-                                        },
-                                        {
-                                            text: "4.11. Variable-Length Argument Lists",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-11-variable-length-argument-lists",
-                                        },
-                                        {
-                                            text: "4.12. Pointers",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-12-pointers",
-                                        },
-                                        {
-                                            text: "4.13. Non-Object Classes",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-13-non-object-classes",
-                                        },
-                                        {
-                                            text: "4.14. D-Bus Integration",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-14-d-bus-integration",
-                                        },
-                                        {
-                                            text: "4.15. Profiles",
-                                            link: "/tutorials/programming-language/main/04-00-advanced-features/04-15-profiles",
-                                        },
-                                    ],
-                                },
-                                {
-                                    text: "5. Experimental Features",
-                                    link: "/tutorials/programming-language/main/05-00-experimental-features",
-                                    items: [
-                                        {
-                                            text: "5.1. Chained Relational Expressions",
-                                            link: "/tutorials/programming-language/main/05-00-experimental-features/05-01-chained-relational-expressions",
-                                        },
-                                        {
-                                            text: "5.2. Regular Expression Literals",
-                                            link: "/tutorials/programming-language/main/05-00-experimental-features/05-02-regular-expression-literals",
-                                        },
-                                        {
-                                            text: "5.3. Strict Non-Null Mode",
-                                            link: "/tutorials/programming-language/main/05-00-experimental-features/05-03-strict-non-null-mode",
-                                        },
-                                        {
-                                            text: "5.4. With Statement",
-                                            link: "/tutorials/programming-language/main/05-00-experimental-features/05-04-with-statement",
-                                        },
-                                    ],
-                                },
-                                {
-                                    text: "6. Libraries",
-                                    link: "/tutorials/programming-language/main/06-00-libraries",
-                                    items: [
-                                        {
-                                            text: "6.1. Using Libraries",
-                                            link: "/tutorials/programming-language/main/06-00-libraries/06-01-using-libraries",
-                                        },
-                                        {
-                                            text: "6.2. Creating a Library",
-                                            link: "/tutorials/programming-language/main/06-00-libraries/06-02-creating-a-library",
-                                        },
-                                        {
-                                            text: "6.3. Binding Libraries with VAPI Files",
-                                            link: "/tutorials/programming-language/main/06-00-libraries/06-03-binding-libraries-with-vapi-files",
-                                        },
-                                        {
-                                            text: "6.4. ABI and API Design Choices",
-                                            link: "/tutorials/programming-language/main/06-00-libraries/06-04-abi-and-api-design-choices",
-                                        },
-                                        {
-                                            text: "6.5. Binding to Vala Libraries from Other Languages",
-                                            link: "/tutorials/programming-language/main/06-00-libraries/06-05-binding-to-vala-libraries-from-other-languages",
-                                        },
-                                        {
-                                            text: "6.6. Using Autotools",
-                                            link: "/tutorials/programming-language/main/06-00-libraries/06-06-using-autotools",
-                                        },
-                                    ],
-                                },
-                                {
-                                    text: "7. Tools",
-                                    link: "/tutorials/programming-language/main/07-00-tools",
-                                    items: [
-                                        {
-                                            text: "7.1. valac",
-                                            link: "/tutorials/programming-language/main/07-00-tools/07-01-valac",
-                                        },
-                                        {
-                                            text: "7.2. valadoc",
-                                            link: "/tutorials/programming-language/main/07-00-tools/07-02-valadoc",
-                                        },
-                                        {
-                                            text: "7.3. vapigen",
-                                            link: "/tutorials/programming-language/main/07-00-tools/07-03-vapigen",
-                                        },
-                                        {
-                                            text: "7.4. vala-gen-introspect",
-                                            link: "/tutorials/programming-language/main/07-00-tools/07-04-vala-gen-introspect",
-                                        },
-                                    ],
-                                },
-                                {
-                                    text: "8. Techniques",
-                                    link: "/tutorials/programming-language/main/08-00-techniques",
-                                    items: [
-                                        {
-                                            text: "8.1. Debugging",
-                                            link: "/tutorials/programming-language/main/08-00-techniques/08-01-debugging",
-                                        },
-                                        {
-                                            text: "8.2. Using GLib",
-                                            link: "/tutorials/programming-language/main/08-00-techniques/08-02-using-glib",
-                                        },
-                                        {
-                                            text: "8.3. Unit Testing",
-                                            link: "/tutorials/programming-language/main/08-00-techniques/08-03-unit-testing",
-                                        },
-                                    ],
-                                },
-                            ],
+                                    {
+                                        text: "1. First Program",
+                                        link: "/tutorials/main/01-00-first-program",
+                                    },
+                                    {
+                                        text: "2. Basics",
+                                        link: "/tutorials/main/02-00-basics",
+                                        items: [
+                                            {
+                                                text: "2.1. Source Files and Compilation",
+                                                link: "/tutorials/main/02-00-basics/02-01-source-files-and-compilation",
+                                            },
+                                            {
+                                                text: "2.2. Syntax Overview",
+                                                link: "/tutorials/main/02-00-basics/02-02-syntax-overview",
+                                            },
+                                            {
+                                                text: "2.3. Comments",
+                                                link: "/tutorials/main/02-00-basics/02-03-comments",
+                                            },
+                                            {
+                                                text: "2.4. Data Types",
+                                                link: "/tutorials/main/02-00-basics/02-04-data-types",
+                                            },
+                                            {
+                                                text: "2.5. Operators",
+                                                link: "/tutorials/main/02-00-basics/02-05-operators",
+                                            },
+                                            {
+                                                text: "2.6. Control Structures",
+                                                link: "/tutorials/main/02-00-basics/02-06-control-structures",
+                                            },
+                                            {
+                                                text: "2.7. Language Elements",
+                                                link: "/tutorials/main/02-00-basics/02-07-language-elements",
+                                            },
+                                            {
+                                                text: "2.8. Code Attributes",
+                                                link: "/tutorials/main/02-00-basics/02-08-code-attributes",
+                                            },
+                                            {
+                                                text: "2.9. Input / Output",
+                                                link: "/tutorials/main/02-00-basics/02-09-input-output",
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        text: "3. Object Oriented Programming",
+                                        link: "/tutorials/main/03-00-object-oriented-programming",
+                                        items: [
+                                            {
+                                                text: "3.1. Basics",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-01-basics",
+                                            },
+                                            {
+                                                text: "3.2. Construction",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-02-construction",
+                                            },
+                                            {
+                                                text: "3.3. Destruction",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-03-destruction",
+                                            },
+                                            {
+                                                text: "3.4. Signals",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-04-signals",
+                                            },
+                                            {
+                                                text: "3.5. Properties",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-05-properties",
+                                            },
+                                            {
+                                                text: "3.6. Inheritance",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-06-inheritance",
+                                            },
+                                            {
+                                                text: "3.7. Abstract Classes",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-07-abstract-classes",
+                                            },
+                                            {
+                                                text: "3.8. Interfaces",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-08-interfaces",
+                                            },
+                                            {
+                                                text: "3.9. Polymorphism",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-09-polymorphism",
+                                            },
+                                            {
+                                                text: "3.10. Method Hiding",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-10-method-hiding",
+                                            },
+                                            {
+                                                text: "3.11. Run-Time Type Information",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-11-run-time-type-information",
+                                            },
+                                            {
+                                                text: "3.12. Dynamic Type Casting",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-12-dynamic-type-casting",
+                                            },
+                                            {
+                                                text: "3.13. Generics",
+                                                link: "/tutorials/main/03-00-object-oriented-programming/03-13-generics",
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        text: "4. Advanced Features",
+                                        link: "/tutorials/main/04-00-advanced-features",
+                                        items: [
+                                            {
+                                                text: "4.1. Assertions and Contract Programming",
+                                                link: "/tutorials/main/04-00-advanced-features/04-01-assertions-and-contract-programming",
+                                            },
+                                            {
+                                                text: "4.2. Error Handling",
+                                                link: "/tutorials/main/04-00-advanced-features/04-02-error-handling",
+                                            },
+                                            {
+                                                text: "4.3. Parameter Directions",
+                                                link: "/tutorials/main/04-00-advanced-features/04-03-parameter-directions",
+                                            },
+                                            {
+                                                text: "4.4. Collections",
+                                                link: "/tutorials/main/04-00-advanced-features/04-04-collections",
+                                            },
+                                            {
+                                                text: "4.5. Methods with Syntax Support",
+                                                link: "/tutorials/main/04-00-advanced-features/04-05-methods-with-syntax-support",
+                                            },
+                                            {
+                                                text: "4.6. Multi-Threading",
+                                                link: "/tutorials/main/04-00-advanced-features/04-06-multi-threading",
+                                            },
+                                            {
+                                                text: "4.7. The Main Loop",
+                                                link: "/tutorials/main/04-00-advanced-features/04-07-the-main-loop",
+                                            },
+                                            {
+                                                text: "4.8. Asynchronous Methods",
+                                                link: "/tutorials/main/04-00-advanced-features/04-08-asynchronous-methods",
+                                            },
+                                            {
+                                                text: "4.9. Weak References",
+                                                link: "/tutorials/main/04-00-advanced-features/04-09-weak-references",
+                                            },
+                                            {
+                                                text: "4.10. Ownership",
+                                                link: "/tutorials/main/04-00-advanced-features/04-10-ownership",
+                                            },
+                                            {
+                                                text: "4.11. Variable-Length Argument Lists",
+                                                link: "/tutorials/main/04-00-advanced-features/04-11-variable-length-argument-lists",
+                                            },
+                                            {
+                                                text: "4.12. Pointers",
+                                                link: "/tutorials/main/04-00-advanced-features/04-12-pointers",
+                                            },
+                                            {
+                                                text: "4.13. Non-Object Classes",
+                                                link: "/tutorials/main/04-00-advanced-features/04-13-non-object-classes",
+                                            },
+                                            {
+                                                text: "4.14. D-Bus Integration",
+                                                link: "/tutorials/main/04-00-advanced-features/04-14-d-bus-integration",
+                                            },
+                                            {
+                                                text: "4.15. Profiles",
+                                                link: "/tutorials/main/04-00-advanced-features/04-15-profiles",
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        text: "5. Experimental Features",
+                                        link: "/tutorials/main/05-00-experimental-features",
+                                        items: [
+                                            {
+                                                text: "5.1. Chained Relational Expressions",
+                                                link: "/tutorials/main/05-00-experimental-features/05-01-chained-relational-expressions",
+                                            },
+                                            {
+                                                text: "5.2. Regular Expression Literals",
+                                                link: "/tutorials/main/05-00-experimental-features/05-02-regular-expression-literals",
+                                            },
+                                            {
+                                                text: "5.3. Strict Non-Null Mode",
+                                                link: "/tutorials/main/05-00-experimental-features/05-03-strict-non-null-mode",
+                                            },
+                                            {
+                                                text: "5.4. With Statement",
+                                                link: "/tutorials/main/05-00-experimental-features/05-04-with-statement",
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        text: "6. Libraries",
+                                        link: "/tutorials/main/06-00-libraries",
+                                        items: [
+                                            {
+                                                text: "6.1. Using Libraries",
+                                                link: "/tutorials/main/06-00-libraries/06-01-using-libraries",
+                                            },
+                                            {
+                                                text: "6.2. Creating a Library",
+                                                link: "/tutorials/main/06-00-libraries/06-02-creating-a-library",
+                                            },
+                                            {
+                                                text: "6.3. Binding Libraries with VAPI Files",
+                                                link: "/tutorials/main/06-00-libraries/06-03-binding-libraries-with-vapi-files",
+                                            },
+                                            {
+                                                text: "6.4. ABI and API Design Choices",
+                                                link: "/tutorials/main/06-00-libraries/06-04-abi-and-api-design-choices",
+                                            },
+                                            {
+                                                text: "6.5. Binding to Vala Libraries from Other Languages",
+                                                link: "/tutorials/main/06-00-libraries/06-05-binding-to-vala-libraries-from-other-languages",
+                                            },
+                                            {
+                                                text: "6.6. Using Autotools",
+                                                link: "/tutorials/main/06-00-libraries/06-06-using-autotools",
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        text: "7. Tools",
+                                        link: "/tutorials/main/07-00-tools",
+                                        items: [
+                                            {
+                                                text: "7.1. valac",
+                                                link: "/tutorials/main/07-00-tools/07-01-valac",
+                                            },
+                                            {
+                                                text: "7.2. valadoc",
+                                                link: "/tutorials/main/07-00-tools/07-02-valadoc",
+                                            },
+                                            {
+                                                text: "7.3. vapigen",
+                                                link: "/tutorials/main/07-00-tools/07-03-vapigen",
+                                            },
+                                            {
+                                                text: "7.4. vala-gen-introspect",
+                                                link: "/tutorials/main/07-00-tools/07-04-vala-gen-introspect",
+                                            },
+                                        ],
+                                    },
+                                    {
+                                        text: "8. Techniques",
+                                        link: "/tutorials/main/08-00-techniques",
+                                        items: [
+                                            {
+                                                text: "8.1. Debugging",
+                                                link: "/tutorials/main/08-00-techniques/08-01-debugging",
+                                            },
+                                            {
+                                                text: "8.2. Using GLib",
+                                                link: "/tutorials/main/08-00-techniques/08-02-using-glib",
+                                            },
+                                            {
+                                                text: "8.3. Unit Testing",
+                                                link: "/tutorials/main/08-00-techniques/08-03-unit-testing",
+                                            },
+                                        ],
+                                    },
+                                ],
+                            },
+                        ],
                         },
                         {
                             text: "GUI Programming",
-                            link: "/tutorials/gui-programming",
+                            items: [
+                                {
+                                    text: "GNOME Developer Documentation - Tutorials",
+                                    link: "https://developer.gnome.org/documentation/tutorials.html",
+                                },
+                                {
+                                    text: "elementary OS - Writing Apps",
+                                    link: "https://docs.elementary.io/develop/writing-apps/the-basic-setup",
+                                },
+                            ],
                         },
                     ],
                 },

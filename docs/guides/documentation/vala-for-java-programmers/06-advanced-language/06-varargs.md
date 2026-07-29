@@ -17,4 +17,4 @@ string format (string pattern, ...) {
 }
 ```
 
-For more information, see [Variable-length argument lists](/tutorials/programming-language/main/04-00-advanced-features/04-11-variable-length-argument-lists) in the Vala Tutorial. Type-safe varargs planned with `params` keyword.
+For more information, see [Variable-length argument lists](/tutorials/main/04-00-advanced-features/04-11-variable-length-argument-lists) in the Vala Tutorial. Type-safe varargs planned with `params` keyword.

@@ -7,7 +7,7 @@ prints [TAP](https://testanything.org/)-style output and sets the process exit c
 so CI systems (and [`meson test`](https://mesonbuild.com/Unit-tests.html)) can tell
 pass from fail.
 
-For a Unit Testing Sample Code see: [Testing Samples](../../../../sample-code/glib-samples/testing-samples).
+For a Unit Testing Sample Code see: [Testing Samples](../../../sample-code/glib-samples/testing-samples).
 
 ## Minimal harness
 
@@ -80,13 +80,13 @@ fatal errors.
 
 Meson’s `test()` target runs an executable and interprets its exit status. A
 minimal `meson.build` is shown on the
-[Testing Samples](../../../../sample-code/glib-samples/testing-samples#meson) page.
+[Testing Samples](../../../sample-code/glib-samples/testing-samples#meson) page.
 In CI, run `meson test -C build` (or your build directory) so every registered
 `Test.add_func` is executed automatically.
 
 ## See also
 
-- [Testing Samples](../../../../sample-code/glib-samples/testing-samples) — full
+- [Testing Samples](../../../sample-code/glib-samples/testing-samples) — full
   copy-paste example and Meson snippet
 - [GLib.Test reference](https://valadoc.org/glib-2.0/GLib.Test.html)
 - [8.1. Debugging](08-01-debugging) — using debuggers when a test or app crashes

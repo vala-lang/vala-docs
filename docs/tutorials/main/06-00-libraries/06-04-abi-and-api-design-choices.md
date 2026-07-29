@@ -66,9 +66,9 @@ The problem is the construction defined Vala is not called.
 
 Vala does have a way to run a function at instantiation time that is the
 use of the construct {} in the class. See
-[GObject Style Construction page](../../../programming-language/main/03-00-object-oriented-programming/03-02-construction#gobject-style-construction)
+[GObject Style Construction page](../03-00-object-oriented-programming/03-02-construction#gobject-style-construction)
 in the
-[Vala Main Tutorial](../../../programming-language/main)
+[Vala Main Tutorial](../../main)
 in the Vala tutorial.
 
 ### 6.4.2.2. Avoid Using varargs

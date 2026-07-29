@@ -200,23 +200,10 @@ export default {
     },
     async buildEnd(siteConfig) {
         const outDir = siteConfig.outDir;
-        const guidesDir = join(outDir, "guides");
-        const devGuidesDir = join(outDir, "developer-guides");
 
-        function createRedirects(dir) {
-            if (!existsSync(dir)) return;
-            const entries = readdirSync(dir, { withFileTypes: true });
-            for (const entry of entries) {
-                const srcPath = join(dir, entry.name);
-                const relPath = relative(guidesDir, srcPath);
-                const destPath = join(devGuidesDir, relPath);
-
-                if (entry.isDirectory()) {
-                    mkdirSync(destPath, { recursive: true });
-                    createRedirects(srcPath);
-                } else if (entry.isFile() && entry.name.endsWith(".html")) {
-                    const targetUrl = "/guides/" + relPath.replace(/\\/g, "/");
-                    const redirectHtml = `<!DOCTYPE html>
+        /** @param {string} targetUrl */
+        function redirectHtmlFor(targetUrl) {
+            return `<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -229,11 +216,66 @@ export default {
   <p>Redirecting to <a href="${targetUrl}">${targetUrl}</a>...</p>
 </body>
 </html>`;
-                    mkdirSync(dirname(destPath), { recursive: true });
-                    writeFileSync(destPath, redirectHtml);
+        }
+
+        /**
+         * Write a redirect stub at an old built HTML path pointing to a new URL.
+         * @param {string} destPath
+         * @param {string} targetUrl
+         */
+        function writeRedirect(destPath, targetUrl) {
+            mkdirSync(dirname(destPath), { recursive: true });
+            writeFileSync(destPath, redirectHtmlFor(targetUrl));
+        }
+
+        /**
+         * Mirror every built HTML page under `newDir` into `oldDir`, at the same
+         * relative path, as a stub redirecting to the page's new URL under
+         * `newUrlPrefix`. Lets an old directory tree keep working after a rename.
+         * @param {string} newDir
+         * @param {string} oldDir
+         * @param {string} newUrlPrefix
+         * @param {string} [dir]
+         */
+        function mirrorRedirects(newDir, oldDir, newUrlPrefix, dir = newDir) {
+            if (!existsSync(dir)) return;
+            const entries = readdirSync(dir, { withFileTypes: true });
+            for (const entry of entries) {
+                const srcPath = join(dir, entry.name);
+                const relPath = relative(newDir, srcPath);
+                const destPath = join(oldDir, relPath);
+
+                if (entry.isDirectory()) {
+                    mirrorRedirects(newDir, oldDir, newUrlPrefix, srcPath);
+                } else if (entry.isFile() && entry.name.endsWith(".html")) {
+                    const targetUrl =
+                        newUrlPrefix + "/" + relPath.replace(/\\/g, "/");
+                    writeRedirect(destPath, targetUrl);
                 }
             }
         }
-        createRedirects(guidesDir);
+
+        mirrorRedirects(
+            join(outDir, "guides"),
+            join(outDir, "developer-guides"),
+            "/guides",
+        );
+
+        // "Programming Language" and "GUI Programming" are now sidebar section
+        // titles only; their old index pages are gone and Main Tutorial moved
+        // up one level.
+        mirrorRedirects(
+            join(outDir, "tutorials", "main"),
+            join(outDir, "tutorials", "programming-language", "main"),
+            "/tutorials/main",
+        );
+        writeRedirect(
+            join(outDir, "tutorials", "programming-language.html"),
+            "/tutorials/",
+        );
+        writeRedirect(
+            join(outDir, "tutorials", "gui-programming.html"),
+            "/tutorials/",
+        );
     },
 };

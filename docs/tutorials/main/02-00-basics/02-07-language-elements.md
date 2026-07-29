@@ -295,7 +295,7 @@ void main () {
 Structs are stack/inline allocated and copied on assignment.
 
 To define an array of structs, please see the
-[FAQ](../../../../faq#how-do-i-create-an-array-of-structs)
+[FAQ](../../../faq#how-do-i-create-an-array-of-structs)
 
 
 ## 2.7.6. Enums

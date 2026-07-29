@@ -209,5 +209,5 @@ result: 48000
 
 ## 4.8.2. Examples
 
-See [Async Method Samples](../../../../sample-code/basics/async-samples) for examples of different
+See [Async Method Samples](../../../sample-code/basics/async-samples) for examples of different
 ways that `async` may be used.

@@ -3,7 +3,7 @@
 ::: info Note
 
 There are multiple
-[build systems](../../../../tooling/build-systems)
+[build systems](../../../tooling/build-systems)
 you could use create a library in Vala (Meson is the recommended one
 right now).
 

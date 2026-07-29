@@ -2,13 +2,13 @@
 
 <ul class="section-toc">
   <li>
-    <a href="programming-language">Programming Language</a>
+    Programming Language
     <ul class="section-toc section-toc-sub">
-      <li><a href="programming-language/main">Main Tutorial</a></li>
+      <li><a href="main">Main Tutorial</a></li>
     </ul>
   </li>
   <li>
-    <a href="gui-programming">GUI Programming</a>
+    GUI Programming
     <ul class="section-toc section-toc-sub">
       <li><a href="https://developer.gnome.org/documentation/tutorials.html">GNOME Developer Documentation - Tutorials</a></li>
       <li><a href="https://docs.elementary.io/develop/writing-apps/the-basic-setup">elementary OS - Writing Apps</a></li>

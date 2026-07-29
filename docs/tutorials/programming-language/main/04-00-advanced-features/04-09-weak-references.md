@@ -24,4 +24,4 @@ class Node {
 }
 ```
 
-This topic is explained in detail in the [Memory management](../../../../developer-guides/memory-management) guide.
+This topic is explained in detail in the [Memory management](../../../../guides/memory-management) guide.

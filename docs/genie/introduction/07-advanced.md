@@ -74,7 +74,7 @@ class Node : Object
 ```
 
 This topic is explained in detail on the
-[Memory Management](../../developer-guides/memory-management.md) page.
+[Memory Management](../../guides/memory-management.md) page.
 
 ### Unowned References
 

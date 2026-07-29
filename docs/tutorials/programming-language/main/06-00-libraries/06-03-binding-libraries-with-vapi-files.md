@@ -18,4 +18,4 @@ This process of creating this generally amounts to three steps,
 -   Generating a VAPI file from the above sources using `vapigen`.
 
 Specific instructions on how to generate bindings are in the
-[Vala Bindings Tutorial](../../../../developer-guides/bindings).
+[Vala Bindings Tutorial](../../../../guides/bindings).

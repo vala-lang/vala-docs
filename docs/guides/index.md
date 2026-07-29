@@ -1,4 +1,4 @@
-# Developer Guides
+# Guides
 
 <ul class="section-toc">
   <li>

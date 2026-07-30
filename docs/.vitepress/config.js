@@ -230,7 +230,6 @@ export default {
             {
                 text: "Resources",
                 items: [
-                    { text: "About", link: "/about" },
                     {
                         text: "Sample Code",
                         link: "/sample-code/language-features-and-introductory-samples",
@@ -238,6 +237,7 @@ export default {
                     { text: "Tooling", link: "/tooling/build-systems" },
                     { text: "Genie", link: "/genie/" },
                     { text: "FAQ", link: "/faq" },
+                    { text: "About", link: "/about" },
                 ],
             },
         ],

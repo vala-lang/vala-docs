@@ -19,7 +19,7 @@ uses where native binaries are required.
 ## Sections
 
 - [Installation Guide](get-started/installation-guide)
-- [Tutorials](tutorials/main)
+- [Tutorials](tutorials/)
 - [Tooling](tooling/build-systems)
 - [Guides](guides/bindings)
 - [Sample Code](sample-code/language-features-and-introductory-samples)

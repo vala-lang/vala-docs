@@ -1253,15 +1253,11 @@ export const sidebar = {
                     link: "/faq",
                 },
             ],
-            '/tutorials/': [
+            '/tutorials/main': [
                     {
-                        text: "Programming Language",
+                        text: "Main Tutorial",
+                        link: "/tutorials/main",
                         items: [
-                            {
-                                text: "Main Tutorial",
-                                collapsed: true,
-                                link: "/tutorials/main",
-                                items: [
                                 {
                                     text: "1. First Program",
                                     link: "/tutorials/main/01-00-first-program",
@@ -1524,9 +1520,18 @@ export const sidebar = {
                                         },
                                     ],
                                 },
-                            ],
-                        },
-                    ],
+                        ],
+                    },
+            ],
+            '/tutorials/': [
+                    {
+                        text: "Programming Language",
+                        items: [
+                            {
+                                text: "Main Tutorial",
+                                link: "/tutorials/main",
+                            },
+                        ],
                     },
                     {
                         text: "GUI Programming",

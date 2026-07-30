@@ -12,7 +12,7 @@ C#:
 ```
 
 Vala:
-[Valadoc](../../../tutorials/main/02-00-basics/02-03-comments) comments
+[Valadoc](../../tutorials/main/02-00-basics/02-03-comments) comments
 
 ```vala
 /**

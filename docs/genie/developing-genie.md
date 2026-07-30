@@ -348,5 +348,5 @@ confirm the patch works as expected.
 - [Introduction to Genie](introduction) - syntax overview and tutorial.
 - [Genie Tutorials, Blogs and Code Examples](resources.md) - additional
   learning resources.
-- [Contributor Guide](../contributor-guide/) - general guidelines for
+- [Contributor Guide](../guides/contributor-guide) - general guidelines for
   contributing to the Vala project.

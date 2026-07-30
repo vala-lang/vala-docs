@@ -1,9 +1,5 @@
 # Documentation for Contributors to Vala
 
-<ul class="section-toc">
-<li><a href="compiler-guide">Compiler Guide</a></li>
-</ul>
-
 Vala follows a collaborative, open source development model. The
 following guidelines are here to help if you want to contribute back to
 the project.
@@ -94,8 +90,8 @@ VAPI itself. The Vala repository keeps the generated VAPIs in version
 control as well as the metadata. There is no need for test cases to be
 added for bindings.
 
-- [Writing a VAPI Without Using GObject Introspection](../guides/bindings/writing-a-vapi-manually) - detailed guide on writing a VAPI manually
-- [Generating a VAPI with GObject Introspection](../guides/bindings/generating-a-vapi-with-gobject-introspection) - details on generating a VAPI using `vapigen`
+- [Writing a VAPI Without Using GObject Introspection](bindings/writing-a-vapi-manually) - detailed guide on writing a VAPI manually
+- [Generating a VAPI with GObject Introspection](bindings/generating-a-vapi-with-gobject-introspection) - details on generating a VAPI using `vapigen`
 
 ## Developing the Compiler
 

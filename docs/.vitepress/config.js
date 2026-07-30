@@ -264,6 +264,43 @@ export default {
             "/guides",
         );
 
+        // Contributor Guide and Compiler Guide are no longer nested under
+        // /contributor-guide/; they're now top-level pages under /guides/.
+        mirrorRedirects(
+            join(outDir, "guides", "compiler-guide"),
+            join(outDir, "contributor-guide", "compiler-guide"),
+            "/guides/compiler-guide",
+        );
+        writeRedirect(
+            join(outDir, "contributor-guide", "compiler-guide.html"),
+            "/guides/compiler-guide",
+        );
+        writeRedirect(
+            join(outDir, "contributor-guide", "index.html"),
+            "/guides/contributor-guide",
+        );
+
+        // "Vala for C# Programmers" and "Vala for Java Programmers" are no
+        // longer nested under /guides/documentation/.
+        mirrorRedirects(
+            join(outDir, "guides", "vala-for-csharp-programmers"),
+            join(outDir, "guides", "documentation", "vala-for-csharp-programmers"),
+            "/guides/vala-for-csharp-programmers",
+        );
+        writeRedirect(
+            join(outDir, "guides", "documentation", "vala-for-csharp-programmers.html"),
+            "/guides/vala-for-csharp-programmers",
+        );
+        mirrorRedirects(
+            join(outDir, "guides", "vala-for-java-programmers"),
+            join(outDir, "guides", "documentation", "vala-for-java-programmers"),
+            "/guides/vala-for-java-programmers",
+        );
+        writeRedirect(
+            join(outDir, "guides", "documentation", "vala-for-java-programmers.html"),
+            "/guides/vala-for-java-programmers",
+        );
+
         // "Programming Language" and "GUI Programming" are now sidebar section
         // titles only; their old index pages are gone and Main Tutorial moved
         // up one level.
@@ -294,6 +331,18 @@ export default {
         writeRedirect(
             join(outDir, "tooling", "index.html"),
             "/tooling/build-systems",
+        );
+
+        // The Documentation and Plugins sections' index pages are gone the
+        // same way; their sidebar entries are now plain section headers with
+        // no link.
+        writeRedirect(
+            join(outDir, "guides", "documentation.html"),
+            "/guides/documentation/valadoc-guide",
+        );
+        writeRedirect(
+            join(outDir, "guides", "plugins.html"),
+            "/guides/plugins/01-type-modules",
         );
     },
 };

@@ -1,3 +1,7 @@
+---
+sidebar: false
+---
+
 # Vala FAQ
 
 ## Why have you created a whole new programming language? Why didn't you just use C++, C#, D, Java, Python,...?

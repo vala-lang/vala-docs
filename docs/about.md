@@ -1,3 +1,7 @@
+---
+sidebar: false
+---
+
 # About Vala
 
 **valac**, the Vala compiler, is a self-hosting compiler that translates

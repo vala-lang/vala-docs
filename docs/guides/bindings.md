@@ -50,7 +50,7 @@ valac --vapidir ./vapi --pkg pkg_name main.vala
 
 Documentation of bindings may be included in [https://valadoc.org](https://valadoc.org)
 
-For more info on how to generate your own documentation, check out the [Valadoc Guide](./documentation/valadoc-guide).
+For more info on how to generate your own documentation, check out the [Valadoc Guide](./valadoc-guide).
 
 ## Contents
 

@@ -322,8 +322,17 @@ export default {
             "/guides/contributor-guide",
         );
 
-        // "Vala for C# Programmers" and "Vala for Java Programmers" are no
-        // longer nested under /guides/documentation/.
+        // "Vala for C# Programmers", "Vala for Java Programmers", and the
+        // Valadoc Guide are no longer nested under /guides/documentation/.
+        mirrorRedirects(
+            join(outDir, "guides", "valadoc-guide"),
+            join(outDir, "guides", "documentation", "valadoc-guide"),
+            "/guides/valadoc-guide",
+        );
+        writeRedirect(
+            join(outDir, "guides", "documentation", "valadoc-guide.html"),
+            "/guides/valadoc-guide",
+        );
         mirrorRedirects(
             join(outDir, "guides", "vala-for-csharp-programmers"),
             join(outDir, "guides", "documentation", "vala-for-csharp-programmers"),
@@ -383,7 +392,7 @@ export default {
         // no link.
         writeRedirect(
             join(outDir, "guides", "documentation.html"),
-            "/guides/documentation/valadoc-guide",
+            "/guides/valadoc-guide",
         );
         writeRedirect(
             join(outDir, "guides", "plugins.html"),

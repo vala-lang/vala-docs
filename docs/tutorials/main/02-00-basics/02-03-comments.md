@@ -17,4 +17,4 @@ little explanation.
 
 Documentation comments are not special to the Vala compiler, but a
 documentation generation tool like
-[Valadoc](../../../guides/documentation/valadoc-guide) will recognize them.
+[Valadoc](../../../guides/valadoc-guide) will recognize them.

@@ -4,8 +4,8 @@
 documentation from a library's API (Application Programming Interface).
 
 The library's API can be
-[written manually](../bindings/writing-a-vapi-manually) in a VAPI file or in a VAPI file or
-[generated automatically](../bindings/generating-a-vapi-with-gobject-introspection) 
+[written manually](./bindings/writing-a-vapi-manually) in a VAPI file or in a VAPI file or
+[generated automatically](./bindings/generating-a-vapi-with-gobject-introspection) 
 from source files and held in a GIR (GObject Introspection
 Repository) file. valadoc can generate documentation from both a VAPI
 file or a GIR file.

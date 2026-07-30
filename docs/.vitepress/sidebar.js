@@ -311,40 +311,40 @@ export const sidebar = {
                         ],
                     },
             ],
-            '/guides/documentation/valadoc-guide': [
+            '/guides/valadoc-guide': [
                     {
                         text: "Valadoc Guide",
-                        link: "/guides/documentation/valadoc-guide",
+                        link: "/guides/valadoc-guide",
                         items: [
                             {
                                 text: "1. Quick Start",
-                                link: "/guides/documentation/valadoc-guide/01-00-quick-start",
+                                link: "/guides/valadoc-guide/01-00-quick-start",
                             },
                             {
                                 text: "2. Command Line Tool",
-                                link: "/guides/documentation/valadoc-guide/02-00-command-line-tool",
+                                link: "/guides/valadoc-guide/02-00-command-line-tool",
                             },
                             {
                                 text: "3. Documentation Comment Markup",
-                                link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup",
+                                link: "/guides/valadoc-guide/03-00-documentation-comment-markup",
                                 items: [
                                     {
                                         text: "3.1.1. Brief Description",
-                                        link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-01-brief-description",
+                                        link: "/guides/valadoc-guide/03-00-documentation-comment-markup/03-01-brief-description",
                                     },
                                     {
                                         text: "3.1.2. Formatting",
-                                        link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-02-formatting",
+                                        link: "/guides/valadoc-guide/03-00-documentation-comment-markup/03-02-formatting",
                                     },
                                     {
                                         text: "3.1.3. Taglets",
-                                        link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-03-taglets",
+                                        link: "/guides/valadoc-guide/03-00-documentation-comment-markup/03-03-taglets",
                                     },
                                 ],
                             },
                             {
                                 text: "4. Contributing to Valadoc",
-                                link: "/guides/documentation/valadoc-guide/04-00-contributing-to-valadoc",
+                                link: "/guides/valadoc-guide/04-00-contributing-to-valadoc",
                             },
                         ],
                     },
@@ -880,7 +880,7 @@ export const sidebar = {
                         items: [
                             {
                                 text: "Valadoc Guide",
-                                link: "/guides/documentation/valadoc-guide",
+                                link: "/guides/valadoc-guide",
                             },
                         ],
                     },

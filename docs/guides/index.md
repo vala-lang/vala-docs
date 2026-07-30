@@ -26,7 +26,7 @@
   <li>
     Documentation
     <ul class="section-toc section-toc-sub">
-      <li><a href="documentation/valadoc-guide">Valadoc Guide</a></li>
+      <li><a href="valadoc-guide">Valadoc Guide</a></li>
     </ul>
   </li>
   <li>

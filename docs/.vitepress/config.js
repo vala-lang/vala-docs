@@ -2,7 +2,7 @@ import { existsSync, readFileSync, mkdirSync, writeFileSync, readdirSync } from 
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import removeMarkdown from "remove-markdown";
-import { sidebar } from "./sidebar.js";
+import { sidebar, sectionPageOrder } from "./sidebar.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const bnfGrammar = JSON.parse(
@@ -63,6 +63,46 @@ function absoluteAssetUrl(siteData, assetPath) {
     return `${SITE_ORIGIN}${siteBasePrefix(siteData)}${path}`;
 }
 
+/**
+ * Turn a page's relativePath (e.g. "guides/plugins/01-type-modules.md") into
+ * the extensionless link format used throughout sidebar.js (e.g.
+ * "/guides/plugins/01-type-modules"), independent of the site's cleanUrls
+ * setting - unlike pageMdToUrlPath, which deliberately appends ".html" when
+ * cleanUrls is off for canonical/OG URLs.
+ * @param {string} relativePath
+ * @param siteConfig Resolved VitePress site config (rewrites).
+ */
+function relativePathToSidebarLink(relativePath, siteConfig) {
+    const resolved = siteConfig.rewrites.map[relativePath] || relativePath;
+    const withoutIndex = resolved.replace(/(^|\/)index\.md$/, "$1");
+    const withoutExt = withoutIndex.replace(/\.md$/, "");
+    return withoutExt.startsWith("/") ? withoutExt : `/${withoutExt}`;
+}
+
+/**
+ * Overrides VitePress's default (per-sidebar-key) prev/next links for pages
+ * in a section whose sidebar is split across several subsection keys, using
+ * the continuous reading order computed in sidebar.js.
+ * @param pageData
+ * @param siteConfig Resolved VitePress site config (rewrites, cleanUrls, etc.).
+ */
+function applySectionPrevNext(pageData, siteConfig) {
+    if (!pageData.relativePath) return;
+    const currentLink = relativePathToSidebarLink(
+        pageData.relativePath,
+        siteConfig,
+    );
+    const order = Object.entries(sectionPageOrder).find(
+        ([prefix]) => currentLink === prefix || currentLink.startsWith(prefix),
+    )?.[1];
+    if (!order) return;
+    const index = order.findIndex((page) => page.link === currentLink);
+    if (index === -1) return;
+    pageData.frontmatter.prev = index > 0 ? order[index - 1] : false;
+    pageData.frontmatter.next =
+        index < order.length - 1 ? order[index + 1] : false;
+}
+
 const MAX_DESCRIPTION_SNIPPET_LENGTH = 200;
 
 /**
@@ -116,6 +156,7 @@ export default {
         ],
     ],
     transformPageData(pageData, { siteConfig }) {
+        applySectionPrevNext(pageData, siteConfig);
         if (
             typeof pageData.description === "string" &&
             pageData.description.trim() !== ""

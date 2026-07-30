@@ -1623,3 +1623,87 @@ export const sidebar = {
                     },
             ]
 };
+
+/**
+ * Recursively flattens a sidebar item tree (DFS, pre-order) into a flat list
+ * of linked pages, dropping link-less group headers.
+ * @param {Array<{text?: string, link?: string, items?: Array}>} items
+ */
+function flattenSidebarItems(items) {
+    const result = [];
+    for (const item of items) {
+        if (item.link && !/^https?:\/\//.test(item.link)) {
+            result.push({ text: item.text, link: item.link });
+        }
+        if (item.items) {
+            result.push(...flattenSidebarItems(item.items));
+        }
+    }
+    return result;
+}
+
+/**
+ * A top-level section (e.g. Guides) is often split across several sidebar
+ * keys, one per subsection, so that the visible sidebar only shows the
+ * current subsection's tree. That split means VitePress's automatic
+ * prev/next links (which only walk the single sidebar matched to the
+ * current route) stop at each subsection's boundary.
+ *
+ * This rebuilds one continuous reading order for the whole section: it
+ * walks the section's own catch-all sidebar entry (which lists every
+ * subsection in intended order) and, for any link that has its own more
+ * detailed sidebar key, splices in that key's full page tree instead of
+ * just the single link.
+ * @param {string} catchAllKey e.g. "/guides/"
+ * @param {{text?: string, link?: string}} [indexPage] the section's own
+ *   index page, prepended as the first entry if provided
+ */
+function buildSectionPageOrder(catchAllKey, indexPage) {
+    const specificKeys = Object.keys(sidebar).filter(
+        (key) => key !== catchAllKey && key.startsWith(catchAllKey),
+    );
+    const result = indexPage ? [indexPage] : [];
+    function visit(item) {
+        if (item.link && !/^https?:\/\//.test(item.link)) {
+            const specificKey = specificKeys.find(
+                (key) => item.link === key || item.link.startsWith(`${key}/`),
+            );
+            if (specificKey) {
+                result.push(...flattenSidebarItems(sidebar[specificKey]));
+                return;
+            }
+            result.push({ text: item.text, link: item.link });
+        }
+        if (item.items) {
+            for (const child of item.items) visit(child);
+        }
+    }
+    for (const group of sidebar[catchAllKey]) visit(group);
+    // Mirror VitePress's own prev/next computation, which dedupes flattened
+    // sidebar links by `link` (keeping the first occurrence) before walking
+    // them - see usePrevNext() in vitepress/theme-default. Without this,
+    // a group node that reuses its first child's link (e.g. Plugins) would
+    // appear twice and point to itself.
+    const seen = new Set();
+    return result.filter((page) => {
+        if (seen.has(page.link)) return false;
+        seen.add(page.link);
+        return true;
+    });
+}
+
+/**
+ * Continuous prev/next reading order per top-level section, keyed by the
+ * section's catch-all sidebar prefix. Used by config.js to override
+ * VitePress's default (siloed) prev/next links.
+ */
+export const sectionPageOrder = {
+    "/guides/": buildSectionPageOrder("/guides/", {
+        text: "Guides",
+        link: "/guides/",
+    }),
+    "/tutorials/": buildSectionPageOrder("/tutorials/", {
+        text: "Tutorials",
+        link: "/tutorials/",
+    }),
+};

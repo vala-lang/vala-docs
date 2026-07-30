@@ -95,6 +95,7 @@ export const sidebar = {
                             {
                                 text: "Writing a VAPI Manually",
                                 link: "/guides/bindings/writing-a-vapi-manually",
+                                collapsed: false,
                                 items: [
                                     {
                                         text: "1. Prerequisites",
@@ -433,6 +434,7 @@ export const sidebar = {
                             {
                                 text: "Vala for C# Programmers",
                                 link: "/guides/documentation/vala-for-csharp-programmers",
+                                collapsed: false,
                                 items: [
                                     {
                                         text: "Source Files",
@@ -591,6 +593,7 @@ export const sidebar = {
                             {
                                 text: "Vala for Java Programmers",
                                 link: "/guides/documentation/vala-for-java-programmers",
+                                collapsed: false,
                                 items: [
                                     {
                                         text: "1. Project Setup and Toolchain",

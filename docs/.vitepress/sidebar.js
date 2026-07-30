@@ -1259,7 +1259,7 @@ export const sidebar = {
                         items: [
                             {
                                 text: "Main Tutorial",
-                                collapsed: false,
+                                collapsed: true,
                                 link: "/tutorials/main",
                                 items: [
                                 {

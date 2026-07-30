@@ -168,6 +168,7 @@ export default {
     themeConfig: {
         // theme-level options
         logo: "/logo.png",
+        externalLinkIcon: true,
         socialLinks: [
             {
                 icon: "github",
@@ -183,8 +184,8 @@ export default {
         },
         nav: [
             { text: "Get Started", link: "/get-started/installation-guide" },
-            { text: "Tutorials", link: "/tutorials/main" },
-            { text: "Guides", link: "/guides/bindings" },
+            { text: "Tutorials", link: "/tutorials/" },
+            { text: "Guides", link: "/guides/" },
             {
                 text: "Resources",
                 items: [
@@ -317,9 +318,6 @@ export default {
             join(outDir, "tutorials", "gui-programming.html"),
             "/tutorials/main",
         );
-        // The Tutorials index page is gone; the nav link now goes straight to
-        // the main tutorial.
-        writeRedirect(join(outDir, "tutorials", "index.html"), "/tutorials/main");
 
         // The Installation Guide is no longer a top-level page; it now lives
         // under /get-started/ as that section's default page.
@@ -328,9 +326,8 @@ export default {
             "/get-started/installation-guide",
         );
 
-        // Guides, Sample Code, and Tooling index pages are gone the same way;
-        // their nav links now go straight to a default page in each section.
-        writeRedirect(join(outDir, "guides", "index.html"), "/guides/bindings");
+        // Sample Code and Tooling index pages are gone the same way; their
+        // nav links now go straight to a default page in each section.
         writeRedirect(
             join(outDir, "sample-code", "index.html"),
             "/sample-code/language-features-and-introductory-samples",

@@ -18,7 +18,7 @@ uses where native binaries are required.
 
 ## Sections
 
-- [Installation Guide](installation-guide)
+- [Installation Guide](get-started/installation-guide)
 - [Tutorials](tutorials/main)
 - [Tooling](tooling/build-systems)
 - [Guides](guides/bindings)

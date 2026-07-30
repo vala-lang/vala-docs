@@ -75,7 +75,7 @@ individually.
 ### Windows Subsystem for Linux (WSL)
 
 Install a Linux distribution in WSL and then continue with the
-[installation instructions for Linux](installation-guide#linux).
+[installation instructions for Linux](#linux).
 
 ## macOS
 

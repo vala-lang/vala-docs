@@ -1,4 +1,10 @@
 export const sidebar = {
+            '/get-started/': [
+                    {
+                        text: "Installation Guide",
+                        link: "/get-started/installation-guide",
+                    },
+            ],
             '/guides/': [
                     {
                         text: "Bindings",

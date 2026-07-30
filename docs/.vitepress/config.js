@@ -182,7 +182,7 @@ export default {
             provider: "local",
         },
         nav: [
-            { text: "Get Started", link: "/installation-guide" },
+            { text: "Get Started", link: "/get-started/installation-guide" },
             { text: "Tutorials", link: "/tutorials/main" },
             { text: "Guides", link: "/guides/bindings" },
             {
@@ -320,6 +320,13 @@ export default {
         // The Tutorials index page is gone; the nav link now goes straight to
         // the main tutorial.
         writeRedirect(join(outDir, "tutorials", "index.html"), "/tutorials/main");
+
+        // The Installation Guide is no longer a top-level page; it now lives
+        // under /get-started/ as that section's default page.
+        writeRedirect(
+            join(outDir, "installation-guide.html"),
+            "/get-started/installation-guide",
+        );
 
         // Guides, Sample Code, and Tooling index pages are gone the same way;
         // their nav links now go straight to a default page in each section.

@@ -5,7 +5,7 @@ export const sidebar = {
                         link: "/get-started/installation-guide",
                     },
             ],
-            '/guides/': [
+            '/guides/bindings': [
                     {
                         text: "Bindings",
                         link: "/guides/bindings",
@@ -287,6 +287,8 @@ export const sidebar = {
                             },
                         ],
                     },
+            ],
+            '/guides/design-patterns': [
                     {
                         text: "Design Patterns",
                         link: "/guides/design-patterns",
@@ -309,50 +311,49 @@ export const sidebar = {
                             },
                         ],
                     },
+            ],
+            '/guides/documentation/valadoc-guide': [
                     {
-                        text: "Documentation",
+                        text: "Valadoc Guide",
+                        link: "/guides/documentation/valadoc-guide",
                         items: [
                             {
-                                text: "Valadoc Guide",
-                                link: "/guides/documentation/valadoc-guide",
-                                collapsed: false,
+                                text: "1. Quick Start",
+                                link: "/guides/documentation/valadoc-guide/01-00-quick-start",
+                            },
+                            {
+                                text: "2. Command Line Tool",
+                                link: "/guides/documentation/valadoc-guide/02-00-command-line-tool",
+                            },
+                            {
+                                text: "3. Documentation Comment Markup",
+                                link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup",
                                 items: [
                                     {
-                                        text: "1. Quick Start",
-                                        link: "/guides/documentation/valadoc-guide/01-00-quick-start",
+                                        text: "3.1.1. Brief Description",
+                                        link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-01-brief-description",
                                     },
                                     {
-                                        text: "2. Command Line Tool",
-                                        link: "/guides/documentation/valadoc-guide/02-00-command-line-tool",
+                                        text: "3.1.2. Formatting",
+                                        link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-02-formatting",
                                     },
                                     {
-                                        text: "3. Documentation Comment Markup",
-                                        link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup",
-                                        items: [
-                                            {
-                                                text: "3.1.1. Brief Description",
-                                                link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-01-brief-description",
-                                            },
-                                            {
-                                                text: "3.1.2. Formatting",
-                                                link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-02-formatting",
-                                            },
-                                            {
-                                                text: "3.1.3. Taglets",
-                                                link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-03-taglets",
-                                            },
-                                        ],
-                                    },
-                                    {
-                                        text: "4. Contributing to Valadoc",
-                                        link: "/guides/documentation/valadoc-guide/04-00-contributing-to-valadoc",
+                                        text: "3.1.3. Taglets",
+                                        link: "/guides/documentation/valadoc-guide/03-00-documentation-comment-markup/03-03-taglets",
                                     },
                                 ],
                             },
+                            {
+                                text: "4. Contributing to Valadoc",
+                                link: "/guides/documentation/valadoc-guide/04-00-contributing-to-valadoc",
+                            },
                         ],
                     },
+            ],
+            '/guides/plugins': [
                     {
                         text: "Plugins",
+                        link: "/guides/plugins/01-type-modules",
                         items: [
                             {
                                 text: "Type Modules",
@@ -364,10 +365,11 @@ export const sidebar = {
                             },
                         ],
                     },
+            ],
+            '/guides/compiler-guide': [
                     {
                         text: "Compiler Guide",
                         link: "/guides/compiler-guide",
-                        collapsed: true,
                         items: [
                             {
                                 text: "1. Project Information",
@@ -437,6 +439,425 @@ export const sidebar = {
                             },
                         ],
                     },
+            ],
+            '/guides/vala-for-csharp-programmers': [
+                    {
+                        text: "Vala for C# Programmers",
+                        link: "/guides/vala-for-csharp-programmers",
+                        items: [
+                            {
+                                text: "Source Files",
+                                link: "/guides/vala-for-csharp-programmers/01-sources-files",
+                            },
+                            {
+                                text: "Compilation",
+                                link: "/guides/vala-for-csharp-programmers/02-compilation",
+                            },
+                            {
+                                text: "Naming Conventions",
+                                link: "/guides/vala-for-csharp-programmers/03-naming-conventions",
+                            },
+                            {
+                                text: "Main Entry Point",
+                                link: "/guides/vala-for-csharp-programmers/04-main-entry-point",
+                            },
+                            {
+                                text: "System Namespace",
+                                link: "/guides/vala-for-csharp-programmers/05-system-namespace",
+                            },
+                            {
+                                text: "Value Types",
+                                link: "/guides/vala-for-csharp-programmers/06-value-types",
+                            },
+                            {
+                                text: "Verbatim String Literals",
+                                link: "/guides/vala-for-csharp-programmers/07-verbatim-string-literals",
+                            },
+                            {
+                                text: "Documentation Comments",
+                                link: "/guides/vala-for-csharp-programmers/08-documentation-comments",
+                            },
+                            {
+                                text: "Object Base Class",
+                                link: "/guides/vala-for-csharp-programmers/09-object-base-class",
+                            },
+                            {
+                                text: "Method Overloading",
+                                link: "/guides/vala-for-csharp-programmers/10-method-overloading",
+                            },
+                            {
+                                text: "Multiple Constructors",
+                                link: "/guides/vala-for-csharp-programmers/11-multiple-constructors",
+                            },
+                            {
+                                text: "Constructor Chaining",
+                                link: "/guides/vala-for-csharp-programmers/12-constructor-chaining",
+                            },
+                            {
+                                text: "Delegates / Lambdas",
+                                link: "/guides/vala-for-csharp-programmers/13-delegates-lambdas",
+                            },
+                            {
+                                text: "Events",
+                                link: "/guides/vala-for-csharp-programmers/14-events",
+                            },
+                            {
+                                text: "Interfaces",
+                                link: "/guides/vala-for-csharp-programmers/15-interfaces",
+                            },
+                            {
+                                text: "Enums",
+                                link: "/guides/vala-for-csharp-programmers/16-enums",
+                            },
+                            {
+                                text: "Struct Initialization",
+                                link: "/guides/vala-for-csharp-programmers/17-struct-initialization",
+                            },
+                            {
+                                text: "Multi-dimensional Arrays",
+                                link: "/guides/vala-for-csharp-programmers/18-multi-dimensional-arrays",
+                            },
+                            {
+                                text: "Nullable Types",
+                                link: "/guides/vala-for-csharp-programmers/19-nullable-types",
+                            },
+                            {
+                                text: "Code Attributes",
+                                link: "/guides/vala-for-csharp-programmers/20-code-attributes",
+                            },
+                            {
+                                text: "Properties",
+                                link: "/guides/vala-for-csharp-programmers/21-properties",
+                            },
+                            {
+                                text: "Exceptions",
+                                link: "/guides/vala-for-csharp-programmers/22-exceptions",
+                            },
+                            {
+                                text: "Argument Checking",
+                                link: "/guides/vala-for-csharp-programmers/23-argument-checking",
+                            },
+                            {
+                                text: "Unsafe Code and Pointers",
+                                link: "/guides/vala-for-csharp-programmers/24-unsafe-code-and-pointers",
+                            },
+                            {
+                                text: "Conditional Compilation Directives",
+                                link: "/guides/vala-for-csharp-programmers/25-conditional-compilation-directives",
+                            },
+                            {
+                                text: "Resource Disposing",
+                                link: "/guides/vala-for-csharp-programmers/26-resource-disposing",
+                            },
+                            {
+                                text: "Memory Management",
+                                link: "/guides/vala-for-csharp-programmers/27-memory-management",
+                            },
+                            {
+                                text: "Asynchronous Calls",
+                                link: "/guides/vala-for-csharp-programmers/28-asynchronous-calls",
+                            },
+                            {
+                                text: "Static Constructors",
+                                link: "/guides/vala-for-csharp-programmers/29-static-constructors",
+                            },
+                            {
+                                text: "External Methods",
+                                link: "/guides/vala-for-csharp-programmers/30-external-methods",
+                            },
+                            {
+                                text: "Reflection",
+                                link: "/guides/vala-for-csharp-programmers/31-reflection",
+                            },
+                            {
+                                text: "Not Available",
+                                link: "/guides/vala-for-csharp-programmers/32-not-available",
+                            },
+                            {
+                                text: "Collections",
+                                link: "/guides/vala-for-csharp-programmers/33-collections",
+                            },
+                            {
+                                text: "Indexers",
+                                link: "/guides/vala-for-csharp-programmers/34-indexers",
+                            },
+                            {
+                                text: "IO, Network Sockets",
+                                link: "/guides/vala-for-csharp-programmers/35-io-network-sockets",
+                            },
+                            {
+                                text: "Console Input / Output",
+                                link: "/guides/vala-for-csharp-programmers/36-console-input-output",
+                            },
+                            {
+                                text: "GTK+ Demo App",
+                                link: "/guides/vala-for-csharp-programmers/37-gtk-demo-app",
+                            },
+                            {
+                                text: "Bindings",
+                                link: "/guides/vala-for-csharp-programmers/38-bindings",
+                            },
+                        ],
+                    },
+            ],
+            '/guides/vala-for-java-programmers': [
+                    {
+                        text: "Vala for Java Programmers",
+                        link: "/guides/vala-for-java-programmers",
+                        items: [
+                            {
+                                text: "1. Project Setup and Toolchain",
+                                link: "/guides/vala-for-java-programmers/01-project-setup",
+                                items: [
+                                    {
+                                        text: "1.1. Source Files",
+                                        link: "/guides/vala-for-java-programmers/01-project-setup/01-source-files",
+                                    },
+                                    {
+                                        text: "1.2. Compilation",
+                                        link: "/guides/vala-for-java-programmers/01-project-setup/02-compilation",
+                                    },
+                                    {
+                                        text: "1.3. Using Libraries",
+                                        link: "/guides/vala-for-java-programmers/01-project-setup/03-using-libraries",
+                                    },
+                                    {
+                                        text: "1.4. Naming Conventions",
+                                        link: "/guides/vala-for-java-programmers/01-project-setup/04-naming-conventions",
+                                    },
+                                    {
+                                        text: "1.5. Code Organization",
+                                        link: "/guides/vala-for-java-programmers/01-project-setup/05-code-organization",
+                                    },
+                                    {
+                                        text: "1.6. Main Entry Point",
+                                        link: "/guides/vala-for-java-programmers/01-project-setup/06-main-entry-point",
+                                    },
+                                ],
+                            },
+                            {
+                                text: "2. Types and Core Syntax",
+                                link: "/guides/vala-for-java-programmers/02-types-and-syntax",
+                                items: [
+                                    {
+                                        text: "2.1. Basic Types",
+                                        link: "/guides/vala-for-java-programmers/02-types-and-syntax/01-basic-types",
+                                    },
+                                    {
+                                        text: "2.2. Strings",
+                                        link: "/guides/vala-for-java-programmers/02-types-and-syntax/02-strings",
+                                    },
+                                    {
+                                        text: "2.3. Arrays",
+                                        link: "/guides/vala-for-java-programmers/02-types-and-syntax/03-arrays",
+                                    },
+                                    {
+                                        text: "2.4. Type Inference",
+                                        link: "/guides/vala-for-java-programmers/02-types-and-syntax/04-type-inference",
+                                    },
+                                    {
+                                        text: "2.5. Foreach",
+                                        link: "/guides/vala-for-java-programmers/02-types-and-syntax/05-foreach",
+                                    },
+                                ],
+                            },
+                            {
+                                text: "3. Object-Oriented Programming",
+                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming",
+                                items: [
+                                    {
+                                        text: "3.1. Inheritance",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/01-inheritance",
+                                    },
+                                    {
+                                        text: "3.2. Object Base Class",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/02-object-base-class",
+                                    },
+                                    {
+                                        text: "3.3. Method Overloading",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/03-method-overloading",
+                                    },
+                                    {
+                                        text: "3.4. Multiple Constructors",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/04-multiple-constructors",
+                                    },
+                                    {
+                                        text: "3.5. Constructor Chaining",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/05-constructor-chaining",
+                                    },
+                                    {
+                                        text: "3.6. Overriding",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/06-overriding",
+                                    },
+                                    {
+                                        text: "3.7. Access Modifiers",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/07-access-modifiers",
+                                    },
+                                    {
+                                        text: "3.8. Interfaces",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/08-interfaces",
+                                    },
+                                    {
+                                        text: "3.9. Enums",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/09-enums",
+                                    },
+                                    {
+                                        text: "3.10. Run-Time Type Information",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/10-run-time-type-information",
+                                    },
+                                    {
+                                        text: "3.11. Object Destruction",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/11-object-destruction",
+                                    },
+                                    {
+                                        text: "3.12. Annotations",
+                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming/12-annotations",
+                                    },
+                                ],
+                            },
+                            {
+                                text: "4. Properties, Events, and Delegates",
+                                link: "/guides/vala-for-java-programmers/04-properties-events-delegates",
+                                items: [
+                                    {
+                                        text: "4.1. Properties",
+                                        link: "/guides/vala-for-java-programmers/04-properties-events-delegates/01-properties",
+                                    },
+                                    {
+                                        text: "4.2. Delegates and Closures",
+                                        link: "/guides/vala-for-java-programmers/04-properties-events-delegates/02-delegates-closures",
+                                    },
+                                    {
+                                        text: "4.3. Notification",
+                                        link: "/guides/vala-for-java-programmers/04-properties-events-delegates/03-notification",
+                                    },
+                                    {
+                                        text: "4.4. Property Change Notification",
+                                        link: "/guides/vala-for-java-programmers/04-properties-events-delegates/04-property-change-notification",
+                                    },
+                                ],
+                            },
+                            {
+                                text: "5. Exceptions and API Contracts",
+                                link: "/guides/vala-for-java-programmers/05-exceptions-and-contracts",
+                                items: [
+                                    {
+                                        text: "5.1. Exceptions",
+                                        link: "/guides/vala-for-java-programmers/05-exceptions-and-contracts/01-exceptions",
+                                    },
+                                    {
+                                        text: "5.2. Parameter Directions",
+                                        link: "/guides/vala-for-java-programmers/05-exceptions-and-contracts/02-parameter-directions",
+                                    },
+                                    {
+                                        text: "5.3. Nullability",
+                                        link: "/guides/vala-for-java-programmers/05-exceptions-and-contracts/03-nullability",
+                                    },
+                                    {
+                                        text: "5.4. Argument Checking",
+                                        link: "/guides/vala-for-java-programmers/05-exceptions-and-contracts/04-argument-checking",
+                                    },
+                                ],
+                            },
+                            {
+                                text: "6. Advanced Language and Runtime",
+                                link: "/guides/vala-for-java-programmers/06-advanced-language",
+                                items: [
+                                    {
+                                        text: "6.1. Structs",
+                                        link: "/guides/vala-for-java-programmers/06-advanced-language/01-structs",
+                                    },
+                                    {
+                                        text: "6.2. Synchronizing",
+                                        link: "/guides/vala-for-java-programmers/06-advanced-language/02-synchronizing",
+                                    },
+                                    {
+                                        text: "6.3. Conditional Compilation",
+                                        link: "/guides/vala-for-java-programmers/06-advanced-language/03-conditional-compilation",
+                                    },
+                                    {
+                                        text: "6.4. Memory Management",
+                                        link: "/guides/vala-for-java-programmers/06-advanced-language/04-memory-management",
+                                    },
+                                    {
+                                        text: "6.5. Static Initialization",
+                                        link: "/guides/vala-for-java-programmers/06-advanced-language/05-static-initialization",
+                                    },
+                                    {
+                                        text: "6.6. Varargs",
+                                        link: "/guides/vala-for-java-programmers/06-advanced-language/06-varargs",
+                                    },
+                                    {
+                                        text: "6.7. Native Methods",
+                                        link: "/guides/vala-for-java-programmers/06-advanced-language/07-native-methods",
+                                    },
+                                    {
+                                        text: "6.8. Not Available",
+                                        link: "/guides/vala-for-java-programmers/06-advanced-language/08-not-available",
+                                    },
+                                    {
+                                        text: "6.9. Features Not Covered in This Tutorial",
+                                        link: "/guides/vala-for-java-programmers/06-advanced-language/09-features-not-covered",
+                                    },
+                                ],
+                            },
+                            {
+                                text: "7. Collections and I/O",
+                                link: "/guides/vala-for-java-programmers/07-collections-and-io",
+                                items: [
+                                    {
+                                        text: "7.1. Collections",
+                                        link: "/guides/vala-for-java-programmers/07-collections-and-io/01-collections",
+                                    },
+                                    {
+                                        text: "7.2. IO, Network Sockets",
+                                        link: "/guides/vala-for-java-programmers/07-collections-and-io/02-io-network-sockets",
+                                    },
+                                    {
+                                        text: "7.3. Console Input / Output",
+                                        link: "/guides/vala-for-java-programmers/07-collections-and-io/03-console-input-output",
+                                    },
+                                ],
+                            },
+                            {
+                                text: "8. From Swing to GTK+",
+                                link: "/guides/vala-for-java-programmers/08-swing-to-gtk",
+                                items: [
+                                    {
+                                        text: "8.1. From Swing to GTK+",
+                                        link: "/guides/vala-for-java-programmers/08-swing-to-gtk/01-from-swing-to-gtk",
+                                    },
+                                ],
+                            },
+                        ],
+                    },
+            ],
+            '/guides/': [
+                    {
+                        text: "Bindings",
+                        link: "/guides/bindings",
+                    },
+                    {
+                        text: "Design Patterns",
+                        link: "/guides/design-patterns",
+                    },
+                    {
+                        text: "Documentation",
+                        items: [
+                            {
+                                text: "Valadoc Guide",
+                                link: "/guides/documentation/valadoc-guide",
+                            },
+                        ],
+                    },
+                    {
+                        text: "Plugins",
+                        link: "/guides/plugins/01-type-modules",
+                    },
+                    {
+                        text: "Compiler Guide",
+                        link: "/guides/compiler-guide",
+                    },
                     {
                         text: "Miscellaneous",
                         items: [
@@ -447,392 +868,10 @@ export const sidebar = {
                             {
                                 text: "Vala for C# Programmers",
                                 link: "/guides/vala-for-csharp-programmers",
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: "Source Files",
-                                        link: "/guides/vala-for-csharp-programmers/01-sources-files",
-                                    },
-                                    {
-                                        text: "Compilation",
-                                        link: "/guides/vala-for-csharp-programmers/02-compilation",
-                                    },
-                                    {
-                                        text: "Naming Conventions",
-                                        link: "/guides/vala-for-csharp-programmers/03-naming-conventions",
-                                    },
-                                    {
-                                        text: "Main Entry Point",
-                                        link: "/guides/vala-for-csharp-programmers/04-main-entry-point",
-                                    },
-                                    {
-                                        text: "System Namespace",
-                                        link: "/guides/vala-for-csharp-programmers/05-system-namespace",
-                                    },
-                                    {
-                                        text: "Value Types",
-                                        link: "/guides/vala-for-csharp-programmers/06-value-types",
-                                    },
-                                    {
-                                        text: "Verbatim String Literals",
-                                        link: "/guides/vala-for-csharp-programmers/07-verbatim-string-literals",
-                                    },
-                                    {
-                                        text: "Documentation Comments",
-                                        link: "/guides/vala-for-csharp-programmers/08-documentation-comments",
-                                    },
-                                    {
-                                        text: "Object Base Class",
-                                        link: "/guides/vala-for-csharp-programmers/09-object-base-class",
-                                    },
-                                    {
-                                        text: "Method Overloading",
-                                        link: "/guides/vala-for-csharp-programmers/10-method-overloading",
-                                    },
-                                    {
-                                        text: "Multiple Constructors",
-                                        link: "/guides/vala-for-csharp-programmers/11-multiple-constructors",
-                                    },
-                                    {
-                                        text: "Constructor Chaining",
-                                        link: "/guides/vala-for-csharp-programmers/12-constructor-chaining",
-                                    },
-                                    {
-                                        text: "Delegates / Lambdas",
-                                        link: "/guides/vala-for-csharp-programmers/13-delegates-lambdas",
-                                    },
-                                    {
-                                        text: "Events",
-                                        link: "/guides/vala-for-csharp-programmers/14-events",
-                                    },
-                                    {
-                                        text: "Interfaces",
-                                        link: "/guides/vala-for-csharp-programmers/15-interfaces",
-                                    },
-                                    {
-                                        text: "Enums",
-                                        link: "/guides/vala-for-csharp-programmers/16-enums",
-                                    },
-                                    {
-                                        text: "Struct Initialization",
-                                        link: "/guides/vala-for-csharp-programmers/17-struct-initialization",
-                                    },
-                                    {
-                                        text: "Multi-dimensional Arrays",
-                                        link: "/guides/vala-for-csharp-programmers/18-multi-dimensional-arrays",
-                                    },
-                                    {
-                                        text: "Nullable Types",
-                                        link: "/guides/vala-for-csharp-programmers/19-nullable-types",
-                                    },
-                                    {
-                                        text: "Code Attributes",
-                                        link: "/guides/vala-for-csharp-programmers/20-code-attributes",
-                                    },
-                                    {
-                                        text: "Properties",
-                                        link: "/guides/vala-for-csharp-programmers/21-properties",
-                                    },
-                                    {
-                                        text: "Exceptions",
-                                        link: "/guides/vala-for-csharp-programmers/22-exceptions",
-                                    },
-                                    {
-                                        text: "Argument Checking",
-                                        link: "/guides/vala-for-csharp-programmers/23-argument-checking",
-                                    },
-                                    {
-                                        text: "Unsafe Code and Pointers",
-                                        link: "/guides/vala-for-csharp-programmers/24-unsafe-code-and-pointers",
-                                    },
-                                    {
-                                        text: "Conditional Compilation Directives",
-                                        link: "/guides/vala-for-csharp-programmers/25-conditional-compilation-directives",
-                                    },
-                                    {
-                                        text: "Resource Disposing",
-                                        link: "/guides/vala-for-csharp-programmers/26-resource-disposing",
-                                    },
-                                    {
-                                        text: "Memory Management",
-                                        link: "/guides/vala-for-csharp-programmers/27-memory-management",
-                                    },
-                                    {
-                                        text: "Asynchronous Calls",
-                                        link: "/guides/vala-for-csharp-programmers/28-asynchronous-calls",
-                                    },
-                                    {
-                                        text: "Static Constructors",
-                                        link: "/guides/vala-for-csharp-programmers/29-static-constructors",
-                                    },
-                                    {
-                                        text: "External Methods",
-                                        link: "/guides/vala-for-csharp-programmers/30-external-methods",
-                                    },
-                                    {
-                                        text: "Reflection",
-                                        link: "/guides/vala-for-csharp-programmers/31-reflection",
-                                    },
-                                    {
-                                        text: "Not Available",
-                                        link: "/guides/vala-for-csharp-programmers/32-not-available",
-                                    },
-                                    {
-                                        text: "Collections",
-                                        link: "/guides/vala-for-csharp-programmers/33-collections",
-                                    },
-                                    {
-                                        text: "Indexers",
-                                        link: "/guides/vala-for-csharp-programmers/34-indexers",
-                                    },
-                                    {
-                                        text: "IO, Network Sockets",
-                                        link: "/guides/vala-for-csharp-programmers/35-io-network-sockets",
-                                    },
-                                    {
-                                        text: "Console Input / Output",
-                                        link: "/guides/vala-for-csharp-programmers/36-console-input-output",
-                                    },
-                                    {
-                                        text: "GTK+ Demo App",
-                                        link: "/guides/vala-for-csharp-programmers/37-gtk-demo-app",
-                                    },
-                                    {
-                                        text: "Bindings",
-                                        link: "/guides/vala-for-csharp-programmers/38-bindings",
-                                    },
-                                ],
                             },
                             {
                                 text: "Vala for Java Programmers",
                                 link: "/guides/vala-for-java-programmers",
-                                collapsed: true,
-                                items: [
-                                    {
-                                        text: "1. Project Setup and Toolchain",
-                                        link: "/guides/vala-for-java-programmers/01-project-setup",
-                                        items: [
-                                            {
-                                                text: "1.1. Source Files",
-                                                link: "/guides/vala-for-java-programmers/01-project-setup/01-source-files",
-                                            },
-                                            {
-                                                text: "1.2. Compilation",
-                                                link: "/guides/vala-for-java-programmers/01-project-setup/02-compilation",
-                                            },
-                                            {
-                                                text: "1.3. Using Libraries",
-                                                link: "/guides/vala-for-java-programmers/01-project-setup/03-using-libraries",
-                                            },
-                                            {
-                                                text: "1.4. Naming Conventions",
-                                                link: "/guides/vala-for-java-programmers/01-project-setup/04-naming-conventions",
-                                            },
-                                            {
-                                                text: "1.5. Code Organization",
-                                                link: "/guides/vala-for-java-programmers/01-project-setup/05-code-organization",
-                                            },
-                                            {
-                                                text: "1.6. Main Entry Point",
-                                                link: "/guides/vala-for-java-programmers/01-project-setup/06-main-entry-point",
-                                            },
-                                        ],
-                                    },
-                                    {
-                                        text: "2. Types and Core Syntax",
-                                        link: "/guides/vala-for-java-programmers/02-types-and-syntax",
-                                        items: [
-                                            {
-                                                text: "2.1. Basic Types",
-                                                link: "/guides/vala-for-java-programmers/02-types-and-syntax/01-basic-types",
-                                            },
-                                            {
-                                                text: "2.2. Strings",
-                                                link: "/guides/vala-for-java-programmers/02-types-and-syntax/02-strings",
-                                            },
-                                            {
-                                                text: "2.3. Arrays",
-                                                link: "/guides/vala-for-java-programmers/02-types-and-syntax/03-arrays",
-                                            },
-                                            {
-                                                text: "2.4. Type Inference",
-                                                link: "/guides/vala-for-java-programmers/02-types-and-syntax/04-type-inference",
-                                            },
-                                            {
-                                                text: "2.5. Foreach",
-                                                link: "/guides/vala-for-java-programmers/02-types-and-syntax/05-foreach",
-                                            },
-                                        ],
-                                    },
-                                    {
-                                        text: "3. Object-Oriented Programming",
-                                        link: "/guides/vala-for-java-programmers/03-object-oriented-programming",
-                                        items: [
-                                            {
-                                                text: "3.1. Inheritance",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/01-inheritance",
-                                            },
-                                            {
-                                                text: "3.2. Object Base Class",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/02-object-base-class",
-                                            },
-                                            {
-                                                text: "3.3. Method Overloading",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/03-method-overloading",
-                                            },
-                                            {
-                                                text: "3.4. Multiple Constructors",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/04-multiple-constructors",
-                                            },
-                                            {
-                                                text: "3.5. Constructor Chaining",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/05-constructor-chaining",
-                                            },
-                                            {
-                                                text: "3.6. Overriding",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/06-overriding",
-                                            },
-                                            {
-                                                text: "3.7. Access Modifiers",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/07-access-modifiers",
-                                            },
-                                            {
-                                                text: "3.8. Interfaces",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/08-interfaces",
-                                            },
-                                            {
-                                                text: "3.9. Enums",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/09-enums",
-                                            },
-                                            {
-                                                text: "3.10. Run-Time Type Information",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/10-run-time-type-information",
-                                            },
-                                            {
-                                                text: "3.11. Object Destruction",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/11-object-destruction",
-                                            },
-                                            {
-                                                text: "3.12. Annotations",
-                                                link: "/guides/vala-for-java-programmers/03-object-oriented-programming/12-annotations",
-                                            },
-                                        ],
-                                    },
-                                    {
-                                        text: "4. Properties, Events, and Delegates",
-                                        link: "/guides/vala-for-java-programmers/04-properties-events-delegates",
-                                        items: [
-                                            {
-                                                text: "4.1. Properties",
-                                                link: "/guides/vala-for-java-programmers/04-properties-events-delegates/01-properties",
-                                            },
-                                            {
-                                                text: "4.2. Delegates and Closures",
-                                                link: "/guides/vala-for-java-programmers/04-properties-events-delegates/02-delegates-closures",
-                                            },
-                                            {
-                                                text: "4.3. Notification",
-                                                link: "/guides/vala-for-java-programmers/04-properties-events-delegates/03-notification",
-                                            },
-                                            {
-                                                text: "4.4. Property Change Notification",
-                                                link: "/guides/vala-for-java-programmers/04-properties-events-delegates/04-property-change-notification",
-                                            },
-                                        ],
-                                    },
-                                    {
-                                        text: "5. Exceptions and API Contracts",
-                                        link: "/guides/vala-for-java-programmers/05-exceptions-and-contracts",
-                                        items: [
-                                            {
-                                                text: "5.1. Exceptions",
-                                                link: "/guides/vala-for-java-programmers/05-exceptions-and-contracts/01-exceptions",
-                                            },
-                                            {
-                                                text: "5.2. Parameter Directions",
-                                                link: "/guides/vala-for-java-programmers/05-exceptions-and-contracts/02-parameter-directions",
-                                            },
-                                            {
-                                                text: "5.3. Nullability",
-                                                link: "/guides/vala-for-java-programmers/05-exceptions-and-contracts/03-nullability",
-                                            },
-                                            {
-                                                text: "5.4. Argument Checking",
-                                                link: "/guides/vala-for-java-programmers/05-exceptions-and-contracts/04-argument-checking",
-                                            },
-                                        ],
-                                    },
-                                    {
-                                        text: "6. Advanced Language and Runtime",
-                                        link: "/guides/vala-for-java-programmers/06-advanced-language",
-                                        items: [
-                                            {
-                                                text: "6.1. Structs",
-                                                link: "/guides/vala-for-java-programmers/06-advanced-language/01-structs",
-                                            },
-                                            {
-                                                text: "6.2. Synchronizing",
-                                                link: "/guides/vala-for-java-programmers/06-advanced-language/02-synchronizing",
-                                            },
-                                            {
-                                                text: "6.3. Conditional Compilation",
-                                                link: "/guides/vala-for-java-programmers/06-advanced-language/03-conditional-compilation",
-                                            },
-                                            {
-                                                text: "6.4. Memory Management",
-                                                link: "/guides/vala-for-java-programmers/06-advanced-language/04-memory-management",
-                                            },
-                                            {
-                                                text: "6.5. Static Initialization",
-                                                link: "/guides/vala-for-java-programmers/06-advanced-language/05-static-initialization",
-                                            },
-                                            {
-                                                text: "6.6. Varargs",
-                                                link: "/guides/vala-for-java-programmers/06-advanced-language/06-varargs",
-                                            },
-                                            {
-                                                text: "6.7. Native Methods",
-                                                link: "/guides/vala-for-java-programmers/06-advanced-language/07-native-methods",
-                                            },
-                                            {
-                                                text: "6.8. Not Available",
-                                                link: "/guides/vala-for-java-programmers/06-advanced-language/08-not-available",
-                                            },
-                                            {
-                                                text: "6.9. Features Not Covered in This Tutorial",
-                                                link: "/guides/vala-for-java-programmers/06-advanced-language/09-features-not-covered",
-                                            },
-                                        ],
-                                    },
-                                    {
-                                        text: "7. Collections and I/O",
-                                        link: "/guides/vala-for-java-programmers/07-collections-and-io",
-                                        items: [
-                                            {
-                                                text: "7.1. Collections",
-                                                link: "/guides/vala-for-java-programmers/07-collections-and-io/01-collections",
-                                            },
-                                            {
-                                                text: "7.2. IO, Network Sockets",
-                                                link: "/guides/vala-for-java-programmers/07-collections-and-io/02-io-network-sockets",
-                                            },
-                                            {
-                                                text: "7.3. Console Input / Output",
-                                                link: "/guides/vala-for-java-programmers/07-collections-and-io/03-console-input-output",
-                                            },
-                                        ],
-                                    },
-                                    {
-                                        text: "8. From Swing to GTK+",
-                                        link: "/guides/vala-for-java-programmers/08-swing-to-gtk",
-                                        items: [
-                                            {
-                                                text: "8.1. From Swing to GTK+",
-                                                link: "/guides/vala-for-java-programmers/08-swing-to-gtk/01-from-swing-to-gtk",
-                                            },
-                                        ],
-                                    },
-                                ],
                             },
                             {
                                 text: "Memory Management",

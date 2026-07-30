@@ -1,3 +1,7 @@
+---
+sidebar: false
+---
+
 # Vala Documentation
 
 ## Introduction

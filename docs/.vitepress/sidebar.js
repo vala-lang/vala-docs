@@ -1300,12 +1300,6 @@ export const sidebar = {
                     ],
                 },
             ],
-            '/': [
-                {
-                    text: "FAQ",
-                    link: "/faq",
-                },
-            ],
             '/tutorials/main': [
                     {
                         text: "Main Tutorial",

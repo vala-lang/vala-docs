@@ -184,13 +184,16 @@ export default {
         nav: [
             { text: "Get Started", link: "/installation-guide" },
             { text: "Tutorials", link: "/tutorials/main" },
-            { text: "Guides", link: "/guides/" },
+            { text: "Guides", link: "/guides/bindings" },
             {
                 text: "Resources",
                 items: [
                     { text: "About", link: "/about" },
-                    { text: "Sample Code", link: "/sample-code/" },
-                    { text: "Tooling", link: "/tooling/" },
+                    {
+                        text: "Sample Code",
+                        link: "/sample-code/language-features-and-introductory-samples",
+                    },
+                    { text: "Tooling", link: "/tooling/build-systems" },
                     { text: "Genie", link: "/genie/" },
                     { text: "FAQ", link: "/faq" },
                 ],
@@ -280,5 +283,17 @@ export default {
         // The Tutorials index page is gone; the nav link now goes straight to
         // the main tutorial.
         writeRedirect(join(outDir, "tutorials", "index.html"), "/tutorials/main");
+
+        // Guides, Sample Code, and Tooling index pages are gone the same way;
+        // their nav links now go straight to a default page in each section.
+        writeRedirect(join(outDir, "guides", "index.html"), "/guides/bindings");
+        writeRedirect(
+            join(outDir, "sample-code", "index.html"),
+            "/sample-code/language-features-and-introductory-samples",
+        );
+        writeRedirect(
+            join(outDir, "tooling", "index.html"),
+            "/tooling/build-systems",
+        );
     },
 };

@@ -16,9 +16,9 @@ uses where native binaries are required.
 
 - [Installation Guide](installation-guide)
 - [Tutorials](tutorials/main)
-- [Tooling](tooling/)
-- [Guides](guides/)
-- [Sample Code](sample-code/)
+- [Tooling](tooling/build-systems)
+- [Guides](guides/bindings)
+- [Sample Code](sample-code/language-features-and-introductory-samples)
 - [Genie Programming Language](genie/)
 - [FAQ](faq)
 

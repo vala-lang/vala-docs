@@ -1700,8 +1700,4 @@ export const sectionPageOrder = {
         text: "Tutorials",
         link: "/tutorials/",
     }),
-    "/sample-code/": buildSectionPageOrder("/sample-code/", {
-        text: "Sample Code",
-        link: "/sample-code/",
-    }),
 };

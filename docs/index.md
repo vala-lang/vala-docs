@@ -22,7 +22,7 @@ uses where native binaries are required.
 - [Tutorials](tutorials/)
 - [Tooling](tooling/build-systems)
 - [Guides](guides/)
-- [Sample Code](sample-code/)
+- [Sample Code](sample-code/language-features-and-introductory-samples)
 - [Genie Programming Language](genie/)
 - [FAQ](faq)
 

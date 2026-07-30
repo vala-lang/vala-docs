@@ -232,7 +232,7 @@ export default {
                 items: [
                     {
                         text: "Sample Code",
-                        link: "/sample-code/",
+                        link: "/sample-code/language-features-and-introductory-samples",
                     },
                     { text: "Tooling", link: "/tooling/build-systems" },
                     { text: "Genie", link: "/genie/" },
@@ -367,8 +367,12 @@ export default {
             "/get-started/installation-guide",
         );
 
-        // The Tooling index page is gone the same way; its nav link now
-        // goes straight to a default page in the section.
+        // Sample Code and Tooling index pages are gone the same way; their
+        // nav links now go straight to a default page in each section.
+        writeRedirect(
+            join(outDir, "sample-code", "index.html"),
+            "/sample-code/language-features-and-introductory-samples",
+        );
         writeRedirect(
             join(outDir, "tooling", "index.html"),
             "/tooling/build-systems",

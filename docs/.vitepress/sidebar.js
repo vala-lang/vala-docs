@@ -351,18 +351,12 @@ export const sidebar = {
             ],
             '/guides/plugins': [
                     {
-                        text: "Plugins",
+                        text: "Type Modules",
                         link: "/guides/plugins/01-type-modules",
-                        items: [
-                            {
-                                text: "Type Modules",
-                                link: "/guides/plugins/01-type-modules",
-                            },
-                            {
-                                text: "Libpeas",
-                                link: "/guides/plugins/02-libpeas",
-                            },
-                        ],
+                    },
+                    {
+                        text: "Libpeas",
+                        link: "/guides/plugins/02-libpeas",
                     },
             ],
             '/guides/compiler-guide': [

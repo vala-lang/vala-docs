@@ -21,7 +21,6 @@ export const sidebar = {
                             {
                                 text: "Writing a VAPI Manually",
                                 link: "/guides/bindings/writing-a-vapi-manually",
-                                collapsed: true,
                                 items: [
                                     {
                                         text: "1. Prerequisites",
@@ -834,12 +833,47 @@ export const sidebar = {
             ],
             '/guides/': [
                     {
-                        text: "Bindings",
-                        link: "/guides/bindings",
+                        text: "Interop & Bindings",
+                        items: [
+                            {
+                                text: "Bindings",
+                                link: "/guides/bindings",
+                            },
+                        ],
                     },
                     {
-                        text: "Design Patterns",
-                        link: "/guides/design-patterns",
+                        text: "Language Guides",
+                        items: [
+                            {
+                                text: "Design Patterns",
+                                link: "/guides/design-patterns",
+                            },
+                            {
+                                text: "Memory Management",
+                                link: "/guides/memory-management",
+                            },
+                            {
+                                text: "Syntax Guide",
+                                link: "/guides/syntax-guide",
+                            },
+                            {
+                                text: "Vala on Windows",
+                                link: "/guides/vala-on-windows",
+                            },
+                        ],
+                    },
+                    {
+                        text: "Coming from Other Languages",
+                        items: [
+                            {
+                                text: "Vala for C# Programmers",
+                                link: "/guides/vala-for-csharp-programmers",
+                            },
+                            {
+                                text: "Vala for Java Programmers",
+                                link: "/guides/vala-for-java-programmers",
+                            },
+                        ],
                     },
                     {
                         text: "Documentation",
@@ -851,39 +885,19 @@ export const sidebar = {
                         ],
                     },
                     {
-                        text: "Plugins",
-                        link: "/guides/plugins/01-type-modules",
-                    },
-                    {
-                        text: "Compiler Guide",
-                        link: "/guides/compiler-guide",
-                    },
-                    {
-                        text: "Miscellaneous",
+                        text: "Contributing",
                         items: [
+                            {
+                                text: "Compiler Guide",
+                                link: "/guides/compiler-guide",
+                            },
                             {
                                 text: "Contributor Guide",
                                 link: "/guides/contributor-guide",
                             },
                             {
-                                text: "Vala for C# Programmers",
-                                link: "/guides/vala-for-csharp-programmers",
-                            },
-                            {
-                                text: "Vala for Java Programmers",
-                                link: "/guides/vala-for-java-programmers",
-                            },
-                            {
-                                text: "Memory Management",
-                                link: "/guides/memory-management",
-                            },
-                            {
-                                text: "Vala on Windows",
-                                link: "/guides/vala-on-windows",
-                            },
-                            {
-                                text: "Syntax Guide",
-                                link: "/guides/syntax-guide",
+                                text: "Plugins",
+                                link: "/guides/plugins/01-type-modules",
                             },
                         ],
                     },

@@ -2,49 +2,39 @@
 
 <ul class="section-toc">
   <li>
-    <a href="bindings">Bindings</a>
+    Interop &amp; Bindings
     <ul class="section-toc section-toc-sub">
-      <li><a href="bindings/generating-a-vapi-with-gobject-introspection">Generating a VAPI with GObject Introspection</a></li>
-      <li><a href="bindings/upstream-guide">Why Distribute Bindings Upstream</a></li>
-      <li><a href="bindings/writing-a-vapi-manually">Writing a VAPI Manually</a></li>
+      <li><a href="bindings">Bindings</a></li>
     </ul>
   </li>
   <li>
-    <a href="design-patterns">Design Patterns</a>
+    Language Guides
     <ul class="section-toc section-toc-sub">
-      <li><a href="design-patterns#🚀-introduction">🚀 Introduction</a></li>
-      <li><a href="design-patterns#⚠️-be-careful">⚠️ Be Careful</a></li>
-      <li><a href="design-patterns#types-of-design-patterns">Types of Design Patterns</a></li>
+      <li><a href="design-patterns">Design Patterns</a></li>
+      <li><a href="memory-management">Memory Management</a></li>
+      <li><a href="syntax-guide">Syntax Guide</a></li>
+      <li><a href="vala-on-windows">Vala on Windows</a></li>
     </ul>
   </li>
   <li>
-    <a href="documentation/valadoc-guide">Documentation</a>
+    Coming from Other Languages
     <ul class="section-toc section-toc-sub">
       <li><a href="vala-for-csharp-programmers">Vala for C# Programmers</a></li>
       <li><a href="vala-for-java-programmers">Vala for Java Programmers</a></li>
+    </ul>
+  </li>
+  <li>
+    Documentation
+    <ul class="section-toc section-toc-sub">
       <li><a href="documentation/valadoc-guide">Valadoc Guide</a></li>
     </ul>
   </li>
   <li>
-    <a href="plugins/01-type-modules">Plugins</a>
+    Contributing
     <ul class="section-toc section-toc-sub">
-      <li><a href="plugins/01-type-modules">Type Modules</a></li>
-      <li><a href="plugins/02-libpeas">Libpeas</a></li>
+      <li><a href="compiler-guide">Compiler Guide</a></li>
+      <li><a href="contributor-guide">Contributor Guide</a></li>
+      <li><a href="plugins/01-type-modules">Plugins</a></li>
     </ul>
-  </li>
-  <li>
-    <a href="compiler-guide">Compiler Guide</a>
-  </li>
-  <li>
-    <a href="contributor-guide">Contributor Guide</a>
-  </li>
-  <li>
-    <a href="memory-management">Memory Management</a>
-  </li>
-  <li>
-    <a href="vala-on-windows">Vala on Windows</a>
-  </li>
-  <li>
-    <a href="syntax-guide">Syntax Guide</a>
   </li>
 </ul>

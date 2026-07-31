@@ -63,5 +63,5 @@ LD_LIBRARY_PATH=$PWD ./loader
 On macOS, use `DYLD_LIBRARY_PATH` instead of `LD_LIBRARY_PATH` if you build a `.dylib`.
 
 For a type-aware plugin that registers GObject types from a module, see
-[TypeModule sample](type-module-sample) and the [Type Modules](../../developer-guides/plugins/01-type-modules)
+[TypeModule sample](type-module-sample) and the [Type Modules](../../guides/plugins/01-type-modules)
 developer guide.

@@ -199,6 +199,6 @@ numbers in the test binary use the `--debug` switch with `valac`.
 In most cases, however, these tools will not be needed. Genie uses reference
 counting for memory management. In some data structures it is possible to
 create reference cycles and the memory is not freed; see
-[Memory Management](../../developer-guides/memory-management.md) for more
+[Memory Management](../../guides/memory-management.md) for more
 details. Memory leaks may also occur when a binding to a C library has not
 defined ownership correctly or there is a bug in the C library.

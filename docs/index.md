@@ -1,3 +1,7 @@
+---
+sidebar: false
+---
+
 # Vala Documentation
 
 ## Introduction
@@ -14,12 +18,11 @@ uses where native binaries are required.
 
 ## Sections
 
-- [Installation Guide](installation-guide)
+- [Installation Guide](get-started/installation-guide)
 - [Tutorials](tutorials/)
-- [Tooling](tooling/)
-- [Contributor Guide](contributor-guide/)
-- [Developer Guides](developer-guides/)
-- [Sample Code](sample-code/)
+- [Tooling](tooling/build-systems)
+- [Guides](guides/)
+- [Sample Code](sample-code/language-features-and-introductory-samples)
 - [Genie Programming Language](genie/)
 - [FAQ](faq)
 

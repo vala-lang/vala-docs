@@ -14,7 +14,7 @@ Vala uses the GObject type system and has additional code generation
 routines that make targeting the GNOME stack simple. Vala has many other
 uses where native binaries are required.
 
-[Learn more about Vala](about)
+[Learn more about Vala](https://vala.dev/about/)
 
 ## Sections
 

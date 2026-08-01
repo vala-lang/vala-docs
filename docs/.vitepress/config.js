@@ -237,7 +237,7 @@ export default {
                     { text: "Tooling", link: "/tooling/build-systems" },
                     { text: "Genie", link: "/genie/" },
                     { text: "FAQ", link: "/faq" },
-                    { text: "About", link: "/about" },
+                    { text: "About", link: "https://vala.dev/about/" },
                 ],
             },
         ],

@@ -1,8 +1,26 @@
 # 3.4. Semantic Analyzer
 
-<!-- What is the semantic analyzer? -->
+`Vala.SemanticAnalyzer` is a `CodeVisitor` that looks up the symbols that have been, parsed and checks if the symbols are being used correctly.
 
-<!-- What does it do? -->
+This includes:
+- Verifying that for each symbol type, the syntax is being followed
+- The rules of how each symbol can be used is being followed
+
+## How The Built-in Symbol Types Are Looked Up
+
+Initially symbol types are looked up from the `Vala.CodeContext` `root` (`Vala.Namespace`).
+
+In `Vala.Compiler` for the `run()` method, for each source filename given to the compiler, the `Vala.CodeContext.add_source_file_name ()` is called (unless the compiler is run with the Fast VAPIs feature enabled).
+
+On each call to the `add_source_file_name ()` method on `Vala.CodeContext`, a default namespace `using` directive is added to the `Vala.SourceFile` object representing each source file.
+
+The default namespace that gets added depends on the `profile` option set when the compiler is executed:
+- `gobject` (default): `using GLib;`
+- `posix`: `using Posix;`
+
+This provides the implementation of the built-in types of the language. 
+
+The implementation of each type are then added to the namespace scope which is then looked up when the `Vala.SemanticAnalyzer.analyze()` method is called.
 
 <!-- How does it work? -->
 

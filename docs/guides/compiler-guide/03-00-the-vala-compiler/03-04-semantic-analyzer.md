@@ -22,8 +22,12 @@ This provides the implementation of the built-in types of the language.
 
 The implementation of each type are then added to the namespace scope which is then looked up when the `Vala.SemanticAnalyzer.analyze()` method is called.
 
+<!-- TODO: Create sections about how the actual analysis process (going through each code node in the code context, looking up symbols in each code node, then ensuring that they are being used correctly) -->
+
 <!-- How does it work? -->
 
 <!-- Key aspects, key classes around  it etc. -->
 
 ## Error Handling
+
+<!-- Explain how errors are reported and handled. For instance, if there are any errors that come up, the compiler returns early from checking the code context and doesn't proceed to the flow analyzer stage for that source file -->

@@ -882,12 +882,12 @@ export const sidebar = {
                         text: "Contributing",
                         items: [
                             {
-                                text: "Compiler Guide",
-                                link: "/guides/compiler-guide",
-                            },
-                            {
                                 text: "Contributor Guide",
                                 link: "/guides/contributor-guide",
+                            },
+                            {
+                                text: "Compiler Guide",
+                                link: "/guides/compiler-guide",
                             },
                             {
                                 text: "Plugins",

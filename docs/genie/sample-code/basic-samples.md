@@ -6,7 +6,7 @@ Adapted from the archived GNOME Wiki page
 [Projects/Genie/BasicSamples](https://wiki.gnome.org/Projects/Genie/BasicSamples).
 
 For richer file and network I/O, prefer GIO-based patterns (see the Vala docs
-[sample code](/sample-code/) and [GIO samples](/sample-code/basics/gio-samples)).
+[sample code](/sample-code/language-features-and-introductory-samples) and [GIO samples](/sample-code/basics/gio-samples)).
 
 ## Hello world
 

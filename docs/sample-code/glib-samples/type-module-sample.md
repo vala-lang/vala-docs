@@ -4,7 +4,7 @@
 that registers one or more [`GObject`](https://valadoc.org/gobject-2.0/GObject.Object.html) types. A
 loader subclass opens the module, resolves its `[ModuleInit]` entry point, and the type system keeps
 the library loaded while instances exist. This is the same example as in the
-[Type Modules](../../developer-guides/plugins/01-type-modules) developer guide.
+[Type Modules](../../guides/plugins/01-type-modules) developer guide.
 
 **Never unref a [`GLib.TypeModule`](https://valadoc.org/gobject-2.0/GLib.TypeModule.html) instance
 yourself**; the type system owns its lifetime.

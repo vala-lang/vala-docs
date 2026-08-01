@@ -41,7 +41,7 @@ init
     print "Hello World"
 ```
 
-Provided you have [Vala installed](../installation-guide), copy and paste the
+Provided you have [Vala installed](../get-started/installation-guide), copy and paste the
 code above and save it in a file called `hello.gs`. Genie code must be
 written in files with the `*.gs` extension.
 

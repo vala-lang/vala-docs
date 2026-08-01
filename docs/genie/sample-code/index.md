@@ -34,4 +34,4 @@ expect to adjust packages and APIs for a current desktop or distribution.
 
 - [Introduction to Genie](../introduction) — tutorial in this documentation.
 - [Tutorials, Blogs and Code Examples](../resources) — more external links.
-- [Vala sample code](/sample-code/) — many related patterns in Vala syntax.
+- [Vala sample code](/sample-code/language-features-and-introductory-samples) — many related patterns in Vala syntax.

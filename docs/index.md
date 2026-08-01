@@ -1,3 +1,7 @@
+---
+sidebar: false
+---
+
 # Vala Documentation
 
 ## Introduction
@@ -10,16 +14,15 @@ Vala uses the GObject type system and has additional code generation
 routines that make targeting the GNOME stack simple. Vala has many other
 uses where native binaries are required.
 
-[Learn more about Vala](about)
+[Learn more about Vala](https://vala.dev/about/)
 
 ## Sections
 
-- [Installation Guide](installation-guide)
+- [Installation Guide](get-started/installation-guide)
 - [Tutorials](tutorials/)
-- [Tooling](tooling/)
-- [Contributor Guide](contributor-guide/)
-- [Developer Guides](developer-guides/)
-- [Sample Code](sample-code/)
+- [Tooling](tooling/build-systems)
+- [Guides](guides/)
+- [Sample Code](sample-code/language-features-and-introductory-samples)
 - [Genie Programming Language](genie/)
 - [FAQ](faq)
 
@@ -33,6 +36,9 @@ uses where native binaries are required.
 - [Vala Website](https://vala.dev)
 - [Vala Project GNOME Wiki (Retired)](https://wiki.gnome.org/Projects/Vala)
 - [Introducing Vala Programming (O'Reilly Book)](https://www.oreilly.com/library/view/introducing-vala-programming/9781484253809/)
+- [vala-list (Mailing list archives)](https://mail.gnome.org/archives/vala-list/)
+- [vala-devel-list (Mailing list archives)](https://mail.gnome.org/archives/vala-devel-list/)
+- [awesome-vala (A curated list of Vala projects)](https://github.com/vala-lang/awesome-vala)
 
 ## Community
 

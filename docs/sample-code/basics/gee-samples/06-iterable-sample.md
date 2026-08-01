@@ -243,5 +243,5 @@ valac --pkg gee-0.8 gee-iterable.vala
 
 Either listing prints the integers `10` through `19` once.
 
-See the [Collections](/tutorials/programming-language/main/04-00-advanced-features/04-04-collections)
+See the [Collections](/tutorials/main/04-00-advanced-features/04-04-collections)
 chapter for how `foreach` uses iterators.

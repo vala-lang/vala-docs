@@ -1,3 +1,7 @@
+---
+sidebar: false
+---
+
 # Vala FAQ
 
 ## Why have you created a whole new programming language? Why didn't you just use C++, C#, D, Java, Python,...?
@@ -213,7 +217,7 @@ you must append one before converting to a string. Note that
 ## How do I create an array of structs?
 
 First of all, take a look to the ways structs can be created at
-[Structs](tutorials/programming-language/main/02-00-basics/02-07-language-elements#_2-7-5-structs).
+[Structs](tutorials/main/02-00-basics/02-07-language-elements#_2-7-5-structs).
 
 If the array is constant:
 

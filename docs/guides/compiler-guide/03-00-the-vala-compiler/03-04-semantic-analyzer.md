@@ -26,7 +26,9 @@ The implementation of each type are then added to the namespace scope which is t
 
 ## 3.4.2 How Each Symbol in the Symbol Tree Is Checked
 
-After looking up the built-in symbol types, in `Vala.SemanticAnalyzer.analyze ()`, the method then continues on by calling `Vala.CodeNode.check ()` method recursively on the entire symbol tree, to ensure that all the symbols are being used correctly.
+After looking up the built-in symbol types, in `Vala.SemanticAnalyzer.analyze ()`, the method then continues on by calling `Vala.CodeNode.check ()` on the namespaces in the code context root.
+
+After, `CodeContext.accept ()` is called with the semantic instance and the code visitor recursively goes through the entire symbol tree to ensure that all the symbols are being used correctly.
 
 Also, `Vala.SemanticAnalyzer` contains methods and static functions that are used as shared reusable logic across the symbol tree of ensuring that symbol's are being used correctly. For example `Vala.SemanticAnalyzer.check_arguments ()` checks the arguments of an expression, ensuring that the correct amount of arguments are being used.
 

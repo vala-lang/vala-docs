@@ -8,7 +8,7 @@ This includes:
 
 The key method to look at is `Vala.SemanticAnalyzer.analyze ()`
 
-## How The Built-in Symbol Types Are Looked Up
+## 3.4.1 How The Built-in Symbol Types Are Looked Up
 
 Initially symbol types are looked up from the `Vala.CodeContext` `root` (`Vala.Namespace`).
 
@@ -24,13 +24,13 @@ This provides the implementation of the built-in types of the language.
 
 The implementation of each type are then added to the namespace scope which is then looked up when the `Vala.SemanticAnalyzer.analyze()` method is called.
 
-## How Each Symbol in the Symbol Tree Is Checked
+## 3.4.2 How Each Symbol in the Symbol Tree Is Checked
 
 After looking up the built-in symbol types, in `Vala.SemanticAnalyzer.analyze ()`, the method then continues on by calling `Vala.CodeNode.check ()` method recursively on the entire symbol tree, to ensure that all the symbols are being used correctly.
 
 Also, `Vala.SemanticAnalyzer` contains methods and static functions that are used as shared reusable logic across the symbol tree of ensuring that symbol's are being used correctly. For example `Vala.SemanticAnalyzer.check_arguments ()` checks the arguments of an expression, ensuring that the correct amount of arguments are being used.
 
-## Error Handling
+## 3.4.3 Error Handling
 
 If while checking the symbols, any errors have been reported, after the semantic analyzer has finishing checking through the entire symbol tree, the compiler program will exit early instead of proceeding with the Flow Analyzer.
 

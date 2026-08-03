@@ -1,119 +1,36 @@
 # 3.4. Semantic Analyzer
 
-## 3.4.1. Attribute Processing
+`Vala.SemanticAnalyzer` is a `CodeVisitor` that looks up the symbols that have been, parsed and checks if the symbols are being used correctly.
 
-`Vala.Attribute` nodes have a name and a possibly empty
-list of key-value arguments. Some types of code tree nodes have as
-children a list of `Attribute` nodes. The attribute processor's purpose is to
-interpret the attributes which were parsed into the code tree.
+This includes:
+- Verifying that for each symbol type, the syntax is being followed
+- The rules of how each symbol can be used is being followed
 
-Later in the compilation, the results of attribute processing will be
-used, for example the `CCode` attribute `cname` affects what function names
-are used in emitted C code.
+The key method to look at is `Vala.SemanticAnalyzer.analyze ()`
 
-All attributes except for `Conditional` are handled from
-`Vala.AttributeProcessor`. I don't know where and how the `Conditional`
-attribute is handled, but there is a function `ignore_node ()` in `Vala.CodeContext`.
+## How The Built-in Symbol Types Are Looked Up
 
-`Vala.AttributeProcessor` is a `CodeVisitor` which simply calls the
-`process_attributes ()` method on every namespace, class, struct,
-interface, enum, method, constructor, parameter, property, delegate,
-constant, field, and signal that it visits.
+Initially symbol types are looked up from the `Vala.CodeContext` `root` (`Vala.Namespace`).
 
-Inside the `process_attributes ()` method of each of these objects, a
-series of string comparisons will be made to parse the attributes. If
-the attribute is called `CCode`, then the `process_ccode_attributes ()`
-function will be called to parse the key-value pairs supplied.
+In `Vala.Compiler` for the `run()` method, for each source filename given to the compiler, the `Vala.CodeContext.add_source_file_name ()` is called (unless the compiler is run with the Fast VAPIs feature enabled).
 
-::: info TODO
-Mention `Vala.Parser.set_attributes ()`
+On each call to the `add_source_file_name ()` method on `Vala.CodeContext`, a default namespace `using` directive is added to the `Vala.SourceFile` object representing each source file.
 
-Feel free to help: [Vala Docs Repository](https://github.com/vala-lang/vala-docs).
-:::
+The default namespace that gets added depends on the `profile` option set when the compiler is executed:
+- `gobject` (default): `using GLib;`
+- `posix`: `using Posix;`
 
-Attributes Recognized by Vala
+This provides the implementation of the built-in types of the language. 
 
-All `Vala.Symbol` (class, constant, delegate, enum, enum value,
-errordomain, field, interface, method, property, signal, struct):
+The implementation of each type are then added to the namespace scope which is then looked up when the `Vala.SemanticAnalyzer.analyze()` method is called.
 
--   `Deprecated`
-    -   `since`
+## How Each Symbol in the Symbol Tree Is Checked
 
-`Vala.Namespace`
+After looking up the built-in symbol types, in `Vala.SemanticAnalyzer.analyze ()`, the method then continues on by calling `Vala.CodeNode.check ()` method recursively on the entire symbol tree, to ensure that all the symbols are being used correctly.
 
--   `CCode`
+Also, `Vala.SemanticAnalyzer` contains methods and static functions that are used as shared reusable logic across the symbol tree of ensuring that symbol's are being used correctly. For example `Vala.SemanticAnalyzer.check_arguments ()` checks the arguments of an expression, ensuring that the correct amount of arguments are being used.
 
-`Vala.Class`
+## Error Handling
 
--   `CCode`
--   `DBus`
--   `Compact`
--   `Immutable`
--   `ErrorBase`
+If while checking the symbols, any errors have been reported, after the semantic analyzer has finishing checking through the entire symbol tree, the compiler program will exit early instead of proceeding with the Flow Analyzer.
 
-`Vala.Struct`
-
--   `CCode`
--   `SimpleType`
--   `IntegerType`
--   `FloatingType`
--   `BooleanType`
--   `Immutable`
-
-`Vala.Interface`
-
--   `CCode`
--   `DBus`
-
-`Vala.Enum`
-
--   `CCode`
--   `Flags`
-
-`Vala.Method`
-
--   `CCode`
--   `DBus`
--   `ReturnsModifiedPointer`
--   `FloatingReference`
--   `NoWrapper`
--   `NoReturn`
--   `ModuleInit`
-
-`Vala.CreationMethod`
-> Same as `Vala.Method` — this class inherits from `Method`.
-
-`Vala.FormalParameter`
-
--   `CCode`
-
-`Vala.Property`
-
--   `CCode`
--   `DBus`
--   `NoAccessorMethod`
--   `Description`
-    -   `nick`
-    -   `blurb`
-
-`Vala.PropertyAccessor`
-
--   `CCode`
-
-`Vala.Delegate`
-
--   `CCode`
-
-`Vala.Constant`
-
--   `CCode`
-
-`Vala.Field`
-
--   `CCode`
-
-`Vala.Signal`
-
--   `DBus`
--   `Signal`
--   `HasEmitter`

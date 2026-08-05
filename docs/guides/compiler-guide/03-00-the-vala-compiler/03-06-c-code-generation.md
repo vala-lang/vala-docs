@@ -1,8 +1,8 @@
 # 3.6. C Code Generation
 
-<!-- Explain what this is and how this works in a nutshell -->
+In the previous Vala compiler steps, we verified that the validity of the Vala code. Now the compiler is ready to generate C code from the Vala source code.
 
-<!-- After checking the code context for after the previous steps, we can now verify that the Vala code was correct and now start converting the Vala code into CCode. In `Vala.Compiler.run ()` method, the compiler will eventually call the `Vala.CodeContext.codegen.emit ()` method, which triggers this CCode generation process! -->
+In the `Vala.Compiler.run ()` method, the compiler will eventually call `Vala.CodeContext.codegen.emit ()` which starts the C code generation process.
 
 ## Deciding which Vala.CodeGenerator instance type to use
 

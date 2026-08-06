@@ -5,16 +5,16 @@ In the previous Vala compiler steps, we verified that the validity of the Vala c
 In the `Vala.Compiler.run ()` method, the compiler will eventually call `Vala.CodeContext.codegen.emit ()` which starts the C code generation process.
 
 
-## How The Code Generation Works
+## 3.6.1 How The Code Generation Works
 
-### Deciding which Vala.CodeGenerator instance type to use
+### 3.6.1.1 Deciding which Vala.CodeGenerator instance type to use
 
 Vala.CodeContext.codegen is a property for an instance of `Vala.CodeGenerator`. The object type is different based on the compiler profile that the user set:
 
 - GObject profile: `GDBusServerModule`. 
 - Otherwise: `CCodeDelegateModule`
 
-### Modules Pattern with C Code Generator
+### 3.6.1.2 Modules Pattern with C Code Generator
 
 `Vala.CodeGenerator` is an abstract class that is a code visitor for generating code. This is the base class for code generators in the compiler, it contains abstract methods to be overriden by subclasses that help wit hthe code generation process too.
 

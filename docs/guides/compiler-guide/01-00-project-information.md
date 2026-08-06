@@ -8,8 +8,12 @@
 
 ## 1.2. Project Maintainers
 
-The principal authors and project maintainers are Jürg Billeter and
-Raffaele Sandrini.
+The principal authors are:
+- Jürg Billeter
+- Raffaele Sandrini
+
+The current maintainers are:
+- Rico Tzschichholz
 
 ## 1.3. License
 

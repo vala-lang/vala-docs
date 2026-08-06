@@ -33,7 +33,3 @@ Here's the object hiearchy graph for the `Vala.GDBusServerModule` class:
 <!-- Then show how inheritance tree of GDBusServerModule so the reader has a visual understanding of the Vala.CodeGenerator inheritance -->
 
 ![Vala.GDBusServerModule Object Hierarchy Graph](assets/vala-gdbus-server-module.png)
-
-## Error Handling
-
-<!-- Explain how errors are handled in code generation -->

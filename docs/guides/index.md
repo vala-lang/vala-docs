@@ -32,8 +32,8 @@
   <li>
     Contributing
     <ul class="section-toc section-toc-sub">
-      <li><a href="compiler-guide">Compiler Guide</a></li>
       <li><a href="contributor-guide">Contributor Guide</a></li>
+      <li><a href="compiler-guide">Compiler Guide</a></li>
       <li><a href="plugins/01-type-modules">Plugins</a></li>
     </ul>
   </li>

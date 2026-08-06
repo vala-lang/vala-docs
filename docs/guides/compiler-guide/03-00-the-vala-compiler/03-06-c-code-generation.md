@@ -5,7 +5,7 @@ In the previous Vala compiler steps, we verified that the validity of the Vala c
 In the `Vala.Compiler.run ()` method, the compiler will eventually call `Vala.CodeContext.codegen.emit ()` which starts the C code generation process.
 
 
-## How the code generation works
+## How The Code Generation Works
 
 ### Deciding which Vala.CodeGenerator instance type to use
 
@@ -31,6 +31,8 @@ However, as more features are added to the language, the inhertiance trees for t
 Here's the object hiearchy graph for the `Vala.GDBusServerModule` class:
 
 <!-- Then show how inheritance tree of GDBusServerModule so the reader has a visual understanding of the Vala.CodeGenerator inheritance -->
+
+![Vala.GDBusServerModule Object Hierarchy Graph](assets/vala-gdbus-server-module.png)
 
 ## Error Handling
 

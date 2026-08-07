@@ -44,6 +44,28 @@ Only the source files that were explicitly passed on the command line are marked
 
 If the resulting library name does not match the `pkg-config` package name declared by a `.gir` source, a warning is emitted.
 
+### 6.1.2. Attributes
+
+`vapigen` is where two more `CCode` attribute consumers show up, on top of
+the ones described in
+[3.2.5. Attributes](03-00-the-vala-compiler/03-02-parser#3-2-5-attributes)
+and [3.6.2. Attributes](03-00-the-vala-compiler/03-06-c-code-generation#3-6-2-attributes).
+Both matter here specifically because `.gir`-derived symbols never pass
+through `Vala.Parser`, so they need their C mapping set some other way.
+
+`Vala.GirParser` (`vala/valagirparser.vala`), used in the parsing step above,
+works in both directions: it reads existing `CCode` arguments - for example
+`cprefix` or `lower_case_cprefix` - to inherit a C naming prefix from an
+enclosing namespace or type, and it *sets* `CCode` arguments such as `cname`,
+`cheader_filename`, `has_type_id` and `type_id` directly on the symbols it
+builds from the parsed `.gir` XML and any matching `.metadata` file.
+
+`Vala.CodeWriter` (`vala/valacodewriter.vala`), used in the "Writing the VAPI
+File" step above, reads `CCode` arguments such as `cheader_filename` when
+deciding what to emit for a symbol, and writes attributes themselves back out
+as `[Name (key = value, ...)]` syntax in the generated `.vapi` text - the same
+syntax `Vala.Parser.parse_attributes ()` reads at the other end.
+
 ## 6.2. vala-gen-introspect
 
 `vala-gen-introspect` is a tool for extracting metainformation about GObject based libraries. Nowadays, the preferred method is to use GObject Introspection instead, as `vapigen` can use GIR files directly.

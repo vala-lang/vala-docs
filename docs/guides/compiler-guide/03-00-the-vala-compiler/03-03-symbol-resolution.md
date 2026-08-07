@@ -67,7 +67,36 @@ is searched. If more than one imported namespace contains the symbol, an
 In the recursive case, `resolve_symbol ()` is called on the child node to
 give a parent scope, in which the symbol is looked up.
 
-One last function of `SymbolResolver` is in `visit_variable_declarator ()` —
+One last function of `SymbolResolver` is in `visit_variable_declarator ()` -
 to mark a variable type reference as "nullable" if the variable's
 type is a class, interface, array or error (reference type). This is
 used later by `Vala.NullChecker`.
+
+## 3.3.3. Attributes
+
+Symbol Resolution runs before there is any dedicated attribute processing
+step (there isn't one - see
+[3.2.5. Attributes](./03-02-parser#3-2-5-attributes) for why), so where
+`Vala.SymbolResolver` needs to know something an attribute encodes, it reads
+it straight off the symbol with `Vala.CodeNode.has_attribute ()`. This is
+called out in a comment in `get_type_for_struct ()`
+(`vala/valasymbolresolver.vala`):
+
+```vala
+// attributes are not processed yet, access them directly
+if (base_struct.has_attribute ("BooleanType")) {
+    return new BooleanType (st, source_reference);
+} else if (base_struct.has_attribute ("IntegerType")) {
+    return new IntegerType (st, null, null, source_reference);
+} else if (base_struct.has_attribute ("FloatingType")) {
+    return new FloatingType (st, source_reference);
+} else {
+    return new StructValueType (st, source_reference);
+}
+```
+
+This decides what kind of `Vala.DataType` a struct resolves to as a value
+type. A struct declared with `[BooleanType]`, `[IntegerType]` or
+`[FloatingType]` (used for structs that bind to C's primitive types, such as
+`bool`, `int` or `double`) resolves to the matching built-in `DataType`
+instead of the default `Vala.StructValueType`.

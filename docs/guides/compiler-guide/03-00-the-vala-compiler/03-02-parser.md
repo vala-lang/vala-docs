@@ -311,7 +311,7 @@ yourself bouncing between different classes.
 
 ## 3.2.2. Back to the Parser
 
-`Vala.Parser` is a highly specialized `CodeVisitor` — the only type of code
+`Vala.Parser` is a highly specialized `CodeVisitor` - the only type of code
 node it visits is a `Vala.SourceFile`. However, the `Parser` calls back to
 the context and uses it to create code nodes (mentioned before), then
 adds these code nodes into the context's root code node.
@@ -659,129 +659,123 @@ local_variable ::= identifier [ inline_array_type ] [ "=" expression ]
 expression_statement ::= statement_expression ";"
 ```
 
-## 3.2.5. Attribute Processing
+## 3.2.5. Attributes
 
-::: danger Out-of-date information
+### 3.2.5.1. What the Parser Does With Attributes
 
-This information is out-of-date. `Vala.AttrbuteProcessor` is no longer used and
-Attribute processsing now occurs across various code visitors
+An attribute in Vala source code is written as `[Name (key = value, ...)]` in
+front of a declaration. `Vala.Parser.parse_attributes ()`
+(`vala/valaparser.vala`) reads that syntax and turns each one into a
+`Vala.Attribute` node (`vala/valaattribute.vala`), which holds nothing more than
+a name and a map of argument names to their values as strings. The argument map
+may be empty, as in `[Compact]`.
 
-This info is in the process of being updated.
-:::
+The parsed attributes are attached to the declaration they belong to by
+`Vala.Parser.set_attributes ()`, which is called from most `parse_` methods -
+namespaces, classes, structs, interfaces, enums (and enum values), error
+domains, methods, properties (and their accessors), signals, delegates, fields,
+constants and parameters all take attributes. `set_attributes ()` appends each
+`Vala.Attribute` onto the target code node's `attributes` list, first checking
+`Vala.CodeNode.has_attribute ()` and reporting a `duplicate attribute` error if
+the same attribute name is applied twice to the same node.
 
-`Vala.Attribute` nodes have a name and a possibly empty
-list of key-value arguments. Some types of code tree nodes have as
-children a list of `Attribute` nodes. The attribute processor's purpose is to
-interpret the attributes which were parsed into the code tree.
+That is the full extent of what happens at parse time. The parser does not
+interpret what any attribute *means* - it only converts attribute syntax into
+data hanging off the code tree.
 
-Later in the compilation, the results of attribute processing will be
-used, for example the `CCode` attribute `cname` affects what function names
-are used in emitted C code.
+The one exception is the `Vala.Attribute` constructor itself, which does a
+small piece of immediate interpretation as each attribute node is built: if the
+attribute is named `Deprecated` or `Experimental` - both superseded by
+`[Version (...)]`, see [3.4.4](./03-04-semantic-analyzer#3-4-4-attributes) -
+it calls `Report.deprecated ()` right away.
 
-All attributes except for `Conditional` are handled from
-`Vala.AttributeProcessor`. I don't know where and how the `Conditional`
-attribute is handled, but there is a function `ignore_node ()` in `Vala.CodeContext`.
+### 3.2.5.2. Attributes Are Read On Demand, Not Processed In One Pass
 
-`Vala.AttributeProcessor` is a `CodeVisitor` which simply calls the
-`process_attributes ()` method on every namespace, class, struct,
-interface, enum, method, constructor, parameter, property, delegate,
-constant, field, and signal that it visits.
+There is no attribute processing stage, and no single code visitor that walks
+the tree interpreting attributes as a batch. Instead, each later stage of the
+compiler pulls out the specific attribute values it cares about, at the point
+where it needs them, through generic accessor methods defined on
+`Vala.CodeNode` (`vala/valacodenode.vala`):
 
-Inside the `process_attributes ()` method of each of these objects, a
-series of string comparisons will be made to parse the attributes. If
-the attribute is called `CCode`, then the `process_ccode_attributes ()`
-function will be called to parse the key-value pairs supplied.
+- `get_attribute ()` and `has_attribute ()`
+- `has_attribute_argument ()`
+- `get_attribute_string ()`, `get_attribute_integer ()`,
+  `get_attribute_double ()` and `get_attribute_bool ()`, each of which takes a
+  default value to fall back on when the attribute or argument is absent
+- matching `set_attribute*` methods, used by code that constructs symbols
+  programmatically rather than from Vala source
 
-::: info TODO
-Mention `Vala.Parser.set_attributes ()`
+These simply look up the raw `Vala.Attribute` in the node's `attributes` list
+and read the requested argument out of its string map. Because interpretation is
+decentralized like this, the meaning of an attribute lives with the code that
+acts on it, and the same node can be asked about different attributes by
+different stages. `Vala.SymbolResolver` (`vala/valasymbolresolver.vala`) even
+says as much in a comment above one of its own attribute reads:
+`// attributes are not processed yet, access them directly`.
 
-Feel free to help: [Vala Docs Repository](https://github.com/vala-lang/vala-docs).
-:::
+Each of the following stages of the compiler has its own "Attributes" section
+describing what it reads and why, since which attributes matter - and what
+they're used for - changes from one stage to the next:
 
-Attributes Recognized by Vala
+- [3.3.3. Attributes](./03-03-symbol-resolution#3-3-3-attributes) - Symbol Resolution
+- [3.4.4. Attributes](./03-04-semantic-analyzer#3-4-4-attributes) - Semantic Analyzer
+- [3.5.3. Attributes](./03-05-flow-analyzer#3-5-3-attributes) - Flow Analyzer
+- [3.6.2. Attributes](./03-06-c-code-generation#3-6-2-attributes) - C Code Generation
+- [6.1.2. Attributes](../06-00-other-tools#6-1-2-attributes) - vapigen
 
-All `Vala.Symbol` (class, constant, delegate, enum, enum value,
-errordomain, field, interface, method, property, signal, struct):
+### 3.2.5.3. Attributes Recognized by Vala
 
--   `Deprecated`
-    -   `since`
+The `valac_default_attrs` list in `vala/valausedattr.vala` is the authoritative
+record of what the compiler accepts, since it is exactly what `Vala.UsedAttr`
+checks source attributes against. Grouped by rough purpose, it currently covers:
 
-`Vala.Namespace`
+**C binding**
 
--   `CCode`
+-   `CCode` - by far the largest, with around seventy arguments controlling how
+    a symbol maps onto C, among them `cname`, `cprefix`, `cheader_filename`,
+    `type_id`, `type_cname`, `ref_function`, `unref_function`, `copy_function`,
+    `free_function`, `array_length`, `array_null_terminated`, `delegate_target`,
+    `has_target`, `has_type_id`, `has_construct_function`, `instance_pos`,
+    `finish_name`, `scope` and `notify`. The
+    [manual VAPI writing guide](../../bindings/writing-a-vapi-manually/02-00-getting-started/02-03-the-ccode-attribute)
+    covers these in detail.
 
-`Vala.Class`
+**Versioning**
 
--   `CCode`
--   `DBus`
--   `Compact`
--   `Immutable`
--   `ErrorBase`
+-   `Version` - `since`, `replacement`, `deprecated`, `deprecated_since`,
+    `experimental`, `experimental_until`
+-   `Deprecated` (`since`, `replacement`), `Experimental` and `NoArrayLength` -
+    all superseded, and warned about as described above
 
-`Vala.Struct`
+**Type and class semantics**
 
--   `CCode`
--   `SimpleType`
--   `IntegerType`
--   `FloatingType`
--   `BooleanType`
--   `Immutable`
+-   `Compact` (`opaque`), `Immutable`, `SingleInstance`, `Flags`, `ErrorBase`
+-   `SimpleType`, `BooleanType`, `PointerType`,
+    `IntegerType` (`rank`, `min`, `max`, `signed`, `width`),
+    `FloatingType` (`rank`, `decimal`, `width`)
 
-`Vala.Interface`
+**Method behaviour**
 
--   `CCode`
--   `DBus`
+-   `NoWrapper`, `NoThrow`, `NoReturn`, `DestroysInstance`,
+    `ReturnsModifiedPointer`, `Assert`, `ModuleInit`, `Profile`, `Diagnostics`
+-   `Print`, `PrintfFormat`, `ScanfFormat`, `FormatArg`
 
-`Vala.Enum`
+**Properties, accessors and signals**
 
--   `CCode`
--   `Flags`
+-   `NoAccessorMethod`, `ConcreteAccessor`, `GenericAccessors`, `HasEmitter`
+-   `Description` - `nick`, `blurb`
+-   `Signal` - `detailed`, `run`, `no_recurse`, `action`, `no_hooks`
 
-`Vala.Method`
+**Integration with other systems**
 
--   `CCode`
--   `DBus`
--   `ReturnsModifiedPointer`
--   `FloatingReference`
--   `NoWrapper`
--   `NoReturn`
--   `ModuleInit`
+-   `DBus` - `name`, `no_reply`, `result`, `use_string_marshalling`, `value`,
+    `signature`, `visible`, `timeout`
+-   `GIR` - `fullname`, `name`, `visible`
+-   `GtkChild` (`name`, `internal`), `GtkTemplate` (`ui`), `GtkCallback` (`name`)
+-   `Source` - `filename`, `line`, `column`
 
-`Vala.CreationMethod`
-> Same as `Vala.Method` — this class inherits from `Method`.
-
-`Vala.FormalParameter`
-
--   `CCode`
-
-`Vala.Property`
-
--   `CCode`
--   `DBus`
--   `NoAccessorMethod`
--   `Description`
-    -   `nick`
-    -   `blurb`
-
-`Vala.PropertyAccessor`
-
--   `CCode`
-
-`Vala.Delegate`
-
--   `CCode`
-
-`Vala.Constant`
-
--   `CCode`
-
-`Vala.Field`
-
--   `CCode`
-
-`Vala.Signal`
-
--   `DBus`
--   `Signal`
--   `HasEmitter`
+Which of these are meaningful on a given declaration depends on the attribute:
+`Compact` only means something on a class, `Flags` only on an enum, and so on.
+`Vala.UsedAttr` checks only that an attribute and its arguments are known to the
+compiler at all, not that they were applied to a declaration that can use them.
 

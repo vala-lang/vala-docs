@@ -47,7 +47,7 @@ control to gdb, so breakpoints and backtraces resolve properly.
 
 This means you don't need to `make install` a debug build of Vala
 anywhere on your system to debug it. Configuring with
-`--enable-debug` and running `make` is enough — the debug `valac`
+`--enable-debug` and running `make` is enough - the debug `valac`
 and its matching `libvala`/`libvalaccodegen` libraries stay in the
 build tree's `.libs` directories, and `./libtool --mode=execute` runs
 straight from there, leaving any installed `valac` you already have

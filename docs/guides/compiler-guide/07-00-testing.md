@@ -21,10 +21,10 @@ through `testrunner.sh`, reporting a summary of passes and failures.
 The top-level `Makefile.am` also defines a few convenience wrappers
 around `make check`:
 
-- `make test` — plain `make check` in the `tests` directory.
-- `make test-asan` / `make test-ubsan` — same, but with AddressSanitizer
+- `make test` - plain `make check` in the `tests` directory.
+- `make test-asan` / `make test-ubsan` - same, but with AddressSanitizer
   or UndefinedBehaviorSanitizer flags added to `TEST_CFLAGS`.
-- `make test-update` — same, but with `UPDATE_EXPECTED=1` set, so
+- `make test-update` - same, but with `UPDATE_EXPECTED=1` set, so
   expected C output files are regenerated rather than checked.
 
 ## 7.2. Where is the test suite defined?
@@ -66,23 +66,23 @@ Test sources are organised into subdirectories of `tests` by topic
 (e.g. `basic-types`, `arrays`, `dbus`, `errors`, `genie`), and each
 test is one of the following file types:
 
-- `.vala` / `.gs` — A Vala or Genie source file that is expected to
+- `.vala` / `.gs` - A Vala or Genie source file that is expected to
   compile and run successfully. If a matching `.c-expected` file
   exists alongside it, the generated C code is compared against it.
-- `.test` — A plain text file containing one or more headers followed
+- `.test` - A plain text file containing one or more headers followed
   by a blank line and then the source code. This format is used for
   tests that need extra metadata, such as invalid code tests, D-Bus
   tests, or tests that declare required packages.
-- `.gir` — A GIR file used to test `vapigen`'s VAPI generation; the
+- `.gir` - A GIR file used to test `vapigen`'s VAPI generation; the
   output is compared against a matching `.vapi-expected` file.
 
 A `.test` file can start with one or more of the following headers:
 
-- `Packages: <name> ...` — Declares the packages to pass to `valac`
+- `Packages: <name> ...` - Declares the packages to pass to `valac`
   via `--pkg` when compiling the test.
-- `Invalid Code` — Marks the test as expected to fail compilation.
+- `Invalid Code` - Marks the test as expected to fail compilation.
   The test passes only if `valac` reports an error.
-- `D-Bus` — Marks the test as a D-Bus test. The test is compiled and
+- `D-Bus` - Marks the test as a D-Bus test. The test is compiled and
   run inside a private D-Bus session via `dbus-run-session`.
 
 For example, an invalid code test looks like this:
@@ -125,7 +125,7 @@ codegen change.
 Any directory under `tests` may contain a `tests-extra-environment.sh`
 file. This is sourced by the test runner before compiling tests in
 that directory, letting you customise the environment for every test
-in the directory — for example, by adding extra `VALAFLAGS`:
+in the directory - for example, by adding extra `VALAFLAGS`:
 
 ```shell
 VALAFLAGS="--vapidir ${abs_srcdir}/girwriter"

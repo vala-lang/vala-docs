@@ -1,17 +1,18 @@
 # 3.3. Symbol Resolution
 
-`Vala.SymbolResolver` is a `CodeVisitor` that exchanges `Vala.UnresolvedType`
-nodes in the parse tree with `Vala.DataType` nodes and links `Vala.NamespaceReference`
-nodes with the correct namespace symbol. Additionally, it checks base types
-for classes so that classes don't inherit from multiple classes or
-themselves, and likewise it checks that interfaces don't need to
-implement themselves.
+`Vala.SymbolResolver` (`vala/valasymbolresolver.vala`) is a `CodeVisitor`
+that exchanges `Vala.UnresolvedType` (`vala/valaunresolvedtype.vala`)
+nodes in the parse tree with `Vala.DataType` (`vala/valadatatype.vala`)
+nodes and links `Vala.NamespaceReference` nodes with the correct
+namespace symbol. Additionally, it checks base types for classes so
+that classes don't inherit from multiple classes or themselves, and
+likewise it checks that interfaces don't need to implement themselves.
 
 ## 3.3.1. Data Types
 
 Every expression has a static type. This is represented by `Vala.DataType`.
 
-`Vala.DataType` is called a "type reference" because because it contains a reference to a `Vala.TypeSymbol` (a class, interface, etc.) as well as information about the expression's type, e.g., if it can be `null`,
+`Vala.DataType` is called a "type reference" because because it contains a reference to a `Vala.TypeSymbol` (`vala/valatypesymbol.vala`) (a class, interface, etc.) as well as information about the expression's type, e.g., if it can be `null`,
 or, if it's an `out` parameter.
 
 Type references are first discovered by the `Vala.Parser`.
@@ -22,7 +23,8 @@ Later on in the compilation process, the semantic analyzer (`Vala.SemanticAnalyz
 
 ## 3.3.2. Symbols
 
-A `Vala.Symbol` is a specialization of `Vala.CodeNode`. All symbols except
+A `Vala.Symbol` (`vala/valasymbol.vala`) is a specialization of
+`Vala.CodeNode` (`vala/valacodenode.vala`). All symbols except
 for the root symbol are contained within another's scope. Types have
 scope and variables have scope. For types and variables, scope
 determines their accessibility, subject to access modifiers. For

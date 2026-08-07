@@ -36,3 +36,47 @@ Also, `Vala.SemanticAnalyzer` contains methods and static functions that are use
 
 If while checking the symbols, any errors have been reported, after the semantic analyzer has finishing checking through the entire symbol tree, the compiler program will exit early instead of proceeding with the Flow Analyzer.
 
+## 3.4.4. Attributes
+
+Semantic analysis is where most attribute-driven validation happens, since
+this is the stage that walks every symbol and calls `Vala.CodeNode.check ()`
+on it. There's no separate step for this - the same attribute accessors
+described in [3.2.5. Attributes](./03-02-parser#3-2-5-attributes) are simply
+called from inside `check ()` and from computed properties that `check ()`
+relies on.
+
+A few examples:
+
+- `Vala.Class.check ()` (`vala/valaclass.vala`) reads `has_attribute ("Compact")`
+  directly to reject a `[Compact]` class inheriting from a non-compact base
+  class, reporting `` Compact class `%s' cannot inherit from non-compact class
+  `%s' ``.
+- `Vala.Class.is_compact` and the equivalent properties on `Vala.Struct`
+  (`vala/valastruct.vala`) for `SimpleType`, `BooleanType`, `IntegerType` and
+  `FloatingType` are backed by `has_attribute ()`, computed once and cached on
+  first access.
+- `Vala.SemanticAnalyzer` (`vala/valasemanticanalyzer.vala`) reaches into
+  individual `CCode` arguments in its own helper methods while deciding how a
+  symbol must be treated - for example `is_gobject_property ()` reads
+  `array_length`, `array_null_terminated` and `delegate_target` to work out
+  whether a property can be exposed as a GObject property, and
+  `is_gobject_property_type ()` reads `has_type_id` to work out whether a
+  struct type qualifies.
+
+### 3.4.4.1. Version and Deprecation Checks
+
+`[Version]` (and its deprecated predecessors `[Deprecated]`/`[Experimental]`)
+are checked by a dedicated helper class, `Vala.VersionAttribute`
+(`vala/valaversionattribute.vala`), rather than being read directly. Every
+`Vala.Symbol` lazily creates and caches one through its `version` property
+(`vala/valasymbol.vala`), and that object is what reads the `since`,
+`replacement`, `deprecated`, `deprecated_since`, `experimental` and
+`experimental_until` arguments.
+
+Its `check ()` method is called wherever a symbol is *used*, rather than once
+for the whole file - from `Vala.MemberAccess` (`vala/valamemberaccess.vala`),
+`Vala.ObjectCreationExpression`, `Vala.Field`, `Vala.Parameter`,
+`Vala.LocalVariable` and `Vala.Class`. This is why a deprecation or
+experimental-API warning is reported once per call site or reference, not
+once globally for the declaration.
+

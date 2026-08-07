@@ -21,9 +21,9 @@ are referenced in the options array. It's not very interesting.
 
 ## 3.1.2. The Compilation Procedure and Vala.CodeContext
 
-`Vala.Compiler` plugs together the classes of libvala in a big pipeline.
-This modular design makes Vala more maintainable and external tools can
-easily use this code.
+`Vala.Compiler` (`compiler/valacompiler.vala`) plugs together the classes
+of libvala in a big pipeline. This modular design makes Vala more
+maintainable and external tools can easily use this code.
 
 ## 3.1.3. The valac Pipeline
 
@@ -39,20 +39,22 @@ easily use this code.
 10. Compile the generated C code.
 
 The individual steps will be explained later, but first
-`Vala.CodeContext`, the data structure which holds everything together.
-It stores the compile options which were specified on the command line,
-and a list of source files to compile. There is only one `CodeContext`
-instantiated and its reference is passed around a lot, so effectively
-it's a global variable.
+`Vala.CodeContext` (`vala/valacodecontext.vala`), the data structure
+which holds everything together. It stores the compile options which
+were specified on the command line, and a list of source files to
+compile. There is only one `CodeContext` instantiated and its reference
+is passed around a lot, so effectively it's a global variable.
 
 `Vala.CodeContext` is the root of the code tree, because it contains the
-root `Namespace`, which holds references to all parsed code nodes. In
-addition to the code tree, the context contains a reference to a code
-generator object. This object walks the code tree and generates code.
+root `Namespace` (`vala/valanamespace.vala`), which holds references to
+all parsed code nodes. In addition to the code tree, the context
+contains a reference to a code generator object. This object walks the
+code tree and generates code.
 
 Vala.CodeContext contains an important method called `accept`, which
 initiates a depth-first traversal of the code tree. This method, and the
-`CodeVisitor` pattern, will be discussed later.
+`CodeVisitor` (`vala/valacodevisitor.vala`) pattern, will be discussed
+later.
 
 **Data diagram**
 
@@ -60,7 +62,8 @@ initiates a depth-first traversal of the code tree. This method, and the
 
 The Vala code tree is an abstract syntax tree (AST) built by parsing the
 Vala sources. For example, if you see a class called `Vala.Destructor`
-which inherits `Vala.Symbol`, then it is a part of the AST. Data
+(`vala/valadestructor.vala`) which inherits `Vala.Symbol`
+(`vala/valasymbol.vala`), then it is a part of the AST. Data
 structures for the AST and the parser which builds it are in the `vala`
 directory.
 

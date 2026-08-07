@@ -16,7 +16,7 @@ process of replacing it with GObject Introspection going on.
 1.  vala-gen-introspect is a program written in C (under
     /gobject-introspection) that will generate the `.gi` file from C
     headers.
-2.  vapigen using the `Vala.GIDLParser` (under /vapigen) will then
+2.  vapigen using the `Vala.GIdlParser` (`vapigen/valagidlparser.vala`) will then
     construct a Vala tree from the `.gi` file.
 
 ## 4.2. GObject Introspection
@@ -25,5 +25,5 @@ This will be the preferred way of generating GObject bindings at some
 point, deprecating the old vala introspection.
 
 1.  Existing libraries will distribute a `.gir` file.
-2.  vapigen using the `Vala.GirParser` (under /vala) will then construct a
+2.  vapigen using the `Vala.GirParser` (`vala/valagirparser.vala`) will then construct a
     Vala tree from the `.gir` file.

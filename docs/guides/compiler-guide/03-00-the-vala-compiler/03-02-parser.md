@@ -15,8 +15,9 @@ the parser is a hand-crafted recursive descent parser. The parser is in
 :::
 
 The entry point of the parser is `Vala.Parser.parse ()`. This method is
-called by `Vala.Compiler.run ()`. `Vala.Parser` is an implementation of
-`Vala.CodeVisitor` for source files.
+called by `Vala.Compiler.run ()` (`compiler/valacompiler.vala`).
+`Vala.Parser` is an implementation of `Vala.CodeVisitor`
+(`vala/valacodevisitor.vala`) for source files.
 
 ## 3.2.1. Visitors and Ping Pong
 
@@ -24,6 +25,13 @@ called by `Vala.Compiler.run ()`. `Vala.Parser` is an implementation of
 methods for each kind of code node. A class which inherits `CodeVisitor`
 is supposed to do some kind of processing of the code tree. Here are all
 the `CodeVisitor` classes in Vala:
+
+::: info Note
+All of these classes are found in the `vala` directory, following the
+`vala<class-name-lowercase>.vala` naming convention (e.g.
+`Vala.SemanticAnalyzer` is in `vala/valasemanticanalyzer.vala`), with
+one exception: `Vala.GIdlParser` is in `vapigen/valagidlparser.vala`.
+:::
 
 ```vala
 public abstract class Vala.CodeVisitor
@@ -55,6 +63,13 @@ public class Vala.SwitchLabel : CodeNode
 public abstract class Vala.Symbol : CodeNode
 public class Vala.UsingDirective : CodeNode
 ```
+
+::: info Note
+All of the `CodeNode` classes below (data types, expressions, literals,
+statements, symbols, members, and type symbols) are also found in the
+`vala` directory, using the same `vala<class-name-lowercase>.vala`
+naming convention.
+:::
 
 Data types:
 
@@ -219,10 +234,10 @@ All `CodeNode`s except the root have a non-null parent `CodeNode`. Some
 specializations of `CodeNode` may have children. The type and number of
 children are declared in the specialized class.
 
-The two important methods in a `CodeNode` are `accept` and
-`accept_children`. The `accept ()` method lets the node declare to the
-`CodeVisitor` what it is, so the `CodeVisitor` can act on it. For example,
-`Vala.Struct.accept ()`:
+The two important methods in a `CodeNode` (`vala/valacodenode.vala`) are
+`accept` and `accept_children`. The `accept ()` method lets the node
+declare to the `CodeVisitor` what it is, so the `CodeVisitor` can act on
+it. For example, `Vala.Struct.accept ()` (`vala/valastruct.vala`):
 
 ```vala
 public override void accept (CodeVisitor visitor) {

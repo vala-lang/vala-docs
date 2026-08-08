@@ -93,7 +93,58 @@ for example:
 VALAC=$HOME/dev/vala-x.y.z/compiler/valac ./configure --prefix=$HOME/prefix
 ```
 
-## 9.5. Out-of-tree build
+## 9.5. Configuring an isolated install prefix
+
+Running `make install` installs straight into the system prefix
+(`/usr/local` by default), which can overwrite or conflict with a
+`valac` you already have installed, especially one managed by a
+package manager. This makes it easy to end up with a broken or
+mismatched compiler toolchain on your system.
+
+To avoid this, configure the build with `--prefix=PATH` pointing at a
+directory outside your system paths, for example:
+
+```shell
+./autogen.sh --prefix=$HOME/vala-wip
+make
+make install
+```
+
+This installs `valac` and its supporting libraries entirely under
+`$HOME/vala-wip`, leaving any system-installed Vala untouched. To use
+the isolated install, add its `bin` directory to your `PATH` and, if
+needed, point the dynamic linker at its `lib` directory:
+
+```shell
+export PATH=$HOME/vala-wip/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/vala-wip/lib:$LD_LIBRARY_PATH
+```
+
+On macOS, use `DYLD_LIBRARY_PATH` instead of `LD_LIBRARY_PATH`.
+
+Since `PATH` and `LD_LIBRARY_PATH` are ordered lists, prepending the
+isolated `bin`/`lib` directories makes the shell and dynamic linker
+resolve `valac` and its libraries there first, cleanly shadowing any
+system install for the lifetime of that shell.
+
+If you're also building other projects against the isolated `valac`,
+note that `pkg-config` doesn't follow `PATH` - it uses its own search
+path. To make `vala-X.Y.pc` (and any other `.pc` files under the
+prefix) discoverable, also export:
+
+```shell
+export PKG_CONFIG_PATH=$HOME/vala-wip/lib/pkgconfig:$PKG_CONFIG_PATH
+```
+
+Otherwise, `pkg-config --cflags --libs vala-X.Y` may still resolve to
+a system-installed Vala instead of your isolated build.
+
+This is especially useful for quickly testing a work-in-progress
+version of the compiler: you can switch between your isolated build
+and your system's `valac` just by toggling `PATH`, without ever
+running `make install` against system directories.
+
+## 9.6. Out-of-tree build
 
 An out-of-tree build does not properly work yet. Out-of-tree builds have
 the advantage that your source tree is not cluttered with built files.

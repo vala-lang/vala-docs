@@ -51,3 +51,33 @@ If you want to have a C header file for your project, you can use the
 ```shell
 valac hello.vala -C -H hello.h
 ```
+
+## File Naming
+
+The Vala compiler does not enforce any convention for naming source
+files - `valac` will happily compile a file with any name. Because of
+this, no single file naming convention has been agreed upon across the
+Vala community, and you will find different conventions used by
+different projects. Two common ones are:
+
+-   `PascalCase`: Matching the primary class name. A general convention,
+    popularised for Vala by
+    [elementary OS](https://docs.elementary.io/develop/writing-apps/code-style#classes-and-files),
+    where a class `MainWindow` would live in `MainWindow.vala`. This
+    makes it easy to find the file that defines a given class.
+-   `kebab-case`: Follows the
+    [GObject naming conventions](https://docs.gtk.org/gobject/tutorial.html#boilerplate-header-code)
+    used by GNOME and other projects, applied to Vala with `kebab-case`
+    in place of C's underscores. Seen in two forms:
+    -   **Prefix and type name, dash-separated**: GObject's convention
+        is to separate a type's prefix (often the namespace) from its
+        type name with a dash - e.g. a `Viewer` prefix and `File` type
+        name give `viewer-file.h`/`viewer-file.c` - and this is the
+        convention used by most GNOME libraries and applications.
+    -   **The class name alone, hyphenated**: Applied directly as an
+        alternative to `PascalCase` file naming, without a separate
+        prefix - a class `MainWindow` would live in `main-window.vala`.
+
+When contributing to an existing project, follow whatever convention
+that project already uses. When starting a new project, pick one of the
+above (or another convention you prefer) and apply it consistently.

@@ -12,23 +12,188 @@ This is a list of known code editors with some form of Vala support.
 There may be other editors not listed here that support Vala.
 :::
 
-| Editor                                                                 | Syntax Highlighting                                                                    | Code Formatting                                                                    | Static Code Analysis                                                       | Auto-completion                                          | Jump to Definition                                                       | Integrated Documentation                                 | Integrated Build, Test and Debug                                                                                                                                                                                                                | Refactoring Tools |
-|------------------------------------------------------------------------|----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|----------------------------------------------------------------------------|----------------------------------------------------------|--------------------------------------------------------------------------|----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------|
-| [Anjuta](https://wiki.gnome.org/Apps/Anjuta)                           | Yes                                                                                    |                                                                                    | Yes                                                                        | Yes                                                      |                                                                          |                                                          |                                                                                                                                                                                                                                                 |                   |
-| [elementary OS Code](https://github.com/elementary/code)               | Yes                                                                                    |                                                                                    |                                                                            |                                                          |                                                                          |                                                          |                                                                                                                                                                                                                                                 |                   |
-| [Emacs](https://www.gnu.org/software/emacs/)                           | Yes                                                                                    |                                                                                    |                                                                            |                                                          |                                                                          |                                                          |                                                                                                                                                                                                                                                 |                   |
-| [Geany](http://www.geany.org/)                                         | Yes                                                                                    |                                                                                    |                                                                            | Yes                                                      | Yes                                                                      |                                                          |                                                                                                                                                                                                                                                 |                   |
-| [gedit](https://gedit-technology.github.io/apps/gedit/)                | Yes                                                                                    |                                                                                    |                                                                            |                                                          |                                                                          |                                                          |                                                                                                                                                                                                                                                 |                   |
-| [GNOME Builder](https://apps.gnome.org/Builder/)                       | Yes                                                                                    | Yes                                                                                | Yes                                                                        | Yes                                                      | Yes                                                                      | Yes                                                      | Yes                                                                                                                                                                                                                                             |                   |
-| [Helix](https://helix-editor.com/)                                     | Yes                                                                                    | Yes                                                                                | Yes                                                                        | Yes                                                      |                                                                          |                                                          |                                                                                                                                                                                                                                                 |                   |
-| [JetBrains IDEs](https://www.jetbrains.com/ides/)                      | [Yes](https://github.com/vala-lang/vala-jetbrains)                                     | [Yes](https://github.com/vala-lang/vala-jetbrains)                                 | [Yes](https://github.com/vala-lang/vala-jetbrains)                         | [Yes](https://github.com/vala-lang/vala-jetbrains)       | [Yes](https://github.com/vala-lang/vala-jetbrains)                       | [Yes](https://github.com/vala-lang/vala-jetbrains)       |                                                                                                                                                                                                                                                 |                   |
-| [medit](https://mooedit.sourceforge.net/)                              | Yes                                                                                    |                                                                                    |                                                                            |                                                          |                                                                          |                                                          |                                                                                                                                                                                                                                                 |                   |
-| [Pulsar](https://pulsar-edit.dev/) | [Yes](https://packages.pulsar-edit.dev/packages/pulsar-ide-vala) | [Yes](https://packages.pulsar-edit.dev/packages/formatter) | [Yes](https://packages.pulsar-edit.dev/packages/pulsar-ide-vala) | [Yes](https://github.com/Charadon/pulsar-ide-vala) | [Yes](https://packages.pulsar-edit.dev/packages/atom-ide-definitions) | [Yes](https://packages.pulsar-edit.dev/packages/atom-ide-datatip) | | |
-| [Sublime Text](https://www.sublimetext.com/)                           | [Yes](https://packagecontrol.io/packages/Vala-TMBundle)                                |                                                                                    | [Yes](https://lsp.sublimetext.io/language_servers/#vala)                   | [Yes](https://lsp.sublimetext.io/language_servers/#vala) | [Yes](https://lsp.sublimetext.io/language_servers/#vala)                 | [Yes](https://lsp.sublimetext.io/language_servers/#vala) |                                                                                                                                                                                                                                                 |                   |
-| [TextMate](https://macromates.com/)                                    | [Yes](https://github.com/technosophos/Vala-TMBundle)                                   |                                                                                    | [Basic](https://github.com/technosophos/Vala-TMBundle)                     |                                                          |                                                                          |                                                          |                                                                                                                                                                                                                                                 |                   |
-| [Vim](https://wiki.gnome.org/Projects/Vala/Tools/Vim)                  | [Yes](https://wiki.gnome.org/Projects/Vala/Tools/Vim#Syntax_Highlighting)              |                                                                                    | [Yes](https://wiki.gnome.org/Projects/Vala/Tools/Vim#Static_Code_Analysis) |                                                          | [Yes](https://wiki.gnome.org/Projects/Vala/Tools/Vim#Jump_to_Definition) |                                                          |                                                                                                                                                                                                                                                 |                   |
-| [VS Code](https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode) | [Yes](https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Syntax_Highlighting) | [Yes](https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Code_Formatting) | [Yes](https://github.com/vala-lang/vala-language-server)                   | [Yes](https://github.com/vala-lang/vala-language-server) | [Yes](https://github.com/vala-lang/vala-language-server)                 | [Yes](https://imgur.com/KQKhCNY)                         | [Yes](https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging) ([GDB](https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging), [Meson](https://marketplace.visualstudio.com/items?itemName=mesonbuild.mesonbuild)) |                   |
-| [Zed](https://zed.dev/)                                                | [Yes](https://github.com/EbonJaeger/zed-vala)                                          | [Yes](https://github.com/EbonJaeger/zed-vala)                                      | [Yes](https://github.com/EbonJaeger/zed-vala)                              | [Yes](https://github.com/EbonJaeger/zed-vala)            | [Yes](https://github.com/EbonJaeger/zed-vala)                            | Yes                                                      |                                                                                                                                                                                                                                                 |                   |
+<table>
+  <thead>
+    <tr>
+      <th>Editor</th>
+      <th>Syntax Highlighting</th>
+      <th>Code Formatting</th>
+      <th>Static Code Analysis</th>
+      <th>Auto-completion</th>
+      <th>Jump to Definition</th>
+      <th>Integrated Documentation</th>
+      <th>Integrated Build, Test and Debug</th>
+      <th>Refactoring Tools</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://wiki.gnome.org/Apps/Anjuta">Anjuta</a></td>
+      <td>Yes</td>
+      <td></td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/elementary/code">elementary OS Code</a></td>
+      <td>Yes</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.gnu.org/software/emacs/">Emacs</a></td>
+      <td>Yes</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.geany.org/">Geany</a></td>
+      <td>Yes</td>
+      <td></td>
+      <td></td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://gedit-technology.github.io/apps/gedit/">gedit</a></td>
+      <td>Yes</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://apps.gnome.org/Builder/">GNOME Builder</a></td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://helix-editor.com/">Helix</a></td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.jetbrains.com/ides/">JetBrains IDEs</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://mooedit.sourceforge.net/">medit</a></td>
+      <td>Yes</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://pulsar-edit.dev/">Pulsar</a></td>
+      <td><a href="https://packages.pulsar-edit.dev/packages/pulsar-ide-vala">Yes</a></td>
+      <td><a href="https://packages.pulsar-edit.dev/packages/formatter">Yes</a></td>
+      <td><a href="https://packages.pulsar-edit.dev/packages/pulsar-ide-vala">Yes</a></td>
+      <td><a href="https://github.com/Charadon/pulsar-ide-vala">Yes</a></td>
+      <td><a href="https://packages.pulsar-edit.dev/packages/atom-ide-definitions">Yes</a></td>
+      <td><a href="https://packages.pulsar-edit.dev/packages/atom-ide-datatip">Yes</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.sublimetext.com/">Sublime Text</a></td>
+      <td><a href="https://packagecontrol.io/packages/Vala-TMBundle">Yes</a></td>
+      <td></td>
+      <td><a href="https://lsp.sublimetext.io/language_servers/#vala">Yes</a></td>
+      <td><a href="https://lsp.sublimetext.io/language_servers/#vala">Yes</a></td>
+      <td><a href="https://lsp.sublimetext.io/language_servers/#vala">Yes</a></td>
+      <td><a href="https://lsp.sublimetext.io/language_servers/#vala">Yes</a></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://macromates.com/">TextMate</a></td>
+      <td><a href="https://github.com/technosophos/Vala-TMBundle">Yes</a></td>
+      <td></td>
+      <td><a href="https://github.com/technosophos/Vala-TMBundle">Basic</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim">Vim</a></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim#Syntax_Highlighting">Yes</a></td>
+      <td></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim#Static_Code_Analysis">Yes</a></td>
+      <td></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim#Jump_to_Definition">Yes</a></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode">VS Code</a></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Syntax_Highlighting">Yes</a></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Code_Formatting">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-language-server">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-language-server">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-language-server">Yes</a></td>
+      <td><a href="https://imgur.com/KQKhCNY">Yes</a></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging">Yes</a> (<a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging">GDB</a>, <a href="https://marketplace.visualstudio.com/items?itemName=mesonbuild.mesonbuild">Meson</a>)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://zed.dev/">Zed</a></td>
+      <td><a href="https://github.com/EbonJaeger/zed-vala">Yes</a></td>
+      <td><a href="https://github.com/EbonJaeger/zed-vala">Yes</a></td>
+      <td><a href="https://github.com/EbonJaeger/zed-vala">Yes</a></td>
+      <td><a href="https://github.com/EbonJaeger/zed-vala">Yes</a></td>
+      <td><a href="https://github.com/EbonJaeger/zed-vala">Yes</a></td>
+      <td>Yes</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 
 Syntax highlighting and code formatting affect the visual display of the
 code in the editor. For example syntax highlighting will color keywords

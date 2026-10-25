@@ -27,7 +27,12 @@ For debugging messages, Vala provides `debug ()`, `message ()`, `warning ()`, an
 message ("I'm a message !");
 warning ("I'm a warning !");
 critical ("I'm a critical message !");
+debug ("I'm a debug message");
 ```
+
+::: warning
+You must start your program with `G_MESSAGES_DEBUG=all` environment variable set for `debug ()` messages to be printed.
+:::
 
 You can change how log messages are formatted with the `Log.set_default_handler ()` function.
 

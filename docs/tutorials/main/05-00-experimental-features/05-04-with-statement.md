@@ -29,6 +29,8 @@ void main ()
         green = 2;
         blue = 3;
     }
+
+    // red: 1, green: 2, blue: 3
     print ("red: %d, green: %d, blue: %d\n", c.red, c.green, c.blue);
 }
 ```
@@ -40,3 +42,23 @@ The `with` statement is a convenient way to access members of a struct or class 
 
 Use `with` statements carefully, as they can make programs harder to read and understand.
 :::
+
+## Variable Declarations in With Statement
+
+It's also possible to do variable delcarations within `with` statement parentheses. Keeping the Color variable in the scope of the `with` statement block:
+
+```vala
+public struct Color {
+    int red;
+    int green;
+    int blue;
+}
+
+void main ()
+{
+    with (Color c = Color () { red = 1, green = 2, blue = 3 }) {
+        // red: 1, green: 2, blue: 3
+        print ("red: %d, green: %d, blue: %d\n", red, green, blue);
+    }
+}
+```

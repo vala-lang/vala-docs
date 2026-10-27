@@ -28,7 +28,7 @@ There may be other editors not listed here that support Vala.
   </thead>
   <tbody>
     <tr>
-      <td><a href="https://wiki.gnome.org/Apps/Anjuta">Anjuta</a></td>
+      <td><a href="https://wiki.gnome.org/Apps/Anjuta" target="_blank" rel="noreferrer">Anjuta</a></td>
       <td>Yes</td>
       <td></td>
       <td>Yes</td>
@@ -39,7 +39,7 @@ There may be other editors not listed here that support Vala.
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://github.com/elementary/code">elementary OS Code</a></td>
+      <td><a href="https://github.com/elementary/code" target="_blank" rel="noreferrer">elementary OS Code</a></td>
       <td>Yes</td>
       <td></td>
       <td></td>
@@ -50,7 +50,7 @@ There may be other editors not listed here that support Vala.
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://www.gnu.org/software/emacs/">Emacs</a></td>
+      <td><a href="https://www.gnu.org/software/emacs/" target="_blank" rel="noreferrer">Emacs</a></td>
       <td>Yes</td>
       <td></td>
       <td></td>
@@ -61,7 +61,7 @@ There may be other editors not listed here that support Vala.
       <td></td>
     </tr>
     <tr>
-      <td><a href="http://www.geany.org/">Geany</a></td>
+      <td><a href="http://www.geany.org/" target="_blank" rel="noreferrer">Geany</a></td>
       <td>Yes</td>
       <td></td>
       <td></td>
@@ -72,7 +72,7 @@ There may be other editors not listed here that support Vala.
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://gedit-technology.github.io/apps/gedit/">gedit</a></td>
+      <td><a href="https://gedit-technology.github.io/apps/gedit/" target="_blank" rel="noreferrer">gedit</a></td>
       <td>Yes</td>
       <td></td>
       <td></td>
@@ -83,7 +83,7 @@ There may be other editors not listed here that support Vala.
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://apps.gnome.org/Builder/">GNOME Builder</a></td>
+      <td><a href="https://apps.gnome.org/Builder/" target="_blank" rel="noreferrer">GNOME Builder</a></td>
       <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
@@ -94,7 +94,7 @@ There may be other editors not listed here that support Vala.
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://helix-editor.com/">Helix</a></td>
+      <td><a href="https://helix-editor.com/" target="_blank" rel="noreferrer">Helix</a></td>
       <td>Yes</td>
       <td>Yes</td>
       <td>Yes</td>
@@ -105,18 +105,18 @@ There may be other editors not listed here that support Vala.
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://www.jetbrains.com/ides/">JetBrains IDEs</a></td>
-      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
-      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
-      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
-      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
-      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
-      <td><a href="https://github.com/vala-lang/vala-jetbrains">Yes</a></td>
+      <td><a href="https://www.jetbrains.com/ides/" target="_blank" rel="noreferrer">JetBrains IDEs</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-jetbrains" target="_blank" rel="noreferrer">Yes</a></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://mooedit.sourceforge.net/">medit</a></td>
+      <td><a href="https://mooedit.sourceforge.net/" target="_blank" rel="noreferrer">medit</a></td>
       <td>Yes</td>
       <td></td>
       <td></td>
@@ -127,67 +127,67 @@ There may be other editors not listed here that support Vala.
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://pulsar-edit.dev/">Pulsar</a></td>
-      <td><a href="https://packages.pulsar-edit.dev/packages/pulsar-ide-vala">Yes</a></td>
-      <td><a href="https://packages.pulsar-edit.dev/packages/formatter">Yes</a></td>
-      <td><a href="https://packages.pulsar-edit.dev/packages/pulsar-ide-vala">Yes</a></td>
-      <td><a href="https://github.com/Charadon/pulsar-ide-vala">Yes</a></td>
-      <td><a href="https://packages.pulsar-edit.dev/packages/atom-ide-definitions">Yes</a></td>
-      <td><a href="https://packages.pulsar-edit.dev/packages/atom-ide-datatip">Yes</a></td>
+      <td><a href="https://pulsar-edit.dev/" target="_blank" rel="noreferrer">Pulsar</a></td>
+      <td><a href="https://packages.pulsar-edit.dev/packages/pulsar-ide-vala" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://packages.pulsar-edit.dev/packages/formatter" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://packages.pulsar-edit.dev/packages/pulsar-ide-vala" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/Charadon/pulsar-ide-vala" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://packages.pulsar-edit.dev/packages/atom-ide-definitions" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://packages.pulsar-edit.dev/packages/atom-ide-datatip" target="_blank" rel="noreferrer">Yes</a></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://www.sublimetext.com/">Sublime Text</a></td>
-      <td><a href="https://packagecontrol.io/packages/Vala-TMBundle">Yes</a></td>
+      <td><a href="https://www.sublimetext.com/" target="_blank" rel="noreferrer">Sublime Text</a></td>
+      <td><a href="https://packagecontrol.io/packages/Vala-TMBundle" target="_blank" rel="noreferrer">Yes</a></td>
       <td></td>
-      <td><a href="https://lsp.sublimetext.io/language_servers/#vala">Yes</a></td>
-      <td><a href="https://lsp.sublimetext.io/language_servers/#vala">Yes</a></td>
-      <td><a href="https://lsp.sublimetext.io/language_servers/#vala">Yes</a></td>
-      <td><a href="https://lsp.sublimetext.io/language_servers/#vala">Yes</a></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td><a href="https://macromates.com/">TextMate</a></td>
-      <td><a href="https://github.com/technosophos/Vala-TMBundle">Yes</a></td>
-      <td></td>
-      <td><a href="https://github.com/technosophos/Vala-TMBundle">Basic</a></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><a href="https://lsp.sublimetext.io/language_servers/#vala" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://lsp.sublimetext.io/language_servers/#vala" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://lsp.sublimetext.io/language_servers/#vala" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://lsp.sublimetext.io/language_servers/#vala" target="_blank" rel="noreferrer">Yes</a></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim">Vim</a></td>
-      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim#Syntax_Highlighting">Yes</a></td>
+      <td><a href="https://macromates.com/" target="_blank" rel="noreferrer">TextMate</a></td>
+      <td><a href="https://github.com/technosophos/Vala-TMBundle" target="_blank" rel="noreferrer">Yes</a></td>
       <td></td>
-      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim#Static_Code_Analysis">Yes</a></td>
+      <td><a href="https://github.com/technosophos/Vala-TMBundle" target="_blank" rel="noreferrer">Basic</a></td>
       <td></td>
-      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim#Jump_to_Definition">Yes</a></td>
+      <td></td>
       <td></td>
       <td></td>
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode">VS Code</a></td>
-      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Syntax_Highlighting">Yes</a></td>
-      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Code_Formatting">Yes</a></td>
-      <td><a href="https://github.com/vala-lang/vala-language-server">Yes</a></td>
-      <td><a href="https://github.com/vala-lang/vala-language-server">Yes</a></td>
-      <td><a href="https://github.com/vala-lang/vala-language-server">Yes</a></td>
-      <td><a href="https://imgur.com/KQKhCNY">Yes</a></td>
-      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging">Yes</a> (<a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging">GDB</a>, <a href="https://marketplace.visualstudio.com/items?itemName=mesonbuild.mesonbuild">Meson</a>)</td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim" target="_blank" rel="noreferrer">Vim</a></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim#Syntax_Highlighting" target="_blank" rel="noreferrer">Yes</a></td>
+      <td></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim#Static_Code_Analysis" target="_blank" rel="noreferrer">Yes</a></td>
+      <td></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/Vim#Jump_to_Definition" target="_blank" rel="noreferrer">Yes</a></td>
+      <td></td>
+      <td></td>
       <td></td>
     </tr>
     <tr>
-      <td><a href="https://zed.dev/">Zed</a></td>
-      <td><a href="https://github.com/EbonJaeger/zed-vala">Yes</a></td>
-      <td><a href="https://github.com/EbonJaeger/zed-vala">Yes</a></td>
-      <td><a href="https://github.com/EbonJaeger/zed-vala">Yes</a></td>
-      <td><a href="https://github.com/EbonJaeger/zed-vala">Yes</a></td>
-      <td><a href="https://github.com/EbonJaeger/zed-vala">Yes</a></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode" target="_blank" rel="noreferrer">VS Code</a></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Syntax_Highlighting" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Code_Formatting" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-language-server" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-language-server" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/vala-lang/vala-language-server" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://imgur.com/KQKhCNY" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging" target="_blank" rel="noreferrer">Yes</a> (<a href="https://wiki.gnome.org/Projects/Vala/Tools/VisualStudioCode#Debugging" target="_blank" rel="noreferrer">GDB</a>, <a href="https://marketplace.visualstudio.com/items?itemName=mesonbuild.mesonbuild" target="_blank" rel="noreferrer">Meson</a>)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a href="https://zed.dev/" target="_blank" rel="noreferrer">Zed</a></td>
+      <td><a href="https://github.com/EbonJaeger/zed-vala" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/EbonJaeger/zed-vala" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/EbonJaeger/zed-vala" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/EbonJaeger/zed-vala" target="_blank" rel="noreferrer">Yes</a></td>
+      <td><a href="https://github.com/EbonJaeger/zed-vala" target="_blank" rel="noreferrer">Yes</a></td>
       <td>Yes</td>
       <td></td>
       <td></td>

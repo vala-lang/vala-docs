@@ -46,3 +46,7 @@ Vala compiler. This allows for mixed Vala and C source code projects.
 ```bash
 valac demo.vala foo.c
 ```
+
+For more on calling C code from Vala, including how to customise the way
+external methods are called with the `CCode` attribute, check out the
+[Interop with C](../interop-with-c) guide.

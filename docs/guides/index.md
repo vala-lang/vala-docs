@@ -4,6 +4,7 @@
   <li>
     Interop &amp; Bindings
     <ul class="section-toc section-toc-sub">
+      <li><a href="interop-with-c">Interop with C</a></li>
       <li><a href="bindings">Bindings</a></li>
     </ul>
   </li>

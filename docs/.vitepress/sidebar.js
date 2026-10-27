@@ -830,6 +830,10 @@ export const sidebar = {
                         text: "Interop & Bindings",
                         items: [
                             {
+                                text: "Interop with C",
+                                link: "/guides/interop-with-c",
+                            },
+                            {
                                 text: "Bindings",
                                 link: "/guides/bindings",
                             },

@@ -34,9 +34,14 @@ of the array (e.g., `size_t`).
 
 The `array_null_terminated` will assume the array is null terminated,
 like a string is, and set the array length automatically by iterating
-over the items in the array. Since Vala always allocates padding in
-arrays with the final element as null, passing a Vala-declared array in
-does not involve modifying the array in any way.
+over the items in the array.
+
+Vala does not always null-terminate the arrays it creates, so don't rely
+on a Vala-declared array ending with a null element when passing it to C
+code that expects one. For example, a `string[]` is null-terminated, but
+`uint[]` and `const string[]` arrays are not. If the C function needs a
+null-terminated array, make sure the array you pass in is one that Vala
+terminates, or add the terminating element yourself.
 
 ## 7.3.3. Array Length is a Constant Expression
 

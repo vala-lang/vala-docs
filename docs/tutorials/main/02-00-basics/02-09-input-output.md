@@ -20,7 +20,7 @@ The two work mostly the same, but they come from different places:
 
 - `stdout.printf ()` comes from the C standard library. `stdout` is a [`FileStream`](https://valadoc.org/glib-2.0/GLib.FileStream.html), so you can use it with the other file stream APIs, such as `stdout.flush ()` and `stdout.puts ()`, and pass it to code that expects a `FileStream`.
 - `print ()` is part of GLib. It works well with the rest of the GLib library, for example with the [format macros GLib provides for its basic types](https://docs.gtk.org/glib/types.html). These are available in Vala as constants such as `int64.FORMAT` and `uint64.FORMAT`.
-- The output of `print ()` can be redirected with [`set_print_handler ()`](https://docs.gtk.org/glib/func.set_print_handler.html), for example to show it in a window or write it to a file. `stdout.printf ()` always writes to the C standard output stream.
+- The output of `print ()` can be redirected with [`set_print_handler ()`](https://valadoc.org/glib-2.0/GLib.set_print_handler.html), for example to show it in a window or write it to a file. `stdout.printf ()` always writes to the C standard output stream.
 
 ```vala
 int64 big_number = int64.MAX;
@@ -46,22 +46,175 @@ stderr.printf ("I'm an error message !\n");
 printerr ("I'm an error message !\n");
 ```
 
-The same differences apply: `stderr` is a `FileStream` from the C standard library, while `printerr ()` is a GLib function whose output can be redirected with [`set_printerr_handler ()`](https://docs.gtk.org/glib/func.set_printerr_handler.html).
+The same differences apply: `stderr` is a `FileStream` from the C standard library, while `printerr ()` is a GLib function whose output can be redirected with [`set_printerr_handler ()`](https://valadoc.org/glib-2.0/GLib.set_printerr_handler.html).
 
-For debugging messages, Vala provides `debug ()`, `message ()`, `warning ()`, and `critical ()`.
+## Logging
+
+`print ()` and `printerr ()` are for your program's normal output. For messages about what your program is doing, or about problems in it, GLib provides logging functions. They add a timestamp and the source file and line number to each message, and they let users control which messages they see.
+
+Each function takes a format string followed by arguments, like `print ()`. You don't need to end the message with `\n`, because the default log handler adds a newline for you.
+
+<table>
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Level</th>
+      <th>Use it for</th>
+      <th>Printed by default</th>
+      <th>Stream</th>
+      <th>Stops the program</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://valadoc.org/glib-2.0/GLib.debug.html"><code>debug ()</code></a></td>
+      <td>Debug</td>
+      <td>Detailed information to help you find bugs</td>
+      <td>No</td>
+      <td>stdout</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><a href="https://valadoc.org/glib-2.0/GLib.message.html"><code>message ()</code></a></td>
+      <td>Message</td>
+      <td>Normal messages about what the program is doing</td>
+      <td>Yes</td>
+      <td>stderr</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><a href="https://valadoc.org/glib-2.0/GLib.warning.html"><code>warning ()</code></a></td>
+      <td>Warning</td>
+      <td>Unexpected external conditions, such as a missing file or a misconfigured system</td>
+      <td>Yes</td>
+      <td>stderr</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><a href="https://valadoc.org/glib-2.0/GLib.critical.html"><code>critical ()</code></a></td>
+      <td>Critical</td>
+      <td>A bug in your program, such as an invalid argument</td>
+      <td>Yes</td>
+      <td>stderr</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td><a href="https://valadoc.org/glib-2.0/GLib.error.html"><code>error ()</code></a></td>
+      <td>Error</td>
+      <td>A bug so serious that the program can't continue</td>
+      <td>Yes</td>
+      <td>stderr</td>
+      <td><strong>Yes, always</strong></td>
+    </tr>
+  </tbody>
+</table>
 
 ```vala
-message ("I'm a message !");
-warning ("I'm a warning !");
-critical ("I'm a critical message !");
-debug ("I'm a debug message");
+int items = 3;
+
+debug ("Loaded %d items", items);
+message ("Loaded %d items", items);
+warning ("Config file not found, using defaults");
+critical ("Index %d is out of range", 7);
+error ("Unrecoverable state, shutting down");
+```
+
+When run, this prints the following (the stream each line is on is in the table above):
+
+```
+** Message: 13:33:13.201: example.vala:4: Loaded 3 items
+
+** (process:39732): WARNING **: 13:33:13.201: example.vala:5: Config file not found, using defaults
+
+** (process:39732): CRITICAL **: 13:33:13.201: example.vala:6: Index 7 is out of range
+
+** (process:39732): ERROR **: 13:33:13.201: example.vala:7: Unrecoverable state, shutting down
+```
+
+The `debug ()` line isn't there. See [Showing debug messages](#showing-debug-messages) below.
+
+### `debug ()`
+
+Use `debug ()` for detailed messages that help you track down bugs while developing. They are hidden by default, so you can leave them in your code without cluttering the output for users.
+
+```vala
+debug ("Connecting to %s on port %d", host, port);
+```
+
+### `message ()`
+
+Use `message ()` for ordinary messages that users may want to see, such as progress or status updates.
+
+```vala
+message ("Loaded %d items", items);
+```
+
+### `warning ()`
+
+Use `warning ()` when something unexpected happened outside of your program, but your program can carry on. Examples are a missing file, a bad system configuration or invalid contents in a file. The program continues running after a warning.
+
+```vala
+warning ("Config file not found, using defaults");
+```
+
+::: tip
+Warnings and error messages aren't meant for reporting errors to the user of your program. If the caller of a function can do something about a failure, use a [`GLib.Error`](https://valadoc.org/glib-2.0/GLib.Error.html) and `throws` instead (see [Error Handling](../04-00-advanced-features/04-02-error-handling)).
+:::
+
+### `critical ()`
+
+Use `critical ()` when you detect a bug in your own program or in a library you use, such as being called with an invalid argument. It prints a message and the program carries on, so the bug may cause further problems afterwards.
+
+```vala
+critical ("Index %d is out of range", index);
+```
+
+Vala's runtime checks, such as a failed `requires` precondition in a method, also log a critical message.
+
+### `error ()`
+
+Use `error ()` only for failures that should never happen and that you can't recover from. It prints a message and then **always** terminates the program, usually with a core dump, so don't use it for errors you expect to happen, such as a file not existing. Vala knows `error ()` never returns, so code after it is unreachable.
+
+```vala
+error ("Unrecoverable state, shutting down");
+```
+
+### Showing debug messages
+
+To see `debug ()` messages, set the `G_MESSAGES_DEBUG` environment variable to `all` to see every debug message, or to a list of log domains separated by spaces.
+
+```
+G_MESSAGES_DEBUG=all ./my-program
 ```
 
 ::: warning
-You must start your program with `G_MESSAGES_DEBUG=all` environment variable set for `debug ()` messages to be printed.
+You must start your program with the `G_MESSAGES_DEBUG=all` environment variable set for `debug ()` messages to be printed.
 :::
 
-You can change how log messages are formatted with the `Log.set_default_handler ()` function.
+### Making warnings and critical messages stop your program
+
+While developing, it helps to stop at the first warning or critical message, so you can find what caused it in a debugger. Set the `G_DEBUG` environment variable to make them fatal:
+
+```
+G_DEBUG=fatal-warnings ./my-program
+G_DEBUG=fatal-criticals ./my-program
+```
+
+With `fatal-warnings`, both `warning ()` and `critical ()` stop the program. With `fatal-criticals`, only `critical ()` does.
+
+### Changing how log messages are handled
+
+You can change how log messages are formatted and where they go with the [`Log.set_default_handler ()`](https://valadoc.org/glib-2.0/GLib.Log.set_default_handler.html) function.
+
+```vala
+Log.set_default_handler ((domain, level, message) => {
+    print ("[custom] %s\n", message);
+});
+
+message ("Hello"); // Prints something like "[custom] example.vala:5: Hello"
+```
+
+For more information, see the GLib documentation on [message logging](https://docs.gtk.org/glib/logging.html) and the Valadoc pages for [`debug ()`](https://valadoc.org/glib-2.0/GLib.debug.html), [`message ()`](https://valadoc.org/glib-2.0/GLib.message.html), [`warning ()`](https://valadoc.org/glib-2.0/GLib.warning.html), [`critical ()`](https://valadoc.org/glib-2.0/GLib.critical.html) and [`error ()`](https://valadoc.org/glib-2.0/GLib.error.html).
 
 
 ## Stdin

@@ -104,7 +104,7 @@ probably with an example:
 ```vala
 public class Test : GLib.Object {
 
-    private int a { get; set; }
+    private int a = 0;
 
     public void action_1 () {
         lock (a) {
@@ -132,9 +132,64 @@ statements here, Vala will guarantee that if one thread has locked
 "a", another thread that needs the same lock will have to wait its
 turn.
 
+### How `lock` works
+
+A `lock` statement has the form `lock (member) { ... }`. The thread
+executing it acquires a mutex associated with `member` before running the
+block, and releases it when the block is left. The lock is also released
+if the block is left early, for example with `return` or `break`:
+
+```vala
+public class Counter : GLib.Object {
+
+    private int count = 0;
+
+    public void increment () {
+        lock (count) {
+            count++;
+        }
+    }
+
+    public int get_count () {
+        lock (count) {
+            return count;
+        }
+    }
+}
+```
+
+Some things to keep in mind:
+
+- Each locked member has its own mutex. Locking `a` does not stop another
+  thread from locking a different member such as `b`.
+- Locking only protects code that also uses `lock` on the same member.
+  Code that reads or writes the member outside of a `lock` block is not
+  held back, so every access to the shared data should be locked.
+- Static members can be locked too. Their lock is shared by all instances
+  of the class, rather than being per-instance.
+
 In Vala, it is only possible to lock members of the object that is
-executing the code. This might appear to be a major restriction, but in
+executing the code. Trying to lock anything else, such as a local variable,
+results in a compile error:
+
+```vala
+void main () {
+    int x = 0;
+    lock (x) {   // error: Expression is either not a member access
+        x++;     // or does not denote a lockable member
+    }
+}
+```
+
+This might appear to be a major restriction, but in
 fact the standard use for this technique should involve classes that are
 individually responsible for controlling a resource, and so all locking
 will indeed be internal to the class. Likewise, in above example all
 accesses to "a" are encapsulated in the class.
+
+Unlike Java's `synchronized`, `lock` cannot be applied to a whole method.
+If you need to protect an entire method body, wrap it in a `lock` block.
+
+For situations `lock` cannot cover, such as protecting data that is not a
+member of the current object, GLib provides the `Mutex`, `RecMutex`,
+`RWLock` and `Cond` classes.

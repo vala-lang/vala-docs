@@ -1,0 +1,18 @@
+{
+  "name": "Vala Docs",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
+  },
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y valac libglib2.0-dev && npm install",
+  "forwardPorts": [5173],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "prince781.vala"
+      ]
+    }
+  }
+}

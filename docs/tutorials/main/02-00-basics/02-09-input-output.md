@@ -48,6 +48,39 @@ printerr ("I'm an error message !\n");
 
 The same differences apply: `stderr` is a `FileStream` from the C standard library, while `printerr ()` is a GLib function whose output can be redirected with [`set_printerr_handler ()`](https://valadoc.org/glib-2.0/GLib.set_printerr_handler.html).
 
+## Stdin
+
+To read a line from the console, you can use the `stdin.read_line ()` function. This function reads a line from the console and returns it as a string.
+
+```vala
+string? line;
+while ((line = stdin.read_line ()) != null) {
+    stdout.printf ("You entered: %s\n", line);
+}
+```
+
+Or use `stdin.scanf ()` to read formatted input from the console.
+
+```vala
+int day, month, year;
+stdout.printf ("Enter your birthday (dd/mm/yyyy): ");
+stdin.scanf ("%d/%d/%d", out day, out month, out year);
+stdout.printf ("You were born on %d/%d/%d\n", day, month, year);
+```
+
+::: warning
+
+If you use `stdin.scanf ()` with a `%s` format specifier, you must supply a buffer large enough to hold the input. If you omit a buffer or use one that is too small, you may get a segmentation fault.
+
+:::
+
+```vala
+uint8 buffer[128];
+stdin.scanf ("%s", out buffer);
+stdout.printf ("You entered: %s\n", (string)buffer);
+```
+
+
 ## Logging
 
 `print ()` and `printerr ()` are for your program's normal output. For messages about what your program is doing, or about problems in it, GLib provides logging functions. They add a timestamp and the source file and line number to each message, and they let users control which messages they see.
@@ -336,41 +369,44 @@ log ("MyApp", LogLevelFlags.LEVEL_WARNING, "Hello");  // Handled by the handler 
 log ("Other", LogLevelFlags.LEVEL_WARNING, "Hello");  // Handled by the default handler
 ```
 
-For more information, see the GLib documentation on [message logging](https://docs.gtk.org/glib/logging.html) and the Valadoc pages for [`log ()`](https://valadoc.org/glib-2.0/GLib.log.html), [`debug ()`](https://valadoc.org/glib-2.0/GLib.debug.html), [`info ()`](https://valadoc.org/glib-2.0/GLib.info.html), [`message ()`](https://valadoc.org/glib-2.0/GLib.message.html), [`warning ()`](https://valadoc.org/glib-2.0/GLib.warning.html), [`warning_once ()`](https://valadoc.org/glib-2.0/GLib.warning_once.html), [`critical ()`](https://valadoc.org/glib-2.0/GLib.critical.html) and [`error ()`](https://valadoc.org/glib-2.0/GLib.error.html).
+### Structured logging
 
+[Structured logging](https://docs.gtk.org/glib/logging.html#using-structured-logging) (since GLib 2.50) attaches key-value fields to a log message, instead of only a single text message. Logging tools such as the systemd journal can then filter and search messages by those fields. The default writer prints structured messages to the terminal in the same format as ordinary ones, but when the journal is available, it sends the fields to it.
 
-## Stdin
-
-To read a line from the console, you can use the `stdin.read_line ()` function. This function reads a line from the console and returns it as a string.
-
-```vala
-string? line;
-while ((line = stdin.read_line ()) != null) {
-    stdout.printf ("You entered: %s\n", line);
-}
-```
-
-Or use `stdin.scanf ()` to read formatted input from the console.
+[`log_structured ()`](https://valadoc.org/glib-2.0/GLib.log_structured.html) takes a log domain, a log level and then pairs of a key and a value. The `MESSAGE` key holds the text of the message. Its value is a format string, which is followed by the format string's arguments:
 
 ```vala
-int day, month, year;
-stdout.printf ("Enter your birthday (dd/mm/yyyy): ");
-stdin.scanf ("%d/%d/%d", out day, out month, out year);
-stdout.printf ("You were born on %d/%d/%d\n", day, month, year);
+log_structured ("MyApp", LogLevelFlags.LEVEL_WARNING,
+    "ITEM_COUNT", "3",
+    "MESSAGE", "Loaded %d items", 3);
 ```
 
 ::: warning
-
-If you use `stdin.scanf ()` with a `%s` format specifier, you must supply a buffer large enough to hold the input. If you omit a buffer or use one that is too small, you may get a segmentation fault.
-
+Put `MESSAGE` last. Any fields after it are ignored.
 :::
 
-```vala
-uint8 buffer[128];
-stdin.scanf ("%s", out buffer);
-stdout.printf ("You entered: %s\n", (string)buffer);
+#### Using structured logging in the convenience functions
+
+By default, `debug ()`, `info ()`, `message ()`, `warning ()`, `critical ()` and `error ()` don't use structured logging. To make them do so, define `G_LOG_USE_STRUCTURED` when compiling your program:
+
+```
+valac --Xcc=-DG_LOG_USE_STRUCTURED my-program.vala
 ```
 
+Your code doesn't change. The convenience functions still take a format string and arguments, but each message is also written with fields such as `CODE_FILE`, `CODE_LINE` and `CODE_FUNC`, so tools that understand them can show where a message came from. Because Vala compiles to C, these fields name the generated C file and line, not your `.vala` file. Environment variables such as `G_MESSAGES_DEBUG` work the same way.
+
+To change where structured messages go, use [`Log.set_writer_func ()`](https://valadoc.org/glib-2.0/GLib.Log.set_writer_func.html) instead of the log handlers from the previous section. Once `G_LOG_USE_STRUCTURED` is defined, handlers set with `Log.set_default_handler ()` or `Log.set_handler ()` are no longer called, and the writer function receives the messages instead.
+
+```vala
+Log.set_writer_func ((level, fields) => {
+    foreach (var field in fields) {
+        print ("%s=%s\n", field.key, (string) field.value);
+    }
+    return LogWriterOutput.HANDLED;
+});
+```
+
+For more information, see the GLib documentation on [message logging](https://docs.gtk.org/glib/logging.html) and the Valadoc pages for [`log ()`](https://valadoc.org/glib-2.0/GLib.log.html), [`debug ()`](https://valadoc.org/glib-2.0/GLib.debug.html), [`info ()`](https://valadoc.org/glib-2.0/GLib.info.html), [`message ()`](https://valadoc.org/glib-2.0/GLib.message.html), [`warning ()`](https://valadoc.org/glib-2.0/GLib.warning.html), [`warning_once ()`](https://valadoc.org/glib-2.0/GLib.warning_once.html), [`critical ()`](https://valadoc.org/glib-2.0/GLib.critical.html) and [`error ()`](https://valadoc.org/glib-2.0/GLib.error.html).
 
 ## Opening Files (File Streams)
 

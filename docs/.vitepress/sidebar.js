@@ -1471,6 +1471,10 @@ export const sidebar = {
                                             text: "4.15. Profiles",
                                             link: "/tutorials/main/04-00-advanced-features/04-15-profiles",
                                         },
+                                        {
+                                            text: "4.16. Dynamic Objects",
+                                            link: "/tutorials/main/04-00-advanced-features/04-16-dynamic-objects",
+                                        },
                                     ],
                                 },
                                 {

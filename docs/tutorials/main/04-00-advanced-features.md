@@ -66,4 +66,10 @@
   <li>
     <a href="04-00-advanced-features/04-15-profiles">4.15. Profiles</a>
   </li>
+  <li>
+    <a href="04-00-advanced-features/04-16-dynamic-objects">4.16. Dynamic Objects</a>
+    <ul class="section-toc section-toc-sub">
+      <li><a href="04-00-advanced-features/04-16-dynamic-objects#_4-16-1-dynamic-signals">4.16.1. Dynamic Signals</a></li>
+    </ul>
+  </li>
 </ul>

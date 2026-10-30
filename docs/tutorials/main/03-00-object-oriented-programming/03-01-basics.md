@@ -93,3 +93,79 @@ TestClass t = new TestClass ();
 t.first_data = 5;
 t.method_1 ();
 ```
+
+## 3.1.1. Partial Classes
+
+A class that has become very large or complex can be split into several
+parts, even across multiple files. Put the `partial` keyword before `class`
+in every part. The compiler combines all the parts into a single class:
+
+```vala
+// shape.vala
+public partial class Shape : GLib.Object {
+    public double width { get; set; }
+    public double height { get; set; }
+}
+```
+
+```vala
+// shape-area.vala
+public partial class Shape {
+    public double area () {
+        return width * height;
+    }
+}
+```
+
+```vala
+// main.vala
+void main () {
+    var s = new Shape () { width = 3, height = 4 };
+    stdout.printf ("%g\n", s.area ());   // prints 12
+}
+```
+
+Compile all the files together:
+
+```
+valac shape.vala shape-area.vala main.vala
+```
+
+Each part can add members, such as properties, fields and methods, and can
+also add interfaces for the class to implement:
+
+```vala
+public partial class Foo : Object {
+    public double bar { get; set; }
+}
+
+public partial class Foo : Initable {
+    public virtual bool init (Cancellable? cancellable = null) {
+        stdout.printf ("hello!\n");
+        this.bar = 0.56;
+        return true;
+    }
+}
+```
+
+Here the first part declares the `bar` property and the `Object` base class,
+and the second part adds the `Initable` interface along with the `init`
+method that implements it. Compile this one with `valac --pkg gio-2.0`.
+
+A few rules apply:
+
+- Every part must be marked `partial`. Declaring a class once without
+  `partial` and again with it is an error.
+- A class can only have one base class. If a part names a base class, no
+  other part may name one as well, even if it's the same class.
+- Members can't be defined twice. Two parts declaring a member with the
+  same name is an error.
+
+::: info Note
+
+Partial classes are an experimental feature. `valac` prints the warning
+"`partial' classes are experimental" unless you pass `--enable-experimental`.
+
+They are rarely needed. Before reaching for them, consider whether
+splitting the class into smaller classes would be a better design.
+:::

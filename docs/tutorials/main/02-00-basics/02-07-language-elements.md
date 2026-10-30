@@ -197,7 +197,75 @@ In this example `curried_add` (see [Currying](http://en.wikipedia.org/wiki/Curry
 that preserves the value of `a`. This returned method is directly called afterwards with 4 as argument 
 resulting in the sum of the two numbers.  
 
-## 2.7.4. Namespaces
+## 2.7.4. Nested Functions {#_2-7-4-nested-functions}
+
+A function can be defined inside another function or method. A nested
+function is only visible to the code of the function that contains it, so
+it lets you split up a complicated method into smaller parts without making
+those parts available to the rest of the program. It can also read and
+modify the local variables of the enclosing method:
+
+```vala
+int sum_of_squares (int[] values) {
+    int total = 0;
+
+    int square (int x) {
+        return x * x;
+    }
+
+    void add (int x) {
+        total += square (x);   // ``total`` belongs to the enclosing method
+    }
+
+    foreach (int v in values) {
+        add (v);
+    }
+    return total;
+}
+
+void main () {
+    stdout.printf ("%d\n", sum_of_squares ({ 1, 2, 3 }));   // prints 14
+}
+```
+
+Trying to call `square` or `add` from `main` is a compile error, because they
+only exist inside `sum_of_squares`.
+
+A nested function behaves like a lambda expression (see
+[Anonymous Methods / Closures](#_2-7-3-anonymous-methods-closures)) assigned
+to a local variable. Unlike a lambda, it has a name and explicit parameter
+and return types. This makes it useful when the same callback is needed in
+more than one place, since a lambda would have to be written out again each
+time. Here one nested function is the completion callback for two
+asynchronous writes:
+
+```vala
+void write_streams (OutputStream stream1, OutputStream stream2, uint8[] data) {
+    void on_written (Object? object_source, AsyncResult result) {
+        OutputStream stream = object_source as OutputStream;
+        try {
+            ssize_t size = stream.write_async.end (result);
+            stdout.printf (@"Written $size bytes\n");
+        } catch (Error e) {
+            stderr.printf ("Error writing to stream: %s", e.message);
+        }
+    }
+
+    stream1.write_async.begin (data, Priority.DEFAULT, null, on_written);
+    stream2.write_async.begin (data, Priority.DEFAULT, null, on_written);
+}
+```
+
+::: info Note
+
+Nested functions are an experimental feature. `valac` prints the warning
+"local functions are experimental" unless you pass `--enable-experimental`.
+
+Because they work like lambdas, a nested function can't call itself
+recursively.
+:::
+
+## 2.7.5. Namespaces
 
 ```vala     
 namespace NameSpaceName {        
@@ -230,7 +298,7 @@ NameSpace1.Test { ... }`. Note that when doing this, the
 final namespace of the definition will be the one the declaration is
 nested in plus the namespaces declared in the definition.
 
-## 2.7.5. Structs
+## 2.7.6. Structs
 
 ```vala
 struct StructName {
@@ -298,7 +366,7 @@ To define an array of structs, please see the
 [FAQ](../../../faq#how-do-i-create-an-array-of-structs)
 
 
-## 2.7.6. Enums
+## 2.7.7. Enums
 
 Enums are a way to define a set of named integer constants. They are useful for defining a set of related values that are not necessarily sequential. For example, the following code defines an enum named `EnumName` with three values:
 
@@ -346,7 +414,7 @@ An enum can be declared inside a class
 :::
 
 
-## 2.7.7. Flags
+## 2.7.8. Flags
 
 Enums can be used like flags by using the `[Flags]` attribute on the enum definition.
 This allows you to combine the values using the `+` operator and check if a value is set using the `in` operator.
@@ -384,7 +452,7 @@ void main () {
 | `in` | Checks if a flag is set. |
 
 
-## 2.7.8. Classes
+## 2.7.9. Classes
 
 ```vala
 class ClassName : SuperClassName, InterfaceName {
@@ -398,7 +466,7 @@ object-oriented programming.
 
 [3. Object Oriented Programming](../03-00-object-oriented-programming) and [3.1. Basics](../03-00-object-oriented-programming/03-01-basics)
 
-## 2.7.9. Interfaces
+## 2.7.10. Interfaces
 
 ```vala
 interface InterfaceName : SuperInterfaceName {

@@ -35,12 +35,13 @@
       <li><a href="02-00-basics/02-07-language-elements#_2-7-1-methods">2.7.1. Methods</a></li>
       <li><a href="02-00-basics/02-07-language-elements#_2-7-2-delegates">2.7.2. Delegates</a></li>
       <li><a href="02-00-basics/02-07-language-elements#_2-7-3-anonymous-methods-closures">2.7.3. Anonymous Methods / Closures (Lambda Expressions)</a></li>
-      <li><a href="02-00-basics/02-07-language-elements#_2-7-4-namespaces">2.7.4. Namespaces</a></li>
-      <li><a href="02-00-basics/02-07-language-elements#_2-7-5-structs">2.7.5. Structs</a></li>
-      <li><a href="02-00-basics/02-07-language-elements#_2-7-6-enums">2.7.6. Enums</a></li>
-      <li><a href="02-00-basics/02-07-language-elements#_2-7-7-flags">2.7.7. Flags</a></li>
-      <li><a href="02-00-basics/02-07-language-elements#_2-7-8-classes">2.7.8. Classes</a></li>
-      <li><a href="02-00-basics/02-07-language-elements#_2-7-9-interfaces">2.7.9. Interfaces</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-4-nested-functions">2.7.4. Nested Functions</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-5-namespaces">2.7.5. Namespaces</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-6-structs">2.7.6. Structs</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-7-enums">2.7.7. Enums</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-8-flags">2.7.8. Flags</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-9-classes">2.7.9. Classes</a></li>
+      <li><a href="02-00-basics/02-07-language-elements#_2-7-10-interfaces">2.7.10. Interfaces</a></li>
     </ul>
   </li>
   <li>

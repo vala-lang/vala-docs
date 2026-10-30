@@ -3,6 +3,9 @@
 <ul class="section-toc">
   <li>
     <a href="03-00-object-oriented-programming/03-01-basics">3.1. Basics</a>
+    <ul class="section-toc section-toc-sub">
+      <li><a href="03-00-object-oriented-programming/03-01-basics#_3-1-1-partial-classes">3.1.1. Partial Classes</a></li>
+    </ul>
   </li>
   <li>
     <a href="03-00-object-oriented-programming/03-02-construction">3.2. Construction</a>

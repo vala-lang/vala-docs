@@ -2,9 +2,9 @@
 
 ## Stdout
 
-The [*Hello World* program](../01-00-first-program) in chapter 1 used `print ()` for a single string. For formatted output and for consistency with much existing C and GObject code, Vala also offers `stdout.printf ()`, which can take an arbitrary number of arguments of different types. The first argument is always a *format string*, following the same rules as [C format strings](http://en.wikipedia.org/wiki/Printf). If you must output an error message you can use `stderr.printf ()` instead of `stdout.printf ()`.
+The [*Hello World* program](../01-00-first-program) in chapter 1 used [`print ()`](https://valadoc.org/glib-2.0/GLib.print.html) to print a string. Vala also offers `stdout.printf ()`, which writes to the C standard output stream.
 
-To print a message to the console, you can use `stdout.printf ()` or `print ()`. Both are similar to `printf ()` in C. `stdout.printf ()` takes a format string and a list of arguments. The format string contains placeholders for the arguments; the placeholders are replaced with the argument values when the function is called.
+Both take a *format string* followed by any number of arguments of different types. The format string follows the same rules as [C format strings](http://en.wikipedia.org/wiki/Printf): it contains placeholders that are replaced with the argument values when the function is called.
 
 ```vala
 stdout.printf ("Hello, world\n");
@@ -12,14 +12,41 @@ print ("Hello, world\n");
 stdout.printf ("%d %g %s\n", 42, 3.1415, "Vala");
 ```
 
-## Stderr
+Neither function adds a newline for you, so end the format string with `\n` when you want one.
 
-To print an error message to the console, you can use `stderr.printf ()` instead of `stdout.printf ()`, or you can use `printerr ()`.
+### `print ()` vs `stdout.printf ()`
+
+The two work mostly the same, but they come from different places:
+
+- `stdout.printf ()` comes from the C standard library. `stdout` is a [`FileStream`](https://valadoc.org/glib-2.0/GLib.FileStream.html), so you can use it with the other file stream APIs, such as `stdout.flush ()` and `stdout.puts ()`, and pass it to code that expects a `FileStream`.
+- `print ()` is part of GLib. It works well with the rest of the GLib library, for example with the [format macros GLib provides for its basic types](https://docs.gtk.org/glib/types.html). These are available in Vala as constants such as `int64.FORMAT` and `uint64.FORMAT`.
+- The output of `print ()` can be redirected with [`set_print_handler ()`](https://docs.gtk.org/glib/func.set_print_handler.html), for example to show it in a window or write it to a file. `stdout.printf ()` always writes to the C standard output stream.
 
 ```vala
-stderr.printf ("I'm an error message !");
-printerr ("I'm an error message !");
+int64 big_number = int64.MAX;
+print ("%" + int64.FORMAT + "\n", big_number);
 ```
+
+```vala
+set_print_handler ((text) => {
+    stdout.printf ("[custom handler] %s", text);
+});
+
+print ("Hello, world\n"); // Prints "[custom handler] Hello, world"
+```
+
+For more information, see the Valadoc pages for [`print ()`](https://valadoc.org/glib-2.0/GLib.print.html) and [`printerr ()`](https://valadoc.org/glib-2.0/GLib.printerr.html).
+
+## Stderr
+
+To print an error message to the console, you can use `stderr.printf ()` instead of `stdout.printf ()`, or you can use [`printerr ()`](https://valadoc.org/glib-2.0/GLib.printerr.html) instead of `print ()`.
+
+```vala
+stderr.printf ("I'm an error message !\n");
+printerr ("I'm an error message !\n");
+```
+
+The same differences apply: `stderr` is a `FileStream` from the C standard library, while `printerr ()` is a GLib function whose output can be redirected with [`set_printerr_handler ()`](https://docs.gtk.org/glib/func.set_printerr_handler.html).
 
 For debugging messages, Vala provides `debug ()`, `message ()`, `warning ()`, and `critical ()`.
 

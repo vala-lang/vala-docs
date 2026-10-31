@@ -36,6 +36,7 @@ The syntax of Vala is similar to C#, modified to better fit the GObject type sys
 ## Contents
 
 - [Basics](#basics)
+- [Identifiers](#identifiers)
 - [Variables and Types](#variables-and-types)
 - [Strings](#strings)
 - [Control Flow](#control-flow)
@@ -58,6 +59,7 @@ The syntax of Vala is similar to C#, modified to better fit the GObject type sys
 - [Threads and Locking](#threads-and-locking)
 - [Operators in Action](#operators-in-action)
 - [Pointers](#pointers)
+- [Experimental Features](#experimental-features)
 - [Other Keywords](#other-keywords)
 - [Keywords](#keywords)
 - [Operators](#operators)
@@ -86,6 +88,25 @@ The entry point can also return an exit code and receive command line arguments:
 int main (string[] args) {
     stdout.printf ("Got %d argument(s)\n", args.length);
     return 0;
+}
+```
+
+## Identifiers
+
+Prefix a name with `@` to use a keyword (or a name starting with a digit) as an identifier. The `@` isn't part of the name:
+
+```vala
+class Item : Object {
+    public int @foreach () {
+        return 1;
+    }
+}
+
+void main () {
+    var item = new Item ();
+
+    // The "@" can be omitted when it's unambiguous
+    print ("%d\n", item.foreach ());
 }
 ```
 
@@ -881,6 +902,28 @@ void main () {
     var obj = new Object ();
     Object* raw = obj;
     delete raw;
+}
+```
+
+## Experimental Features
+
+These features may change in future releases. Compile with `valac --enable-experimental` to silence the experimental warnings (for example, the one for main blocks).
+
+### Main Blocks
+
+Top-level statements form an implicit `main` method:
+
+```vala
+print ("Hello, World!\n");
+```
+
+### Regular Expression Literals
+
+```vala
+void main () {
+    if (/^[a-z]+$/i.match ("Vala")) {
+        print ("Only letters\n");
+    }
 }
 ```
 

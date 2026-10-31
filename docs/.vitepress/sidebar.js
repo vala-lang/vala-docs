@@ -1347,6 +1347,10 @@ export const sidebar = {
                                             text: "2.9. Input / Output",
                                             link: "/tutorials/main/02-00-basics/02-09-input-output",
                                         },
+                                        {
+                                            text: "2.10. Format Strings",
+                                            link: "/tutorials/main/02-00-basics/02-10-format-strings",
+                                        },
                                     ],
                                 },
                                 {

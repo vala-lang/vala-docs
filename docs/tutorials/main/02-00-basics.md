@@ -56,4 +56,7 @@
       <li><a href="02-00-basics/02-09-input-output#opening-files">Opening Files</a></li>
     </ul>
   </li>
+  <li>
+    <a href="02-00-basics/02-10-format-strings">2.10. Format Strings</a>
+  </li>
 </ul>

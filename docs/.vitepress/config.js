@@ -9,6 +9,10 @@ const bnfGrammar = JSON.parse(
     readFileSync(join(__dirname, "grammars/bnf.tmLanguage.json"), "utf-8"),
 );
 
+const blueprintGrammar = JSON.parse(
+    readFileSync(join(__dirname, "grammars/blueprint.tmLanguage.json"), "utf-8"),
+);
+
 /** Public site origin for absolute Open Graph URLs (no trailing slash). */
 const SITE_ORIGIN = (
     process.env.VITEPRESS_SITE_ORIGIN ?? "https://docs.vala.dev"
@@ -204,7 +208,7 @@ export default {
         },
     },
     markdown: {
-        languages: [bnfGrammar],
+        languages: [bnfGrammar, blueprintGrammar],
     },
     themeConfig: {
         // theme-level options

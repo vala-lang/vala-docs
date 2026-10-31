@@ -127,3 +127,161 @@ Run:
 ```shell
 ./ColumnView.vala
 ```
+
+## Blueprint Version
+
+The same sample, with the UI described in
+[Blueprint](https://gnome.pages.gitlab.gnome.org/blueprint-compiler/) instead of
+being built in code.
+
+The item layouts are defined in Blueprint using `BuilderListItemFactory`, so the
+Vala setup and bind handlers are no longer needed.
+
+### Source Code
+
+::: code-group
+
+```blueprint [column-view.blp]
+using Gtk 4.0;
+
+template $ColumnViewWindow: ApplicationWindow {
+  title: "ColumnView Sample";
+  default-width: 375;
+  default-height: 150;
+
+  child: ColumnView {
+    model: SingleSelection selection_model {
+      autoselect: true;
+    };
+
+    ColumnViewColumn {
+      title: "Account Name";
+      expand: true;
+      factory: BuilderListItemFactory {
+        template ListItem {
+          child: Label {
+            halign: start;
+            label: bind template.item as <$Account>.name;
+          };
+        }
+      };
+    }
+
+    ColumnViewColumn {
+      title: "Type";
+
+      factory: BuilderListItemFactory {
+        template ListItem {
+          child: Label {
+            halign: start;
+            label: bind template.item as <$Account>.account_type;
+          };
+        }
+      };
+    }
+
+    ColumnViewColumn {
+      title: "Balance";
+      expand: true;
+      factory: BuilderListItemFactory {
+        template ListItem {
+          child: Label {
+            halign: start;
+            label: bind template.item as <$Account>.balance;
+          };
+        }
+      };
+    }
+  };
+}
+```
+
+```vala [ColumnViewBlueprint.vala]
+// ColumnViewBlueprint.vala
+
+public class Account : GLib.Object {
+    public string name { get; set; }
+    public string account_type { get; set; }
+    public string balance { get; set; }
+
+    public Account (string name, string account_type, string balance) {
+        Object (
+            name: name,
+            account_type: account_type,
+            balance: balance
+        );
+    }
+}
+
+[GtkTemplate (ui = "/com/example/ColumnViewSample/column-view.ui")]
+public class ColumnViewWindow : Gtk.ApplicationWindow {
+    [GtkChild]
+    private unowned Gtk.SingleSelection selection_model;
+
+    public ColumnViewWindow (Gtk.Application app) {
+        Object (application: app);
+    }
+
+    construct {
+        var accounts = new GLib.ListStore (typeof (Account));
+
+        accounts.append (new Account ("Visa", "Card", "102.10"));
+        accounts.append (new Account ("Mastercard", "Card", "10.20"));
+
+        selection_model.model = accounts;
+    }
+}
+
+public class ColumnViewSample : Gtk.Application {
+    public ColumnViewSample () {
+        Object (application_id: "com.example.ColumnViewSample");
+    }
+
+    public override void activate () {
+        new ColumnViewWindow (this).present ();
+    }
+
+    public static int main (string[] args) {
+        var app = new ColumnViewSample ();
+        return app.run (args);
+    }
+}
+```
+
+```xml [column-view.gresource.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/example/ColumnViewSample">
+    <file>column-view.ui</file>
+  </gresource>
+</gresources>
+```
+
+:::
+
+### Compile and Run
+
+Install [blueprint-compiler](https://gnome.pages.gitlab.gnome.org/blueprint-compiler/setup.html),
+then compile the Blueprint file into a UI file:
+
+```shell
+blueprint-compiler compile column-view.blp --output column-view.ui
+```
+
+Compile the UI file into a resource:
+
+```shell
+glib-compile-resources column-view.gresource.xml --target=column-view.gresource.c --generate-source
+```
+
+Compile:
+
+```shell
+valac --pkg gtk4 --gresources column-view.gresource.xml ColumnViewBlueprint.vala column-view.gresource.c
+```
+
+Run:
+
+```shell
+./ColumnViewBlueprint
+```

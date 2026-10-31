@@ -1,0 +1,48 @@
+{
+  "name": "blueprint",
+  "scopeName": "source.blueprint",
+  "patterns": [
+    { "name": "comment.line.double-slash.blueprint", "match": "//.*$" },
+    {
+      "name": "comment.block.blueprint",
+      "begin": "/\\*",
+      "end": "\\*/"
+    },
+    {
+      "name": "string.quoted.double.blueprint",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        { "name": "constant.character.escape.blueprint", "match": "\\\\." }
+      ]
+    },
+    {
+      "name": "keyword.control.blueprint",
+      "match": "\\b(using|template|bind|bidirectional|as|typeof|item|sync-create|inverted|swapped|after|not)\\b"
+    },
+    {
+      "name": "constant.language.blueprint",
+      "match": "\\b(true|false|null)\\b"
+    },
+    {
+      "name": "constant.numeric.blueprint",
+      "match": "\\b-?[0-9]+(\\.[0-9]+)?\\b"
+    },
+    {
+      "name": "entity.name.function.blueprint",
+      "match": "\\$[A-Za-z_][A-Za-z0-9_]*"
+    },
+    {
+      "name": "entity.name.type.blueprint",
+      "match": "\\b[A-Z][A-Za-z0-9_]*\\b"
+    },
+    {
+      "name": "support.type.property-name.blueprint",
+      "match": "\\b[a-z][a-z0-9_]*(-[a-z0-9_]+)*(?=\\s*:)"
+    },
+    {
+      "name": "keyword.operator.blueprint",
+      "match": "=>|:|;|\\.|<|>"
+    }
+  ]
+}

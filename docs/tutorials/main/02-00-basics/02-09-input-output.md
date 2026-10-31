@@ -4,7 +4,7 @@
 
 The [*Hello World* program](../01-00-first-program) in chapter 1 used [`print ()`](https://valadoc.org/glib-2.0/GLib.print.html) to print a string. Vala also offers `stdout.printf ()`, which writes to the C standard output stream.
 
-Both take a *format string* followed by any number of arguments of different types. The format string follows the same rules as [C format strings](http://en.wikipedia.org/wiki/Printf): it contains placeholders that are replaced with the argument values when the function is called.
+Both take a *format string* followed by any number of arguments of different types. The format string follows the same rules as [C format strings](http://en.wikipedia.org/wiki/Printf) (see [2.10. Format Strings](02-10-format-strings)): it contains placeholders that are replaced with the argument values when the function is called.
 
 ```vala
 stdout.printf ("Hello, world\n");
@@ -36,6 +36,8 @@ print ("Hello, world\n"); // Prints "[custom handler] Hello, world"
 ```
 
 For more information, see the Valadoc pages for [`print ()`](https://valadoc.org/glib-2.0/GLib.print.html) and [`printerr ()`](https://valadoc.org/glib-2.0/GLib.printerr.html).
+
+For the full list of placeholders you can use in a format string, see [2.10. Format Strings](02-10-format-strings).
 
 ## Stderr
 

@@ -1,6 +1,6 @@
 # Other Tools
 
--   [Valadoc](https://wiki.gnome.org/Projects/Valadoc) - Generate
+-   [Valadoc](/guides/valadoc-guide) - Generate
     documentation from VAPIs, GIRs and other files
 -   [Valdo](https://github.com/vala-lang/valdo) - Create new projects generated from templates - Can use built-in templates or custom templates
 -   [Gcovr](http://gcovr.com) - Code coverage reports, use the `--debug`

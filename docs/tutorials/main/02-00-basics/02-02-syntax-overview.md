@@ -27,3 +27,7 @@ Reference types are instantiated using the `new` operator and the name
 of a construction method, which is usually just the name of the type,
 e.g. `Object o = new Object ()` creates a new Object and makes `o` a
 reference to it.
+
+::: tip
+Need a quick refresher on the syntax of a specific feature? See the [Syntax Guide](/guides/syntax-guide).
+:::

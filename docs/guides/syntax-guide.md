@@ -97,7 +97,7 @@ void main () {
     int number = 42;
     double pi = 3.14159;
     bool is_ready = true;
-bool is_finished = false;
+    bool is_finished = false;
     char letter = 'a';
     unichar emoji = '😀';
     string text = "Hello";
@@ -178,16 +178,16 @@ void main () {
 
     // switch
     switch (x) {
-    case 1:
-        print ("one\n");
-        break;
-    case 2:
-    case 3:
-        print ("two or three\n");
-        break;
-    default:
-        print ("something else\n");
-        break;
+        case 1:
+            print ("one\n");
+            break;
+        case 2:
+        case 3:
+            print ("two or three\n");
+            break;
+        default:
+            print ("something else\n");
+            break;
     }
 
     // Conditional (ternary) operator
@@ -427,9 +427,9 @@ enum Color {
 
     public string to_label () {
         switch (this) {
-        case RED: return "red";
-        case GREEN: return "green";
-        default: return "blue";
+            case RED: return "red";
+            case GREEN: return "green";
+            default: return "blue";
         }
     }
 }
@@ -594,8 +594,7 @@ void main () {
 ```vala
 int divide (int a, int b)
     requires (b != 0)
-    ensures (result * b <= a)
-{
+    ensures (result * b <= a) {
     return a / b;
 }
 ```
@@ -657,7 +656,7 @@ void main () {
 }
 ```
 
-Use `using` to import a namespace's members, for example `using GLib;`, so they can be used without qualification.
+Use `using` to import a namespace's members, for example `using GLib;`, so they can be used without qualification. Note that [vala-lint](https://github.com/vala-lang/vala-lint) discourages this in favour of explicit namespaces, so it's used only once above to show the keyword.
 
 ## Conditional Compilation
 

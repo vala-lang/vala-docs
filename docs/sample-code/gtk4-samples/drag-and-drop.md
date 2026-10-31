@@ -135,3 +135,243 @@ Run:
 ```
 ./drag-and-drop
 ```
+
+## Blueprint Version
+
+The same sample, with the UI described in
+[Blueprint](https://gnome.pages.gitlab.gnome.org/blueprint-compiler/) instead of
+being built in code.
+
+### Source Code
+
+::: code-group
+
+```blueprint [drag-and-drop.blp]
+using Gtk 4.0;
+
+template $DragAndDropWindow: ApplicationWindow {
+  title: "Drag and Drop Sample";
+  default-width: 400;
+  default-height: 300;
+
+  child: Box {
+    orientation: vertical;
+
+    ScrolledWindow {
+      hscrollbar-policy: automatic;
+      vscrollbar-policy: automatic;
+      vexpand: true;
+      valign: fill;
+
+      child: ListBox list {
+        styles ["boxed-list"]
+
+        DropTarget drop_target {
+          actions: move;
+          drop => $on_drop();
+        }
+
+        ListBoxRow {
+          child: Label {
+            label: "Row 1";
+          };
+
+          DragSource {
+            actions: move;
+            prepare => $on_drag_prepare();
+          }
+
+          DropControllerMotion {
+            enter => $on_row_enter();
+            leave => $on_row_leave();
+          }
+        }
+
+        ListBoxRow {
+          child: Label {
+            label: "Row 2";
+          };
+
+          DragSource {
+            actions: move;
+            prepare => $on_drag_prepare();
+          }
+
+          DropControllerMotion {
+            enter => $on_row_enter();
+            leave => $on_row_leave();
+          }
+        }
+
+        ListBoxRow {
+          child: Label {
+            label: "Row 3";
+          };
+
+          DragSource {
+            actions: move;
+            prepare => $on_drag_prepare();
+          }
+
+          DropControllerMotion {
+            enter => $on_row_enter();
+            leave => $on_row_leave();
+          }
+        }
+
+        ListBoxRow {
+          child: Label {
+            label: "Row 4";
+          };
+
+          DragSource {
+            actions: move;
+            prepare => $on_drag_prepare();
+          }
+
+          DropControllerMotion {
+            enter => $on_row_enter();
+            leave => $on_row_leave();
+          }
+        }
+
+        ListBoxRow {
+          child: Label {
+            label: "Row 5";
+          };
+
+          DragSource {
+            actions: move;
+            prepare => $on_drag_prepare();
+          }
+
+          DropControllerMotion {
+            enter => $on_row_enter();
+            leave => $on_row_leave();
+          }
+        }
+
+      };
+    }
+
+    LinkButton {
+      uri: "https://docs.gtk.org/gtk4/drag-and-drop.html";
+      label: "API Reference";
+      margin-top: 24;
+    }
+  };
+}
+```
+
+```vala [DragAndDropBlueprint.vala]
+// DragAndDropBlueprint.vala
+
+[GtkTemplate (ui = "/com/example/DragAndDropSample/drag-and-drop.ui")]
+public class DragAndDropWindow : Gtk.ApplicationWindow {
+    [GtkChild]
+    private unowned Gtk.ListBox list;
+
+    [GtkChild]
+    private unowned Gtk.DropTarget drop_target;
+
+    public DragAndDropWindow (Gtk.Application app) {
+        Object (application: app);
+    }
+
+    construct {
+        drop_target.set_gtypes ({ typeof (Gtk.ListBoxRow) });
+    }
+
+    // Drag handling
+    [GtkCallback]
+    private Gdk.ContentProvider on_drag_prepare (Gtk.DragSource source, double x, double y) {
+        Value value = Value (typeof (Gtk.ListBoxRow));
+        value.set_object (source.widget);
+
+        return new Gdk.ContentProvider.for_value (value);
+    }
+
+    // Update row visuals during DnD operation
+    [GtkCallback]
+    private void on_row_enter (Gtk.DropControllerMotion controller, double x, double y) {
+        list.drag_highlight_row ((Gtk.ListBoxRow) controller.widget);
+    }
+
+    [GtkCallback]
+    private void on_row_leave (Gtk.DropControllerMotion controller) {
+        list.drag_unhighlight_row ();
+    }
+
+    // Drop Handling
+    [GtkCallback]
+    private bool on_drop (Gtk.DropTarget target, Value value, double x, double y) {
+        var value_row = value.get_object () as Gtk.ListBoxRow?;
+        Gtk.ListBoxRow? target_row = list.get_row_at_y ((int) y);
+        // If value or the target row is null, do not accept the drop
+        if (value_row == null || target_row == null) {
+            return false;
+        }
+
+        int target_index = target_row.get_index ();
+
+        list.remove (value_row);
+        list.insert (value_row, target_index);
+        target_row.set_state_flags (Gtk.StateFlags.NORMAL, true);
+
+        return true;
+    }
+}
+
+public class DragAndDropSample : Gtk.Application {
+    public DragAndDropSample () {
+        Object (application_id: "com.example.DragAndDropSample");
+    }
+
+    public override void activate () {
+        new DragAndDropWindow (this).present ();
+    }
+
+    public static int main (string[] args) {
+        var app = new DragAndDropSample ();
+        return app.run (args);
+    }
+}
+```
+
+```xml [drag-and-drop.gresource.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/example/DragAndDropSample">
+    <file>drag-and-drop.ui</file>
+  </gresource>
+</gresources>
+```
+
+:::
+
+### Compile and Run
+
+Install [blueprint-compiler](https://gnome.pages.gitlab.gnome.org/blueprint-compiler/setup.html),
+then compile the Blueprint file into a UI file:
+
+```shell
+blueprint-compiler compile drag-and-drop.blp --output drag-and-drop.ui
+```
+
+Compile the UI file into a resource:
+
+```shell
+glib-compile-resources drag-and-drop.gresource.xml --target=drag-and-drop.gresource.c --generate-source
+```
+
+Compile:
+
+```shell
+valac --pkg gtk4 --gresources drag-and-drop.gresource.xml DragAndDropBlueprint.vala drag-and-drop.gresource.c
+```
+
+Run:
+
+```shell
+./DragAndDropBlueprint
+```

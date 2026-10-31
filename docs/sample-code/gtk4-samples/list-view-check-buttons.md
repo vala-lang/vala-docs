@@ -89,3 +89,137 @@ Run:
 ```shell
 ./ListViewCheckButtons.vala
 ```
+
+## Blueprint Version
+
+The same sample, with the UI described in
+[Blueprint](https://gnome.pages.gitlab.gnome.org/blueprint-compiler/) instead of
+being built in code.
+
+The item layouts are defined in Blueprint using `BuilderListItemFactory`, so the
+Vala setup and bind handlers are no longer needed.
+
+### Source Code
+
+::: code-group
+
+```blueprint [list-view-check-buttons.blp]
+using Gtk 4.0;
+
+template $ListViewCheckButtonsWindow: ApplicationWindow {
+  title: "ListView CheckButtons Sample";
+  default-width: 280;
+  default-height: 200;
+
+  child: ListView {
+    model: SingleSelection selection_model {
+      autoselect: true;
+    };
+
+    factory: BuilderListItemFactory {
+      template ListItem {
+        child: Box {
+          orientation: horizontal;
+
+          CheckButton {
+            active: bind template.item as <$Item>.checked;
+          }
+
+          Label {
+            halign: start;
+            label: bind template.item as <$Item>.name;
+          }
+        };
+      }
+    };
+  };
+}
+```
+
+```vala [ListViewCheckButtonsBlueprint.vala]
+// ListViewCheckButtonsBlueprint.vala
+
+public class Item : GLib.Object {
+    public string name { get; set; }
+    public bool checked { get; set; }
+
+    public Item (string name, bool checked) {
+        Object (
+            name: name,
+            checked: checked
+        );
+    }
+}
+
+[GtkTemplate (ui = "/com/example/ListViewCheckButtonsSample/list-view-check-buttons.ui")]
+public class ListViewCheckButtonsWindow : Gtk.ApplicationWindow {
+    [GtkChild]
+    private unowned Gtk.SingleSelection selection_model;
+
+    public ListViewCheckButtonsWindow (Gtk.Application app) {
+        Object (application: app);
+    }
+
+    construct {
+        var items = new GLib.ListStore (typeof (Item));
+
+        items.append (new Item ("Item 1", true));
+        items.append (new Item ("Item 2", false));
+
+        selection_model.model = items;
+    }
+}
+
+public class ListViewCheckButtonsSample : Gtk.Application {
+    public ListViewCheckButtonsSample () {
+        Object (application_id: "com.example.ListViewCheckButtonsSample");
+    }
+
+    public override void activate () {
+        new ListViewCheckButtonsWindow (this).present ();
+    }
+
+    public static int main (string[] args) {
+        var app = new ListViewCheckButtonsSample ();
+        return app.run (args);
+    }
+}
+```
+
+```xml [list-view-check-buttons.gresource.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/example/ListViewCheckButtonsSample">
+    <file>list-view-check-buttons.ui</file>
+  </gresource>
+</gresources>
+```
+
+:::
+
+### Compile and Run
+
+Install [blueprint-compiler](https://gnome.pages.gitlab.gnome.org/blueprint-compiler/setup.html),
+then compile the Blueprint file into a UI file:
+
+```shell
+blueprint-compiler compile list-view-check-buttons.blp --output list-view-check-buttons.ui
+```
+
+Compile the UI file into a resource:
+
+```shell
+glib-compile-resources list-view-check-buttons.gresource.xml --target=list-view-check-buttons.gresource.c --generate-source
+```
+
+Compile:
+
+```shell
+valac --pkg gtk4 --gresources list-view-check-buttons.gresource.xml ListViewCheckButtonsBlueprint.vala list-view-check-buttons.gresource.c
+```
+
+Run:
+
+```shell
+./ListViewCheckButtonsBlueprint
+```

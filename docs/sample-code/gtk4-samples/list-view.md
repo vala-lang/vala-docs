@@ -114,3 +114,172 @@ Run:
 ```shell
 ./ListView.vala
 ```
+
+## Blueprint Version
+
+The same sample, with the UI described in
+[Blueprint](https://gnome.pages.gitlab.gnome.org/blueprint-compiler/) instead of
+being built in code.
+
+The item layouts are defined in Blueprint using `BuilderListItemFactory`, so the
+Vala setup and bind handlers are no longer needed.
+
+### Source Code
+
+::: code-group
+
+```blueprint [list-view.blp]
+using Gtk 4.0;
+
+template $ListViewWindow: ApplicationWindow {
+  title: "ListView Sample";
+  default-width: 240;
+  default-height: 400;
+
+  child: ListView list_view {
+    model: SingleSelection selection_model {
+      autoselect: true;
+    };
+
+    factory: BuilderListItemFactory {
+      template ListItem {
+        child: Box {
+          orientation: vertical;
+          spacing: 4;
+
+          Label {
+            halign: start;
+            label: bind $get_full_name(template.item as <$Customer>) as <string>;
+          }
+
+          Label {
+            halign: start;
+            label: bind $get_id_text(template.item as <$Customer>) as <string>;
+          }
+        };
+      }
+    };
+
+    header-factory: BuilderListItemFactory {
+      template ListHeader {
+        child: Label {
+          halign: start;
+          label: "Customers";
+        };
+      }
+    };
+  };
+}
+```
+
+```vala [ListViewBlueprint.vala]
+// ListViewBlueprint.vala
+
+public class Customer : GLib.Object {
+    public string first_name { get; set; }
+    public string last_name { get; set; }
+    public string id { get; set; }
+
+    public Customer (string first_name, string last_name, string id) {
+        Object (
+            first_name: first_name,
+            last_name: last_name,
+            id: id
+        );
+    }
+}
+
+[GtkTemplate (ui = "/com/example/ListViewSample/list-view.ui")]
+public class ListViewWindow : Gtk.ApplicationWindow {
+    [GtkChild]
+    private unowned Gtk.SingleSelection selection_model;
+
+    public ListViewWindow (Gtk.Application app) {
+        Object (application: app);
+    }
+
+    construct {
+        var customers = new GLib.ListStore (typeof (Customer));
+
+        customers.append (new Customer ("Linus", "Legend", "1991"));
+        customers.append (new Customer ("John", "Smith", "1992"));
+        customers.append (new Customer ("Alice", "Key", "1993"));
+        customers.append (new Customer ("Bob", "Key", "1994"));
+        customers.append (new Customer ("Jane", "Doe", "1995"));
+        customers.append (new Customer ("Gabe", "Goode", "1996"));
+
+        selection_model.model = customers;
+    }
+
+    [GtkCallback]
+    private string get_full_name (Customer? customer) {
+        if (customer == null) {
+            return "";
+        }
+
+        return @"$(customer.first_name) $(customer.last_name)";
+    }
+
+    [GtkCallback]
+    private string get_id_text (Customer? customer) {
+        if (customer == null) {
+            return "";
+        }
+
+        return @"ID: $(customer.id)";
+    }
+}
+
+public class ListViewSample : Gtk.Application {
+    public ListViewSample () {
+        Object (application_id: "com.example.ListViewSample");
+    }
+
+    public override void activate () {
+        new ListViewWindow (this).present ();
+    }
+
+    public static int main (string[] args) {
+        var app = new ListViewSample ();
+        return app.run (args);
+    }
+}
+```
+
+```xml [list-view.gresource.xml]
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/com/example/ListViewSample">
+    <file>list-view.ui</file>
+  </gresource>
+</gresources>
+```
+
+:::
+
+### Compile and Run
+
+Install [blueprint-compiler](https://gnome.pages.gitlab.gnome.org/blueprint-compiler/setup.html),
+then compile the Blueprint file into a UI file:
+
+```shell
+blueprint-compiler compile list-view.blp --output list-view.ui
+```
+
+Compile the UI file into a resource:
+
+```shell
+glib-compile-resources list-view.gresource.xml --target=list-view.gresource.c --generate-source
+```
+
+Compile:
+
+```shell
+valac --pkg gtk4 --gresources list-view.gresource.xml ListViewBlueprint.vala list-view.gresource.c
+```
+
+Run:
+
+```shell
+./ListViewBlueprint
+```
